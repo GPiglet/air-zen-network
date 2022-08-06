@@ -10,7 +10,6 @@ import SafeHome from '../../components/homeComponents/SafeHome'
 import Reliable from '../../components/homeComponents/Reliable'
 import Easy from '../../components/homeComponents/Easy'
 import OurNode from '../../components/homeComponents/OurNode'
-import Footer from '../../components/common/footer'
 
 
 
@@ -41,11 +40,11 @@ const Home: NextPage = () => {
 	]
 
 	return (
-		<div className='back-left-top-gradient-primary '>
+		<div className='back-left-top-gradient-primary overflow-x-hidden'>
 			<Mainlayout navItems={navItems}>
 				<SimplyNetwork />
 				<SafeHome />
-				<Reliable />
+				<Reliable /> 	
 				<Easy />
 				<OurNode />
 			</Mainlayout>

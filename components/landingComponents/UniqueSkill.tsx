@@ -61,7 +61,7 @@ const UniqueSkill: FC = () => {
     ]
 
     return (
-            <section id='solutions' className='overflow-x-clip relative  flex justify-center items-center'>
+            <section id='solutions' className='md:container mx-auto relative  md:flex justify-center items-center'>
                 <svg className='hidden md:block absolute   top-1/2 left-1/2 center-transform w-[55%]' viewBox="0 0 898 898" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle opacity="0.5" cx="449" cy="449" r="448.5" transform="rotate(-180 449 449)" stroke="url(#paint0_linear_1362_4341)" />
                     <defs>
@@ -72,7 +72,7 @@ const UniqueSkill: FC = () => {
                     </defs>
                 </svg>
 
-                <div className='container  mt-[200px] md:mt-[120px]'>
+                <div className='  mt-[200px] md:mt-[120px]'>
                     <div className="text-center">
                         <h1 className="text-title-sm">Einzigartige Technologie. </h1>
                         <p className="font-lato font-light tracking-widest text-white text-[22px] mt-3">Unzählige Einsatzmöglichkeiten. Finden Sie Ihre:</p>

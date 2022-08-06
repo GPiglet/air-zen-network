@@ -40,13 +40,13 @@ const Home: NextPage = () => {
 	]
 
 	return (
-		<div className='back-left-top-gradient-primary '>
+		<div className='back-left-top-gradient-primary overflow-x-clip'>
 			<Mainlayout navItems={navItems}>
 				<Hero/>
 				<UniqueSkill />
 				<AboutUs />
-				<Credential />
-				<Contact />
+				{/* <Credential /> */}
+				{/* <Contact /> */}
 			</Mainlayout>
 		</div>
 	)

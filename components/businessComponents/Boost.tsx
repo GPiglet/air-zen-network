@@ -94,11 +94,11 @@ const Boost: FC = () => {
                                 {logos.map((item, index) => (
                                     <picture className="h-[50px] w-[40px] sm:w-auto" key={index}>
                                         <source
-                                            srcSet={`/images/${item}-logo.svg`}
+                                            srcSet={`/images/logos/${item}-logo.svg`}
                                             type="image/webp"
                                         />
                                         <img
-                                            src={`/images/logos/${item}-logo.svg`}
+                                            src={`/images/logos/logos/${item}-logo.svg`}
                                             className="w-full h-full mr-2 cursor-pointer"
                                             alt=""
                                         />

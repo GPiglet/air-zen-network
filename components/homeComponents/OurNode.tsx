@@ -7,8 +7,10 @@ import HomeForm from "./HomeForm";
 const OurNode: FC = () => {
 
     return (
-        <section className="pb-16 relative  overflow-x-clip">
-            <svg className="absolute left-[-37%] top-[-15%] w-[174%]  md:top-[34%] md:translate-y-[-50%] md:w-[60%] 2xl:w-[57%] 2xl:left-[0%]  sm:top-[-14%] sm:w-[120%] sm:left-[-10%]  md:left-[-2%]" viewBox="0 0 561 569" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <section className="pb-16 relative  ">
+
+            <div className="container mx-auto relative px-10 md:px-0 ">
+            <svg className="absolute left-[-37%] top-[-15%] w-[174%]  md:top-[34%] md:translate-y-[-50%] md:w-[60%] xl:w-[57%] xl:left-[-7%]  sm:top-[-14%] sm:w-[120%] sm:left-[-10%]  md:left-[-7%]" viewBox="0 0 561 569" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.7" d="M232.492 25.889C369.39 -0.783706 501.892 93.3524 528.41 236.198C554.929 379.044 465.409 516.438 328.511 543.111C191.614 569.784 59.1116 475.648 32.5932 332.802C6.0748 189.956 95.5947 52.5617 232.492 25.889Z" stroke="url(#paint0_linear_0_1)" />
                 <path opacity="0.3" d="M347.586 498.813C465.279 460.268 530.733 333.024 493.781 214.605C456.828 96.1858 331.464 31.4346 213.77 69.9791C96.0771 108.524 30.6237 235.768 67.5759 354.187C104.528 472.606 229.893 537.357 347.586 498.813Z" fill="url(#paint1_radial_0_1)" />
                 <path opacity="0.5" d="M324.934 431.525C402.744 406.042 446.017 321.918 421.587 243.628C397.157 165.339 314.275 122.53 236.465 148.013C158.655 173.496 115.383 257.62 139.813 335.909C164.243 414.199 247.124 457.008 324.934 431.525Z" fill="url(#paint2_radial_0_1)" />
@@ -34,8 +36,6 @@ const OurNode: FC = () => {
                     </linearGradient>
                 </defs>
             </svg>
-
-            <div className="container mx-auto relative px-10 md:px-0 ">
                 <div className="flex flex-wrap pt-[500px] md:pt-[42%]">
                     <div className="md:w-1/12"></div>
                     <div className="w-full md:w-[45%] px-10">
