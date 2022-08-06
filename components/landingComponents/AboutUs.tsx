@@ -6,23 +6,23 @@ import "flickity/dist/flickity.css"
 
 
 const AboutUs: FC = () => {
-    
-    let flkty:any = undefined
+
+    let flkty: any = undefined
 
     useEffect(() => {
-        if(flkty)
-        flkty.on('settle', () => {
-            console.log(flkty.selectedIndex)
-        })
+        if (flkty)
+            flkty.on('settle', () => {
+                console.log(flkty.selectedIndex)
+            })
     })
 
-    const flickity = (c:Flickity) => {
+    const flickity = (c: Flickity) => {
         flkty = c
     }
 
     const flickityProps = {
-        className:"carousel-nav pl-[55px] md:h-[70%] mt-[120px] xl:mt-[200px]",
-        options:{
+        className: "carousel-nav pl-[55px] md:h-[70%] mt-[120px] xl:mt-[200px]",
+        options: {
             asNavFor: ".carousel-main",
             contain: true,
             pageDots: false
@@ -68,64 +68,66 @@ const AboutUs: FC = () => {
 
 
     return (
-            <section id='aboutus' className='overflow-x-clip relative'>
-                <svg className='absolute z-30 right-[-90%] top-[40%] md:top-[-0%] xl:top-[-20%] lg:top-[-10%] md:w-[70%] sm:top-[22%] sm:w-[140%] sm:right-[-20%] w-[290%] md:right-[-5%] lg:right-[-8%] md:w-[100%] lg:w-[90%] ' viewBox="0 0 1295 1294" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path opacity="0.5" d="M666.531 1047.33C887.445 1047.33 1066.53 868.239 1066.53 647.325C1066.53 426.411 887.445 247.325 666.531 247.325C445.617 247.325 266.531 426.411 266.531 647.325C266.531 868.239 445.617 1047.33 666.531 1047.33Z" fill="url(#paint0_radial_0_1)" />
-                    <path opacity="0.5" d="M741.941 880.701C873.371 838.685 946.464 699.983 905.199 570.899C863.934 441.816 723.937 371.234 592.506 413.25C461.076 455.265 387.983 593.968 429.249 723.051C470.514 852.134 610.511 922.716 741.941 880.701Z" fill="url(#paint1_radial_0_1)" />
-                    <path d="M951.031 647.325C951.031 804.45 823.656 931.825 666.531 931.825C509.406 931.825 382.031 804.45 382.031 647.325C382.031 490.2 509.406 362.825 666.531 362.825C823.656 362.825 951.031 490.2 951.031 647.325Z" stroke="url(#paint2_linear_0_1)" />
-                    <path opacity="0.3" d="M1166.5 647C1166.5 922.866 942.862 1146.5 666.996 1146.5C391.13 1146.5 167.496 922.866 167.496 647C167.496 371.134 391.13 147.5 666.996 147.5C942.862 147.5 1166.5 371.134 1166.5 647Z" stroke="url(#paint3_linear_0_1)" />
-                    <image href="/images/phone-home.png" x="40.5%" y="33%" cx="511.828" cy="696.377" transform="translate(0,0)" />
-                    <foreignObject className="font-lato-light  italic w-[260px] text-lg text-white hidden md:block" x="67.5%" y="61.5%" width="260px" height="100px">
-                        <p
-                        >Dieses Feature ermöglicht eine besondere Funktion: XYZ</p>
-                    </foreignObject>
-                    <foreignObject className="font-lato-light  italic w-[260px] text-lg text-white hidden md:block" x="9%" y="74.5%" width="260px" height="100px">
-                        <p
-                        >Dieses Feature ermöglicht eine besondere Funktion: XYZ</p>
-                    </foreignObject>
-                    <image href="/images/sparkle.svg" className="w-[49px] h-[47px] hidden md:block" x="5%" y="74%" cx="511.828" cy="696.377" />
-                    <path opacity="0.5" d="M1.49603 647C1.49606 289.948 290.944 0.500034 647.996 0.500066C1005.05 0.500097 1294.5 289.948 1294.5 647C1294.5 1004.05 1005.05 1293.5 647.996 1293.5C290.944 1293.5 1.496 1004.05 1.49603 647Z" stroke="url(#paint4_linear_0_1)" />
-                    <image href="/images/sparkle.svg" className="w-[49px] h-[47px] hidden md:block" x="64%" y="61%" cx="511.828" cy="696.377" />
-                    <defs>
-                        <radialGradient id="paint0_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(689.034 286.09) rotate(90.385) scale(806.303 806.304)">
-                            <stop stopColor="#2294C3" />
-                            <stop offset="1" stopColor="#2294C3" stopOpacity="0" />
-                        </radialGradient>
-                        <radialGradient id="paint1_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(613.135 431.62) rotate(72.664) scale(494.623 503.616)">
-                            <stop stopColor="#2294C3" />
-                            <stop offset="1" stopColor="#2294C3" stopOpacity="0" />
-                        </radialGradient>
-                        <linearGradient id="paint2_linear_0_1" x1="666.531" y1="362.325" x2="666.531" y2="932.325" gradientUnits="userSpaceOnUse">
-                            <stop stopColor="#159BDE" />
-                            <stop offset="1" stopColor="#159BDE" stopOpacity="0" />
-                        </linearGradient>
-                        <linearGradient id="paint3_linear_0_1" x1="666.996" y1="147" x2="666.996" y2="1147" gradientUnits="userSpaceOnUse">
-                            <stop stopColor="#159BDE" />
-                            <stop offset="1" stopColor="#159BDE" stopOpacity="0" />
-                        </linearGradient>
-                        <linearGradient id="paint4_linear_0_1" x1="647.996" y1="1294" x2="647.996" y2="6.55078e-05" gradientUnits="userSpaceOnUse">
-                            <stop stopColor="white" />
-                            <stop offset="1" stopColor="white" stopOpacity="0" />
-                        </linearGradient>
-                    </defs>
-                </svg>
-                <div className='container m-auto relative z-50'>
-                  
-                    <div className="text-center pt-[100px] md:pt-[18%]">
-                        <h1 className="text-title-sm">Über Uns </h1>
+        <div id='aboutus' className='container m-auto relative md:flex items-center py-20'>
+            <svg className='absolute z-30 right-[-90%] top-[40%] md:top-[-28%] xl:top-[-30%]  md:w-[135%] sm:top-[22%] sm:w-[140%] sm:right-[-20%] w-[290%] xl:right-[-20%] md:right-[-47%] md:w-[100%] xl:w-[100%] ' viewBox="0 0 1295 1294" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.5" d="M666.531 1047.33C887.445 1047.33 1066.53 868.239 1066.53 647.325C1066.53 426.411 887.445 247.325 666.531 247.325C445.617 247.325 266.531 426.411 266.531 647.325C266.531 868.239 445.617 1047.33 666.531 1047.33Z" fill="url(#paint0_radial_0_1)" />
+                <path opacity="0.5" d="M741.941 880.701C873.371 838.685 946.464 699.983 905.199 570.899C863.934 441.816 723.937 371.234 592.506 413.25C461.076 455.265 387.983 593.968 429.249 723.051C470.514 852.134 610.511 922.716 741.941 880.701Z" fill="url(#paint1_radial_0_1)" />
+                <path d="M951.031 647.325C951.031 804.45 823.656 931.825 666.531 931.825C509.406 931.825 382.031 804.45 382.031 647.325C382.031 490.2 509.406 362.825 666.531 362.825C823.656 362.825 951.031 490.2 951.031 647.325Z" stroke="url(#paint2_linear_0_1)" />
+                <path opacity="0.3" d="M1166.5 647C1166.5 922.866 942.862 1146.5 666.996 1146.5C391.13 1146.5 167.496 922.866 167.496 647C167.496 371.134 391.13 147.5 666.996 147.5C942.862 147.5 1166.5 371.134 1166.5 647Z" stroke="url(#paint3_linear_0_1)" />
+                <image href="/images/phone-home.png" x="40.5%" y="33%" cx="511.828" cy="696.377" transform="translate(0,0)" />
+                <foreignObject className="font-lato-light  italic w-[260px] text-lg text-white hidden md:block" x="67.5%" y="61.5%" width="260px" height="100px">
+                    <p
+                    >Dieses Feature ermöglicht eine besondere Funktion: XYZ</p>
+                </foreignObject>
+                <foreignObject className="font-lato-light  italic w-[260px] text-lg text-white hidden md:block" x="9%" y="74.5%" width="260px" height="100px">
+                    <p
+                    >Dieses Feature ermöglicht eine besondere Funktion: XYZ</p>
+                </foreignObject>
+                <image href="/images/sparkle.svg" className="w-[49px] h-[47px] hidden md:block" x="5%" y="74%" cx="511.828" cy="696.377" />
+                <path opacity="0.5" d="M1.49603 647C1.49606 289.948 290.944 0.500034 647.996 0.500066C1005.05 0.500097 1294.5 289.948 1294.5 647C1294.5 1004.05 1005.05 1293.5 647.996 1293.5C290.944 1293.5 1.496 1004.05 1.49603 647Z" stroke="url(#paint4_linear_0_1)" />
+                <image href="/images/sparkle.svg" className="w-[49px] h-[47px] hidden md:block" x="64%" y="61%" cx="511.828" cy="696.377" />
+                <defs>
+                    <radialGradient id="paint0_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(689.034 286.09) rotate(90.385) scale(806.303 806.304)">
+                        <stop stopColor="#2294C3" />
+                        <stop offset="1" stopColor="#2294C3" stopOpacity="0" />
+                    </radialGradient>
+                    <radialGradient id="paint1_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(613.135 431.62) rotate(72.664) scale(494.623 503.616)">
+                        <stop stopColor="#2294C3" />
+                        <stop offset="1" stopColor="#2294C3" stopOpacity="0" />
+                    </radialGradient>
+                    <linearGradient id="paint2_linear_0_1" x1="666.531" y1="362.325" x2="666.531" y2="932.325" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="#159BDE" />
+                        <stop offset="1" stopColor="#159BDE" stopOpacity="0" />
+                    </linearGradient>
+                    <linearGradient id="paint3_linear_0_1" x1="666.996" y1="147" x2="666.996" y2="1147" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="#159BDE" />
+                        <stop offset="1" stopColor="#159BDE" stopOpacity="0" />
+                    </linearGradient>
+                    <linearGradient id="paint4_linear_0_1" x1="647.996" y1="1294" x2="647.996" y2="6.55078e-05" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="white" />
+                        <stop offset="1" stopColor="white" stopOpacity="0" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div className='relative z-50 w-full '>
+
+                <div>
+                    <div className="text-center">
+                        <h1 className="text-title-sm mt-20">Über Uns </h1>
                     </div>
-                    <div className='relative'>
-                    <picture>
-        <source srcSet="/images/sparkle-arrow.svg" type="image/webp" />
-                        <img src="/images/sparkle-arrow.svg" alt='' onClick={ () => flkty.next()} className="w-[47px] h-[93px] hidden md:block cursor-pointer absolute right-0 top-1/2 center-y-transform" />
+                    <div className='relative flex'>
+                        <picture>
+                            <source srcSet="/images/sparkle-arrow.svg" type="image/webp" />
+                            <img src="/images/sparkle-arrow.svg" alt='' onClick={() => flkty.next()} className="w-[47px] h-[93px] hidden md:block cursor-pointer absolute right-[47px] top-1/2 center-y-transform" />
                         </picture>
                         <picture>
-        <source srcSet="/images/sparkle-arrow.svg" type="image/webp" />
-                        <img src="/images/sparkle-arrow.svg" alt='' onClick={ () => flkty.previous()} className={`w-[47px] h-[93px] hidden md:block  cursor-pointer absolute left-[-60px] sparkle-arrow-reverse  top-1/2 center-y-transform`}/>
+                            <source srcSet="/images/sparkle-arrow.svg" type="image/webp" />
+                            <img src="/images/sparkle-arrow.svg" alt='' onClick={() => flkty.previous()} className={`w-[47px] h-[93px] hidden md:block  cursor-pointer absolute left-[47px] sparkle-arrow-reverse  top-1/2 center-y-transform`} />
                         </picture>
+                        <div className='md:w-[10%]'></div>
                         <div className='w-full md:w-2/5 '>
-                            <Flickity 
-                               {...flickityProps}
+                            <Flickity
+                                {...flickityProps}
                             >
                                 {
                                     sliderList.map((item, ind) => (
@@ -134,15 +136,16 @@ const AboutUs: FC = () => {
                                             <p className="font-lato font-light tracking-widest text-white text-lg mt-3">{item.description}</p>
                                         </div>
 
-                                    ) )
+                                    ))
                                 }
-                                
+
                             </Flickity>
                         </div>
 
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
     )
 }
 

@@ -44,9 +44,9 @@ const Home: NextPage = () => {
 			<Mainlayout navItems={navItems}>
 				<Hero/>
 				<UniqueSkill />
-				<AboutUs />
-				{/* <Credential /> */}
-				{/* <Contact /> */}
+				<AboutUs />	
+				<Credential />
+				<Contact />
 			</Mainlayout>
 		</div>
 	)

@@ -10,9 +10,9 @@ const Contact: FC = () => {
 
 
     return (
-            <div id='cantact' className='relative py-[120px] md:py-[280px] flex justify-center overflow-x-clip'>
-                <div className="container flex justify-center">
-                    <div className='md:w-1/3 text-center relative px-10 md:px-auto'>
+            <div id='cantact' className='container m-auto relative py-[120px] md:py-[280px] flex justify-center'>
+                <div className=" flex justify-center">
+                    <div className='md:w-[50%] xl:w-1/3 text-center relative px-10 md:px-auto'>
                         <h1 className="text-title-sm">Kontakt</h1>
                         <svg className='absolute left-1/2 center-x-transform w-[90%] md:w-[150%] top-[-100px] md:top-[-150px]' viewBox="0 0 488 519" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path opacity="0.7" d="M243.691 23.0004C377.708 23.0004 486.381 133.623 486.381 270.122C486.381 406.62 377.708 517.243 243.691 517.243C109.673 517.243 0.999995 406.62 0.999989 270.122C0.999983 133.623 109.673 23.0005 243.691 23.0004Z" stroke="url(#paint0_linear_0_1)" strokeWidth="2" />

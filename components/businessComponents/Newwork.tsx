@@ -5,8 +5,8 @@ import React, { FC } from "react"
 const NewWork: FC = () => {
 
     return (
-        <section className="pb-16 relative  overflow-x-clip py-[150px]">
-            <svg className="absolute left-[-37%] top-[95%]  md:top-1/2 md:translate-y-[-50%] md:w-[65%] 2xl:w-[1000px]  sm:top-[80%] sm:w-[120%] sm:left-[-10%] w-[174%] md:left-[-14%]" viewBox="0 0 692 692" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <section className="pb-16 relative container mx-auto">
+            <svg className="absolute left-[-27%] bottom-[-50%] w-[140%] sm:top-[70%]  md:top-1/2 md:translate-y-[-50%] sm:w-[120%] md:w-[100%] xl:w-[65%]   sm:left-[-10%]  md:left-[-45%] xl:left-[-20%]" viewBox="0 0 692 692" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
                     <ellipse opacity="0.7" cx="345.838" cy="345.661" rx="233.997" ry="234.212" transform="rotate(-180 345.838 345.661)" fill="url(#paint0_radial_1376_5616)" />
                     <path opacity="0.3" d="M101.168 345.66C101.168 210.409 210.711 100.766 345.838 100.766C480.965 100.766 590.508 210.409 590.508 345.66C590.508 480.912 480.965 590.555 345.838 590.555C210.711 590.555 101.168 480.912 101.168 345.66Z" stroke="#7BB690" />
@@ -32,8 +32,8 @@ const NewWork: FC = () => {
             </svg>
 
 
-            <div className="container mx-auto relative items-center px-10 md:px-0 md:h-[70%]">
-                <div className="flex flex-wrap mt-[400px] md:mt-12">
+            <div className="relative md:flex items-center px-10 md:px-0 h-full">
+                <div className="flex flex-wrap pt-[400px] md:pt-0 md:mt-12">
                     <div className="w-full md:w-2/5 m-auto">
                         <div className="relative">
                             <p className="font-lato-light italic font-light text-[22px] text-white">Zuverlässig</p>

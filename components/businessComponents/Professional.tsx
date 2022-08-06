@@ -33,13 +33,10 @@ const Professional: FC = () => {
     ]
 
     return (
-        <section className="pb-16 relative  overflow-x-clip  items-center md:flex ">
+        <section className="pb-16 relative  items-center md:flex container mx-auto ">
 
 
-
-
-
-            <svg className="absolute left-[-75%] bottom-[-37%] sm:top-[12%] md:top-[-10%] lg:top-[-47%] md:w-[100%] 2xl:w-[1563px]  sm:w-[200%] sm:left-[-54%] w-[250%] md:left-[-41%] lg:left-[-35%] 2xl:left-[-34%] " viewBox="0 0 679 681" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="absolute left-[-75%] bottom-[-71%] sm:top-[45%] md:top-[-10%] xl:top-[-33%] md:w-[100%]   sm:w-[150%] sm:left-[-25%] w-[250%] md:left-[-41%] xl:left-[-40%] " viewBox="0 0 679 681" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
                     <ellipse opacity="0.7" cx="339.414" cy="340.579" rx="167.901" ry="168.624" transform="rotate(150 339.414 340.579)" fill="url(#paint0_radial_1376_5657)" />
                     <path opacity="0.3" d="M187.495 428.29C138.845 344.025 167.424 236.449 251.324 188.01C335.223 139.57 442.677 168.608 491.327 252.873C539.978 337.138 511.398 444.714 427.499 493.154C343.599 541.593 236.145 512.555 187.495 428.29Z" stroke="#7BB690" />
@@ -74,7 +71,7 @@ const Professional: FC = () => {
             </svg>
 
 
-            <svg className="hidden md:block absolute right-[-42%] top-[66%] md:bottom-[-10%] lg:top-30%] md:w-[50%] 2xl:w-[900px]  sm:top-[43%] sm:w-[200%] sm:right-[-54%] w-[174%] md:right-[-13%] lg:right-[-13%] 2xl:right-[-15%] " viewBox="0 0 525 523" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="hidden md:block absolute right-[-42%] top-[66%] md:bottom-[-10%] lg:top-30%] md:w-[50%]   sm:top-[43%] sm:w-[200%] sm:right-[-54%] w-[174%] md:right-[-31%] xl:right-[-23%] " viewBox="0 0 525 523" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.6">
                     <ellipse opacity="0.7" cx="262.611" cy="261.234" rx="177.521" ry="176.933" fill="url(#paint0_radial_1376_5511)" />
                     <path opacity="0.3" d="M448.111 261.233C448.111 363.338 365.063 446.114 262.614 446.114C160.165 446.114 77.1172 363.338 77.1172 261.233C77.1172 159.128 160.165 76.3525 262.614 76.3525C365.063 76.3525 448.111 159.128 448.111 261.233Z" stroke="#7BB690" />
@@ -107,7 +104,7 @@ const Professional: FC = () => {
                     </radialGradient>
                 </defs>
             </svg>
-            <div className="mt-[300px] sm:mt-[50%] md:mt-0 container mx-auto relative text-center text-white px-10">
+            <div className="pt-[50%] md:pt-[0] md:mt-0 relative text-center text-white px-10">
                 <div className="w-full">
                     <h1 className="text-title-sm">
                         Profesionelles Wlan
