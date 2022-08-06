@@ -1,0 +1,48 @@
+//modules
+import React, { FC, useState } from 'react'
+import type { NextPage } from 'next'
+
+//custom Components
+import Mainlayout from '../../layout/main'
+import KeepEverything from '../../components/industrialComponents/KeepEverything'
+import IdeaSeries from '../../components/industrialComponents/IdeaSeries'
+
+
+
+
+const Industrial: NextPage = () => {
+
+	const navItems:Array<any> = [
+		{
+			id: 1,
+			title: 'Lösungen',
+			href: 'solutions'
+		},
+		{
+			id: 2,
+			title: 'Über uns',
+			href: 'aboutus'
+		},
+		{
+			id: 3,
+			title: 'REFERENZEN',
+			href: 'credentials'
+		},
+		{
+			id: 4,
+			title: 'Kontakt',
+			href: 'cantact'
+		},
+	]
+
+	return (
+		<div className='back-left-top-gradient-primary'>
+			<Mainlayout navItems={navItems} >
+				<KeepEverything />  
+				{/* <IdeaSeries /> */}
+			</Mainlayout>
+		</div>
+	)
+}
+
+export default Industrial
