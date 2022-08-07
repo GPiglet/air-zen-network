@@ -5,8 +5,8 @@ import React, { FC } from "react"
 const PrepareSuccess: FC = () => {
 
     return (
-        <section className="pb-16 relative  overflow-x-clip py-[150px]">
-            <svg className="hidden md:block absolute top-1/2 translate-y-[-50%] w-[65%] 2xl:w-[1000px] w-[174%] left-[-14%]" viewBox="0 0 704 704" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <section className="container mx-auto pb-16 relative  py-[150px]">
+            <svg className="hidden md:block absolute top-1/2 translate-y-[-50%] w-[65%] 2xl:w-[1000px] w-[174%] left-[-21%]" viewBox="0 0 704 704" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
                     <ellipse opacity="0.7" cx="351.991" cy="351.55" rx="217.013" ry="217.214" transform="rotate(-180 351.991 351.55)" fill="url(#paint0_radial_1376_5668)" />
                     <path opacity="0.3" d="M53.0685 351.55C53.0685 186.305 186.901 52.3491 351.991 52.3491C517.081 52.3491 650.914 186.305 650.914 351.55C650.914 516.795 517.081 650.751 351.991 650.751C186.901 650.751 53.0685 516.795 53.0685 351.55Z" stroke="#7BB690" />
@@ -36,7 +36,7 @@ const PrepareSuccess: FC = () => {
                 </defs>
             </svg>
 
-            <svg className="hidden md:block absolute  right-[-5%] top-0 w-[28%] 2xl:w-[400px] " viewBox="0 0 413 413" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="hidden md:block absolute  right-[-12%] top-0 w-[28%] 2xl:w-[400px] " viewBox="0 0 413 413" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
                     <circle opacity="0.7" cx="206.097" cy="206.099" r="206.098" transform="rotate(-180 206.097 206.099)" fill="url(#paint0_radial_1376_5811)" />
                     <path opacity="0.6" d="M15.1172 206.04C15.1172 101.108 100.628 16.04 206.117 16.04C311.606 16.04 397.117 101.108 397.117 206.04C397.117 310.972 311.606 396.04 206.117 396.04C100.628 396.04 15.1172 310.972 15.1172 206.04Z" stroke="url(#paint1_radial_1376_5811)" />
@@ -60,7 +60,7 @@ const PrepareSuccess: FC = () => {
                 </defs>
             </svg>
 
-            <svg className="hidden md:block absolute right-0 w-[60%] bottom-[-37%] right-[-10%] 2xl:w-[900px] " viewBox="0 0 394 397" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="hidden md:block absolute right-0 w-[60%] bottom-[-37%] right-[-17%] 2xl:w-[900px] " viewBox="0 0 394 397" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.8">
 <ellipse opacity="0.7" cx="197.123" cy="198.596" rx="176.638" ry="177.817" transform="rotate(-180 197.123 198.596)" fill="url(#paint0_radial_1376_5831)"/>
 <path opacity="0.6" d="M43.4369 198.595C43.4369 113.704 112.244 44.8866 197.121 44.8866C281.998 44.8866 350.805 113.704 350.805 198.595C350.805 283.485 281.998 352.303 197.121 352.303C112.244 352.303 43.4369 283.485 43.4369 198.595Z" stroke="url(#paint1_radial_1376_5831)"/>
@@ -86,7 +86,7 @@ const PrepareSuccess: FC = () => {
 
 
 
-            <div className="container mx-auto relative items-center px-10 md:px-0">
+            <div className="relative items-center px-10 md:px-0">
                 <div className="flex flex-wrap mt-[400px] md:mt-12">
                     <div className="w-full md:w-2/5 m-auto">
                         <div className="relative">

@@ -10,7 +10,7 @@ import BusinessForm from "./BusinessForm";
 const BusinessNode: FC = () => {
 
     return (
-        <section className="pb-16 relative  overflow-x-clip">
+        <section className="pb-16 relative container mx-auto ">
             <svg className="absolute left-[-37%] top-[-15%] w-[174%]  md:top-[34%] md:translate-y-[-50%] md:w-[60%] 2xl:w-[57%] 2xl:left-[0%]  sm:top-[-14%] sm:w-[120%] sm:left-[-10%]  md:left-[-2%]" viewBox="0 0 700 708" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <ellipse opacity="0.5" cx="350.002" cy="353.94" rx="311.623" ry="315.088" fill="url(#paint0_radial_1376_6324)" />
                 <path opacity="0.3" d="M565.18 353.94C565.18 474.044 468.836 571.398 350 571.398C231.165 571.398 134.82 474.044 134.82 353.94C134.82 233.836 231.165 136.481 350 136.481C468.836 136.481 565.18 233.836 565.18 353.94Z" stroke="#7BB690" />
@@ -40,7 +40,7 @@ const BusinessNode: FC = () => {
             </svg>
             {/* mt-[600px] sm:mt-[100%] md:mt-[50%] */}
 
-            <div className="container mx-auto relative px-10 md:px-0 ">
+            <div className="relative px-10 md:px-0 ">
                 <div className="flex flex-wrap pt-[500px] md:pt-[42%]">
                     <div className="md:w-1/12"></div>
                     <div className="w-full md:w-[45%] px-10">

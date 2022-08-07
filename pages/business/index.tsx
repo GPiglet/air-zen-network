@@ -44,13 +44,13 @@ const Business: NextPage = () => {
 	]
 
 	return (
-		<div className='back-left-top-gradient-secondary '>
+		<div className='back-left-top-gradient-secondary overflow-x-clip'>
 			<Mainlayout navItems={navItems}>
-				<Boost />
-				<Professional  />
-				<NewWork />
-				<PrepareSuccess />
-				<CertainlySafe />
+				{/* <Boost /> */}
+				{/* <Professional  /> */}
+				{/* <NewWork /> */}
+				{/* <PrepareSuccess /> */}
+				{/* <CertainlySafe /> */}
 				<Solution360 />
 				<BusinessNode />
 				<WhitePaper />

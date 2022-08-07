@@ -21,7 +21,7 @@ const Solution360: FC = () => {
     }
 
     const flickityProps = {
-        className: "carousel-nav pl-[55px] md:h-[70%] mt-[120px] xl:mt-[200px]",
+        className: "carousel-nav pl-[55px] mt-[120px] xl:mt-[150px]",
         options: {
             asNavFor: ".carousel-main",
             contain: true,
@@ -84,9 +84,9 @@ const Solution360: FC = () => {
 
 
     return (
-        <section id='aboutus' className='overflow-x-clip relative'>
+        <section id='aboutus' className='container m-auto relative'>
 
-            <svg className='absolute z-30 left-[-27%] top-[40%] md:top-[-11%] xl:top-[-20%] 2xl:top-[-300px] lg:top-[-20%] 2xl:w-[1490px] md:w-[100%] sm:top-[22%] sm:w-[140%] sm:left-[-20%] w-[150%] md:left-[-12%] lg:left-[-10%] md:w-[100%] lg:w-[100%] ' viewBox="0 0 763 764" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className='absolute z-30 left-[-27%] top-[40%] md:top-[-11%] xl:top-[-20%]  md:w-[115%] sm:top-[22%] sm:w-[140%] sm:left-[-20%] w-[150%] md:left-[-27%] xl:left-[-10%] md:w-[100%] xl:w-[100%] ' viewBox="0 0 763 764" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
                     <ellipse opacity="0.7" cx="381.16" cy="381.842" rx="179.165" ry="179.4" transform="rotate(-180 381.16 381.842)" fill="url(#paint0_radial_1376_6235)" />
                     <circle opacity="0.8" r="269.261" transform="matrix(-0.706643 0.70757 -0.706643 -0.70757 381.25 381.749)" stroke="url(#paint1_linear_1376_6235)" />
@@ -115,7 +115,7 @@ const Solution360: FC = () => {
                     </radialGradient>
                 </defs>
             </svg>
-            <div className='container m-auto relative z-50'>
+            <div className='relative z-50'>
 
                 <div className="text-center pt-[100px] md:pt-[18%]">
                     <h1 className="text-title-sm">360° Lösung für Unternehmen </h1>

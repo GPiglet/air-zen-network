@@ -18,7 +18,7 @@ const Mainlayout: FC<MainlayoutProps> = ({children,  navItems }) => {
             <Navbar navItems={navItems}/>
             {/* <Sticky /> */}
             {children}
-				{/* <Footer /> */}
+				<Footer />
 
         </>
     );
