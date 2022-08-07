@@ -8,7 +8,7 @@ const Hero: FC = () => {
 
     return (
             <section className="container mx-auto pb-16 relative  pt-32 ">
-                <svg className="absolute right-[-52%] top-[40%] sm:top-[20%] md:top-[-5%] lg:top-[-16%] md:w-[70%]   sm:w-[120%] sm:right-[-20%] w-[174%] md:right-[-27%] lg:right-[-25%] md:w-[90%] " viewBox="0 0 1245 2114" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="absolute right-[-52%] bottom-[-56%] sm:top-[20%] md:top-[-5%] lg:top-[-16%] md:w-[70%]   sm:w-[120%] sm:right-[-20%] w-[174%] md:right-[-27%] lg:right-[-25%] md:w-[90%] " viewBox="0 0 1245 2114" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.33" d="M50.0812 701.846C55.2566 989.408 335.109 1200.06 627.722 1301.88C920.334 1403.71 1234.95 1659.84 1242.99 2106.91C1245.57 2250.91 1245.77 155.351 1242.99 0.000182753C1013.21 121.659 900.23 166.66 594.437 171.818C288.643 176.976 44.9057 414.284 50.0812 701.846Z" fill="url(#paint0_linear_967_2268)" />
                     <circle opacity="0.7" cx="511.729" cy="696.732" r="346.322" fill="url(#paint1_radial_967_2268)" />
                     <foreignObject  className="font-lato-light  italic w-[260px] text-lg text-white hidden md:block" x="68%" y="23.4%" width="260px" height="100px">

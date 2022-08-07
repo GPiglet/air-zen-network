@@ -15,7 +15,7 @@ const BusinessForm: FC = () => {
 
             </div>
             {
-                    <div className={`w-full absolute  ${formView ? ' block right-[-40px]' : 'right-[-100%] md:right-[-600px]'} top-[25%] bg-white  md:w-[600px] rounded-xl py-[58px] pl-[80px] pr-0 font-lato form-animate`}>
+                    <div className={`w-full absolute  ${formView ? ' block right-[-40px]' : 'right-[-100%] md:right-[-600px] opacity-0 '} top-[25%] bg-white  md:w-[600px] rounded-xl py-[58px] pl-[80px] pr-0 font-lato form-animate`}>
                     <div className='w-[80%] relative' >
                         <h1 className='text-[22px] uppercase w-1/2 tracking-[0.08em] '>Startklar in Minuten</h1>
                         <p className='text-lg mt-2 tracking-widest'> Für Home-Office und die Familie: AirZen bietet eine
