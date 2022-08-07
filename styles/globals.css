@@ -111,6 +111,7 @@ section {
     height: 982px;
   }
 }
+
 @media only screen and (min-width: 920px) {
   
   
@@ -243,5 +244,5 @@ section {
 
 /* custom Service form style */
 .form-animate {
-  transition: all 0.5s cubic-bezier(0.68, 0.22, 1, 1) 0s;
+  transition: all 0.4s cubic-bezier(0.68, 0.22, 1, 1) 0s;
 }

@@ -36,7 +36,7 @@ const Professional: FC = () => {
         <section className="pb-16 relative  items-center md:flex container mx-auto ">
 
 
-            <svg className="absolute left-[-75%] bottom-[-71%] sm:top-[45%] md:top-[-10%] xl:top-[-33%] md:w-[100%]   sm:w-[150%] sm:left-[-25%] w-[250%] md:left-[-41%] xl:left-[-40%] " viewBox="0 0 679 681" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="absolute left-[-75%] bottom-[-71%] sm:top-[45%] md:top-[-10%] xl:top-[-33%] md:w-[100%]   sm:w-[150%] sm:left-[-25%] w-[250%] md:left-[-41%] xl:left-[-40%] " viewBox="0 0 679 681" fill="none" stopOpacity='0.2' xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
                     <ellipse opacity="0.7" cx="339.414" cy="340.579" rx="167.901" ry="168.624" transform="rotate(150 339.414 340.579)" fill="url(#paint0_radial_1376_5657)" />
                     <path opacity="0.3" d="M187.495 428.29C138.845 344.025 167.424 236.449 251.324 188.01C335.223 139.57 442.677 168.608 491.327 252.873C539.978 337.138 511.398 444.714 427.499 493.154C343.599 541.593 236.145 512.555 187.495 428.29Z" stroke="#7BB690" />
@@ -48,9 +48,10 @@ const Professional: FC = () => {
                     width="370"
                     height="370"
                     clipPath="url(#businessContentPic2)"
+                    className="opacity-60"
                     x="13%"
                     y="23%"
-                    fillOpacity="0.5"
+
                 />
                 <defs>
                     <clipPath id="businessContentPic2"><circle cx="340" cy="340" r="90" fill="#FFFFFF"></circle></clipPath>
@@ -85,7 +86,7 @@ const Professional: FC = () => {
                     clipPath="url(#businessContentPic3)"
                     x="-5%"
                     y="-9%"
-                    fillOpacity="0.5"
+                    className="opacity-60"
                 />
                 <defs>
                     <clipPath id="businessContentPic3"><circle cx="263" cy="261" r="130" fill="#FFFFFF"></circle></clipPath>
