@@ -20,20 +20,20 @@ const Contact: FC = () => {
                     <image href="/images/model-group.png" x="22.5%" y="35%" fillOpacity='0.5' className="w-[55%]" />
                     <defs>
                     <radialGradient id="paint0_radial_1376_8017" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(398.906 240.078) rotate(68.3963) scale(835.646 836.397)">
-                    <stop stop-color="#7BB690"/>
-                    <stop offset="1" stop-color="#7BB690" stop-opacity="0"/>
+                    <stop stopColor="#7BB690"/>
+                    <stop offset="1" stopColor="#7BB690" stopOpacity="0"/>
                     </radialGradient>
                     <radialGradient id="paint1_radial_1376_8017" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(835.743 296.554) rotate(143.707) scale(903.111 904.639)">
-                    <stop stop-color="#7BB690"/>
-                    <stop offset="1" stop-color="#7BB690" stop-opacity="0"/>
+                    <stop stopColor="#7BB690"/>
+                    <stop offset="1" stopColor="#7BB690" stopOpacity="0"/>
                     </radialGradient>
                     <radialGradient id="paint2_radial_1376_8017" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(431.932 363.602) rotate(68.4205) scale(355.744)">
-                    <stop stop-color="#7BB690"/>
-                    <stop offset="1" stop-color="#7BB690" stop-opacity="0"/>
+                    <stop stopColor="#7BB690"/>
+                    <stop offset="1" stopColor="#7BB690" stopOpacity="0"/>
                     </radialGradient>
                     <radialGradient id="paint3_radial_1376_8017" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(419.358 316.104) rotate(68.4205) scale(539.962)">
-                    <stop stop-color="#7BB690"/>
-                    <stop offset="1" stop-color="#7BB690" stop-opacity="0"/>
+                    <stop stopColor="#7BB690"/>
+                    <stop offset="1" stopColor="#7BB690" stopOpacity="0"/>
                     </radialGradient>
                     </defs>
                 </svg>
