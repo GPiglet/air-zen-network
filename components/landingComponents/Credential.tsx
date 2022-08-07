@@ -3,7 +3,7 @@ import Flickity from "react-flickity-component"
 import "flickity/dist/flickity.css"
 
 const Credential: FC = () => {
-
+    const refBackCircle = React.useRef<SVGSVGElement>(null);
     
 
     const carouselList = [
@@ -45,10 +45,9 @@ const Credential: FC = () => {
     let flkty: any = undefined;
 
     useEffect(() => {
-        if(flkty)   
-        flkty.on('settle', () => {
-            console.log(flkty.selectedIndex, '99999999')
-        })
+        if(flkty) {
+            flkty.element.appendChild(refBackCircle.current);
+        }   
     })
 
     const flickity = (c:Flickity) => {
@@ -106,26 +105,26 @@ const Credential: FC = () => {
                             </div>
                         ))
                     }
-                    <svg className='absolute w-[120%] md:w-[45%] top-0 top-[-40%] md:top-[-39%] right-[27%] md:right-[27.5%]' viewBox="0 0 736 736" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle opacity="0.3" cx="368.2" cy="368.2" r="338.706" transform="rotate(-120 368.2 368.2)" fill="url(#paint0_radial_0_1)" />
-                        <circle opacity="0.8" cx="368.199" cy="368.2" r="367.206" transform="rotate(-120 368.199 368.2)" stroke="url(#paint1_linear_0_1)" />
-                        <circle opacity="0.4" cx="368.204" cy="367.623" r="311.914" transform="rotate(-120 368.204 367.623)" fill="url(#paint2_radial_0_1)" />
-                        <defs>
-                            <radialGradient id="paint0_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(320.569 188.262) rotate(68.4205) scale(697.882)">
-                                <stop stopColor="#7BB690" />
-                                <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
-                            </radialGradient>
-                            <linearGradient id="paint1_linear_0_1" x1="368.199" y1="0.493683" x2="368.199" y2="735.905" gradientUnits="userSpaceOnUse">
-                                <stop stopColor="#7BB790" />
-                                <stop offset="1" stopColor="#7BB790" stopOpacity="0" />
-                            </linearGradient>
-                            <radialGradient id="paint2_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(341.918 353.047) rotate(82.9191) scale(427.785)">
-                                <stop stopColor="#7BB690" />
-                                <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
-                            </radialGradient>
-                        </defs>
-                    </svg>
                 </Flickity>
+                <svg ref={refBackCircle} className='absolute w-[120%] md:w-[45%] top-0 top-[-40%] md:top-[-39%] right-[27%] md:right-[27.5%]' viewBox="0 0 736 736" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle opacity="0.3" cx="368.2" cy="368.2" r="338.706" transform="rotate(-120 368.2 368.2)" fill="url(#paint0_radial_0_1)" />
+                    <circle opacity="0.8" cx="368.199" cy="368.2" r="367.206" transform="rotate(-120 368.199 368.2)" stroke="url(#paint1_linear_0_1)" />
+                    <circle opacity="0.4" cx="368.204" cy="367.623" r="311.914" transform="rotate(-120 368.204 367.623)" fill="url(#paint2_radial_0_1)" />
+                    <defs>
+                        <radialGradient id="paint0_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(320.569 188.262) rotate(68.4205) scale(697.882)">
+                            <stop stopColor="#7BB690" />
+                            <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
+                        </radialGradient>
+                        <linearGradient id="paint1_linear_0_1" x1="368.199" y1="0.493683" x2="368.199" y2="735.905" gradientUnits="userSpaceOnUse">
+                            <stop stopColor="#7BB790" />
+                            <stop offset="1" stopColor="#7BB790" stopOpacity="0" />
+                        </linearGradient>
+                        <radialGradient id="paint2_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(341.918 353.047) rotate(82.9191) scale(427.785)">
+                            <stop stopColor="#7BB690" />
+                            <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
+                        </radialGradient>
+                    </defs>
+                </svg>
                 </div>
             </section>
     )
