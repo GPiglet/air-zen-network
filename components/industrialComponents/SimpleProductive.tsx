@@ -20,11 +20,11 @@ const SimpleProductive: FC = () => {
     ]
 
     return (
-        <section className="container mx-auto relative flex items-center ">
+        <div className="container mx-auto relative">
 
             <svg className="absolute 
                 left-[0%]            md:left-[-23%] lg:left-[-34%] xl:left-[-17%]
-                top-[83%] sm:top-[57%] md:top-[13%] lg:top-[10%] xl:top-[-1%]
+                top-[83%] sm:top-[25%] md:top-[3%] lg:top-[-7%] xl:top-[-18%]
                 w-[100%] sm:w-[100%] md:w-[77%] lg:w-[83%] xl:w-[820px]" 
             viewBox="0 0 831 851" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
@@ -92,7 +92,7 @@ const SimpleProductive: FC = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
     );
 };

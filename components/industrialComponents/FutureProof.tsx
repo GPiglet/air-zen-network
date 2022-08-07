@@ -15,11 +15,11 @@ const FutureProof: FC = () => {
     ]
 
     return (
-        <section className="pb-16 flex relative container mx-auto">
+        <section className="flex relative container mx-auto">
 
             <svg  className="absolute 
             left-[8%] md:left-[-24%] lg:left-[-23%] xl:left-[-27%]
-            top-[-8%] sm:top-[62%] md:top-[-5%] lg:top-[-4%] xl:top-[1%]
+            top-[-8%] sm:top-[80%] md:top-[-5%] lg:top-[-4%] xl:top-[1%]
             w-[84%] sm:w-[80%] md:w-[85%] lg:w-[85%] xl:w-[1100px]"
             viewBox="0 0 1164 982" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">

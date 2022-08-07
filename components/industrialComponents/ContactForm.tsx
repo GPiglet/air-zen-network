@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 const ContactHome: FC = () => {
 
     return (
-        <div className='absolute right-[0px] top-[11%] w-[90%] xs:w-[80%] sm:w-[70%] md:w-[40%]'>
+        <div className='absolute right-[0px] top-[-40%] w-[90%] xs:w-[80%] sm:w-[70%] md:w-[40%]'>
         <div className='relative flex'>
             <svg className='absolute top-[-48px] left-[-37px]' width="277" height="219" viewBox="0 0 277 219" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M129.293 215.398C71.8441 227.511 15.2595 189.912 2.92224 131.397C-9.41506 72.8825 27.1731 15.6397 84.6218 3.52718C142.071 -8.58532 198.655 29.013 210.992 87.5279C223.33 146.043 186.741 203.286 129.293 215.398Z" stroke="url(#paint0_linear_0_1)"/>
