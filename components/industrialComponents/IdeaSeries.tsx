@@ -20,34 +20,47 @@ const IdeaSeries: FC = () => {
     ]
 
     return (
-        <section className="pb-16 container mx-auto relative flex items-center  overflow-x-clip ">
-            <svg className="absolute left-[-37%] top-[50%]  md:top-1/2 md:translate-y-[-50%] md:w-[65%] 2xl:w-[1000px]  sm:top-[40%] sm:w-[120%] sm:left-[-10%] w-[174%] md:left-[-14%]" viewBox="0 0 692 692" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div className="pb-16 container mx-auto relative flex items-center ">
+            <svg className="absolute 
+                left-[0%]            md:left-[-23%] lg:left-[-34%] xl:left-[-17%]
+                top-[83%] sm:top-[70%] md:top-[13%] lg:top-[10%] xl:top-[-1%]
+                w-[100%] sm:w-[100%] md:w-[77%] lg:w-[83%] xl:w-[820px]" 
+            viewBox="0 0 821 850" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
-                    <ellipse opacity="0.7" cx="345.838" cy="345.661" rx="233.997" ry="234.212" transform="rotate(-180 345.838 345.661)" fill="url(#paint0_radial_1376_5616)" />
-                    <path opacity="0.3" d="M101.168 345.66C101.168 210.409 210.711 100.766 345.838 100.766C480.965 100.766 590.508 210.409 590.508 345.66C590.508 480.912 480.965 590.555 345.838 590.555C210.711 590.555 101.168 480.912 101.168 345.66Z" stroke="#7BB690" />
-                    <path opacity="0.6" d="M0.5 345.732C0.5 155.066 155.185 0.500122 346 0.500122C536.815 0.500122 691.5 155.066 691.5 345.732C691.5 536.398 536.815 690.964 346 690.964C155.185 690.964 0.5 536.398 0.5 345.732Z" stroke="url(#paint1_radial_1376_5616)" />
-                    <ellipse opacity="0.7" rx="161.634" ry="161.56" transform="matrix(0.499657 0.866223 -0.865827 0.500343 345.839 345.66)" fill="url(#paint2_radial_1376_5616)" />
+                <circle opacity="0.7" cx="410.101" cy="409.515" r="277.477" transform="rotate(-180 410.101 409.515)" fill="url(#paint0_radial_0_1)"/>
+                <circle opacity="0.3" cx="410.099" cy="409.515" r="290.225" transform="rotate(-180 410.099 409.515)" stroke="#7BB690"/>
+                <path opacity="0.6" d="M0.499695 409.599C0.499695 183.661 183.969 0.501099 410.291 0.501099C636.613 0.501099 820.082 183.661 820.082 409.599C820.082 635.537 636.613 818.697 410.291 818.697C183.969 818.697 0.499695 635.537 0.499695 409.599Z" stroke="url(#paint1_radial_0_1)"/>
+                <circle opacity="0.7" cx="410.098" cy="409.507" r="207.742" transform="rotate(60 410.098 409.507)" fill="url(#paint2_radial_0_1)"/>
                 </g>
-                <image href="/images/phone-home.png" x="33.5%" y="20%" className="w-[32%]" />
-
+                <image href="/images/phone-home.png" x="29%" y="20%" className="w-[41%]" />
+                <path opacity="0.8" d="M303.843 695.245C368.051 674.697 403.759 606.863 383.6 543.734C363.44 480.605 295.048 446.086 230.84 466.634C166.633 487.182 130.924 555.016 151.084 618.145C171.243 681.274 239.636 715.793 303.843 695.245Z" fill="url(#paint3_radial_0_1)"/>
+                <foreignObject  className="font-lato-light  italic w-[260px] text-lg text-white hidden md:block" x="36%" y="93%" width="260px" height="100px">
+                    <p 
+                    >Dieses Feature ermöglicht eine besondere Funktion: XYZ</p>
+                </foreignObject>
+                <image href="/images/sparkle.svg" className="w-[49px] h-[47px] hidden md:block"  x="30.9%" y="92%" cx="511.828" cy="696.377" />
                 <defs>
-                    <radialGradient id="paint0_radial_1376_5616" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(312.933 221.236) rotate(68.4384) scale(482.519 482.196)">
-                        <stop stopColor="#7BB690" />
-                        <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
+                    <radialGradient id="paint0_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(371.081 262.105) rotate(68.4205) scale(571.724)">
+                    <stop stop-color="#7BB690"/>
+                    <stop offset="1" stop-color="#7BB690" stop-opacity="0"/>
                     </radialGradient>
-                    <radialGradient id="paint1_radial_1376_5616" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(57.8615 466.241) rotate(-36.3183) scale(685.475 686.823)">
-                        <stop stopColor="#7BB690" />
-                        <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
+                    <radialGradient id="paint1_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(68.6126 552.369) rotate(-36.2932) scale(812.584 813.959)">
+                    <stop stop-color="#7BB690"/>
+                    <stop offset="1" stop-color="#7BB690" stop-opacity="0"/>
                     </radialGradient>
-                    <radialGradient id="paint2_radial_1376_5616" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(138.904 75.7314) rotate(68.4115) scale(332.905 333.016)">
-                        <stop stopColor="#7BB690" />
-                        <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
+                    <radialGradient id="paint2_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(380.884 299.144) rotate(68.4205) scale(428.038)">
+                    <stop stop-color="#7BB690"/>
+                    <stop offset="1" stop-color="#7BB690" stop-opacity="0"/>
+                    </radialGradient>
+                    <radialGradient id="paint3_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(265.04 496.811) rotate(79.2367) scale(240.017 244.135)">
+                    <stop stop-color="#479CDA"/>
+                    <stop offset="1" stop-color="#60A9AF" stop-opacity="0"/>
                     </radialGradient>
                 </defs>
             </svg>
 
 
-            <div className=" relative items-center px-10 md:px-0 md:h-[70%]">
+            <div className="relative items-center px-10 md:px-0 md:h-[70%] pt-[10%]">
                 <div className="flex flex-wrap md:mt-12">
                     <div className="w-full md:w-[35%] m-auto">
                         <div className="relative">
@@ -60,15 +73,12 @@ const IdeaSeries: FC = () => {
                                 sind für den Einsatz in der Industrie konzipiert und sorgen
                                 für ein äußerst effizientes Netzwerk auch bei speziellen,
                                 industriellen Anforderungen. Egal ob Automatisierung,
-                                smartes Management, Fernsteuerung oder Ferndiagnosen -
+                                smartes Management, Fernsteuerung oder Ferndiagnosen -<br/>
                                 AirZen entwickelt gemeinsam mit Ihnen eine ideale
-                                Netzwerk-Variante. Halten Sie alles am Laufen –
+                                Netzwerk-Variante. Halten Sie alles am Laufen –<br/>
                                 mit einer
                                 außergewöhnlich zuverlässigen und stabilen
                                 Netzwerkabdeckung von AirZen. </p>
-                            <p className="font-lato font-light tracking-widest text-white text-lg mt-3">
-                                So arbeiten Sie und ihr Team überall zu den
-                                Sicherheitsrichtlinien Ihres Unternehmens, selbst vom Sofa aus.</p>
                             <div className="hidden md:block md:absolute  top-[62px] left-[110%] w-[80%]">
                                 {
                                     hintList.map((item, index) => (
@@ -91,7 +101,7 @@ const IdeaSeries: FC = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
     );
 };
