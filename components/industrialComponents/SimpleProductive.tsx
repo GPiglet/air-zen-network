@@ -1,0 +1,100 @@
+//modules
+import React, { FC } from "react"
+
+
+const SimpleProductive: FC = () => {
+
+    const hintList = [
+        {
+            title: 'Sicheres Wlan für Kinder',
+            description: 'inclusive Internet-Filter und Pause Knopf'
+        },
+        {
+            title: 'Sicheres Wlan für Kinder',
+            description: 'inclusive Internet-Filter und Pause Knopf'
+        },
+        {
+            title: 'Sicheres Wlan für Kinder',
+            description: 'inclusive Internet-Filter und Pause Knopf'
+        },
+    ]
+
+    return (
+        <section className="container mx-auto relative flex items-center ">
+
+            <svg className="absolute 
+                left-[0%]            md:left-[-23%] lg:left-[-34%] xl:left-[-17%]
+                top-[83%] sm:top-[57%] md:top-[13%] lg:top-[10%] xl:top-[-1%]
+                w-[100%] sm:w-[100%] md:w-[77%] lg:w-[83%] xl:w-[820px]" 
+            viewBox="0 0 831 851" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g opacity="0.8">
+                <circle opacity="0.7" cx="410.101" cy="410.511" r="277.477" transform="rotate(-180 410.101 410.511)" fill="url(#paint0_radial_0_1)"/>
+                <circle opacity="0.3" cx="410.099" cy="410.513" r="290.225" transform="rotate(-180 410.099 410.513)" stroke="#7BB690"/>
+                <path opacity="0.6" d="M0.499695 410.597C0.499695 184.659 183.969 1.49915 410.291 1.49915C636.613 1.49915 820.082 184.659 820.082 410.597C820.082 636.535 636.613 819.695 410.291 819.695C183.969 819.695 0.499695 636.535 0.499695 410.597Z" stroke="url(#paint1_radial_0_1)"/>
+                <circle opacity="0.7" cx="410.096" cy="410.504" r="220.436" transform="rotate(60 410.096 410.504)" fill="url(#paint2_radial_0_1)"/>
+                </g>
+                <image href="/images/phone-home.png" x="29%" y="20%" className="w-[41%]" />
+                <path opacity="0.8" d="M733.385 433.689C806.258 410.368 846.785 333.38 823.905 261.731C801.025 190.083 723.402 150.906 650.53 174.227C577.657 197.548 537.13 274.536 560.01 346.185C582.89 417.833 660.512 457.01 733.385 433.689Z" fill="url(#paint3_radial_0_1)"/>
+                <foreignObject  className="font-lato-light  italic w-[260px] text-lg text-white hidden md:block" x="36%" y="93%" width="260px" height="100px">
+                    <p 
+                    >Dieses Feature ermöglicht eine besondere Funktion: XYZ</p>
+                </foreignObject>
+                <image href="/images/sparkle.svg" className="w-[49px] h-[47px] hidden md:block"  x="30.9%" y="92%" cx="511.828" cy="696.377" />
+                <defs>
+                    <radialGradient id="paint0_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(371.081 263.101) rotate(68.4205) scale(571.724)">
+                    <stop stop-color="#7BB690"/>
+                    <stop offset="1" stop-color="#7BB690" stop-opacity="0"/>
+                    </radialGradient>
+                    <radialGradient id="paint1_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(68.6126 553.367) rotate(-36.2932) scale(812.584 813.959)">
+                    <stop stop-color="#7BB690"/>
+                    <stop offset="1" stop-color="#7BB690" stop-opacity="0"/>
+                    </radialGradient>
+                    <radialGradient id="paint2_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(379.097 293.397) rotate(68.4205) scale(454.194)">
+                    <stop stop-color="#7BB690"/>
+                    <stop offset="1" stop-color="#7BB690" stop-opacity="0"/>
+                    </radialGradient>
+                    <radialGradient id="paint3_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(689.345 208.476) rotate(79.2367) scale(272.408 277.082)">
+                    <stop stop-color="#479CDA"/>
+                    <stop offset="1" stop-color="#60A9AF" stop-opacity="0"/>
+                    </radialGradient>
+                </defs>
+            </svg>
+
+
+
+            <div className="relative items-center px-10 md:px-0 md:h-[70%]">
+                <div className="flex flex-wrap md:mt-12">
+                    <div className="w-full md:w-[35%] m-auto">
+                        <div className="relative">
+                            <p className="font-lato-light italic font-light text-[22px] text-white">Sicher</p>
+                            <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">Zukunftsicher statt anno dazumal!</h1>
+                            <p className="font-lato font-light tracking-widest text-white text-lg mt-3">Der Schutz von Maschinen, Anlagen und Netzwerken erfordert einen aktuellen Stand der Technik. Damit der Betrieb störungsfrei abläuft, unterstützt AirZen mit sicheren Netzwerklösungen. </p>
+                            <p className="font-lato font-light tracking-widest text-white text-lg mt-3">Eine direkt integriert Firewall ermöglicht Schutz vor unberechtigtem Zugriff. Mit eigener Hardware, Servern in Europa und dem Siegel "Made in Switzerland“ steht AirZen für optimalen Schutz. Darüber hinaus haben Sie potenzielle Störungen und Sicherheitsmängel zuverlässig im Blick. Das Netzwerk ist verwertbar über Kommandozeile, API oder App. So behalten Sie sicher den Überblick.</p>
+                            <div className="hidden md:block md:absolute  top-[62px] left-[110%] w-[80%]">
+                                {
+                                    hintList.map((item, index) => (
+                                        <div className="flex mb-12" key={index}>
+                                            <picture>
+                                                <source srcSet="/images/check-icon.svg" type="image/webp" />
+                                                <img src="/images/check-icon.svg" className="w-[28px] h-[22px] mr-[10px]" alt="" />
+                                            </picture>
+                                            <div className="text-white tracking-[0.08em] w-2/3">
+                                                <p className="font-lato text-lg font-medium">{item.title} </p>
+                                                <p className="font-lato-light text-lg font-light italic">{item.description}</p>
+                                            </div>
+                                        </div>
+                                    ))
+                                }
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    );
+};
+
+export default SimpleProductive
