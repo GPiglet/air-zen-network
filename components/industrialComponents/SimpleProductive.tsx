@@ -42,20 +42,20 @@ const SimpleProductive: FC = () => {
                 <image href="/images/sparkle.svg" className="w-[49px] h-[47px] hidden md:block"  x="30.9%" y="92%" cx="511.828" cy="696.377" />
                 <defs>
                     <radialGradient id="paint0_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(371.081 263.101) rotate(68.4205) scale(571.724)">
-                    <stop stop-color="#7BB690"/>
-                    <stop offset="1" stop-color="#7BB690" stop-opacity="0"/>
+                    <stop stopColor="#7BB690"/>
+                    <stop offset="1" stopColor="#7BB690" stopOpacity="0"/>
                     </radialGradient>
                     <radialGradient id="paint1_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(68.6126 553.367) rotate(-36.2932) scale(812.584 813.959)">
-                    <stop stop-color="#7BB690"/>
-                    <stop offset="1" stop-color="#7BB690" stop-opacity="0"/>
+                    <stop stopColor="#7BB690"/>
+                    <stop offset="1" stopColor="#7BB690" stopOpacity="0"/>
                     </radialGradient>
                     <radialGradient id="paint2_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(379.097 293.397) rotate(68.4205) scale(454.194)">
-                    <stop stop-color="#7BB690"/>
-                    <stop offset="1" stop-color="#7BB690" stop-opacity="0"/>
+                    <stop stopColor="#7BB690"/>
+                    <stop offset="1" stopColor="#7BB690" stopOpacity="0"/>
                     </radialGradient>
                     <radialGradient id="paint3_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(689.345 208.476) rotate(79.2367) scale(272.408 277.082)">
-                    <stop stop-color="#479CDA"/>
-                    <stop offset="1" stop-color="#60A9AF" stop-opacity="0"/>
+                    <stop stopColor="#479CDA"/>
+                    <stop offset="1" stopColor="#60A9AF" stopOpacity="0"/>
                     </radialGradient>
                 </defs>
             </svg>
