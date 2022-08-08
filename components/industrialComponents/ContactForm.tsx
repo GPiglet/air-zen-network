@@ -9,7 +9,9 @@ const ContactHome: FC = () => {
 
     const [formView, setFormView] = React.useState(true)
     return (
+
         <div className={`absolute ${formView ? ' block right-[0%]' : 'right-[-80%] sm:right-[-450px] opacity-0.7 '} top-[-70%] w-[90%] sm:w-[500px] form-animate`} onClick={() => showChat()}>
+
       
                 <div className='relative'>
                     <svg className='absolute top-[-48px] left-[-37px]' width="277" height="219" viewBox="0 0 277 219" fill="none" xmlns="http://www.w3.org/2000/svg">
