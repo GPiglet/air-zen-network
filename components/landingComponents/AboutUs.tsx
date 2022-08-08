@@ -68,7 +68,7 @@ const AboutUs: FC = () => {
 
 
     return (
-        <div id='aboutus' className='container m-auto relative md:flex items-center py-20'>
+        <section id='aboutus' className='container m-auto relative md:flex items-center py-20'>
             <svg className='absolute z-30 right-[-90%] top-[40%] md:top-[-28%] xl:top-[-30%]  md:w-[135%] sm:top-[22%] sm:w-[140%] sm:right-[-20%] w-[290%] xl:right-[-20%] md:right-[-47%] md:w-[100%] xl:w-[100%] ' viewBox="0 0 1295 1294" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.5" d="M666.531 1047.33C887.445 1047.33 1066.53 868.239 1066.53 647.325C1066.53 426.411 887.445 247.325 666.531 247.325C445.617 247.325 266.531 426.411 266.531 647.325C266.531 868.239 445.617 1047.33 666.531 1047.33Z" fill="url(#paint0_radial_0_1)" />
                 <path opacity="0.5" d="M741.941 880.701C873.371 838.685 946.464 699.983 905.199 570.899C863.934 441.816 723.937 371.234 592.506 413.25C461.076 455.265 387.983 593.968 429.249 723.051C470.514 852.134 610.511 922.716 741.941 880.701Z" fill="url(#paint1_radial_0_1)" />
@@ -145,7 +145,7 @@ const AboutUs: FC = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

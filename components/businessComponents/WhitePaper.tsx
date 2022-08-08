@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 const WhitePaper: FC = () => {
 
     return (
-        <section className='container text-white flex items-center m-auto'>
+        <div className='container text-white md:flex items-center m-auto py-[100px]'>
             <div className='w-full text-center '>
                 <div>
                     <h1 className="text-title-sm ">
@@ -83,7 +83,7 @@ const WhitePaper: FC = () => {
             </div>
 
 
-        </section>
+        </div>
     )
 }
 
