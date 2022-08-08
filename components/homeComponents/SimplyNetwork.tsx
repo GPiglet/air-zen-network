@@ -1,31 +1,104 @@
 //modules
-import React, { FC } from "react"
+import React, { FC, useEffect } from "react"
+import gsap from "gsap";
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
 
 // Custom components
 import Breadcrumb from '../../components/common/breadcrumb'
 
 
-
-
-
 const SimplyNetwork: FC = () => {
+
+    //Animate Ref
+    const circleRef1 = React.useRef<any>();
+    const circleRef2 = React.useRef<any>();
+    const circleRef3 = React.useRef<any>();
+    const circleRef4 = React.useRef<any>();
+    const circleRef5 = React.useRef<any>();
+
+    useEffect(() => {
+
+       
+        gsap.to(circleRef1.current, {
+            duration: 2,
+            scale: 0.5,
+            opacity: 0,
+            transformOrigin: "50% 50%",
+            scrollTrigger: {
+                trigger: circleRef1.current,
+                markers: true,
+                start: 'top 5%',
+                end: 'bottom 5%',
+                toggleActions: 'restart resume reverse reset'
+            },
+            stagger: 1
+        })
+
+        gsap.to(circleRef2.current, {
+            duration: 2,
+            scale: 2,
+            opacity: 0,
+            transformOrigin: "50% 50%",
+            scrollTrigger: {
+                trigger: circleRef2.current,
+                markers: true,
+                start: 'top 5%',
+                end: 'bottom 5%',
+                toggleActions: 'restart resume reverse reset'
+            },
+            stagger: 1
+        })  
+    }, [])
+    //   gsap.fromTo(
+    //     circleRef1.current,
+    //     {
+    //         duration: 2 , 
+    //             scale: 2,
+    //                 opacity: 0,
+    //                 transformOrigin: "50% 50%",
+    //             scrollTrigger: {
+    //               trigger: circleRef1.current,
+    //               markers: true,
+    //               start: 'top 25%',
+    //               end: 'top 75%',
+    //               toggleActions: 'restart resume reverse reset'
+    //             },
+    //             stagger: 1
+    //     },
+    //     {
+    //         duration: 2 , 
+    //             scale: 1,
+    //                 opacity: 0,
+    //                 transformOrigin: "50% 50%",
+    //             scrollTrigger: {
+    //               trigger: circleRef1.current,
+    //               markers: true,
+    //               start: 'top 25%',
+    //               end: 'top 75%',
+    //               toggleActions: 'restart resume reverse reset'
+    //             },
+    //             stagger: 1
+    //     }
+    //   );
 
     return (
         <section className="container mx-auto pb-16 relative">
-            <svg className="absolute right-[-36%] bottom-[-20%] md:top-[-10%] xl:top-[-20%] md:w-[140%] md:right-[-53%]  xl:w-[120%]   sm:top-[37%] sm:w-[120%] sm:right-[-12%] w-[174%]  xl:right-[-44%] " viewBox="0 0 817 828" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path opacity="0.6" d="M259.493 676.355C116.557 593.32 67.3899 408.41 149.686 263.345C231.983 118.279 414.572 68.0028 557.507 151.038C700.443 234.072 749.61 418.982 667.314 564.048C585.017 709.114 402.428 759.389 259.493 676.355Z" stroke="url(#paint0_linear_1376_4715)" />
-                <path opacity="0.6" d="M156.234 267.676C76.0933 408.942 124.025 588.918 263.293 669.663C402.561 750.408 580.427 701.346 660.568 560.079C740.709 418.813 692.777 238.837 553.509 158.092C414.241 77.3475 236.375 126.41 156.234 267.676Z" fill="url(#paint1_radial_1376_4715)" />
-                <path opacity="0.6" d="M207.243 296.694C143.239 409.515 181.519 553.25 292.744 617.735C403.968 682.221 546.018 643.038 610.022 530.218C674.025 417.398 635.745 273.663 524.521 209.177C413.297 144.691 271.246 183.874 207.243 296.694Z" fill="url(#paint2_radial_1376_4715)" />
-                <path opacity="0.6" d="M170.266 269.414C196.873 319.921 258.548 338.68 308.023 311.311C357.498 283.943 376.036 220.812 349.429 170.305C322.823 119.797 261.147 101.039 211.672 128.408C162.198 155.776 143.659 218.906 170.266 269.414Z" fill="url(#paint3_radial_1376_4715)" />
-                <path opacity="0.3" d="M424.577 500.01C410.309 554.202 441.15 609.471 493.462 623.456C545.775 637.442 599.749 604.847 614.017 550.655C628.285 496.463 597.444 441.194 545.132 427.209C492.819 413.223 438.845 445.818 424.577 500.01Z" fill="url(#paint4_radial_1376_4715)" />
-               
-            {/* <image href="/images/HomeContentPic1.png" className=" w-[44%]"  x="28.5%" y="29%"  /> */}
+            <svg className="absolute right-[-36%] bottom-[-20%] md:top-[-10%] xl:top-[-20%] md:w-[100%] md:right-[-53%]  xl:w-[120%]   sm:top-[37%] sm:w-[120%] sm:right-[-12%] w-[174%]  xl:right-[-44%] " viewBox="0 0 817 828" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path ref={circleRef1} opacity="0.6" d="M259.493 676.355C116.557 593.32 67.3899 408.41 149.686 263.345C231.983 118.279 414.572 68.0028 557.507 151.038C700.443 234.072 749.61 418.982 667.314 564.048C585.017 709.114 402.428 759.389 259.493 676.355Z" stroke="url(#paint0_linear_1376_4715)" />
+                <path ref={circleRef2} opacity="0.6" d="M156.234 267.676C76.0933 408.942 124.025 588.918 263.293 669.663C402.561 750.408 580.427 701.346 660.568 560.079C740.709 418.813 692.777 238.837 553.509 158.092C414.241 77.3475 236.375 126.41 156.234 267.676Z" fill="url(#paint1_radial_1376_4715)" />
+                <path ref={circleRef3} opacity="0.6" d="M207.243 296.694C143.239 409.515 181.519 553.25 292.744 617.735C403.968 682.221 546.018 643.038 610.022 530.218C674.025 417.398 635.745 273.663 524.521 209.177C413.297 144.691 271.246 183.874 207.243 296.694Z" fill="url(#paint2_radial_1376_4715)" />
+                <path ref={circleRef4} opacity="0.6" d="M170.266 269.414C196.873 319.921 258.548 338.68 308.023 311.311C357.498 283.943 376.036 220.812 349.429 170.305C322.823 119.797 261.147 101.039 211.672 128.408C162.198 155.776 143.659 218.906 170.266 269.414Z" fill="url(#paint3_radial_1376_4715)" />
+                <path ref={circleRef5} opacity="0.3" d="M424.577 500.01C410.309 554.202 441.15 609.471 493.462 623.456C545.775 637.442 599.749 604.847 614.017 550.655C628.285 496.463 597.444 441.194 545.132 427.209C492.819 413.223 438.845 445.818 424.577 500.01Z" fill="url(#paint4_radial_1376_4715)" />
+
+                {/* <image href="/images/HomeContentPic1.png" className=" w-[44%]"  x="28.5%" y="29%"  /> */}
                 <defs>
                     <clipPath id="myCircle">
-                        <circle cx="413" cy="415"  r="170"  fill="#FFFFFF" />
+                        <circle cx="413" cy="415" r="170" fill="#FFFFFF" />
                     </clipPath>
 
-                    
+
                     <linearGradient id="paint0_linear_1376_4715" x1="300.536" y1="135.46" x2="504.148" y2="674.285" gradientUnits="userSpaceOnUse">
                         <stop stopColor="#669AB4" />
                         <stop offset="1" stopColor="#669AB4" stopOpacity="0" />
@@ -47,7 +120,7 @@ const SimplyNetwork: FC = () => {
                         <stop offset="1" stopColor="#2294C3" stopOpacity="0" />
                     </radialGradient>
                 </defs>
-                    <image href="/images/homeContent1.png" width="600" height="350" clipPath="url(#myCircle)" x="12.5%"     y="29%" fillOpacity='0.5' />
+                <image href="/images/homeContent1.png" width="600" height="350" clipPath="url(#myCircle)" x="12.5%" y="29%" fillOpacity='0.5' />
             </svg>
 
 
