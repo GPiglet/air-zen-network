@@ -1,7 +1,7 @@
 //modules
 import React, { FC } from "react"
 
-const DigitalEducation2: FC = () => {
+const Easy: FC = () => {
 
     return (
         <section className="md:mb-[500px] relative  overflow-x-clip">
@@ -122,4 +122,4 @@ const DigitalEducation2: FC = () => {
     );
 };
 
-export default DigitalEducation2
+export default Easy
