@@ -5,12 +5,12 @@ import ContactHome from "./ContactForm";
 
 const Contact: FC = () => {
     return (
-        <div className="relative  md:pt-[10%] mt-[400px] sm:mt-[550px] md:mt-[170px] lg:mt-[150px] xl:mt-[450px] mb-[700px] md:mb-[0] ">
-            <div className="container mx-auto relative flex items-center ">
+        <div className="relative mb-[700px] md:mb-[0] ">
+            <div className="container mx-auto relative mt-[800px] sm:mt-[950px] md:mt-[500px]">
                 <svg  className="absolute
-                top-[-10%] sm:top-[-116%] md:top-[-77%] lg:top-[-82%] xl:top-[-163%]
+                top-[-100%] sm:top-[-116%] md:top-[-77%] lg:top-[-82%] xl:top-[-163%]
                 xs:w-[100%] sm:w-[70%] md:w-[70%] lg:w-[60%] max-w-[962px]
-                left-[0] sm:left-[13%] md:left-[-5%] lg:left-0" 
+                left-[0] sm:left-[13%] md:left-[-5%] lg:left-0"
                 viewBox="0 0 912 911" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <ellipse opacity="0.5" cx="456" cy="455.5" rx="406" ry="405.5" fill="url(#paint0_radial_1376_8017)"/>
                     <path opacity="0.3" d="M736.5 455.5C736.5 610.139 610.917 735.5 456 735.5C301.083 735.5 175.5 610.139 175.5 455.5C175.5 300.861 301.083 175.5 456 175.5C610.917 175.5 736.5 300.861 736.5 455.5Z" stroke="#7BB690"/>
@@ -39,20 +39,16 @@ const Contact: FC = () => {
                 </svg>
 
                 <div className="mx-auto relative md:pl-[10%]">
-                    <div className="">
-                        <div className="w-full md:w-1/2 px-10">
-                            <p className="font-lato-light italic font-light text-[22px] text-white">Einfach</p>
-                            <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">Unsere Nodes</h1>
-                            <p className="font-lato font-light tracking-widest text-white text-lg mt-3"><span className="font-normal">Wifi 6.</span> <br />2 wlan module für Access- und Meshing</p>
-                            <p className="font-lato font-light tracking-widest text-white text-lg mt-3"><span className="font-normal">UPerfektes roaming mit Apple & Android </span><br /> unterstützt alle Roaming Standards von Apple iOS und Android Geräten für ein Seamless Romaing. </p>
-                            <p className="font-lato font-light tracking-widest text-white text-lg mt-3"><span className="font-normal">Zero-Setup </span><br />Die AirZen App hilft dir bei der kinderleichten Installation. </p>
-                        </div>
+                    <div className="w-full md:w-1/2 px-10">
+                        <p className="font-lato-light italic font-light text-[22px] text-white">Einfach</p>
+                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">Unsere Nodes</h1>
+                        <p className="font-lato font-light tracking-widest text-white text-lg mt-3"><span className="font-normal">Wifi 6.</span> <br />2 wlan module für Access- und Meshing</p>
+                        <p className="font-lato font-light tracking-widest text-white text-lg mt-3"><span className="font-normal">UPerfektes roaming mit Apple & Android </span><br /> unterstützt alle Roaming Standards von Apple iOS und Android Geräten für ein Seamless Romaing. </p>
+                        <p className="font-lato font-light tracking-widest text-white text-lg mt-3"><span className="font-normal">Zero-Setup </span><br />Die AirZen App hilft dir bei der kinderleichten Installation. </p>
                     </div>
                 </div>
             </div>
-            <div className="relative md:static">
                 <ContactHome />
-            </div>
                 
         </div>
 

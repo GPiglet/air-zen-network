@@ -8,6 +8,15 @@ const Credential: FC = () => {
 
     const carouselList = [
         {
+            title: 'AIM-Re­fe­renz­-stre­cke',
+            image: '/images/Bildschirmfoto.png',
+            details: [
+                '2Zeiler Herausforderungen',
+                'kurze Bullets zur Technik',
+                'Projektzeitraum',
+            ]
+        },
+        {
             title: 'Volksbank Köln/Bonn',
             image: '/images/volskbank.png',
             details: [
@@ -75,7 +84,7 @@ const Credential: FC = () => {
             <section id='credentials' className='flex items-center overflow-x-clip'>
                 <div className='w-full'>
                 <div className=' py-10 flex justify-center'>
-                    <h1 className="text-title-sm">REFERENZEN</h1>
+                    <h1 className="text-title-sm">Referenzprojekte</h1>
                 </div>
 
                 <Flickity 
