@@ -1,7 +1,7 @@
 //modules
 import React, { FC } from "react"
 
-const DigitalEducation1: FC = () => {
+const Secure: FC = () => {
 
     return (
         <section className="md:pb-16 relative  overflow-x-clip">
@@ -61,4 +61,4 @@ const DigitalEducation1: FC = () => {
     );
 };
 
-export default DigitalEducation1
+export default Secure

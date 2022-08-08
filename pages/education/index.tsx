@@ -6,9 +6,9 @@ import Image from 'next/image'
 //custom Components
 import Mainlayout from '../../layout/main'
 import ClassWiFi from '../../components/educationComponents/ClassWiFi'
-import DigitalEducation from '../../components/educationComponents/DigitalEducation'
-import DigitalEducation1 from '../../components/educationComponents/DigitalEducation1'
-import DigitalEducation2 from '../../components/educationComponents/DigitalEducation2'
+import Reliable from '../../components/educationComponents/Reliable'
+import Secure from '../../components/educationComponents/Secure'
+import Easy from '../../components/educationComponents/Easy'
 import Contact from '../../components/educationComponents/Contact'
 import Footer from '../../components/common/footer'
 
@@ -44,9 +44,9 @@ const Home: NextPage = () => {
 		<div className='back-left-top-gradient-primary '>
 			<Mainlayout navItems={navItems}>
 				<ClassWiFi />
-				<DigitalEducation />
-				<DigitalEducation1 />
-				<DigitalEducation2 />
+				<Reliable />
+				<Secure />
+				<Easy />
 				<Contact />
 				<Footer />
 			</Mainlayout>
