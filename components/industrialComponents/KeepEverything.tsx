@@ -15,11 +15,11 @@ const KeepEverything: FC = () => {
     ]
 
     return (
-        <section className="pb-16 relative container mx-auto">
+        <div className="pb-16 relative container mx-auto mb-[30%] md:mb-0">
 
             <svg className="absolute 
             right-[12%] md:right-[-27%] lg:right-[-38%] xl:right-[-27%]
-            top-[75%] sm:top-[65%] md:top-[26%] lg:top-[21%] xl:top-[11%]
+            top-[90%] sm:top-[90%] md:top-[26%] lg:top-[21%] xl:top-[11%]
             w-[84%] sm:w-[80%] md:w-[100%] xl:w-[1200px]" viewBox="0 0 853 538" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.8" d="M678.873 519.526C809.282 477.167 881.807 337.33 840.862 207.192C799.918 77.0538 661.008 5.89465 530.599 48.2536C400.19 90.6125 327.665 230.449 368.609 360.587C409.554 490.725 548.464 561.885 678.873 519.526Z" fill="url(#paint0_radial_0_1)" />
                 <path opacity="0.8" d="M792.368 222.938C824.906 326.358 767.272 437.49 663.631 471.154C559.989 504.818 449.597 448.265 417.059 344.845C384.52 241.425 442.155 130.293 545.796 96.629C649.437 62.9648 759.829 119.518 792.368 222.938Z" stroke="url(#paint1_linear_0_1)" />
@@ -82,7 +82,7 @@ const KeepEverything: FC = () => {
 
             <div className="container mx-auto relative items-center text-white px-10 md:px-0 h-full">
                 <Breadcrumb />
-                <div className="md:flex items-center mt-5 md:mt-0  md:h-[60%]">
+                <div className="md:flex items-center mt-5 xl:mt-[120px]  md:h-[60%]">
                     <div className="md:w-[350px] xl:w-[40%]">
                         <h1 className="text-title-md">
                             Alles im Flow halten.
@@ -98,7 +98,7 @@ const KeepEverything: FC = () => {
 
                     </div>
                 </div>
-                    <div className="flex mt-10 mb-10">
+                    <div className="flex items-end mt-20">
                         <p className="m-auto font-lato-light italic text-lg tracking-[0.08em]">In vertrauensvoller Kooperation mit:</p>
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-4 text-center  items-center mx-auto md:h-[60px]">
@@ -112,7 +112,7 @@ const KeepEverything: FC = () => {
                         }
                     </div>
             </div>
-        </section>
+        </div>
     );
 };
 
