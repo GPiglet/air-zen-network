@@ -8,6 +8,7 @@ const ContactHome: FC = () => {
     }
 
     const [formView, setFormView] = React.useState(true)
+
     return (
         <div className={`absolute ${formView ? ' block right-[0%]' : 'right-[-80%] sm:right-[-450px] opacity-0.7 '} top-[-70%] w-[90%] sm:w-[500px] form-animate`} onClick={() => showChat()}>
       
@@ -20,6 +21,7 @@ const ContactHome: FC = () => {
                         <stop offset="1" stopColor="white" stopOpacity="0"/>
                         </linearGradient>
                         </defs>
+
                     </svg>
                     <div className='relative bg-white md:block w-[100%] rounded-l-[50px] pt-[50px] font-lato'>
                             <svg className='absolute top-[35px] right-[37px] cursor-pointer' onClick={() => {setFormView(false);}} width="37" height="39" viewBox="0 0 37 39" fill="none" xmlns="http://www.w3.org/2000/svg">
