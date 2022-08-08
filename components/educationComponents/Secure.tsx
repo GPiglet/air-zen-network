@@ -4,21 +4,11 @@ import React, { FC } from "react"
 const Secure: FC = () => {
 
     return (
-        <section className="md:pb-16 relative  overflow-x-clip">
-            <div className="container md:w-[70%] relative items-center px-10 md:px-0 pt-[30%] md:pt-[10%] md:h-[70%]">
-                <div className="flex flex-col mt-12 md:mt-18">
-                    <div className="w-full md:w-3/5 m-auto">
-                        <p className="font-lato-light italic font-light text-[22px] text-white">Sicher</p>
-                        <h1 className="text-title-sm">SCHUTZ wird hier großsgeschrieben!</h1>
-                        <p className="font-lato font-light tracking-widest text-white text-lg mt-3">Von der Grundschule bis zum Hörsaal - im schulischen Netzwerk gibt es viele sensible Daten. AirZen bietet durch die Kombi von hochqualitativem Hersteller- Service und EU- als auch DSGV- konformen Sicherheitskonzepten ein hohes Maß an IT-Sicherheit. <br/><br/>Schützen Sie Ihre Schüler und Lehrkräfte zudem mit eigenen WLAN-Passwörtern, Jugendschutzfiltern und separat getrennten Verbindungen.</p>
-                    </div>
-                </div>
-            </div>
-
-            <svg className="relative md:absolute mx-auto 
-            right-[5%] sm:right-[-2%] md:right-[-35%] lg:right-[-15%] xl:right-[-150px]
-            top-0 
-            w-[120%] sm:w-[700px] md:w-[880px] 2xl:w-[950px]" viewBox="0 0 752 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div className="relative container mx-auto mb-[75%] md:mb-0">
+            <svg className="absolute mx-auto 
+            right-[3%] sm:right-[10%] md:right-[-25%] lg:right-[-15%] xl:right-[-20%]
+            top-[95%] md:top-[10%] xl:top-[-13%]
+            w-[90%] sm:w-[80%] md:w-[80%] lg:w-[70%] xl:w-[75%]" viewBox="0 0 752 700" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.3" d="M303.174 715.686C469.992 755.232 637.379 652.461 677.043 486.141C716.707 319.822 613.628 152.935 446.809 113.39C279.991 73.8448 112.604 176.616 72.94 342.935C33.2762 509.255 136.355 676.141 303.174 715.686Z" fill="url(#paint0_radial_1226_5560)"/>
                 <image href="/images/education3.png" width="1000" height="370" clipPath="url(#myCircle)" x="-17%" y="32%" fillOpacity='0.5'/>
                 <path opacity="0.5" d="M441.331 620.158C555.295 583.835 618.148 462.279 581.716 348.655C545.283 235.031 423.363 172.367 309.398 208.69C195.433 245.013 132.581 366.569 169.013 480.193C205.445 593.817 327.366 656.481 441.331 620.158Z" fill="url(#paint1_radial_1226_5560)"/>
@@ -56,7 +46,17 @@ const Secure: FC = () => {
                 </clipPath>
                 </defs>
             </svg>
-        </section>
+            <div className="md:w-[70%] relative items-center px-10 md:px-0 md:pt-[10%] xl:py-[12%]">
+                <div className="flex flex-col mt-12 md:mt-18">
+                    <div className="w-full md:w-4/5 xl:w-3/5 m-auto">
+                        <p className="font-lato-light italic font-light text-[22px] text-white">Sicher</p>
+                        <h1 className="text-title-sm">SCHUTZ wird hier großsgeschrieben!</h1>
+                        <p className="font-lato font-light tracking-widest text-white text-lg mt-3">Von der Grundschule bis zum Hörsaal - im schulischen Netzwerk gibt es viele sensible Daten. AirZen bietet durch die Kombi von hochqualitativem Hersteller- Service und EU- als auch DSGV- konformen Sicherheitskonzepten ein hohes Maß an IT-Sicherheit. <br/><br/>Schützen Sie Ihre Schüler und Lehrkräfte zudem mit eigenen WLAN-Passwörtern, Jugendschutzfiltern und separat getrennten Verbindungen.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
     );
 };
