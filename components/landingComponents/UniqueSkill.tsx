@@ -9,10 +9,8 @@ const UniqueSkill: FC = () => {
 
     //window size
     const [isMobile, setIsMobile] = useState(false)
-    const [innerHeight, setInnerHeight] = useState(1);
 
     const handleResize = () => {
-        setInnerHeight(window.innerHeight)
         console.log(window.innerHeight)
         if (window.innerWidth < 920) {
             setIsMobile(true)
@@ -69,61 +67,86 @@ const UniqueSkill: FC = () => {
     // Animate Refs
     const headerRef = React.useRef<any>();
     const subRef = React.useRef<any>();
+    const itemRef = React.useRef<any>();
 
     useEffect(() => {
-
-        // gsap.timeline( { 
-       
-        //     scrollTrigger: {
-        //       trigger: '#solutions',
-        //       start: 100,
-        //       end: 500,
-        //       scrub: true,
-        //     //   markers: true,
-        //     }
-        //   }).to(headerRef.current, {opacity:1, duration: 6})
         var tl = gsap.timeline({ });
         tl.from (headerRef.current, {autoAlpha: 0, display: 'none'})
+        .from(subRef.current, {autoAlpha:0, display: 'none'})
+
         gsap.timeline( { 
        
             scrollTrigger: {
-              trigger: headerRef.current,
-              start: 400,
-              end: 1000,
+              trigger: '#solutions',
+              start: 100 * window.innerHeight / 982,
+              end: 700 * window.innerHeight / 982,
               scrub: true,
+            //   pin: true,
             //   markers: true,
             }
           }).to(headerRef.current, {
             autoAlpha: 1,
             display: "block",
-            duration: 6,
-            scrub: 1,
-            stagger: 1,
+            duration: 6
           })
-          gsap.timeline( { 
+        gsap.timeline( { 
        
             scrollTrigger: {
-              trigger: headerRef.current,
-              start: 1000,
-              end: 1400 ,
+              trigger: '#solutions',
+              start: 700 * window.innerHeight / 982,
+              end: 1000 * window.innerHeight / 982,
               scrub: true,
+            //   pin: true,
             //   markers: true,
             }
-          }).to(headerRef.current, {opacity:0, duration: 6})
-        // tl.to(headerRef.current, {
-        //     autoAlpha: 1,
-        //     display: "block",
-        //     duration: 6,
-        //     scrub: 1,
-        //     stagger: 1,
-        //     scrollTrigger: {
-        //       trigger: headerRef.current,
-        //       scrub: true,
-        //       markers: { startColor: "red", endColor: "red" },
-        //       start: 400,
-        //       end: 800
-        //     }
-        //   });
+          }).to(subRef.current, {
+            autoAlpha: 1,
+            display: "block",
+            duration: 6
+          })
+        gsap.timeline( { 
+       
+            scrollTrigger: {
+              trigger: '#solutions',
+              start: 1000 * window.innerHeight / 982,
+              end: 1200 * window.innerHeight / 982,
+              scrub: true,
+            //   pin: true,
+            //   markers: true,
+            }
+          }).to(headerRef.current, {opacity:0, duration: 4})
+          .to(subRef.current, {opacity:0, duration: 4})
+  
+
+          gsap.utils.toArray('.unique-skill-animate').forEach((section: any) => {
+            console.log(section)
+            tl.from(section, {autoAlpha:0, display:'none', y: "250px", duration: 0})
+            gsap.timeline( { 
+       
+                scrollTrigger: {
+                  trigger: '#solutions',
+                  start: 700 * window.innerHeight / 982,
+                  end: 1000 * window.innerHeight / 982,
+                //   scrub: true,
+                //   pin: true,
+                //   markers: true,
+                }
+              }).to(section, { autoAlpha: 0,  y: "250px", duration: 0 })
+              .to(section, { autoAlpha: 1, y: "0", ease: "expo.inOut", duration: 2,});
+            // gsap.timeline( { 
+       
+            //     scrollTrigger: {
+            //       trigger: '#solutions',
+            //       start: 1000 * window.innerHeight / 982,
+            //       end: 1200 * window.innerHeight / 982,
+            //       scrub: true,
+            //     //   pin: true,
+            //       markers: true,
+            //     }
+            //   }).to(section, {opacity:0, duration: 4})
+             
+        })
+       
     }, [])
 
 
@@ -139,15 +162,15 @@ const UniqueSkill: FC = () => {
                 </defs>
             </svg>
 
-            <div className='  mt-[200px] md:mt-[120px]'>
+            <div className='mt-[200px] md:mt-[120px]'>
                 <div className=" text-center">
-                    <h1 ref={headerRef} className="text-title-sm ">Einzigartige Technologie. </h1>
+                    <h1 ref={headerRef} className="text-title-sm">Einzigartige Technologie. </h1>
                     <p ref={subRef} className="font-lato font-light tracking-widest text-white text-[22px] mt-3">Unzählige Einsatzmöglichkeiten. Finden Sie Ihre:</p>
                 </div>
-                <div className='w-full md:flex  mt-[160px] z-50'>
+                <div ref={itemRef} className='w-full md:flex  mt-[160px] z-50'>
                     {
                         skillList.map((item, index) => (
-                            <div className='right-[-20px] sm:right-[-70px] md:right-auto unique-skill-items relative px-5 py-5 cursor-pointer flex-1' key={index} onClick={() => router.push(item.href)}>
+                            <div className='right-[-20px] sm:right-[-70px] md:right-auto unique-skill-items relative px-5 py-5 cursor-pointer flex-1 unique-skill-animate' key={index} onClick={() => router.push(item.href)}>
                                 <div className='border-[1px] border-slate-600 rounded-md h-full'>
                                     <div className='bg-black rounded-md'>
                                         <div className='py-3 md:py-[80px] md:pb-[120px] md:hover:pb-[80px] px-[20px] text-white w-full relative'>
