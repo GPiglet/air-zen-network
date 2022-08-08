@@ -6,7 +6,7 @@ import ContactHome from "./ContactForm";
 const Contact: FC = () => {
     return (
         
-        <div className="relative mb-[700px] md:mb-[0] mt-[100%] sm:mt-[45%] md:mt-[60%] lg:mt-[50%]">
+        <div className="relative mt-[100%] sm:mt-[45%] md:mt-[60%] lg:mt-[50%]">
             <div className="container mx-auto relative">
                 <svg className="absolute
                 top-[-100%] xs:top-[-90%] sm:top-[-116%] md:top-[-77%] lg:top-[-82%] xl:top-[-163%]

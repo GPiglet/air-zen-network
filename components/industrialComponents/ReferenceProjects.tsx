@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from 'react'
 import Flickity from "react-flickity-component"
 import "flickity/dist/flickity.css"
 
-const Credential: FC = () => {
+const ReferenceProjects: FC = () => {
 
     
 
@@ -140,4 +140,4 @@ const Credential: FC = () => {
     )
 }
 
-export default Credential
+export default ReferenceProjects

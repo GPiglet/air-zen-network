@@ -1,4 +1,3 @@
-//modules
 import React, { FC, useEffect, useState } from "react"
 import gsap from "gsap";
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
