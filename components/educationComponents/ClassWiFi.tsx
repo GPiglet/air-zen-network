@@ -11,23 +11,12 @@ import Breadcrumb from '../common/breadcrumb'
 const ClassWiFi: FC = () => {
 
     return (
-        <section className="md:pb-16 relative  overflow-x-clip">
-
-            <div className="container mx-auto relative itemsCenter px-10 md:px-0 md:h-[70%]">
-                <Breadcrumb />
-                <div className="flex flex-wrap mt-12">
-                    <div className="w-full md:w-7/12 md:max-w-[417px] lg:max-w-[617px]">
-                        <h1 className="text-title-md">Klasse, WLAN!</h1>
-                        <p className="font-lato font-light tracking-widest text-white text-lg mt-3">Für die moderne Bildung ist ein zeitgemäßes Netzwerk die Grundlage. AirZen sorgt für zuverlässiges und sicheres Internet für Schulen. Mit schlüsselfertiger Hardware, schulgerechter Einrichtung, mobiler Nutzerverwaltung, sowie einem rundum-sorglos ITSupport.</p>
-                        <p className="font-lato font-light tracking-widest text-white text-lg mt-5">Es braucht also keine IT-Abteilung vor Ort. Aber das Beste an der AirZen Technologie: Der kinderleichte Betrieb. Eben einfach das Netzwerk der nächsten Generation.</p>
-                    </div>
-                </div>
-            </div>
+        <div className="relative container mx-auto mb-[70%] md:mb-[10%] lg:mb-[15%] xl:mb-[25%]">
             <svg className="
-            relative md:absolute
-            right-[0%] sm:right-[-10%] md:right-[-10%] lg:right-[-10%] 
-            top-0
-            w-[100%] sm:w-[700px] md:w-[750px] lg:w-[800px] xl:w-[1000px] 2xl:w-[1100px]" 
+            absolute
+            right-[13%] sm:right-[10%] md:right-[-17%] lg:right-[-18%] xl:right-[-10%]
+            top-[95%] sm:top-[90%] md:top-[14%] lg:top-[10%] xl:top-[0%]
+            w-[80%] sm:w-[80%] md:w-[80%] lg:w-[80%] xl:w-[70%]" 
             viewBox="0 0 878 926" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.4" d="M747.782 581.528C819.969 558.451 860.114 482.27 837.45 411.372C814.785 340.474 737.893 301.708 665.706 324.784C593.519 347.861 553.373 424.042 576.038 494.94C598.702 565.838 675.595 604.605 747.782 581.528Z" fill="url(#paint0_linear_0_1)"/>
                 <path opacity="0.6" d="M529.836 718.645C689.229 667.69 777.873 499.477 727.828 342.93C677.784 186.383 508 100.783 348.607 151.738C189.214 202.693 100.569 370.906 150.614 527.453C200.659 684 370.442 769.6 529.836 718.645Z" fill="url(#paint1_radial_0_1)"/>
@@ -75,8 +64,17 @@ const ClassWiFi: FC = () => {
                 </clipPath>
                 </defs>
             </svg>
-
-        </section>
+            <div className="container mx-auto relative itemsCenter px-10 md:px-0 md:h-[70%]">
+                <Breadcrumb />
+                <div className="flex flex-wrap mt-12">
+                    <div className="w-full md:w-7/12 md:max-w-[417px] lg:max-w-[617px]">
+                        <h1 className="text-title-md">Klasse, WLAN!</h1>
+                        <p className="font-lato font-light tracking-widest text-white text-lg mt-3">Für die moderne Bildung ist ein zeitgemäßes Netzwerk die Grundlage. AirZen sorgt für zuverlässiges und sicheres Internet für Schulen. Mit schlüsselfertiger Hardware, schulgerechter Einrichtung, mobiler Nutzerverwaltung, sowie einem rundum-sorglos ITSupport.</p>
+                        <p className="font-lato font-light tracking-widest text-white text-lg mt-5">Es braucht also keine IT-Abteilung vor Ort. Aber das Beste an der AirZen Technologie: Der kinderleichte Betrieb. Eben einfach das Netzwerk der nächsten Generation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     );
 };

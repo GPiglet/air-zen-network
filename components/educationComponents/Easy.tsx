@@ -4,21 +4,12 @@ import React, { FC } from "react"
 const Easy: FC = () => {
 
     return (
-        <section className="md:mb-[500px] relative  overflow-x-clip">
+        <div className="md:mb-[500px] relative container mx-auto">
 
-            <div className="container mx-auto relative items-center px-10 md:px-0 pt-[30%] md:pt-[10%] md:h-[70%]">
-                <div className="flex flex-col mt-12 md:mt-18">
-                    <div className="w-full md:w-1/3 m-auto">
-                        <p className="font-lato-light italic font-light text-[22px] text-white">Einfach</p>
-                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">Das kleine Einmaleinfach!</h1>
-                        <p className="font-lato font-light tracking-widest text-white text-lg mt-3">Laptop raus und loslegen. Mit AirZen bekommen Schüler und Lehrer schnell und spielend einfach Zugang ins Netz über ein Self Service Portal. Damit sich alle auf den Unterricht konzentrieren können, läuft alles andere fast automatisch ab - Von der Einrichtung, bis hin zur Wartung mit selbstlernender Softwarepflege. <br/><br/>Es braucht also keine große IT-Abteilung oder Fachkenntnisse, dank Hardware und Support direkt vom Hersteller. Oder anders gesagt: Mit AirZen geht die Rechnung auf.</p>
-                    </div>
-                </div>
-            </div>
             <svg className="absolute hidden md:block
-            w-[100%] max-w-[1257px]
-            top-[12%]
-            left-[-30%] 2xl:left-[-300px]" viewBox="0 0 1258 982" fill="none" xmlns="http://www.w3.org/2000/svg">
+            w-[100%] 
+            top-[12%] md:top-[25%] xl:top-[25%]
+            left-[-30%] md:left-[-35%] xl:left-[-35%]" viewBox="0 0 1258 982" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.5" d="M559.509 856.661C726.555 897.035 893.595 794.569 932.604 627.798C971.612 461.026 867.818 293.102 700.772 252.728C533.726 212.354 366.686 314.82 327.677 481.592C288.668 648.363 392.463 816.288 559.509 856.661Z" fill="url(#paint0_radial_1376_7310)"/>
                 <path opacity="0.5" d="M700.026 794.638C825.22 753.955 894.846 619.652 855.538 494.662C816.231 369.673 682.876 301.33 557.681 342.013C432.486 382.696 362.861 516.999 402.169 641.988C441.476 766.977 574.831 835.321 700.026 794.638Z" fill="url(#paint1_radial_1376_7310)"/>
                 <path d="M837.623 500.484C873.822 615.591 809.703 739.28 694.401 776.748C579.099 814.216 456.286 751.273 420.086 636.166C383.886 521.059 448.006 397.37 563.308 359.902C678.61 322.433 801.423 385.377 837.623 500.484Z" stroke="url(#paint2_linear_1376_7310)"/>
@@ -50,8 +41,8 @@ const Easy: FC = () => {
             </svg>
             <svg className="absolute hidden md:block
             w-[100%]
-            top-[-5%]
-            right-[-15%]" width="1081" height="811" viewBox="0 0 1081 811" fill="none" xmlns="http://www.w3.org/2000/svg">
+            top-[-5%] md:top-[-13%] xl:top-[-13%]
+            right-[-15%] md:right-[-23%] xl:right-[-17%]" width="1081" height="811" viewBox="0 0 1081 811" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.7">
                     <path opacity="0.5" d="M435.17 228.461C401.1 310.48 436.947 406.911 515.236 443.847C593.525 480.782 684.611 444.234 718.681 362.215C752.752 280.196 716.905 183.765 638.616 146.83C560.326 109.895 469.241 146.442 435.17 228.461Z" fill="url(#paint0_radial_1376_7305)"/>
                     <path opacity="0.5" d="M484.552 248.727C463.48 299.455 485.651 359.098 534.073 381.943C582.495 404.787 638.831 382.182 659.904 331.454C680.976 280.725 658.805 221.083 610.383 198.238C561.961 175.394 505.625 197.998 484.552 248.727Z" fill="url(#paint1_radial_1376_7305)"/>
@@ -86,7 +77,7 @@ const Easy: FC = () => {
             <svg className="absolute hidden md:block
             w-[100%]
             top-[18%]
-            right-[-28%]" width="694" height="710" viewBox="0 0 694 710" fill="none" xmlns="http://www.w3.org/2000/svg">
+            right-[-28%] md:right-[-40%] xl:right-[-34%]" width="694" height="710" viewBox="0 0 694 710" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.5" d="M567.326 342.479C557.336 241.826 468.571 166.103 369.064 173.347C269.558 180.59 196.991 268.057 206.981 368.71C216.972 469.362 305.736 545.085 405.243 537.842C504.749 530.598 577.316 443.131 567.326 342.479Z" fill="url(#paint0_radial_1376_7301)"/>
                 <path d="M368.133 162.858C473.501 155.188 567.527 235.375 578.11 342.002C588.694 448.628 511.821 541.255 406.452 548.926C301.084 556.596 207.058 476.409 196.475 369.782C185.892 263.155 262.765 170.528 368.133 162.858Z" stroke="url(#paint1_linear_1376_7301)"/>
                 <path opacity="0.3" d="M354.158 111.881C486.745 102.229 605.052 203.129 618.368 337.289C631.684 471.448 534.961 588.001 402.374 597.652C269.786 607.304 151.48 506.404 138.164 372.244C124.848 238.085 221.571 121.532 354.158 111.881Z" stroke="url(#paint2_linear_1376_7301)"/>
@@ -113,11 +104,20 @@ const Easy: FC = () => {
             </svg>
             <svg className="absolute hidden md:block
             w-[100%]
-            top-[70%]
+            top-[95%]
             right-[0%]" width="337" height="337" viewBox="0 0 337 337" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <image href="/images/app-ellipse.svg"/>
             </svg>
-        </section>
+            <div className="relative items-center px-10 md:px-0 md:pt-[10%] md:h-[70%]">
+                <div className="flex flex-col mt-12 md:mt-18">
+                    <div className="w-full md:w-1/3 m-auto">
+                        <p className="font-lato-light italic font-light text-[22px] text-white">Einfach</p>
+                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">Das kleine Einmaleinfach!</h1>
+                        <p className="font-lato font-light tracking-widest text-white text-lg mt-3">Laptop raus und loslegen. Mit AirZen bekommen Schüler und Lehrer schnell und spielend einfach Zugang ins Netz über ein Self Service Portal. Damit sich alle auf den Unterricht konzentrieren können, läuft alles andere fast automatisch ab - Von der Einrichtung, bis hin zur Wartung mit selbstlernender Softwarepflege. <br/><br/>Es braucht also keine große IT-Abteilung oder Fachkenntnisse, dank Hardware und Support direkt vom Hersteller. Oder anders gesagt: Mit AirZen geht die Rechnung auf.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     );
 };
