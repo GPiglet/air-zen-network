@@ -20,11 +20,11 @@ const IdeaSeries: FC = () => {
     ]
 
     return (
-        <div className="pb-16 container mx-auto relative flex items-center ">
+        <div className="container mx-auto relative flex items-center mb-[70%] md:mb-0">
             <svg className="absolute 
-                left-[0%]            md:left-[-23%] lg:left-[-34%] xl:left-[-17%]
-                top-[83%] sm:top-[70%] md:top-[13%] lg:top-[10%] xl:top-[-1%]
-                w-[100%] sm:w-[100%] md:w-[77%] lg:w-[83%] xl:w-[820px]" 
+                left-[13%] sm:left-[13%] md:left-[-23%] lg:left-[-34%] xl:left-[-17%]
+                top-[93%] sm:top-[93%] md:top-[13%] lg:top-[10%] xl:top-[-1%]
+                w-[75%] sm:w-[75%] md:w-[77%] lg:w-[83%] xl:w-[820px]" 
             viewBox="0 0 821 850" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
                 <circle opacity="0.7" cx="410.101" cy="409.515" r="277.477" transform="rotate(-180 410.101 409.515)" fill="url(#paint0_radial_0_1)"/>

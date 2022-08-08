@@ -21,12 +21,12 @@ const SimpleProductive: FC = () => {
 
     return (
         
-        <div className="container mx-auto relative">
+        <div className="container mx-auto relative mb-[65%] md:mb-[15%]">
 
             <svg className="absolute 
-                left-[0%]            md:left-[-23%] lg:left-[-34%] xl:left-[-17%]
-                top-[83%] sm:top-[25%] md:top-[3%] lg:top-[-7%] xl:top-[-18%]
-                w-[100%] sm:w-[100%] md:w-[77%] lg:w-[83%] xl:w-[820px]" 
+                left-[13%] md:left-[-23%] lg:left-[-34%] xl:left-[-17%]
+                top-[95%] md:top-[3%] lg:top-[-7%] xl:top-[-18%]
+                w-[70%] md:w-[77%] lg:w-[83%] xl:w-[820px]" 
             viewBox="0 0 831 851" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
                 <circle opacity="0.7" cx="410.101" cy="410.511" r="277.477" transform="rotate(-180 410.101 410.511)" fill="url(#paint0_radial_0_1)"/>

@@ -15,12 +15,12 @@ const FutureProof: FC = () => {
     ]
 
     return (
-        <section className="flex relative container mx-auto">
+        <div className="relative container mx-auto mb-[70%] md:mb-0">
 
             <svg  className="absolute 
             left-[8%] md:left-[-24%] lg:left-[-23%] xl:left-[-27%]
-            top-[-8%] sm:top-[80%] md:top-[-5%] lg:top-[-4%] xl:top-[1%]
-            w-[84%] sm:w-[80%] md:w-[85%] lg:w-[85%] xl:w-[1100px]"
+            top-[100%] md:top-[-5%] lg:top-[-4%] xl:top-[1%]
+            w-[84%] md:w-[85%] lg:w-[85%] xl:w-[1100px]"
             viewBox="0 0 1164 982" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
                 <circle opacity="0.7" cx="581.442" cy="473.606" r="393.406" transform="rotate(-180 581.442 473.606)" fill="url(#paint0_radial_0_1)"/>
@@ -59,7 +59,7 @@ const FutureProof: FC = () => {
             
 
 
-            <div className="container mx-auto flex self-center relative text-white px-10 ">
+            <div className="container mx-auto flex self-center relative text-white px-10 xl:py-[18%]">
                 <div className="md:flex justify-end items-center mt-5 md:mt-0  md:h-[60%]">
                     <div className="md:w-[40%]">
                         <p className="font-lato-light italic font-light text-[22px] text-white">Sicher</p>
@@ -69,7 +69,7 @@ const FutureProof: FC = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     );
 };
 

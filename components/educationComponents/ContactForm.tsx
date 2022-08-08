@@ -2,8 +2,15 @@ import React, { FC } from 'react'
 
 const ContactHome: FC = () => {
 
+    const showChat = () => {
+        if(!formView)
+        setFormView(!formView)
+    }
+
+    const [formView, setFormView] = React.useState(true)
+
     return (
-        <div className='absolute right-[0px] top-[-3%] w-[90%] xs:w-[80%] sm:w-[70%] md:w-[40%]'>
+        <div className={`absolute ${formView ? ' block right-[0%]' : 'right-[-450px] opacity-0.7 '} top-[-3%] w-[90%] xs:w-[80%] sm:w-[500px] form-animate`} onClick={() => showChat()}>
         <div className='relative flex'>
             <svg className='absolute top-[-48px] left-[-37px]' width="277" height="219" viewBox="0 0 277 219" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M129.293 215.398C71.8441 227.511 15.2595 189.912 2.92224 131.397C-9.41506 72.8825 27.1731 15.6397 84.6218 3.52718C142.071 -8.58532 198.655 29.013 210.992 87.5279C223.33 146.043 186.741 203.286 129.293 215.398Z" stroke="url(#paint0_linear_0_1)"/>
@@ -15,7 +22,8 @@ const ContactHome: FC = () => {
                 </defs>
             </svg>
             <div className='relative bg-white md:block w-[100%] rounded-l-[50px] pt-[50px] font-lato'>
-                    <svg className='absolute top-[35px] right-[37px]' width="37" height="39" viewBox="0 0 37 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                
+                    <svg className='absolute top-[35px] right-[37px] cursor-pointer' onClick={() => {setFormView(false);}} width="37" height="39" viewBox="0 0 37 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <line x1="0.707107" y1="1.29289" x2="35.7071" y2="36.2929" stroke="#159BDE" strokeWidth="2"/>
                     <line x1="35.7071" y1="2.70711" x2="0.707107" y2="37.7071" stroke="#159BDE" strokeWidth="2"/>
                     </svg>
