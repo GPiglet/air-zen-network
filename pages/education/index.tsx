@@ -41,7 +41,7 @@ const Home: NextPage = () => {
 	]
 
 	return (
-		<div className='back-left-top-gradient-primary overflow-x-clip min-w-[428px]'>
+		<div className='back-left-top-gradient-primary overflow-x-clip'>
 			<Mainlayout navItems={navItems}>
 				<ClassWiFi />
 				<Reliable />
