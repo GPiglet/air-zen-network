@@ -6,7 +6,7 @@ import type { NextPage } from 'next'
 import Mainlayout from '../../layout/main'
 import KeepEverything from '../../components/industrialComponents/KeepEverything'
 import IdeaSeries from '../../components/industrialComponents/IdeaSeries'
-import Credential from '../../components/industrialComponents/Credential'
+import ReferenceProjects from '../../components/industrialComponents/ReferenceProjects'
 import SimpleProductive from '../../components/industrialComponents/SimpleProductive'
 import FutureProof from '../../components/industrialComponents/FutureProof'
 import Contact from '../../components/industrialComponents/Contact'
@@ -40,11 +40,11 @@ const Industrial: NextPage = () => {
 	]
 
 	return (
-		<div className='back-left-top-gradient-primary overflow-x-clip min-w-[428px]'>
+		<div className='back-left-top-gradient-primary overflow-x-clip'>
 			<Mainlayout navItems={navItems} >
 				<KeepEverything />
 				<IdeaSeries />
-				<Credential />
+				<ReferenceProjects />
 				<SimpleProductive />
 				<FutureProof />
 				<Contact />
