@@ -8,17 +8,10 @@ const ReadMore :FC<ReadmoreProps> = ({children}) => {
 
     //window size
     const [isMobile, setIsMobile] = useState(false)
-
-    const handleResize = () => {
-        if (window.innerWidth < 920) {
-            setIsMobile(true)
-        } else {
-            setIsMobile(false)
-        }
-      }
+   
 
     useEffect(() => {
-        window.addEventListener("resize", handleResize)
+       if(window.innerWidth < 920) setIsMobile(true)
       })
 
     const text = children;
