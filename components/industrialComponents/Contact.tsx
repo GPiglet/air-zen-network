@@ -6,18 +6,18 @@ import ContactHome from "./ContactForm";
 const Contact: FC = () => {
     return (
         <div className="relative mb-[700px] md:mb-[0] ">
-            <div className="container mx-auto relative mt-[800px] sm:mt-[950px] md:mt-[500px]">
+            <div className="container mx-auto relative mt-[800px] xs:mt-[800px] sm:mt-[1100px] md:mt-[700px]">
                 <svg  className="absolute
-                top-[-100%] sm:top-[-116%] md:top-[-77%] lg:top-[-82%] xl:top-[-163%]
-                xs:w-[100%] sm:w-[70%] md:w-[70%] lg:w-[60%] max-w-[962px]
-                left-[0] sm:left-[13%] md:left-[-5%] lg:left-0"
-                viewBox="0 0 912 911" fill="none" xmlns="http://www.w3.org/2000/svg">
+                top-[-78%] xs:top-[-127%] sm:top-[-565px] md:top-[-130%] lg:top-[-150%] xl:top-[-250%]
+                w-[220%] sm:w-[170%] md:w-[160%] lg:w-[160%] xl:w-[150%]
+                left-[-60%] sm:left-[-38%] md:left-[-55%] lg:left-[-55%] xl:left-[-53%]" 
+                viewBox="-600 -350 2000 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <ellipse opacity="0.5" cx="456" cy="455.5" rx="406" ry="405.5" fill="url(#paint0_radial_1376_8017)"/>
                     <path opacity="0.3" d="M736.5 455.5C736.5 610.139 610.917 735.5 456 735.5C301.083 735.5 175.5 610.139 175.5 455.5C175.5 300.861 301.083 175.5 456 175.5C610.917 175.5 736.5 300.861 736.5 455.5Z" stroke="#7BB690"/>
                     <path opacity="0.6" d="M911.5 455.23C911.5 706.369 707.567 909.959 456 909.959C204.434 909.959 0.500062 706.369 0.50004 455.23C0.500018 204.09 204.434 0.499982 456 0.49996C707.567 0.499938 911.5 204.09 911.5 455.23Z" stroke="url(#paint1_radial_1376_8017)"/>
                     <circle opacity="0.7" cx="456.212" cy="455.325" r="172.655" transform="rotate(-120 456.212 455.325)" fill="url(#paint2_radial_1376_8017)"/>
                     <circle opacity="0.4" cx="456.21" cy="455.325" r="262.062" transform="rotate(-120 456.21 455.325)" fill="url(#paint3_radial_1376_8017)"/>
-                    <image href="/images/model-group.png" x="22.5%" y="35%" fillOpacity='0.5' className="w-[55%]" />
+                    <image href="/images/model-group.png" x="10.6%" y="20%" fillOpacity='0.5' className="w-[24%]" />
                     <defs>
                     <radialGradient id="paint0_radial_1376_8017" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(398.906 240.078) rotate(68.3963) scale(835.646 836.397)">
                     <stop stopColor="#7BB690"/>
