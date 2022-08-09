@@ -22,23 +22,23 @@ const IdeaSeries: FC = () => {
     return (
         <div className="container mx-auto relative flex items-center mb-[70%] md:mb-0">
             <svg className="absolute 
-                left-[13%] sm:left-[13%] md:left-[-23%] lg:left-[-34%] xl:left-[-17%]
-                top-[93%] sm:top-[93%] md:top-[13%] lg:top-[10%] xl:top-[-1%]
-                w-[75%] sm:w-[75%] md:w-[77%] lg:w-[83%] xl:w-[820px]" 
-            viewBox="0 0 821 850" fill="none" xmlns="http://www.w3.org/2000/svg">
+                left-[-64%] sm:left-[-64%] md:left-[-92%] lg:left-[-88%] xl:left-[-69%]
+                top-[93%] sm:top-[46%] md:top-[-15%] lg:top-[-23%] xl:top-[-46%]
+                w-[230%] sm:w-[230%] md:w-[200%] lg:w-[190%] xl:w-[155%]" 
+                viewBox="-600 -350 2000 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
                 <circle opacity="0.7" cx="410.101" cy="409.515" r="277.477" transform="rotate(-180 410.101 409.515)" fill="url(#paint0_radial_0_1)"/>
                 <circle opacity="0.3" cx="410.099" cy="409.515" r="290.225" transform="rotate(-180 410.099 409.515)" stroke="#7BB690"/>
                 <path opacity="0.6" d="M0.499695 409.599C0.499695 183.661 183.969 0.501099 410.291 0.501099C636.613 0.501099 820.082 183.661 820.082 409.599C820.082 635.537 636.613 818.697 410.291 818.697C183.969 818.697 0.499695 635.537 0.499695 409.599Z" stroke="url(#paint1_radial_0_1)"/>
                 <circle opacity="0.7" cx="410.098" cy="409.507" r="207.742" transform="rotate(60 410.098 409.507)" fill="url(#paint2_radial_0_1)"/>
                 </g>
-                <image href="/images/phone-home.png" x="29%" y="20%" className="w-[41%]" />
+                <image href="/images/phone-home.png" x="12%" y="11%" className="w-[17%]" />
                 <path opacity="0.8" d="M303.843 695.245C368.051 674.697 403.759 606.863 383.6 543.734C363.44 480.605 295.048 446.086 230.84 466.634C166.633 487.182 130.924 555.016 151.084 618.145C171.243 681.274 239.636 715.793 303.843 695.245Z" fill="url(#paint3_radial_0_1)"/>
-                <foreignObject  className="font-lato-light  italic w-[260px] text-lg text-white hidden md:block" x="36%" y="93%" width="260px" height="100px">
+                <foreignObject  className="font-lato-light  italic w-[260px] text-lg text-white hidden md:block" x="16%" y="53%" width="260px" height="100px">
                     <p 
                     >Dieses Feature ermöglicht eine besondere Funktion: XYZ</p>
                 </foreignObject>
-                <image href="/images/sparkle.svg" className="w-[49px] h-[47px] hidden md:block"  x="30.9%" y="92%" cx="511.828" cy="696.377" />
+                <image href="/images/sparkle.svg" className="w-[49px] h-[47px] hidden md:block"  x="14%" y="52.5%" cx="511.828" cy="696.377" />
                 <defs>
                     <radialGradient id="paint0_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(371.081 262.105) rotate(68.4205) scale(571.724)">
                     <stop stopColor="#7BB690"/>
