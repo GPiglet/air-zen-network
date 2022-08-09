@@ -21,26 +21,26 @@ const SimpleProductive: FC = () => {
 
     return (
         
-        <div className="container mx-auto relative mb-[65%] md:mb-[15%]">
+        <div className="container mx-auto relative mb-[95%] sm:mb-[100%] md:mb-[15%]">
 
             <svg className="absolute 
-                left-[13%] md:left-[-23%] lg:left-[-34%] xl:left-[-17%]
-                top-[95%] md:top-[3%] lg:top-[-7%] xl:top-[-18%]
-                w-[70%] md:w-[77%] lg:w-[83%] xl:w-[820px]" 
-            viewBox="0 0 831 851" fill="none" xmlns="http://www.w3.org/2000/svg">
+                left-[-64%] sm:left-[-64%] md:left-[-92%] lg:left-[-88%] xl:left-[-69%]
+                top-[93%] xs:top-[78%] sm:top-[46%] md:top-[-36%] lg:top-[-47%] xl:top-[-102%]
+                w-[230%] sm:w-[230%] md:w-[200%] lg:w-[190%] xl:w-[155%]" 
+                viewBox="-600 -350 2000 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
                 <circle opacity="0.7" cx="410.101" cy="410.511" r="277.477" transform="rotate(-180 410.101 410.511)" fill="url(#paint0_radial_0_1)"/>
                 <circle opacity="0.3" cx="410.099" cy="410.513" r="290.225" transform="rotate(-180 410.099 410.513)" stroke="#7BB690"/>
                 <path opacity="0.6" d="M0.499695 410.597C0.499695 184.659 183.969 1.49915 410.291 1.49915C636.613 1.49915 820.082 184.659 820.082 410.597C820.082 636.535 636.613 819.695 410.291 819.695C183.969 819.695 0.499695 636.535 0.499695 410.597Z" stroke="url(#paint1_radial_0_1)"/>
                 <circle opacity="0.7" cx="410.096" cy="410.504" r="220.436" transform="rotate(60 410.096 410.504)" fill="url(#paint2_radial_0_1)"/>
                 </g>
-                <image href="/images/phone-home.png" x="29%" y="20%" className="w-[41%]" />
+                <image href="/images/phone-home.png" x="12%" y="11%" className="w-[17%]" />
                 <path opacity="0.8" d="M733.385 433.689C806.258 410.368 846.785 333.38 823.905 261.731C801.025 190.083 723.402 150.906 650.53 174.227C577.657 197.548 537.13 274.536 560.01 346.185C582.89 417.833 660.512 457.01 733.385 433.689Z" fill="url(#paint3_radial_0_1)"/>
-                <foreignObject  className="font-lato-light  italic w-[260px] text-lg text-white hidden md:block" x="36%" y="93%" width="260px" height="100px">
+                <foreignObject  className="font-lato-light  italic w-[260px] text-lg text-white hidden md:block" x="16%" y="53%" width="260px" height="100px">
                     <p 
                     >Dieses Feature ermöglicht eine besondere Funktion: XYZ</p>
                 </foreignObject>
-                <image href="/images/sparkle.svg" className="w-[49px] h-[47px] hidden md:block"  x="30.9%" y="92%" cx="511.828" cy="696.377" />
+                <image href="/images/sparkle.svg" className="w-[49px] h-[47px] hidden md:block"  x="14%" y="52.5%" cx="511.828" cy="696.377" />
                 <defs>
                     <radialGradient id="paint0_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(371.081 263.101) rotate(68.4205) scale(571.724)">
                     <stop stopColor="#7BB690"/>
