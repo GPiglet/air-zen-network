@@ -1,12 +1,16 @@
 import React, { FC, useEffect, useState } from "react"
-import gsap from "gsap";
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
+import { useTranslation } from "next-i18next"
+import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+import gsap from "gsap"
+gsap.registerPlugin(ScrollTrigger)
 
 
 
 
 const Hero: FC = () => {
+
+    //Language locale
+    const { t } = useTranslation();
 
     //Animate Ref
     const heroCircleRef1 = React.useRef<any>();
@@ -123,9 +127,9 @@ const Hero: FC = () => {
             <div ref={heroTextRef} className="relative px-10 z-10 flex items-center md:h-[70%] hero-fade">
                 <div className="flex flex-wrap ">
                     <div className="w-full md:w-2/5">
-                        <h1 className="text-title-md">Smart Wifi </h1>
-                        <h1 className="text-title-md"> for Smart People </h1>
-                        <p className="font-lato font-light tracking-widest text-white text-lg mt-3">Das Leben ist zu kurz für schlechtes WIFI. AirZen bietet Highend-Netzwerk-Technologien für einen entspannteren Alltag und Arbeitswelt. Und das außergewöhnlich einfach, sicher und zuverlässig.</p>
+                        <h1 className="text-title-md">{t("landing.header")} </h1>
+                        {/* <h1 className="text-title-md"> for Smart People </h1> */}
+                        <p className="font-lato font-light tracking-widest text-white text-lg mt-3">{t("landing.description")}</p>
                     </div>
                 </div>
             </div>
@@ -135,3 +139,4 @@ const Hero: FC = () => {
 };
 
 export default Hero
+

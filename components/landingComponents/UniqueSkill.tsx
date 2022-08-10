@@ -59,7 +59,7 @@ const UniqueSkill: FC = () => {
                 var tl = gsap.timeline({});
                 tl.from(uniqueHeaderRef.current, { autoAlpha: 0 })
                     .from(uniquesubRef.current, { autoAlpha: 0 })
-                    .from('.unique-skill-animate', { autoAlpha: 0 })
+                    .from('.unique-skill-animate', { autoAlpha: 0, display: 'none' })
                     .from(uniqueCircleRef.current, { opacity: 0 })
         
                 //expand Hero circle
@@ -89,7 +89,7 @@ const UniqueSkill: FC = () => {
                         toggleActions: "play complete reverse reset"
     
                     }
-                }).to(uniqueCircleRef.current, { autoAlpha: 0, display: 'none',})
+                }).to(uniqueCircleRef.current, { autoAlpha: 0})
         
                 //Head title and subtitle animation
         
@@ -138,17 +138,17 @@ const UniqueSkill: FC = () => {
                             trigger: '#solutions',
                             // scrub:true,
                             start: 700 * window.innerHeight / 982,
-                            end: 1000 * window.innerHeight / 982,
-                            toggleActions: "play none none reverse"
+                            end: 1400 * window.innerHeight / 982,
+                            toggleActions: "play complete reverse reset"
                         }
-                    }).to(section, { autoAlpha: 0, display: 'none', y: "150px", duration: 0 })
+                    }).to(section, { autoAlpha: 0, y: "150px", duration: 0 })
                         .to(section, { autoAlpha: 1, y: "0", display: 'inline-block', ease: "expo.inOut", duration: 1, delay: i * 0.1 });
                     gsap.timeline({
         
                         scrollTrigger: {
                             trigger: '#solutions',
-                            start: 1200 * window.innerHeight / 982,
-                            end: 1400 * window.innerHeight / 982,
+                            start: 1400 * window.innerHeight / 982,
+                            end: 1600 * window.innerHeight / 982,
                             toggleActions: "play complete reverse reset"
         
                         }

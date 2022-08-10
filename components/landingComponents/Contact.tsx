@@ -1,5 +1,10 @@
+//modules
 import React, { FC, useState } from 'react'
+import gsap from "gsap";
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
+//Custom components
 import CustomInput from '../common/input'
 import CustomTextarea from '../common/textarea'
 
