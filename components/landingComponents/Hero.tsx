@@ -21,7 +21,7 @@ const Hero: FC = () => {
             // set scroll height
             scrollRef.current.style.height = end + 'px';
 
-            gsap.set(heroImgRef.current, {opacity: 1});
+            gsap.set(heroImgRef.current, {opacity: 'auto'});
             gsap.to( heroImgRef.current, { 
                 opacity: 0, 
                 scrollTrigger: {
@@ -31,9 +31,9 @@ const Hero: FC = () => {
                 } }, 
             );
 
-            gsap.set(animSideUpRefs.current, {opacity: 1, y: 0});
+            gsap.set(animSideUpRefs.current, {opacity: 'auto', y: 0});
             gsap.to( animSideUpRefs.current, { 
-                y: -50,
+                y: -100,
                 opacity: 0, 
                 transformOrigin: "50% 50%",
                 scrollTrigger: {
@@ -43,7 +43,7 @@ const Hero: FC = () => {
                 } }, 
             );
 
-            gsap.set(animZoomInRefs.current, {opacity: 1, scale: 1});
+            gsap.set(animZoomInRefs.current, {opacity: 'auto', scale: 1});
             gsap.to( animZoomInRefs.current, { 
                 opacity: 0, 
                 scale: 2,
@@ -55,7 +55,7 @@ const Hero: FC = () => {
                 } }, 
             );
 
-            gsap.set(animZoomOutRefs.current, {opacity: 1, scale: 1});
+            gsap.set(animZoomOutRefs.current, {opacity: 'auto', scale: 1});
             gsap.to( animZoomOutRefs.current, { 
                 opacity: 0, 
                 scale: 0,
@@ -68,10 +68,10 @@ const Hero: FC = () => {
             );
         }
         else {
-            gsap.set(animSideUpRefs.current, {opacity: 1, y: 0});
-            gsap.set(animZoomInRefs.current, {opacity: 1, scale: 1});
-            gsap.set(animZoomOutRefs.current, {opacity: 1, scale: 1});
-            gsap.set(heroImgRef.current, {opacity: 1});
+            gsap.set(animSideUpRefs.current, {opacity: 'auto', y: 0});
+            gsap.set(animZoomInRefs.current, {opacity: 'auto', scale: 1});
+            gsap.set(animZoomOutRefs.current, {opacity: 'auto', scale: 1});
+            gsap.set(heroImgRef.current, {opacity: 'auto'});
         }
     }
 
