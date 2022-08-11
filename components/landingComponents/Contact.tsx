@@ -15,7 +15,7 @@ const Contact: FC = () => {
 
 
     return (
-            <div id='cantact' className='container m-auto relative py-[120px] md:py-[280px] flex justify-center'>
+            <div id='cantact' className='container m-auto relative md:fixed md:hidden py-[120px] md:py-[280px] flex justify-center'>
                 <div className=" flex justify-center">
                     <div className='md:w-[50%] xl:w-1/3 text-center relative px-10 md:px-auto'>
                         <h1 className="text-title-sm">Kontakt</h1>

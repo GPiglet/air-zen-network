@@ -5,6 +5,10 @@ import { StoreProvider } from '../contexts/Store'
 import { appWithTranslation } from "next-i18next";
 
 
+import gsap from "gsap";
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

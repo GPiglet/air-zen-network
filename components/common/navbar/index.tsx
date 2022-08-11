@@ -17,6 +17,33 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
 
   const router = useRouter()
 
+  // animation
+  const animNavButtons = React.useRef<any>([]);
+  React.useEffect(() => {
+    gsap.set(animNavButtons.current, {opacity: 0, y: 50});
+    gsap.to(animNavButtons.current, {
+        opacity: 1,
+        scrollTrigger: {
+            scrub: true,
+            start: 2500,
+            end: 4900,
+        }
+    });
+
+    gsap.to(animNavButtons.current.reverse(), {
+        y: 0,
+        stagger: 0.05,
+        scrollTrigger: {
+            scrub: true,
+            start: 2500,
+            end: 4900,
+        }
+    });
+
+
+    return ()=>gsap.killTweensOf(animNavButtons);
+  }, [])
+
 
   return (
     <nav className="top-[10px] md:top-[40px] lg:top-[62px] fixed z-50 w-full items-center navbar-expand-lg bg-transparent z-60">
@@ -82,7 +109,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
           <ul className="flex flex-col md:flex-row list-none mr-auto w-full justify-around text-white">
             {
               navItems.map((item, index) => (
-                <li className={"flex items-center cursor-pointer"} key={index} >
+                <li ref={el=>animNavButtons.current.push(el)} className={"flex items-center cursor-pointer"} key={index} >
                   <Link activeClass="active" smooth spy to={item.href}>
                     <p className="hover:text-gray-100 text-gray-400 px-3 py-4 md:py-2 flex items-center text-lg uppercase font-lato">{item.title}</p>
                   </Link>

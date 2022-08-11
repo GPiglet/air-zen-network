@@ -126,7 +126,7 @@ section {
   }
   
   .unique-skill-items:hover {
-    width: 400px;
+    width: 350px;
     height: fit-content;
     /* width: 300px !important; */
     /* transform-origin: top left; */
