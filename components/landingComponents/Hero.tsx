@@ -13,6 +13,15 @@ const Hero: FC = () => {
 
     const enableAnim = (enable: boolean = false) => {
         gsap.killTweensOf([heroImgRef.current, ...animSideUpRefs.current, ...animZoomInRefs.current, animZoomOutRefs.current]);
+        gsap.set(animSideUpRefs.current, {y: 0});
+        gsap.set(animZoomInRefs.current, {scale: 1});
+        gsap.set(animZoomOutRefs.current, {scale: 1});
+        gsap.set(heroImgRef.current, {opacity: 1});
+
+        [...animSideUpRefs.current, ...animZoomInRefs.current, ...animZoomOutRefs.current].forEach(el => {
+            if ( el ) el.style.opacity = el.getAttribute('opacity') || 1;
+        })
+
         if ( enable ) {
             // get client rect
             const rect = containerRef.current.getBoundingClientRect();
@@ -21,7 +30,6 @@ const Hero: FC = () => {
             // set scroll height
             scrollRef.current.style.height = end + 'px';
 
-            gsap.set(heroImgRef.current, {opacity: 'auto'});
             gsap.to( heroImgRef.current, { 
                 opacity: 0, 
                 scrollTrigger: {
@@ -31,7 +39,6 @@ const Hero: FC = () => {
                 } }, 
             );
 
-            gsap.set(animSideUpRefs.current, {opacity: 'auto', y: 0});
             gsap.to( animSideUpRefs.current, { 
                 y: -100,
                 opacity: 0, 
@@ -43,7 +50,6 @@ const Hero: FC = () => {
                 } }, 
             );
 
-            gsap.set(animZoomInRefs.current, {opacity: 'auto', scale: 1});
             gsap.to( animZoomInRefs.current, { 
                 opacity: 0, 
                 scale: 2,
@@ -55,7 +61,6 @@ const Hero: FC = () => {
                 } }, 
             );
 
-            gsap.set(animZoomOutRefs.current, {opacity: 'auto', scale: 1});
             gsap.to( animZoomOutRefs.current, { 
                 opacity: 0, 
                 scale: 0,
@@ -66,12 +71,6 @@ const Hero: FC = () => {
                     end,
                 } }, 
             );
-        }
-        else {
-            gsap.set(animSideUpRefs.current, {opacity: 'auto', y: 0});
-            gsap.set(animZoomInRefs.current, {opacity: 'auto', scale: 1});
-            gsap.set(animZoomOutRefs.current, {opacity: 'auto', scale: 1});
-            gsap.set(heroImgRef.current, {opacity: 'auto'});
         }
     }
 
