@@ -36,7 +36,7 @@ const Footer: FC = () => {
     ]
 
     return (
-            <div className='container m-auto'>
+            <div className='container m-auto md:fixed md:hidden'>
                 <div className='relative py-[100px] md:py-[100px] flex justify-center overflow-x-clip'>
             <h1 className="text-title-sm">Impressum</h1>
             </div>

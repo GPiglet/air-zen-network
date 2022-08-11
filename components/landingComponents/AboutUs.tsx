@@ -2,10 +2,6 @@ import React, { FC, Suspense, useEffect, useState, useContext } from 'react'
 import Flickity from "react-flickity-component"
 import "flickity/dist/flickity.css"
 import gsap from "gsap";
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
-
-
 
 
 const AboutUs: FC = () => {
@@ -103,97 +99,11 @@ const AboutUs: FC = () => {
     // Animate only desktop
      useEffect(() => {
     
-        //Only Animation on desktop
-        if(window.innerWidth > 920){
-            var tl = gsap.timeline({});
-            tl.from(aboutCircleRef1.current, { scale: 0.7, opacity: 1, transformOrigin: "50% 50%", })
-            .from('.about-us-animate', { autoAlpha: 0 })
-            .from('.about-fade-in', { autoAlpha: 0 })
-    
-            //  Hero circle
-            gsap.to(aboutCircleRef1.current, {
-                scale: 0.5,
-                duration: 1,
-                opacity: 1,
-                transformOrigin: "50% 50%",
-                scrollTrigger: {
-                    //   scrub: true,
-                    // pin: true,
-                    toggleActions: "restart none none reverse",
-                    trigger: '#aboutus',
-                    start: 1400 * window.innerHeight / 982,
-                    end: 1600 * window.innerHeight / 982,
-                }
-            },
-    
-            );
-
-            //Fade Svg Group
-            gsap.utils.toArray('.about-us-animate').forEach((section: any, i) => {
-                gsap.timeline({
-    
-                    scrollTrigger: {
-                        trigger: '#aboutus',
-                        // scrub:true,
-                        start: 1700 * window.innerHeight / 982,
-                        end: 2600 * window.innerHeight / 982,
-                        toggleActions: "play none none reverse"
-                    }
-                }).to(section, { autoAlpha: 0, display: 'none', x:"-200px", y: "-150px", duration: 0 })
-                    .to(section, { autoAlpha: 0.6, x: "0", y: "0", display: 'block', ease: "expo.inOut", duration: 2.5, });
-                gsap.timeline({
-    
-                    scrollTrigger: {
-                        trigger: '#aboutus',
-                        start: 2600 * window.innerHeight / 982,
-                        end: 2800 * window.innerHeight / 982,
-                        toggleActions: "play none none reverse"
-    
-                    }
-                }).to(section, { autoAlpha: 0.6, display: 'block', x: '0', y: "0", duration: 0 })
-                    .to(section, { autoAlpha: 0, x: "-200px",display: "none", y: '-150px', ease: "expo.inOut", duration: 2.5 });
-    
-            })
-
-            //Fade phone-home and flickity
-            gsap.utils.toArray('.about-fade-in').forEach((section: any, i) => {
-                gsap.timeline({
-    
-                    scrollTrigger: {
-                        trigger: '#aboutus',
-                        // scrub:true,
-                        start: 1700 * window.innerHeight / 982,
-                        end: 2600 * window.innerHeight / 982,
-                        toggleActions: "play none none reverse"
-                    }
-                }).to(section, { autoAlpha: 0, display: 'none', y: "150px", duration: 0 })
-                    .to(section, { autoAlpha: 1,  y: "0", display: 'block', ease: "expo.inOut", duration: 3, });
-                gsap.timeline({
-    
-                    scrollTrigger: {
-                        trigger: '#aboutus',
-                        // scrub:true,
-                        start: 2600 * window.innerHeight / 982,
-                        end: 2800 * window.innerHeight / 982,
-                        toggleActions: "play none none reverse"
-                    }
-                }).to(section, { autoAlpha: 1, display: 'block', y: "0", duration: 0 })
-                    .to(section, { autoAlpha: 0,  y: "-150px", display: 'none', ease: "expo.inOut", duration: 3, });
-            })
-    
-           
-    
-            //Hover Animation
-        }
-
-       
-
-
     }, [])
 
 
     return (
-        <section id='aboutus' className='container m-auto relative md:flex items-center py-20'>
+        <section id='aboutus' className='container m-auto relative md:fixed md:hidden md:flex items-center py-20'>
              <svg ref={aboutCircleRef1} className='hidden md:block absolute top-[35%] left-1/2 center-transform w-[150%]' viewBox="-200 -200 1300 1300" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle opacity="0.5" cx="449" cy="449" r="448.5" transform="rotate(-180 449 449)" stroke="url(#paint0_linear_1362_4341)" />
                 <defs>
