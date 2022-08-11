@@ -2,6 +2,10 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { LanguageProvider } from '../contexts/language'
+import gsap from "gsap";
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
