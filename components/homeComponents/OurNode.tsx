@@ -1,13 +1,13 @@
 //modules
 import React, { FC } from "react"
 
-import HomeForm from "./HomeForm";
+import HomeForm from "./homeForm";
 
 
 const OurNode: FC = () => {
 
     return (
-        <section className="pb-16 relative  ">
+        <section className="md:mb-[100px] relative  ">
 
             <div className="container mx-auto relative px-5 md:px-0 ">
             <svg className="absolute left-[-37%] bottom-[63%] w-[174%]  md:top-[34%] md:translate-y-[-50%] md:w-[60%] xl:w-[57%] xl:left-[-7%]  sm:top-[-83%] sm:w-[120%] sm:left-[-10%]  md:left-[-7%]" viewBox="0 0 561 569" fill="none" xmlns="http://www.w3.org/2000/svg">

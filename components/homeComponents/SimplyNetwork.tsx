@@ -43,7 +43,6 @@ const SimplyNetwork: FC = () => {
             transformOrigin: "50% 50%",
             scrollTrigger: {
                 trigger: circleRef2.current,
-                markers: true,
                 start: 'top 5%',
                 end: 'bottom 5%',
                 toggleActions: 'restart resume reverse reset'

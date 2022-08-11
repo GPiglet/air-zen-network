@@ -209,7 +209,9 @@ section {
 /* Custom Input style */
 .custom-input {
   position: relative;
-  border: 1px solid transparent;
+  border: 1px solid #DADADA;
+  background-color: transparent;
+  padding: 0.5em 0.75em;
   border-radius: 6px;
   background-clip: padding-box;
   /* just to show box-shadow still works fine */

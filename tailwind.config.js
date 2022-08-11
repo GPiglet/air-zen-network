@@ -17,7 +17,8 @@ module.exports = {
       colors: {
         "primary": "#2599D2",
         "secondary": "#7BB690",
-        "third": "#669AB4"
+        "third": "#669AB4",
+        "inputColor": "#159BDE"
       },
        scale: {
         '-1': '-1',

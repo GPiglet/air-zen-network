@@ -1,25 +1,26 @@
-import React, {FC} from 'react'
+import React, {FC, useRef} from 'react'
 
 type InputProps = {
     label ?: string,
     inputColor?: string,
     type?: string,
-    className: string,
-    placeholder: string,
-    value: string
+    className?: string,
+    placeholder?: string,
+    value: any
 }
 
 const CustomInput: FC<InputProps> = ({label, type, inputColor, className, placeholder, value  }) => {
+
+    const inputRef = useRef<any>();
 
     return (
         <div className={className}>
             <p className='ml-3 text-slate-300 '>{label}</p>
             <input 
                 type={type} 
-                className={`w-full bg-transparent custom-input py-2 px-3 border ${inputColor}`}
+                className={`w-full bg-transparent custom-input py-2 px-3  ${inputColor}`}
                 placeholder={placeholder}
                 value={value}
-                readOnly
              />
         </div>
     )
