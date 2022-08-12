@@ -20,7 +20,6 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
 
   // animation
   const animNavButtons = React.useRef<any>([]);
-  const [isMobile, setIsMobile] = useState(false)
    
 
   useEffect(() => {
@@ -49,8 +48,6 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
         return ()=>gsap.killTweensOf(animNavButtons);
      }
     }, [])
-
-
 
   return (
     <nav className="top-[10px] md:top-[40px] lg:top-[62px] fixed z-50 w-full items-center navbar-expand-lg bg-transparent z-60">
