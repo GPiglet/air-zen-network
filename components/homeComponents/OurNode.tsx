@@ -1,7 +1,7 @@
 //modules
 import React, { FC } from "react"
 
-import HomeForm from "./homeForm";
+import HomeForm from './homeForm/index'
 
 
 const OurNode: FC = () => {
