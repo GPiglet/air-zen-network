@@ -24,15 +24,8 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
    
 
   useEffect(() => {
-     if(window.innerWidth < 920) setIsMobile(true)
-    }, [])
-
-
-    if(isMobile){
-      return null
-    } else{
-      React.useEffect(() => {
-        gsap.set(animNavButtons.current, {opacity: 0, y: 50});
+     if(window.innerWidth < 920) {
+      gsap.set(animNavButtons.current, {opacity: 0, y: 50});
         gsap.to(animNavButtons.current, {
             opacity: 1,
             scrollTrigger: {
@@ -54,8 +47,9 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
     
     
         return ()=>gsap.killTweensOf(animNavButtons);
-      }, [])
-    }
+     }
+    }, [])
+
 
 
   return (

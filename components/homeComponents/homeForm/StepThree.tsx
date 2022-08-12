@@ -41,7 +41,7 @@ const StepThree: FC = () => {
                     <div>
                         <div className="sm:flex items-center">
                             <p>Vertragslaufzeit:</p>
-                            <select name="cars" className='custom-input w-[50%] sm:w-[22%] text-center text-inputColor mx-2' ref={monthRef} onChange={() => testValue()}  defaultValue={homeOption?.contractTerm}>
+                            <select name="months" data-native-menu={false} className='custom-input w-[50%] sm:w-[22%] text-center text-inputColor mx-2' ref={monthRef} onChange={() => testValue()}  defaultValue={homeOption?.contractTerm}>
                                 <option value={undefined} className='text-gray-500' disabled hidden>3-60</option>
                                 <option value="6">6</option>
                                 <option value="12">12</option>
