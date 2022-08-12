@@ -21,33 +21,34 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
   // animation
   const animNavButtons = React.useRef<any>([]);
 
-  if(window.innerWidth>920){
+//   if(window.innerWidth<920) {
+//     return null
+// } else {
+  React.useEffect(() => {
+    gsap.set(animNavButtons.current, {opacity: 0, y: 50});
+    gsap.to(animNavButtons.current, {
+        opacity: 1,
+        scrollTrigger: {
+            scrub: true,
+            start: 2500,
+            end: 4900,
+        }
+    });
 
-    React.useEffect(() => {
-      gsap.set(animNavButtons.current, {opacity: 0, y: 50});
-      gsap.to(animNavButtons.current, {
-          opacity: 1,
-          scrollTrigger: {
-              scrub: true,
-              start: 2500,
-              end: 4900,
-          }
-      });
-  
-      gsap.to(animNavButtons.current.reverse(), {
-          y: 0,
-          stagger: 0.05,
-          scrollTrigger: {
-              scrub: true,
-              start: 2500,
-              end: 4900,
-          }
-      });
-  
-  
-      return ()=>gsap.killTweensOf(animNavButtons);
-    }, [])
-  }
+    gsap.to(animNavButtons.current.reverse(), {
+        y: 0,
+        stagger: 0.05,
+        scrollTrigger: {
+            scrub: true,
+            start: 2500,
+            end: 4900,
+        }
+    });
+
+
+    return ()=>gsap.killTweensOf(animNavButtons);
+  }, [])
+// }
 
 
   return (

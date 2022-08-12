@@ -43,7 +43,7 @@ const Business: NextPage = () => {
 	]
 
 	return (
-		<div className='back-left-top-gradient-secondary overflow-x-clip'>
+		<div className='back-left-top-gradient-secondary overflow-x-hidden'>
 			<Mainlayout navItems={navItems}>
 				<Boost />
 				<Professional  />

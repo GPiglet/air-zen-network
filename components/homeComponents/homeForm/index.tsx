@@ -20,7 +20,7 @@ const HomeForm: FC = () => {
         if(step ===0 && homeOption){
             ++step
         }
-    }, [step])
+    }, [step,homeOption])
 
 
 
@@ -36,7 +36,12 @@ const HomeForm: FC = () => {
             </div>
             {
                 <div className={`w-full absolute  ${formView ? ' block right-[-20px]' : 'right-[-100%] md:right-[-600px]'} top-[25%] bg-white  md:w-[600px] rounded-xl  font-lato form-animate tracking-[0.8em] z-40`}>
-                        {step === 0 && <img src="/images/chat-check.svg" alt="" className='absolute top-[-30px] left-[50%] center-x-transform'/>}
+                        {step === 0 && 
+                            <picture>
+                                <source src='/images/chat-check.svg' />
+                                <img src="/images/chat-check.svg" alt="" className='absolute top-[-30px] left-[50%] center-x-transform'/>
+                            </picture>
+                        }
                        {
                         step !== 0 &&  <svg width="214" height="219" className='absolute top-[-60px] left-[-50px]' viewBox="0 0 214 219" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M129.297 215.398C71.848 227.511 15.2634 189.912 2.92615 131.397C-9.41115 72.8825 27.177 15.6397 84.6257 3.52718C142.074 -8.58532 198.659 29.013 210.996 87.5279C223.334 146.043 186.745 203.286 129.297 215.398Z" stroke="url(#paint0_linear_0_1)" />

@@ -12,7 +12,7 @@ const ReadMore :FC<ReadmoreProps> = ({children}) => {
 
     useEffect(() => {
        if(window.innerWidth < 920) setIsMobile(true)
-      })
+      }, [])
 
     const text = children;
     const [isReadMore, setIsReadMore] = useState(true)
