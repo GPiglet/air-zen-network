@@ -119,9 +119,10 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
                 </li>
               ))
             }
-                 {/* <li className={"flex items-center cursor-pointer"} >
+                {/* <li className={"flex items-center cursor-pointer"} >
                   <LocaleSwitcher />
                 </li> */}
+
           </ul>
         </div>
       </div>
