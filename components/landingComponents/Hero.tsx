@@ -143,3 +143,4 @@ const Hero: FC = () => {
 };
 
 export default Hero
+

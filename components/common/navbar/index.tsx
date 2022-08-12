@@ -4,6 +4,9 @@ import { useRouter } from "next/router";
 import { Link } from 'react-scroll'
 import gsap from "gsap";
 
+import LocaleSwitcher from '../../common/localeSwitcher'
+
+
 type NaveProps = {
   navItems: Array<any>
 }
@@ -114,7 +117,9 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
                 </li>
               ))
             }
-
+                <li className={"flex items-center cursor-pointer"} >
+                  <LocaleSwitcher />
+                </li>
           </ul>
         </div>
       </div>

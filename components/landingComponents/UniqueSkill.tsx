@@ -18,146 +18,146 @@ const UniqueSkill: FC = () => {
         },
         {
             title: 'Business',
-            subtitle: 'Für ein vernetztes Unternehmen.',
-            description: 'Das Team und ihre Kunden:innen - damit jeder überall und jederzeit vernetzt ist, gibt es die smarten und sicheren Netzwerklösungen von AirZen.',
-            list: [],
+            subtitle: 'Für ein smartes Zuhause.',
+            description: 'Störungsfreies und selbstoptimierendes Netz. Zuhause wie beim Profi.',
+            list: ['Hochstabile Verbindung', 'Keine Erfahrung nötig', ' Automatische Updates', 'Videosupport'],
             graph: '/images/graph-business.svg',
             href: '/business'
         },
         {
             title: 'Education',
-            subtitle: 'Für eine digitale Zukunft.',
-            description: 'Digitaler Wandel, Homeschooling, Verwaltung - damit alles funktioniert braucht es ein komplexes WLAN mit kinderleichter Handhabe.',
-            list: [],
+            subtitle: 'Für ein vernetztes Unternehmen.',
+            description: 'Störungsfreies und selbstoptimierendes Netz. Zuhause wie beim Profi.',
+            list: ['Hochstabile Verbindung', 'Keine Erfahrung nötig', ' Automatische Updates', 'Videosupport'],
             graph: '/images/graph-education.svg',
             href: '/education'
         },
         {
             title: 'Industrial',
-            subtitle: 'Für den digitalen Fortschritt.',
-            description: 'Innovative Ideen brauchen individuelle Lösungen - Auch im großen Stil. AirZen hilft beider Lösung industrieller Netzwerk-Aufgaben.',
-            list: [],
+            subtitle: 'Für den digitalen Fortschritt.',
+            description: 'Störungsfreies und selbstoptimierendes Netz. Zuhause wie beim Profi.',
+            list: ['Hochstabile Verbindung', 'Keine Erfahrung nötig', ' Automatische Updates', 'Videosupport'],
             graph: '/images/graph-industrial.svg',
             href: '/industrial'
         },
     ]
 
-    // Animate Refs
-    const scrollRef = React.useRef<any>();
-    const containerRef = React.useRef<any>();
-    const animSideUp = React.useRef<any>([]);
-    const animFadeIn = React.useRef<any>([]);
-    const animSkills = React.useRef<any>([]);
-    const circleRef = React.useRef<any>(null);
-    const animGradient = React.useRef<any>([]);
-
-    const onResize = () => {
-        const windowWidth = window.innerWidth;
-        if ( windowWidth > 920 ) enableAnim(true);
-        else enableAnim(false);
-    }
-
-    const enableAnim = (enable: boolean = false) => {
-        gsap.killTweensOf([...animSideUp.current, ...animFadeIn.current, ...animSkills.current, circleRef.current, ...animGradient.current]);
-        if ( enable ) {
-            // get client rect
-            const rect = containerRef.current.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-            const start = 400, end = rect.y + rect.height*3, top = windowHeight - 100;
-
-            // set scroll height
-            scrollRef.current.style.height = end + 'px';
-
-            // side up
-            gsap.set(animSideUp.current, {y: -rect.y/3*2});
-            gsap.to( animSideUp.current, { 
-                y: '-=' + top,
-                scrollTrigger: {
-                    scrub: true,
-                    start,
-                    end,
-                } }, 
-            );
-
-            // fade in
-            gsap.set(animFadeIn.current, {opacity: 0});
-            gsap.to( animFadeIn.current, { 
-                opacity: 1,
-                scrollTrigger: {
-                    scrub: true,
-                    start: 2500,
-                    end,
-                } }, 
-            );
-
-            // skills 
-            gsap.set(animSkills.current, {y: -rect.y/3*2});
-            gsap.to(animSkills.current, {
-                y: '-=' + top,
-                stagger: 0.05,
-                scrollTrigger: {
-                    scrub: true,
-                    start,
-                    end
-                }
-            })
-
-            //circle
-            gsap.to(circleRef.current, {
-                width: '70%',
-                scrollTrigger: {
-                    scrub: true,
-                    start: 2500,
-                    end,
-                }
-            })
-
-            //gradient
-            gsap.set(animGradient.current[0], {opacity: 0, background: 'linear-gradient(145deg, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 10%)'});
-            gsap.set(animGradient.current[1], {opacity: 0, background: 'radial-gradient(circle, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 100%)'});
-            gsap.to(animGradient.current[0], {
-                opacity: 1,
-                background: 'linear-gradient(145deg, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 100%)',
-                scrollTrigger: {
-                    scrub: true,
-                    start,
-                    end: 2500,
-                }
-            });
-            gsap.to(animGradient.current[0], {
-                opacity: 0,
-                background: 'linear-gradient(145deg, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 10%)',
-                scrollTrigger: {
-                    scrub: true,
-                    start: 2500,
-                    end,
-                }
-            });
-
-            gsap.to(animGradient.current[1], {
-                opacity: 1,
-                background: 'radial-gradient(circle, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 80%)',
-                scrollTrigger: {
-                    scrub: true,
-                    start: 2500,
-                    end,
-                }
-            });
-        }
-        else {
-            gsap.set(animSideUp.current, {y: 0});
-            gsap.set(animFadeIn.current, {opacity: 1});
-            gsap.set(animSkills.current, {y: 0});            
-        }
-    }
-
-    useEffect(() => {
-        onResize();
-        window.addEventListener('resize', onResize);
-        return ()=>window.removeEventListener('resize', onResize);
-    }, [])
-
-
+     // Animate Refs
+     const scrollRef = React.useRef<any>();
+     const containerRef = React.useRef<any>();
+     const animSideUp = React.useRef<any>([]);
+     const animFadeIn = React.useRef<any>([]);
+     const animSkills = React.useRef<any>([]);
+     const circleRef = React.useRef<any>(null);
+     const animGradient = React.useRef<any>([]);
+ 
+     const onResize = () => {
+         const windowWidth = window.innerWidth;
+         if ( windowWidth > 920 ) enableAnim(true);
+         else enableAnim(false);
+     }
+ 
+     const enableAnim = (enable: boolean = false) => {
+         gsap.killTweensOf([...animSideUp.current, ...animFadeIn.current, ...animSkills.current, circleRef.current, ...animGradient.current]);
+         if ( enable ) {
+             // get client rect
+             const rect = containerRef.current.getBoundingClientRect();
+             const windowHeight = window.innerHeight;
+             const start = 400, end = rect.y + rect.height*3, top = windowHeight - 100;
+ 
+             // set scroll height
+             scrollRef.current.style.height = end + 'px';
+ 
+             // side up
+             gsap.set(animSideUp.current, {y: -rect.y/3*2});
+             gsap.to( animSideUp.current, { 
+                 y: '-=' + top,
+                 scrollTrigger: {
+                     scrub: true,
+                     start,
+                     end,
+                 } }, 
+             );
+ 
+             // fade in
+             gsap.set(animFadeIn.current, {opacity: 0});
+             gsap.to( animFadeIn.current, { 
+                 opacity: 1,
+                 scrollTrigger: {
+                     scrub: true,
+                     start: 2500,
+                     end,
+                 } }, 
+             );
+ 
+             // skills 
+             gsap.set(animSkills.current, {y: -rect.y/3*2});
+             gsap.to(animSkills.current, {
+                 y: '-=' + top,
+                 stagger: 0.05,
+                 scrollTrigger: {
+                     scrub: true,
+                     start,
+                     end
+                 }
+             })
+ 
+             //circle
+             gsap.to(circleRef.current, {
+                 width: '70%',
+                 scrollTrigger: {
+                     scrub: true,
+                     start: 2500,
+                     end,
+                 }
+             })
+ 
+             //gradient
+             gsap.set(animGradient.current[0], {opacity: 0, background: 'linear-gradient(145deg, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 10%)'});
+             gsap.set(animGradient.current[1], {opacity: 0, background: 'radial-gradient(circle, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 100%)'});
+             gsap.to(animGradient.current[0], {
+                 opacity: 1,
+                 background: 'linear-gradient(145deg, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 100%)',
+                 scrollTrigger: {
+                     scrub: true,
+                     start,
+                     end: 2500,
+                 }
+             });
+             gsap.to(animGradient.current[0], {
+                 opacity: 0,
+                 background: 'linear-gradient(145deg, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 10%)',
+                 scrollTrigger: {
+                     scrub: true,
+                     start: 2500,
+                     end,
+                 }
+             });
+ 
+             gsap.to(animGradient.current[1], {
+                 opacity: 1,
+                 background: 'radial-gradient(circle, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 80%)',
+                 scrollTrigger: {
+                     scrub: true,
+                     start: 2500,
+                     end,
+                 }
+             });
+         }
+         else {
+             gsap.set(animSideUp.current, {y: 0});
+             gsap.set(animFadeIn.current, {opacity: 1});
+             gsap.set(animSkills.current, {y: 0});            
+         }
+     }
+ 
+     useEffect(() => {
+         onResize();
+         window.addEventListener('resize', onResize);
+         return ()=>window.removeEventListener('resize', onResize);
+     }, [])
+ 
+ 
     return (
         <>
             <div id='solutions' ref={containerRef} className='z-10 md:container mx-auto relative md:fixed md:left-[50%] md:translate-x-[-50%] md:flex justify-center items-center pb-[200px]'>

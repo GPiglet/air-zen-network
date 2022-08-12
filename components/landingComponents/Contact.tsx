@@ -1,5 +1,10 @@
+//modules
 import React, { FC, useState } from 'react'
+import gsap from "gsap";
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
+//Custom components
 import CustomInput from '../common/input'
 import CustomTextarea from '../common/textarea'
 
@@ -35,6 +40,7 @@ const Contact: FC = () => {
                             className="text-left w-full my-5"
                             placeholder='Vorname Nachname'
                             value={name}
+                            readOnly ={true}
                         />
                         <CustomInput
                             label='Email Address'
@@ -42,6 +48,7 @@ const Contact: FC = () => {
                             className="text-left w-full my-5"
                             placeholder='meine@email.io'
                             value={email}
+                            readOnly={true}
                         />
                         <CustomTextarea
                             rows={3}

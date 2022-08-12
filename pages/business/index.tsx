@@ -13,7 +13,6 @@ import CertainlySafe from '../../components/businessComponents/CertainlySafe'
 import Solution360 from '../../components/businessComponents/Solution360'
 import BusinessNode from '../../components/businessComponents/BusinessNode'
 import WhitePaper from '../../components/businessComponents/WhitePaper'
-import Footer from '../../components/common/footer'
 
 
 

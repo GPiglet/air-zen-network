@@ -1,10 +1,12 @@
 import React, { FC, useEffect, useState } from 'react'
 import Flickity from "react-flickity-component"
 import "flickity/dist/flickity.css"
+import gsap from "gsap";
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 const Credential: FC = () => {
     const refBackCircle = React.useRef<SVGSVGElement>(null);
-    
 
     const carouselList = [
         {
@@ -42,7 +44,8 @@ const Credential: FC = () => {
         },
             ]
 
-    let flkty: any = undefined;
+    //Flickity
+    const [flkty, setFlkty] = useState<any>(undefined)
 
     useEffect(() => {
         if(flkty) {
@@ -50,8 +53,8 @@ const Credential: FC = () => {
         }   
     })
 
-    const flickity = (c:Flickity) => {
-        flkty = c
+    const flickity = (c: Flickity) => {
+        setFlkty(c)
     }
 
     const flickityProps = {

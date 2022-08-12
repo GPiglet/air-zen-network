@@ -1,6 +1,7 @@
 //modules
 import React, { FC, useState } from 'react'
 import type { NextPage } from 'next'
+import { GetStaticProps } from 'next'
 
 //custom Components
 import Mainlayout from '../../layout/main'
@@ -9,12 +10,13 @@ import UniqueSkill from '../../components/landingComponents/UniqueSkill'
 import AboutUs from '../../components/landingComponents/AboutUs'
 import Credential from '../../components/landingComponents/Credential'
 import Contact from '../../components/landingComponents/Contact'
-import Footer from '../../components/common/footer'
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
 
 
 
-const Home: NextPage = () => {
+
+const Homepage: NextPage = () => {
 
 	const navItems:Array<any> = [
 		{
@@ -52,4 +54,12 @@ const Home: NextPage = () => {
 	)
 }
 
-export default Home
+export default Homepage
+
+export const getStaticProps: GetStaticProps  = async ({locale}) => {
+	return {
+		props: {
+		  ...(await serverSideTranslations(locale as string, ["common"])),
+		},
+	  };
+  }
