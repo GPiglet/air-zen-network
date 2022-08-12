@@ -21,7 +21,6 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
   // animation
   const animNavButtons = React.useRef<any>([]);
 
-  if(window.innerWidth>920){
 
     React.useEffect(() => {
       gsap.set(animNavButtons.current, {opacity: 0, y: 50});
@@ -47,7 +46,6 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
   
       return ()=>gsap.killTweensOf(animNavButtons);
     }, [])
-  }
 
 
   return (
@@ -121,9 +119,9 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
                 </li>
               ))
             }
-                {/* <li className={"flex items-center cursor-pointer"} >
+                 {/* <li className={"flex items-center cursor-pointer"} >
                   <LocaleSwitcher />
-                </li>
+                </li> */}
           </ul>
         </div>
       </div>
