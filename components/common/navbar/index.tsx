@@ -23,7 +23,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
    
 
   useEffect(() => {
-     if(window.innerWidth < 920) {
+     if(window.innerWidth > 920) {
       gsap.set(animNavButtons.current, {opacity: 0, y: 50});
         gsap.to(animNavButtons.current, {
             opacity: 1,
