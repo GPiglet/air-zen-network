@@ -12,7 +12,6 @@ const SimplyNetwork: FC = () => {
 
 
     const { t } = useTranslation()
-    console.log(t('home.landing'))
 
     return (
         <section className="container mx-auto pb-16 relative">
@@ -60,8 +59,11 @@ const SimplyNetwork: FC = () => {
                 <div className="flex flex-wrap mt-12">
                     <div className="w-full md:w-[510px]">
                         <h1 className="text-title-sm"> {t("home.section1.header")}</h1>
-                        <p className="font-lato font-light tracking-widest text-white text-lg mt-3">AirZen macht Schluss mit Funklöchern, Verbindungsabbrüchen und unsicheren Netzwerken.</p>
-                        <p className="font-lato font-light tracking-widest text-white text-lg mt-5">Dank ausgeklügelter Mesh- Technologie halten sie ihr Zuhause immer im On. Internet für das Homeoffice und die ganze Familie, direkt vom Hersteller, so zuverlässig, sicher und einfach wie noch nie.</p>
+                        {
+                            t('home.section1.description').split('\n').map((item, index) => (
+                                <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}</p>
+                            ))
+                        }
                     </div>
                 </div>
             </div>

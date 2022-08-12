@@ -11,6 +11,12 @@ html {
 }
 body{
   /* overflow-x: hidden; */
+  white-space: pre-line;
+
+
+}
+
+#root {
 
 }
 
