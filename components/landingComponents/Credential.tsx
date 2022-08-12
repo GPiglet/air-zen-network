@@ -74,7 +74,7 @@ const Credential: FC = () => {
     }
 
     return (
-        <section id='credentials' className='md:fixed md:hidden flex items-center overflow-x-clip'>
+        <section id='credentials' className='md:fixed md:hidden flex items-center overflow-x-hidden'>
             <div className='w-full'>
             <div className=' py-10 flex justify-center'>
                 <h1 className="text-title-sm">REFERENZEN</h1>
