@@ -1,5 +1,5 @@
 //modules
-import React, { FC, useState } from "react"
+import React, { FC, useState, useEffect } from "react"
 import { useRouter } from "next/router";
 import { Link } from 'react-scroll'
 import gsap from "gsap";
@@ -20,32 +20,42 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
 
   // animation
   const animNavButtons = React.useRef<any>([]);
+  const [isMobile, setIsMobile] = useState(false)
+   
 
-
-    React.useEffect(() => {
-      gsap.set(animNavButtons.current, {opacity: 0, y: 50});
-      gsap.to(animNavButtons.current, {
-          opacity: 1,
-          scrollTrigger: {
-              scrub: true,
-              start: 2500,
-              end: 4900,
-          }
-      });
-  
-      gsap.to(animNavButtons.current.reverse(), {
-          y: 0,
-          stagger: 0.05,
-          scrollTrigger: {
-              scrub: true,
-              start: 2500,
-              end: 4900,
-          }
-      });
-  
-  
-      return ()=>gsap.killTweensOf(animNavButtons);
+  useEffect(() => {
+     if(window.innerWidth < 920) setIsMobile(true)
     }, [])
+
+
+    if(isMobile){
+      return null
+    } else{
+      React.useEffect(() => {
+        gsap.set(animNavButtons.current, {opacity: 0, y: 50});
+        gsap.to(animNavButtons.current, {
+            opacity: 1,
+            scrollTrigger: {
+                scrub: true,
+                start: 2500,
+                end: 4900,
+            }
+        });
+    
+        gsap.to(animNavButtons.current.reverse(), {
+            y: 0,
+            stagger: 0.05,
+            scrollTrigger: {
+                scrub: true,
+                start: 2500,
+                end: 4900,
+            }
+        });
+    
+    
+        return ()=>gsap.killTweensOf(animNavButtons);
+      }, [])
+    }
 
 
   return (
