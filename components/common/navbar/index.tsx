@@ -2,6 +2,7 @@
 import React, { FC, useState } from "react"
 import { useRouter } from "next/router";
 import { Link } from 'react-scroll'
+import gsap from "gsap";
 
 import LocaleSwitcher from '../../common/localeSwitcher'
 

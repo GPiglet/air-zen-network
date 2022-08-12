@@ -12,6 +12,7 @@ const StepThree: FC = () => {
         if(homeOption?.contractTerm){
             setActive(true)
         } 
+        console.log(homeOption?.contractTerm, '-------')
        })
 
     const testValue = () => {
@@ -34,13 +35,14 @@ const StepThree: FC = () => {
                 buttonActive={active}
                 breadcrumb='Home Konfigurator'
                 buttonString='Kostenübersicht'
+                width='sm:w-[80%]'
             >
                 <div className='pb-10 flex items-center'>
                     <div>
                         <div className="sm:flex items-center">
                             <p>Vertragslaufzeit:</p>
                             <select name="cars" className='custom-input w-[50%] sm:w-[22%] text-center text-inputColor mx-2' ref={monthRef} onChange={() => testValue()}  defaultValue={homeOption?.contractTerm}>
-                                <option value="" className='text-gray-500' disabled selected hidden>3-60</option>
+                                <option value={undefined} className='text-gray-500' disabled hidden>3-60</option>
                                 <option value="6">6</option>
                                 <option value="12">12</option>
                                 <option value="24">24</option>

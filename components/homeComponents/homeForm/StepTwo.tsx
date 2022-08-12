@@ -38,6 +38,7 @@ const StepTwo: FC = () => {
                 buttonActive={active}
                 breadcrumb='Home Konfigurator'
                 buttonString='weiter'
+                width='sm:w-[80%]'
             >
                 <div className='pb-10 flex items-center'>
                     <div>

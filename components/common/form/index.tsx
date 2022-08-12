@@ -11,18 +11,20 @@ type FormProps = {
     buttonString?: string,
     buttonType?: string,
     children: ReactNode,
-    buttonActive?: boolean
+    buttonActive?: boolean,
+    bgClassName?: string
+    width: string
 
 }
 
-const Form: FC<FormProps> = ({ breadcrumb, final, bgImg, submit, buttonString, buttonType, buttonActive, children }) => {
+const Form: FC<FormProps> = ({ breadcrumb, final, bgImg, submit, buttonString, buttonType, buttonActive, bgClassName, width, children }) => {
 
     const {changeStep} = useContext(StoreContext)
     let step = useContext(StoreContext).step
 
     return (
         <FadeIn delay={0} transitionDuration={1000}>
-            <div className='w-[90%] sm:w-[80%] tracking-[0.08em] '>
+            <div className={`w-[90%] ${width} tracking-[0.08em] text-lg`}>
                 {
                     breadcrumb && (
                         <div className="flex items-center pb-10 relative z-50">
@@ -37,12 +39,15 @@ const Form: FC<FormProps> = ({ breadcrumb, final, bgImg, submit, buttonString, b
                 }
                 {children}
             </div>
-            <picture className='absolute w-[26%] bottom-[-10px] right-[-5px]'>
+            <picture >
                 <source src={bgImg} />
-                <img src={bgImg} alt="" />
+                <img src={bgImg} alt="" className={`absolute  ${bgClassName}`} />
             </picture>
-            <button className={`text-lg py-[12px] float-right rounded-lg drop-shadow-lg tracking-[0.08em] mt-12 cursor-pointer ${buttonType} ${buttonActive ? 'opacity-1' : 'opacity-50'}`} disabled={!buttonActive} onClick={() => changeStep?.(++step)}>{buttonString}</button>
+            {
+                buttonString && 
+                <button className={`text-lg py-[12px] float-right rounded-lg drop-shadow-lg tracking-[0.08em] mt-12 cursor-pointer ${buttonType} ${buttonActive ? 'opacity-1' : 'opacity-50'}`} disabled={!buttonActive} onClick={() => changeStep?.(++step)}>{buttonString}</button>
 
+            }
         </FadeIn>
     )
 }

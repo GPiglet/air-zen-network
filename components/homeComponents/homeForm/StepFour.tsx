@@ -15,6 +15,7 @@ const StepFour: FC = () => {
                 buttonActive={true}
                 breadcrumb='Zusammenfassung'
                 buttonString='Zahlungsoptionen'
+                width='sm:w-[80%]'
             >
                     <p className='text-gray-500'>Sind diese Daten Korrekt?</p>
                     <p>Mein Zuhause ist <span className='text-inputColor p-1 border rounded-md'>{homeOption?.roomSize}</span> m<sup>2</sup>groß .</p>

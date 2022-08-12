@@ -2,5 +2,11 @@
     "landing":{
         "header": "SMART WIFI FOR SMART PEOPLE",
         "description": "Das Leben ist zu kurz für schlechtes WIFI. AirZen bietet Highend-Netzwerk-Technologien für einen entspannteren Alltag und Arbeitswelt. Und das außergewöhnlich einfach, sicher und zuverlässig."
+    },
+    "home": {
+        "section1": {
+            "header": "ZEN FOR YOUR HOME",
+            "description": "AirZen puts an end to dead spots, dropped connections and insecure networks.Thanks to sophisticated mesh technology, they always keep your home on. Internet for the home office and the whole family, directly from the manufacturer, more reliable, safer and easier than ever."
+        }
     }
 }

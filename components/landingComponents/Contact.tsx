@@ -40,6 +40,7 @@ const Contact: FC = () => {
                             className="text-left w-full my-5"
                             placeholder='Vorname Nachname'
                             value={name}
+                            readOnly ={true}
                         />
                         <CustomInput
                             label='Email Address'
@@ -47,6 +48,7 @@ const Contact: FC = () => {
                             className="text-left w-full my-5"
                             placeholder='meine@email.io'
                             value={email}
+                            readOnly={true}
                         />
                         <CustomTextarea
                             rows={3}

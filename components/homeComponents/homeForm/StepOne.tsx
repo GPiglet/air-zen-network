@@ -13,6 +13,7 @@ const StepOne: FC = () => {
                 buttonType='border border-primary pl-5 pr-12'
                 buttonActive={true}
                 buttonString='zum Konfigurator'
+                width='sm:w-[80%]'
             >
                  <h1 className='text-[22px] uppercase w-1/2 '>Startklar in Minuten</h1>
                 <p className='text-lg mt-2 tracking-widest'> Für Home-Office und die Familie: AirZen bietet eine

@@ -6,10 +6,11 @@ type InputProps = {
     type?: string,
     className?: string,
     placeholder?: string,
-    value: any
+    value: any,
+    readOnly: boolean
 }
 
-const CustomInput: FC<InputProps> = ({label, type, inputColor, className, placeholder, value  }) => {
+const CustomInput: FC<InputProps> = ({label, type, inputColor, className, placeholder, value, readOnly  }) => {
 
     const inputRef = useRef<any>();
 
@@ -21,6 +22,7 @@ const CustomInput: FC<InputProps> = ({label, type, inputColor, className, placeh
                 className={`w-full bg-transparent custom-input py-2 px-3  ${inputColor}`}
                 placeholder={placeholder}
                 value={value}
+                readOnly={readOnly}
              />
         </div>
     )

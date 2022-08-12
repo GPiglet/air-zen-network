@@ -17,7 +17,8 @@ type StoreContextType = {
         placeName?: string,
         federalState?: string,
         houseNo?:number,
-        postCode?: number
+        postCode?: number,
+        payMethod?: string
         
     },
     changeHomeOption?: (homeOption: object) => void
@@ -26,7 +27,8 @@ type StoreContextType = {
 
 const initialState = {
     step: 1,
-    homeOption: {}
+    homeOption: {
+    }
 }
 
 export const StoreContext = createContext<StoreContextType>(initialState);
