@@ -20,19 +20,11 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
 
   // animation
   const animNavButtons = React.useRef<any>([]);
-  const [isMobile, setIsMobile] = useState(false)
    
 
   useEffect(() => {
-     if(window.innerWidth < 920) setIsMobile(true)
-    }, [])
-
-
-    if(isMobile){
-      return null
-    } else{
-      React.useEffect(() => {
-        gsap.set(animNavButtons.current, {opacity: 0, y: 50});
+     if(window.innerWidth < 920) {
+      gsap.set(animNavButtons.current, {opacity: 0, y: 50});
         gsap.to(animNavButtons.current, {
             opacity: 1,
             scrollTrigger: {
@@ -54,9 +46,8 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
     
     
         return ()=>gsap.killTweensOf(animNavButtons);
-      }, [])
-    }
-
+     }
+    }, [])
 
   return (
     <nav className="top-[10px] md:top-[40px] lg:top-[62px] fixed z-50 w-full items-center navbar-expand-lg bg-transparent z-60">
