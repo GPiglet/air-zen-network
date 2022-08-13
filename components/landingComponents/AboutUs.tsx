@@ -103,7 +103,7 @@ const AboutUs: FC = () => {
 
 
     return (
-        <section id='aboutus' className='container m-auto relative md:fixed md:hidden md:flex items-center py-20'>
+        <section id='aboutus' className='container m-auto relative md:fixed md:hidden md:flex items-center md:py-20'>
              <svg ref={aboutCircleRef1} className='hidden md:block absolute top-[35%] left-1/2 center-transform w-[150%]' viewBox="-200 -200 1300 1300" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle opacity="0.5" cx="449" cy="449" r="448.5" transform="rotate(-180 449 449)" stroke="url(#paint0_linear_1362_4341)" />
                 <defs>
@@ -114,13 +114,13 @@ const AboutUs: FC = () => {
                 </defs>
             </svg>
 
-            <div className='relative z-50 w-full '>
+            <div className=' z-50 w-full '>
 
                 <div>
                     <div className="text-center">
                         <h1 className="text-title-sm mt-20">Über Uns </h1>
                     </div>
-                    <div className='relative md:flex'>
+                    <div className=' md:flex'>
                         <picture className={`${selected + 1 === sliderList.length ? 'hidden': ''} `}>
                             <source srcSet="/images/sparkle-arrow.svg" type="image/webp" />
                             <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('next')} className='w-[47px] h-[93px] hidden md:block cursor-pointer absolute right-[47px]  top-1/2 center-y-transform z-50 about-fade-in ' />
@@ -130,7 +130,7 @@ const AboutUs: FC = () => {
                             <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('prev')} className={`w-[47px] h-[93px] hidden md:block  cursor-pointer absolute left-[47px] sparkle-arrow-reverse transform-none top-1/2 center-y-transform z-50 about-fade-in`} />
                         </picture>
                         <div className='md:w-[10%]'></div>
-                        <div className='w-full md:w-2/5 z-50 about-fade-in'>
+                        <div className='w-full md:w-2/5 z-40 relative about-fade-in'>
                             <Flickity
                                 {...flickityProps}
                             >
