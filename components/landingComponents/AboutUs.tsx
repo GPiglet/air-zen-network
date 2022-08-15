@@ -64,16 +64,7 @@ const AboutUs: FC = () => {
 
 
     return (
-        <section id='aboutus' className='container m-auto relative md:fixed md:hidden md:flex items-center md:py-20'>
-            <svg ref={aboutCircleRef1} className='hidden md:block absolute top-[35%] left-1/2 center-transform w-[150%]' viewBox="-200 -200 1300 1300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle opacity="0.5" cx="449" cy="449" r="448.5" transform="rotate(-180 449 449)" stroke="url(#paint0_linear_1362_4341)" />
-                <defs>
-                    <linearGradient id="paint0_linear_1362_4341" x1="449" y1="-3.05176e-05" x2="449" y2="898" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="white" />
-                        <stop offset="1" stopColor="white" stopOpacity="0" />
-                    </linearGradient>
-                </defs>
-            </svg>
+        <section id='aboutus' className='container m-auto relative md:flex items-center md:py-20'>
 
             <div className=' z-50 w-full '>
 

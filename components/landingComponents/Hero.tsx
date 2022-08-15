@@ -82,7 +82,7 @@ const Hero: FC = () => {
 
     const onResize = () => {
         const windowWidth = window.innerWidth;
-        if (windowWidth > 920) enableAnim(true);
+        if (windowWidth > 920) enableAnim(false);
         else enableAnim(false);
     }
 
@@ -97,7 +97,7 @@ const Hero: FC = () => {
 
     return (
         <>
-            <section ref={containerRef} className="container mx-auto pb-16 relative md:fixed md:left-[50%] md:translate-x-[-50%] pt-32">
+            <section ref={containerRef} className="container mx-auto pb-16 relative pt-32">
                 <svg className="absolute right-[-52%] bottom-[-56%] sm:top-[20%] md:top-[-5%] xl:top-[-16%] sm:w-[120%] sm:right-[-20%] w-[174%] md:right-[-27%] lg:right-[-25%] md:w-[105%] " viewBox="-220 0 1450 2114" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path ref={el => animSideUpRefs.current.push(el)} className='hero-fade' opacity="0.33" d="M50.0812 701.846C55.2566 989.408 335.109 1200.06 627.722 1301.88C920.334 1403.71 1234.95 1659.84 1242.99 2106.91C1245.57 2250.91 1245.77 155.351 1242.99 0.000182753C1013.21 121.659 900.23 166.66 594.437 171.818C288.643 176.976 44.9057 414.284 50.0812 701.846Z" fill="url(#paint0_linear_967_2268)" />
                     <circle ref={el => animZoomInRefs.current.push(el)} opacity="0.7" cx="511.729" cy="696.732" r="346.322" fill="url(#paint1_radial_967_2268)" />
@@ -147,7 +147,7 @@ const Hero: FC = () => {
                     </div>
                 </div>
             </section>
-            <div ref={scrollRef} className='hidden md:block'></div>
+            {/* <div ref={scrollRef} className='hidden md:block'></div> */}
         </>
 
 
