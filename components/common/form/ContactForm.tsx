@@ -46,7 +46,7 @@ const ContactHome: FC = () => {
                                         placeholder='Vorname Nachname'
                                         id="first-name"
                                         autoComplete="given-name"
-                                        className="block w-full shadow-sm sm:text-lg border-gray-300 border-[1px] rounded-md"
+                                        className="block w-full shadow-sm sm:text-lg border-gray-300 border-[1px] rounded-md px-3 py-1"
                                     />
                                 </div>
 
@@ -60,7 +60,7 @@ const ContactHome: FC = () => {
                                         placeholder='examplemail@provider.com'
                                         id="email-address"
                                         autoComplete="email"
-                                        className="block w-full shadow-sm sm:text-lg border-gray-300 border-[1px] rounded-md"
+                                        className="block w-full shadow-sm sm:text-lg border-gray-300 border-[1px] rounded-md px-3 py-1"
                                     />
                                 </div>
 
@@ -73,7 +73,7 @@ const ContactHome: FC = () => {
                                             id="about"
                                             name="about"
                                             rows={3}
-                                            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
+                                            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md px-3 py-1"
                                             placeholder={t('contactForm.placeholder')}
                                             defaultValue={''}
                                         />

@@ -55,7 +55,7 @@ const StepFive: FC = () => {
     }
 
     return (
-        <FadeIn delay={0} transitionDuration={1000} className='leading-8'>
+        <div className='leading-8'>
             <Form
                 buttonType='px-[70px] bg-primary-button text-white'
                 buttonActive={active}
@@ -65,36 +65,38 @@ const StepFive: FC = () => {
                 bgClassName='bottom-[-40px] w-[40%] right-[-5px]'
                 width='sm:w-[80%]'
             >
-                <p className='text-gray-500'>{t('home.form.step5.info')}</p>
-                <p className='text-gray-400 pl-3'>Mail</p>
-                <input placeholder='Mail' type='email' required className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={mailRef} onChange={() => testValue()} defaultValue={homeOption?.mail} />
-                <input placeholder='Vorname' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={firstNameRef} onChange={() => testValue()} defaultValue={homeOption?.firstName} />
-                <input placeholder='Nachname' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={surNameRef} onChange={() => testValue()} defaultValue={homeOption?.surName} />
-                <input placeholder='Straße' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={streetRef} onChange={() => testValue()} defaultValue={homeOption?.street} />
-                <input placeholder='Haus Nr.' className='mb-3 ml-2 w-[30%] h-[38px] custom-input text-inputColor' ref={houseNoRef} onChange={() => testValue()} defaultValue={homeOption?.houseNo} />
-                <input placeholder='Ortsname' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={placeRef} onChange={() => testValue()} defaultValue={homeOption?.placeName} />
-                <input placeholder='PLZ' className='mb-3 ml-2 w-[30%] h-[38px] custom-input text-inputColor' ref={postCodeRef} onChange={() => testValue()} defaultValue={homeOption?.postCode} />
-                <input placeholder='Bundesland' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={federalRef} onChange={() => testValue()} defaultValue={homeOption?.federalState} />
-                <div className="flex items-center px-2 py-5">
-                    <svg width="53" height="53" className='mr-5' viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="26.5" cy="26.5" r="25" stroke="url(#paint0_linear_1248_3123)" strokeWidth="3" />
-                        <defs>
-                            <linearGradient id="paint0_linear_1248_3123" x1="26.5" y1="0" x2="26.5" y2="53" gradientUnits="userSpaceOnUse">
-                                <stop stopColor="#01ACE6" />
-                                <stop offset="1" stopColor="#01ACE6" stopOpacity="0.6" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    <div>
-                        {
-                            t('home.form.step5.confirm').split('\n').map((item, index) =>
-                                <p key={index}>{item}</p>
-                            )
-                        }
+                <FadeIn transitionDuration={1000} delay={0}>
+                    <p className='text-gray-500'>{t('home.form.step5.info')}</p>
+                    <p className='text-gray-400 pl-3'>Mail</p>
+                    <input placeholder='Mail' type='email' required className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={mailRef} onChange={() => testValue()} defaultValue={homeOption?.mail} />
+                    <input placeholder='Vorname' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={firstNameRef} onChange={() => testValue()} defaultValue={homeOption?.firstName} />
+                    <input placeholder='Nachname' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={surNameRef} onChange={() => testValue()} defaultValue={homeOption?.surName} />
+                    <input placeholder='Straße' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={streetRef} onChange={() => testValue()} defaultValue={homeOption?.street} />
+                    <input placeholder='Haus Nr.' className='mb-3 ml-2 w-[30%] h-[38px] custom-input text-inputColor' ref={houseNoRef} onChange={() => testValue()} defaultValue={homeOption?.houseNo} />
+                    <input placeholder='Ortsname' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={placeRef} onChange={() => testValue()} defaultValue={homeOption?.placeName} />
+                    <input placeholder='PLZ' className='mb-3 ml-2 w-[30%] h-[38px] custom-input text-inputColor' ref={postCodeRef} onChange={() => testValue()} defaultValue={homeOption?.postCode} />
+                    <input placeholder='Bundesland' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={federalRef} onChange={() => testValue()} defaultValue={homeOption?.federalState} />
+                    <div className="flex items-center px-2 py-5">
+                        <svg width="53" height="53" className='mr-5' viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="26.5" cy="26.5" r="25" stroke="url(#paint0_linear_1248_3123)" strokeWidth="3" />
+                            <defs>
+                                <linearGradient id="paint0_linear_1248_3123" x1="26.5" y1="0" x2="26.5" y2="53" gradientUnits="userSpaceOnUse">
+                                    <stop stopColor="#01ACE6" />
+                                    <stop offset="1" stopColor="#01ACE6" stopOpacity="0.6" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div>
+                            {
+                                t('home.form.step5.confirm').split('\n').map((item, index) =>
+                                    <p key={index}>{item}</p>
+                                )
+                            }
+                        </div>
                     </div>
-                </div>
+                </FadeIn>
             </Form>
-        </FadeIn>
+        </div>
     )
 }
 

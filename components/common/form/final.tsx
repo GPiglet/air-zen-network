@@ -1,4 +1,5 @@
 import React, { FC, useContext, useRef, useState } from 'react'
+import FadeIn from 'react-fade-in/lib/FadeIn'
 
 import Form from './index'
 import { StoreContext } from '../../../contexts/Store'
@@ -12,7 +13,7 @@ const Final: FC<FinalProps> = ({ app }) => {
 
 
     return (
-        <div className='leading-10'>
+        <FadeIn delay={0} transitionDuration={1000} className='leading-10'>
             <Form
                 buttonType='border border-primary px-[70px] bg-primary-button text-white'
                 buttonActive={true}
@@ -37,7 +38,7 @@ const Final: FC<FinalProps> = ({ app }) => {
                     }
                 </div>
             </Form>
-        </div>
+        </FadeIn>
     )
 }
 
