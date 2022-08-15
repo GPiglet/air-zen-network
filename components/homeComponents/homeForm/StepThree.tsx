@@ -17,7 +17,7 @@ const StepThree: FC = () => {
             setActive(true)
         }
         console.log(homeOption?.contractTerm, '-------')
-    }, [])
+    })
 
     const testValue = () => {
         if (monthRef.current.value) {
