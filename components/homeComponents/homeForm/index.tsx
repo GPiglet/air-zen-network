@@ -58,7 +58,7 @@ const HomeForm: FC = () => {
                         </defs>
                     </svg>
                        }
-                        <div className='relative overflow-hidden pt-[58px] pb-[160px] pl-[60px] pr-0'>
+                        <div className='relative overflow-hidden py-[58px] pl-[60px] pr-0'>
                         {step === 1 && <StepOne></StepOne>}
                         {step === 2 && <StepTwo></StepTwo>}
                         {step === 3 && <StepThree></StepThree>}

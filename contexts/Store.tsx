@@ -16,28 +16,35 @@ type StoreContextType = {
         street?: string,
         placeName?: string,
         federalState?: string,
-        houseNo?:number,
+        houseNo?: number,
         postCode?: number,
         payMethod?: string
-        
+
     },
-    changeHomeOption?: (homeOption: object) => void
+    businessOption?: {
+        business?: string
+    },
+    changeHomeOption?: (homeOption: object) => void,
+    changeBusinessOption?: (businessOption: object) => void
 };
 
 
 const initialState = {
     step: 1,
     homeOption: {
+    },
+    businessOption: {
+
     }
 }
 
 export const StoreContext = createContext<StoreContextType>(initialState);
 
 type childrenType = {
-    children ?: ReactNode,
+    children?: ReactNode,
 }
 
-export const StoreProvider:FC<childrenType> = ({ children }) => {
+export const StoreProvider: FC<childrenType> = ({ children }) => {
 
     const [state, dispatch] = useReducer((state: any, action: any) => {
         switch (action.type) {
@@ -50,7 +57,14 @@ export const StoreProvider:FC<childrenType> = ({ children }) => {
             case 'CHANGE_HOME_OPTION':
                 return {
                     step: state.step,
-                    homeOption : {...state.homeOption, ...action.payload}
+                    businessOption: state.businessOption,
+                    homeOption: { ...state.homeOption, ...action.payload }
+                }
+            case 'CHANGE_BUSINESS_OPTION':
+                return {
+                    step: state.step,
+                    homeOption: state.homeOption,
+                    businessOption: { ...state.businessOption, ...action.payload }
                 }
             default:
                 return state;
@@ -59,14 +73,19 @@ export const StoreProvider:FC<childrenType> = ({ children }) => {
 
     const value = {
         step: state.step,
-        changeStep: (step:number) => dispatch({
+        homeOption: state.homeOption,
+        businessOption: state.businessOption,
+        changeStep: (step: number) => dispatch({
             type: 'CHANGE_STEP',
             payload: step
         }),
-        homeOption: state.homeOption,
         changeHomeOption: (homeOption: object) => dispatch({
             type: 'CHANGE_HOME_OPTION',
             payload: homeOption
+        }),
+        changeBusinessOption: (businessOption: object) => dispatch({
+            type: 'CHANGE_BUSINESS_OPTION',
+            payload: businessOption
         })
     }
     return (

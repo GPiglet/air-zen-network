@@ -2,27 +2,28 @@ import React, { FC, Suspense, useEffect, useState, useContext } from 'react'
 import Flickity from "react-flickity-component"
 import "flickity/dist/flickity.css"
 import gsap from "gsap";
+import { useTranslation } from "next-i18next";
 
 
 const AboutUs: FC = () => {
 
-      // Animate Refs
-      const aboutCircleRef1 = React.useRef<any>();
-      const aboutCircleRef2 = React.useRef<any>();
-      const aboutCircleRef3 = React.useRef<any>();
-      const aboutCircleRef4 = React.useRef<any>();
-      const aboutCircleRef5 = React.useRef<any>();
-      const aboutCircleRef6 = React.useRef<any>();
+    // Animate Refs
+    const aboutCircleRef1 = React.useRef<any>();
+    const aboutCircleRef2 = React.useRef<any>();
+    const aboutCircleRef3 = React.useRef<any>();
+    const aboutCircleRef4 = React.useRef<any>();
+    const aboutCircleRef5 = React.useRef<any>();
+    const aboutCircleRef6 = React.useRef<any>();
 
     //Flickity
     const [flkty, setFlkty] = useState<any>(undefined)
     const [selected, setSelected] = useState(0)
 
     useEffect(() => {
-        if(flkty)
-        flkty.on('settle', () => {
-            setSelected(flkty.selectedIndex)
-        })
+        if (flkty)
+            flkty.on('settle', () => {
+                setSelected(flkty.selectedIndex)
+            })
     })
 
     const flickity = (c: Flickity) => {
@@ -42,7 +43,7 @@ const AboutUs: FC = () => {
         flickityRef: flickity
     }
 
-    
+
     const sliderList = [
         {
             title: 'Aus Europa. Für Europa. ',
@@ -80,31 +81,24 @@ const AboutUs: FC = () => {
     ]
 
     const svgGroupAnimation = (state: string) => {
-        if(state === 'next'){
+        if (state === 'next') {
             flkty.next()
-            gsap.to([aboutCircleRef2.current, aboutCircleRef3.current, ], { duration: 0.8, scale:(1 + (flkty.selectedIndex + 1) * 0.03), transformOrigin: "50% 50%",  })
-            gsap.to(aboutCircleRef4.current, { duration: 0.8, scale:(1 + (flkty.selectedIndex + 1) * 0.05), transformOrigin: "50% 50%",  })
-        }else {
+            gsap.to([aboutCircleRef2.current, aboutCircleRef3.current,], { duration: 0.8, scale: (1 + (flkty.selectedIndex + 1) * 0.03), transformOrigin: "50% 50%", })
+            gsap.to(aboutCircleRef4.current, { duration: 0.8, scale: (1 + (flkty.selectedIndex + 1) * 0.05), transformOrigin: "50% 50%", })
+        } else {
             flkty.previous()
-            gsap.to([aboutCircleRef2.current, aboutCircleRef3.current, ], { duration: 0.8, scale:(1 - (flkty.selectedIndex + 1) * 0.03), transformOrigin: "50% 50%",  })
-            gsap.to(aboutCircleRef4.current, { duration: 0.8, scale:(1 - (flkty.selectedIndex + 1) * 0.05), transformOrigin: "50% 50%",  })
+            gsap.to([aboutCircleRef2.current, aboutCircleRef3.current,], { duration: 0.8, scale: (1 - (flkty.selectedIndex + 1) * 0.03), transformOrigin: "50% 50%", })
+            gsap.to(aboutCircleRef4.current, { duration: 0.8, scale: (1 - (flkty.selectedIndex + 1) * 0.05), transformOrigin: "50% 50%", })
 
         }
     }
 
-
-
-
-   
-    // Animate only desktop
-     useEffect(() => {
-    
-    }, [])
-
+    //translate
+    const { t } = useTranslation()
 
     return (
         <section id='aboutus' className='container m-auto relative md:fixed md:hidden md:flex items-center md:py-20'>
-             <svg ref={aboutCircleRef1} className='hidden md:block absolute top-[35%] left-1/2 center-transform w-[150%]' viewBox="-200 -200 1300 1300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg ref={aboutCircleRef1} className='hidden md:block absolute top-[35%] left-1/2 center-transform w-[150%]' viewBox="-200 -200 1300 1300" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle opacity="0.5" cx="449" cy="449" r="448.5" transform="rotate(-180 449 449)" stroke="url(#paint0_linear_1362_4341)" />
                 <defs>
                     <linearGradient id="paint0_linear_1362_4341" x1="449" y1="-3.05176e-05" x2="449" y2="898" gradientUnits="userSpaceOnUse">
@@ -118,14 +112,14 @@ const AboutUs: FC = () => {
 
                 <div>
                     <div className="text-center">
-                        <h1 className="text-title-sm mt-20">Über Uns </h1>
+                        <h1 className="text-title-sm mt-20">{t('landing.section3.title')} </h1>
                     </div>
                     <div className=' md:flex'>
-                        <picture className={`${selected + 1 === sliderList.length ? 'hidden': ''} `}>
+                        <picture className={`${selected + 1 === sliderList.length ? 'hidden' : ''} `}>
                             <source srcSet="/images/sparkle-arrow.svg" type="image/webp" />
                             <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('next')} className='w-[47px] h-[93px] hidden md:block cursor-pointer absolute right-[47px]  top-1/2 center-y-transform z-50 about-fade-in ' />
                         </picture>
-                        <picture className={`${selected  === 0 ? 'hidden': ''}`}>
+                        <picture className={`${selected === 0 ? 'hidden' : ''}`}>
                             <source srcSet="/images/sparkle-arrow.svg" type="image/webp" />
                             <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('prev')} className={`w-[47px] h-[93px] hidden md:block  cursor-pointer absolute left-[47px] sparkle-arrow-reverse transform-none top-1/2 center-y-transform z-50 about-fade-in`} />
                         </picture>
@@ -157,11 +151,11 @@ const AboutUs: FC = () => {
                                 <image className='about-us-phone about-fade-in' href="/images/phone-home.png" x="40.5%" y="33%" cx="511.828" cy="696.377" transform="translate(0,0)" />
                                 <foreignObject className="font-lato-light about-us-animate italic w-[260px] text-lg text-white hidden md:block" x="67.5%" y="61.5%" width="260px" height="100px">
                                     <p
-                                    >Dieses Feature ermöglicht eine besondere Funktion: XYZ</p>
+                                    >{t('landing.section3.sparkle1')}</p>
                                 </foreignObject>
                                 <foreignObject className="font-lato-light about-us-animate italic w-[260px] text-lg text-white hidden md:block" x="9%" y="74.5%" width="260px" height="100px">
                                     <p
-                                    >Dieses Feature ermöglicht eine besondere Funktion: XYZ</p>
+                                    >{t('landing.section3.sparkle2')}</p>
                                 </foreignObject>
                                 <image href="/images/sparkle.svg" className="about-us-animate w-[49px] h-[47px] hidden md:block about-fade-in" x="5%" y="74%" cx="511.828" cy="696.377" />
                                 <image href="/images/sparkle.svg" className="about-us-animate w-[49px] h-[47px] hidden md:block about-fade-in" x="64%" y="61%" cx="511.828" cy="696.377" />

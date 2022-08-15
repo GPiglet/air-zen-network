@@ -1,8 +1,11 @@
 //modules
 import React, { FC } from "react"
+import { useTranslation } from "next-i18next";
 
 
 const CertainlySafe: FC = () => {
+    //translate
+    const { t } = useTranslation()
 
     const hintList = [
         {
@@ -51,19 +54,15 @@ const CertainlySafe: FC = () => {
                 <div className="flex flex-wrap md:mt-12">
                     <div className="w-full md:w-2/5 m-auto">
                         <div className="relative">
-                            <p className="font-lato-light italic font-light text-[22px] text-white">Sicher</p>
-                            <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">Mit Sicherheit sicher!</h1>
-                            <p className="font-lato font-light tracking-widest text-white text-lg mt-3">Ein sicherer Zugang auf zentrale Firmen-Ressourcen ist
-                                wesentlich, um im Großraum- büro, Coworking Space oder
-                                Zuhause zu arbeiten. wir bieten einzelne Kennwörter
-                                im Sinne von Zero Trust, automatische Rechtebeschränkungen für neue Devises,
-                                und ermöglichen Ihnen dennoch volle Konnektivität für all Ihre digitalen Abenteuer.
+                            <p className="font-lato-light italic font-light text-[22px] text-white">{t('business.section5.tip')}</p>
+                            <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('business.section5.title')}</h1>
+                            {
+                                t('business.section5.description').split('\n').map((item, index) =>
 
-
-                            </p>
-                            <p className="font-lato font-light tracking-widest text-white text-lg mt-3">
-                                So arbeiten Sie und ihr Team überall zu den
-                                Sicherheitsrichtlinien Ihres Unternehmens, selbst vom Sofa aus.</p>
+                                    <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}
+                                    </p>
+                                )
+                            }
                             <div className="hidden md:block md:absolute  top-[62px] left-[110%] w-[80%]">
                                 {
                                     hintList.map((item, index) => (

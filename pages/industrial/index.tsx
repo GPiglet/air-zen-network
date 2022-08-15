@@ -1,6 +1,8 @@
 //modules
 import React, { FC, useState } from 'react'
 import type { NextPage } from 'next'
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { GetStaticProps } from 'next'
 
 //custom Components
 import Mainlayout from '../../layout/main'
@@ -16,7 +18,7 @@ import Contact from '../../components/industrialComponents/Contact'
 
 const Industrial: NextPage = () => {
 
-	const navItems:Array<any> = [
+	const navItems: Array<any> = [
 		{
 			id: 1,
 			title: 'Lösungen',
@@ -54,3 +56,11 @@ const Industrial: NextPage = () => {
 }
 
 export default Industrial
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+	return {
+		props: {
+			...(await serverSideTranslations(locale as string, ["common"])),
+		},
+	};
+}

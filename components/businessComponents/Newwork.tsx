@@ -1,8 +1,12 @@
 //modules
 import React, { FC } from "react"
+import { useTranslation } from "next-i18next";
 
 
 const NewWork: FC = () => {
+
+    //translate
+    const { t } = useTranslation()
 
     return (
         <section className="pb-16 relative container mx-auto">
@@ -36,13 +40,14 @@ const NewWork: FC = () => {
                 <div className="flex flex-wrap pt-[400px] md:pt-0 md:mt-12">
                     <div className="w-full md:w-2/5 m-auto">
                         <div className="relative">
-                            <p className="font-lato-light italic font-light text-[22px] text-white">Zuverlässig</p>
-                            <h1 className="text-title-sm">New Work, leicht gemacht!</h1>
-                            <p className="font-lato font-light tracking-widest text-white text-lg mt-3">Nach dem Update ist vor dem Update.
-                                Gerade bei Home Office Lösungen ist ihr Netzwerk vielen Potentiellen Angriffen ausgesetzt.
-
-                            </p>
-                            <p className="font-lato font-light tracking-widest text-white text-lg mt-3">Um diesen Bedrohungen immer einen Schritt voraus zu sein, ist unsere Platform an ein Lizensmodell gekoppelt. Das schließt zahlreiche Sicherheitsfeatures ein, von denen Sie kaum etwas bemerken werden:</p>
+                            <p className="font-lato-light italic font-light text-[22px] text-white">{t('business.section3.tip')}</p>
+                            <h1 className="text-title-sm">{t('business.section3.title')}</h1>
+                            {
+                                t('business.section3.description').split('\n').map((item, index) =>
+                                    <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}
+                                    </p>
+                                )
+                            }
                             <div className="hidden md:block md:absolute  top-[62px] left-[110%] w-[80%]">
                                 <div className="flex mb-12">
                                     <picture>

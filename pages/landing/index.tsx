@@ -1,7 +1,9 @@
 //modules
 import React, { FC, useState } from 'react'
 import type { NextPage } from 'next'
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { GetStaticProps } from 'next'
+import { useTranslation } from 'next-i18next'
 
 //custom Components
 import Mainlayout from '../../layout/main'
@@ -10,33 +12,31 @@ import UniqueSkill from '../../components/landingComponents/UniqueSkill'
 import AboutUs from '../../components/landingComponents/AboutUs'
 import Credential from '../../components/landingComponents/Credential'
 import Contact from '../../components/landingComponents/Contact'
-import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-
-
-
 
 
 const Homepage: NextPage = () => {
+	//translate
+	const { t } = useTranslation()
 
-	const navItems:Array<any> = [
+	const navItems: Array<any> = [
 		{
 			id: 1,
-			title: 'Lösungen',
+			title: t('landing.menu').split('\n')[0],
 			href: 'solutions'
 		},
 		{
 			id: 2,
-			title: 'Über uns',
+			title: t('landing.menu').split('\n')[1],
 			href: 'aboutus'
 		},
 		{
 			id: 3,
-			title: 'REFERENZEN',
+			title: t('landing.menu').split('\n')[2],
 			href: 'credentials'
 		},
 		{
 			id: 4,
-			title: 'Kontakt',
+			title: t('landing.menu').split('\n')[3],
 			href: 'cantact'
 		},
 	]
@@ -44,9 +44,9 @@ const Homepage: NextPage = () => {
 	return (
 		<div className='back-left-top-gradient-primary overflow-x-hidden'>
 			<Mainlayout navItems={navItems}>
-				<Hero/>
+				<Hero />
 				<UniqueSkill />
-				<AboutUs />	
+				<AboutUs />
 				<Credential />
 				<Contact />
 			</Mainlayout>
@@ -56,10 +56,10 @@ const Homepage: NextPage = () => {
 
 export default Homepage
 
-export const getStaticProps: GetStaticProps  = async ({locale}) => {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
 	return {
 		props: {
-		  ...(await serverSideTranslations(locale as string, ["common"])),
+			...(await serverSideTranslations(locale as string, ["common"])),
 		},
-	  };
-  }
+	};
+}

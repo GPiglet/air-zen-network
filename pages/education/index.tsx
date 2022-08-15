@@ -1,7 +1,9 @@
 //modules
 import React, { FC, useState } from 'react'
 import type { NextPage } from 'next'
-import Image from 'next/image'
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { GetStaticProps } from 'next'
+
 
 //custom Components
 import Mainlayout from '../../layout/main'
@@ -10,14 +12,13 @@ import Reliable from '../../components/educationComponents/Reliable'
 import Secure from '../../components/educationComponents/Secure'
 import Easy from '../../components/educationComponents/Easy'
 import Contact from '../../components/educationComponents/Contact'
-import Footer from '../../components/common/footer'
 
 
 
 
 const Home: NextPage = () => {
 
-	const navItems:Array<any> = [
+	const navItems: Array<any> = [
 		{
 			id: 1,
 			title: 'Lösungen',
@@ -54,3 +55,11 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+	return {
+		props: {
+			...(await serverSideTranslations(locale as string, ["common"])),
+		},
+	};
+}

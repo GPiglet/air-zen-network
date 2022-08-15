@@ -1,8 +1,11 @@
 //modules
 import React, { FC } from "react"
+import { useTranslation } from "next-i18next";
 
 
 const Reliable: FC = () => {
+    //translate
+    const { t } = useTranslation()
 
     return (
         <div className="container mx-auto pb-16 relative flex items-center py-[150px]">
@@ -14,8 +17,8 @@ const Reliable: FC = () => {
                 <path opacity="0.6" d="M797.616 342.142C857.338 530.749 751.554 733.421 561.329 794.815C371.103 856.209 168.486 753.071 108.765 564.464C49.0433 375.857 154.827 173.185 345.052 111.791C535.278 50.3971 737.895 153.535 797.616 342.142Z" stroke="url(#paint3_linear_1376_4815)" />
                 <image href="/images/homeContent2.png" width="600" height="350" clipPath="url(#reliableCircle)" x="18.5%" y="30%" fillOpacity='0.5' />
                 <defs>
-                <clipPath id="reliableCircle">
-                        <circle cx="454" cy="454"  r="150"  fill="#FFFFFF" />
+                    <clipPath id="reliableCircle">
+                        <circle cx="454" cy="454" r="150" fill="#FFFFFF" />
                     </clipPath>
                     <radialGradient id="paint0_radial_1376_4815" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(393.723 195.087) rotate(72.8188) scale(560.702 566.428)">
                         <stop stopColor="#2294C3" />
@@ -40,20 +43,15 @@ const Reliable: FC = () => {
 
             <div className="relative md:flex items-center px-10 md:px-0 h-full">
                 <div className="flex flex-wrap">
-                {/* <div className="w-[20%]"></div> */}
+                    {/* <div className="w-[20%]"></div> */}
                     <div className="w-full md:w-1/2 m-auto">
-                        <p className="font-lato-light italic font-light text-[22px] text-white">Zuverlässig</p>
-                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">So gut, so OmG!</h1>
-                        <p className="font-lato font-light tracking-widest text-white text-lg mt-3">Nach dem Update ist vor dem Update. 
-                            Gerade für
-                            Menschen, die ihr privates Netzwerk im Homeoffice nutzen, stellen verzögerte Updates eine ernste Bedrohung für die sensiblen Daten
-                            ihrer Firma.</p>
-                        <p className="font-lato font-light tracking-widest text-white text-lg mt-3">Nach dem Update ist vor dem Update. 
-                        Um diesen Bedrohungen immer einen Schritt voraus zu sein, ist unsere Platform an ein Lizensmodell gekoppelt. Das schließt zahlreiche Sicherheits- features ein, von denen Sie kaum etwas bemerken werden, solange wir unsere Arbeit gewissenhaft erledigen:</p>
-                        
-                        <p className="font-lato font-light tracking-widest text-white text-lg mt-3">- BotNetz-Schutz <br />
-- Content-Filter für Kinder-Netzwerk <br /> - Content-Filter für Manipulierte Websites <br /> - Familien Verwaltung mit y für Kinder 
-   und Internet-Pause Knopf <br />- Automatisch Software Updates <br /> - Live-Support vom Hersteller</p>                        
+                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('home.secton3.tip')}</p>
+                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('home.section3.title')}</h1>
+                        {
+                            t('home.section3.description').split('\n').map((item, index) =>
+                                <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}</p>
+                            )
+                        }
                     </div>
                 </div>
             </div>

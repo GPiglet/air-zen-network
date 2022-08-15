@@ -19,11 +19,12 @@ type FormProps = {
 
 const Form: FC<FormProps> = ({ breadcrumb, final, bgImg, submit, buttonString, buttonType, buttonActive, bgClassName, width, children }) => {
 
-    const {changeStep} = useContext(StoreContext)
+    const { changeStep } = useContext(StoreContext)
     let step = useContext(StoreContext).step
 
     return (
-        <FadeIn delay={0} transitionDuration={1000}>
+        // <FadeIn delay={0} transitionDuration={1000}>
+        <>
             <div className={`w-[90%] ${width} tracking-[0.08em] text-lg`}>
                 {
                     breadcrumb && (
@@ -44,11 +45,12 @@ const Form: FC<FormProps> = ({ breadcrumb, final, bgImg, submit, buttonString, b
                 <img src={bgImg} alt="" className={`absolute  ${bgClassName}`} />
             </picture>
             {
-                buttonString && 
-                <button className={`text-lg py-[12px] float-right rounded-lg drop-shadow-lg tracking-[0.08em] mt-12 cursor-pointer ${buttonType} ${buttonActive ? 'opacity-1' : 'opacity-50'}`} disabled={!buttonActive} onClick={() => changeStep?.(++step)}>{buttonString}</button>
+                buttonString &&
+                <button className={`text-lg py-[12px] float-right rounded-lg drop-shadow-md tracking-[0.08em] mt-12 cursor-pointer ${buttonType} ${buttonActive ? 'opacity-1' : 'opacity-50'}`} disabled={!buttonActive} onClick={() => changeStep?.(++step)}>{buttonString}</button>
 
             }
-        </FadeIn>
+        </>
+        // </FadeIn>
     )
 }
 

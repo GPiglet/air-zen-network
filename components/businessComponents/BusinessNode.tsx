@@ -3,11 +3,14 @@
 
 //modules
 import React, { FC } from "react"
+import { useTranslation } from "next-i18next";
 
-import BusinessForm from "./BusinessForm";
+import BusinessForm from "./businessForm";
 
 
 const BusinessNode: FC = () => {
+    //translate
+    const { t } = useTranslation()
 
     return (
         <section className="pb-16 relative ">
@@ -44,11 +47,20 @@ const BusinessNode: FC = () => {
                 <div className="flex flex-wrap pt-[500px] md:pt-[42%]">
                     <div className="md:w-1/12"></div>
                     <div className="w-full md:w-[45%] px-10">
-                        <p className="font-lato-light italic font-light text-[22px] text-white">Einfach</p>
-                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">Unsere Nodes</h1>
-                        <p className="font-lato font-light tracking-widest text-white text-lg mt-3"><span className="font-normal">Wifi 6.</span> <br />2 wlan module für Access- und Meshing</p>
-                        <p className="font-lato font-light tracking-widest text-white text-lg mt-3"><span className="font-normal">UPerfektes roaming mit Apple & Android </span><br /> unterstützt alle Roaming Standards von Apple iOS und Android Geräten für ein Seamless Romaing. </p>
-                        <p className="font-lato font-light tracking-widest text-white text-lg mt-3"><span className="font-normal">Zero-Setup </span><br />Die AirZen App hilft dir bei der kinderleichten Installation. </p>
+                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('business.section7.tip')}</p>
+                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em] mb-10">{t('business.section7.title')}</h1>
+                        {
+                            t('business.section7.description').split('\n').map((item, index) =>
+                                index % 2 === 0 ? (
+                                    <p className="font-lato tracking-widest text-white text-lg mt-3 font-normal" key={index}>{item}</p>
+                                ) : (
+                                    <>
+                                        <p className="font-lato font-light tracking-widest text-white text-lg" key={index}>{item}
+                                        </p><br />
+                                    </>
+                                )
+                            )
+                        }
                     </div>
                 </div>
             </div>

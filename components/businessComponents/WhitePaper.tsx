@@ -1,6 +1,9 @@
 import React, { FC } from 'react'
+import { Translation, useTranslation } from 'next-i18next'
 
 const WhitePaper: FC = () => {
+    //translate
+    const { t } = useTranslation()
 
     return (
         <div className='container text-white md:flex items-center m-auto py-[100px]'>

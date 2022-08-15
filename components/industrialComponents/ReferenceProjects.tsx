@@ -1,10 +1,12 @@
 import React, { FC, useEffect, useState } from 'react'
 import Flickity from "react-flickity-component"
 import "flickity/dist/flickity.css"
+import { useTranslation } from 'next-i18next'
 
 const ReferenceProjects: FC = () => {
+    //translate
+    const { t } = useTranslation()
 
-    
 
     const carouselList = [
         {
@@ -54,19 +56,19 @@ const ReferenceProjects: FC = () => {
     let flkty: any = undefined;
 
     useEffect(() => {
-        if(flkty)   
-        flkty.on('settle', () => {
-            console.log(flkty.selectedIndex, '99999999')
-        })
+        if (flkty)
+            flkty.on('settle', () => {
+                console.log(flkty.selectedIndex, '99999999')
+            })
     })
 
-    const flickity = (c:Flickity) => {
+    const flickity = (c: Flickity) => {
         flkty = c
     }
 
     const flickityProps = {
-        className:"credential-carousel ml-[30px] md:ml-auto relative z-50",
-        options:{
+        className: "credential-carousel ml-[30px] md:ml-auto relative z-50",
+        options: {
             asNavFor: ".carousel-main",
             pageDots: false
         },
@@ -81,24 +83,24 @@ const ReferenceProjects: FC = () => {
     }
 
     return (
-            <section id='credentials' className='flex items-center overflow-x-hidden'>
-                <div className='w-full'>
+        <section id='credentials' className='flex items-center overflow-x-hidden'>
+            <div className='w-full'>
                 <div className=' py-10 flex justify-center'>
-                    <h1 className="text-title-sm">Referenzprojekte</h1>
+                    <h1 className="text-title-sm">{t('industrial.section3.title')}</h1>
                 </div>
 
-                <Flickity 
-                 {...flickityProps}
-                
+                <Flickity
+                    {...flickityProps}
+
                 >
                     {/* <div className='hidden md:block w-[200px]'></div> */}
                     {
                         carouselList.map((item, index) => (
 
                             <div className={`mr-10 w-[60%] md:w-[35%] credential-detail`} onClick={() => clickCell(index)} key={index}>
-                                       <picture>
-                                <source srcSet={item.image} type="image/webp" />
-                                <img src={item.image} alt="" />
+                                <picture>
+                                    <source srcSet={item.image} type="image/webp" />
+                                    <img src={item.image} alt="" />
                                 </picture>
                                 <div className='md:flex md:p-7'>
                                     <div className='w-full md:w-1/2 px-2'>
@@ -135,8 +137,8 @@ const ReferenceProjects: FC = () => {
                         </defs>
                     </svg>
                 </Flickity>
-                </div>
-            </section>
+            </div>
+        </section>
     )
 }
 

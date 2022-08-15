@@ -1,12 +1,286 @@
 {
     "landing":{
-        "header": "SMART WIFI FOR SMART PEOPLE",
-        "description": "Das Leben ist zu kurz für schlechtes WIFI. AirZen bietet Highend-Netzwerk-Technologien für einen entspannteren Alltag und Arbeitswelt. Und das außergewöhnlich einfach, sicher und zuverlässig."
+        "section1":{
+            "_comment": "The top section of page.",
+            "title": "Be smart! \n Just do it!",
+            "description": "High-end network technologies for a more relaxed everyday life and working environment. And it is extraordinarily simple, safe and reliable.",
+            "sparkle1": "This feature enables a special function: XYZ",
+            "sparkle2": "This feature enables a special function: XYZ"
+        },
+        "section2": {
+            "_comment": "'Unique technologies' section of page.",
+            "title": "Unique technology.",
+            "subtitle": "Countless possible uses. Find your:",
+            "list": [
+                {
+                    "title": "Home",
+                    "subtitle": "For a smart home.",
+                    "description" : "Trouble-free and self-optimizing network. At home like a professional.",
+                    "list": "Highly stable connection \n No experience required \n Automatic updates \n Video support"
+                },
+                {
+                    "title": "Business",
+                    "subtitle": "For a smart home.",
+                    "description" : "Trouble-free and self-optimizing network. At home like a professional.",
+                    "list": "Highly stable connection \n No experience required \n Automatic updates \n Video support"
+                },
+                {
+                    "title": "Home",
+                    "subtitle": "For a smart home.",
+                    "description" : "Trouble-free and self-optimizing network. At home like a professional.",
+                    "list": "Highly stable connection \n No experience required \n Automatic updates \n Video support"
+                },
+                {
+                    "title": "Home",
+                    "subtitle": "For a smart home.",
+                    "description" : "Trouble-free and self-optimizing network. At home like a professional.",
+                    "list": "Highly stable connection \n No experience required \n Automatic updates \n Video support"
+                }
+            ],
+            "solution": "Our Solution"
+        },
+        "section3": {
+            "_comment": "'AboutUs' section of page.",
+            "title": "About Us",
+            "swiper": [
+                {
+                    "title": "From Europe. For Europe.",
+                    "content": "AirZen manufactures the most modern network technology in Switzerland & Europe. Secure WLAN - developed for individual requirements and with a high level of user-friendliness. Committed to its origins, AirZen helps all customers to keep up with current data protection and security guidelines."
+                }
+            ],
+            "sparkle1": "This feature enables a special function: XYZ",
+            "sparkle2": "This feature enables a special function: XYZ"
+        },
+        "section4": {
+            "_comment": "'Credentials' section of page",
+            "title": "Credentials",
+            "swiper": [
+                {
+                    "title" : "Volksbank Köln/Bonn",
+                    "list": "WiFi for 30 locations \n 150 wireless routers \n 700 employees \n Customer WiFi \n managed services"
+                }
+            ]
+        },
+        "section5": {
+            "_comment": "'Contact' section of page",
+            "title": "Contact",
+            "subtitle": "High-end network technologies for a relaxed everyday life and working environment. And it is extraordinarily simple, safe and reliable.",
+            "send": "Send",
+            "description": "I have read the privacy policy and agree to the storage and processing of my data by AirZen Networks Lda. \n I agree that my data will be collected and stored electronically to answer my request. I can withdraw my consent at any time: privacy@airzen.io"
+        },
+        "menu": "Solutions \n About us \n References \n Contact"
     },
     "home": {
         "section1": {
-            "header": "ZEN FOR YOUR HOME",
+            "_comment": "The top section of page",
+            "title": "ZEN FOR YOUR HOME",
             "description": "AirZen puts an end to insecure networks and annoying disconnections. Thanks to sophisticated mesh technology, they always keep your home on. \n   Experience the new form of Internet use in your home. AirZen is comparable to an Internet operating system that not only redefines the standard for security and privacy of your data."
+        },
+        "section2": {
+            "_comment": "'SaveHome' section of page",
+            "tip": "Secure",
+            "title": "Home safe Home",
+            "description": "Your digital security is our goal. Our security package not only includes the separation of your professional from the private network when you work in the home office, but also protects your children with a comprehensive youth protection function. \n Security begins with us right at the source of Internet access via Security WatchDog, which filters malicious websites for you in advance and is constantly updated through automatic updates. \n The Internet Pause button gives you control over the Internet availability of all users and the individual password assignment not only enables personalized assignment of rights according to your wishes, but also increases the security of your Wifi enormously."
+        },
+        "section3" : {
+            "_comment": "'Reliable' section of page",
+            "tip": "Reliable",
+            "title": "So good, so OmG!",
+            "description": "After the update is before the update. Especially for people who use their private network in their home office, delayed updates pose a serious threat to their company's sensitive data. \n In order to always be one step ahead of these threats, our platform is on coupled with a license model, which includes numerous security features that you will hardly notice as long as we do our job conscientiously:",
+            "list": "Botnet protection \n Content filter for children's network \n Content filter for manipulated websites \n Family management with y for children and Internet pause button \n Automatic software updates \n Live support from the manufacturer"
+        },
+        "section4" : {
+            "_comment": "'Easy' section of page",
+            "tip": "Easy",
+            "title": "couldn't be more relaxed!",
+            "description": "Fridge, toaster and Playstation: Air Zen is highly compatible. Update your home network with setup in minutes. All you need is an internet connection. \n And the most relaxing thing about it: It almost adjusts itself thanks to our mesh technology. The independent maintenance and administration then runs just as smoothly as the installation."
+        },
+        "section5" : {
+            "_comment": "'Technology' section of page",
+            "tip": "Technology",
+            "title": "Our nodes",
+            "description": "Wifi 6 \n 2 wlan modules for access and meshing \n Perfect roaming with Apple & Android \n supports all roaming standards of Apple iOS and Android devices for seamless roaming. \n Zero setup \n The AirZen app helps you with the easy installation."
+        },
+        "form": {
+            "step1": {
+                "title": "Ready to go in minutes",
+                "description": "For the home office and the family: With the set, AirZen offers a trouble-free and carefree high-end network solution for your home.",
+                "button": "To the configurator"
+            },
+            "step2": {
+                "breadcrumb": "Home Konfigurator",
+                "roomSize": "My home is \n square meters .",
+                "node": "I want \n nodes for €25 each.",
+                "description": "AirZen set includes at least 3 routers: our nodes. We guarantee you a stable connection up to 200m2.\n In addition, we recommend one node for each additional 60m2 or new external locations.",
+                "button": "Next"
+            },
+            "step3": {
+                "breadcrumb": "Home configurator",
+                "month": "Contract period: \n months",
+                "price": "I want to \n pay.",
+                "description": "Since we are constantly developing our software, our service is based on a license model. \n This enables us to provide you with support from experts, constantly secure internet and constantly new features.",
+                "button": "Cost overview"
+            },
+            "step4": {
+                "breadcrumb": "Summary",
+                "confirm": "Sind diese Daten Korrekt?",
+                "roomSize": "My home is \n square meters .",
+                "node": "I want \n nodes for €25 each.",
+                "month": "Contract period: \n months",
+                "price": "I want to \n pay.",
+                "noti": "We guarantee you \n 30 days right of return.",
+                "button": "Payment Options"
+            },
+            "step5": {
+                "breadcrumb": "Contract details",
+                "info": "We need your address data:",
+                "confirm": "Would you like \n express shipping?",
+                "button": "Contract overview"
+            },
+            "step6": {
+                "breadcrumb": "Contact Details",
+                "info": "You can access your personalized contract here:",
+                "confirm": "Do you agree with the contract details?",
+                "button": "Payment options"
+            },
+            "step7": {
+                "breadcrumb": "Payment Options",
+                "description": "We charge you a one-time payment of 100€ for 4 nodes. In addition, we will debit 68€ per month over 24 months.",
+                "info": "We guarantee you \n 30 days right of return.",
+                "choose": "A payment method:",
+                "buttons": "Bank Transfer \n Credit Card \n SEPA Direct Debit \n Ideal"
+            }
         }
-    }
+    },
+    "business": {
+        "section1":{
+            "_comment": "The top section of page.('Boost')",
+            "title": "Boost your Business",
+            "description": "Your start-up, branch, or restaurant should be provided with a secure network and be maintainable from a distance? \n Then discover the innovative Air Zen technology for a reliable, secure and simple network.",
+            "cooperation": "In trusting cooperation with:"
+        },
+        "section2": {
+            "_comment": "'Professional wifi' section of page",
+            "title": "Professional wifi",
+            "subtitle": "for teams, offices and clients"
+        },
+        "section3": {
+            "_comment": "'Reliable' section of page",
+            "tip": "Reliable",
+            "title": "New Work, leicht gemacht!",
+            "description": "Nach dem Update ist vor dem Update. Gerade bei Home Office Lösungen ist ihr Netzwerk vielen Potentiellen Angriffen ausgesetzt. \n Um diesen Bedrohungen immer einen Schritt voraus zu sein, ist unsere Platform an ein Lizensmodell gekoppelt. Das schließt zahlreiche Sicherheitsfeatures ein, von denen Sie kaum etwas bemerken werden:"
+        },
+        "section4": {
+            "_comment": "'Easy' section of page",
+            "tip": "Easy",
+            "title": "Prepared for success!",
+            "description": "Especially hotels, retail, insurance companies or banks with many locations make life easier with smart location and user management including direct support from the manufacturer. \n With our app you can dynamically expand or update your network and securely invite or block individual users. \n Your team can also access and intervene themselves via a self-service portal. In addition, you can even define your own security standards: the best Feng Shui for your employees and your WiFi."
+        },
+        "section5": {
+            "_comment": "'Secure' section of page",
+            "tip": "Secure",
+            "title": "Certainly safe!",
+            "description": "Secure access to central company resources is essential to work in an open-plan office, co-working space or at home. we offer single passwords in the spirit of zero trust, automatic rights restrictions for new currencies, while still allowing you full connectivity for all your digital adventures. \n So you and your team can work on your company's security policies from anywhere, even from the sofa."
+        },
+        "section6": {
+            "_comment": "'360°'section of page",
+            "title": "360° solution for companies"
+        },
+        "section7": {
+            "_comment": "'Our nodes' section of page",
+            "tip": "Technology",
+            "title": "Our Nodes",
+            "description": "Wifi 6 \n 2 wlan modules for access and meshing \n Perfect roaming with Apple & Android \n supports all roaming standards of Apple iOS and Android devices for seamless roaming. \n Zero setup \n The AirZen app helps you with the easy installation."
+        },
+        "form": {
+            "step1": {
+                "title": "Ready to go in minutes",
+                "content": "Whatever is pending in your company, together we will find a suitable network solution - with our own hardware and appropriate router system. All from a single source! \n Optionally, we offer you complete direct support - from planning to maintenance during operation.",
+                "button": "To the configurator"
+            },
+            "step2": {
+                "breadcrumb": "Business configurator",
+                "confirm": "What is your business?"
+            }
+        }
+    },
+    "education": {
+        "section1": {
+            "_comment":"The top section of page",
+            "title": "Class WiFi!",
+            "description": "A modern network is the basis for modern education. AirZen brings reliable and safe internet to schools. With turnkey hardware, school-friendly equipment, mobile user management and all-round carefree IT support. \n So there is no need for an on-site IT department. But the best thing about the AirZen technology: The very easy operation. Simply the next-generation network."
+        },
+        "section2": {
+            "_comment":"'Reliable' section of page",
+            "tip": "Reliable",
+            "title": "Classroom digital!",
+            "description": "AirZen has the all-in-one solution for the complex needs of schools of all types and sizes - and is very easy to use. \n In addition to seamless WLAN coverage, AirZen also ensures reliable network stability, even when many devices are online. Administrators can easily enable access and manage it on the go - very easily from their cell phone. \n No IT training is required for this, because operation is very intuitive via the app. With AirZen you ensure a first-class network in your school."
+        },
+        "section3": {
+            "_comment":"'Secure' section of page",
+            "tip": "Secure",
+            "title": "PROTECTION is very important here!",
+            "description": "From primary school to the lecture hall - there is a lot of sensitive data in the school network. AirZen offers a high level of IT security through the combination of high-quality manufacturer service and EU and GDPR-compliant security concepts. \n Also protect your students and teachers with their own Wi-Fi passwords, parental controls and separate disconnected connections.",
+            "sparkle1": "This feature enables a special function: XYZ",
+            "sparkle2": "This feature enables a special function: XYZ"
+        },
+        "section4": {
+            "_comment":"'Easy'Abschnitt der Seite",
+            "tip": "Easy",
+            "title": "The little one-time easy!",
+            "description": "Take out your laptop and get started. With AirZen, students and teachers can access the Internet quickly and easily via a self-service portal. So that everyone can concentrate on the lesson, everything else runs almost automatically - from setup to maintenance with self-learning software maintenance. \n So there is no need for a large IT department or specialist knowledge, thanks to hardware and support directly from the manufacturer. Or to put it another way: With AirZen, the calculation works.",
+            "sparkle1": "This feature enables a special function: XYZ",
+            "sparkle2": "This feature enables a special function: XYZ",
+            "sparkle3": "This feature enables a special function: XYZ"
+        }   ,
+        "section5": {
+            "_comment": "'Our nodes' section of page",
+            "tip": "Technology",
+            "title": "Our nodes",
+            "description": "Wifi 6 \n 2 wlan modules for access and meshing \n Perfect roaming with Apple & Android \n supports all roaming standards of Apple iOS and Android devices for seamless roaming. \n Zero setup \n The AirZen app helps you with the easy installation."
+        }
+    },
+    "industrial": {
+        "section1": {
+            "_comment":"The top section of page",
+            "title": "Keep everything in flow.",
+            "description": "With stability, security and ease of use, the AirZen offer extensive individualization for industrial networks in many areas to handle processes, offer new services and set completely new standards for Industry 4.0.",
+            "cooperation": "In trusting cooperation with:"
+        },
+        "section2": {
+            "_comment":"'Reliable' section of page",
+            "tip": "Reliable",
+            "title": "ideas used in series",
+            "description": "Everything from a single source - from the idea to the hardware. Do you need a reliable network or do you have a new requirement for your existing network? \n The AirZen technologies are designed for use in industry and ensure an extremely efficient network even with special industrial requirements. Whether automation, smart management, remote control or remote diagnostics - AirZen will develop an ideal network variant together with you. Keep everything running with exceptionally reliable and stable network coverage from AirZen."
+        },
+        "section3" : {
+            "_comment": "'Reference projects' section of page",
+            "title": "Reference projects"
+        },
+        "section4": {
+            "_comment": "'Easy' section of page",
+            "tip": "Easy",
+            "title": "Simply more productive.",
+            "description": "AirZen offers you everything you need for smooth operation. Enjoy easy setup or integration of the network's complementary functionalities, thanks to automated infrastructure between routers. You get constant access to all connected devices and machines, worldwide and from home. \n Also relaxed: AirZen is a European company and also helps you to comply with the current European data protection basic regulation and requirements. Easily manage everything from routers to IoT sensors on the same platform. In short: Minimize your effort. Increase your efficiency. Become an AirZen."
+        },
+        "section5": {
+            "_comment": "'Secure' section of page",
+            "tip": "Secure",
+            "title": "Future-proof instead of back then!",
+            "description": "The protection of machines, systems and networks requires state-of-the-art technology. To ensure that operations run smoothly, AirZen provides support with secure network solutions. \n A directly integrated firewall provides protection against unauthorized access. With its own hardware, servers in Europe and the 'Made in Switzerland' seal, AirZen stands for optimal protection. In addition, you have a reliable overview of potential faults and security deficiencies. The network is exploitable via command line, API or app. This way you can keep an overview."
+        },
+        "section6": {
+            "_comment": "'Our nodes' section of page",
+            "tip": "Technology",
+            "title": "Our nodes",
+            "description": "Wifi 6 \n 2 wlan modules for access and meshing \n Perfect roaming with Apple & Android \n supports all roaming standards of Apple iOS and Android devices for seamless roaming. \n Zero setup \n The AirZen app helps you with the easy installation."
+        }
+    },
+    "contactForm": {
+        "cotact": "Get in touch",
+        "message": "Your message",
+        "placeholder": "Please describe your project with some key data. We'll get back to you.",
+        "GDPR": "GDPR Copy",
+        "button": "Send"
+    } 
 }

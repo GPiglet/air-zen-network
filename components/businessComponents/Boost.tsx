@@ -1,10 +1,14 @@
 //modules
 import React, { FC } from "react";
+import { useTranslation } from "next-i18next";
 
 // Custom components
 import Breadcrumb from "../../components/common/breadcrumb";
 
 const Boost: FC = () => {
+    //translate
+    const { t } = useTranslation()
+
     const logos = ["volksbank", "adac", "sparkasse", "barSaintJean"];
 
     return (
@@ -34,7 +38,7 @@ const Boost: FC = () => {
                     y="50%"
                 />
                 <defs>
-                <clipPath id="businessContentPic1"><circle cx="333" cy="325" r="130" fill="#FFFFFF"></circle></clipPath>
+                    <clipPath id="businessContentPic1"><circle cx="333" cy="325" r="130" fill="#FFFFFF"></circle></clipPath>
                     <linearGradient id="paint0_linear_1376_5373" x1="406.242" y1="178.458" x2="502.469" y2="227.006" gradientUnits="userSpaceOnUse">
                         <stop stopColor="#8ABE9C" />
                         <stop offset="1" stopColor="#8ABE9C" stopOpacity="0" />
@@ -58,7 +62,7 @@ const Boost: FC = () => {
                     <linearGradient id="paint5_linear_1376_5373" x1="345.325" y1="389.894" x2="287.954" y2="645.652" gradientUnits="userSpaceOnUse">
                         <stop stopColor="#7BB690" />
                         <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
-                    </linearGradient> 
+                    </linearGradient>
                     <radialGradient id="paint6_radial_1376_5373" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(433.883 342.236) rotate(1.51896) scale(194.316 192.647)">
                         <stop stopColor="#8ABE9C" />
                         <stop offset="1" stopColor="#8ABE9C" stopOpacity="0" />
@@ -76,19 +80,18 @@ const Boost: FC = () => {
                 <div className="flex flex-wrap mt-12">
                     <div className="w-full md:w-1/2">
                         <h1 className="text-title-md">
-                            Boost your Business
+                            {t('business.section1.title')}
                         </h1>
-                        <p className="font-lato font-light tracking-widest text-white text-lg mt-3">
-                            AIhr Start-Up, Filiale, oder Restaurant soll mit einem sciheren
-                            Netz versorgt, und aus der Ferne wartbar sein?
-                        </p>
-                        <p className="font-lato font-light tracking-widest text-white text-lg mt-5">
-                            Dann entdecken Sie die innovative Air Zen Technologie für ein
-                            zuverlässiges, sicheres und einfaches Netz.
-                        </p>
+                        {
+                            t('business.section1.description').split('\n').map((item, index) =>
+                                <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>
+                                    {item}
+                                </p>
+                            )
+                        }
                         <div className="mt-12">
                             <p className="font-lato-light italic font-light text-lg text-white  ">
-                                In vertrauensvoller Kooperation mit:
+                                {t('business.section1.cooperation')}
                             </p>
                             <div className="flex justify-between items-center mt-12">
                                 {logos.map((item, index) => (

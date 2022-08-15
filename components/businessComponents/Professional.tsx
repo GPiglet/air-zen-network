@@ -1,8 +1,11 @@
 //modules
 import React, { FC } from "react";
+import { useTranslation } from "next-i18next";
 
 
 const Professional: FC = () => {
+    //translate
+    const { t } = useTranslation()
 
     const list = [
         {
@@ -108,9 +111,9 @@ const Professional: FC = () => {
             <div className="pt-[50%] md:pt-[0] md:mt-0 relative text-center text-white px-10">
                 <div className="w-full">
                     <h1 className="text-title-sm">
-                        Profesionelles Wlan
+                        {t('business.section2.title')}
                     </h1>
-                    <p className="font-lato-light font-light italic text-lg tracking-widest">für Teams, Büros und Kunden</p>
+                    <p className="font-lato-light font-light italic text-lg tracking-widest">{t('business.section2.subtitle')}</p>
                     <div className="md:flex justify-between text-lg text-left mt-10">
                         <div className="w-[160px]"></div>
                         {
@@ -125,9 +128,7 @@ const Professional: FC = () => {
                                 </div>
                             ))
                         }
-
                     </div>
-
                 </div>
             </div>
         </section>
