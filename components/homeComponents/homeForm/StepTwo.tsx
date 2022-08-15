@@ -18,7 +18,7 @@ const StepTwo: FC = () => {
         if (homeOption?.roomSize && homeOption.node) {
             setActive(true)
         }
-    }, [])
+    })
     const testValue = () => {
         const roomSize = Number(roomRef.current.value)
         const node = Number(nodeRef.current.value)
