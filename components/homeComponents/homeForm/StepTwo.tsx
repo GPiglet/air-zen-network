@@ -8,6 +8,8 @@ import Form from '../../common/form'
 const StepTwo: FC = () => {
     //translate
     const { t } = useTranslation()
+    //translate
+    const { t } = useTranslation()
 
     const [active, setActive] = useState(false)
     const { homeOption, changeHomeOption } = useContext(StoreContext)

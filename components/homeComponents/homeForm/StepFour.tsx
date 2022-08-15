@@ -7,7 +7,7 @@ import { StoreContext } from '../../../contexts/Store'
 
 const StepFour: FC = () => {
     const { homeOption } = useContext(StoreContext)
-    const { t } = useTranslation()
+    const { t } = useTranslation()    const { t } = useTranslation()
 
 
     return (

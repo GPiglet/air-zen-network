@@ -9,6 +9,9 @@ const StepFive: FC = () => {
     //translate
     const { t } = useTranslation()
 
+    //translate
+    const { t } = useTranslation()
+
     const { homeOption, changeHomeOption } = useContext(StoreContext)
     const [active, setActive] = useState(false)
     const mailRef = useRef<any>();

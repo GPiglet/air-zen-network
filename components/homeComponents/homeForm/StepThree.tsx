@@ -8,6 +8,8 @@ import { StoreContext } from '../../../contexts/Store'
 const StepThree: FC = () => {
     //translate
     const { t } = useTranslation()
+    //translate
+    const { t } = useTranslation()
 
     const [active, setActive] = useState(false)
     const monthRef = useRef<any>();

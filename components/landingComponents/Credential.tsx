@@ -5,8 +5,13 @@ import gsap from "gsap";
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 
 const Credential: FC = () => {
+    //translate
+    const { t } = useTranslation()
+
+
     //translate
     const { t } = useTranslation()
 

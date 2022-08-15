@@ -7,6 +7,8 @@ import Form from '../../common/form'
 const StepSix: FC = () => {
     //translate
     const { t } = useTranslation()
+    //translate
+    const { t } = useTranslation()
 
     return (
         <FadeIn delay={0} transitionDuration={1000} className='leading-8'>
