@@ -13,7 +13,6 @@ import CertainlySafe from '../../components/businessComponents/CertainlySafe'
 import Solution360 from '../../components/businessComponents/Solution360'
 import BusinessNode from '../../components/businessComponents/BusinessNode'
 import WhitePaper from '../../components/businessComponents/WhitePaper'
-import Footer from '../../components/common/footer'
 
 
 
@@ -44,7 +43,7 @@ const Business: NextPage = () => {
 	]
 
 	return (
-		<div className='back-left-top-gradient-secondary overflow-x-clip'>
+		<div className='back-left-top-gradient-secondary overflow-x-hidden'>
 			<Mainlayout navItems={navItems}>
 				<Boost />
 				<Professional  />

@@ -40,7 +40,7 @@ const Industrial: NextPage = () => {
 	]
 
 	return (
-		<div className='back-left-top-gradient-primary overflow-x-clip'>
+		<div className='back-left-top-gradient-secondary overflow-hidden'>
 			<Mainlayout navItems={navItems} >
 				<KeepEverything />
 				<IdeaSeries />

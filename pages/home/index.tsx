@@ -1,6 +1,9 @@
 //modules
 import React from 'react'
 import type { NextPage } from 'next'
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { GetStaticProps } from 'next'
+
 
 
 //custom Components
@@ -10,6 +13,7 @@ import SafeHome from '../../components/homeComponents/SafeHome'
 import Reliable from '../../components/homeComponents/Reliable'
 import Easy from '../../components/homeComponents/Easy'
 import OurNode from '../../components/homeComponents/OurNode'
+
 
 
 
@@ -53,3 +57,11 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+export const getStaticProps: GetStaticProps  = async ({locale}) => {
+	return {
+		props: {
+		  ...(await serverSideTranslations(locale as string, ["common"])),
+		},
+	  };
+  }
