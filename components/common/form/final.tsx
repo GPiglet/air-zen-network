@@ -26,7 +26,7 @@ const Final: FC<FinalProps> = ({ app }) => {
                         app ? (
                             <>
                                 <p>Wir melden uns bei Dir, <br />sobald deine Nodes versandt wurden.<br /><br />Das Setup erfolgt automatisch <br />über unsere App.</p>
-                                <div className='pt-[150px]'>
+                                <div className='pt-[150px] pb-[100px]'>
                                     <button className='py-[12px] rounded-lg cursor-pointer mt-5 px-[70px] bg-primary text-white relative z-10'>
                                         App herunterladen
                                     </button>

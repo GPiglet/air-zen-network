@@ -1,5 +1,5 @@
 //import modules
-import React, {FC, ReactNode} from 'react';
+import React, { FC, ReactNode } from 'react';
 
 //import components
 import Navbar from '../../components/common/navbar'
@@ -11,16 +11,16 @@ type MainlayoutProps = {
     navItems: Array<any>
 };
 
-const Mainlayout: FC<MainlayoutProps> = ({children,  navItems }) => {
+const Mainlayout: FC<MainlayoutProps> = ({ children, navItems }) => {
 
     return (
-        <>
-            <Navbar navItems={navItems}/>
+        <div>
+            <Navbar navItems={navItems} />
             {/* <Sticky /> */}
             {children}
-				<Footer />
+            <Footer />
 
-        </>
+        </div>
     );
 };
 

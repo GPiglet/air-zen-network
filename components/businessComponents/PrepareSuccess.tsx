@@ -1,8 +1,11 @@
 //modules
 import React, { FC } from "react"
+import { useTranslation } from "next-i18next";
 
 
 const PrepareSuccess: FC = () => {
+    //translate
+    const { t } = useTranslation()
 
     return (
         <section className="container mx-auto pb-16 relative  py-[150px]">
@@ -61,28 +64,28 @@ const PrepareSuccess: FC = () => {
             </svg>
 
             <svg className="hidden md:block absolute right-0 w-[60%] bottom-[-37%] right-[-17%] 2xl:w-[900px] " viewBox="0 0 394 397" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g opacity="0.8">
-<ellipse opacity="0.7" cx="197.123" cy="198.596" rx="176.638" ry="177.817" transform="rotate(-180 197.123 198.596)" fill="url(#paint0_radial_1376_5831)"/>
-<path opacity="0.6" d="M43.4369 198.595C43.4369 113.704 112.244 44.8866 197.121 44.8866C281.998 44.8866 350.805 113.704 350.805 198.595C350.805 283.485 281.998 352.303 197.121 352.303C112.244 352.303 43.4369 283.485 43.4369 198.595Z" stroke="url(#paint1_radial_1376_5831)"/>
-<ellipse opacity="0.7" rx="144.937" ry="144.456" transform="matrix(0.497508 0.867459 -0.86458 0.502496 196.999 198.684)" fill="url(#paint2_radial_1376_5831)"/>
-</g>
-<image href="/images/model.png" x="26.5%" y="20%" className="w-[46%]" />
+                <g opacity="0.8">
+                    <ellipse opacity="0.7" cx="197.123" cy="198.596" rx="176.638" ry="177.817" transform="rotate(-180 197.123 198.596)" fill="url(#paint0_radial_1376_5831)" />
+                    <path opacity="0.6" d="M43.4369 198.595C43.4369 113.704 112.244 44.8866 197.121 44.8866C281.998 44.8866 350.805 113.704 350.805 198.595C350.805 283.485 281.998 352.303 197.121 352.303C112.244 352.303 43.4369 283.485 43.4369 198.595Z" stroke="url(#paint1_radial_1376_5831)" />
+                    <ellipse opacity="0.7" rx="144.937" ry="144.456" transform="matrix(0.497508 0.867459 -0.86458 0.502496 196.999 198.684)" fill="url(#paint2_radial_1376_5831)" />
+                </g>
+                <image href="/images/model.png" x="26.5%" y="20%" className="w-[46%]" />
 
-<defs>
-<radialGradient id="paint0_radial_1376_5831" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(172.283 104.131) rotate(68.5505) scale(366.053 364.278)">
-<stop stopColor="#7BB690"/>
-<stop offset="1" stopColor="#7BB690" stopOpacity="0"/>
-</radialGradient>
-<radialGradient id="paint1_radial_1376_5831" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(68.721 252.346) rotate(-36.3438) scale(305.56 306.246)">
-<stop stopColor="#7BB690"/>
-<stop offset="1" stopColor="#7BB690" stopOpacity="0"/>
-</radialGradient>
-<radialGradient id="paint2_radial_1376_5831" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(124.555 67.7136) rotate(68.3552) scale(297.776 298.499)">
-<stop stopColor="#7BB690"/>
-<stop offset="1" stopColor="#7BB690" stopOpacity="0"/>
-</radialGradient>
-</defs>
-</svg>
+                <defs>
+                    <radialGradient id="paint0_radial_1376_5831" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(172.283 104.131) rotate(68.5505) scale(366.053 364.278)">
+                        <stop stopColor="#7BB690" />
+                        <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
+                    </radialGradient>
+                    <radialGradient id="paint1_radial_1376_5831" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(68.721 252.346) rotate(-36.3438) scale(305.56 306.246)">
+                        <stop stopColor="#7BB690" />
+                        <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
+                    </radialGradient>
+                    <radialGradient id="paint2_radial_1376_5831" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(124.555 67.7136) rotate(68.3552) scale(297.776 298.499)">
+                        <stop stopColor="#7BB690" />
+                        <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
+                    </radialGradient>
+                </defs>
+            </svg>
 
 
 
@@ -90,12 +93,14 @@ const PrepareSuccess: FC = () => {
                 <div className="flex flex-wrap mt-[400px] md:mt-12">
                     <div className="w-full md:w-2/5 m-auto">
                         <div className="relative">
-                            <p className="font-lato-light italic font-light text-[22px] text-white">Einfach</p>
-                            <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">Auf Erfolg eingerichtet!</h1>
-                            <p className="font-lato font-light tracking-widest text-white text-lg mt-3">Gerade Hotels, Einzelhandel, Versicherungen oder Banken mit vielen Standorten erleichtert ein smartes Standort- und Nutzermanagement inklusive Direktsupport vom Hersteller das Leben.
-                            </p>
-                            <p className="font-lato font-light tracking-widest text-white text-lg mt-3">Über unsere App können Sie ihr Netzwerk dynamisch erweitern oder updaten und einzelne Nutzer sicher einladen oder sperren. </p>
-                            <p className="font-lato font-light tracking-widest text-white text-lg mt-3">Auch Ihr Team kann über ein Self-Service-Portal selbst zu- und eingreifen. Darüber hinaus können Sie sogar eigene Sicherheits-Standards definieren: bestes Feng Shui für Ihre Mitarbeiter und Ihr Wlan. </p>
+                            <p className="font-lato-light italic font-light text-[22px] text-white">{t('business.section4.tip')}</p>
+                            <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('business.section4.title')}</h1>
+                            {
+                                t('business.section4.description').split('\n').map((item, index) =>
+                                    <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}
+                                    </p>
+                                )
+                            }
                         </div>
                     </div>
                 </div>

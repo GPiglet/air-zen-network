@@ -1,11 +1,14 @@
 import React, { FC, useEffect } from 'react'
 import Flickity from "react-flickity-component"
 import "flickity/dist/flickity.css"
+import { useTranslation } from 'next-i18next'
 
 
 
 
 const Solution360: FC = () => {
+    //translate
+    const { t } = useTranslation()
 
     let flkty: any = undefined
 
@@ -32,7 +35,7 @@ const Solution360: FC = () => {
 
     const sliderList = [
         {
-            hintList : [
+            hintList: [
                 {
                     title: 'Sicheres Wlan für Kinder',
                     description: 'inclusive Internet-Filter und Pause Knopf'
@@ -48,7 +51,7 @@ const Solution360: FC = () => {
             ]
         },
         {
-            hintList : [
+            hintList: [
                 {
                     title: 'Sicheres Wlan für Kinder',
                     description: 'inclusive Internet-Filter und Pause Knopf'
@@ -64,7 +67,7 @@ const Solution360: FC = () => {
             ]
         },
         {
-            hintList : [
+            hintList: [
                 {
                     title: 'Sicheres Wlan für Kinder',
                     description: 'inclusive Internet-Filter und Pause Knopf'
@@ -79,7 +82,7 @@ const Solution360: FC = () => {
                 },
             ]
         },
-        
+
     ]
 
 
@@ -117,7 +120,7 @@ const Solution360: FC = () => {
             <div className='relative z-50'>
 
                 <div className="text-center pt-[100px] md:pt-[18%]">
-                    <h1 className="text-title-sm">360° Lösung für Unternehmen </h1>
+                    <h1 className="text-title-sm">{t('businees.section6.title')} </h1>
                 </div>
                 <div className='relative flex'>
                     <picture>
@@ -138,8 +141,8 @@ const Solution360: FC = () => {
                                     <div key={ind} className='mr-10 w-[80%] md:w-full'>
                                         {item.hintList.map((hint, index) => (
                                             <div className="text-white tracking-[0.08em] mb-12" key={index}>
-                                            <p className="font-lato text-lg font-medium">{hint.title} </p>
-                                            <p className="font-lato-light text-lg font-light italic">{hint.description}</p>
+                                                <p className="font-lato text-lg font-medium">{hint.title} </p>
+                                                <p className="font-lato-light text-lg font-light italic">{hint.description}</p>
                                             </div>
                                         ))}
                                     </div>

@@ -1,6 +1,9 @@
 //modules
 import React from 'react'
 import type { NextPage } from 'next'
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { GetStaticProps } from 'next'
+
 
 
 //custom Components
@@ -19,7 +22,7 @@ import WhitePaper from '../../components/businessComponents/WhitePaper'
 
 const Business: NextPage = () => {
 
-	const navItems:Array<any> = [
+	const navItems: Array<any> = [
 		{
 			id: 1,
 			title: 'Lösungen',
@@ -43,10 +46,10 @@ const Business: NextPage = () => {
 	]
 
 	return (
-		<div className='back-left-top-gradient-secondary overflow-x-hidden'>
-			<Mainlayout navItems={navItems}>
+		<div className='back-left-top-gradient-secondary overflow-x-hidden' id='business_page'>
+			<Mainlayout navItems={navItems} >
 				<Boost />
-				<Professional  />
+				<Professional />
 				<NewWork />
 				<PrepareSuccess />
 				<CertainlySafe />
@@ -59,3 +62,11 @@ const Business: NextPage = () => {
 }
 
 export default Business
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+	return {
+		props: {
+			...(await serverSideTranslations(locale as string, ["common"])),
+		},
+	};
+}

@@ -1,11 +1,14 @@
-import React, { FC, useContext} from 'react'
+import React, { FC, useContext } from 'react'
+import { useTranslation } from 'next-i18next'
 
 import Form from '../../common/form'
 import { StoreContext } from '../../../contexts/Store'
 
 const StepSeven: FC = () => {
+    //translate
+    const { t } = useTranslation()
 
-    const {homeOption, changeStep, changeHomeOption} = useContext(StoreContext)
+    const { homeOption, changeStep, changeHomeOption } = useContext(StoreContext)
     let step = useContext(StoreContext).step
 
     const payMethod = (method: string) => {
@@ -19,9 +22,9 @@ const StepSeven: FC = () => {
     return (
         <div className='leading-8'>
             <Form
-                buttonType='border border-primary px-[70px] bg-primary text-white'
+                buttonType='px-[70px] bg-primary-button text-white'
                 buttonActive={true}
-                breadcrumb='Zahlungsoptionen'
+                breadcrumb={t('home.form.step7.breadcrumb')}
                 width='sm:w-[80%]'
             >
                 <p className='text-gray-500'>Wir berechnen dir eine <strong>einmalige Zahlung</strong> von <strong>100€</strong> für <strong>{homeOption?.node}</strong> Nodes. Außerdem werden wir monatlich über <strong>{homeOption?.contractTerm} Monate {homeOption?.monthPay}€</strong>   abbuchen.</p>
@@ -32,13 +35,13 @@ const StepSeven: FC = () => {
                         Bank Transfer
                     </button>
                     <button className='w-full py-[12px] rounded-lg cursor-pointer mt-5 px-[70px] bg-primary' onClick={() => payMethod('creditcard')}>
-                    Kreditkarte
+                        Kreditkarte
                     </button>
                     <button className='w-full py-[12px] rounded-lg cursor-pointer mt-5 px-[70px] bg-primary' onClick={() => payMethod('sepa')}>
-                    SEPA-Lastschrift
+                        SEPA-Lastschrift
                     </button>
                     <button className='w-full py-[12px] rounded-lg cursor-pointer mt-5 px-[70px] bg-primary' onClick={() => payMethod('ideal')}>
-                    Ideal
+                        Ideal
                     </button>
                 </div>
             </Form>

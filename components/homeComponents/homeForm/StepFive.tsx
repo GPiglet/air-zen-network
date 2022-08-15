@@ -1,9 +1,13 @@
 import React, { FC, useContext, useRef, useState } from 'react'
+import { useTranslation } from 'next-i18next'
 
 import Form from '../../common/form'
 import { StoreContext } from '../../../contexts/Store'
 
 const StepFive: FC = () => {
+    //translate
+    const { t } = useTranslation()
+
     const { homeOption, changeHomeOption } = useContext(StoreContext)
     const [active, setActive] = useState(false)
     const mailRef = useRef<any>();
@@ -23,15 +27,15 @@ const StepFive: FC = () => {
         const federalState = federalRef.current.value
         const houseNo = houseNoRef.current.value
         const postCode = postCodeRef.current.value
-        if(mailRef.current.value 
-            && firstName 
+        if (mailRef.current.value
+            && firstName
             && surName
             && street
             && placeName
             && federalState
             && houseNo
             && postCode
-        ){
+        ) {
             setActive(true)
             const homeOption = {
                 firstName,
@@ -43,27 +47,23 @@ const StepFive: FC = () => {
                 postCode
             }
             changeHomeOption?.(homeOption)
-        }else {
+        } else {
             setActive(false)
         }
     }
 
-
-
-
-
     return (
         <div className='leading-8'>
             <Form
-                buttonType='border border-primary px-[70px] bg-primary text-white'
+                buttonType='px-[70px] bg-primary-button text-white'
                 buttonActive={active}
-                breadcrumb='Vertragsdetails'
-                buttonString='Vertragsübersicht'
+                breadcrumb={t('home.form.step5.breadcrumb')}
+                buttonString={t('home.form.step5.button')}
                 bgImg='/images/model.png'
                 bgClassName='bottom-[-40px] w-[40%] right-[-5px]'
                 width='sm:w-[80%]'
             >
-                <p className='text-gray-500'>Wir benötigen Ihre Adressdaten:</p>
+                <p className='text-gray-500'>{t('home.form.step5.info')}</p>
                 <p className='text-gray-400 pl-3'>Mail</p>
                 <input placeholder='Mail' type='email' required className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={mailRef} onChange={() => testValue()} defaultValue={homeOption?.mail} />
                 <input placeholder='Vorname' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={firstNameRef} onChange={() => testValue()} defaultValue={homeOption?.firstName} />
@@ -83,7 +83,13 @@ const StepFive: FC = () => {
                             </linearGradient>
                         </defs>
                     </svg>
-                    <p>Wünschen Sie <br />Expressversand?</p>
+                    <div>
+                        {
+                            t('home.form.step5.confirm').split('\n').map((item, index) =>
+                                <p key={index}>{item}</p>
+                            )
+                        }
+                    </div>
                 </div>
             </Form>
         </div>

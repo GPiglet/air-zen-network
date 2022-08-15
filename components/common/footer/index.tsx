@@ -6,18 +6,10 @@ const Footer: FC = () => {
 
     const inprint = [
         {
-            title: 'AirZen AG',
-            description: `Matthofstrand 6 6006 Luzern, Schweiz. \n UID CHE-309.160.930`,
-            subdes: 'Vertreten durch Steffen Siewert'
-        },
-        {
-            title: 'Produktion',
-            description: 'Airfy Factory Switzerland AG Matthofstrand 6 6006 Luzern, Schweiz. \n UID: CHE-361.577.135'
-        },
-        {
-            title: 'Niederlassung Deutschland',
-            description: 'Airfy Services Germany GmbH Schönhauser Allee 163 10435 Berlin, Germany Amtsgericht: Charlottenburg (Berlin) HRB 217300 B'
-        },
+            title: 'AirZen Networks Lda.',
+            description: `Avenida Arriaga, nº30, 1ºA \n 9000-064 Funchal, Portugal`,
+            subdes: 'VAT: PT516672169'
+        }
     ]
 
     const readmore = [
