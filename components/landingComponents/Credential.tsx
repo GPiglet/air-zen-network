@@ -18,15 +18,9 @@ const Credential: FC = () => {
     const carouselList = t('landing.section4.swiper', { returnObjects: true })
 
     const imageList = [
-        {
-            image: '/images/volskbank.png'
-        },
-        {
-            image: '/images/districtbank.png'
-        },
-        {
-            image: '/images/districtbank.png'
-        },
+        '/images/volskbank.png',
+        '/images/districtbank.png',
+        '/images/districtbank.png'
     ]
 
     //Flickity
@@ -59,7 +53,7 @@ const Credential: FC = () => {
     }
 
     return (
-        <section id='credentials' className='md:fixed md:hidden flex items-center'>
+        <section id='credentials' className='flex items-center'>
             <div className='w-full'>
                 <div className=' py-10 flex justify-center'>
                     <h1 className="text-title-sm">{t('landing.section4.title')}</h1>
@@ -75,8 +69,8 @@ const Credential: FC = () => {
 
                             <div className={`mr-10 w-[60%] md:w-[35%] credential-detail`} onClick={() => clickCell(index)} key={index}>
                                 <picture>
-                                    <source srcSet={imageList[index].image} type="image/webp" />
-                                    <img src={imageList[index].image} alt="" />
+                                    <source srcSet={imageList[index]} type="image/webp" />
+                                    <img src={imageList[index]} alt="" />
                                 </picture>
                                 <div className='md:flex md:p-7'>
                                     <div className='w-full md:w-1/2 px-2'>

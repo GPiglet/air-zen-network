@@ -44,7 +44,7 @@ const UniqueSkill: FC = () => {
 
     const onResize = () => {
         const windowWidth = window.innerWidth;
-        if (windowWidth > 920) enableAnim(true);
+        if (windowWidth > 920) enableAnim(false);
         else enableAnim(false);
     }
 
@@ -156,7 +156,7 @@ const UniqueSkill: FC = () => {
 
     return (
         <>
-            <div id='solutions' ref={containerRef} className='z-10 md:container mx-auto relative md:fixed md:left-[50%] md:translate-x-[-50%] md:flex justify-center items-center pb-[200px]'>
+            <div id='solutions' ref={containerRef} className='z-10 md:container mx-auto relative md:flex justify-center items-center pb-[200px]'>
                 <div className='mt-[200px] md:mt-[120px]'>
                     <div className=" text-center  text-white">
                         <h1 ref={el => animSideUp.current.push(el)} className="text-title-sm">{t('landing.section2.title')}</h1>
@@ -198,7 +198,7 @@ const UniqueSkill: FC = () => {
 
                 </div>
             </div>
-            <div ref={el => animGradient.current.push(el)} className='z-0 hidden md:block fixed top-0 left-0 w-[100vw] h-[100vh]'></div>
+            {/* <div ref={el => animGradient.current.push(el)} className='z-0 hidden md:block fixed top-0 left-0 w-[100vw] h-[100vh]'></div>
             <div ref={el => animGradient.current.push(el)} className='z-0 hidden md:block fixed top-0 left-0 w-[100vw] h-[100vh]'></div>
             <svg ref={el => { circleRef.current = el; animFadeIn.current.push(el) }} className='z-0 hidden md:block fixed top-1/2 left-1/2 center-transform w-full' viewBox="-200 -200 1300 1300" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle opacity="0.5" cx="449" cy="449" r="448.5" transform="rotate(-180 449 449)" stroke="url(#paint0_linear_1362_4341)" />
@@ -208,8 +208,8 @@ const UniqueSkill: FC = () => {
                         <stop offset="1" stopColor="white" stopOpacity="0" />
                     </linearGradient>
                 </defs>
-            </svg>
-            <div ref={scrollRef} className='hidden md:block'></div>
+            </svg> */}
+            {/* <div ref={scrollRef} className='hidden md:block'></div> */}
         </>
     )
 
