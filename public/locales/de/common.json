@@ -20,21 +20,21 @@
                 },
                {
                     "title": "Business",
-                    "subtitle": "For a connected company.",
+                    "subtitle": "Für ein vernetztes Unternehmen.",
                     "description" : "Störungsfreies und selbstoptimierendes Netz. Zuhause wie beim Profi.",
-                    "list": "Highly stable connection \n No experience required \n Automatic updates \n Video support"
+                   "list": "Hochstabile Verbindung \n Keine Erfahrung nötig \n Automatische Updates \n Videosupport"
                 },
                 {
                     "title": "Education",
-                    "subtitle": "For a digital future.",
+                    "subtitle": "Für eine digitale Zukunft.",
                     "description" : "Störungsfreies und selbstoptimierendes Netz. Zuhause wie beim Profi.",
-                    "list": "Highly stable connection \n No experience required \n Automatic updates \n Video support"
+                   "list": "Hochstabile Verbindung \n Keine Erfahrung nötig \n Automatische Updates \n Videosupport"
                 },
                {
-                    "title": "Industrial",
-                    "subtitle": "For digital progress.",
+                    "title": "Industril",
+                    "subtitle": "Für den digitalen Fortschritt.",
                     "description" : "Störungsfreies und selbstoptimierendes Netz. Zuhause wie beim Profi.",
-                    "list": "Highly stable connection \n No experience required \n Automatic updates \n Video support"
+                   "list": "Hochstabile Verbindung \n Keine Erfahrung nötig \n Automatische Updates \n Videosupport"
                 }
             ],
             "solution": "Unsere Lösung"
@@ -43,6 +43,14 @@
             "_comment": "Abschnitt 'Über uns' der Seite.",
             "title": "Über Uns",
             "swiper": [
+                {
+                    "title": "Aus Europa. Für Europa.",
+                    "content": "AirZen stellt modernste Netzwerk Technologie in der Schweiz & Europa her. Sicheres WLAN – entwickelt für individuelle Anforderungen und mit hoher Anwenderfreundlichkeit. Der eigenen Herkunft verpflichtet, hilft AirZen allen Kunden dabei mit aktuellen Datenschutz- und Security-Richtlinien Schritt zu halten."
+                },
+                {
+                    "title": "Aus Europa. Für Europa.",
+                    "content": "AirZen stellt modernste Netzwerk Technologie in der Schweiz & Europa her. Sicheres WLAN – entwickelt für individuelle Anforderungen und mit hoher Anwenderfreundlichkeit. Der eigenen Herkunft verpflichtet, hilft AirZen allen Kunden dabei mit aktuellen Datenschutz- und Security-Richtlinien Schritt zu halten."
+                },
                 {
                     "title": "Aus Europa. Für Europa.",
                     "content": "AirZen stellt modernste Netzwerk Technologie in der Schweiz & Europa her. Sicheres WLAN – entwickelt für individuelle Anforderungen und mit hoher Anwenderfreundlichkeit. Der eigenen Herkunft verpflichtet, hilft AirZen allen Kunden dabei mit aktuellen Datenschutz- und Security-Richtlinien Schritt zu halten."
@@ -65,6 +73,14 @@
             "swiper": [
                 {
                     "title" : "Volksbank Köln/Bonn",
+                    "list": "WiFi für 30 Standorte \n 150 WLAN Router \n 700 Mitarbeiter \n Kunden-WLAN \n Managed Service"
+                },
+                {
+                    "title" : "Kreissparkasse Tuttlingen",
+                    "list": "WiFi für 30 Standorte \n 150 WLAN Router \n 700 Mitarbeiter \n Kunden-WLAN \n Managed Service"
+                },
+                {
+                    "title" : "IHK Schwarzwald-Baar-Heuberg",
                     "list": "WiFi für 30 Standorte \n 150 WLAN Router \n 700 Mitarbeiter \n Kunden-WLAN \n Managed Service"
                 },
                 {
@@ -110,6 +126,11 @@
             "tip": "Einfach",
             "title": "entspannter geht nicht!",
             "description": "Kühlschrank, Toaster und Playstation: Air Zen ist hochkompatibel. Updaten Sie ihr Heim-Netz mit minutenschneller Einrichtung. Alles was Sie dazu brauchen ist eine Internetverbindung. \n Und das Entspannteste daran: Es richtet sich fast wie von selbst ein, dank unserer Mesh Technologie. So reibungslos wie die Installation läuft dann auch die eigenständige Wartung und Verwaltung ab.",
+            "list": [
+                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
+                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
+                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
+            ],
             "list": [
                 "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
                 "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
@@ -202,6 +223,20 @@
                     "title": "Kunden & Gäste WLAN",
                     "items": "Marketing im Gäste WLAN per App konfigurierbar \n kontinuierlich Rechtssicher und DSGVO-Konform \n Individalisierbar nach Branche (Premium-WLAN, Gäste-WLAN uvm.)"
                 }
+            ],
+            "list": [
+                {
+                    "title": "Office & Teams",
+                    "items": "Zerotrust: individuelle Kennwörter \n Self-Service Portal für Mitarbeiter \n Managed Service & Live- Support per App, optional auch für Mitarbeiter"
+                },
+                {
+                    "title": "Homeoffice",
+                    "items": "Security im Home-Office: Seperate Business und Privat-Netze \n Plug & Play, keine  IT-Erfahrung nötig \n  Router-Set mit Mesh-Technologie"
+                },
+                {
+                    "title": "Kunden & Gäste WLAN",
+                    "items": "Marketing im Gäste WLAN per App konfigurierbar \n kontinuierlich Rechtssicher und DSGVO-Konform \n Individalisierbar nach Branche (Premium-WLAN, Gäste-WLAN uvm.)"
+                }
             ]
         },
         "section3": {
@@ -209,6 +244,11 @@
             "tip": "Zuverlässig",
             "title": "New Work, leicht gemacht!",
             "description": "Nach dem Update ist vor dem Update. Gerade bei Home Office Lösungen ist ihr Netzwerk vielen Potentiellen Angriffen ausgesetzt. \n Um diesen Bedrohungen immer einen Schritt voraus zu sein, ist unsere Platform an ein Lizensmodell gekoppelt. Das schließt zahlreiche Sicherheitsfeatures ein, von denen Sie kaum etwas bemerken werden:",
+            "list": [
+                "Zero Trust Konzept \n Je Mitarbeiter ein Kennwort",
+                "Live Protection \n c",
+                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
+            ],
             "list": [
                 "Zero Trust Konzept \n Je Mitarbeiter ein Kennwort",
                 "Live Protection \n c",
@@ -230,11 +270,33 @@
                 "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
                 "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
                 "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
+            ],
+            "list": [
+                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
+                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
+                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
             ]
         },
         "section6": {
             "_comment": "Abschnitt '360°' der Seite",
             "title": "360° Lösung für Unternehmen",
+            "swiper": [
+                [
+                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
+                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
+                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
+                ],
+                [
+                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
+                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
+                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
+                ],
+                [
+                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
+                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
+                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
+                ]
+            ],
             "swiper": [
                 [
                     "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
@@ -307,6 +369,11 @@
             "tip": "Zuverlässig",
             "title": "Klassenzimmer digital!",
             "description": "AirZen hat die Komplettlösung für komplexe Anforderungen von Schulen jeder Art und Größe – und ist dabei kinderleicht zu bedienen. \n Neben lückenloser WLAN-Abdeckung sorgt AirZen auch für eine zuverlässige Netzstabilität, auch wenn viele Geräte online sind. Administratoren können unkompliziert Zugänge ermöglichen und mobil verwalten - ganz einfach vom Handy aus. \n Dazu braucht es keine ITSchulung, denn die Bedienung funktioniert ganz intuitiv über die App. Mit AirZen sorgen Sie für ein erst- klassiges Netz in ihrer Schule.",
+            "list": [
+                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
+                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
+                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
+            ],
             "list": [
                 "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
                 "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
