@@ -1,12 +1,12 @@
 import React, { FC } from 'react'
-import { Translation, useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-i18next'
 
 const WhitePaper: FC = () => {
     //translate
     const { t } = useTranslation()
     const paperList = t('business.section8.paperList', { returnObjects: true })
     const graphList = [
-        <svg className='absolute hidden md:block top-[-115px] left-[-10px]' viewBox="0 0 370 374" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg key={0} className='absolute hidden md:block top-[-115px] left-[-10px]' viewBox="0 0 370 374" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.5" d="M242.536 297.537C304.666 265.209 329.292 189.536 297.542 128.516C265.791 67.4964 189.687 44.237 127.557 76.5649C65.4282 108.893 40.8014 184.566 72.552 245.586C104.303 306.605 180.407 329.865 242.536 297.537Z" fill="url(#paint0_radial_0_1)" />
             <path opacity="0.5" d="M104.743 18.7347C196.029 -24.8162 305.993 15.2224 350.346 108.189C394.698 201.155 356.63 311.817 265.343 355.367C174.057 398.918 64.0927 358.88 19.7404 265.914C-24.6119 172.947 13.4563 62.2856 104.743 18.7347Z" stroke="url(#paint1_linear_0_1)" />
             <defs>
@@ -20,7 +20,7 @@ const WhitePaper: FC = () => {
                 </linearGradient>
             </defs>
         </svg>,
-        <svg className='absolute hidden md:block top-[-115px] left-[-10px] w-[90%]' viewBox="0 0 344 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg key={1} className='absolute hidden md:block top-[-115px] left-[-10px] w-[90%]' viewBox="0 0 344 340" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.5" d="M237.143 14.0528C149.421 -22.3392 49.3341 18.0017 13.592 104.157C-22.1502 190.312 19.9875 289.656 107.709 326.048C195.431 362.44 295.518 322.099 331.26 235.944C367.002 149.789 324.864 50.4448 237.143 14.0528Z" fill="url(#paint0_radial_0_1)" />
             <path opacity="0.5" d="M258.572 47.7252C324.912 94.4467 340.138 187.09 292.554 254.654C244.97 322.218 152.613 339.093 86.2735 292.371C19.9336 245.65 4.70737 153.007 52.2912 85.4427C99.8749 17.8785 192.232 1.00365 258.572 47.7252Z" stroke="url(#paint1_linear_0_1)" />
             <defs>
@@ -34,7 +34,7 @@ const WhitePaper: FC = () => {
                 </linearGradient>
             </defs>
         </svg>,
-        <svg className='absolute hidden md:block top-[-115px] left-[-10px]' viewBox="0 0 337 342" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg key={2} className='absolute hidden md:block top-[-115px] left-[-10px]' viewBox="0 0 337 342" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.5" d="M293.014 111.606C259.59 41.5448 176.712 11.3612 107.902 44.1891C39.0913 77.017 10.4058 160.425 43.8306 230.487C77.2554 300.548 160.133 330.731 228.943 297.904C297.754 265.076 326.439 181.667 293.014 111.606Z" fill="url(#paint0_radial_0_1)" />
             <path opacity="0.5" d="M186.348 340.22C94.5974 349.942 12.1793 282.091 2.27864 188.651C-7.62203 95.2101 58.7471 11.5943 150.497 1.87274C242.248 -7.84884 324.666 60.0019 334.567 153.442C344.467 246.883 278.098 330.499 186.348 340.22Z" stroke="url(#paint1_linear_0_1)" />
             <defs>
