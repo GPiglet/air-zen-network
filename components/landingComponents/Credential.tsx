@@ -7,45 +7,25 @@ gsap.registerPlugin(ScrollTrigger);
 import { useTranslation } from 'next-i18next';
 
 const Credential: FC = () => {
+
+
     //translate
     const { t } = useTranslation()
 
 
     const refBackCircle = React.useRef<SVGSVGElement>(null);
 
-    const carouselList = [
+    const carouselList = t('landing.section4.swiper', { returnObjects: true })
+
+    const imageList = [
         {
-            title: 'Volksbank Köln/Bonn',
-            image: '/images/volskbank.png',
-            details: [
-                'WiFi für 30 Standorte',
-                '150 WLAN Router',
-                '700 Mitarbeiter',
-                'Kunden-WLAN',
-                'Managed Service'
-            ]
+            image: '/images/volskbank.png'
         },
         {
-            title: 'Kreissparkasse Tuttlingen',
-            image: '/images/districtbank.png',
-            details: [
-                'WiFi für 30 Standorte',
-                '150 WLAN Router',
-                '700 Mitarbeiter',
-                'Kunden-WLAN',
-                'Managed Service'
-            ]
+            image: '/images/districtbank.png'
         },
         {
-            title: 'IHK Schwarzwald- Baar-Heuberg',
-            image: '/images/districtbank.png',
-            details: [
-                'WiFi für 30 Standorte',
-                '150 WLAN Router',
-                '700 Mitarbeiter',
-                'Kunden-WLAN',
-                'Managed Service'
-            ]
+            image: '/images/districtbank.png'
         },
     ]
 
@@ -91,12 +71,12 @@ const Credential: FC = () => {
                 >
                     {/* <div className='hidden md:block w-[200px]'></div> */}
                     {
-                        carouselList.map((item, index) => (
+                        (carouselList as unknown as any[]).map((item, index) => (
 
                             <div className={`mr-10 w-[60%] md:w-[35%] credential-detail`} onClick={() => clickCell(index)} key={index}>
                                 <picture>
-                                    <source srcSet={item.image} type="image/webp" />
-                                    <img src={item.image} alt="" />
+                                    <source srcSet={imageList[index].image} type="image/webp" />
+                                    <img src={imageList[index].image} alt="" />
                                 </picture>
                                 <div className='md:flex md:p-7'>
                                     <div className='w-full md:w-1/2 px-2'>
@@ -104,7 +84,7 @@ const Credential: FC = () => {
                                     </div>
                                     <ul className='w-full   md:w-1/2 pl-2 px-2 text-white list-disc hidden'>
                                         {
-                                            item.details.map((detail, ind) => (
+                                            item.list.split('\n').map((detail: string, ind: number) => (
                                                 <li className='font-lato text-base font-light' key={ind}>{detail}</li>
                                             ))
                                         }

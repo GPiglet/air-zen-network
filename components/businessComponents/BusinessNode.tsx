@@ -13,7 +13,7 @@ const BusinessNode: FC = () => {
     const { t } = useTranslation()
 
     return (
-        <section className="pb-16 relative ">
+        <div className="pb-16 relative ">
             {/* mt-[600px] sm:mt-[100%] md:mt-[50%] */}
 
             <div className="relative px-10 md:px-0 container mx-auto ">
@@ -54,10 +54,10 @@ const BusinessNode: FC = () => {
                                 index % 2 === 0 ? (
                                     <p className="font-lato tracking-widest text-white text-lg mt-3 font-normal" key={index}>{item}</p>
                                 ) : (
-                                    <>
-                                        <p className="font-lato font-light tracking-widest text-white text-lg" key={index}>{item}
+                                    < div key={index}>
+                                        <p className="font-lato font-light tracking-widest text-white text-lg" >{item}
                                         </p><br />
-                                    </>
+                                    </div>
                                 )
                             )
                         }
@@ -65,7 +65,7 @@ const BusinessNode: FC = () => {
                 </div>
             </div>
             <BusinessForm />
-        </section>
+        </div>
 
     );
 };

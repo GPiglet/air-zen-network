@@ -10,6 +10,7 @@ const Reliable: FC = () => {
 
     //usetranslate
     const { t } = useTranslation()
+    const list = t('education.section2.list', { returnObjects: true })
 
 
     // const tl = gsap.timeline({
@@ -74,37 +75,20 @@ const Reliable: FC = () => {
                                 )
                             }
                             <div className="hidden md:block md:absolute  top-[62px] left-[110%] w-[80%]">
-                                <div className="flex mb-12">
-                                    <picture>
-                                        <source srcSet="/images/check-icon.svg" type="image/webp" />
-                                        <img src="/images/check-icon.svg" className="w-[28px] h-[22px] mr-[10px]" alt="" />
-                                    </picture>
-                                    <div className="text-white tracking-[0.08em] w-2/3">
-                                        <p className="font-lato text-lg font-medium">Sicheres Wlan für Kinder</p>
-                                        <p className="font-lato-light text-lg font-light italic">inclusive Internet-Filter und Pause Knopf</p>
-                                    </div>
-                                </div>
-                                <div className="flex mb-12">
-                                    <picture>
-                                        <source srcSet="/images/check-icon.svg" type="image/webp" />
-                                        <img src="/images/check-icon.svg" className="w-[28px] h-[22px] mr-[10px]" alt="" />
-                                    </picture>
-                                    <div className="text-white tracking-[0.08em] w-2/3">
-                                        <p className="font-lato text-lg font-medium">Sicheres Wlan für Kinder </p>
-                                        <p className="font-lato-light text-lg font-light italic">inclusive Internet-Filter und Pause Knopf</p>
-                                    </div>
-                                </div>
-                                <div className="flex mb-12">
-                                    <picture>
-                                        <source srcSet="/images/check-icon.svg" type="image/webp" />
-                                        <img src="/images/check-icon.svg" className="w-[28px] h-[22px] mr-[10px]" alt="" />
-                                    </picture>
-                                    <div className="text-white tracking-[0.08em] w-2/3">
-                                        <p className="font-lato text-lg font-medium">Sicheres Wlan für Kinder </p>
-                                        <p className="font-lato-light text-lg font-light italic">inclusive Internet-Filter und Pause Knopf</p>
-                                    </div>
-                                </div>
-
+                                {
+                                    (list as unknown as any[]).map((item, index) =>
+                                        <div className="flex mb-12" key={index}>
+                                            <picture>
+                                                <source srcSet="/images/check-icon.svg" type="image/webp" />
+                                                <img src="/images/check-icon.svg" className="w-[28px] h-[22px] mr-[10px]" alt="" />
+                                            </picture>
+                                            <div className="text-white tracking-[0.08em] w-2/3">
+                                                <p className="font-lato text-lg font-medium">{item.split('\n')[0]} </p>
+                                                <p className="font-lato-light text-lg font-light italic">{item.split('\n')[1]}</p>
+                                            </div>
+                                        </div>
+                                    )
+                                }
                             </div>
                         </div>
                     </div>

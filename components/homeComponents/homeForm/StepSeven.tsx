@@ -9,7 +9,8 @@ const StepSeven: FC = () => {
     const { t } = useTranslation()
 
     const { homeOption, changeStep, changeHomeOption } = useContext(StoreContext)
-    let step = useContext(StoreContext).step
+
+    const buttonList = t('home.form.step7.buttons', { returnObjects: true })
 
     const payMethod = (method: string) => {
         const homeOption = {
@@ -31,18 +32,13 @@ const StepSeven: FC = () => {
                 <p className='mt-10'>Wir garantieren Dir <br /> <strong>30 Tage Rückgaberecht.</strong></p>
                 <p className='text-gray-500 mt-5'>Bitte wähle deine Zahlungsmethode:</p>
                 <div className='mt-3 text-lg text-white'>
-                    <button className='w-full py-[12px] rounded-lg cursor-pointer px-[70px] bg-primary' onClick={() => payMethod('bank')}>
-                        Bank Transfer
-                    </button>
-                    <button className='w-full py-[12px] rounded-lg cursor-pointer mt-5 px-[70px] bg-primary' onClick={() => payMethod('creditcard')}>
-                        Kreditkarte
-                    </button>
-                    <button className='w-full py-[12px] rounded-lg cursor-pointer mt-5 px-[70px] bg-primary' onClick={() => payMethod('sepa')}>
-                        SEPA-Lastschrift
-                    </button>
-                    <button className='w-full py-[12px] rounded-lg cursor-pointer mt-5 px-[70px] bg-primary' onClick={() => payMethod('ideal')}>
-                        Ideal
-                    </button>
+                    {
+                        (buttonList as unknown as any[]).map((item, index) =>
+                            <button className='w-full py-[12px] rounded-md cursor-pointer px-[70px] bg-primary-button mb-5' onClick={() => payMethod(item)} key={index}>
+                                {item}
+                            </button>
+                        )
+                    }
                 </div>
             </Form>
         </div>

@@ -1,5 +1,6 @@
 import React, { FC, useRef, useState, useContext, useEffect } from 'react'
 import { useTranslation } from 'next-i18next'
+import FadeIn from 'react-fade-in/lib/FadeIn'
 
 import { StoreContext } from '../../../contexts/Store'
 import Form from '../../common/form'
@@ -35,7 +36,7 @@ const StepTwo: FC = () => {
     }
 
     return (
-        <div>
+        <FadeIn delay={0} transitionDuration={1000}>
             <Form
                 buttonType='px-[70px] bg-primary-button text-white'
                 buttonActive={active}
@@ -64,7 +65,7 @@ const StepTwo: FC = () => {
                     )
                 }
             </Form>
-        </div>
+        </FadeIn>
     )
 }
 

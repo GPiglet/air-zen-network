@@ -14,7 +14,7 @@ const Final: FC<FinalProps> = ({ app }) => {
     return (
         <div className='leading-10'>
             <Form
-                buttonType='border border-primary px-[70px] bg-primary text-white'
+                buttonType='border border-primary px-[70px] bg-primary-button text-white'
                 buttonActive={true}
                 bgImg='/images/phone-home.png'
                 bgClassName='bottom-[-40%] w-[60%] right-[-30px]'

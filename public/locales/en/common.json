@@ -46,6 +46,14 @@
                 {
                     "title": "From Europe. For Europe.",
                     "content": "AirZen manufactures the most modern network technology in Switzerland & Europe. Secure WLAN - developed for individual requirements and with a high level of user-friendliness. Committed to its origins, AirZen helps all customers to keep up with current data protection and security guidelines."
+                },
+                {
+                    "title": "From Europe. For Europe.",
+                    "content": "AirZen manufactures the most modern network technology in Switzerland & Europe. Secure WLAN - developed for individual requirements and with a high level of user-friendliness. Committed to its origins, AirZen helps all customers to keep up with current data protection and security guidelines."
+                },
+                {
+                    "title": "From Europe. For Europe.",
+                    "content": "AirZen manufactures the most modern network technology in Switzerland & Europe. Secure WLAN - developed for individual requirements and with a high level of user-friendliness. Committed to its origins, AirZen helps all customers to keep up with current data protection and security guidelines."
                 }
             ],
             "sparkle1": "This feature enables a special function: XYZ",
@@ -57,6 +65,14 @@
             "swiper": [
                 {
                     "title" : "Volksbank Köln/Bonn",
+                    "list": "WiFi for 30 locations \n 150 wireless routers \n 700 employees \n Customer WiFi \n managed services"
+                },
+                {
+                    "title" : "Kreissparkasse Tuttlingen",
+                    "list": "WiFi for 30 locations \n 150 wireless routers \n 700 employees \n Customer WiFi \n managed services"
+                },
+                {
+                    "title" : "IHK Schwarzwald-Baar-Heuberg",
                     "list": "WiFi for 30 locations \n 150 wireless routers \n 700 employees \n Customer WiFi \n managed services"
                 }
             ]
@@ -93,7 +109,12 @@
             "_comment": "'Easy' section of page",
             "tip": "Easy",
             "title": "couldn't be more relaxed!",
-            "description": "Fridge, toaster and Playstation: Air Zen is highly compatible. Update your home network with setup in minutes. All you need is an internet connection. \n And the most relaxing thing about it: It almost adjusts itself thanks to our mesh technology. The independent maintenance and administration then runs just as smoothly as the installation."
+            "description": "Fridge, toaster and Playstation: Air Zen is highly compatible. Update your home network with setup in minutes. All you need is an internet connection. \n And the most relaxing thing about it: It almost adjusts itself thanks to our mesh technology. The independent maintenance and administration then runs just as smoothly as the installation.",
+            "list": [
+                "Safe wifi for kids \n including internet filter and pause button",
+                "Safe wifi for kids \n including internet filter and pause button",
+                "Safe wifi for kids \n including internet filter and pause button"
+            ]
         },
         "section5" : {
             "_comment": "'Technology' section of page",
@@ -148,7 +169,12 @@
                 "description": "We charge you a one-time payment of 100€ for 4 nodes. In addition, we will debit 68€ per month over 24 months.",
                 "info": "We guarantee you \n 30 days right of return.",
                 "choose": "A payment method:",
-                "buttons": "Bank Transfer \n Credit Card \n SEPA Direct Debit \n Ideal"
+                "buttons": [
+                    "Bank Transfer",
+                    "Credit Card",
+                    "SEPA Direct Debit",
+                    "Ideal"
+                ]
             }
         }
     },
@@ -162,13 +188,32 @@
         "section2": {
             "_comment": "'Professional wifi' section of page",
             "title": "Professional wifi",
-            "subtitle": "for teams, offices and clients"
+            "subtitle": "for teams, offices and clients",
+            "list": [
+                {
+                    "title": "Office & Teams",
+                    "items": "Zerotrust: individual passwords \n self-service portal for employees \n managed service & live support via app, optionally also for employees"
+                },
+                {
+                    "title": "Homeoffice",
+                    "items": "Security in the home office: Separate business and private networks \n Plug & Play, no IT experience required \n Router set with mesh technology"
+                },
+                {
+                    "title": "Kunden & Gäste WLAN",
+                    "items": "Marketing in the guest WLAN can be configured via app \n continuously legally secure and GDPR-compliant \n can be customized according to industry (premium WLAN, guest WLAN and much more)"
+                }
+            ]
         },
         "section3": {
             "_comment": "'Reliable' section of page",
             "tip": "Reliable",
             "title": "New Work, leicht gemacht!",
-            "description": "Nach dem Update ist vor dem Update. Gerade bei Home Office Lösungen ist ihr Netzwerk vielen Potentiellen Angriffen ausgesetzt. \n Um diesen Bedrohungen immer einen Schritt voraus zu sein, ist unsere Platform an ein Lizensmodell gekoppelt. Das schließt zahlreiche Sicherheitsfeatures ein, von denen Sie kaum etwas bemerken werden:"
+            "description": "Nach dem Update ist vor dem Update. Gerade bei Home Office Lösungen ist ihr Netzwerk vielen Potentiellen Angriffen ausgesetzt. \n Um diesen Bedrohungen immer einen Schritt voraus zu sein, ist unsere Platform an ein Lizensmodell gekoppelt. Das schließt zahlreiche Sicherheitsfeatures ein, von denen Sie kaum etwas bemerken werden:",
+            "list": [
+                "Zero trust concept \n One password per employee",
+                "Live Protection \n c",
+                "Safe wifi for kids \n including internet filter and pause button"
+            ]
         },
         "section4": {
             "_comment": "'Easy' section of page",
@@ -180,17 +225,64 @@
             "_comment": "'Secure' section of page",
             "tip": "Secure",
             "title": "Certainly safe!",
-            "description": "Secure access to central company resources is essential to work in an open-plan office, co-working space or at home. we offer single passwords in the spirit of zero trust, automatic rights restrictions for new currencies, while still allowing you full connectivity for all your digital adventures. \n So you and your team can work on your company's security policies from anywhere, even from the sofa."
+            "description": "Secure access to central company resources is essential to work in an open-plan office, co-working space or at home. we offer single passwords in the spirit of zero trust, automatic rights restrictions for new currencies, while still allowing you full connectivity for all your digital adventures. \n So you and your team can work on your company's security policies from anywhere, even from the sofa.",
+            "list": [
+                "Safe wifi for kids \n including internet filter and pause button",
+                "Safe wifi for kids \n including internet filter and pause button",
+                "Safe wifi for kids \n including internet filter and pause button"
+            ]
         },
         "section6": {
             "_comment": "'360°'section of page",
-            "title": "360° solution for companies"
+            "title": "360° solution for companies",
+            "swiper": [
+                [
+                    "Safe wifi for kids \n including internet filter and pause button",
+                    "Safe wifi for kids \n including internet filter and pause button",
+                    "Safe wifi for kids \n including internet filter and pause button"
+                ],
+                [
+                    "Safe wifi for kids \n including internet filter and pause button",
+                    "Safe wifi for kids \n including internet filter and pause button",
+                    "Safe wifi for kids \n including internet filter and pause button"
+                ],
+                [
+                    "Safe wifi for kids \n including internet filter and pause button",
+                    "Safe wifi for kids \n including internet filter and pause button",
+                    "Safe wifi for kids \n including internet filter and pause button"
+                ]
+            ]
         },
         "section7": {
             "_comment": "'Our nodes' section of page",
             "tip": "Technology",
             "title": "Our Nodes",
             "description": "Wifi 6 \n 2 wlan modules for access and meshing \n Perfect roaming with Apple & Android \n supports all roaming standards of Apple iOS and Android devices for seamless roaming. \n Zero setup \n The AirZen app helps you with the easy installation."
+        },
+        "section8": {
+            "_comment": "'Whitepaper' section of page",
+            "title": "Whitepaper",
+            "subtitle": "Here you will find more detailed information about our service.",
+            "paperList": [
+                {
+                    "tip": "Whitepaper",
+                    "title": "Home office for everyone",
+                    "description": "Whether big or small: AirZen offers diverse, individual network solutions for your home office. For more information about our services and hard facts, take a look at our white paper.",
+                    "button": "Download PDF"
+                },
+                {
+                    "tip": "Whitepaper",
+                    "title": "Home office for everyone",
+                    "description": "Whether big or small: AirZen offers diverse, individual network solutions for your home office. For more information about our services and hard facts, take a look at our white paper.",
+                    "button": "Download PDF"
+                },
+                {
+                    "tip": "Whitepaper",
+                    "title": "Home office for everyone",
+                    "description": "Whether big or small: AirZen offers diverse, individual network solutions for your home office. For more information about our services and hard facts, take a look at our white paper.",
+                    "button": "Download PDF"
+                }              
+            ]
         },
         "form": {
             "step1": {
@@ -214,7 +306,13 @@
             "_comment":"'Reliable' section of page",
             "tip": "Reliable",
             "title": "Classroom digital!",
-            "description": "AirZen has the all-in-one solution for the complex needs of schools of all types and sizes - and is very easy to use. \n In addition to seamless WLAN coverage, AirZen also ensures reliable network stability, even when many devices are online. Administrators can easily enable access and manage it on the go - very easily from their cell phone. \n No IT training is required for this, because operation is very intuitive via the app. With AirZen you ensure a first-class network in your school."
+            "description": "AirZen has the all-in-one solution for the complex needs of schools of all types and sizes - and is very easy to use. \n In addition to seamless WLAN coverage, AirZen also ensures reliable network stability, even when many devices are online. Administrators can easily enable access and manage it on the go - very easily from their cell phone. \n No IT training is required for this, because operation is very intuitive via the app. With AirZen you ensure a first-class network in your school.",
+            "list": [
+                "Safe wifi for kids \n including internet filter and pause button",
+                "Safe wifi for kids \n including internet filter and pause button",
+                "Safe wifi for kids \n including internet filter and pause button"
+            ]
+            
         },
         "section3": {
             "_comment":"'Secure' section of page",
@@ -282,5 +380,27 @@
         "placeholder": "Please describe your project with some key data. We'll get back to you.",
         "GDPR": "GDPR Copy",
         "button": "Send"
-    } 
+    } ,
+    "footer" : {
+        "title": "imprint",
+        "imprint": [{
+            "title": "AirZen Networks Lda.",
+            "description": "Avenida Arriaga, nº30, 1ºA \n 9000-064 Funchal, Portugal",
+            "subdes": "VAT: PT516672169"
+        }],
+        "readmore": [
+            {
+                "title": "Limitation of Liability",
+                "content": "The contents of this website are created with utmost care. However, the provider assumes no liability for the correctness, completeness and topicality of the content provided. The content of the website is used at the user's own risk. Contributions marked by name reflect the opinion of the respective author and not always the opinion of the provider. The mere use of the provider's website does not result in any contractual relationship between the user and the provider."
+            },
+            {
+                "title": "External Links",
+                "content": "This website contains links to third-party websites ('external links'). These websites are the responsibility of the respective operators. When the external links were first linked, the provider checked the third-party content for any legal violations. At the time, no legal violations were apparent. The provider has no influence whatsoever on the current and future design and content of the linked pages. The setting of external links does not mean that the provider adopts the content behind the reference or link as his own. Constant monitoring of the external links is not reasonable for the provider without concrete evidence of legal violations. However, if we become aware of legal violations, such external links will be deleted immediately."
+            },
+            {
+                "title": "Copyright and ancillary copyright",
+                "content": "The content published on this website is subject to German copyright and ancillary copyright. Any use not permitted by German copyright and ancillary copyright law requires the prior written consent of the provider or the respective rights holder. This applies in particular to the duplication, processing, translation, storage, processing or reproduction of content in databases or other electronic media and systems. Contents and rights of third parties are marked as such. The unauthorized duplication or forwarding of individual content or complete pages is not permitted and is punishable by law. Only the production of copies and downloads for personal, private and non-commercial use is permitted. The presentation of this website in external frames is only permitted with written permission."
+            }
+        ]
+    }
 }

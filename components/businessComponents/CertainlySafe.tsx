@@ -7,20 +7,7 @@ const CertainlySafe: FC = () => {
     //translate
     const { t } = useTranslation()
 
-    const hintList = [
-        {
-            title: 'Sicheres Wlan für Kinder',
-            description: 'inclusive Internet-Filter und Pause Knopf'
-        },
-        {
-            title: 'Sicheres Wlan für Kinder',
-            description: 'inclusive Internet-Filter und Pause Knopf'
-        },
-        {
-            title: 'Sicheres Wlan für Kinder',
-            description: 'inclusive Internet-Filter und Pause Knopf'
-        },
-    ]
+    const hintList = t('business.section5.list', { returnObjects: true })
 
     return (
         <section className="pb-16 relative container mx-auto  py-[150px]">
@@ -65,18 +52,18 @@ const CertainlySafe: FC = () => {
                             }
                             <div className="hidden md:block md:absolute  top-[62px] left-[110%] w-[80%]">
                                 {
-                                    hintList.map((item, index) => (
+                                    (hintList as unknown as any[]).map((item, index) =>
                                         <div className="flex mb-12" key={index}>
                                             <picture>
                                                 <source srcSet="/images/check-icon.svg" type="image/webp" />
                                                 <img src="/images/check-icon.svg" className="w-[28px] h-[22px] mr-[10px]" alt="" />
                                             </picture>
                                             <div className="text-white tracking-[0.08em] w-2/3">
-                                                <p className="font-lato text-lg font-medium">{item.title} </p>
-                                                <p className="font-lato-light text-lg font-light italic">{item.description}</p>
+                                                <p className="font-lato text-lg font-medium">{item.split('\n')[0]} </p>
+                                                <p className="font-lato-light text-lg font-light italic">{item.split('\n')[1]}</p>
                                             </div>
                                         </div>
-                                    ))
+                                    )
                                 }
 
 

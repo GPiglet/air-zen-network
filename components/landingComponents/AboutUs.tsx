@@ -7,6 +7,9 @@ import { useTranslation } from "next-i18next";
 
 const AboutUs: FC = () => {
 
+    //translate
+    const { t } = useTranslation()
+
     // Animate Refs
     const aboutCircleRef1 = React.useRef<any>();
     const aboutCircleRef2 = React.useRef<any>();
@@ -44,41 +47,7 @@ const AboutUs: FC = () => {
     }
 
 
-    const sliderList = [
-        {
-            title: 'Aus Europa. Für Europa. ',
-            description: `Das Leben ist zu kurz AirZen stellt modernste Netzwerk Technologie in der Schweiz & Europa her. Sicheres WLAN –
-            entwickelt für individuelle Anforderungen und mit
-            hoher Anwenderfreundlichkeit.
-
-            Der eigenen Herkunft verpflichtet,
-            hilft AirZen allen Kunden dabei
-            mit aktuellen Datenschutz- und
-            Security-Richtlinien Schritt zu halten.`
-        },
-        {
-            title: 'Aus Europa. Für Europa. ',
-            description: `Das Leben ist zu kurz AirZen stellt modernste Netzwerk Technologie in der Schweiz & Europa her. Sicheres WLAN –
-            entwickelt für individuelle Anforderungen und mit
-            hoher Anwenderfreundlichkeit.
-
-            Der eigenen Herkunft verpflichtet,
-            hilft AirZen allen Kunden dabei
-            mit aktuellen Datenschutz- und
-            Security-Richtlinien Schritt zu halten.`
-        },
-        {
-            title: 'Aus Europa. Für Europa. ',
-            description: `Das Leben ist zu kurz AirZen stellt modernste Netzwerk Technologie in der Schweiz & Europa her. Sicheres WLAN –
-            entwickelt für individuelle Anforderungen und mit
-            hoher Anwenderfreundlichkeit.
-
-            Der eigenen Herkunft verpflichtet,
-            hilft AirZen allen Kunden dabei
-            mit aktuellen Datenschutz- und
-            Security-Richtlinien Schritt zu halten.`
-        },
-    ]
+    const sliderList = t('landing.section3.swiper', { returnObjects: true })
 
     const svgGroupAnimation = (state: string) => {
         if (state === 'next') {
@@ -93,8 +62,6 @@ const AboutUs: FC = () => {
         }
     }
 
-    //translate
-    const { t } = useTranslation()
 
     return (
         <section id='aboutus' className='container m-auto relative md:fixed md:hidden md:flex items-center md:py-20'>
@@ -129,10 +96,10 @@ const AboutUs: FC = () => {
                                 {...flickityProps}
                             >
                                 {
-                                    sliderList.map((item, ind) => (
+                                    (sliderList as unknown as any[]).map((item, ind) => (
                                         <div className='w-[80%] md:w-full mr-12' key={ind}>
                                             <p className="font-lato uppercase font-black text-[22px] text-transparent bg-clip-text bg-gradient-to-r from-gray-400 via-gray-200 to-white tracking-widest">{item.title}</p>
-                                            <p className="font-lato font-light tracking-widest text-white text-lg mt-3">{item.description}</p>
+                                            <p className="font-lato font-light tracking-widest text-white text-lg mt-3">{item.content}</p>
                                         </div>
 
                                     ))

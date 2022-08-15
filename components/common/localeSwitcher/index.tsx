@@ -12,16 +12,14 @@ export default function LocaleSwitcher() {
 
   return (
     <span className="text-muted cursor-pointer">
-      {otherLocales?.map((locale) => {
+      {otherLocales?.map((locale, index) => {
         const { pathname, query, asPath } = router;
         return (
-          <span key={"locale-" + locale}>
-            <Link href={{ pathname, query }} as={asPath} locale={locale}>
-              <a>
-                {locale === "en" ? "English" : locale === "de" ? "Deutsch" : null}
-              </a>
-            </Link>
-          </span>
+          <Link href={{ pathname, query }} as={asPath} locale={locale} key={index}>
+            <p className="hover:text-gray-100 text-white px-3 py-4 md:py-2 flex items-center text-lg font-lato">
+              {locale === "en" ? "En/De" : locale === "de" ? "De/En" : null}
+            </p>
+          </Link>
         );
       })}
     </span>
