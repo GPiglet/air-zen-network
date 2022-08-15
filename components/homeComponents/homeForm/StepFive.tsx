@@ -6,8 +6,6 @@ import Form from '../../common/form'
 import { StoreContext } from '../../../contexts/Store'
 
 const StepFive: FC = () => {
-    //translate
-    const { t } = useTranslation()
 
     //translate
     const { t } = useTranslation()

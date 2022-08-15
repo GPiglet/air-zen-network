@@ -52,10 +52,10 @@ const Contact: FC = () => {
                                 index % 2 === 0 ? (
                                     <p className="font-lato tracking-widest text-white text-lg mt-3 font-normal" key={index}>{item}</p>
                                 ) : (
-                                    <>
-                                        <p className="font-lato font-light tracking-widest text-white text-lg" key={index}>{item}
+                                    <div key={index}>
+                                        <p className="font-lato font-light tracking-widest text-white text-lg" >{item}
                                         </p><br />
-                                    </>
+                                    </div>
                                 )
                             )
                         }

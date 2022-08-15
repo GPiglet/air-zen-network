@@ -1,13 +1,10 @@
 import React, { FC, useContext } from 'react'
 import { useTranslation } from 'next-i18next'
-import { useTranslation } from 'next-i18next'
 
 import Form from '../../common/form'
 import { StoreContext } from '../../../contexts/Store'
 
 const StepSeven: FC = () => {
-    //translate
-    const { t } = useTranslation()
     //translate
     const { t } = useTranslation()
 

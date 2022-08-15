@@ -3,7 +3,6 @@ import Flickity from "react-flickity-component"
 import "flickity/dist/flickity.css"
 import gsap from "gsap";
 import { useTranslation } from "next-i18next";
-import { useTranslation } from "next-i18next";
 
 
 const AboutUs: FC = () => {

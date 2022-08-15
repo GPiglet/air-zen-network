@@ -9,9 +9,6 @@ const UniqueSkill: FC = () => {
     //translate
     const { t } = useTranslation()
 
-    //translate
-    const { t } = useTranslation()
-
     const router = useRouter()
 
     const skillList = t('landing.section2.list', { returnObjects: true })
