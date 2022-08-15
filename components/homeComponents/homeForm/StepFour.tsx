@@ -1,5 +1,6 @@
 import React, { FC, useContext, useRef, useState } from 'react'
 import { useTranslation } from 'next-i18next'
+import FadeIn from 'react-fade-in/lib/FadeIn'
 
 import Form from '../../common/form'
 import { StoreContext } from '../../../contexts/Store'
@@ -10,7 +11,7 @@ const StepFour: FC = () => {
 
 
     return (
-        <div className='leading-10'>
+        <FadeIn delay={0} transitionDuration={1000} className='leading-10'>
             <Form
                 buttonType='px-[70px] bg-primary-button text-white'
                 buttonActive={true}
@@ -31,7 +32,7 @@ const StepFour: FC = () => {
                     )
                 }
             </Form>
-        </div>
+        </FadeIn>
     )
 }
 

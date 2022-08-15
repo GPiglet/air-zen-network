@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import { useTranslation } from 'next-i18next'
+import FadeIn from 'react-fade-in/lib/FadeIn'
 
 import Form from '../../common/form'
 
@@ -8,7 +9,7 @@ const StepOne: FC = () => {
     const { t } = useTranslation()
 
     return (
-        <div>
+        <FadeIn delay={0} transitionDuration={1000}>
             <Form
                 buttonType='border border-primary pl-5 pr-12'
                 buttonActive={true}
@@ -19,7 +20,7 @@ const StepOne: FC = () => {
                 <p className='text-lg mt-2 tracking-widest'> {t('home.form.step1.description')}</p>
 
             </Form>
-        </div>
+        </FadeIn>
     )
 }
 

@@ -7,6 +7,8 @@ const Easy: FC = () => {
     //translate
     const { t } = useTranslation()
 
+    const easyList = t('home.section4.list', { returnObjects: true })
+
     return (
         <section className="container mx-auto pb-16 relative">
             <svg className="hidden md:block absolute left-[-27%] top-[45%] w-[140%] sm:top-[37%]  md:top-1/2 md:translate-y-[-50%] sm:w-[120%] md:w-[100%] xl:w-[65%]   sm:left-[-10%]  md:left-[-45%] xl:left-[-20%]" viewBox="0 0 804 796" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,36 +45,20 @@ const Easy: FC = () => {
                                 )
                             }
                             <div className="hidden md:block md:absolute  top-[62px] left-[110%] pt-9 w-[80%]">
-                                <div className="flex mb-12">
-                                    <picture>
-                                        <source srcSet="/images/check-icon.svg" type="image/webp" />
-                                        <img src="/images/check-icon.svg" className="w-[28px] h-[22px] mr-[10px]" alt="" />
-                                    </picture>
-                                    <div className="text-white tracking-[0.08em] w-2/3">
-                                        <p className="font-lato text-lg font-medium">Sicheres Wlan für Kinder </p>
-                                        <p className="font-lato-light text-lg font-light italic">inclusive Internet-Filter und Pause Knopf</p>
-                                    </div>
-                                </div>
-                                <div className="flex mb-12">
-                                    <picture>
-                                        <source srcSet="/images/check-icon.svg" type="image/webp" />
-                                        <img src="/images/check-icon.svg" className="w-[28px] h-[22px] mr-[10px]" alt="" />
-                                    </picture>
-                                    <div className="text-white tracking-[0.08em] w-2/3">
-                                        <p className="font-lato text-lg font-medium">Sicheres Wlan für Kinder </p>
-                                        <p className="font-lato-light text-lg font-light italic">inclusive Internet-Filter und Pause Knopf</p>
-                                    </div>
-                                </div>
-                                <div className="flex mb-12">
-                                    <picture>
-                                        <source srcSet="/images/check-icon.svg" type="image/webp" />
-                                        <img src="/images/check-icon.svg" className="w-[28px] h-[22px] mr-[10px]" alt="" />
-                                    </picture>
-                                    <div className="text-white tracking-[0.08em] w-2/3">
-                                        <p className="font-lato text-lg font-medium">Sicheres Wlan für Kinder </p>
-                                        <p className="font-lato-light text-lg font-light italic">inclusive Internet-Filter und Pause Knopf</p>
-                                    </div>
-                                </div>
+                                {
+                                    (easyList as unknown as any[]).map((item, index) =>
+                                        <div className="flex mb-12" key={index}>
+                                            <picture>
+                                                <source srcSet="/images/check-icon.svg" type="image/webp" />
+                                                <img src="/images/check-icon.svg" className="w-[28px] h-[22px] mr-[10px]" alt="" />
+                                            </picture>
+                                            <div className="text-white tracking-[0.08em] w-2/3">
+                                                <p className="font-lato text-lg font-medium">{item.split('\n')[0]} </p>
+                                                <p className="font-lato-light text-lg font-light italic">{item.split('\n')[1]}</p>
+                                            </div>
+                                        </div>
+                                    )
+                                }
 
                             </div>
                         </div>

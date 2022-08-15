@@ -7,33 +7,35 @@ const Professional: FC = () => {
     //translate
     const { t } = useTranslation()
 
-    const list = [
-        {
-            title: 'Office & Teams',
-            lists: [
-                'Zerotrust: individuelle Kennwörter',
-                'Self-Service Portal für Mitarbeiter ',
-                'Managed Service & Live-Support per App, optional auch für Mitarbeiter'
-            ]
-        },
-        {
-            title: 'Homeoffice',
-            lists: [
-                'Security im Home-Office: Seperate Business und Privat-Netze',
-                'SPlug & Play, keine  IT-Erfahrung nötig ',
-                'Router-Set mit Mesh- Technologie'
-            ]
-        },
-        {
-            title: 'Kunden & Gäste WLAN',
-            lists: [
-                'Marketing im Gäste WLAN per App konfigurierbar',
-                'kontinuierlich Rechtssicher und DSGVO-Konform',
-                'Individalisierbar nach Branche (Premium-WLAN, Gäste-WLAN uvm.)'
-            ]
-        },
+    const list = t('business.section2.list', { returnObjects: true })
 
-    ]
+    // const list = [
+    //     {
+    //         title: 'Office & Teams',
+    //         lists: [
+    //             'Zerotrust: individuelle Kennwörter',
+    //             'Self-Service Portal für Mitarbeiter ',
+    //             'Managed Service & Live-Support per App, optional auch für Mitarbeiter'
+    //         ]
+    //     },
+    //     {
+    //         title: 'Homeoffice',
+    //         lists: [
+    //             'Security im Home-Office: Seperate Business und Privat-Netze',
+    //             'SPlug & Play, keine  IT-Erfahrung nötig ',
+    //             'Router-Set mit Mesh- Technologie'
+    //         ]
+    //     },
+    //     {
+    //         title: 'Kunden & Gäste WLAN',
+    //         lists: [
+    //             'Marketing im Gäste WLAN per App konfigurierbar',
+    //             'kontinuierlich Rechtssicher und DSGVO-Konform',
+    //             'Individalisierbar nach Branche (Premium-WLAN, Gäste-WLAN uvm.)'
+    //         ]
+    //     },
+
+    // ]
 
     return (
         <section className="pb-16 relative  items-center md:flex container mx-auto ">
@@ -117,11 +119,11 @@ const Professional: FC = () => {
                     <div className="md:flex justify-between text-lg text-left mt-10">
                         <div className="w-[160px]"></div>
                         {
-                            list.map((item, index) => (
+                            (list as unknown as any[]).map((item, index) => (
                                 <div key={index} className='md:px-5'>
                                     <p className="font-lato font-medium mb-4">{item.title}</p>
                                     <ul className='list-["-"] pl-2 unique-skill-list'>
-                                        {item.lists.map((list, ind) => (
+                                        {item.items.split('\n').map((list: string, ind: number) => (
                                             <li className='font-lato text-base font-light' key={ind}>{list}</li>
                                         ))}
                                     </ul>

@@ -13,7 +13,7 @@ const BusinessNode: FC = () => {
     const { t } = useTranslation()
 
     return (
-        <section className="pb-16 relative ">
+        <div className="pb-16 relative ">
             {/* mt-[600px] sm:mt-[100%] md:mt-[50%] */}
 
             <div className="relative px-10 md:px-0 container mx-auto ">
@@ -65,7 +65,7 @@ const BusinessNode: FC = () => {
                 </div>
             </div>
             <BusinessForm />
-        </section>
+        </div>
 
     );
 };

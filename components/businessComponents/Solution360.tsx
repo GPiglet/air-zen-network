@@ -33,62 +33,64 @@ const Solution360: FC = () => {
         flickityRef: flickity
     }
 
-    const sliderList = [
-        {
-            hintList: [
-                {
-                    title: 'Sicheres Wlan für Kinder',
-                    description: 'inclusive Internet-Filter und Pause Knopf'
-                },
-                {
-                    title: 'Sicheres Wlan für Kinder',
-                    description: 'inclusive Internet-Filter und Pause Knopf'
-                },
-                {
-                    title: 'Sicheres Wlan für Kinder',
-                    description: 'inclusive Internet-Filter und Pause Knopf'
-                },
-            ]
-        },
-        {
-            hintList: [
-                {
-                    title: 'Sicheres Wlan für Kinder',
-                    description: 'inclusive Internet-Filter und Pause Knopf'
-                },
-                {
-                    title: 'Sicheres Wlan für Kinder',
-                    description: 'inclusive Internet-Filter und Pause Knopf'
-                },
-                {
-                    title: 'Sicheres Wlan für Kinder',
-                    description: 'inclusive Internet-Filter und Pause Knopf'
-                },
-            ]
-        },
-        {
-            hintList: [
-                {
-                    title: 'Sicheres Wlan für Kinder',
-                    description: 'inclusive Internet-Filter und Pause Knopf'
-                },
-                {
-                    title: 'Sicheres Wlan für Kinder',
-                    description: 'inclusive Internet-Filter und Pause Knopf'
-                },
-                {
-                    title: 'Sicheres Wlan für Kinder',
-                    description: 'inclusive Internet-Filter und Pause Knopf'
-                },
-            ]
-        },
+    const sliderList = t('business.section6.swiper', { returnObjects: true })
 
-    ]
+    // const sliderList = [
+    //     {
+    //         hintList: [
+    //             {
+    //                 title: 'Sicheres Wlan für Kinder',
+    //                 description: 'inclusive Internet-Filter und Pause Knopf'
+    //             },
+    //             {
+    //                 title: 'Sicheres Wlan für Kinder',
+    //                 description: 'inclusive Internet-Filter und Pause Knopf'
+    //             },
+    //             {
+    //                 title: 'Sicheres Wlan für Kinder',
+    //                 description: 'inclusive Internet-Filter und Pause Knopf'
+    //             },
+    //         ]
+    //     },
+    //     {
+    //         hintList: [
+    //             {
+    //                 title: 'Sicheres Wlan für Kinder',
+    //                 description: 'inclusive Internet-Filter und Pause Knopf'
+    //             },
+    //             {
+    //                 title: 'Sicheres Wlan für Kinder',
+    //                 description: 'inclusive Internet-Filter und Pause Knopf'
+    //             },
+    //             {
+    //                 title: 'Sicheres Wlan für Kinder',
+    //                 description: 'inclusive Internet-Filter und Pause Knopf'
+    //             },
+    //         ]
+    //     },
+    //     {
+    //         hintList: [
+    //             {
+    //                 title: 'Sicheres Wlan für Kinder',
+    //                 description: 'inclusive Internet-Filter und Pause Knopf'
+    //             },
+    //             {
+    //                 title: 'Sicheres Wlan für Kinder',
+    //                 description: 'inclusive Internet-Filter und Pause Knopf'
+    //             },
+    //             {
+    //                 title: 'Sicheres Wlan für Kinder',
+    //                 description: 'inclusive Internet-Filter und Pause Knopf'
+    //             },
+    //         ]
+    //     },
+
+    // ]
 
 
     return (
-        <section id='aboutus' className='container m-auto relative'>
-            <svg className='absolute z-30 left-[-27%] top-[40%] md:top-[-11%] xl:top-[-20%]  md:w-[115%] sm:top-[10%] sm:w-[140%] sm:left-[-20%] w-[150%] md:left-[-27%] xl:left-[-10%] md:w-[100%] xl:w-[100%] ' viewBox="0 0 763 764" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <section id='aboutus' className='container m-auto relative mt-[300px] md:mt-[0]'>
+            <svg className='hidden md:block absolute z-30 left-[-27%] top-[40%] md:top-[-11%] xl:top-[-20%]  md:w-[115%] sm:top-[10%] sm:w-[140%] sm:left-[-20%] w-[150%] md:left-[-27%] xl:left-[-10%] md:w-[100%] xl:w-[100%] ' viewBox="0 0 763 764" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
                     <ellipse opacity="0.7" cx="381.16" cy="381.842" rx="179.165" ry="179.4" transform="rotate(-180 381.16 381.842)" fill="url(#paint0_radial_1376_6235)" />
                     <circle opacity="0.8" r="269.261" transform="matrix(-0.706643 0.70757 -0.706643 -0.70757 381.25 381.749)" stroke="url(#paint1_linear_1376_6235)" />
@@ -120,7 +122,7 @@ const Solution360: FC = () => {
             <div className='relative z-50'>
 
                 <div className="text-center pt-[100px] md:pt-[18%]">
-                    <h1 className="text-title-sm">{t('businees.section6.title')} </h1>
+                    <h1 className="text-title-sm">{t('business.section6.title')} </h1>
                 </div>
                 <div className='relative flex'>
                     <picture>
@@ -137,12 +139,12 @@ const Solution360: FC = () => {
                             {...flickityProps}
                         >
                             {
-                                sliderList.map((item, ind) => (
+                                (sliderList as unknown as any[]).map((item, ind) => (
                                     <div key={ind} className='mr-10 w-[80%] md:w-full'>
-                                        {item.hintList.map((hint, index) => (
+                                        {item.map((hint: string, index: number) => (
                                             <div className="text-white tracking-[0.08em] mb-12" key={index}>
-                                                <p className="font-lato text-lg font-medium">{hint.title} </p>
-                                                <p className="font-lato-light text-lg font-light italic">{hint.description}</p>
+                                                <p className="font-lato text-lg font-medium">{hint.split('\n')[0]} </p>
+                                                <p className="font-lato-light text-lg font-light italic">{hint.split('\n')[0]} </p>
                                             </div>
                                         ))}
                                     </div>

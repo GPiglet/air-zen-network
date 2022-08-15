@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import { useTranslation } from 'next-i18next'
+import FadeIn from 'react-fade-in/lib/FadeIn'
 
 import Form from '../../common/form'
 
@@ -8,7 +9,7 @@ const StepSix: FC = () => {
     const { t } = useTranslation()
 
     return (
-        <div className='leading-8'>
+        <FadeIn delay={0} transitionDuration={1000} className='leading-8'>
             <Form
                 buttonType='px-[70px] bg-primary-button text-white'
                 buttonActive={true}
@@ -37,7 +38,7 @@ const StepSix: FC = () => {
                     <p className=' ml-2'>{t('home.form.step6.confirm')}</p>
                 </div>
             </Form>
-        </div>
+        </FadeIn>
     )
 }
 
