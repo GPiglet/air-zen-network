@@ -49,14 +49,14 @@ const Home: NextPage = () => {
 		if (scrolling.enabled) {
 			scrolling.enabled = false;
 			window.addEventListener("scroll", gsap.ticker.tick, {passive: true});
-			scrolling.events.forEach((e, i) => (i ? document : window).addEventListener(e, scrolling.prevent, {passive: false}));
+			scrolling.events.forEach((e, i) => window.addEventListener(e, scrolling.prevent, {passive: false}));
 		}
 		},
 		enable() {
 		if (!scrolling.enabled) {
 			scrolling.enabled = true;
 			window.removeEventListener("scroll", gsap.ticker.tick);
-			scrolling.events.forEach((e, i) => (i ? document : window).removeEventListener(e, scrolling.prevent));
+			scrolling.events.forEach((e, i) => window.removeEventListener(e, scrolling.prevent));
 		}
 		}
 	};
