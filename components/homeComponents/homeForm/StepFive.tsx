@@ -55,7 +55,7 @@ const StepFive: FC = () => {
     }
 
     return (
-        <div className='leading-8'>
+        <FadeIn delay={0} transitionDuration={1000} className='leading-8'>
             <Form
                 buttonType='px-[70px] bg-primary-button text-white'
                 buttonActive={active}
@@ -96,7 +96,7 @@ const StepFive: FC = () => {
                     </div>
                 </FadeIn>
             </Form>
-        </div>
+        </FadeIn>
     )
 }
 
