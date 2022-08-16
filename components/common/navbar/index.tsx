@@ -122,9 +122,6 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
           <div className="hidden md:block">
             <LocaleSwitcher />
           </div>
-          <div className="hidden md:block">
-            <LocaleSwitcher />
-          </div>
         </div>
       </div>
     </nav>
