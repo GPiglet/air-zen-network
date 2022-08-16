@@ -12,7 +12,8 @@ const UniqueSkill: FC = () => {
     const router = useRouter()
     const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop, behavior: 'smooth' })
     useEffect(() => {
-        scrollToRef(containerRef)
+        if (router.query.section === 'solution')
+            scrollToRef(containerRef)
     }, [])
 
     const skillList = t('landing.solution.list', { returnObjects: true })
