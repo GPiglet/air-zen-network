@@ -80,16 +80,23 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
               <LocaleSwitcher />
             </div>
 
-            <button
-              className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block md:hidden outline-none focus:outline-none"
-              type="button"
-              onClick={() => setNavbarOpen(!navbarOpen)}
-            >
-              <picture>
-                <source srcSet="/images/expand-icon.svg" type="image/webp" />
-                <img src="/images/expand-icon.svg" alt="" />
-              </picture>
-            </button>
+            <div className="flex">
+
+              <div className="md:hidden">
+                <LocaleSwitcher />
+              </div>
+
+              <button
+                className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block md:hidden outline-none focus:outline-none"
+                type="button"
+                onClick={() => setNavbarOpen(!navbarOpen)}
+              >
+                <picture>
+                  <source srcSet="/images/expand-icon.svg" type="image/webp" />
+                  <img src="/images/expand-icon.svg" alt="" />
+                </picture>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -112,6 +119,9 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
             </li>
 
           </ul>
+          <div className="hidden md:block">
+            <LocaleSwitcher />
+          </div>
           <div className="hidden md:block">
             <LocaleSwitcher />
           </div>
