@@ -12,7 +12,8 @@ const UniqueSkill: FC = () => {
     const router = useRouter()
     const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop, behavior: 'smooth' })
     useEffect(() => {
-        scrollToRef(containerRef)
+        if (router.query.section === 'solution')
+            scrollToRef(containerRef)
     }, [])
 
     const skillList = t('landing.solution.list', { returnObjects: true })
@@ -167,7 +168,7 @@ const UniqueSkill: FC = () => {
                         <p ref={el => { animSideUp.current.push(el); animFadeIn.current.push(el) }} className="font-lato font-light tracking-widest text-[22px] mt-3">{t('landing.solution.subtitle')}</p>
                     </div>
                     <div ref={el => { animFadeIn.current.push(el) }} className='w-full mt-[160px]'>
-                        <div className='md:m-auto md:w-max '>
+                        <div className='md:m-auto md:w-max  '>
                             {
                                 (skillList as unknown as any[]).map((item: any, index: any) => (
                                     <div ref={el => animSkills.current.push(el)} className='right-[-20px] sm:right-[-70px] w-full md:w-[210px] xl:w-[280px] md:inline-block align-top md:right-auto relative px-5 py-5 flex-1 unique-skill-items unique-skill-animate z-40' key={index} onClick={() => router.push(graphList[index].href)}>

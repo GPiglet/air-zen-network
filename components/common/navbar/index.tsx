@@ -15,9 +15,23 @@ type NaveProps = {
 const Navbar: FC<NaveProps> = ({ navItems }) => {
 
   const [navbarOpen, setNavbarOpen] = React.useState(false)
+  const [position, setPosition] = useState(0)
 
   const router = useRouter()
 
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    console.log(position);
+    setPosition(position)
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   // animation
   const animNavButtons = React.useRef<any>([]);
@@ -51,7 +65,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
   // }, [])
 
   return (
-    <nav className="top-[10px] md:top-[40px] lg:top-[62px] fixed z-50 w-full items-center navbar-expand-lg bg-transparent z-60">
+    <nav className={`${position === 0 ? 'top-[10px] md:top-[40px] lg:top-[62px]' : 'md:py-5 backdrop-blur'} duration-500 fixed z-50 w-full items-center navbar-expand-lg bg-transparent z-60`}>
       <div className="container px-4 mx-auto flex flex-wrap relative items-center justify-between">
         <div className="w-full relative flex justify-between md:w-auto md:static md:block md:justify-start md:w-1/4  px-5 pt-5 md:px-0 md:pt-0">
           <div className=" cursor-pointer" onClick={() => router.push('/')}>
@@ -66,16 +80,23 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
               <LocaleSwitcher />
             </div>
 
-            <button
-              className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block md:hidden outline-none focus:outline-none"
-              type="button"
-              onClick={() => setNavbarOpen(!navbarOpen)}
-            >
-              <picture>
-                <source srcSet="/images/expand-icon.svg" type="image/webp" />
-                <img src="/images/expand-icon.svg" alt="" />
-              </picture>
-            </button>
+            <div className="flex">
+
+              <div className="md:hidden">
+                <LocaleSwitcher />
+              </div>
+
+              <button
+                className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block md:hidden outline-none focus:outline-none"
+                type="button"
+                onClick={() => setNavbarOpen(!navbarOpen)}
+              >
+                <picture>
+                  <source srcSet="/images/expand-icon.svg" type="image/webp" />
+                  <img src="/images/expand-icon.svg" alt="" />
+                </picture>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -87,7 +108,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
           <ul className="flex flex-col md:flex-row list-none mr-auto w-full justify-around text-white">
             {
               navItems.map((item, index) => (
-                <li ref={el => animNavButtons.current.push(el)} className={"flex items-center cursor-pointer"} key={index} >
+                <li ref={el => animNavButtons.current.push(el)} className={"mx-3 md:m-0 flex items-center cursor-pointer"} key={index} >
                   <Link activeClass="active" smooth spy to={item.href} onClick={() => setNavbarOpen(false)}>
                     <p className="hover:text-gray-100 text-gray-400  py-4 md:py-2 flex items-center text-lg uppercase font-lato">{item.title}</p>
                   </Link>
