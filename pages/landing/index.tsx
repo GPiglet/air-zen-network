@@ -1,5 +1,5 @@
 //modules
-import React, { FC, useState } from 'react'
+import React, { FC } from 'react'
 import type { NextPage } from 'next'
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { GetStaticProps } from 'next'

@@ -89,7 +89,7 @@ const Solution360: FC = () => {
 
 
     return (
-        <section id='aboutus' className='container m-auto relative mt-[300px] md:mt-[0]'>
+        <section id='solution' className='container m-auto relative mt-[300px] md:mt-[0]'>
             <svg className='hidden md:block absolute z-30 left-[-27%] top-[40%] md:top-[-11%] xl:top-[-20%]  md:w-[115%] sm:top-[10%] sm:w-[140%] sm:left-[-20%] w-[150%] md:left-[-27%] xl:left-[-10%] md:w-[100%] xl:w-[100%] ' viewBox="0 0 763 764" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
                     <ellipse opacity="0.7" cx="381.16" cy="381.842" rx="179.165" ry="179.4" transform="rotate(-180 381.16 381.842)" fill="url(#paint0_radial_1376_6235)" />

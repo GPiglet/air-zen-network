@@ -33,7 +33,7 @@ const Secure: FC = () => {
     // },[])
 
     return (
-        <div className="relative container mx-auto mb-[75%] md:mb-0">
+        <div id="protection" className="relative container mx-auto mb-[75%] md:mb-0">
             <svg className="absolute mx-auto 
             right-[-67%] sm:right-[-63%] md:right-[-85%] lg:right-[-110%] xl:right-[-85%]
             top-[88%] xs:top-[73%] sm:top-[23%] md:top-[-33%] lg:top-[-69%] xl:top-[-70%]

@@ -25,24 +25,29 @@ const Business: NextPage = () => {
 	const navItems: Array<any> = [
 		{
 			id: 1,
-			title: 'Lösungen',
-			href: 'solutions'
+			title: 'Profesionelles',
+			href: 'professional'
 		},
 		{
 			id: 2,
-			title: 'Über uns',
-			href: 'aboutus'
+			title: 'Einfach',
+			href: 'easy'
 		},
 		{
 			id: 3,
-			title: 'REFERENZEN',
-			href: 'credentials'
+			title: 'Lösung',
+			href: 'solution'
 		},
 		{
 			id: 4,
-			title: 'Kontakt',
-			href: 'cantact'
+			title: 'Technik',
+			href: 'technology'
 		},
+		{
+			id: 4,
+			title: 'Whitepaper',
+			href: 'whitepaper'
+		}
 	]
 
 	return (

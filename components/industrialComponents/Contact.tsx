@@ -9,7 +9,7 @@ const Contact: FC = () => {
     const { t } = useTranslation()
 
     return (
-        <div className="relative mb-[700px] md:mb-[0] ">
+        <div id="technology" className="relative mb-[700px] md:mb-[0] ">
             <div className="container mx-auto relative mt-[800px] xs:mt-[800px] sm:mt-[1100px] md:mt-[700px]">
                 <svg className="absolute
                 top-[-78%] xs:top-[-127%] sm:top-[-565px] md:top-[-130%] lg:top-[-150%] xl:top-[-250%]

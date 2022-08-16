@@ -8,7 +8,7 @@ const PrepareSuccess: FC = () => {
     const { t } = useTranslation()
 
     return (
-        <section className="container mx-auto pb-16 relative  py-[150px]">
+        <section id="easy" className="container mx-auto pb-16 relative  py-[150px]">
             <svg className="hidden md:block absolute top-1/2 translate-y-[-50%] w-[65%] 2xl:w-[1000px] w-[174%] left-[-21%]" viewBox="0 0 704 704" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
                     <ellipse opacity="0.7" cx="351.991" cy="351.55" rx="217.013" ry="217.214" transform="rotate(-180 351.991 351.55)" fill="url(#paint0_radial_1376_5668)" />

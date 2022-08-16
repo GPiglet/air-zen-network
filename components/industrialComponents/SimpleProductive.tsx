@@ -24,7 +24,7 @@ const SimpleProductive: FC = () => {
 
     return (
 
-        <div className="container mx-auto relative mb-[95%] sm:mb-[100%] md:mb-[15%]">
+        <div id="easy" className="container mx-auto relative mb-[95%] sm:mb-[100%] md:mb-[15%]">
 
             <svg className="absolute 
                 left-[-64%] sm:left-[-64%] md:left-[-92%] lg:left-[-88%] xl:left-[-69%]

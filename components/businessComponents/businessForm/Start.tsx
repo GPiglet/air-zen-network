@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next'
 
 import Form from '../../common/form'
 
-const StepOne: FC = () => {
+const Start: FC = () => {
     const { t } = useTranslation()
 
     return (
@@ -16,8 +16,8 @@ const StepOne: FC = () => {
                 buttonString='zum Konfigurator'
                 width='sm:w-[80%]'
             >
-                <h1 className='text-[22px] uppercase mb-10'>{t('business.form.step1.title')}</h1>
-                {t('business.form.step1.content').split('\n').map((item, index) =>
+                <h1 className='text-[22px] uppercase mb-10'>{t('business.form.start.title')}</h1>
+                {t('business.form.start.content').split('\n').map((item, index) =>
                     <p className='text-lg mt-2 tracking-widest' key={index}>{item}</p>
                 )}
             </Form>
@@ -25,4 +25,4 @@ const StepOne: FC = () => {
     )
 }
 
-export default StepOne
+export default Start

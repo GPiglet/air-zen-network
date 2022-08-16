@@ -22,7 +22,20 @@ type StoreContextType = {
 
     },
     businessOption?: {
-        business?: string
+        business?: string,
+        location?: [
+            {
+                RoomCount?: number,
+                teamSize?: number,
+                surface?: number,
+                node?: number,
+                femaleColleague?: number,
+                oldRouter?: number,
+            }
+        ],
+        contractTerm?: number,
+        monthPay?: number,
+
     },
     changeHomeOption?: (homeOption: object) => void,
     changeBusinessOption?: (businessOption: object) => void
@@ -31,11 +44,8 @@ type StoreContextType = {
 
 const initialState = {
     step: 1,
-    homeOption: {
-    },
-    businessOption: {
-
-    }
+    homeOption: {},
+    businessOption: {}
 }
 
 export const StoreContext = createContext<StoreContextType>(initialState);
@@ -49,10 +59,10 @@ export const StoreProvider: FC<childrenType> = ({ children }) => {
     const [state, dispatch] = useReducer((state: any, action: any) => {
         switch (action.type) {
             case 'CHANGE_STEP':
-                // console.log(state, action.payload)
                 return {
                     step: action.payload,
-                    homeOption: state.homeOption
+                    homeOption: state.homeOption,
+                    businessOption: state.businessOption
                 }
             case 'CHANGE_HOME_OPTION':
                 return {
@@ -61,6 +71,7 @@ export const StoreProvider: FC<childrenType> = ({ children }) => {
                     homeOption: { ...state.homeOption, ...action.payload }
                 }
             case 'CHANGE_BUSINESS_OPTION':
+                console.log(state, action.payload, '---------')
                 return {
                     step: state.step,
                     homeOption: state.homeOption,

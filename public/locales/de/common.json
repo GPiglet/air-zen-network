@@ -16,7 +16,7 @@
                     "title": "Home",
                     "subtitle": "Für ein smartes Zuhause.",
                     "description" : "Störungsfreies und selbstoptimierendes Netz. Zuhause wie beim Profi.",
-                    "list": "Highly stable connection \n No experience required \n Automatic updates \n Video support"
+                    "list": "Hochstabile Verbindung \n Keine Erfahrung nötig \n Automatische Updates \n Videosupport"
                 },
                {
                     "title": "Business",
@@ -43,14 +43,6 @@
             "_comment": "Abschnitt 'Über uns' der Seite.",
             "title": "Über Uns",
             "swiper": [
-                {
-                    "title": "Aus Europa. Für Europa.",
-                    "content": "AirZen stellt modernste Netzwerk Technologie in der Schweiz & Europa her. Sicheres WLAN – entwickelt für individuelle Anforderungen und mit hoher Anwenderfreundlichkeit. Der eigenen Herkunft verpflichtet, hilft AirZen allen Kunden dabei mit aktuellen Datenschutz- und Security-Richtlinien Schritt zu halten."
-                },
-                {
-                    "title": "Aus Europa. Für Europa.",
-                    "content": "AirZen stellt modernste Netzwerk Technologie in der Schweiz & Europa her. Sicheres WLAN – entwickelt für individuelle Anforderungen und mit hoher Anwenderfreundlichkeit. Der eigenen Herkunft verpflichtet, hilft AirZen allen Kunden dabei mit aktuellen Datenschutz- und Security-Richtlinien Schritt zu halten."
-                },
                 {
                     "title": "Aus Europa. Für Europa.",
                     "content": "AirZen stellt modernste Netzwerk Technologie in der Schweiz & Europa her. Sicheres WLAN – entwickelt für individuelle Anforderungen und mit hoher Anwenderfreundlichkeit. Der eigenen Herkunft verpflichtet, hilft AirZen allen Kunden dabei mit aktuellen Datenschutz- und Security-Richtlinien Schritt zu halten."
@@ -197,7 +189,8 @@
                     "Ideal"
                 ]
             }
-        }
+        },
+        "menu": "Sicher \n Zuverlässig \n Einfach \n Technik"
     },
     "business": {
         "boost":{
@@ -330,12 +323,12 @@
             ]
         },
         "form": {
-            "step1": {
+            "start": {
                 "title": "Startklar in Minuten",
                 "content": "Was auch immer gerade in Ihrem Unternehmen ansteht, zusammen finden wir eine passende Netzwerklösung – Mit eigener Hardware und entsprechendem Routersystem. Alles aus einer Hand! \n Optional bieten wir Ihnen eine komplette Direktbetreuung an - von der Planung bis zur Wartung im laufenden Betrieb.",
                 "button": "zum Konfigurator"
             },
-            "step2": {
+            "businesstype": {
                 "breadcrumb": "Business  Konfigurator",
                 "confirm": "Was ist Ihr Geschäftsfeld?",
                 "buttons": [
@@ -355,8 +348,42 @@
                         "content": "New Work & multiple devices"
                     }
                 ]
+            },
+            "configrator": {
+                "breadcrumb": "Business  Konfigurator",
+                "retail": {
+                    "roomSize": "Mein Zuhause ist \n m2 groß .",
+                    "node": "Ich möchte \n Nodes á 25€."
+                },
+                "hotel": {
+                    "roomCount": "Wir möchten \n Zimmer ausstatten.",
+                    "member": "Unser Team umfasst \n Personen.",
+                    "roomSize": "Unser Hotel ist \n m2 groß .",
+                    "node": "Wir empfehlen \n Nodes á 25€."
+                },
+                "office": {
+                    "wifi": "WIFI für \n Kolleg*innen.",
+                    "roomSize": "Unser Hotel ist \n m2 groß .",
+                    "router": "existierende Router.",
+                    "node": "Wir empfehlen \n Nodes á 25€."
+                },
+                "homeoffice": {
+                    "wifi": "Home Office WIFI für \n Kolleg*innen.",
+                    "": "Dies entspricht 80 Nodes á 25,-€."
+                },
+                "description": "Das AirZen Set beinhaltet mindestens 3 Router: unsere Nodes. Damit garantieren wir ihnen eine stabile Verbindung bis zu 200m2.\n Darüber hinaus empfehlen wir jeweils eine Node für zusätzliche 60m2 oder neue externe Standorte.",
+                "addlocation": "Location hinzufügen",
+                "button": "weiter",
+                "numberofRoom": "Anzahl Zimmer",
+                "teamSize": "Teamgröße:",
+                "surface": "Fläche",
+                "numberofNode": "Nodeanzahl",
+                "femaleColleague": "Kolleg*innen",
+                "oldRouter": "alte Router"
             }
-        }
+
+        },
+        "menu": "Profesionelles \n Zuverlässig \n Sicher \n Lösung \n Technik"
     },
     "education": {
         "classwifi": {
@@ -402,7 +429,8 @@
             "tip": "Technik",
             "title": "Unsere Nodes",
             "description": "Wifi 6 \n 2 wlan module für Access- und Meshing \n Perfektes roaming mit Apple & Android \n unterstützt alle Roaming Standards von Apple iOS und Android Geräten für ein Seamless Romaing. \n Zero-Setup \n Die AirZen App hilft dir bei der kinderleichten Installation. "
-        }                                      
+        },
+        "menu": "Klassenzimmer \n SCHUTZ \n Einfach \n Technik"                               
     },
     "industrial": {
         "everything": {
@@ -438,7 +466,8 @@
             "tip": "Technik",
             "title": "Unsere Nodes",
             "description": "Wifi 6 \n 2 wlan module für Access- und Meshing \n Perfektes roaming mit Apple & Android \n unterstützt alle Roaming Standards von Apple iOS und Android Geräten für ein Seamless Romaing. \n Zero-Setup \n Die AirZen App hilft dir bei der kinderleichten Installation. "
-        }
+        },
+        "menu": "Referenzprojekte \n Einfach \n Sicher \n Technik"     
 
     },
     "contactForm": {

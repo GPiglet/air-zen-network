@@ -7,7 +7,7 @@ const Easy: FC = () => {
     const { t } = useTranslation()
 
     return (
-        <div className="md:mb-[500px] relative container mx-auto">
+        <div id="easy" className="md:mb-[500px] relative container mx-auto">
 
             <svg className="absolute hidden md:block
             w-[100%] 

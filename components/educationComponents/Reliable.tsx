@@ -36,7 +36,7 @@ const Reliable: FC = () => {
     // },[])
 
     return (
-        <div className="container mx-auto relative mb-[80%] sm:mb-[100%] md:mb-[0%] xl:mb-[10%]">
+        <div id="classroom" className="container mx-auto relative mb-[80%] sm:mb-[100%] md:mb-[0%] xl:mb-[10%]">
 
             <svg className="absolute trigger 
             left-[-50%] xs:left-[-50%] sm:left-[-60%] md:left-[-75%] lg:left-[-90%] xl:left-[-71%]

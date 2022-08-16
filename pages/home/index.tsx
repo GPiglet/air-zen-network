@@ -20,26 +20,26 @@ import OurNode from '../../components/homeComponents/OurNode'
 
 const Home: NextPage = () => {
 
-	const navItems:Array<any> = [
+	const navItems: Array<any> = [
 		{
 			id: 1,
-			title: 'Lösungen',
-			href: 'solutions'
+			title: 'Sicher',
+			href: 'secure'
 		},
 		{
 			id: 2,
-			title: 'Über uns',
-			href: 'aboutus'
+			title: 'Zuverlässig',
+			href: 'reliable'
 		},
 		{
 			id: 3,
-			title: 'REFERENZEN',
-			href: 'credentials'
+			title: 'Einfach',
+			href: 'easy'
 		},
 		{
 			id: 4,
-			title: 'Kontakt',
-			href: 'cantact'
+			title: 'Technik',
+			href: 'technology'
 		},
 	]
 
@@ -48,7 +48,7 @@ const Home: NextPage = () => {
 			<Mainlayout navItems={navItems}>
 				<SimplyNetwork />
 				<SafeHome />
-				<Reliable /> 	
+				<Reliable />
 				<Easy />
 				<OurNode />
 			</Mainlayout>
@@ -58,10 +58,10 @@ const Home: NextPage = () => {
 
 export default Home
 
-export const getStaticProps: GetStaticProps  = async ({locale}) => {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
 	return {
 		props: {
-		  ...(await serverSideTranslations(locale as string, ["common"])),
+			...(await serverSideTranslations(locale as string, ["common"])),
 		},
-	  };
-  }
+	};
+}

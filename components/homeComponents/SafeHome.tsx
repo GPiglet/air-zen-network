@@ -8,7 +8,7 @@ const SafeHome: FC = () => {
     const { t } = useTranslation()
 
     return (
-        <section className="container mx-auto relative">
+        <section id="secure" className="container mx-auto relative">
             <svg className="absolute left-[-27%] bottom-[-28%] w-[140%] sm:top-[37%]  md:top-1/2 md:translate-y-[-50%] sm:w-[120%] md:w-[100%] xl:w-[65%]   sm:left-[-10%]  md:left-[-45%] xl:left-[-20%]" viewBox="0 0 804 796" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.4" d="M497.478 697.95C666.249 643.997 760.109 465.887 707.12 300.13C654.13 134.373 474.358 43.7373 305.587 97.69C136.816 151.643 42.9562 329.753 95.9454 495.51C148.935 661.267 328.707 751.903 497.478 697.95Z" fill="url(#paint0_radial_1376_4769)" />
                 <path opacity="0.5" d="M474.04 622.595C600.747 582.09 671.214 448.371 631.432 323.926C591.649 199.481 456.682 131.435 329.975 171.941C203.267 212.447 132.801 346.166 172.583 470.61C212.366 595.055 347.332 663.101 474.04 622.595Z" fill="url(#paint1_radial_1376_4769)" />

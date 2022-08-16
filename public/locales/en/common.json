@@ -176,7 +176,8 @@
                     "Ideal"
                 ]
             }
-        }
+        },
+        "menu": "Secure \n Reliable \n Easy \n Tehchnology"
     },
     "business": {
         "boost":{
@@ -285,16 +286,66 @@
             ]
         },
         "form": {
-            "step1": {
+            "start": {
                 "title": "Ready to go in minutes",
                 "content": "Whatever is pending in your company, together we will find a suitable network solution - with our own hardware and appropriate router system. All from a single source! \n Optionally, we offer you complete direct support - from planning to maintenance during operation.",
                 "button": "To the configurator"
             },
-            "step2": {
+            "businesstype": {
                 "breadcrumb": "Business configurator",
-                "confirm": "What is your business?"
+                "confirm": "What is your business?",
+                "buttons": [
+                    {
+                        "type": "Retail",
+                        "content": "Stores, Restaurants or Cafes"
+                    },
+                    {
+                        "type": "Hotel",
+                        "content": "dynamic accounts for Guests"
+                    },
+                    {
+                        "type": "Office ",
+                        "content": "WiFi for teams and customers "
+                    }, {
+                        "type": "Home Office",
+                        "content": "New Work & multiple devices"
+                    }
+                ]
+            },
+            "configrator": {
+                "breadcrumb": "Business  Configrator",
+                "retail": {
+                    "roomSize": "My home is \n square meters .",
+                    "node": "I want \n nodes for €25 each."
+                },
+                "hotel": {
+                    "roomCount": "We would like to equip \n room.",
+                    "member": "Our team includes \n people.",
+                    "roomSize": "Our hotel is \n square meters .",
+                    "node": "We recommend \n nodes for €25 each."
+                },
+                "office": {
+                    "wifi": "WIFI for \n colleagues.",
+                    "roomSize": "Our hotel is \n square meters .",
+                    "router": "existing routers.",
+                    "node": "We recommend \n nodes for €25 each."
+                },
+                "homeoffice": {
+                    "wifi": "Home office WIFI for \n colleagues.",
+                    "": "This corresponds to 80 nodes at €25 each."
+                },
+                "description": "The AirZen set includes at least 3 routers: our nodes. We guarantee you a stable connection up to 200m2.\n In addition, we recommend one node for each additional 60m2 or new external locations.",
+                "addlocation": "Add location",
+                "button": "Next",
+                "numberofRoom": "Anzahl Zimmer",
+                "teamSize": "Teamgröße:",
+                "surface": "Fläche",
+                "numberofNode": "Nodeanzahl",
+                "femaleColleague": "Kolleg*innen",
+                "oldRouter": "alte Router"
             }
-        }
+        },
+        "menu": "Professional \n Reliable \n Secure \n Solution \n Technology"
     },
     "education": {
         "classwifi": {
@@ -336,7 +387,8 @@
             "tip": "Technology",
             "title": "Our nodes",
             "description": "Wifi 6 \n 2 wlan modules for access and meshing \n Perfect roaming with Apple & Android \n supports all roaming standards of Apple iOS and Android devices for seamless roaming. \n Zero setup \n The AirZen app helps you with the easy installation."
-        }
+        },
+        "menu": "Classroom \n PROTECTION \n Simple \n Technology"
     },
     "industrial": {
         "everything": {
@@ -372,7 +424,8 @@
             "tip": "Technology",
             "title": "Our nodes",
             "description": "Wifi 6 \n 2 wlan modules for access and meshing \n Perfect roaming with Apple & Android \n supports all roaming standards of Apple iOS and Android devices for seamless roaming. \n Zero setup \n The AirZen app helps you with the easy installation."
-        }
+        },
+        "menu": "Reference projects \n Simple \n Safe \n Technology"
     },
     "contactForm": {
         "cotact": "Get in touch",

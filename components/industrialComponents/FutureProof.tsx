@@ -14,7 +14,7 @@ const FutureProof: FC = () => {
     ]
 
     return (
-        <div className="relative container mx-auto mb-[70%] sm:mb-[90%] md:mb-0">
+        <div id="secure" className="relative container mx-auto mb-[70%] sm:mb-[90%] md:mb-0">
 
             <svg className="absolute 
             left-[-49%] md:left-[-70%] lg:left-[-89%] xl:left-[-70%]

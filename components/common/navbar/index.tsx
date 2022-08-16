@@ -18,6 +18,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
 
   const router = useRouter()
 
+
   // animation
   const animNavButtons = React.useRef<any>([]);
 
@@ -88,7 +89,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
               navItems.map((item, index) => (
                 <li ref={el => animNavButtons.current.push(el)} className={"flex items-center cursor-pointer"} key={index} >
                   <Link activeClass="active" smooth spy to={item.href} onClick={() => setNavbarOpen(false)}>
-                    <p className="hover:text-gray-100 text-gray-400 px-3 py-4 md:py-2 flex items-center text-lg uppercase font-lato">{item.title}</p>
+                    <p className="hover:text-gray-100 text-gray-400  py-4 md:py-2 flex items-center text-lg uppercase font-lato">{item.title}</p>
                   </Link>
                 </li>
               ))

@@ -169,6 +169,9 @@ section {
   .unique-skill-items:hover .unique-skill-button p{
     color: #ffffffb3;
   }
+  .unique-skill-items:hover>div>div{
+    height: max-content;
+  }
   
   .unique-skill-items:hover .unique-skill-description, .unique-skill-items:hover .unique-skill-list {
     display: block;
