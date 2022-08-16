@@ -35,9 +35,9 @@ const SafeHome: FC = () => {
                 <div className="flex flex-wrap ">
                     {/* <div className="w-[20%]"></div> */}
                     <div className="w-full md:w-1/2 m-auto">
-                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('home.section2.tip')}</p>
-                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('home.section2.title')}</h1>
-                        {t('home.section2.description').split('\n').map((item, index) =>
+                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('home.safehome.tip')}</p>
+                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('home.safehome.title')}</h1>
+                        {t('home.safehome.description').split('\n').map((item, index) =>
                             <p className="font-lato font-light tracking-widest text-white text-lg mt-4" key={index}>{item}</p>
                         )}
                     </div>

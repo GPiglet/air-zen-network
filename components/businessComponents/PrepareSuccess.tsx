@@ -93,10 +93,10 @@ const PrepareSuccess: FC = () => {
                 <div className="flex flex-wrap mt-[400px] md:mt-12">
                     <div className="w-full md:w-2/5 m-auto">
                         <div className="relative">
-                            <p className="font-lato-light italic font-light text-[22px] text-white">{t('business.section4.tip')}</p>
-                            <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('business.section4.title')}</h1>
+                            <p className="font-lato-light italic font-light text-[22px] text-white">{t('business.preparesuccess.tip')}</p>
+                            <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('business.preparesuccess.title')}</h1>
                             {
-                                t('business.section4.description').split('\n').map((item, index) =>
+                                t('business.preparesuccess.description').split('\n').map((item, index) =>
                                     <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}
                                     </p>
                                 )

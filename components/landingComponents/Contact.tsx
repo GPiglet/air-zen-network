@@ -21,7 +21,7 @@ const Contact: FC = () => {
         <div id='cantact' className='container m-auto relative py-[120px] md:py-[280px] flex justify-center'>
             <div className=" flex justify-center">
                 <div className='md:w-[50%] xl:w-1/3 text-center relative px-10 md:px-auto'>
-                    <h1 className="text-title-sm">{t('landing.section5.title')}</h1>
+                    <h1 className="text-title-sm">{t('landing.contact.title')}</h1>
                     <svg className='absolute left-1/2 center-x-transform w-[90%] md:w-[150%] top-[-100px] md:top-[-150px]' viewBox="0 0 488 519" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path opacity="0.7" d="M243.691 23.0004C377.708 23.0004 486.381 133.623 486.381 270.122C486.381 406.62 377.708 517.243 243.691 517.243C109.673 517.243 0.999995 406.62 0.999989 270.122C0.999983 133.623 109.673 23.0005 243.691 23.0004Z" stroke="url(#paint0_linear_0_1)" strokeWidth="2" />
                         <path d="M185.181 77.3883C190.736 69.4988 194 59.8815 194 49.5C193.999 22.7146 172.285 1 145.5 1C118.715 1 97 22.7146 97 49.5C97 76.2854 118.715 98 145.5 98C156.055 98 165.821 94.6269 173.782 88.9012L193.126 97.2375L185.181 77.3883Z" stroke="url(#paint1_linear_0_1)" strokeWidth="2" strokeMiterlimit="10" />
@@ -36,7 +36,7 @@ const Contact: FC = () => {
                             </linearGradient>
                         </defs>
                     </svg>
-                    <p className='font-lato text-lg text-white mt-11 text-left tracking-widest'>{t('landing.section5.subtitle')}</p>
+                    <p className='font-lato text-lg text-white mt-11 text-left tracking-widest'>{t('landing.contact.subtitle')}</p>
                     <CustomInput
                         label='Name'
                         inputColor='text-slate-300'
@@ -60,10 +60,10 @@ const Contact: FC = () => {
                         value={email}
                     />
                     <button className='text-lgx text-white button-gradient py-2 px-8 rounded-md border border-primary relative'>
-                        {t('landing.section5.send')}
+                        {t('landing.contact.send')}
                     </button>
                     {
-                        t('landing.section5.description').split('\n').map((item, index) =>
+                        t('landing.contact.description').split('\n').map((item, index) =>
                             <p className='font-lato font-light text-left text-base text-white tracking-[2px] my-4' key={index}>
                                 {item}
                             </p>

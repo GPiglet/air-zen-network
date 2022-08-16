@@ -33,7 +33,7 @@ const Solution360: FC = () => {
         flickityRef: flickity
     }
 
-    const sliderList = t('business.section6.swiper', { returnObjects: true })
+    const sliderList = t('business.solution.swiper', { returnObjects: true })
 
     // const sliderList = [
     //     {
@@ -122,7 +122,7 @@ const Solution360: FC = () => {
             <div className='relative z-50'>
 
                 <div className="text-center pt-[100px] md:pt-[18%]">
-                    <h1 className="text-title-sm">{t('business.section6.title')} </h1>
+                    <h1 className="text-title-sm">{t('business.solution.title')} </h1>
                 </div>
                 <div className='relative flex'>
                     <picture>

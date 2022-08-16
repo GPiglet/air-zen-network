@@ -11,7 +11,7 @@ const UniqueSkill: FC = () => {
 
     const router = useRouter()
 
-    const skillList = t('landing.section2.list', { returnObjects: true })
+    const skillList = t('landing.solution.list', { returnObjects: true })
 
     const graphList = [
         {
@@ -159,8 +159,8 @@ const UniqueSkill: FC = () => {
             <div id='solutions' ref={containerRef} className='z-10 md:container mx-auto relative md:flex justify-center items-center pb-[200px]'>
                 <div className='mt-[200px] md:mt-[120px]'>
                     <div className=" text-center  text-white">
-                        <h1 ref={el => animSideUp.current.push(el)} className="text-title-sm">{t('landing.section2.title')}</h1>
-                        <p ref={el => { animSideUp.current.push(el); animFadeIn.current.push(el) }} className="font-lato font-light tracking-widest text-[22px] mt-3">{t('landing.section2.subtitle')}</p>
+                        <h1 ref={el => animSideUp.current.push(el)} className="text-title-sm">{t('landing.solution.title')}</h1>
+                        <p ref={el => { animSideUp.current.push(el); animFadeIn.current.push(el) }} className="font-lato font-light tracking-widest text-[22px] mt-3">{t('landing.solution.subtitle')}</p>
                     </div>
                     <div ref={el => { animFadeIn.current.push(el) }} className='w-full mt-[160px]'>
                         <div className='md:m-auto md:w-max'>
@@ -184,7 +184,7 @@ const UniqueSkill: FC = () => {
                                                 <div className='w-[89px] h-[89px] md:w-[65px] md:h-[65px] top-[5px] md:top-auto sparkle absolute right-[70px] sm:right-[80px] md:right-[10px] md:bottom-[-2px]'>
                                                 </div>
                                                 <div className='hidden unique-skill-button absolute bottom-0'>
-                                                    <p className='text-base text-neutral-700 '>{t('landing.section2.solution')}</p>
+                                                    <p className='text-base text-neutral-700 '>{t('landing.solution.solution')}</p>
                                                 </div>
                                             </div>
                                         </div>

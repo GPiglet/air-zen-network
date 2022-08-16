@@ -57,9 +57,9 @@ const SimplyNetwork: FC = () => {
                 <Breadcrumb />
                 <div className="flex flex-wrap mt-12">
                     <div className="w-full md:w-[510px]">
-                        <h1 className="text-title-sm"> {t("home.section1.title")}</h1>
+                        <h1 className="text-title-sm"> {t("home.simply.title")}</h1>
                         {
-                            t('home.section1.description').split('\n').map((item, index) => (
+                            t('home.simply.description').split('\n').map((item, index) => (
                                 <p className="font-lato font-light tracking-widest text-white text-lg mt-4" key={index}>{item}</p>
                             ))
                         }

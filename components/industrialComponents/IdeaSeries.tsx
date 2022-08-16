@@ -67,10 +67,10 @@ const IdeaSeries: FC = () => {
                 <div className="flex flex-wrap md:mt-12">
                     <div className="w-full md:w-[35%] m-auto">
                         <div className="relative">
-                            <p className="font-lato-light italic font-light text-[22px] text-white">{t('industrial.section2.tip')}</p>
-                            <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('industrial.section2.title')}</h1>
+                            <p className="font-lato-light italic font-light text-[22px] text-white">{t('industrial.reliable.tip')}</p>
+                            <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('industrial.reliable.title')}</h1>
                             {
-                                t('industrial.section2.description').split('\n').map((item, index) =>
+                                t('industrial.reliable.description').split('\n').map((item, index) =>
                                     <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}</p>
                                 )
                             }

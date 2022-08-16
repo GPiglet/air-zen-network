@@ -45,10 +45,10 @@ const Contact: FC = () => {
 
                 <div className="mx-auto relative md:pl-[10%]">
                     <div className="w-full md:w-1/2 px-10">
-                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('education.section5.tip')}</p>
-                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('education.section5.title')}</h1>
+                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('education.ournode.tip')}</p>
+                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('education.ournode.title')}</h1>
                         {
-                            t('education.section5.description').split('\n').map((item, index) =>
+                            t('education.ournode.description').split('\n').map((item, index) =>
                                 index % 2 === 0 ? (
                                     <p className="font-lato tracking-widest text-white text-lg mt-3 font-normal" key={index}>{item}</p>
                                 ) : (

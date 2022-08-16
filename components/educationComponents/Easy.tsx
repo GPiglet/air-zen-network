@@ -20,7 +20,7 @@ const Easy: FC = () => {
                 <image href="/images/model.png" x="41%" y="45%" fillOpacity='0.5' className="w-[221px]" />
                 <foreignObject className="font-lato-light  italic text-lg text-white  md:block" x="44%" y="25%" width="250px" height="100px">
                     <p
-                    >{t('education.section4.sparkle1')}</p>
+                    >{t('education.easy.sparkle1')}</p>
                 </foreignObject>
                 <image href="/images/sparkle.svg" className="w-[49px] h-[49px]  md:block" x="40%" y="24.5%" cx="511.828" cy="696.377" />
                 <defs>
@@ -55,7 +55,7 @@ const Easy: FC = () => {
                 <image href="/images/model.png" x="49%" y="29%" fillOpacity='0.5' className="w-[82px]" />
                 <foreignObject className="font-lato-light  italic text-lg text-white  md:block" x="63%" y="27.5%" width="250px" height="100px">
                     <p
-                    >{t('education.section4.sparkle2')}</p>
+                    >{t('education.easy.sparkle2')}</p>
                 </foreignObject>
                 <image href="/images/sparkle.svg" className="w-[49px] h-[49px]  md:block" x="58.5%" y="26.5%" cx="511.828" cy="696.377" />
                 <defs>
@@ -87,7 +87,7 @@ const Easy: FC = () => {
                 <image href="/images/model.png" x="45%" y="36%" fillOpacity='0.5' className="w-[144px]" />
                 <foreignObject className="font-lato-light  italic text-lg text-white  md:block" x="36%" y="77.5%" width="250px" height="100px">
                     <p
-                    >{t('education.section4.sparkle3')}</p>
+                    >{t('education.easy.sparkle3')}</p>
                 </foreignObject>
                 <image href="/images/sparkle.svg" className="w-[49px] h-[49px]  md:block" x="29%" y="76%" cx="511.828" cy="696.377" />
                 <defs>
@@ -114,10 +114,10 @@ const Easy: FC = () => {
             <div className="relative items-center px-10 md:px-0 md:pt-[10%] md:h-[70%]">
                 <div className="flex flex-col mt-12 md:mt-18">
                     <div className="w-full md:w-1/3 m-auto">
-                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('education.section4.tip')}</p>
-                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('education.section4.title')}</h1>
+                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('education.easy.tip')}</p>
+                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('education.easy.title')}</h1>
                         {
-                            t('education.section4.description').split('\n').map((item, index) =>
+                            t('education.easy.description').split('\n').map((item, index) =>
                                 <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}</p>
                             )
                         }

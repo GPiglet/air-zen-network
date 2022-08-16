@@ -7,7 +7,7 @@ const Easy: FC = () => {
     //translate
     const { t } = useTranslation()
 
-    const easyList = t('home.section4.list', { returnObjects: true })
+    const easyList = t('home.easy.list', { returnObjects: true })
 
     return (
         <section className="container mx-auto pb-16 relative">
@@ -37,10 +37,10 @@ const Easy: FC = () => {
                 <div className="flex flex-wrap mt-[400px] md:mt-12">
                     <div className="w-full md:w-1/2 m-auto">
                         <div className="relative">
-                            <p className="font-lato-light italic font-light text-[22px] text-white">{t('home.section4.tip')}</p>
-                            <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('home.section4.title')}</h1>
+                            <p className="font-lato-light italic font-light text-[22px] text-white">{t('home.easy.tip')}</p>
+                            <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('home.easy.title')}</h1>
                             {
-                                t('home.section4.description').split('\n').map((item, index) =>
+                                t('home.easy.description').split('\n').map((item, index) =>
                                     <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}</p>
                                 )
                             }

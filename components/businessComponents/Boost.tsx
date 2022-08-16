@@ -80,10 +80,10 @@ const Boost: FC = () => {
                 <div className="flex flex-wrap mt-12">
                     <div className="w-full md:w-1/2">
                         <h1 className="text-title-md">
-                            {t('business.section1.title')}
+                            {t('business.boost.title')}
                         </h1>
                         {
-                            t('business.section1.description').split('\n').map((item, index) =>
+                            t('business.boost.description').split('\n').map((item, index) =>
                                 <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>
                                     {item}
                                 </p>
@@ -91,7 +91,7 @@ const Boost: FC = () => {
                         }
                         <div className="mt-12">
                             <p className="font-lato-light italic font-light text-lg text-white  ">
-                                {t('business.section1.cooperation')}
+                                {t('business.boost.cooperation')}
                             </p>
                             <div className="flex justify-between items-center mt-12">
                                 {logos.map((item, index) => (

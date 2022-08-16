@@ -47,7 +47,7 @@ const AboutUs: FC = () => {
     }
 
 
-    const sliderList = t('landing.section3.swiper', { returnObjects: true })
+    const sliderList = t('landing.aboutus.swiper', { returnObjects: true })
 
     const svgGroupAnimation = (state: string) => {
         if (state === 'next') {
@@ -70,7 +70,7 @@ const AboutUs: FC = () => {
 
                 <div>
                     <div className="text-center">
-                        <h1 className="text-title-sm mt-20">{t('landing.section3.title')} </h1>
+                        <h1 className="text-title-sm mt-20">{t('landing.aboutus.title')} </h1>
                     </div>
                     <div className=' md:flex'>
                         <picture className={`${selected + 1 === sliderList.length ? 'hidden' : ''} `}>
@@ -92,7 +92,6 @@ const AboutUs: FC = () => {
                                             <p className="font-lato uppercase font-black text-[22px] text-transparent bg-clip-text bg-gradient-to-r from-gray-400 via-gray-200 to-white tracking-widest">{item.title}</p>
                                             <p className="font-lato font-light tracking-widest text-white text-lg mt-3">{item.content}</p>
                                         </div>
-
                                     ))
                                 }
 
@@ -109,11 +108,11 @@ const AboutUs: FC = () => {
                                 <image className='about-us-phone about-fade-in' href="/images/phone-home.png" x="40.5%" y="33%" cx="511.828" cy="696.377" transform="translate(0,0)" />
                                 <foreignObject className="font-lato-light about-us-animate italic w-[260px] text-lg text-white hidden md:block" x="67.5%" y="61.5%" width="260px" height="100px">
                                     <p
-                                    >{t('landing.section3.sparkle1')}</p>
+                                    >{t('landing.aboutus.sparkle1')}</p>
                                 </foreignObject>
                                 <foreignObject className="font-lato-light about-us-animate italic w-[260px] text-lg text-white hidden md:block" x="9%" y="74.5%" width="260px" height="100px">
                                     <p
-                                    >{t('landing.section3.sparkle2')}</p>
+                                    >{t('landing.aboutus.sparkle2')}</p>
                                 </foreignObject>
                                 <image href="/images/sparkle.svg" className="about-us-animate w-[49px] h-[47px] hidden md:block about-fade-in" x="5%" y="74%" cx="511.828" cy="696.377" />
                                 <image href="/images/sparkle.svg" className="about-us-animate w-[49px] h-[47px] hidden md:block about-fade-in" x="64%" y="61%" cx="511.828" cy="696.377" />

@@ -7,7 +7,7 @@ const NewWork: FC = () => {
 
     //translate
     const { t } = useTranslation()
-    const list = t('business.section3.list', { returnObjects: true })
+    const list = t('business.newwork.list', { returnObjects: true })
 
     return (
         <section className="pb-16 relative container mx-auto">
@@ -41,10 +41,10 @@ const NewWork: FC = () => {
                 <div className="flex flex-wrap pt-[400px] md:pt-0 md:mt-12">
                     <div className="w-full md:w-2/5 m-auto">
                         <div className="relative">
-                            <p className="font-lato-light italic font-light text-[22px] text-white">{t('business.section3.tip')}</p>
-                            <h1 className="text-title-sm">{t('business.section3.title')}</h1>
+                            <p className="font-lato-light italic font-light text-[22px] text-white">{t('business.newwork.tip')}</p>
+                            <h1 className="text-title-sm">{t('business.newwork.title')}</h1>
                             {
-                                t('business.section3.description').split('\n').map((item, index) =>
+                                t('business.newwork.description').split('\n').map((item, index) =>
                                     <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}
                                     </p>
                                 )

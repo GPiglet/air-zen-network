@@ -7,7 +7,7 @@ const Professional: FC = () => {
     //translate
     const { t } = useTranslation()
 
-    const list = t('business.section2.list', { returnObjects: true })
+    const list = t('business.professional.list', { returnObjects: true })
 
     // const list = [
     //     {
@@ -113,9 +113,9 @@ const Professional: FC = () => {
             <div className="pt-[50%] md:pt-[0] md:mt-0 relative text-center text-white px-10">
                 <div className="w-full">
                     <h1 className="text-title-sm">
-                        {t('business.section2.title')}
+                        {t('business.professional.title')}
                     </h1>
-                    <p className="font-lato-light font-light italic text-lg tracking-widest">{t('business.section2.subtitle')}</p>
+                    <p className="font-lato-light font-light italic text-lg tracking-widest">{t('business.professional.subtitle')}</p>
                     <div className="md:flex justify-between text-lg text-left mt-10">
                         <div className="w-[160px]"></div>
                         {

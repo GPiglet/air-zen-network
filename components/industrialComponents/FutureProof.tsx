@@ -61,10 +61,10 @@ const FutureProof: FC = () => {
             <div className="container mx-auto flex self-center relative text-white px-10 xl:py-[18%]">
                 <div className="md:flex justify-end items-center mt-5 md:mt-0  md:h-[60%]">
                     <div className="md:w-[40%]">
-                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('industrial.section5.tip')}</p>
-                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('industrial.section5.title')}</h1>
+                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('industrial.secure.tip')}</p>
+                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('industrial.secure.title')}</h1>
                         {
-                            t('industrial.section5.description').split('\n').map((item, index) =>
+                            t('industrial.secure.description').split('\n').map((item, index) =>
                                 <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}</p>
                             )
                         }
