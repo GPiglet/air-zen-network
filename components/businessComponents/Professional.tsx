@@ -7,7 +7,7 @@ const Professional: FC = () => {
     //translate
     const { t } = useTranslation()
 
-    const list = t('business.section2.list', { returnObjects: true })
+    const list = t('business.professional.list', { returnObjects: true })
 
     // const list = [
     //     {
@@ -38,7 +38,7 @@ const Professional: FC = () => {
     // ]
 
     return (
-        <section className="pb-16 relative  items-center md:flex container mx-auto ">
+        <section id="professional" className="pb-16 relative  items-center md:flex container mx-auto ">
 
 
             <svg className="absolute left-[-75%] bottom-[-71%] sm:top-[45%] md:top-[-10%] xl:top-[-33%] md:w-[100%]   sm:w-[150%] sm:left-[-25%] w-[250%] md:left-[-41%] xl:left-[-40%] " viewBox="0 0 679 681" fill="none" stopOpacity='0.2' xmlns="http://www.w3.org/2000/svg">
@@ -113,9 +113,9 @@ const Professional: FC = () => {
             <div className="pt-[50%] md:pt-[0] md:mt-0 relative text-center text-white px-10">
                 <div className="w-full">
                     <h1 className="text-title-sm">
-                        {t('business.section2.title')}
+                        {t('business.professional.title')}
                     </h1>
-                    <p className="font-lato-light font-light italic text-lg tracking-widest">{t('business.section2.subtitle')}</p>
+                    <p className="font-lato-light font-light italic text-lg tracking-widest">{t('business.professional.subtitle')}</p>
                     <div className="md:flex justify-between text-lg text-left mt-10">
                         <div className="w-[160px]"></div>
                         {

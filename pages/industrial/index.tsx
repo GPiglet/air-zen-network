@@ -21,23 +21,23 @@ const Industrial: NextPage = () => {
 	const navItems: Array<any> = [
 		{
 			id: 1,
-			title: 'Lösungen',
-			href: 'solutions'
+			title: 'Referenzprojekte',
+			href: 'reference'
 		},
 		{
 			id: 2,
-			title: 'Über uns',
-			href: 'aboutus'
+			title: 'Einfach',
+			href: 'easy'
 		},
 		{
 			id: 3,
-			title: 'REFERENZEN',
-			href: 'credentials'
+			title: 'Sicher',
+			href: 'secure'
 		},
 		{
 			id: 4,
-			title: 'Kontakt',
-			href: 'cantact'
+			title: 'Technik',
+			href: 'technology'
 		},
 	]
 

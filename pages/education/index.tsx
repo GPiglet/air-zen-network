@@ -21,23 +21,23 @@ const Home: NextPage = () => {
 	const navItems: Array<any> = [
 		{
 			id: 1,
-			title: 'Lösungen',
-			href: 'solutions'
+			title: 'Klassenzimmer ',
+			href: 'classroom'
 		},
 		{
 			id: 2,
-			title: 'Über uns',
-			href: 'aboutus'
+			title: 'SCHUTZ',
+			href: 'protection'
 		},
 		{
 			id: 3,
-			title: 'REFERENZEN',
-			href: 'credentials'
+			title: 'Einfach',
+			href: 'easy'
 		},
 		{
 			id: 4,
-			title: 'Kontakt',
-			href: 'cantact'
+			title: 'Technik',
+			href: 'technology'
 		},
 	]
 

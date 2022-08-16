@@ -9,7 +9,7 @@ const Contact: FC = () => {
     const { t } = useTranslation()
 
     return (
-        <div className="relative mb-[700px] md:mb-[0] ">
+        <div id="technology" className="relative mb-[700px] md:mb-[0] ">
             <div className="container mx-auto relative mt-[800px] xs:mt-[800px] sm:mt-[1100px] md:mt-[700px]">
                 <svg className="absolute
                 top-[-78%] xs:top-[-127%] sm:top-[-565px] md:top-[-130%] lg:top-[-150%] xl:top-[-250%]
@@ -44,10 +44,10 @@ const Contact: FC = () => {
 
                 <div className="mx-auto relative md:pl-[10%]">
                     <div className="w-full md:w-1/2 px-10">
-                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('industrial.section6.tip')}</p>
-                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('industrial.section6.title')}</h1>
+                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('industrial.ournode.tip')}</p>
+                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('industrial.ournode.title')}</h1>
                         {
-                            t('industrial.section6.description').split('\n').map((item, index) =>
+                            t('industrial.ournode.description').split('\n').map((item, index) =>
                                 index % 2 === 0 ? (
                                     <p className="font-lato tracking-widest text-white text-lg mt-3 font-normal" key={index}>{item}</p>
                                 ) : (

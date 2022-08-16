@@ -13,7 +13,7 @@ const BusinessNode: FC = () => {
     const { t } = useTranslation()
 
     return (
-        <div className="pb-16 relative ">
+        <div id="technology" className="pb-16 relative ">
             {/* mt-[600px] sm:mt-[100%] md:mt-[50%] */}
 
             <div className="relative px-10 md:px-0 container mx-auto ">
@@ -47,10 +47,10 @@ const BusinessNode: FC = () => {
                 <div className="flex flex-wrap pt-[500px] md:pt-[42%]">
                     <div className="md:w-1/12"></div>
                     <div className="w-full md:w-[45%] px-10">
-                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('business.section7.tip')}</p>
-                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em] mb-10">{t('business.section7.title')}</h1>
+                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('business.ournode.tip')}</p>
+                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em] mb-10">{t('business.ournode.title')}</h1>
                         {
-                            t('business.section7.description').split('\n').map((item, index) =>
+                            t('business.ournode.description').split('\n').map((item, index) =>
                                 index % 2 === 0 ? (
                                     <p className="font-lato tracking-widest text-white text-lg mt-3 font-normal" key={index}>{item}</p>
                                 ) : (

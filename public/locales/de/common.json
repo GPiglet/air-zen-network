@@ -1,13 +1,13 @@
 {
     "landing": {
-        "section1": {
+        "wifi": {
             "_comment": "Der obere Abschnitt der Seite.",
             "title": "Sei Smart! \n Machs einfach!",
             "description": "Highend-Netzwerk-Technologien für einen entspannteren Alltag und Arbeitswelt. Und das außergewöhnlich einfach, sicher und zuverlässig.",
             "sparkle1": "Dieses Feature ermöglicht eine besondere Funktion: XYZ",
             "sparkle2": "Dieses Feature ermöglicht eine besondere Funktion: XYZ"
         },
-        "section2": {
+        "solution": {
             "_comment": "Abschnitt 'Einzigartige Technologie' der Seite",
             "title": "Einzigartige Technologie.",
             "subtitle": "Unzählige Einsatzmöglichkeiten. Finden Sie Ihre:",
@@ -16,7 +16,7 @@
                     "title": "Home",
                     "subtitle": "Für ein smartes Zuhause.",
                     "description" : "Störungsfreies und selbstoptimierendes Netz. Zuhause wie beim Profi.",
-                    "list": "Highly stable connection \n No experience required \n Automatic updates \n Video support"
+                    "list": "Hochstabile Verbindung \n Keine Erfahrung nötig \n Automatische Updates \n Videosupport"
                 },
                {
                     "title": "Business",
@@ -39,18 +39,10 @@
             ],
             "solution": "Unsere Lösung"
         },
-        "section3": {
+        "aboutus": {
             "_comment": "Abschnitt 'Über uns' der Seite.",
             "title": "Über Uns",
             "swiper": [
-                {
-                    "title": "Aus Europa. Für Europa.",
-                    "content": "AirZen stellt modernste Netzwerk Technologie in der Schweiz & Europa her. Sicheres WLAN – entwickelt für individuelle Anforderungen und mit hoher Anwenderfreundlichkeit. Der eigenen Herkunft verpflichtet, hilft AirZen allen Kunden dabei mit aktuellen Datenschutz- und Security-Richtlinien Schritt zu halten."
-                },
-                {
-                    "title": "Aus Europa. Für Europa.",
-                    "content": "AirZen stellt modernste Netzwerk Technologie in der Schweiz & Europa her. Sicheres WLAN – entwickelt für individuelle Anforderungen und mit hoher Anwenderfreundlichkeit. Der eigenen Herkunft verpflichtet, hilft AirZen allen Kunden dabei mit aktuellen Datenschutz- und Security-Richtlinien Schritt zu halten."
-                },
                 {
                     "title": "Aus Europa. Für Europa.",
                     "content": "AirZen stellt modernste Netzwerk Technologie in der Schweiz & Europa her. Sicheres WLAN – entwickelt für individuelle Anforderungen und mit hoher Anwenderfreundlichkeit. Der eigenen Herkunft verpflichtet, hilft AirZen allen Kunden dabei mit aktuellen Datenschutz- und Security-Richtlinien Schritt zu halten."
@@ -67,7 +59,7 @@
             "sparkle1": "Dieses Feature ermöglicht eine besondere Funktion: XYZ",
             "sparkle2": "Dieses Feature ermöglicht eine besondere Funktion: XYZ"
         },
-        "section4": {
+        "credential": {
             "_comment": "Abschnitt 'Referenzen' der Seite.",
             "title": "Referenzen",
             "swiper": [
@@ -93,7 +85,7 @@
                 }
             ]
         },
-        "section5": {
+        "contact": {
             "_comment": "Abschnitt 'Kontakt' der Seite.",
             "title": "Kontakt",
             "subtitle": "Highend-Netzwerk-Technologien für einen entspannteren Alltag und Arbeitswelt. Und das außer- gewöhnlich einfach, sicher und zuverlässig.",
@@ -103,25 +95,25 @@
         "menu": "Lösungen \n Über uns \n Referezen \n Kontakt"
     },
     "home": {
-        "section1": {
+        "simply": {
             "_comment": "Der obere Abschnitt der Seite.",
             "title": "EINFACH GUTES NETZ.",
             "description": "AirZen macht Schluss mit unsicheren Netzwerken und nervigen Verbindungsabbrüchen. Dank ausgeklügelter Mesh-Technologie halten sie ihr Zuhause immer im On. \n   Erleben Sie die neue Form der Internet Nutzung in ihrem Zuhause. AirZen ist vergleichbar eines Internet Betriebssystems, dass nicht nur den Standard für Sicherheit und Privatsphäre ihrer Daten neu definiert. "
         },
-        "section2": {
+        "safehome": {
             "_comment": "'sicherer' Abschnitt der Seite",
             "tip": "Sicher",
             "title": "Home safe Home",
             "description": "Ihre digitale Sicherheit ist unser Anspruch. Unser Security Paket umfasst nicht nur die Trennung ihres beruflich vom privaten Netzwerk wenn Sie im Home Office arbeiten sondern beschützt ebenso ihre Kinder mit einer umfassenden Jugendschutz Funktion.  \n Sicherheit beginnt mit uns direkt an der Quelle des Internetzugangs per Security WatchDog welcher schadhafte Websites bereits vorab für Sie filtert und durch automatische Updates permanent aktualisiert wird. \n Der Internet Pause Button gibt Ihnen die Kontrolle über die Internet Verfügbarkeit aller Nutzer und die individuelle Passwortvergabe ermöglicht nicht nur personalisierte Rechtevergaben nach ihrem Wunsch, sondern erhöht auch die Sicherheit Ihres Wifi enorm."
         },
-        "section3" : {
+        "reliable" : {
             "_comment": "'Zuverlässig' Abschnitt der Seite",
             "tip": "Zuverlässig",
             "title": "So gut, so OmG!",
             "description": "Nach dem Update ist vor dem Update. Gerade für Menschen, die ihr privates Netzwerk im Homeoffice nutzen, stellen verzögerte Updates eine ernste Bedrohung für die sensiblen Daten ihrer Firma. \n Um diesen Bedrohungen immer einen Schritt voraus zu sein, ist unsere Platform an ein Lizensmodell gekoppelt. Das schließt zahlreiche Sicherheits- features ein, von denen Sie kaum etwas bemerken werden, solange wir unsere Arbeit gewissenhaft erledigen:",
             "list": "BotNetz-Schutz \n  Content-Filter für Kinder-Netzwerk \n Content-Filter für Manipulierte Websites \n  Familien Verwaltung mit y für Kinder und Internet-Pause Knopf \n  Automatisch Software Updates \n Live-Support vom Hersteller"
         },
-        "section4" : {
+        "easy" : {
             "_comment": "'Einfach' Abschnitt der Seite",
             "tip": "Einfach",
             "title": "entspannter geht nicht!",
@@ -137,7 +129,7 @@
                 "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
             ]
         },
-        "section5" : {
+        "ournode" : {
             "_comment": "'Technik' Abschnitt der Seite",
             "tip": "Technik",
             "title": "Unsere Nodes",
@@ -197,16 +189,17 @@
                     "Ideal"
                 ]
             }
-        }
+        },
+        "menu": "Sicher \n Zuverlässig \n Einfach \n Technik"
     },
     "business": {
-        "section1":{
+        "boost":{
             "_comment": "Der obere Abschnitt der Seite.('Boost')",
             "title": "Boost your Business",
             "description": "Ihr Start-Up, Filiale, oder Restaurant soll mit einem sciheren Netz versorgt,   und aus der Ferne wartbar sein?  \n Dann entdecken Sie die innovative Air Zen Technologie für ein zuverlässiges, sicheres und einfaches Netz.",
             "cooperation": "In vertrauensvoller Kooperation mit:"
         },
-        "section2": {
+        "professional": {
             "_comment": "Abschnitt 'Professional Walan' der Seite",
             "title": "Profesionelles Wlan ",
             "subtitle": "für Teams, Büros und Kunden",
@@ -239,7 +232,7 @@
                 }
             ]
         },
-        "section3": {
+        "newwork": {
             "_comment": "Abschnitt 'Zuverlässig' der Seite",
             "tip": "Zuverlässig",
             "title": "New Work, leicht gemacht!",
@@ -255,13 +248,13 @@
                 "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
             ]
         },
-        "section4": {
+        "preparesuccess": {
             "_comment": "Abschnitt 'Einfach' der Seite",
             "tip": "Einfach",
             "title": "Auf Erfolg eingerichtet!",
             "description": "Gerade Hotels, Einzelhandel, Versicherungen oder Banken mit vielen Standorten erleichtert ein smartes Standort- und Nutzermanagement inklusive Direktsupport vom Hersteller das Leben. \n Über unsere App können Sie ihr Netzwerk dynamisch erweitern oder updaten und einzelne Nutzer sicher einladen oder sperren. \n Auch Ihr Team kann über ein Self-Service-Portal selbst zu- und eingreifen. Darüber hinaus können Sie sogar eigene Sicherheits-Standards definieren: bestes Feng Shui für Ihre Mitarbeiter und Ihr Wlan."
         },
-        "section5": {
+        "secure": {
             "_comment": "Abschnitt 'Sicher' der Seite",
             "tip": "Sicher",
             "title": "Mit Sicherheit sicher!",
@@ -277,7 +270,7 @@
                 "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
             ]
         },
-        "section6": {
+        "solution": {
             "_comment": "Abschnitt '360°' der Seite",
             "title": "360° Lösung für Unternehmen",
             "swiper": [
@@ -296,32 +289,15 @@
                     "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
                     "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
                 ]
-            ],
-            "swiper": [
-                [
-                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
-                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
-                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
-                ],
-                [
-                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
-                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
-                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
-                ],
-                [
-                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
-                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
-                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
-                ]
             ]
         },
-        "section7": {
+        "ournode": {
             "_comment": "Abschnitt 'Unsere Nodes' der Seite",
             "tip": "Technik",
             "title": "Unsere Nodes",
             "description": "Wifi 6 \n 2 wlan module für Access- und Meshing \n Perfektes roaming mit Apple & Android \n unterstützt alle Roaming Standards von Apple iOS und Android Geräten für ein Seamless Romaing. \n Zero-Setup \n Die AirZen App hilft dir bei der kinderleichten Installation. "
         },
-        "section8": {
+        "whitepaper": {
             "_comment": "Abschnitt 'Whitepaper' der Seite",
             "title": "Whitepaper",
             "subtitle": "Hier finden Sie tiefer gehende Informationen zu unserem Service.",
@@ -347,24 +323,75 @@
             ]
         },
         "form": {
-            "step1": {
+            "start": {
                 "title": "Startklar in Minuten",
                 "content": "Was auch immer gerade in Ihrem Unternehmen ansteht, zusammen finden wir eine passende Netzwerklösung – Mit eigener Hardware und entsprechendem Routersystem. Alles aus einer Hand! \n Optional bieten wir Ihnen eine komplette Direktbetreuung an - von der Planung bis zur Wartung im laufenden Betrieb.",
                 "button": "zum Konfigurator"
             },
-            "step2": {
+            "businesstype": {
                 "breadcrumb": "Business  Konfigurator",
-                "confirm": "Was ist Ihr Geschäftsfeld?"
+                "confirm": "Was ist Ihr Geschäftsfeld?",
+                "buttons": [
+                    {
+                        "type": "Retail",
+                        "content": "Stores, Restaurants or Cafés"
+                    },
+                    {
+                        "type": "Hotel",
+                        "content": "dynamic accounts for Guests"
+                    },
+                    {
+                        "type": "Office ",
+                        "content": "WiFi for teams and customers "
+                    }, {
+                        "type": "Home Office",
+                        "content": "New Work & multiple devices"
+                    }
+                ]
+            },
+            "configrator": {
+                "breadcrumb": "Business  Konfigurator",
+                "retail": {
+                    "roomSize": "Mein Zuhause ist \n m2 groß .",
+                    "node": "Ich möchte \n Nodes á 25€."
+                },
+                "hotel": {
+                    "roomCount": "Wir möchten \n Zimmer ausstatten.",
+                    "member": "Unser Team umfasst \n Personen.",
+                    "roomSize": "Unser Hotel ist \n m2 groß .",
+                    "node": "Wir empfehlen \n Nodes á 25€."
+                },
+                "office": {
+                    "wifi": "WIFI für \n Kolleg*innen.",
+                    "roomSize": "Unser Hotel ist \n m2 groß .",
+                    "router": "existierende Router.",
+                    "node": "Wir empfehlen \n Nodes á 25€."
+                },
+                "homeoffice": {
+                    "wifi": "Home Office WIFI für \n Kolleg*innen.",
+                    "": "Dies entspricht 80 Nodes á 25,-€."
+                },
+                "description": "Das AirZen Set beinhaltet mindestens 3 Router: unsere Nodes. Damit garantieren wir ihnen eine stabile Verbindung bis zu 200m2.\n Darüber hinaus empfehlen wir jeweils eine Node für zusätzliche 60m2 oder neue externe Standorte.",
+                "addlocation": "Location hinzufügen",
+                "button": "weiter",
+                "numberofRoom": "Anzahl Zimmer",
+                "teamSize": "Teamgröße:",
+                "surface": "Fläche",
+                "numberofNode": "Nodeanzahl",
+                "femaleColleague": "Kolleg*innen",
+                "oldRouter": "alte Router"
             }
-        }
+
+        },
+        "menu": "Profesionelles \n Zuverlässig \n Sicher \n Lösung \n Technik"
     },
     "education": {
-        "section1": {
+        "classwifi": {
             "_comment":"Der obere Abschnitt der Seite.",
             "title": "Klasse, WLAN!",
             "description": "Für die moderne Bildung ist ein zeitgemäßes Netzwerk die Grundlage. AirZen sorgt für zuverlässiges und sicheres Internet für Schulen. Mit schlüsselfertiger Hardware, schulgerechter Einrichtung, mobiler Nutzerverwaltung, sowie einem rundum-sorglos ITSupport. \n Es braucht also keine IT-Abteilung vor Ort. Aber das Beste an der AirZen Technologie: Der kinderleichte Betrieb. Eben einfach das Netzwerk der nächsten Generation."
         },
-        "section2": {
+        "reliable": {
             "_comment":"'Zuverlässig' Abschnitt der Seite",
             "tip": "Zuverlässig",
             "title": "Klassenzimmer digital!",
@@ -380,7 +407,7 @@
                 "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
             ]
         },
-        "section3": {
+        "secure": {
             "_comment":"'Sicher'Abschnitt der Seite",
             "tip": "Sicher",
             "title": "SCHUTZ wird hier großsgeschrieben!",
@@ -388,7 +415,7 @@
             "sparkle1": "Dieses Feature ermöglicht eine besondere Funktion: XYZ",
             "sparkle2": "Dieses Feature ermöglicht eine besondere Funktion: XYZ"
         },
-        "section4": {
+        "easy": {
             "_comment":"'Einfach'Abschnitt der Seite",
             "tip": "Einfach",
             "title": "Das kleine Einmaleinfach!",
@@ -397,48 +424,50 @@
             "sparkle2": "Dieses Feature ermöglicht eine besondere Funktion: XYZ",
             "sparkle3": "Dieses Feature ermöglicht eine besondere Funktion: XYZ"
         },                                        
-        "section5": {
+        "ournode": {
             "_comment": "Abschnitt 'Unsere Nodes' der Seite",
             "tip": "Technik",
             "title": "Unsere Nodes",
             "description": "Wifi 6 \n 2 wlan module für Access- und Meshing \n Perfektes roaming mit Apple & Android \n unterstützt alle Roaming Standards von Apple iOS und Android Geräten für ein Seamless Romaing. \n Zero-Setup \n Die AirZen App hilft dir bei der kinderleichten Installation. "
-        }                                      
+        },
+        "menu": "Klassenzimmer \n SCHUTZ \n Einfach \n Technik"                               
     },
     "industrial": {
-        "section1": {
+        "everything": {
             "_comment":"Der obere Abschnitt der Seite.",
             "title": "Alles im Flow halten.",
             "description": "Durch Stabilität, Sicherheit und einfache Nutzung bieten die AirZen weitreichende Individualisierung für industrielle Netzwerke in vielen Bereichen ganz neue Möglichkeiten Prozesse abzuwickeln, neue Leistungen anzubieten und ganz neue Maßstäbe für Industrie 4.0 zu setzen.",
             "cooperation": "In vertrauensvoller Kooperation mit:"
         },
-        "section2": {
+        "reliable": {
             "_comment":"'Zuverlässig' Abschnitt der Seite",
             "tip": "Zuverlässig",
             "title": "Ideen in Serie gebracht",
             "description": "Alles aus einer Hand - von der Idee bis zur Hardware. Sie brauchen ein zuverlässiges Netzwerk oder haben eine neue Anforderung an ihr Bestehendes? \n Die AirZen Technologien sind für den Einsatz in der Industrie konzipiert und sorgen für ein äußerst effizientes Netzwerk auch bei speziellen, industriellen Anforderungen. Egal ob Automatisierung, smartes Management, Fernsteuerung oder Ferndiagnosen -AirZen entwickelt gemeinsam mit Ihnen eine ideale Netzwerk-Variante. Halten Sie alles am Laufen – mit einer  außergewöhnlich zuverlässigen und stabilen Netzwerkabdeckung von AirZen."
         },
-        "section3" : {
+        "referenceproject" : {
             "_comment": "'Referenzprojekte' Abschnitt der Seite",
             "title": "Referenzprojekte"
         },
-        "section4": {
+        "easy": {
             "_comment": "'Einfach' Abschnitt der Seite",
             "tip": "Einfach",
             "title": "Einfach Produktiver.",
             "description": "AirZen bietet Ihnen alles was Sie für den reibungslosen Betrieb brauchen. Profitieren Sie von einer einfachen Einrichtung oder der Integration der ergänzenden Funktionalitäten des Netzwerks, dank automatisierter Infrastruktur zwischen den Routern. Sie erhalten ständigen Zugriff auf alle angeschlossenen Geräte und Maschinen, weltweit und von Zuhause aus. \n Auch entspannt: AirZen ist ein europäisches Unternehmen und hilft Ihnen auch die aktuellen europäisches Datenschutz-Grundverordnung und Anforderungen zu erfüllen. Verwalten Sie alles ganz entspannt über dieselbe Plattform von Router bis IoT-Sensor. Kurzum: Minimieren Sie ihre Aufwand. Steigern Sie ihre Effizienz. Werden Sie ein AirZen."
         },
-        "section5": {
+        "secure": {
             "_comment": "'Sicher' Abschnitt der Seite",
             "tip": "Sicher",
             "title": "Zukunftsicher statt anno dazumal!",
             "description": "Der Schutz von Maschinen, Anlagen und Netzwerken erfordert einen aktuellen Stand der Technik. Damit der Betrieb störungsfrei abläuft, unterstützt AirZen mit sicheren Netzwerklösungen. \n Eine direkt integrierte Firewall ermöglicht Schutz vor unberechtigtem Zugriff. Mit eigener Hardware, Servern in Europa und dem Siegel 'Made in Switzerland' steht AirZen für optimalen Schutz. Darüber hinaus haben Sie potenzielle Störungen und Sicherheitsmängel zuverlässig im Blick. Das Netzwerk ist verwertbar über Kommandozeile, API oder App. So behalten Sie sicher den Überblick."
         },
-        "section6": {
+        "ournode": {
             "_comment": "Abschnitt 'Unsere Nodes' der Seite",
             "tip": "Technik",
             "title": "Unsere Nodes",
             "description": "Wifi 6 \n 2 wlan module für Access- und Meshing \n Perfektes roaming mit Apple & Android \n unterstützt alle Roaming Standards von Apple iOS und Android Geräten für ein Seamless Romaing. \n Zero-Setup \n Die AirZen App hilft dir bei der kinderleichten Installation. "
-        }
+        },
+        "menu": "Referenzprojekte \n Einfach \n Sicher \n Technik"     
 
     },
     "contactForm": {

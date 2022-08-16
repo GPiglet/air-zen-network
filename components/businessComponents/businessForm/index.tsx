@@ -1,17 +1,18 @@
 import React, { FC, useState, useContext, useEffect } from 'react'
 
-import StepOne from './StepOne'
-import StepTwo from './StepTwo'
+import Start from './Start'
+import SelectBusiness from './SelectBusiness'
 import Final from '../../common/form/final'
+import Configrator from './Configrator'
 import { StoreContext } from '../../../contexts/Store'
 
 const BusinessForm: FC = () => {
 
     const [formView, setFormView] = useState(true)
     let step = useContext(StoreContext).step
-    const { businessOption } = useContext(StoreContext)
+    const businessOption = useContext(StoreContext).businessOption
     useEffect(() => {
-        console.log(step, businessOption)
+        console.log(step, businessOption, '==-=-=')
         if (step === 0 && businessOption) {
             ++step
         }
@@ -54,8 +55,9 @@ const BusinessForm: FC = () => {
                         </svg>
                     }
                     <div className='relative overflow-hidden py-[58px] pl-[60px] pr-0'>
-                        {step === 1 && <StepOne></StepOne>}
-                        {step === 2 && <StepTwo></StepTwo>}
+                        {step === 1 && <Start></Start>}
+                        {step === 2 && <SelectBusiness></SelectBusiness>}
+                        {step === 3 && <Configrator></Configrator>}
                         {step === 0 && <Final app={true}></Final>}
                     </div>
                 </div>

@@ -18,6 +18,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
 
   const router = useRouter()
 
+
   // animation
   const animNavButtons = React.useRef<any>([]);
 
@@ -51,41 +52,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
 
   return (
     <nav className="top-[10px] md:top-[40px] lg:top-[62px] fixed z-50 w-full items-center navbar-expand-lg bg-transparent z-60">
-      {/* <div className="block md:hidden w-full">
-          <div
-            className={
-              "block md:hidden md:flex flex-grow items-center bg-gray-900 md:bg-opacity-0 md:shadow-none" +
-              (navbarOpen ? " block" : " hidden")
-            }
-          >
-          <div className=" flex justify-between px-5 pt-5">
-            <Link to="/">
-              <Image src="/images/logos/LogoSmall.svg" alt="" />
-            </Link>
-            <button
-              className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block md:hidden outline-none focus:outline-none"
-              type="button"
-              onClick={() => setNavbarOpen(!navbarOpen)}
-            >
-              <Image src="/images/expand-icon.svg" alt="" />
-            </button>
-          </div>
-            <ul className="flex flex-col md:flex-row list-none mr-auto w-full justify-around text-white">
-              {
-                navItems.map((item, index) => (
-                  <li className={"flex items-center cursor-pointer"} key={index} >
-                    <Link activeClass="active" smooth spy to={item.href}>
-                      <p className="hover:text-gray-100 text-gray-400 px-3 py-4 md:py-2 flex items-center text-lg uppercase font-lato">{item.title}</p>
-                    </Link>
-                  </li>
-                ))
-              }
-
-            </ul>
-          </div>
-
-        </div> */}
-      <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
+      <div className="container px-4 mx-auto flex flex-wrap relative items-center justify-between">
         <div className="w-full relative flex justify-between md:w-auto md:static md:block md:justify-start md:w-1/4  px-5 pt-5 md:px-0 md:pt-0">
           <div className=" cursor-pointer" onClick={() => router.push('/')}>
             <picture>
@@ -93,16 +60,23 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
               <img src="/images/logos/LogoSmall.svg" alt="" />
             </picture>
           </div>
-          <button
-            className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block md:hidden outline-none focus:outline-none"
-            type="button"
-            onClick={() => setNavbarOpen(!navbarOpen)}
-          >
-            <picture>
-              <source srcSet="/images/expand-icon.svg" type="image/webp" />
-              <img src="/images/expand-icon.svg" alt="" />
-            </picture>
-          </button>
+          <div className="flex">
+
+            <div className="md:hidden">
+              <LocaleSwitcher />
+            </div>
+
+            <button
+              className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block md:hidden outline-none focus:outline-none"
+              type="button"
+              onClick={() => setNavbarOpen(!navbarOpen)}
+            >
+              <picture>
+                <source srcSet="/images/expand-icon.svg" type="image/webp" />
+                <img src="/images/expand-icon.svg" alt="" />
+              </picture>
+            </button>
+          </div>
         </div>
         <div
           className={
@@ -115,16 +89,18 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
               navItems.map((item, index) => (
                 <li ref={el => animNavButtons.current.push(el)} className={"flex items-center cursor-pointer"} key={index} >
                   <Link activeClass="active" smooth spy to={item.href} onClick={() => setNavbarOpen(false)}>
-                    <p className="hover:text-gray-100 text-gray-400 px-3 py-4 md:py-2 flex items-center text-lg uppercase font-lato">{item.title}</p>
+                    <p className="hover:text-gray-100 text-gray-400  py-4 md:py-2 flex items-center text-lg uppercase font-lato">{item.title}</p>
                   </Link>
                 </li>
               ))
             }
             <li className={"flex items-center cursor-pointer"} >
-              <LocaleSwitcher />
             </li>
 
           </ul>
+          <div className="hidden md:block">
+            <LocaleSwitcher />
+          </div>
         </div>
       </div>
     </nav>

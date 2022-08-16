@@ -7,7 +7,7 @@ const CertainlySafe: FC = () => {
     //translate
     const { t } = useTranslation()
 
-    const hintList = t('business.section5.list', { returnObjects: true })
+    const hintList = t('business.secure.list', { returnObjects: true })
 
     return (
         <section className="pb-16 relative container mx-auto  py-[150px]">
@@ -41,10 +41,10 @@ const CertainlySafe: FC = () => {
                 <div className="flex flex-wrap md:mt-12">
                     <div className="w-full md:w-2/5 m-auto">
                         <div className="relative">
-                            <p className="font-lato-light italic font-light text-[22px] text-white">{t('business.section5.tip')}</p>
-                            <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('business.section5.title')}</h1>
+                            <p className="font-lato-light italic font-light text-[22px] text-white">{t('business.secure.tip')}</p>
+                            <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('business.secure.title')}</h1>
                             {
-                                t('business.section5.description').split('\n').map((item, index) =>
+                                t('business.secure.description').split('\n').map((item, index) =>
 
                                     <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}
                                     </p>

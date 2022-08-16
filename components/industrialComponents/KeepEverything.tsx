@@ -88,10 +88,10 @@ const KeepEverything: FC = () => {
                 <div className="md:flex items-center mt-5 xl:mt-[120px]  md:h-[60%]">
                     <div className="md:w-[350px] xl:w-[40%]">
                         <h1 className="text-title-md">
-                            {t('industrial.section1.title')}
+                            {t('industrial.everything.title')}
                         </h1>
                         <p className="font-lato font-light tracking-widest text-lg mt-3">
-                            {t('industrial.section1.description')}
+                            {t('industrial.everything.description')}
                         </p>
 
                     </div>

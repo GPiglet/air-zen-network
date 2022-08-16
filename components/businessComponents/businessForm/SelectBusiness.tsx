@@ -1,12 +1,17 @@
 import React, { FC, useContext } from 'react'
 import FadeIn from 'react-fade-in'
+import { useTranslation } from 'next-i18next'
 
 import { StoreContext } from '../../../contexts/Store'
 
 import Form from '../../common/form'
 
 
-const StepTwo: FC = () => {
+const SelectBusiness: FC = () => {
+    //translate
+    const { t } = useTranslation()
+
+    const buttons = t('business.form.businesstype.buttons', { returnObjects: true })
 
     const { changeBusinessOption, changeStep } = useContext(StoreContext)
     let step = useContext(StoreContext).step
@@ -19,7 +24,7 @@ const StepTwo: FC = () => {
     const BusinessButton: FC<businessButtonType> = ({ business, detail }) => {
         return (
             <button className={`w-full bg-primary-button text-left text-white pl-[40px] py-[20px] float-right drop-shadow-lg tracking-[0.08em] mt-12 cursor-pointer`}>
-                <h1 className='text-[22px]'>{business}</h1>
+                <h1 className='text-[22px] '>{business}</h1>
                 <h2 className='text-lg'>{detail}</h2>
             </button>
         )
@@ -27,30 +32,12 @@ const StepTwo: FC = () => {
 
     const changeBusiness = (business: string) => {
         const businessOption = {
-            business
+            business: business.replace(/\s/g, '')
         }
+        console.log(businessOption)
         changeBusinessOption?.(businessOption)
         changeStep?.(++step)
     }
-
-    const businessItems = [
-        {
-            business: 'Rtail',
-            detail: 'Was ist Ihr Geschäftsfeld?'
-        },
-        {
-            business: 'Hotel',
-            detail: 'dynamic accounts for Guests'
-        },
-        {
-            business: 'Office',
-            detail: 'WiFi for teams and customers'
-        },
-        {
-            business: 'Home Office',
-            detail: 'New Work & multiple devices'
-        },
-    ]
 
     return (
         <FadeIn delay={0} transitionDuration={1000}>
@@ -59,11 +46,11 @@ const StepTwo: FC = () => {
             >
                 <h1 className='text-[22px]'>Was ist Ihr Geschäftsfeld?</h1>
                 {
-                    businessItems.map((item, index) =>
-                    (<div key={index} onClick={() => changeBusiness(item.business)}>
+                    (buttons as unknown as any[]).map((item, index) =>
+                    (<div key={index} onClick={() => changeBusiness(item.type)}>
                         <BusinessButton
-                            business={item.business}
-                            detail={item.detail}
+                            business={item.type}
+                            detail={item.content}
                         />
                     </div>)
                     )
@@ -73,4 +60,4 @@ const StepTwo: FC = () => {
     )
 }
 
-export default StepTwo
+export default SelectBusiness

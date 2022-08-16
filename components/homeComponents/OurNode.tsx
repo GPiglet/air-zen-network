@@ -10,7 +10,7 @@ const OurNode: FC = () => {
     const { t } = useTranslation()
 
     return (
-        <div className="md:mb-[100px] relative  ">
+        <div id="technology" className="md:mb-[100px] relative  ">
 
             <div className="container mx-auto relative px-5 md:px-0 ">
                 <svg className="absolute left-[-37%] bottom-[63%] w-[174%]  md:top-[34%] md:translate-y-[-50%] md:w-[60%] xl:w-[57%] xl:left-[-7%]  sm:top-[-83%] sm:w-[120%] sm:left-[-10%]  md:left-[-7%]" viewBox="0 0 561 569" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,10 +42,10 @@ const OurNode: FC = () => {
                 <div className="flex flex-wrap pt-[200px] md:pt-[42%]">
                     <div className="md:w-1/12"></div>
                     <div className="w-full md:w-[45%] px-10">
-                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('home.section5.tip')}</p>
-                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em] mb-10">{t('home.section5.title')}</h1>
+                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('home.ournode.tip')}</p>
+                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em] mb-10">{t('home.ournode.title')}</h1>
                         {
-                            t('home.section5.description').split('\n').map((item, index) =>
+                            t('home.ournode.description').split('\n').map((item, index) =>
                                 index % 2 === 0 ? (
                                     <p className="font-lato tracking-widest text-white text-lg mt-3 font-normal" key={index}>{item}</p>
                                 ) : (

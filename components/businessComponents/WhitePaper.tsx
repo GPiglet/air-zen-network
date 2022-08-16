@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next'
 const WhitePaper: FC = () => {
     //translate
     const { t } = useTranslation()
-    const paperList = t('business.section8.paperList', { returnObjects: true })
+    const paperList = t('business.whitepaper.paperList', { returnObjects: true })
     const graphList = [
         <svg key={0} className='absolute hidden md:block top-[-115px] left-[-10px]' viewBox="0 0 370 374" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.5" d="M242.536 297.537C304.666 265.209 329.292 189.536 297.542 128.516C265.791 67.4964 189.687 44.237 127.557 76.5649C65.4282 108.893 40.8014 184.566 72.552 245.586C104.303 306.605 180.407 329.865 242.536 297.537Z" fill="url(#paint0_radial_0_1)" />
@@ -51,13 +51,13 @@ const WhitePaper: FC = () => {
     ]
 
     return (
-        <div className='container text-white md:flex items-center m-auto py-[100px]'>
+        <div id='whitepaper' className='container text-white md:flex items-center m-auto py-[100px]'>
             <div className='w-full text-center '>
                 <div>
                     <h1 className="text-title-sm ">
-                        {t('business.section8.title')}
+                        {t('business.whitepaper.title')}
                     </h1>
-                    <p className="font-lato-light font-light italic text-lg tracking-widest">{t('business.section8.subtitle')}</p>
+                    <p className="font-lato-light font-light italic text-lg tracking-widest">{t('business.whitepaper.subtitle')}</p>
                 </div>
                 <div className='md:flex justify-between text-left mt-[120px]'>
                     {

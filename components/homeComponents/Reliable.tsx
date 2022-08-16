@@ -8,7 +8,7 @@ const Reliable: FC = () => {
     const { t } = useTranslation()
 
     return (
-        <div className="container mx-auto pb-16 relative flex items-center py-[150px]">
+        <div id="reliable" className="container mx-auto pb-16 relative flex items-center py-[150px]">
 
             <svg className="absolute right-[-52%] top-[76%] sm:top-[45%] md:top-[-26%] xl:top-[-20%] md:w-[120%] xl:w-[100%]   sm:w-[140%] sm:right-[-20%] w-[204%] md:right-[-60%] xl:right-[-43%] " viewBox="0 0 907 907" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.4" d="M538.472 704.59C686.17 656.921 768.31 499.556 721.937 353.106C675.564 206.655 518.239 126.576 370.541 174.245C222.842 221.913 140.702 379.278 187.075 525.729C233.448 672.179 390.774 752.258 538.472 704.59Z" fill="url(#paint0_radial_1376_4815)" />
@@ -45,10 +45,10 @@ const Reliable: FC = () => {
                 <div className="flex flex-wrap">
                     {/* <div className="w-[20%]"></div> */}
                     <div className="w-full md:w-1/2 m-auto">
-                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('home.secton3.tip')}</p>
-                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('home.section3.title')}</h1>
+                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('home.reliable.tip')}</p>
+                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('home.reliable.title')}</h1>
                         {
-                            t('home.section3.description').split('\n').map((item, index) =>
+                            t('home.reliable.description').split('\n').map((item, index) =>
                                 <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}</p>
                             )
                         }

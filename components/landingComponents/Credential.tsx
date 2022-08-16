@@ -15,7 +15,7 @@ const Credential: FC = () => {
 
     const refBackCircle = React.useRef<SVGSVGElement>(null);
 
-    const carouselList = t('landing.section4.swiper', { returnObjects: true })
+    const carouselList = t('landing.credential.swiper', { returnObjects: true })
 
     const imageList = [
         '/images/volskbank.png',
@@ -56,7 +56,7 @@ const Credential: FC = () => {
         <section id='credentials' className='flex items-center'>
             <div className='w-full'>
                 <div className=' py-10 flex justify-center'>
-                    <h1 className="text-title-sm">{t('landing.section4.title')}</h1>
+                    <h1 className="text-title-sm">{t('landing.credential.title')}</h1>
                 </div>
 
                 <Flickity

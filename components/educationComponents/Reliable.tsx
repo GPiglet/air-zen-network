@@ -10,7 +10,7 @@ const Reliable: FC = () => {
 
     //usetranslate
     const { t } = useTranslation()
-    const list = t('education.section2.list', { returnObjects: true })
+    const list = t('education.reliable.list', { returnObjects: true })
 
 
     // const tl = gsap.timeline({
@@ -36,7 +36,7 @@ const Reliable: FC = () => {
     // },[])
 
     return (
-        <div className="container mx-auto relative mb-[80%] sm:mb-[100%] md:mb-[0%] xl:mb-[10%]">
+        <div id="classroom" className="container mx-auto relative mb-[80%] sm:mb-[100%] md:mb-[0%] xl:mb-[10%]">
 
             <svg className="absolute trigger 
             left-[-50%] xs:left-[-50%] sm:left-[-60%] md:left-[-75%] lg:left-[-90%] xl:left-[-71%]
@@ -65,10 +65,10 @@ const Reliable: FC = () => {
                 <div className="flex flex-wrap md:mt-12">
                     <div className="w-full md:w-2/5 m-auto">
                         <div className="relative">
-                            <p className="font-lato-light italic font-light text-[22px] text-white">{t('education.section2.tip')}</p>
-                            <h1 className="text-title-sm">{t('education.section2.title')}</h1>
+                            <p className="font-lato-light italic font-light text-[22px] text-white">{t('education.reliable.tip')}</p>
+                            <h1 className="text-title-sm">{t('education.reliable.title')}</h1>
                             {
-                                t('education.section2.description').split('\n').map((item, index) =>
+                                t('education.reliable.description').split('\n').map((item, index) =>
                                     <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}
                                     </p>
 

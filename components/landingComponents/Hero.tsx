@@ -103,14 +103,14 @@ const Hero: FC = () => {
                     <circle ref={el => animZoomInRefs.current.push(el)} opacity="0.7" cx="511.729" cy="696.732" r="346.322" fill="url(#paint1_radial_967_2268)" />
                     <foreignObject ref={el => animSideUpRefs.current.push(el)} className="font-lato-light  italic w-[260px] text-lg text-white hidden md:block hero-fade" x="59%" y="23.4%" width="260px" height="100px">
                         <p
-                        >{t('landing.section1.sparkle1')}</p>
+                        >{t('landing.wifi.sparkle1')}</p>
                     </foreignObject>
                     <image ref={el => animSideUpRefs.current.push(el)} href="/images/sparkle.svg" className="w-[49px] h-[47px] hidden md:block hero-fade" x="55.5%" y="23%" cx="511.828" cy="696.377" />
                     <circle ref={el => animZoomOutRefs.current.push(el)} opacity="0.3" cx="512.408" cy="696.273" r="362.358" stroke="#7BB690" />
                     <image ref={el => animSideUpRefs.current.push(el)} href="/images/sparkle.svg" className="w-[50px] h-[47px] hidden md:block hero-fade" x="50.5%" y="43%" cx="511.828" cy="696.377" />
                     <foreignObject ref={el => animSideUpRefs.current.push(el)} className="font-lato-light  italic w-[260px] text-lg text-white hidden md:block hero-fade" x="54%" y="43.4%" width="260px" height="100px">
                         <p
-                        >{t('landing.section1.sparkle2')}</p>
+                        >{t('landing.wifi.sparkle2')}</p>
                     </foreignObject>
                     <path ref={el => animSideUpRefs.current.push(el)} className='hero-fade' opacity="0.6" d="M1023.68 696.224C1023.68 978.288 794.632 1206.95 512.089 1206.95C229.545 1206.95 0.5 978.288 0.5 696.224C0.5 414.16 229.545 185.5 512.089 185.5C794.632 185.5 1023.68 414.16 1023.68 696.224Z" stroke="url(#paint2_radial_967_2268)" />
                     <circle ref={el => animZoomOutRefs.current.push(el)} opacity="0.7" cx="511.828" cy="696.377" r="259.285" transform="rotate(-90.105 511.828 696.377)" fill="url(#paint3_radial_967_2268)" />
@@ -137,9 +137,9 @@ const Hero: FC = () => {
                 <div ref={el => animSideUpRefs.current.push(el)} className="relative px-10 z-10 flex items-center md:h-[70%] hero-fade">
                     <div className="flex flex-wrap ">
                         <div className="w-full md:w-2/5">
-                            <h1 className="text-title-md">{t("landing.section1.title")} </h1>
+                            <h1 className="text-title-md">{t("landing.wifi.title")} </h1>
                             {
-                                t('landing.section1.description').split('\n').map((item, index) => (
+                                t('landing.wifi.description').split('\n').map((item, index) => (
                                     <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}</p>
                                 ))
                             }

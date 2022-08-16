@@ -34,7 +34,7 @@ const AboutUs: FC = () => {
     }
 
     const flickityProps = {
-        className: "carousel-nav pl-[55px] md:h-[70%] mt-[120px] xl:mt-[200px]",
+        className: "carousel-nav pl-[55px] md:h-[70%] mt-[120px] ",
         options: {
             asNavFor: ".carousel-main",
             contain: true,
@@ -47,7 +47,7 @@ const AboutUs: FC = () => {
     }
 
 
-    const sliderList = t('landing.section3.swiper', { returnObjects: true })
+    const sliderList = t('landing.aboutus.swiper', { returnObjects: true })
 
     const svgGroupAnimation = (state: string) => {
         if (state === 'next') {
@@ -70,9 +70,9 @@ const AboutUs: FC = () => {
 
                 <div>
                     <div className="text-center">
-                        <h1 className="text-title-sm mt-20">{t('landing.section3.title')} </h1>
+                        <h1 className="text-title-sm mt-20">{t('landing.aboutus.title')} </h1>
                     </div>
-                    <div className=' md:flex'>
+                    <div className=' md:flex relative'>
                         <picture className={`${selected + 1 === sliderList.length ? 'hidden' : ''} `}>
                             <source srcSet="/images/sparkle-arrow.svg" type="image/webp" />
                             <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('next')} className='w-[47px] h-[93px] hidden md:block cursor-pointer absolute right-[47px]  top-1/2 center-y-transform z-50 about-fade-in ' />
@@ -92,7 +92,6 @@ const AboutUs: FC = () => {
                                             <p className="font-lato uppercase font-black text-[22px] text-transparent bg-clip-text bg-gradient-to-r from-gray-400 via-gray-200 to-white tracking-widest">{item.title}</p>
                                             <p className="font-lato font-light tracking-widest text-white text-lg mt-3">{item.content}</p>
                                         </div>
-
                                     ))
                                 }
 
@@ -100,7 +99,7 @@ const AboutUs: FC = () => {
                         </div>
                         <div className='relative w-full md:w-2/5 h-[300px] w:h-auto'>
 
-                            <svg className='absolute z-30 top-[-54%] left-[-50%] md:top-[-75%] xl:top-[-100%]  md:w-[300%] sm:top-[-70%] sm:w-[100%] sm:left-[-2%] w-[200%] xl:left-[-63%] md:left-[-100%] md:w-[100%] xl:w-[249%] ' viewBox="0 0 1295 1294" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg className='absolute z-30 top-[-54%] left-[-50%] md:top-[-75%] xl:top-[-150%]  md:w-[300%] sm:top-[-70%] sm:w-[100%] sm:left-[-2%] w-[200%] xl:left-[-63%] md:left-[-100%] md:w-[100%] xl:w-[249%] ' viewBox="0 0 1295 1294" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path ref={aboutCircleRef2} className='about-us-animate' opacity="0.5" d="M666.531 1047.33C887.445 1047.33 1066.53 868.239 1066.53 647.325C1066.53 426.411 887.445 247.325 666.531 247.325C445.617 247.325 266.531 426.411 266.531 647.325C266.531 868.239 445.617 1047.33 666.531 1047.33Z" fill="url(#paint0_radial_0_1)" />
                                 <path ref={aboutCircleRef3} className='about-us-animate' opacity="0.5" d="M741.941 880.701C873.371 838.685 946.464 699.983 905.199 570.899C863.934 441.816 723.937 371.234 592.506 413.25C461.076 455.265 387.983 593.968 429.249 723.051C470.514 852.134 610.511 922.716 741.941 880.701Z" fill="url(#paint1_radial_0_1)" />
                                 <path ref={aboutCircleRef4} className='about-us-animate' d="M951.031 647.325C951.031 804.45 823.656 931.825 666.531 931.825C509.406 931.825 382.031 804.45 382.031 647.325C382.031 490.2 509.406 362.825 666.531 362.825C823.656 362.825 951.031 490.2 951.031 647.325Z" stroke="url(#paint2_linear_0_1)" />
@@ -109,11 +108,11 @@ const AboutUs: FC = () => {
                                 <image className='about-us-phone about-fade-in' href="/images/phone-home.png" x="40.5%" y="33%" cx="511.828" cy="696.377" transform="translate(0,0)" />
                                 <foreignObject className="font-lato-light about-us-animate italic w-[260px] text-lg text-white hidden md:block" x="67.5%" y="61.5%" width="260px" height="100px">
                                     <p
-                                    >{t('landing.section3.sparkle1')}</p>
+                                    >{t('landing.aboutus.sparkle1')}</p>
                                 </foreignObject>
                                 <foreignObject className="font-lato-light about-us-animate italic w-[260px] text-lg text-white hidden md:block" x="9%" y="74.5%" width="260px" height="100px">
                                     <p
-                                    >{t('landing.section3.sparkle2')}</p>
+                                    >{t('landing.aboutus.sparkle2')}</p>
                                 </foreignObject>
                                 <image href="/images/sparkle.svg" className="about-us-animate w-[49px] h-[47px] hidden md:block about-fade-in" x="5%" y="74%" cx="511.828" cy="696.377" />
                                 <image href="/images/sparkle.svg" className="about-us-animate w-[49px] h-[47px] hidden md:block about-fade-in" x="64%" y="61%" cx="511.828" cy="696.377" />

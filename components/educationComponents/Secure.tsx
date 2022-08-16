@@ -33,7 +33,7 @@ const Secure: FC = () => {
     // },[])
 
     return (
-        <div className="relative container mx-auto mb-[75%] md:mb-0">
+        <div id="protection" className="relative container mx-auto mb-[75%] md:mb-0">
             <svg className="absolute mx-auto 
             right-[-67%] sm:right-[-63%] md:right-[-85%] lg:right-[-110%] xl:right-[-85%]
             top-[88%] xs:top-[73%] sm:top-[23%] md:top-[-33%] lg:top-[-69%] xl:top-[-70%]
@@ -45,12 +45,12 @@ const Secure: FC = () => {
                 <path d="M536.827 363.337C565.377 452.376 516.124 547.633 426.815 576.098C337.507 604.562 241.966 555.455 213.416 466.416C184.867 377.377 234.12 282.121 323.428 253.656C412.737 225.191 508.278 274.299 536.827 363.337Z" stroke="url(#paint2_linear_1226_5560)" />
                 <foreignObject className="font-lato-light  italic text-lg text-white hidden md:block" x="15%" y="9.5%" width="250px" height="100px">
                     <p
-                    >{t('education.section3.sparkle1')}</p>
+                    >{t('education.secure.sparkle1')}</p>
                 </foreignObject>
                 <image href="/images/sparkle.svg" className="w-[49px] h-[47px] hidden md:block" x="13%" y="9%" cx="511.828" cy="696.377" />
                 <foreignObject className="font-lato-light  italic text-lg text-white hidden md:block" x="15%" y="37.5%" width="250px" height="100px">
                     <p
-                    >{t('education.section3.sparkle2')}</p>
+                    >{t('education.secure.sparkle2')}</p>
                 </foreignObject>
                 <image href="/images/sparkle.svg" className="w-[49px] h-[47px] hidden md:block" x="13%" y="37%" cx="511.828" cy="696.377" />
                 <defs>
@@ -78,10 +78,10 @@ const Secure: FC = () => {
             <div className="md:w-[70%] relative items-center px-10 md:px-0 md:pt-[10%] xl:py-[12%]">
                 <div className="flex flex-col mt-12 md:mt-18">
                     <div className="w-full md:w-4/5 xl:w-3/5 m-auto">
-                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('education.section3.tip')}</p>
-                        <h1 className="text-title-sm">{t('education.section3.title')}</h1>
+                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('education.secure.tip')}</p>
+                        <h1 className="text-title-sm">{t('education.secure.title')}</h1>
                         {
-                            t('education.section3.description').split('\n').map((item, index) =>
+                            t('education.secure.description').split('\n').map((item, index) =>
                                 <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}</p>
                             )
                         }
