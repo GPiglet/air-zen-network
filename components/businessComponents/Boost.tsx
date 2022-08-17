@@ -90,7 +90,7 @@ const Boost: FC = () => {
                             )
                         }
                         <div className="mt-12">
-                            <p className="font-lato-light italic font-light text-lg text-white  ">
+                            <p className="font-lato-light font-light text-lg text-white  ">
                                 {t('business.boost.cooperation')}
                             </p>
                             <div className="flex justify-between items-center mt-12">

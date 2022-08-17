@@ -65,7 +65,7 @@ const Reliable: FC = () => {
                 <div className="flex flex-wrap md:mt-12">
                     <div className="w-full md:w-2/5 m-auto">
                         <div className="relative">
-                            <p className="font-lato-light italic font-light text-[22px] text-white">{t('education.reliable.tip')}</p>
+                            <p className="font-lato-light font-light text-[22px] text-white">{t('education.reliable.tip')}</p>
                             <h1 className="text-title-sm">{t('education.reliable.title')}</h1>
                             {
                                 t('education.reliable.description').split('\n').map((item, index) =>
@@ -84,7 +84,7 @@ const Reliable: FC = () => {
                                             </picture>
                                             <div className="text-white tracking-[0.08em] w-2/3">
                                                 <p className="font-lato text-lg font-medium">{item.split('\n')[0]} </p>
-                                                <p className="font-lato-light text-lg font-light italic">{item.split('\n')[1]}</p>
+                                                <p className="font-lato-light text-lg font-light">{item.split('\n')[1]}</p>
                                             </div>
                                         </div>
                                     )

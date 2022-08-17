@@ -44,7 +44,7 @@ const Contact: FC = () => {
 
                 <div className="mx-auto relative md:pl-[10%]">
                     <div className="w-full md:w-1/2 px-10">
-                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('industrial.ournode.tip')}</p>
+                        <p className="font-lato-light font-light text-[22px] text-white">{t('industrial.ournode.tip')}</p>
                         <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('industrial.ournode.title')}</h1>
                         {
                             t('industrial.ournode.description').split('\n').map((item, index) =>

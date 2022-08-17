@@ -39,7 +39,7 @@ const SimpleProductive: FC = () => {
                 </g>
                 <image href="/images/phone-home.png" x="12%" y="11%" className="w-[17%]" />
                 <path opacity="0.8" d="M733.385 433.689C806.258 410.368 846.785 333.38 823.905 261.731C801.025 190.083 723.402 150.906 650.53 174.227C577.657 197.548 537.13 274.536 560.01 346.185C582.89 417.833 660.512 457.01 733.385 433.689Z" fill="url(#paint3_radial_0_1)" />
-                <foreignObject className="font-lato-light  italic w-[260px] text-lg text-white hidden md:block" x="16%" y="53%" width="260px" height="100px">
+                <foreignObject className="font-lato-light w-[260px] text-lg text-white hidden md:block" x="16%" y="53%" width="260px" height="100px">
                     <p
                     >Dieses Feature ermöglicht eine besondere Funktion: XYZ</p>
                 </foreignObject>
@@ -70,7 +70,7 @@ const SimpleProductive: FC = () => {
                 <div className="flex flex-wrap md:mt-12">
                     <div className="w-full md:w-[35%] m-auto">
                         <div className="relative">
-                            <p className="font-lato-light italic font-light text-[22px] text-white">{t('industrial.easy.tip')}</p>
+                            <p className="font-lato-ligh font-light text-[22px] text-white">{t('industrial.easy.tip')}</p>
                             <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('industrial.easy.title')}</h1>
                             {
                                 t('industrial.easy.description').split('\n').map((item, index) =>
@@ -87,7 +87,7 @@ const SimpleProductive: FC = () => {
                                             </picture>
                                             <div className="text-white tracking-[0.08em] w-2/3">
                                                 <p className="font-lato text-lg font-medium">{item.title} </p>
-                                                <p className="font-lato-light text-lg font-light italic">{item.description}</p>
+                                                <p className="font-lato-light text-lg font-ligh">{item.description}</p>
                                             </div>
                                         </div>
                                     ))

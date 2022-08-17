@@ -115,7 +115,7 @@ const Professional: FC = () => {
                     <h1 className="text-title-sm">
                         {t('business.professional.title')}
                     </h1>
-                    <p className="font-lato-light font-light italic text-lg tracking-widest">{t('business.professional.subtitle')}</p>
+                    <p className="font-lato-light font-light text-lg tracking-widest">{t('business.professional.subtitle')}</p>
                     <div className="md:flex justify-between text-lg text-left mt-10">
                         <div className="w-[160px]"></div>
                         {

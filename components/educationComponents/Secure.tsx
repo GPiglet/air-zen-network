@@ -43,12 +43,12 @@ const Secure: FC = () => {
                 <path opacity="0.5" d="M441.331 620.158C555.295 583.835 618.148 462.279 581.716 348.655C545.283 235.031 423.363 172.367 309.398 208.69C195.433 245.013 132.581 366.569 169.013 480.193C205.445 593.817 327.366 656.481 441.331 620.158Z" fill="url(#paint1_radial_1226_5560)" />
                 <path opacity="0.6" d="M689.967 314.529C745.553 487.891 649.656 673.358 475.771 728.779C301.886 784.201 115.864 688.588 60.278 515.226C4.69146 341.864 100.589 156.397 274.473 100.976C448.358 45.5548 634.38 141.167 689.967 314.529Z" stroke="url(#paint3_linear_1226_5560)" />
                 <path d="M536.827 363.337C565.377 452.376 516.124 547.633 426.815 576.098C337.507 604.562 241.966 555.455 213.416 466.416C184.867 377.377 234.12 282.121 323.428 253.656C412.737 225.191 508.278 274.299 536.827 363.337Z" stroke="url(#paint2_linear_1226_5560)" />
-                <foreignObject className="font-lato-light  italic text-lg text-white hidden md:block" x="15%" y="9.5%" width="250px" height="100px">
+                <foreignObject className="font-lato-light text-lg text-white hidden md:block" x="15%" y="9.5%" width="250px" height="100px">
                     <p
                     >{t('education.secure.sparkle1')}</p>
                 </foreignObject>
                 <image href="/images/sparkle.svg" className="w-[49px] h-[47px] hidden md:block" x="13%" y="9%" cx="511.828" cy="696.377" />
-                <foreignObject className="font-lato-light  italic text-lg text-white hidden md:block" x="15%" y="37.5%" width="250px" height="100px">
+                <foreignObject className="font-lato-light text-lg text-white hidden md:block" x="15%" y="37.5%" width="250px" height="100px">
                     <p
                     >{t('education.secure.sparkle2')}</p>
                 </foreignObject>
@@ -78,7 +78,7 @@ const Secure: FC = () => {
             <div className="md:w-[70%] relative items-center px-10 md:px-0 md:pt-[10%] xl:py-[12%]">
                 <div className="flex flex-col mt-12 md:mt-18">
                     <div className="w-full md:w-4/5 xl:w-3/5 m-auto">
-                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('education.secure.tip')}</p>
+                        <p className="font-lato-ligh font-light text-[22px] text-white">{t('education.secure.tip')}</p>
                         <h1 className="text-title-sm">{t('education.secure.title')}</h1>
                         {
                             t('education.secure.description').split('\n').map((item, index) =>

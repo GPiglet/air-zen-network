@@ -106,8 +106,9 @@ section {
   height: 100vh;
 }
 
-.sparkle {
+.unique-skill-items .sparkle {
   content: url('/images/sparkle.svg');
+  pointer-events: none;
 }
 
 .button-gradient {
@@ -118,64 +119,58 @@ section {
 
 .unique-skill-items:hover .sparkle {
   content: url('/images/sparkle-arrow.svg');
+  pointer-events: all;
 }
 @media  only screen and (max-width: 920px) {
   section {
     height: 982px;
   }
+
+  .unique-skill-items:active {
+    height: fit-content;
+    cursor: pointer;
+  }
+  
 }
 
-@media only screen and (min-width: 920px) {
-  
-  
-  .unique-skill-items:not(:hover) .h-full {
-    height: fit-content;
-    /* transform: translateX(50px); */
+.unique-skill-items:not(:hover) .h-full, .unique-skill-items:not(:active) .h-full{
+  height: fit-content;
+}
+.unique-skill-items, .unique-skill-title {
+  transition: all 0.4s linear;
+}
+.unique-skill-items:hover .unique-graph, .unique-skill-items:active .unique-graph {
+  width: 80%;
+  opacity: 0.7;
+}
+.unique-skill-items:hover .unique-skill-title, .unique-skill-items:active .unique-skill-title {
+  display: none;
+  opacity: 0;
+}
 
-  }
-  
-  .unique-skill-items, .unique-skill-title {
-    transition: all 0.4s linear;
-  }
-  
+.unique-skill-items:hover .unique-skill-button p, .unique-skill-items:active .unique-skill-button p{
+  color: #ffffffb3;
+}
+.unique-skill-items:hover>div>div, .unique-skill-items:active>div>div{
+  height: max-content;
+}
+.unique-skill-items:hover .unique-skill-description, .unique-skill-items:hover .unique-skill-list {
+  display: block;
+}
+@media only screen and (min-width: 920px) {
   .unique-skill-items:hover {
     width: 350px;
     height: fit-content;
-    /* width: 300px !important; */
-    /* transform-origin: top left; */
     cursor: pointer;
   }
-  .unique-skill-items:hover .unique-graph {
-    /* transform: scale(1.3); */
-    width: 80%;
-    /* width: 398px; */
-    /* top: -40%; */
-    opacity: 0.7;
-  }
-  
-  .unique-skill-items:hover .unique-skill-title {
-    display: none;
-    opacity: 0;
-  }
-  
   .unique-skill-items:hover .unique-skill-button {
     border: none;
     display: block;
-    /* position: absolute; */
     padding: 10px;
     width: inherit;
-    /* bottom: 10px; */
-  }
-  .unique-skill-items:hover .unique-skill-button p{
-    color: #ffffffb3;
-  }
-  .unique-skill-items:hover>div>div{
-    height: max-content;
   }
   
-  .unique-skill-items:hover .unique-skill-description, .unique-skill-items:hover .unique-skill-list {
-    display: block;
-  }
+  
 }
 
 

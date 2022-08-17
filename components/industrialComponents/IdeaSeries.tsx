@@ -37,7 +37,7 @@ const IdeaSeries: FC = () => {
                 </g>
                 <image href="/images/phone-home.png" x="12%" y="11%" className="w-[17%]" />
                 <path opacity="0.8" d="M303.843 695.245C368.051 674.697 403.759 606.863 383.6 543.734C363.44 480.605 295.048 446.086 230.84 466.634C166.633 487.182 130.924 555.016 151.084 618.145C171.243 681.274 239.636 715.793 303.843 695.245Z" fill="url(#paint3_radial_0_1)" />
-                <foreignObject className="font-lato-light  italic w-[260px] text-lg text-white hidden md:block" x="16%" y="53%" width="260px" height="100px">
+                <foreignObject className="font-lato-light  w-[260px] text-lg text-white hidden md:block" x="16%" y="53%" width="260px" height="100px">
                     <p
                     >Dieses Feature ermöglicht eine besondere Funktion: XYZ</p>
                 </foreignObject>
@@ -67,7 +67,7 @@ const IdeaSeries: FC = () => {
                 <div className="flex flex-wrap md:mt-12">
                     <div className="w-full md:w-[35%] m-auto">
                         <div className="relative">
-                            <p className="font-lato-light italic font-light text-[22px] text-white">{t('industrial.reliable.tip')}</p>
+                            <p className="font-lato-light font-light text-[22px] text-white">{t('industrial.reliable.tip')}</p>
                             <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('industrial.reliable.title')}</h1>
                             {
                                 t('industrial.reliable.description').split('\n').map((item, index) =>
@@ -84,7 +84,7 @@ const IdeaSeries: FC = () => {
                                             </picture>
                                             <div className="text-white tracking-[0.08em] w-2/3">
                                                 <p className="font-lato text-lg font-medium">{item.title} </p>
-                                                <p className="font-lato-light text-lg font-light italic">{item.description}</p>
+                                                <p className="font-lato-light text-lg font-light">{item.description}</p>
                                             </div>
                                         </div>
                                     ))

@@ -47,7 +47,7 @@ const BusinessNode: FC = () => {
                 <div className="flex flex-wrap pt-[500px] md:pt-[42%]">
                     <div className="md:w-1/12"></div>
                     <div className="w-full md:w-[45%] px-10">
-                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('business.ournode.tip')}</p>
+                        <p className="font-lato-light font-light text-[22px] text-white">{t('business.ournode.tip')}</p>
                         <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em] mb-10">{t('business.ournode.title')}</h1>
                         {
                             t('business.ournode.description').split('\n').map((item, index) =>

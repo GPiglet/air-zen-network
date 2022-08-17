@@ -1,26 +1,44 @@
 //modules
-import React, { FC, useState } from 'react'
+import React, { FC, useRef, useState } from 'react'
 import gsap from "gsap";
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import Checkbox from 'rc-checkbox';
 gsap.registerPlugin(ScrollTrigger);
 import { useTranslation } from 'next-i18next';
 
-//Custom components
-import CustomInput from '../common/input'
-import CustomTextarea from '../common/textarea'
 
 const Contact: FC = () => {
     //translate
     const { t } = useTranslation()
 
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
+    const [checked, setChecked] = useState(0)
+
+    const nameRef = useRef<any>();
+    const emailRef = useRef<any>();
+    const messageRef = useRef<any>();
+    const checkRef1 = useRef<any>();
+    const checkRef2 = useRef<any>();
+
+    const checkboxChange = (e: Event, checked: number) => {
+        if (checked === 1) {
+            setChecked(0)
+        } else {
+            setChecked(1)
+        }
+    }
+
+    const checkboxProps = {
+        theme: "fancy-checkbox",
+        checked,
+        onChange: (e: Event) => checkboxChange(e, checked)
+
+    }
 
 
     return (
         <div id='cantact' className='container m-auto relative py-[120px] md:py-[280px] flex justify-center'>
             <div className=" flex justify-center">
-                <div className='md:w-[50%] xl:w-1/3 text-center relative px-10 md:px-auto'>
+                <div className='text-white md:w-[50%] xl:w-1/3 text-center relative z-40 px-10 md:px-auto'>
                     <h1 className="text-title-sm">{t('landing.contact.title')}</h1>
                     <svg className='absolute left-1/2 center-x-transform w-[90%] md:w-[150%] top-[-100px] md:top-[-150px]' viewBox="0 0 488 519" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path opacity="0.7" d="M243.691 23.0004C377.708 23.0004 486.381 133.623 486.381 270.122C486.381 406.62 377.708 517.243 243.691 517.243C109.673 517.243 0.999995 406.62 0.999989 270.122C0.999983 133.623 109.673 23.0005 243.691 23.0004Z" stroke="url(#paint0_linear_0_1)" strokeWidth="2" />
@@ -37,38 +55,40 @@ const Contact: FC = () => {
                         </defs>
                     </svg>
                     <p className='font-lato text-lg text-white mt-11 text-left tracking-widest'>{t('landing.contact.subtitle')}</p>
-                    <CustomInput
-                        label='Name'
-                        inputColor='text-slate-300'
-                        className="text-left w-full my-5"
+                    <p className='text-left text-slate-300 '>Name</p>
+                    <input
+                        className="custom-input text-left w-full my-5"
                         placeholder='Vorname Nachname'
-                        value={name}
-                        readOnly={true}
+                        ref={nameRef}
                     />
-                    <CustomInput
-                        label='Email Address'
-                        inputColor='text-slate-300'
-                        className="text-left w-full my-5"
-                        placeholder='meine@email.io'
-                        value={email}
-                        readOnly={true}
+                    <p className='text-left text-slate-300 '>Email Address</p>
+                    <input
+                        className="custom-input text-left w-full my-5"
+                        placeholder='Vorname Nachname'
+                        type="email"
+                        ref={emailRef}
                     />
-                    <CustomTextarea
+                    <textarea
                         rows={3}
-                        className="text-left w-full my-5"
+                        className="custom-input text-left w-full my-5"
                         placeholder='Ihre Nachricht '
-                        value={email}
+                        ref={messageRef}
                     />
                     <button className='text-lgx text-white button-gradient py-2 px-8 rounded-md border border-primary relative'>
                         {t('landing.contact.send')}
                     </button>
-                    {
-                        t('landing.contact.description').split('\n').map((item, index) =>
-                            <p className='font-lato font-light text-left text-base text-white tracking-[2px] my-4' key={index}>
-                                {item}
-                            </p>
-                        )
-                    }
+                    <div className='flex relative z-40'>
+                        <input type='checkbox' className="mr-5" ref={checkRef1} />
+                        <p className='font-lato font-light text-left text-base text-white tracking-[2px] my-4'>
+                            {t('landing.contact.description').split('\n')[0]}
+                        </p>
+                    </div>
+                    <div className='flex relative z-40'>
+                        <input type='checkbox' className="mr-5" ref={checkRef2} />
+                        <p className='font-lato font-light text-left text-base text-white tracking-[2px] my-4'>
+                            {t('landing.contact.description').split('\n')[1]}
+                        </p>
+                    </div>
                     <svg className='absolute left-1/2 center-x-transform w-[100%] sm:w-[66%] md:w-[130%] bottom-[-140px] sm:bottom-[-190px] md:bottom-[-180px]' viewBox="0 0 412 412" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path opacity="0.7" d="M291.677 300.824C240.073 347.051 160.058 341.948 112.961 289.373C65.8641 236.798 69.5612 156.705 121.165 110.478C172.769 64.2515 252.785 69.3545 299.881 121.93C346.978 174.505 343.281 254.598 291.677 300.824Z" stroke="url(#paint0_linear_1374_3891)" strokeWidth="2" />
                         <path opacity="0.3" d="M304.085 314.68C244.955 367.649 153.288 361.791 99.3426 301.57C45.3966 241.349 49.6204 149.592 108.75 96.6239C167.879 43.6559 259.546 49.5138 313.492 109.735C367.438 169.956 363.214 261.712 304.085 314.68Z" stroke="url(#paint1_linear_1374_3891)" />
@@ -83,10 +103,6 @@ const Contact: FC = () => {
                             </linearGradient>
                         </defs>
                     </svg>
-
-
-
-
                 </div>
             </div>
 
