@@ -28,7 +28,7 @@ export default function LocaleSwitcher() {
               isMobile ? (
                 <Link href={{ pathname, query }} as={asPath} locale={locale}>
                   <p className='text-white px-1 py-4 md:py-2 flex items-center text-lg font-lato'>
-                    {locale === 'de' ? 'En' : 'De'}
+                    {locale === 'de' ? 'De' : 'En'}
                   </p>
                 </Link>
               ) : (

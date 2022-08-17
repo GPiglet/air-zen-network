@@ -45,7 +45,7 @@ const Reliable: FC = () => {
                 <div className="flex flex-wrap">
                     {/* <div className="w-[20%]"></div> */}
                     <div className="w-full md:w-1/2 m-auto">
-                        <p className="font-lato-light italic font-light text-[22px] text-white">{t('home.reliable.tip')}</p>
+                        <p className="font-lato-light font-light text-[22px] text-white">{t('home.reliable.tip')}</p>
                         <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('home.reliable.title')}</h1>
                         {
                             t('home.reliable.description').split('\n').map((item, index) =>

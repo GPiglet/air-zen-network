@@ -41,7 +41,7 @@ const CertainlySafe: FC = () => {
                 <div className="flex flex-wrap md:mt-12">
                     <div className="w-full md:w-2/5 m-auto">
                         <div className="relative">
-                            <p className="font-lato-light italic font-light text-[22px] text-white">{t('business.secure.tip')}</p>
+                            <p className="font-lato-light font-light text-[22px] text-white">{t('business.secure.tip')}</p>
                             <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('business.secure.title')}</h1>
                             {
                                 t('business.secure.description').split('\n').map((item, index) =>
@@ -60,7 +60,7 @@ const CertainlySafe: FC = () => {
                                             </picture>
                                             <div className="text-white tracking-[0.08em] w-2/3">
                                                 <p className="font-lato text-lg font-medium">{item.split('\n')[0]} </p>
-                                                <p className="font-lato-light text-lg font-light italic">{item.split('\n')[1]}</p>
+                                                <p className="font-lato-light text-lg font-light">{item.split('\n')[1]}</p>
                                             </div>
                                         </div>
                                     )

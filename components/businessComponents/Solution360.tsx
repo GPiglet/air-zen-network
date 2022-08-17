@@ -144,7 +144,7 @@ const Solution360: FC = () => {
                                         {item.map((hint: string, index: number) => (
                                             <div className="text-white tracking-[0.08em] mb-12" key={index}>
                                                 <p className="font-lato text-lg font-medium">{hint.split('\n')[0]} </p>
-                                                <p className="font-lato-light text-lg font-light italic">{hint.split('\n')[0]} </p>
+                                                <p className="font-lato-light text-lg font-light">{hint.split('\n')[0]} </p>
                                             </div>
                                         ))}
                                     </div>

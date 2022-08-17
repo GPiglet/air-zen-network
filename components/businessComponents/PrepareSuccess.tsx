@@ -17,7 +17,7 @@ const PrepareSuccess: FC = () => {
                     <ellipse opacity="0.7" rx="134.63" ry="134.568" transform="matrix(0.499652 0.866226 -0.865824 0.500348 351.838 351.659)" fill="url(#paint2_radial_1376_5668)" />
                 </g>
                 <image href="/images/model.png" x="34%" y="35%" className="w-[32%]" />
-                <foreignObject className="font-lato-light  italic w-[260px] text-lg text-white hidden md:block" x="40%" y="87.4%" width="260px" height="100px">
+                <foreignObject className="font-lato-light w-[260px] text-lg text-white hidden md:block" x="40%" y="87.4%" width="260px" height="100px">
                     <p
                     >Dieses Feature ermöglicht eine besondere Funktion: XYZ</p>
                 </foreignObject>
@@ -93,7 +93,7 @@ const PrepareSuccess: FC = () => {
                 <div className="flex flex-wrap mt-[400px] md:mt-12">
                     <div className="w-full md:w-2/5 m-auto">
                         <div className="relative">
-                            <p className="font-lato-light italic font-light text-[22px] text-white">{t('business.preparesuccess.tip')}</p>
+                            <p className="font-lato-light font-light text-[22px] text-white">{t('business.preparesuccess.tip')}</p>
                             <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('business.preparesuccess.title')}</h1>
                             {
                                 t('business.preparesuccess.description').split('\n').map((item, index) =>

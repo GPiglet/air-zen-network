@@ -57,13 +57,13 @@ const WhitePaper: FC = () => {
                     <h1 className="text-title-sm ">
                         {t('business.whitepaper.title')}
                     </h1>
-                    <p className="font-lato-light font-light italic text-lg tracking-widest">{t('business.whitepaper.subtitle')}</p>
+                    <p className="font-lato-light font-light text-lg tracking-widest">{t('business.whitepaper.subtitle')}</p>
                 </div>
                 <div className='md:flex justify-between text-left mt-[120px]'>
                     {
                         (paperList as unknown as any[]).map((item, index) =>
                             <div className='px-12 mb-10 relative' key={index}>
-                                <p className="font-lato-light font-light italic text-lg tracking-widest">{item.tip}</p>
+                                <p className="font-lato-light font-light text-lg tracking-widest">{item.tip}</p>
                                 <h1 className="text-title-sm ">
                                     {item.title}
                                 </h1>
