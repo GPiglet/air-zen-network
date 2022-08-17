@@ -78,13 +78,17 @@ const Contact: FC = () => {
                         {t('landing.contact.send')}
                     </button>
                     <div className='flex relative z-40'>
-                        <input type='checkbox' className="mr-5" ref={checkRef1} />
+                        <div>
+                            <div className="mt-[20px]"><input type='checkbox' className="mr-5 w-[20px] h-[20px] cursor-pointer" ref={checkRef1} /></div>
+                        </div>
                         <p className='font-lato font-light text-left text-base text-white tracking-[2px] my-4'>
                             {t('landing.contact.description').split('\n')[0]}
                         </p>
                     </div>
                     <div className='flex relative z-40'>
-                        <input type='checkbox' className="mr-5" ref={checkRef2} />
+                        <div>
+                            <div className="mt-[20px]"><input type='checkbox' className="mr-5 w-[20px] h-[20px] cursor-pointer" ref={checkRef2} /></div>
+                        </div>
                         <p className='font-lato font-light text-left text-base text-white tracking-[2px] my-4'>
                             {t('landing.contact.description').split('\n')[1]}
                         </p>
