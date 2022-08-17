@@ -2,7 +2,6 @@
 import React, { FC, useRef, useState } from 'react'
 import gsap from "gsap";
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import Checkbox from 'rc-checkbox';
 gsap.registerPlugin(ScrollTrigger);
 import { useTranslation } from 'next-i18next';
 
