@@ -19,7 +19,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
 
   const router = useRouter()
 
-  const [y, setY] = useState(window.scrollY);
+  const [y, setY] = useState(0);
 
   const handleNavigation = useCallback(
     (e: any) => {
