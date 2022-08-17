@@ -1,5 +1,5 @@
 //modules
-import React, { FC, useState, useEffect } from "react"
+import React, { FC, useState, useEffect, useCallback } from "react"
 import { useRouter } from "next/router";
 import { Link } from 'react-scroll'
 import gsap from "gsap";
@@ -15,22 +15,34 @@ type NaveProps = {
 const Navbar: FC<NaveProps> = ({ navItems }) => {
 
   const [navbarOpen, setNavbarOpen] = React.useState(false)
-  const [position, setPosition] = useState(0)
+  const [scrolldown, setScrollDown] = useState(false)
 
   const router = useRouter()
 
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setPosition(position)
-  };
+  const [y, setY] = useState(0);
+
+  const handleNavigation = useCallback(
+    (e: any) => {
+      const window = e.currentTarget
+      if (y > window.scrollY && window.innerWidth < 920) {
+        console.log("scrolling up")
+        setScrollDown(false)
+      } else if (y < window.scrollY && window.innerWidth < 920) {
+        console.log("scrolling down")
+        setScrollDown(true)
+      }
+      setY(window.scrollY);
+    }, [y]
+  );
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    setY(window.scrollY);
+    window.addEventListener("scroll", handleNavigation);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleNavigation);
     };
-  }, []);
+  }, [handleNavigation]);
 
   // animation
   const animNavButtons = React.useRef<any>([]);
@@ -64,7 +76,8 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
   // }, [])
 
   return (
-    <nav className={`${position === 0 ? 'top-[10px] md:top-[40px] lg:top-[62px]' : 'md:py-5 backdrop-blur'} duration-500 fixed z-50 w-full items-center navbar-expand-lg bg-transparent z-60`}>
+
+    <nav className={`${scrolldown ? 'hidden' : 'block'} md:top-[40px] lg:top-[62px] md:py-5  md:bg-transparent  duration-500 fixed z-50 w-full items-center navbar-expand-lg z-60`}>
       <div className="container px-4 mx-auto flex flex-wrap relative items-center justify-between">
         <div className="w-full relative flex justify-between md:w-auto md:static md:block md:justify-start md:w-1/4  px-5 pt-5 md:px-0 md:pt-0">
           <div className=" cursor-pointer" onClick={() => router.push('/')}>

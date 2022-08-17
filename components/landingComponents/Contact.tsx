@@ -2,38 +2,36 @@
 import React, { FC, useRef, useState } from 'react'
 import gsap from "gsap";
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import Checkbox from 'rc-checkbox';
 gsap.registerPlugin(ScrollTrigger);
 import { useTranslation } from 'next-i18next';
+
+import CustomCheckbox from '../common/checkbox';
 
 
 const Contact: FC = () => {
     //translate
     const { t } = useTranslation()
 
-    const [checked, setChecked] = useState(0)
+    const [dataProtection, setDataProtection] = useState(false)
+    const [dataCollection, setDataCollection] = useState(false)
 
     const nameRef = useRef<any>();
     const emailRef = useRef<any>();
     const messageRef = useRef<any>();
-    const checkRef1 = useRef<any>();
-    const checkRef2 = useRef<any>();
 
-    const checkboxChange = (e: Event, checked: number) => {
-        if (checked === 1) {
-            setChecked(0)
-        } else {
-            setChecked(1)
+    const changeCheck = (type: string) => {
+        switch (type) {
+            case 'dataProtection':
+                setDataProtection(!dataProtection)
+                break;
+            case 'dataCollection':
+                setDataCollection(!dataCollection)
+                break;
+
+            default:
+                break;
         }
     }
-
-    const checkboxProps = {
-        theme: "fancy-checkbox",
-        checked,
-        onChange: (e: Event) => checkboxChange(e, checked)
-
-    }
-
 
     return (
         <div id='cantact' className='container m-auto relative py-[120px] md:py-[280px] flex justify-center'>
@@ -78,13 +76,17 @@ const Contact: FC = () => {
                         {t('landing.contact.send')}
                     </button>
                     <div className='flex relative z-40'>
-                        <input type='checkbox' className="mr-5" ref={checkRef1} />
+                        <div className='mt-5 mr-3'>
+                            <CustomCheckbox checked={dataProtection} onChange={() => changeCheck('dataProtection')} />
+                        </div>
                         <p className='font-lato font-light text-left text-base text-white tracking-[2px] my-4'>
                             {t('landing.contact.description').split('\n')[0]}
                         </p>
                     </div>
                     <div className='flex relative z-40'>
-                        <input type='checkbox' className="mr-5" ref={checkRef2} />
+                        <div className='mt-5 mr-3'>
+                            <CustomCheckbox checked={dataCollection} onChange={() => changeCheck('dataCollection')} />
+                        </div>
                         <p className='font-lato font-light text-left text-base text-white tracking-[2px] my-4'>
                             {t('landing.contact.description').split('\n')[1]}
                         </p>
