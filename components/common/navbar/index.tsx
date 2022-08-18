@@ -20,6 +20,15 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
   const router = useRouter()
 
   const [y, setY] = useState(0);
+  const [main, setMain] = useState(false);
+
+  useEffect(() => {
+    if (router.pathname.split('/')[1] === 'landing') {
+      setMain(true)
+    } else {
+      setMain(false)
+    }
+  })
 
   const handleNavigation = useCallback(
     (e: any) => {
@@ -75,6 +84,15 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
   //   }
   // }, [])
 
+  const routing = (item: any) => {
+    console.log(item.href)
+    router.push({
+      pathname: '/landing',
+      query: { section: item.href }
+    })
+    setNavbarOpen(false)
+  }
+
   return (
 
     <nav className={`${scrolldown ? 'hidden' : 'block'} md:top-[40px] lg:top-[62px] md:py-5  md:bg-transparent  duration-500 fixed z-50 w-full items-center navbar-expand-lg z-60`}>
@@ -112,11 +130,21 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
         >
           <ul className="flex flex-col md:flex-row list-none mr-auto w-full justify-around text-white">
             {
+
               navItems.map((item, index) => (
+
                 <li ref={el => animNavButtons.current.push(el)} className={"mx-3 md:m-0 flex items-center cursor-pointer"} key={index} >
-                  <Link activeClass="active" smooth spy to={item.href} onClick={() => setNavbarOpen(false)}>
-                    <p className="hover:text-gray-100 text-gray-400  py-4 md:py-2 flex items-center text-lg uppercase font-lato">{item.title}</p>
-                  </Link>
+                  {
+                    main ? (
+                      <Link activeClass="active" smooth spy to={item.href} onClick={() => setNavbarOpen(false)}>
+                        <p className="hover:text-gray-100 text-gray-400  py-4 md:py-2 flex items-center text-lg uppercase font-lato">{item.title}</p>
+                      </Link>
+                    ) : (
+                      <div onClick={() => routing(item)}>
+                        <p className="hover:text-gray-100 text-gray-400  py-4 md:py-2 flex items-center text-lg uppercase font-lato">{item.title}</p>
+                      </div>
+                    )
+                  }
                 </li>
               ))
             }

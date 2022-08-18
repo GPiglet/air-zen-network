@@ -14,7 +14,7 @@ const UniqueSkill: FC = () => {
     const router = useRouter()
     const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop, behavior: 'smooth' })
     useEffect(() => {
-        if (router.query.section === 'solution')
+        if (router.query.section === 'solutions')
             scrollToRef(containerRef)
         if (window.innerWidth > 920)
             setIsMobile(false)

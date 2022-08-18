@@ -8,7 +8,7 @@ const Breadcrumb: FC = () => {
     return (
         <div className='container relative z-20 m-auto pt-[100px] md:pt-[200px]' onClick={() => router.push({
             pathname: '/landing',
-            query: { section: 'solution' }
+            query: { section: 'solutions' }
         })}>
             <div className='flex items-center '>
                 <picture>

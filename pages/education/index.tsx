@@ -12,32 +12,35 @@ import Reliable from '../../components/educationComponents/Reliable'
 import Secure from '../../components/educationComponents/Secure'
 import Easy from '../../components/educationComponents/Easy'
 import Contact from '../../components/educationComponents/Contact'
+import { useTranslation } from 'next-i18next'
 
 
 
 
 const Home: NextPage = () => {
+	const { t } = useTranslation()
+
 
 	const navItems: Array<any> = [
 		{
 			id: 1,
-			title: 'Klassenzimmer ',
-			href: 'classroom'
+			title: t('landing.menu').split('\n')[0],
+			href: 'solutions'
 		},
 		{
 			id: 2,
-			title: 'SCHUTZ',
-			href: 'protection'
+			title: t('landing.menu').split('\n')[1],
+			href: 'aboutus'
 		},
 		{
 			id: 3,
-			title: 'Einfach',
-			href: 'easy'
+			title: t('landing.menu').split('\n')[2],
+			href: 'credentials'
 		},
 		{
 			id: 4,
-			title: 'Technik',
-			href: 'technology'
+			title: t('landing.menu').split('\n')[3],
+			href: 'cantact'
 		},
 	]
 

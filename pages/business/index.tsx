@@ -16,38 +16,36 @@ import CertainlySafe from '../../components/businessComponents/CertainlySafe'
 import Solution360 from '../../components/businessComponents/Solution360'
 import BusinessNode from '../../components/businessComponents/BusinessNode'
 import WhitePaper from '../../components/businessComponents/WhitePaper'
+import { useTranslation } from 'next-i18next';
 
 
 
 
 const Business: NextPage = () => {
+	const { t } = useTranslation()
+
 
 	const navItems: Array<any> = [
 		{
 			id: 1,
-			title: 'Profesionelles',
-			href: 'professional'
+			title: t('landing.menu').split('\n')[0],
+			href: 'solutions'
 		},
 		{
 			id: 2,
-			title: 'Einfach',
-			href: 'easy'
+			title: t('landing.menu').split('\n')[1],
+			href: 'aboutus'
 		},
 		{
 			id: 3,
-			title: 'Lösung',
-			href: 'solution'
+			title: t('landing.menu').split('\n')[2],
+			href: 'credentials'
 		},
 		{
 			id: 4,
-			title: 'Technik',
-			href: 'technology'
+			title: t('landing.menu').split('\n')[3],
+			href: 'cantact'
 		},
-		{
-			id: 4,
-			title: 'Whitepaper',
-			href: 'whitepaper'
-		}
 	]
 
 	return (
