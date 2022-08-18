@@ -12,32 +12,35 @@ import ReferenceProjects from '../../components/industrialComponents/ReferencePr
 import SimpleProductive from '../../components/industrialComponents/SimpleProductive'
 import FutureProof from '../../components/industrialComponents/FutureProof'
 import Contact from '../../components/industrialComponents/Contact'
+import { useTranslation } from 'next-i18next'
 
 
 
 
 const Industrial: NextPage = () => {
+	const { t } = useTranslation()
+
 
 	const navItems: Array<any> = [
 		{
 			id: 1,
-			title: 'Referenzprojekte',
-			href: 'reference'
+			title: t('landing.menu').split('\n')[0],
+			href: 'solutions'
 		},
 		{
 			id: 2,
-			title: 'Einfach',
-			href: 'easy'
+			title: t('landing.menu').split('\n')[1],
+			href: 'aboutus'
 		},
 		{
 			id: 3,
-			title: 'Sicher',
-			href: 'secure'
+			title: t('landing.menu').split('\n')[2],
+			href: 'credentials'
 		},
 		{
 			id: 4,
-			title: 'Technik',
-			href: 'technology'
+			title: t('landing.menu').split('\n')[3],
+			href: 'cantact'
 		},
 	]
 

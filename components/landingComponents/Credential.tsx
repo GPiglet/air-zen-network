@@ -5,15 +5,23 @@ import gsap from "gsap";
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 
 const Credential: FC = () => {
 
 
     //translate
     const { t } = useTranslation()
-
-
     const refBackCircle = React.useRef<SVGSVGElement>(null);
+    const containerRef = React.useRef<any>();
+
+    const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop, behavior: 'smooth' })
+    useEffect(() => {
+        if (router.query.section === 'credentials')
+            scrollToRef(containerRef)
+    }, [])
+
+
 
     const carouselList = t('landing.credential.swiper', { returnObjects: true })
 
@@ -52,8 +60,11 @@ const Credential: FC = () => {
 
     }
 
+    const router = useRouter()
+
+
     return (
-        <section id='credentials' className='flex items-center'>
+        <section id='credentials' ref={containerRef} className='flex items-center'>
             <div className='w-full'>
                 <div className=' py-10 flex justify-center'>
                     <h1 className="text-title-sm">{t('landing.credential.title')}</h1>

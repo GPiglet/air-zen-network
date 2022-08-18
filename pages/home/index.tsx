@@ -3,6 +3,7 @@ import React from 'react'
 import type { NextPage } from 'next'
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { GetStaticProps } from 'next'
+import { useTranslation } from 'next-i18next'
 
 
 
@@ -19,27 +20,28 @@ import OurNode from '../../components/homeComponents/OurNode'
 
 
 const Home: NextPage = () => {
+	const { t } = useTranslation()
 
 	const navItems: Array<any> = [
 		{
 			id: 1,
-			title: 'Sicher',
-			href: 'secure'
+			title: t('landing.menu').split('\n')[0],
+			href: 'solutions'
 		},
 		{
 			id: 2,
-			title: 'Zuverlässig',
-			href: 'reliable'
+			title: t('landing.menu').split('\n')[1],
+			href: 'aboutus'
 		},
 		{
 			id: 3,
-			title: 'Einfach',
-			href: 'easy'
+			title: t('landing.menu').split('\n')[2],
+			href: 'credentials'
 		},
 		{
 			id: 4,
-			title: 'Technik',
-			href: 'technology'
+			title: t('landing.menu').split('\n')[3],
+			href: 'cantact'
 		},
 	]
 

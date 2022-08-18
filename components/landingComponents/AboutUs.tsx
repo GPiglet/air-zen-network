@@ -1,14 +1,25 @@
-import React, { FC, Suspense, useEffect, useState, useContext } from 'react'
+import React, { FC, Suspense, useEffect, useState, useContext, useRef } from 'react'
 import Flickity from "react-flickity-component"
 import "flickity/dist/flickity.css"
 import gsap from "gsap";
 import { useTranslation } from "next-i18next";
+import { useRouter } from 'next/router';
 
 
 const AboutUs: FC = () => {
 
     //translate
     const { t } = useTranslation()
+    const router = useRouter()
+
+    const containerRef = useRef<any>();
+
+
+    const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop, behavior: 'smooth' })
+    useEffect(() => {
+        if (router.query.section === 'aboutus')
+            scrollToRef(containerRef)
+    }, [])
 
     // Animate Refs
     const aboutCircleRef1 = React.useRef<any>();
@@ -17,6 +28,7 @@ const AboutUs: FC = () => {
     const aboutCircleRef4 = React.useRef<any>();
     const aboutCircleRef5 = React.useRef<any>();
     const aboutCircleRef6 = React.useRef<any>();
+
 
     //Flickity
     const [flkty, setFlkty] = useState<any>(undefined)
@@ -64,7 +76,7 @@ const AboutUs: FC = () => {
 
 
     return (
-        <section id='aboutus' className='container m-auto relative md:flex items-center md:py-20'>
+        <section id='aboutus' ref={containerRef} className='container m-auto relative md:flex items-center md:py-20'>
 
             <div className=' z-50 w-full '>
 

@@ -1,16 +1,19 @@
 //modules
-import React, { FC, useRef, useState } from 'react'
+import React, { FC, useEffect, useRef, useState } from 'react'
 import gsap from "gsap";
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 import { useTranslation } from 'next-i18next';
 
 import CustomCheckbox from '../common/checkbox';
+import { useRouter } from 'next/router';
 
 
 const Contact: FC = () => {
     //translate
     const { t } = useTranslation()
+    const router = useRouter()
+
 
     const [dataProtection, setDataProtection] = useState(false)
     const [dataCollection, setDataCollection] = useState(false)
@@ -18,6 +21,14 @@ const Contact: FC = () => {
     const nameRef = useRef<any>();
     const emailRef = useRef<any>();
     const messageRef = useRef<any>();
+    const containerRef = React.useRef<any>();
+
+
+    const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop, behavior: 'smooth' })
+    useEffect(() => {
+        if (router.query.section === 'cantact')
+            scrollToRef(containerRef)
+    }, [])
 
     const changeCheck = (type: string) => {
         switch (type) {
@@ -34,7 +45,7 @@ const Contact: FC = () => {
     }
 
     return (
-        <div id='cantact' className='container m-auto relative py-[120px] md:py-[280px] flex justify-center'>
+        <div id='cantact' ref={containerRef} className='container m-auto relative py-[120px] md:py-[280px] flex justify-center'>
             <div className=" flex justify-center">
                 <div className='text-white md:w-[50%] xl:w-1/3 text-center relative z-40 px-10 md:px-auto'>
                     <h1 className="text-title-sm">{t('landing.contact.title')}</h1>

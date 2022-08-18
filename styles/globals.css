@@ -137,11 +137,13 @@ section {
   height: fit-content;
 }
 .unique-skill-items, .unique-skill-title {
-  transition: all 0.4s linear;
+  transition: all 0.6s linear;
 }
 .unique-skill-items:hover .unique-graph, .unique-skill-items:active .unique-graph {
   width: 80%;
   opacity: 0.7;
+  transition: all 0.6s linear;
+
 }
 .unique-skill-items:hover .unique-skill-title, .unique-skill-items:active .unique-skill-title {
   display: none;

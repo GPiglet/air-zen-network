@@ -21,24 +21,25 @@ export default function LocaleSwitcher() {
   return (
     <span className="text-muted cursor-pointer">
       {otherLocales?.map((locale, index) => {
-        const { pathname, query, asPath } = router;
+        const { pathname, asPath } = router;
+        // console.log(query);
         return (
           <div className="flex" key={index}>
             {
               isMobile ? (
-                <Link href={{ pathname, query }} as={asPath} locale={locale}>
+                <Link href={{ pathname }} as={asPath} locale={locale} >
                   <p className='text-white px-1 py-4 md:py-2 flex items-center text-lg font-lato'>
                     {locale === 'de' ? 'De' : 'En'}
                   </p>
                 </Link>
               ) : (
                 <>
-                  <Link href={{ pathname, query }} as={asPath} locale={locale}>
+                  <Link href={{ pathname }} as={asPath} locale={locale} >
                     <p className={`${locale === 'en' ? 'text-white' : 'text-gray-400'} text-white px-1 py-4 md:py-2 flex items-center text-lg font-lato`}>
                       De
                     </p>
                   </Link>
-                  <Link href={{ pathname, query }} as={asPath} locale={locale}>
+                  <Link href={{ pathname }} as={asPath} locale={locale} >
                     <p className={`${locale === 'de' ? 'text-white' : 'text-gray-400'}  px-1 py-4 md:py-2 flex items-center text-lg font-lato`}>
                       En
                     </p>
