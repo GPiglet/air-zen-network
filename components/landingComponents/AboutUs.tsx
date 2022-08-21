@@ -1,5 +1,6 @@
 import React, { FC, Suspense, useEffect, useState, useContext, useRef } from 'react'
 import Flickity from "react-flickity-component"
+import AZCarousel from '../common/carousel';
 import "flickity/dist/flickity.css"
 import gsap from "gsap";
 import { useTranslation } from "next-i18next";
@@ -7,6 +8,7 @@ import { useRouter } from 'next/router';
 
 
 const AboutUs: FC = () => {
+    
 
     //translate
     const { t } = useTranslation()
@@ -31,6 +33,7 @@ const AboutUs: FC = () => {
 
 
     //Flickity
+    const [carousel, setCarousel] = React.useState<any>(null);
     const [flkty, setFlkty] = useState<any>(undefined)
     const [selected, setSelected] = useState(0)
 
@@ -46,7 +49,7 @@ const AboutUs: FC = () => {
     }
 
     const flickityProps = {
-        className: "carousel-nav pl-[55px] md:h-[70%] mt-[120px] ",
+        className: "carousel-nav pl-[55px] md:h-[70%] mt-[120px] md:hidden",
         options: {
             asNavFor: ".carousel-main",
             contain: true,
@@ -64,14 +67,44 @@ const AboutUs: FC = () => {
     const svgGroupAnimation = (state: string) => {
         if (state === 'next') {
             flkty.next()
+            carousel.next()
             gsap.to([aboutCircleRef2.current, aboutCircleRef3.current,], { duration: 0.8, scale: (1 + (flkty.selectedIndex + 1) * 0.03), transformOrigin: "50% 50%", })
             gsap.to(aboutCircleRef4.current, { duration: 0.8, scale: (1 + (flkty.selectedIndex + 1) * 0.05), transformOrigin: "50% 50%", })
         } else {
             flkty.previous()
+            carousel.prev()
             gsap.to([aboutCircleRef2.current, aboutCircleRef3.current,], { duration: 0.8, scale: (1 - (flkty.selectedIndex + 1) * 0.03), transformOrigin: "50% 50%", })
             gsap.to(aboutCircleRef4.current, { duration: 0.8, scale: (1 - (flkty.selectedIndex + 1) * 0.05), transformOrigin: "50% 50%", })
 
         }
+    }
+
+
+    /* az carousel*/
+    const onInitCarousel = (carousel: any) => {
+        setCarousel(carousel);
+    }
+
+    const onSelectCarousel = (carousel: any, slide: any, selectedIndex: number, position: number) => {
+        setSelected(selectedIndex);
+    }
+
+    const onShowCarousel = (carousel: any, slide: any, shownIndex: number, position: number, onComplete: Function) => {
+        const leftFromTo = (position - carousel.getPosition() > 0) ? ['50%', '20%'] : ['0', '20%'];       // next : prev
+        gsap.fromTo(slide, {opacity: 0, left: leftFromTo[0]}, {opacity: 1, left: leftFromTo[1], duration: 1.5, onComplete: ()=>{
+            if ( onComplete ) onComplete();
+        }});
+    }
+
+    const onHideCarousel = (carousel: any, slide: any, hiddenIndex: number, position: number, onComplete: Function) => {
+        const leftFromTo = (position - carousel.getPosition() > 0) ? ['20%', '0'] : ['20%', '50%'];       // next : prev
+        gsap.fromTo(slide, {opacity: 1, left: leftFromTo[0]}, {opacity: 0, left: leftFromTo[1], duration: 1, onComplete: ()=>{
+            if ( onComplete ) onComplete();
+        }});
+    }
+
+    const onCalcHeight = (carousel: any) => {
+        return carousel.slides[carousel.getSelectedIndex()].getBoundingClientRect().height;
     }
 
 
@@ -108,6 +141,16 @@ const AboutUs: FC = () => {
                                 }
 
                             </Flickity>
+                            <AZCarousel className="hidden md:block carousel-nav pl-[55px] md:h-[70%] mt-[120px]" onInit={onInitCarousel} onSelect={onSelectCarousel} onShow={onShowCarousel} onHide={onHideCarousel} onCalcHeight={onCalcHeight}>
+                                {
+                                    (sliderList as unknown as any[]).map((item, ind) => (
+                                        <div className='w-[80%] md:w-full mr-12' key={ind}>
+                                            <p className="font-lato uppercase font-black text-[22px] text-transparent bg-clip-text bg-gradient-to-r from-gray-400 via-gray-200 to-white tracking-widest">{item.title}</p>
+                                            <p className="font-lato font-light tracking-widest text-white text-lg mt-3">{item.content}</p>
+                                        </div>
+                                    ))
+                                }
+                            </AZCarousel>
                         </div>
                         <div className='relative w-full md:w-2/5 h-[300px] w:h-auto'>
 
