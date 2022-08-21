@@ -203,7 +203,7 @@ section {
 
 .credential-detail{
   cursor: pointer;
-  transition: all .4s ease-in-out;
+  /* transition: all .4s ease-in-out; */
 }
 
   /* .credential-detail:hover ul {
