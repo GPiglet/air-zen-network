@@ -95,7 +95,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
 
   return (
 
-    <nav className={`${scrolldown ? 'hidden' : 'block'} md:top-[40px] lg:top-[62px] md:py-5  md:bg-transparent  duration-500 fixed z-50 w-full items-center navbar-expand-lg z-60`}>
+    <nav className={`${scrolldown ? 'hidden' : 'block'}  md:top-[40px] lg:top-[62px] md:py-5 pb-20 md:pb-0 bg-gradient-to-b from-black md:from-transparent to-transparent duration-500 fixed z-50 w-full items-center navbar-expand-lg z-60`}>
       <div className="container px-4 mx-auto flex flex-wrap relative items-center justify-between">
         <div className="w-full relative flex justify-between md:w-auto md:static md:block md:justify-start md:w-1/4  px-5 pt-5 md:px-0 md:pt-0">
           <div className=" cursor-pointer" onClick={() => router.push('/')}>

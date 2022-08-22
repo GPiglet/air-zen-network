@@ -187,7 +187,7 @@ const UniqueSkill: FC = () => {
                                                 </picture>
                                                 <p className='font-lato text-[22px] uppercase unique-skill-title pb-3'>{item.title}</p>
                                                 <p className='font-lato-light font-bold text-xl w-[60%] md:w-[90%] pb-3'>{item.subtitle}</p>
-                                                <p className='hidden font-lato font-light text-xl text-lg unique-skill-description pb-3'>{item.description}</p>
+                                                <p className='hidden font-lato font-light text-xl text-lg unique-skill-description pb-3 w-full sm:w-[50%]'>{item.description}</p>
                                                 <ul className='hidden list-disc pl-2 unique-skill-list '>
                                                     {item.list.split('\n').map((subitem: string, ind: number) => (
                                                         <li className='font-lato text-[16px] font-extralight leading-6' key={ind}>{subitem}</li>

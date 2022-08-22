@@ -13,6 +13,7 @@
     "yarn": "1.x"
   },
   "dependencies": {
+    "@kunukn/react-collapse": "^2.2.9",
     "@popperjs/core": "^2.11.5",
     "eslint": "8.20.0",
     "eslint-config-next": "12.2.2",
