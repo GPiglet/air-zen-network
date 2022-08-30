@@ -224,5 +224,5 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
     )
 
 })
-
+UniqueSkill.displayName = 'UniqueSkill'
 export default UniqueSkill

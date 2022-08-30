@@ -297,5 +297,5 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
         </>
     )
 })
-
+AboutUs.displayName = 'AboutUs';
 export default AboutUs

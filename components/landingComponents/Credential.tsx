@@ -328,5 +328,5 @@ const Credential = React.forwardRef((props: any, ref: any) => {
         </section>
     )
 })
-
+Credential.displayName = 'Credential';
 export default Credential
