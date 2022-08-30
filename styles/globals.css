@@ -14,7 +14,14 @@ body{
   white-space: pre-line;
   /* overflow-y: scroll; */
 
+  /* overflow-y: hidden; */
+  background-color: #000000;
+}
 
+@media  only screen and (max-width: 920px) {
+  body {
+    overflow-y: auto;
+  }
 }
 
 #root {
@@ -51,11 +58,13 @@ body::-webkit-scrollbar {
 @tailwind utilities;
 
 .back-left-top-gradient-primary {
-  background: linear-gradient(166.42deg, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 21.49%), #000000;
+  background: linear-gradient(166.42deg, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 100%), #000000;
+  background-attachment: fixed;
 }
 
 .back-left-top-gradient-secondary {
-  background: linear-gradient(170.47deg, #1E4D2E -4.4%, #000000 19.39%), #000000;
+  background: linear-gradient(170.47deg, #1E4D2E -4.4%, #000000 100%), #000000;
+  background-attachment: fixed;
 }
 
 .center-transform {

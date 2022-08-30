@@ -8,17 +8,18 @@ import Footer from '../../components/common/footer'
 
 type MainlayoutProps = {
     children: ReactNode,
-    navItems: Array<any>
+    navItems: Array<any>,
+    hasFooter?: boolean,
 };
 
-const Mainlayout: FC<MainlayoutProps> = ({ children, navItems }) => {
+const Mainlayout: FC<MainlayoutProps> = ({ children, navItems, hasFooter=true }) => {
 
     return (
         <div>
-            <Navbar navItems={navItems} />
+            <Navbar navItems={navItems}/>
             {/* <Sticky /> */}
             {children}
-            <Footer />
+            {hasFooter && <Footer />}
 
         </div>
     );

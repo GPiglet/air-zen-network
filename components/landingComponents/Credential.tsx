@@ -2,13 +2,11 @@ import React, { FC, useEffect, useState } from 'react'
 import Flickity from "react-flickity-component"
 import "flickity/dist/flickity.css"
 import gsap from "gsap";
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import AZCarousel from '../common/carousel';
 
-const Credential: FC = () => {
+const Credential = React.forwardRef((props: any, ref: any) => {
     const [carousel, setCarousel] = React.useState<any>(null);
 
     //translate
@@ -120,7 +118,9 @@ const Credential: FC = () => {
 
     const onCalcHeight = (carousel: any) => {
         for ( let i = 0; i < carousel.slides.length; i++ ) {
-            if ( i != carousel.getSelectedIndex() ) return carousel.slides[i].getBoundingClientRect().height;
+            if ( i != carousel.getSelectedIndex() ) {
+                return carousel.slides[i].getBoundingClientRect().height | 300;
+            }
         }
         return 200;
     }
@@ -131,78 +131,156 @@ const Credential: FC = () => {
         step: 1,
     }
 
+
+    // animation
+    const animSideUp = React.useRef<any>([]);
+    const animFadeIn = React.useRef<any>([]);
+    const animGradient = React.useRef<any>([]);
+
+    const getShowTimeline = (duration: number = 3) => {
+        return gsap.timeline({paused: true, onReverseComplete: ()=>{gsap.set([containerRef.current], {display: 'none'});}})
+            .fromTo(
+                animSideUp.current[0],
+                {opacity: 0},
+                {opacity: 1, duration},
+                0
+            )
+            .fromTo(
+                animSideUp.current, 
+                {y: 600}, 
+                {y: 200, duration: duration/2}, 
+                0
+            )
+            .fromTo(
+                animSideUp.current, 
+                {y: 200}, 
+                {y: 0, duration: duration/2}, 
+                duration/2
+            )
+            .fromTo(
+                animFadeIn.current,
+                {opacity: 0, y: 200},
+                {opacity: 1, y: 0, duration: duration/2},
+                duration/2
+            )
+            .fromTo(
+                animGradient.current,
+                {opacity: 0, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 100%)'},
+                {opacity: 1, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 60%)', duration: duration/2},
+                duration/2
+            )
+
+    }
+
+    const getHideTimeline = (duration: number = 1.5) => {
+        return gsap.timeline({paused: true, onComplete: ()=>{gsap.set([containerRef.current], {display: 'none'});}})
+            .fromTo(
+                animSideUp.current[0],
+                {opacity: 1},
+                {opacity: 0, duration},
+                0
+            )
+            .fromTo(
+                animSideUp.current, 
+                {y: 0}, 
+                {y: -100, duration}, 
+                0
+            )
+            .fromTo(
+                animFadeIn.current,
+                {opacity: 1},
+                {opacity: 0, duration},
+                0
+            )
+            .fromTo(
+                animGradient.current,
+                {opacity: 1, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 60%)'},
+                {opacity: 0, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 80%)', duration},
+                0
+            )
+
+    }
+
+    const startAnim = (direction: string, shown: boolean) => {
+        gsap.set([containerRef.current], {display: 'block'});
+        if ( direction == 'DOWN' && shown ) getShowTimeline().play(0);
+        else if ( direction == 'DOWN' && !shown ) getHideTimeline().play(0);
+        else if ( direction == 'UP' && shown ) getHideTimeline().reverse(0);
+        else if (direction == 'UP' && !shown ) getShowTimeline().reverse(0);
+    }
+
     const router = useRouter()
 
 
     return (
-        <section id='credentials' ref={containerRef} className='flex items-center'>
-            <div className='w-full'>
+        <section id='credentials' ref={(el)=>{containerRef.current=el; if (ref) ref.current = {container: el, startAnim}}} className='flex items-center md:items-start md:pt-[160px] md:fixed md:hidden md:w-full md:left-[50%] md:translate-x-[-50%]'>
+            <div className='w-full relative z-50'>
                 <div className=' py-10 flex justify-center'>
-                    <h1 className="text-title-sm">{t('landing.credential.title')}</h1>
+                    <h1 ref={el=>animSideUp.current.push(el)} className="text-title-sm relative z-50">{t('landing.credential.title')}</h1>
                 </div>
+                <div ref={el=>animFadeIn.current.push(el)}>
+                    <Flickity
+                        {...flickityProps}
 
-                <Flickity
-                    {...flickityProps}
+                    >
+                        {/* <div className='hidden md:block w-[200px]'></div> */}
+                        {
+                            (carouselList as unknown as any[]).map((item, index) => (
 
-                >
-                    {/* <div className='hidden md:block w-[200px]'></div> */}
-                    {
-                        (carouselList as unknown as any[]).map((item, index) => (
-
-                            <div className={`mr-10 w-[60%] md:w-[35%] credential-detail`} onClick={() => clickCell(index)} key={index}>
-                                <picture>
-                                    <source srcSet={imageList[index]} type="image/webp" />
-                                    <img src={imageList[index]} alt="" />
-                                </picture>
-                                <div className='md:flex md:p-7'>
-                                    <div className='w-full md:w-1/2 px-2'>
-                                        <p className='font-lato text-[22px] text-white'>{item.title}</p>
+                                <div className={`mr-10 w-[60%] md:w-[35%] credential-detail`} onClick={() => clickCell(index)} key={index}>
+                                    <picture>
+                                        <source srcSet={imageList[index]} type="image/webp" />
+                                        <img src={imageList[index]} alt="" />
+                                    </picture>
+                                    <div className='md:flex md:p-7'>
+                                        <div className='w-full md:w-1/2 px-2'>
+                                            <p className='font-lato text-[22px] text-white'>{item.title}</p>
+                                        </div>
+                                        <ul className='w-full   md:w-1/2 pl-2 px-2 text-white list-disc hidden'>
+                                            {
+                                                item.list.split('\n').map((detail: string, ind: number) => (
+                                                    <li className='font-lato text-base font-light' key={ind}>{detail}</li>
+                                                ))
+                                            }
+                                        </ul>
                                     </div>
-                                    <ul className='w-full   md:w-1/2 pl-2 px-2 text-white list-disc hidden'>
-                                        {
-                                            item.list.split('\n').map((detail: string, ind: number) => (
-                                                <li className='font-lato text-base font-light' key={ind}>{detail}</li>
-                                            ))
-                                        }
-                                    </ul>
                                 </div>
-                            </div>
-                        ))
-                    }
-                </Flickity>
-                <AZCarousel className='credential-carousel ml-[30px] md:ml-auto relative z-50 hidden md:block' config={config}
-                    onInit={onInitCarousel} 
-                    onShow={onShowCarousel}
-                    onHide={onHideCarousel}
-                    onSelect={onSelectCarousel}
-                    onDeselect={onDeselectCarousel}
-                    onChange={onChangeCarousel} 
-                    onCalcHeight={onCalcHeight}
-                >
-                    {
-                        (carouselList as unknown as any[]).map((item, index) => (
+                            ))
+                        }
+                    </Flickity>
+                    <AZCarousel className='credential-carousel ml-[30px] md:ml-auto relative z-50 hidden md:block' config={config}
+                        onInit={onInitCarousel} 
+                        onShow={onShowCarousel}
+                        onHide={onHideCarousel}
+                        onSelect={onSelectCarousel}
+                        onDeselect={onDeselectCarousel}
+                        onChange={onChangeCarousel} 
+                        onCalcHeight={onCalcHeight}
+                    >
+                        {
+                            (carouselList as unknown as any[]).map((item, index) => (
 
-                            <div className={`mr-10 w-[60%] md:w-[30%] opacity-50 credential-detail`} onClick={() => clickCellCarousel(index)} key={index}>
-                                <picture>
-                                    <source srcSet={imageList[index]} type="image/webp" />
-                                    <img src={imageList[index]} className="w-[80%]" alt="" />
-                                </picture>
-                                <div className='md:flex md:p-7'>
-                                    <div className='w-full md:w-1/2 px-2'>
-                                        <p className='font-lato text-[22px] text-white'>{item.title}</p>
+                                <div className={`mr-10 w-[60%] md:w-[30%] opacity-50 credential-detail`} onClick={() => clickCellCarousel(index)} key={index}>
+                                    <picture>
+                                        <source srcSet={imageList[index]} type="image/webp" />
+                                        <img src={imageList[index]} className="w-[80%]" alt="" />
+                                    </picture>
+                                    <div className='md:flex md:p-7'>
+                                        <div className='w-full md:w-1/2 px-2'>
+                                            <p className='font-lato text-[22px] text-white'>{item.title}</p>
+                                        </div>
+                                        <ul className='w-full   md:w-1/2 pl-2 px-2 text-white list-disc hidden'>
+                                            {
+                                                item.list.split('\n').map((detail: string, ind: number) => (
+                                                    <li className='font-lato text-base font-light' key={ind}>{detail}</li>
+                                                ))
+                                            }
+                                        </ul>
                                     </div>
-                                    <ul className='w-full   md:w-1/2 pl-2 px-2 text-white list-disc hidden'>
-                                        {
-                                            item.list.split('\n').map((detail: string, ind: number) => (
-                                                <li className='font-lato text-base font-light' key={ind}>{detail}</li>
-                                            ))
-                                        }
-                                    </ul>
                                 </div>
-                            </div>
-                        ))
-                    }
-                </AZCarousel>
+                            ))
+                        }
+                    </AZCarousel>
                     <svg ref={refBackCircle} className='hidden absolute w-[120%] md:w-[45%] top-0 top-[-40%] md:top-[-39%] right-[27%] md:right-[27.5%]' viewBox="0 0 736 736" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle opacity="0.3" cx="368.2" cy="368.2" r="338.706" transform="rotate(-120 368.2 368.2)" fill="url(#paint0_radial_0_1)" />
                         <circle opacity="0.8" cx="368.199" cy="368.2" r="367.206" transform="rotate(-120 368.199 368.2)" stroke="url(#paint1_linear_0_1)" />
@@ -244,9 +322,11 @@ const Credential: FC = () => {
                             </defs>
                         </svg>
                     </div>
+                </div>
             </div>
+            <div ref={el => animGradient.current.push(el)} className='z-0 hidden md:block fixed top-1/2 left-1/2 center-transform w-full h-full'></div>
         </section>
     )
-}
+})
 
 export default Credential
