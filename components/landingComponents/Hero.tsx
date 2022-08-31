@@ -29,21 +29,21 @@ const Hero = React.forwardRef((props: any, ref: any) => {
             )
             .fromTo(
                 animZoomInRefs.current,
-                {opacity: (index, target, targets)=>target.getAttribute('opacity')||1, scale: 1},
-                {opacity: 0, scale: 2, transformOrigin: '50% 50%', duration},
+                {opacity: (index, target, targets)=>target.getAttribute('opacity')||1},
+                {opacity: 0, transformOrigin: '50% 50%', duration},
                 0
             )
             .fromTo(
                 animZoomOutRefs.current,
-                {opacity: (index, target, targets)=>target.getAttribute('opacity')||1, scale: 1},
-                {opacity: 0, scale: 0, transformOrigin: '50% 50%', duration},
+                {opacity: (index, target, targets)=>target.getAttribute('opacity')||1},
+                {opacity: 0, transformOrigin: '50% 50%', duration},
                 0
             )
             .fromTo(
                 animGradient.current,
-                {background: 'linear-gradient(145deg, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 80%)'},
-                {background: 'linear-gradient(145deg, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 0%)', duration},
-                0
+                {opacity: 1},
+                {opacity: 0},
+                duration/2
             )
     }
 
@@ -51,6 +51,7 @@ const Hero = React.forwardRef((props: any, ref: any) => {
 
     const startAnim = (direction: string, shown: boolean) => {
         gsap.set([containerRef.current, ...animGradient.current], {display: 'block'});
+        gsap.set(animGradient.current, {background: 'linear-gradient(145deg, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 80%)'})
         if ( direction == 'UP' && shown ) getShowTimeline().reverse(0);
         else if (direction == 'DOWN' && !shown ) getShowTimeline().play();
     }
