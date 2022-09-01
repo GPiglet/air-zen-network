@@ -321,7 +321,18 @@ input[type=number] {
 }
 
 
-/* location Edit */
-/* .locaton-edit:focus ~ .location-edit-item {
-  display: flex;
-} */
+/* Scrollbar width custom */
+*::-webkit-scrollbar {
+  width: 0px
+}
+*::-webkit-scrollbar:horizontal {
+  height: 0px;
+}
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+  width: 0
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: transparent;
+}
