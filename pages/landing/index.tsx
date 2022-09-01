@@ -105,8 +105,14 @@ const Homepage: NextPage = () => {
 		if ( currentSection.current && currentSection.current.current?.startAnim ) currentSection.current.current?.startAnim(direction, true);
 	}
 
+	// scroll
+	let isLockScroll = false;
 	const onKeyDown = (e: KeyboardEvent) => {
-		if ( window.innerWidth < 920 ) return;
+		if ( window.innerWidth < 920 || isLockScroll ) return;
+		isLockScroll = true;
+		setTimeout(() => {
+			isLockScroll = false;
+		}, 3000);
 		let index = 0;
 		switch( e.key ) {
 			case 'ArrowDown':
@@ -138,12 +144,44 @@ const Homepage: NextPage = () => {
 
 	}
 
+	const onMouseWheel = (e: WheelEvent) => {
+		if ( window.innerWidth < 920 || isLockScroll ) return;
+		isLockScroll = true;
+		setTimeout(() => {
+			isLockScroll = false;
+		}, 3000);
+
+		let index = 0;
+		if ( e.deltaY > 0 ) { 
+			index = refSections.indexOf(currentSection.current) + 1;
+			if ( index >= refSections.length ) return;
+		}
+		else {
+			index = refSections.indexOf(currentSection.current) - 1;
+			if ( index < 0 ) return;
+		}
+
+		if ( index == 0 ) {
+			router.push({
+				pathname: '/landing',
+			})
+		}
+		else {
+			router.push({
+				pathname: '/landing',
+				query: {section: navItems[index-1].href}
+			})
+		}
+	}
+
 	React.useEffect(() => {
 		gsap.registerPlugin(ScrollToPlugin);
-		// window.addEventListener('keydown', onKeyDown);
-		// return ()=>{
-		// 	window.removeEventListener('keydown', onKeyDown);
-		// }	
+		window.addEventListener('keydown', onKeyDown);
+		window.addEventListener('wheel', onMouseWheel);
+		return ()=>{
+			window.removeEventListener('keydown', onKeyDown);
+			window.removeEventListener('wheel', onMouseWheel);
+		}	
 	}, [])
 
 	React.useEffect(() => {
