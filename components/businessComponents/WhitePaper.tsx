@@ -51,7 +51,7 @@ const WhitePaper: FC = () => {
     ]
 
     return (
-        <div id='whitepaper' className='container text-white md:flex items-center m-auto py-[100px]'>
+        <div id='whitepaper' className='container text-white md:flex items-center m-auto py-[100px] md:h-screen'>
             <div className='w-full text-center '>
                 <div>
                     <h1 className="text-title-sm ">

@@ -9,34 +9,6 @@ const Professional: FC = () => {
 
     const list = t('business.professional.list', { returnObjects: true })
 
-    // const list = [
-    //     {
-    //         title: 'Office & Teams',
-    //         lists: [
-    //             'Zerotrust: individuelle Kennwörter',
-    //             'Self-Service Portal für Mitarbeiter ',
-    //             'Managed Service & Live-Support per App, optional auch für Mitarbeiter'
-    //         ]
-    //     },
-    //     {
-    //         title: 'Homeoffice',
-    //         lists: [
-    //             'Security im Home-Office: Seperate Business und Privat-Netze',
-    //             'SPlug & Play, keine  IT-Erfahrung nötig ',
-    //             'Router-Set mit Mesh- Technologie'
-    //         ]
-    //     },
-    //     {
-    //         title: 'Kunden & Gäste WLAN',
-    //         lists: [
-    //             'Marketing im Gäste WLAN per App konfigurierbar',
-    //             'kontinuierlich Rechtssicher und DSGVO-Konform',
-    //             'Individalisierbar nach Branche (Premium-WLAN, Gäste-WLAN uvm.)'
-    //         ]
-    //     },
-
-    // ]
-
     return (
         <section id="professional" className="pb-16 relative  items-center md:flex container mx-auto ">
 
@@ -110,7 +82,7 @@ const Professional: FC = () => {
                     </radialGradient>
                 </defs>
             </svg>
-            <div className="pt-[50%] md:pt-[0] md:mt-0 relative text-center text-white px-10">
+            <div className="pt-[70%] md:pt-[0] md:mt-0 relative text-center text-white px-10">
                 <div className="w-full">
                     <h1 className="text-title-sm">
                         {t('business.professional.title')}

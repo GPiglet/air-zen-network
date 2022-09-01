@@ -17,11 +17,11 @@ const KeepEverything: FC = () => {
     ]
 
     return (
-        <div className="pb-16 relative container mx-auto mb-[30%] md:mb-0">
+        <div className="pb-16 relative container mx-auto mb-[30%] md:mb-0 md:h-screen">
 
             <svg className="absolute 
             right-[-35%] md:right-[-65%] lg:right-[-60%] xl:right-[-70%]
-            top-[90%] xs:top-[75%] sm:top-[65%] md:top-[0%] lg:top-[-10%] xl:top-[-38%]
+            top-[90%] xs:top-[75%] sm:top-[65%] md:top-1/2 md:translate-y-[-50%]
             w-[184%] sm:w-[180%] md:w-[180%] xl:w-[180%]"
                 viewBox="-600 -350 2000 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.8" d="M678.873 519.526C809.282 477.167 881.807 337.33 840.862 207.192C799.918 77.0538 661.008 5.89465 530.599 48.2536C400.19 90.6125 327.665 230.449 368.609 360.587C409.554 490.725 548.464 561.885 678.873 519.526Z" fill="url(#paint0_radial_0_1)" />
@@ -83,9 +83,9 @@ const KeepEverything: FC = () => {
                 </defs>
             </svg>
 
-            <div className="container mx-auto relative items-center text-white px-10 md:px-0 h-full">
+            <div className="container mx-auto relative items-center text-white px-10 md:px-0 pt-[150px] md:pt-0 md:absolute md:top-1/2 md:translate-y-[-50%]">
                 <Breadcrumb />
-                <div className="md:flex items-center mt-5 xl:mt-[120px]  md:h-[60%]">
+                <div className="md:flex items-center mt-5 ">
                     <div className="md:w-[350px] xl:w-[40%]">
                         <h1 className="text-title-md">
                             {t('industrial.everything.title')}
@@ -96,10 +96,12 @@ const KeepEverything: FC = () => {
 
                     </div>
                 </div>
+            </div>
+            <div className="md:absolute md:bottom-[10%] w-full text-white">
                 <div className="flex items-end mt-20">
                     <p className="m-auto font-lato-light italic text-lg tracking-[0.08em]">In vertrauensvoller Kooperation mit:</p>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 text-center  items-center mx-auto md:h-[60px]">
+                <div className="grid grid-cols-2 md:grid-cols-4 text-center  items-center mx-auto md:h-[60px] ">
                     {
                         logos.map((item, index) => (
                             <picture key={index}>

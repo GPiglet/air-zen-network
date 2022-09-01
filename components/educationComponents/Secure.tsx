@@ -33,10 +33,10 @@ const Secure: FC = () => {
     // },[])
 
     return (
-        <div id="protection" className="relative container mx-auto mb-[75%] md:mb-0">
+        <div id="protection" className="relative container mx-auto mb-[75%] md:mb-0 md:h-screen">
             <svg className="absolute mx-auto 
             right-[-67%] sm:right-[-63%] md:right-[-85%] lg:right-[-110%] xl:right-[-85%]
-            top-[88%] xs:top-[73%] sm:top-[23%] md:top-[-33%] lg:top-[-69%] xl:top-[-70%]
+            top-[88%] xs:top-[73%] sm:top-[23%] md:top-1/2 md:translate-y-[-50%]
             w-[230%] sm:w-[220%] md:w-[200%] lg:w-[230%] xl:w-[200%]" viewBox="-600 -350 2000 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.3" d="M303.174 715.686C469.992 755.232 637.379 652.461 677.043 486.141C716.707 319.822 613.628 152.935 446.809 113.39C279.991 73.8448 112.604 176.616 72.94 342.935C33.2762 509.255 136.355 676.141 303.174 715.686Z" fill="url(#paint0_radial_1226_5560)" />
                 <image href="/images/education3.png" width="1000" height="370" clipPath="url(#myCircle)" x="-6.5%" y="15.2%" fillOpacity='0.5' />
@@ -75,9 +75,9 @@ const Secure: FC = () => {
                     </clipPath>
                 </defs>
             </svg>
-            <div className="md:w-[70%] relative items-center px-10 md:px-0 md:pt-[10%] xl:py-[12%]">
+            <div className="relative items-center px-10 md:px-0 md:absolute md:top-1/2 md:translate-y-[-50%]">
                 <div className="flex flex-col mt-12 md:mt-18">
-                    <div className="w-full md:w-4/5 xl:w-3/5 m-auto">
+                    <div className="w-full md:w-2/5 md:ml-[10%]">
                         <p className="font-lato-ligh font-light text-[22px] text-white">{t('education.secure.tip')}</p>
                         <h1 className="text-title-sm">{t('education.secure.title')}</h1>
                         {

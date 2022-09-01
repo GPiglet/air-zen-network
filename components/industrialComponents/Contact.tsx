@@ -9,12 +9,12 @@ const Contact: FC = () => {
     const { t } = useTranslation()
 
     return (
-        <div id="technology" className="relative mb-[700px] md:mb-[0] ">
+        <div id="technology" className="relative md:mb-[0] ">
             <div className="container mx-auto relative mt-[800px] xs:mt-[800px] sm:mt-[1100px] md:mt-[700px]">
                 <svg className="absolute
                 top-[-78%] xs:top-[-127%] sm:top-[-565px] md:top-[-130%] lg:top-[-150%] xl:top-[-250%]
                 w-[220%] sm:w-[170%] md:w-[160%] lg:w-[160%] xl:w-[150%]
-                left-[-60%] sm:left-[-38%] md:left-[-55%] lg:left-[-55%] xl:left-[-53%]"
+                left-1/2 translate-x-[-50%]"
                     viewBox="-600 -350 2000 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <ellipse opacity="0.5" cx="456" cy="455.5" rx="406" ry="405.5" fill="url(#paint0_radial_1376_8017)" />
                     <path opacity="0.3" d="M736.5 455.5C736.5 610.139 610.917 735.5 456 735.5C301.083 735.5 175.5 610.139 175.5 455.5C175.5 300.861 301.083 175.5 456 175.5C610.917 175.5 736.5 300.861 736.5 455.5Z" stroke="#7BB690" />
@@ -42,8 +42,8 @@ const Contact: FC = () => {
                     </defs>
                 </svg>
 
-                <div className="mx-auto relative md:pl-[10%]">
-                    <div className="w-full md:w-1/2 px-10">
+                <div className=" relative">
+                    <div className="w-full md:w-1/2 px-10 mx-auto">
                         <p className="font-lato-light font-light text-[22px] text-white">{t('industrial.ournode.tip')}</p>
                         <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('industrial.ournode.title')}</h1>
                         {

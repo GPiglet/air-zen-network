@@ -6,7 +6,7 @@ const Breadcrumb: FC = () => {
     const router = useRouter()
 
     return (
-        <div className='container relative z-20 m-auto ' onClick={() => router.push({
+        <div className='container relative z-20 m-auto mt-20' onClick={() => router.push({
             pathname: '/landing',
             query: { section: 'solutions' }
         })}>
