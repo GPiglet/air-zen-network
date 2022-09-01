@@ -199,7 +199,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
     return (
         <>
             <section id='aboutus' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='z-10 container m-auto relative items-center md:py-20 md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]'>
-                <div className=' z-50 w-full md:absolute md:top-1/2 md:translate-y-[-50%]' style={{height: "-webkit-fill-available"}}>
+                <div className=' z-50 w-full md:absolute md:top-1/2 md:translate-y-[-50%]'>
                     <div>
                         <div className="text-center">
                             <h1 ref={el => animSideUp.current.push(el)} className="relative z-40 text-title-sm mt-20 md:mt-0">{t('landing.aboutus.title')} </h1>
@@ -287,7 +287,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                     </div>
                 </div>
             </section>
-            <div ref={el => animGradient.current.push(el)} className='z-0 md:container hidden md:block fixed top-0 3xl:top-[-10%] left-1/2 translate-x-[-50%] w-full h-full max-h-[1080px]'></div>
+            <div ref={el => animGradient.current.push(el)} className='z-0 md:container hidden md:block fixed top-0 md:top-[50%] md:translate-y-[-50%] left-1/2 translate-x-[-50%] w-full h-full max-h-[1080px]'></div>
             <div ref={el => animCircle.current = el} className='z-0 md:container hidden fixed top-1/2 left-1/2 center-transform w-full' >
                 {/* <svg viewBox="-200 -200 1300 1300" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle opacity="0.5" cx="449" cy="449" r="448.5" transform="rotate(-180 449 449)" stroke="url(#paint0_linear_1362_4341)" />
