@@ -20,6 +20,7 @@ const CertainlySafe: FC = () => {
                 </g>
                 <image href="/images/phone-home.png" x="33.5%" y="20%" className="w-[32%]" />
 
+
                 <defs>
                     <radialGradient id="paint0_radial_1376_5616" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(312.933 221.236) rotate(68.4384) scale(482.519 482.196)">
                         <stop stopColor="#7BB690" />

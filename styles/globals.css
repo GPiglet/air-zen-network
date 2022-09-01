@@ -14,7 +14,14 @@ body{
   white-space: pre-line;
   /* overflow-y: scroll; */
 
+  /* overflow-y: hidden; */
+  background-color: #000000;
+}
 
+@media  only screen and (max-width: 920px) {
+  body {
+    overflow-y: auto;
+  }
 }
 
 #root {
@@ -51,11 +58,13 @@ body::-webkit-scrollbar {
 @tailwind utilities;
 
 .back-left-top-gradient-primary {
-  background: linear-gradient(166.42deg, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 21.49%), #000000;
+  background: linear-gradient(166.42deg, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 100%), #000000;
+  background-attachment: fixed;
 }
 
 .back-left-top-gradient-secondary {
-  background: linear-gradient(170.47deg, #1E4D2E -4.4%, #000000 19.39%), #000000;
+  background: linear-gradient(170.47deg, #1E4D2E -4.4%, #000000 100%), #000000;
+  background-attachment: fixed;
 }
 
 .center-transform {
@@ -136,26 +145,14 @@ section {
 .unique-skill-items:not(:hover) .h-full, .unique-skill-items:not(:active) .h-full{
   height: fit-content;
 }
-
-.unique-skill-items{
-  height: 100%;
-  transition: all 0.5s linear;
-  
+.unique-skill-items, .unique-skill-title {
+  transition: all 0.6s linear;
 }
+.unique-skill-items:hover .unique-graph, .unique-skill-items:active .unique-graph {
+  width: 80%;
+  opacity: 0.7;
+  transition: all 0.6s linear;
 
-@keyframes hideTitle{
-  0%{
-      opacity: 1;
-      position: absolute;
-      top: 50px;
-  }
-  100%{
-      opacity:0;
-      position: absolute;
-      top: 30px;
-      height: 0;
-     
-  }
 }
 @keyframes showTitle{
   0%{
@@ -239,7 +236,7 @@ section {
 
 .credential-detail{
   cursor: pointer;
-  transition: all .4s ease-in-out;
+  /* transition: all .4s ease-in-out; */
 }
 
   /* .credential-detail:hover ul {

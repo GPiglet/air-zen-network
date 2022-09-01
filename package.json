@@ -24,6 +24,7 @@
     "next": "12.2.2",
     "next-i18next": "^11.3.0",
     "react": "18.2.0",
+    "react-custom-scrollbars-2": "^4.5.0",
     "react-dom": "18.2.0",
     "react-fade-in": "^2.0.1",
     "react-flickity-component": "^3.6.2",

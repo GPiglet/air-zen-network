@@ -16,7 +16,7 @@ const FutureProof: FC = () => {
     return (
         <div id="secure" className="relative container mx-auto mb-[70%] sm:mb-[90%] md:mb-0">
 
-            <svg className="absolute 
+            <svg className="absolute
             left-[-49%] md:left-[-70%] lg:left-[-89%] xl:left-[-70%]
             top-[90%] xs:top-[75%] sm:top-[50%] md:top-[-15%] lg:top-[-45%] xl:top-[-34%]
             w-[170%] sm:w-[170%] md:w-[160%] lg:w-[180%] xl:w-[145%]"
@@ -48,6 +48,8 @@ const FutureProof: FC = () => {
                     </radialGradient>
                 </defs>
             </svg>
+
+
 
             <svg className="absolute hidden md:block
             w-[100%]

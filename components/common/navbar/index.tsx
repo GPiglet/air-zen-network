@@ -1,6 +1,6 @@
 //modules
 import React, { FC, useState, useEffect, useCallback } from "react"
-import { useRouter } from "next/router";
+import { Router, useRouter } from "next/router";
 import { Link } from 'react-scroll'
 import gsap from "gsap";
 
@@ -8,7 +8,7 @@ import LocaleSwitcher from '../../common/localeSwitcher'
 
 
 type NaveProps = {
-  navItems: Array<any>
+  navItems: Array<any>,
 }
 
 
@@ -16,6 +16,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
 
   const [navbarOpen, setNavbarOpen] = React.useState(false)
   const [scrolldown, setScrollDown] = useState(false)
+  const [section, setSection] = useState<any>('')
 
   const router = useRouter()
 
@@ -33,11 +34,9 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
   const handleNavigation = useCallback(
     (e: any) => {
       const window = e.currentTarget
-      if (y > window.scrollY && window.innerWidth < 920) {
-        console.log("scrolling up")
+      if (y > window.scrollY && window.innerWidth < 920) { // && (window.innerWidth < 920 || main === false)
         setScrollDown(false)
-      } else if (y < window.scrollY && window.innerWidth < 920) {
-        console.log("scrolling down")
+      } else if (y < window.scrollY && window.innerWidth < 920) {  //  && (window.innerWidth < 920 || main === false)
         setScrollDown(true)
       }
       setY(window.scrollY);
@@ -56,36 +55,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
   // animation
   const animNavButtons = React.useRef<any>([]);
 
-
-  // useEffect(() => {
-  //   if (window.innerWidth > 920) {
-  //     gsap.set(animNavButtons.current, { opacity: 0, y: 50 });
-  //     gsap.to(animNavButtons.current, {
-  //       opacity: 1,
-  //       scrollTrigger: {
-  //         scrub: true,
-  //         start: 2500,
-  //         end: 4900,
-  //       }
-  //     });
-
-  //     gsap.to(animNavButtons.current.reverse(), {
-  //       y: 0,
-  //       stagger: 0.05,
-  //       scrollTrigger: {
-  //         scrub: true,
-  //         start: 2500,
-  //         end: 4900,
-  //       }
-  //     });
-
-
-  //     return () => gsap.killTweensOf(animNavButtons);
-  //   }
-  // }, [])
-
   const routing = (item: any) => {
-    console.log(item.href)
     router.push({
       pathname: '/landing',
       query: { section: item.href }
@@ -93,12 +63,18 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
     setNavbarOpen(false)
   }
 
+  useEffect(() => {
+    const sectionPos = router.asPath.indexOf('?section=');
+    if (sectionPos != -1) router.query.section = router.asPath.substring(sectionPos + 9);
+    setSection(router.query.section)
+  }, [router])
+
   return (
 
     <nav className={`${scrolldown ? 'hidden' : 'block'}  md:top-[40px] lg:top-[62px] md:py-5 pb-20 md:pb-0 bg-gradient-to-b from-black md:from-transparent to-transparent duration-500 fixed z-50 w-full items-center navbar-expand-lg z-60`}>
       <div className="container px-4 mx-auto flex flex-wrap relative items-center justify-between">
         <div className="w-full relative flex justify-between md:w-auto md:static md:block md:justify-start md:w-1/4  px-5 pt-5 md:px-0 md:pt-0">
-          <div className=" cursor-pointer" onClick={() => router.push('/')}>
+          <div className=" cursor-pointer" onClick={() => router.push('/landing')}>
             <picture>
               <source srcSet="/images/logos/LogoSmall.svg" type="image/webp" />
               <img src="/images/logos/LogoSmall.svg" alt="" />
@@ -136,7 +112,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
                 <li ref={el => animNavButtons.current.push(el)} className={"mx-3 md:m-0 flex items-center cursor-pointer"} key={index} >
                   {
                     main ? (
-                      <Link activeClass="active" smooth spy to={item.href} onClick={() => setNavbarOpen(false)}>
+                      <Link activeClass="active_scroll" className={section == item.href ? 'active' : ''} smooth spy to={item.href} onClick={() => { routing(item) }}>
                         <p className="hover:text-gray-100 text-gray-400  py-4 md:py-2 flex items-center text-lg uppercase font-lato">{item.title}</p>
                       </Link>
                     ) : (
