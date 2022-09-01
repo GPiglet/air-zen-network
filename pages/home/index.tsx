@@ -50,8 +50,8 @@ const Home: NextPage = () => {
 			<Mainlayout navItems={navItems}>
 				<SimplyNetwork />
 				<SafeHome />
-				<Reliable />
-				<Easy />
+				{/* <Reliable />
+				<Easy /> */}
 				<OurNode />
 			</Mainlayout>
 		</div>
