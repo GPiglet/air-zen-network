@@ -150,7 +150,7 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                     },
                     opacity: 0,
                 },
-                {y: 0, opacity: 1},
+                {y: 0, opacity: 1, duration: 1.5},
                 1.5
             ).play(0);
         }
@@ -191,15 +191,15 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
         else if (direction == 'UP' && !shown ) {
             getShowTimeline().fromTo(
                 animSkills.current,
-                {y: 0, opacity: 1},
                 {
-                    y: (index)=>{
+                    y: (index) => {
                         return 600-index*100
                     },
                     opacity: 0,
-                    duration: 2,
+                    
                 },
-                0
+                {y: 0, opacity: 1,duration: 1.5},
+                1.5
             ).reverse(0);
         }
     }
@@ -213,7 +213,7 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                         <h1 ref={el => animSideUp.current.push(el)} className="text-title-sm">{t('landing.solution.title')}</h1>
                         <p ref={el => { animSideUp.current.push(el); animFadeIn.current.push(el) }} className="font-lato font-light tracking-widest text-[22px] mt-3">{t('landing.solution.subtitle')}</p>
                     </div>
-                    <div ref={el => { animFadeIn.current.push(el) }} className='w-full mt-[160px]'>
+                    <div className='w-full mt-[160px]'>
                         <div className='md:m-auto md:w-max  '>
                             {
                                 (skillList as unknown as any[]).map((item: any, index: any) => (
