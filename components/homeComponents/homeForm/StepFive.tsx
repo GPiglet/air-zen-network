@@ -72,9 +72,9 @@ const StepFive: FC = () => {
                     <input placeholder='Vorname' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={firstNameRef} onChange={() => testValue()} defaultValue={homeOption?.firstName} />
                     <input placeholder='Nachname' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={surNameRef} onChange={() => testValue()} defaultValue={homeOption?.surName} />
                     <input placeholder='Straße' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={streetRef} onChange={() => testValue()} defaultValue={homeOption?.street} />
-                    <input placeholder='Haus Nr.' className='mb-3 ml-2 w-[30%] h-[38px] custom-input text-inputColor' ref={houseNoRef} onChange={() => testValue()} defaultValue={homeOption?.houseNo} />
+                    <input placeholder='Haus Nr.' type='number' className='mb-3 ml-2 w-[30%] h-[38px] custom-input text-inputColor' ref={houseNoRef} onChange={() => testValue()} defaultValue={homeOption?.houseNo} />
                     <input placeholder='Ortsname' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={placeRef} onChange={() => testValue()} defaultValue={homeOption?.placeName} />
-                    <input placeholder='PLZ' className='mb-3 ml-2 w-[30%] h-[38px] custom-input text-inputColor' ref={postCodeRef} onChange={() => testValue()} defaultValue={homeOption?.postCode} />
+                    <input placeholder='PLZ' type='number' className='mb-3 ml-2 w-[30%] h-[38px] custom-input text-inputColor' ref={postCodeRef} onChange={() => testValue()} defaultValue={homeOption?.postCode} />
                     <input placeholder='Bundesland' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={federalRef} onChange={() => testValue()} defaultValue={homeOption?.federalState} />
                     <div className="flex items-center px-2 py-5">
                         <svg width="53" height="53" className='mr-5' viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">

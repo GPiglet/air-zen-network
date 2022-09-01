@@ -181,8 +181,7 @@
                     "Ideal"
                 ]
             }
-        },
-        "menu": "Sicher \n Zuverlässig \n Einfach \n Technik"
+        }
     },
     "business": {
         "boost":{
@@ -371,11 +370,11 @@
                 "surface": "Fläche",
                 "numberofNode": "Nodeanzahl",
                 "femaleColleague": "Kolleg*innen",
-                "oldRouter": "alte Router"
+                "oldRouter": "alte Router",
+                "contact": "Für komplexere Projekte können sie uns gern direkt anschreiben"
             }
 
-        },
-        "menu": "Profesionelles \n Zuverlässig \n Sicher \n Lösung \n Technik"
+        }
     },
     "education": {
         "classwifi": {
@@ -421,8 +420,7 @@
             "tip": "Technik",
             "title": "Unsere Nodes",
             "description": "Wifi 6 \n 2 wlan module für Access- und Meshing \n Perfektes roaming mit Apple & Android \n unterstützt alle Roaming Standards von Apple iOS und Android Geräten für ein Seamless Romaing. \n Zero-Setup \n Die AirZen App hilft dir bei der kinderleichten Installation. "
-        },
-        "menu": "Klassenzimmer \n SCHUTZ \n Einfach \n Technik"                               
+        }                           
     },
     "industrial": {
         "everything": {
@@ -458,9 +456,7 @@
             "tip": "Technik",
             "title": "Unsere Nodes",
             "description": "Wifi 6 \n 2 wlan module für Access- und Meshing \n Perfektes roaming mit Apple & Android \n unterstützt alle Roaming Standards von Apple iOS und Android Geräten für ein Seamless Romaing. \n Zero-Setup \n Die AirZen App hilft dir bei der kinderleichten Installation. "
-        },
-        "menu": "Referenzprojekte \n Einfach \n Sicher \n Technik"     
-
+        }
     },
     "contactForm": {
         "cotact": "Get in touch",

@@ -5,6 +5,7 @@ import SelectBusiness from './SelectBusiness'
 import Final from '../../common/form/final'
 import Configrator from './Configrator'
 import { StoreContext } from '../../../contexts/Store'
+import Contact from './Contact'
 
 const BusinessForm: FC = () => {
 
@@ -60,6 +61,11 @@ const BusinessForm: FC = () => {
                         {step === 3 && <Configrator></Configrator>}
                         {step === 0 && <Final app={true}></Final>}
                     </div>
+                    {
+                        (businessOption?.business === 'Retail' && step === 3) && (
+                            <Contact />
+                        )
+                    }
                 </div>
             }
 

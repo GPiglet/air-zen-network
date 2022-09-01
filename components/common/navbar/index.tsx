@@ -63,15 +63,15 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
     setNavbarOpen(false)
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     const sectionPos = router.asPath.indexOf('?section=');
-		if (  sectionPos != -1 ) router.query.section = router.asPath.substring(sectionPos+9);
+    if (sectionPos != -1) router.query.section = router.asPath.substring(sectionPos + 9);
     setSection(router.query.section)
   }, [router])
 
   return (
 
-    <nav className={`${scrolldown ? 'hidden' : 'block'} md:top-[40px] lg:top-[62px] md:py-5  md:bg-transparent  duration-500 fixed z-50 w-full items-center navbar-expand-lg z-60`}>
+    <nav className={`${scrolldown ? 'hidden' : 'block'}  md:top-[40px] lg:top-[62px] md:py-5 pb-20 md:pb-0 bg-gradient-to-b from-black md:from-transparent to-transparent duration-500 fixed z-50 w-full items-center navbar-expand-lg z-60`}>
       <div className="container px-4 mx-auto flex flex-wrap relative items-center justify-between">
         <div className="w-full relative flex justify-between md:w-auto md:static md:block md:justify-start md:w-1/4  px-5 pt-5 md:px-0 md:pt-0">
           <div className=" cursor-pointer" onClick={() => router.push('/landing')}>
@@ -112,7 +112,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
                 <li ref={el => animNavButtons.current.push(el)} className={"mx-3 md:m-0 flex items-center cursor-pointer"} key={index} >
                   {
                     main ? (
-                      <Link activeClass="active_scroll" className={section == item.href ? 'active' : ''} smooth spy to={item.href} onClick={() => {routing(item)}}>
+                      <Link activeClass="active_scroll" className={section == item.href ? 'active' : ''} smooth spy to={item.href} onClick={() => { routing(item) }}>
                         <p className="hover:text-gray-100 text-gray-400  py-4 md:py-2 flex items-center text-lg uppercase font-lato">{item.title}</p>
                       </Link>
                     ) : (

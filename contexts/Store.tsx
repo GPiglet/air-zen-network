@@ -1,6 +1,14 @@
 import React, { createContext, useReducer, FC, ReactNode } from 'react';
 
-
+type location = {
+    roomSize?: number,
+    roomCount?: number,
+    teamSize?: number,
+    surface?: number,
+    node?: number,
+    femaleColleague?: number,
+    oldRouter?: number,
+}
 
 type StoreContextType = {
     step: number,
@@ -23,16 +31,7 @@ type StoreContextType = {
     },
     businessOption?: {
         business?: string,
-        location?: [
-            {
-                RoomCount?: number,
-                teamSize?: number,
-                surface?: number,
-                node?: number,
-                femaleColleague?: number,
-                oldRouter?: number,
-            }
-        ],
+        location?: location[],
         contractTerm?: number,
         monthPay?: number,
 
@@ -45,7 +44,9 @@ type StoreContextType = {
 const initialState = {
     step: 1,
     homeOption: {},
-    businessOption: {}
+    businessOption: {
+        location: [{}]
+    }
 }
 
 export const StoreContext = createContext<StoreContextType>(initialState);
@@ -71,7 +72,7 @@ export const StoreProvider: FC<childrenType> = ({ children }) => {
                     homeOption: { ...state.homeOption, ...action.payload }
                 }
             case 'CHANGE_BUSINESS_OPTION':
-                console.log(state, action.payload, '---------')
+                console.log(action.payload, 'payload---------')
                 return {
                     step: state.step,
                     homeOption: state.homeOption,
