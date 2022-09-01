@@ -74,16 +74,10 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
             )
             .fromTo(
                 animFadeIn.current,
-                { opacity: 0 },
-                { opacity: 1, duration: duration / 2 },
-                duration / 2
-            )
-            .fromTo(
-                animSkills.current,
-                { y: 600 },
-                { y: 0, duration: duration / 2 },
-                0
-            )
+                {opacity: 0},
+                {opacity: 1, duration: duration/2},
+                duration/2
+            )            
             // .fromTo(
             //     animGradient.current[0],
             //     {opacity: 0, background: 'linear-gradient(145deg, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 0%)'},
@@ -131,12 +125,6 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                 0
             )
             .fromTo(
-                animSkills.current,
-                { y: 0 },
-                { y: -100, duration },
-                0
-            )
-            .fromTo(
                 animGradient.current[1],
                 { opacity: 1, background: 'radial-gradient(circle, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 60%)' },
                 { opacity: 0, background: 'radial-gradient(circle, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 80%)', duration },
@@ -151,12 +139,69 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
     }
 
 
-    const startAnim = (direction: string, shown: boolean) => {
-        gsap.set([containerRef.current, circleRef.current], { display: 'block' });
-        if (direction == 'DOWN' && shown) getShowTimeline().play(0);
-        else if (direction == 'DOWN' && !shown) getHideTimeline().play(0);
-        else if (direction == 'UP' && shown) getHideTimeline().reverse(0);
-        else if (direction == 'UP' && !shown) getShowTimeline().reverse(0);
+    const startAnim = (direction: string, shown: boolean) => {        
+        gsap.set([containerRef.current, circleRef.current], {display: 'block'});
+        if ( direction == 'DOWN' && shown ) {
+            getShowTimeline().fromTo(
+                animSkills.current,
+                {
+                    y: (index) => {
+                        return 100+index*100
+                    },
+                    opacity: 0,
+                },
+                {y: 0, opacity: 1},
+                1.5
+            ).play(0);
+        }
+        else if ( direction == 'DOWN' && !shown ) {
+            getHideTimeline().fromTo(
+                animSkills.current,
+                {
+                    y: 0,
+                    opacity: 1,
+                },
+                {
+                    y: (index) => {
+                        return -600+index*100
+                    },
+                    opacity: 0,
+                    duration:2,
+                },
+                0
+            ).play(0);
+        }
+        else if ( direction == 'UP' && shown ) {
+            getHideTimeline().fromTo(
+                animSkills.current,
+                {
+                    y: 0,
+                    opacity: 1,
+                },
+                {
+                    y: (index) => {
+                        return -100-index*100
+                    },
+                    opacity: 0,
+                    duration: 2,
+                },
+                0
+            ).reverse(0);
+        }
+        else if (direction == 'UP' && !shown ) {
+            getShowTimeline().fromTo(
+                animSkills.current,
+                {y: 0, opacity: 1},
+                {
+                    y: (index)=>{
+                        return 600-index*100
+                    },
+                    opacity: 0,
+                    duration: 2,
+                },
+                0
+            ).reverse(0);
+        }
     }
 
 
