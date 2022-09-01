@@ -199,10 +199,10 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
     return (
         <>
             <section id='aboutus' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='z-10 container m-auto relative items-center md:py-20 md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]'>
-                <div className=' z-50 w-full '>
+                <div className=' z-50 w-full md:absolute md:top-1/2 md:translate-y-[-50%]' style={{height: "-webkit-fill-available"}}>
                     <div>
                         <div className="text-center">
-                            <h1 ref={el => animSideUp.current.push(el)} className="relative z-40 text-title-sm mt-20">{t('landing.aboutus.title')} </h1>
+                            <h1 ref={el => animSideUp.current.push(el)} className="relative z-40 text-title-sm mt-20 md:mt-0">{t('landing.aboutus.title')} </h1>
                         </div>
                         <div ref={el => animFadeIn.current.push(el)} className=' md:flex relative'>
                             <picture className={`${selected + 1 === sliderList.length ? 'hidden' : ''} `}>
