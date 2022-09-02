@@ -2,7 +2,7 @@
 import React, { FC } from "react"
 import { useTranslation } from 'next-i18next';
 
-import ContactHome from "../common/form/ContactForm";
+import ContactForm from "../common/form/ContactForm";
 
 
 const Contact: FC = () => {
@@ -62,7 +62,7 @@ const Contact: FC = () => {
                     </div>
                 </div>
             </div>
-            <ContactHome />
+            {/* <ContactForm /> */}
         </div>
 
     );

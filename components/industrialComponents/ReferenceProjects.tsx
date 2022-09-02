@@ -104,7 +104,7 @@ const ReferenceProjects = React.forwardRef((props: any, ref: any) => {
         gsap.to(slide.getElementsByTagName('ul'), { opacity: 0, display: 'none', duration });
     }
 
-    
+
 
     const onShowCarousel = (carousel: any, slide: any, shownIndex: number, position: number, onComplete: Function) => {
         const from = shownIndex == 0 ? -Math.floor(100 / carousel.getConfig().shownLength) + '%' : '100%';
@@ -126,7 +126,7 @@ const ReferenceProjects = React.forwardRef((props: any, ref: any) => {
         }
         return 200;
 
-        
+
     }
 
     const config = {
@@ -216,119 +216,119 @@ const ReferenceProjects = React.forwardRef((props: any, ref: any) => {
     const router = useRouter()
 
     return (
-        <section id='credentials' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='flex items-center md:items-start md:pt-[160px] md:w-screen md:left-[50%] md:translate-x-[-50%] h-fit md:h-screen my-[100px] md:my-0'>
-        <div className='w-full relative z-50 md:absolute md:top-1/2 md:translate-y-[-50%]' style={{ height: '-webkit-fill-available' }}>
-            <div className=' pt-10 pb-[60px] flex justify-center'>
-                <h1 ref={el => animSideUp.current.push(el)} className="text-title-sm relative z-50">{t('landing.credential.title')}</h1>
-            </div>
-            <div ref={el => animFadeIn.current.push(el)}>
-                <Flickity
-                    {...flickityProps}
+        <section id='credentials' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='flex items-center md:items-start md:pt-[160px] md:w-screen md:left-[50%]  h-fit md:h-screen my-[100px] md:my-0'>
+            <div className='w-full relative z-50 md:absolute md:top-1/2 md:translate-y-[-50%]' style={{ height: '-webkit-fill-available' }}>
+                <div className=' pt-10 pb-[60px] flex justify-center'>
+                    <h1 ref={el => animSideUp.current.push(el)} className="text-title-sm relative z-50">{t('landing.credential.title')}</h1>
+                </div>
+                <div ref={el => animFadeIn.current.push(el)}>
+                    <Flickity
+                        {...flickityProps}
 
-                >
-                    {/* <div className='hidden md:block w-[200px]'></div> */}
-                    {
-                        (carouselList as unknown as any[]).map((item, index) => (
+                    >
+                        {/* <div className='hidden md:block w-[200px]'></div> */}
+                        {
+                            (carouselList as unknown as any[]).map((item, index) => (
 
-                            <div className={`mr-10 w-[60%] md:w-[35%] credential-detail`} onClick={() => clickCell(index)} key={index}>
-                                <picture>
-                                    <source srcSet={imageList[index]} type="image/webp" />
-                                    <img src={imageList[index]} alt="" />
-                                </picture>
-                                <div className='md:flex md:p-7'>
-                                    <div className='w-full md:w-1/2 px-2'>
-                                        <p className='font-lato text-[22px] text-white'>{item.title}</p>
+                                <div className={`mr-10 w-[60%] md:w-[35%] credential-detail`} onClick={() => clickCell(index)} key={index}>
+                                    <picture>
+                                        <source srcSet={imageList[index]} type="image/webp" />
+                                        <img src={imageList[index]} alt="" />
+                                    </picture>
+                                    <div className='md:flex md:p-7'>
+                                        <div className='w-full md:w-1/2 px-2'>
+                                            <p className='font-lato text-[22px] text-white'>{item.title}</p>
+                                        </div>
+                                        <ul className='w-full   md:w-1/2 pl-2 px-2 text-white list-disc hidden'>
+                                            {
+                                                item.list.split('\n').map((detail: string, ind: number) => (
+                                                    <li className='font-lato text-base font-light' key={ind}>{detail}</li>
+                                                ))
+                                            }
+                                        </ul>
                                     </div>
-                                    <ul className='w-full   md:w-1/2 pl-2 px-2 text-white list-disc hidden'>
-                                        {
-                                            item.list.split('\n').map((detail: string, ind: number) => (
-                                                <li className='font-lato text-base font-light' key={ind}>{detail}</li>
-                                            ))
-                                        }
-                                    </ul>
                                 </div>
-                            </div>
-                        ))
-                    }
-                </Flickity>
-                <AZCarousel className='credential-carousel ml-[30px] md:ml-auto relative z-50 hidden md:block' config={config}
-                    onInit={onInitCarousel}
-                    onShow={onShowCarousel}
-                    onHide={onHideCarousel}
-                    onSelect={onSelectCarousel}
-                    onDeselect={onDeselectCarousel}
-                    onChange={onChangeCarousel}
-                    onCalcHeight={onCalcHeight}
-                >
-                    {
-                        (carouselList as unknown as any[]).map((item, index) => (
+                            ))
+                        }
+                    </Flickity>
+                    <AZCarousel className='credential-carousel ml-[30px] md:ml-auto relative z-50 hidden md:block' config={config}
+                        onInit={onInitCarousel}
+                        onShow={onShowCarousel}
+                        onHide={onHideCarousel}
+                        onSelect={onSelectCarousel}
+                        onDeselect={onDeselectCarousel}
+                        onChange={onChangeCarousel}
+                        onCalcHeight={onCalcHeight}
+                    >
+                        {
+                            (carouselList as unknown as any[]).map((item, index) => (
 
-                            <div className={`mr-10 w-[60%] md:w-[30%] opacity-50 credential-detail`} onClick={() => clickCellCarousel(index)} key={index}>
-                                <picture>
-                                    <source srcSet={imageList[index]} type="image/webp" />
-                                    <img src={imageList[index]} className="w-[80%]" alt="" />
-                                </picture>
-                                <div className='md:flex md:p-7'>
-                                    <div className='w-full md:w-1/2 px-2'>
-                                        <p className='font-lato text-[22px] text-white'>{item.title}</p>
+                                <div className={`mr-10 w-[60%] md:w-[30%] opacity-50 credential-detail`} onClick={() => clickCellCarousel(index)} key={index}>
+                                    <picture>
+                                        <source srcSet={imageList[index]} type="image/webp" />
+                                        <img src={imageList[index]} className="w-[80%]" alt="" />
+                                    </picture>
+                                    <div className='md:flex md:p-7'>
+                                        <div className='w-full md:w-1/2 px-2'>
+                                            <p className='font-lato text-[22px] text-white'>{item.title}</p>
+                                        </div>
+                                        <ul className='w-full   md:w-1/2 pl-2 px-2 text-white list-disc hidden'>
+                                            {
+                                                item.list.split('\n').map((detail: string, ind: number) => (
+                                                    <li className='font-lato text-base font-light' key={ind}>{detail}</li>
+                                                ))
+                                            }
+                                        </ul>
                                     </div>
-                                    <ul className='w-full   md:w-1/2 pl-2 px-2 text-white list-disc hidden'>
-                                        {
-                                            item.list.split('\n').map((detail: string, ind: number) => (
-                                                <li className='font-lato text-base font-light' key={ind}>{detail}</li>
-                                            ))
-                                        }
-                                    </ul>
                                 </div>
-                            </div>
-                        ))
-                    }
-                </AZCarousel>
-                <svg ref={refBackCircle} className='hidden absolute w-[120%] md:w-[45%] top-0 top-[-40%] md:top-1/2 md:translate-y-[-50%] right-[27%] md:right-[27.5%]' viewBox="0 0 736 736" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle opacity="0.3" cx="368.2" cy="368.2" r="338.706" transform="rotate(-120 368.2 368.2)" fill="url(#paint0_radial_0_1)" />
-                    <circle opacity="0.8" cx="368.199" cy="368.2" r="367.206" transform="rotate(-120 368.199 368.2)" stroke="url(#paint1_linear_0_1)" />
-                    <circle opacity="0.4" cx="368.204" cy="367.623" r="311.914" transform="rotate(-120 368.204 367.623)" fill="url(#paint2_radial_0_1)" />
-                    <defs>
-                        <radialGradient id="paint0_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(320.569 188.262) rotate(68.4205) scale(697.882)">
-                            <stop stopColor="#7BB690" />
-                            <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
-                        </radialGradient>
-                        <linearGradient id="paint1_linear_0_1" x1="368.199" y1="0.493683" x2="368.199" y2="735.905" gradientUnits="userSpaceOnUse">
-                            <stop stopColor="#7BB790" />
-                            <stop offset="1" stopColor="#7BB790" stopOpacity="0" />
-                        </linearGradient>
-                        <radialGradient id="paint2_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(341.918 353.047) rotate(82.9191) scale(427.785)">
-                            <stop stopColor="#7BB690" />
-                            <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
-                        </radialGradient>
-                    </defs>
-                </svg>
-
-                <div ref={refBackCircleCarousel} className='hidden absolute w-[120%] md:w-[45%] top-0  md:top-1/2 md:translate-y-[-44%] right-[27%] md:left-[14%]' >
-                    <svg viewBox="0 0 736 736" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle opacity="0.3" cx="368.2" cy="368.2" r="338.706" transform="rotate(-120 368.2 368.2)" fill="url(#paint0_radial_0_2)" />
-                        <circle opacity="0.8" cx="368.199" cy="368.2" r="367.206" transform="rotate(-120 368.199 368.2)" stroke="url(#paint1_linear_0_2)" />
-                        <circle opacity="0.4" cx="368.204" cy="367.623" r="311.914" transform="rotate(-120 368.204 367.623)" fill="url(#paint2_radial_0_2)" />
+                            ))
+                        }
+                    </AZCarousel>
+                    <svg ref={refBackCircle} className='hidden absolute w-[120%] md:w-[45%] top-0 top-[-40%] md:top-1/2 md:translate-y-[-50%] right-[27%] md:right-[27.5%]' viewBox="0 0 736 736" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle opacity="0.3" cx="368.2" cy="368.2" r="338.706" transform="rotate(-120 368.2 368.2)" fill="url(#paint0_radial_0_1)" />
+                        <circle opacity="0.8" cx="368.199" cy="368.2" r="367.206" transform="rotate(-120 368.199 368.2)" stroke="url(#paint1_linear_0_1)" />
+                        <circle opacity="0.4" cx="368.204" cy="367.623" r="311.914" transform="rotate(-120 368.204 367.623)" fill="url(#paint2_radial_0_1)" />
                         <defs>
-                            <radialGradient id="paint0_radial_0_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(320.569 188.262) rotate(68.4205) scale(697.882)">
+                            <radialGradient id="paint0_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(320.569 188.262) rotate(68.4205) scale(697.882)">
                                 <stop stopColor="#7BB690" />
                                 <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
                             </radialGradient>
-                            <linearGradient id="paint1_linear_0_2" x1="368.199" y1="0.493683" x2="368.199" y2="735.905" gradientUnits="userSpaceOnUse">
+                            <linearGradient id="paint1_linear_0_1" x1="368.199" y1="0.493683" x2="368.199" y2="735.905" gradientUnits="userSpaceOnUse">
                                 <stop stopColor="#7BB790" />
                                 <stop offset="1" stopColor="#7BB790" stopOpacity="0" />
                             </linearGradient>
-                            <radialGradient id="paint2_radial_0_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(341.918 353.047) rotate(82.9191) scale(427.785)">
+                            <radialGradient id="paint2_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(341.918 353.047) rotate(82.9191) scale(427.785)">
                                 <stop stopColor="#7BB690" />
                                 <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
                             </radialGradient>
                         </defs>
                     </svg>
+
+                    <div ref={refBackCircleCarousel} className='hidden absolute w-[120%] md:w-[45%] top-0  md:top-1/2 md:translate-y-[-44%] right-[27%] md:left-[14%]' >
+                        <svg viewBox="0 0 736 736" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle opacity="0.3" cx="368.2" cy="368.2" r="338.706" transform="rotate(-120 368.2 368.2)" fill="url(#paint0_radial_0_2)" />
+                            <circle opacity="0.8" cx="368.199" cy="368.2" r="367.206" transform="rotate(-120 368.199 368.2)" stroke="url(#paint1_linear_0_2)" />
+                            <circle opacity="0.4" cx="368.204" cy="367.623" r="311.914" transform="rotate(-120 368.204 367.623)" fill="url(#paint2_radial_0_2)" />
+                            <defs>
+                                <radialGradient id="paint0_radial_0_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(320.569 188.262) rotate(68.4205) scale(697.882)">
+                                    <stop stopColor="#7BB690" />
+                                    <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
+                                </radialGradient>
+                                <linearGradient id="paint1_linear_0_2" x1="368.199" y1="0.493683" x2="368.199" y2="735.905" gradientUnits="userSpaceOnUse">
+                                    <stop stopColor="#7BB790" />
+                                    <stop offset="1" stopColor="#7BB790" stopOpacity="0" />
+                                </linearGradient>
+                                <radialGradient id="paint2_radial_0_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(341.918 353.047) rotate(82.9191) scale(427.785)">
+                                    <stop stopColor="#7BB690" />
+                                    <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
+                                </radialGradient>
+                            </defs>
+                        </svg>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div ref={el => animGradient.current.push(el)} className='z-0 hidden md:block fixed top-1/2 left-1/2 center-transform w-full h-full'></div>
-    </section>
+            <div ref={el => animGradient.current.push(el)} className='z-0 hidden md:block fixed top-1/2 left-1/2 center-transform w-full h-full'></div>
+        </section>
     )
 })
 

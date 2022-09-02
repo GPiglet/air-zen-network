@@ -20,7 +20,7 @@ const KeepEverything: FC = () => {
         <div className="pb-16 relative container mx-auto mb-[30%] md:mb-0 md:h-screen">
 
             <svg className="absolute 
-            right-[-35%] md:right-[-65%] lg:right-[-60%] xl:right-[-70%]
+            right-[-35%] md:right-[-65%] lg:right-[-60%] xl:right-[-70%] z-10
             top-[90%] xs:top-[75%] sm:top-[65%] md:top-1/2 md:translate-y-[-50%]
             w-[184%] sm:w-[180%] md:w-[180%] xl:w-[180%]"
                 viewBox="-600 -350 2000 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -97,7 +97,7 @@ const KeepEverything: FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="md:absolute md:bottom-[10%] w-full text-white">
+            <div className="md:absolute md:bottom-[10%] w-full text-white z-20">
                 <div className="flex items-end mt-20">
                     <p className="m-auto font-lato-light italic text-lg tracking-[0.08em]">In vertrauensvoller Kooperation mit:</p>
                 </div>

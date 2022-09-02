@@ -68,7 +68,7 @@ const StepFive: FC = () => {
                 breadcrumb={t('home.form.step5.breadcrumb')}
                 buttonString={t('home.form.step5.button')}
                 bgImg='/images/model.png'
-                bgClassName='bottom-[-40px] w-[40%] right-[-5px]'
+                bgClassName='bottom-[-40px] w-[35%] right-[-5px]'
                 width='sm:w-[80%]'
             >
                 <FadeIn transitionDuration={1000} delay={0}>
@@ -87,7 +87,7 @@ const StepFive: FC = () => {
                     </div>
                     <input placeholder='Bundesland' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={federalRef} onChange={() => testValue()} defaultValue={homeOption?.federalState} />
                     <div className="flex items-center px-2 py-5">
-                        <CustomCheckbox checked={deliver} onChange={() => changeDeliver()} />
+                        <CustomCheckbox checked={deliver} onClick={() => changeDeliver()} />
                         <div className='ml-5'>
                             {
                                 t('home.form.step5.confirm').split('\n').map((item, index) =>

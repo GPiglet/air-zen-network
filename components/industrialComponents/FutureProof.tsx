@@ -17,7 +17,7 @@ const FutureProof: FC = () => {
         <div id="secure" className="relative container mx-auto mb-[70%] sm:mb-[90%] md:mb-0 md:h-screen">
 
             <svg className="absolute
-            left-[-49%] md:left-[-70%] lg:left-[-89%] xl:left-[-70%]
+            left-[-49%] md:left-[-70%] lg:left-[-89%] xl:left-[-70%] z-10
             top-[90%] xs:top-[75%] sm:top-[50%] md:top-1/2 md:translate-y-[-50%]
             w-[170%] sm:w-[170%] md:w-[160%] lg:w-[180%] xl:w-[145%]"
                 viewBox="-600 -350 2000 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,10 +52,10 @@ const FutureProof: FC = () => {
 
 
             <svg className="absolute hidden md:block
-            w-[100%]
+            w-[100%] z-50
             bottom-0 translate-y-[30%]
-            left-[0%] xl:left-[0%]" width="337" height="337" viewBox="0 0 337 337" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <image href="/images/app-ellipse.svg" />
+            left-1/2 translate-x-[-50%] w-[300px] h-[300px]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <image href="/images/app-ellipse.svg" className="cursor-pointer " />
             </svg>
 
 

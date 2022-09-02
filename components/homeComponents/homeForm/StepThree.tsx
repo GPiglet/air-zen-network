@@ -4,6 +4,7 @@ import FadeIn from 'react-fade-in/lib/FadeIn'
 
 import Form from '../../common/form'
 import { StoreContext } from '../../../contexts/Store'
+import { clippingParents } from '@popperjs/core'
 
 const StepThree: FC = () => {
     //translate
@@ -20,7 +21,7 @@ const StepThree: FC = () => {
     })
 
     const testValue = () => {
-        if (monthRef.current.value) {
+        if (monthRef.current.value !== '' || monthRef.current.value !== null) {
             setActive(true)
             const option = {
                 contractTerm: Number(monthRef.current.value),
@@ -29,6 +30,11 @@ const StepThree: FC = () => {
             changeHomeOption?.(option)
         } else {
             setActive(false)
+            const option = {
+                contractTerm: null,
+                monthPay: 68
+            }
+            changeHomeOption?.(option)
         }
     }
 
@@ -47,6 +53,7 @@ const StepThree: FC = () => {
                             <p>{t('home.form.step3.month').split('\n')[0]}</p>
                             <select name="months" data-native-menu={false} className='custom-input w-[50%] sm:w-[22%] text-center text-inputColor mx-2' ref={monthRef} onChange={() => testValue()} defaultValue={homeOption?.contractTerm}>
                                 <option value={undefined} className='text-gray-500' disabled hidden>3-60</option>
+                                <option value=""></option>
                                 <option value="6">6</option>
                                 <option value="12">12</option>
                                 <option value="24">24</option>
