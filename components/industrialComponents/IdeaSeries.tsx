@@ -23,11 +23,11 @@ const IdeaSeries: FC = () => {
     ]
 
     return (
-        <div className="container mx-auto relative flex items-center mb-[70%] md:mb-0">
+        <div className="container mx-auto relative flex items-center mb-[70%] md:mb-0 md:h-screen">
             <svg className="absolute 
                 left-[-64%] sm:left-[-64%] md:left-[-92%] lg:left-[-88%] xl:left-[-69%]
-                top-[93%] sm:top-[46%] md:top-[-15%] lg:top-[-23%] xl:top-[-46%]
-                w-[230%] sm:w-[230%] md:w-[200%] lg:w-[190%] xl:w-[155%]"
+                top-[68%] sm:top-[46%] md:top-1/2 md:translate-y-[-50%]
+                w-[230%] sm:w-[230%] md:w-[200%] lg:w-[190%] xl:w-[160%]"
                 viewBox="-600 -350 2000 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
                     <circle opacity="0.7" cx="410.101" cy="409.515" r="277.477" transform="rotate(-180 410.101 409.515)" fill="url(#paint0_radial_0_1)" />
@@ -63,7 +63,7 @@ const IdeaSeries: FC = () => {
             </svg>
 
 
-            <div className="relative items-center px-10 md:px-0 md:h-[70%] pt-[10%]">
+            <div className="relative items-center px-10 md:px-0 md:absolute md:top-1/2 md:translate-y-[-50%]">
                 <div className="flex flex-wrap md:mt-12">
                     <div className="w-full md:w-[35%] m-auto">
                         <div className="relative">

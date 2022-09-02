@@ -33,6 +33,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
     }, [])
 
     const changeCheck = (type: string) => {
+        console.log(type, 'custom Check changed  ')
         switch (type) {
             case 'dataProtection':
                 setDataProtection(!dataProtection)

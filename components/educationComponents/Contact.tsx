@@ -14,8 +14,8 @@ const Contact: FC = () => {
             <div className="container mx-auto relative">
                 <svg className="absolute
                 top-[-78%] xs:top-[-127%] sm:top-[-565px] md:top-[-130%] lg:top-[-150%] xl:top-[-250%]
-                w-[220%] sm:w-[170%] md:w-[160%] lg:w-[160%] xl:w-[150%]
-                left-[-60%] sm:left-[-38%] md:left-[-55%] lg:left-[-55%] xl:left-[-53%]"
+                w-[220%] sm:w-[170%] md:w-[160%] lg:w-[160%] xl:w-[160%]
+                left-1/2 translate-x-[-50%]"
                     viewBox="-600 -350 2000 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.7" d="M376.09 41.1328C598.38 -1.14335 813.492 148.063 856.541 374.416C899.59 600.769 754.268 818.524 531.979 860.8C309.689 903.076 94.5768 753.871 51.5279 527.517C8.47893 301.164 153.8 83.4089 376.09 41.1328Z" stroke="url(#paint0_linear_0_1)" />
                     <path opacity="0.3" d="M562.868 790.362C753.811 729.321 860.001 527.812 800.051 340.279C740.1 152.746 536.711 50.2033 345.768 111.244C154.825 172.284 48.6346 373.793 108.585 561.326C168.536 748.86 371.925 851.402 562.868 790.362Z" fill="url(#paint1_radial_0_1)" />
@@ -44,7 +44,7 @@ const Contact: FC = () => {
 
 
                 <div className="mx-auto relative md:pl-[10%]">
-                    <div className="w-full md:w-1/2 px-10">
+                    <div className="w-full md:w-1/2 px-10 mx-auto">
                         <p className="font-lato-light font-light text-[22px] text-white">{t('education.ournode.tip')}</p>
                         <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('education.ournode.title')}</h1>
                         {

@@ -40,11 +40,11 @@ const ClassWiFi: FC = () => {
 
     // },[])
     return (
-        <div className="relative container mx-auto mb-[70%] md:mb-[10%] lg:mb-[15%] xl:mb-[25%]">
+        <div className="relative container mx-auto mb-[70%] md:mb-[10%] lg:mb-[15%] xl:mb-[25%] md:h-screen">
             <svg className="
             absolute trigger
             right-[-30%] sm:right-[-35%] md:right-[-60%] lg:right-[-65%] xl:right-[-62%]
-            top-[85%] xs:top-[75%] sm:top-[50%] md:top-[-15%] lg:top-[-25%] xl:top-[-75%]
+            top-[85%] xs:top-[75%] sm:top-[50%] md:top-1/2 md:translate-y-[-50%]
             w-[180%] sm:w-[180%] md:w-[170%] lg:w-[170%] xl:w-[185%]"
                 viewBox="-600 -350 2000 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path className="box" opacity="0.4" d="M747.782 581.528C819.969 558.451 860.114 482.27 837.45 411.372C814.785 340.474 737.893 301.708 665.706 324.784C593.519 347.861 553.373 424.042 576.038 494.94C598.702 565.838 675.595 604.605 747.782 581.528Z" fill="url(#paint0_linear_0_1)" />
@@ -93,7 +93,7 @@ const ClassWiFi: FC = () => {
                     </clipPath>
                 </defs>
             </svg>
-            <div className="container mx-auto relative itemsCenter px-10 md:px-0 md:h-[70%]">
+            <div className="container mx-auto relative itemsCenter px-10 md:px-0 md:absolute md:top-1/2 md:translate-y-[-50%] pt-[150px] md:pt-0">
                 <Breadcrumb />
                 <div className="flex flex-wrap mt-12">
                     <div className="w-full md:w-7/12 md:max-w-[417px] lg:max-w-[617px]">

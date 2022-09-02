@@ -14,11 +14,11 @@ const FutureProof: FC = () => {
     ]
 
     return (
-        <div id="secure" className="relative container mx-auto mb-[70%] sm:mb-[90%] md:mb-0">
+        <div id="secure" className="relative container mx-auto mb-[70%] sm:mb-[90%] md:mb-0 md:h-screen">
 
             <svg className="absolute
             left-[-49%] md:left-[-70%] lg:left-[-89%] xl:left-[-70%]
-            top-[90%] xs:top-[75%] sm:top-[50%] md:top-[-15%] lg:top-[-45%] xl:top-[-34%]
+            top-[90%] xs:top-[75%] sm:top-[50%] md:top-1/2 md:translate-y-[-50%]
             w-[170%] sm:w-[170%] md:w-[160%] lg:w-[180%] xl:w-[145%]"
                 viewBox="-600 -350 2000 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
@@ -53,14 +53,14 @@ const FutureProof: FC = () => {
 
             <svg className="absolute hidden md:block
             w-[100%]
-            top-[60%] md:top-[95%] lg:top-[90%] xl:top-[70%]
+            bottom-0 translate-y-[30%]
             left-[0%] xl:left-[0%]" width="337" height="337" viewBox="0 0 337 337" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <image href="/images/app-ellipse.svg" />
             </svg>
 
 
 
-            <div className="container mx-auto flex self-center relative text-white px-10 xl:py-[18%]">
+            <div className="container mx-auto flex self-center relative text-white px-10 md:absolute md:top-1/2 md:translate-y-[-50%]">
                 <div className="md:flex justify-end items-center mt-5 md:mt-0  md:h-[60%]">
                     <div className="md:w-[40%]">
                         <p className="font-lato-light  font-light text-[22px] text-white">{t('industrial.secure.tip')}</p>

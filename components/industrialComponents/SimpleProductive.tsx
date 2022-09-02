@@ -24,12 +24,12 @@ const SimpleProductive: FC = () => {
 
     return (
 
-        <div id="easy" className="container mx-auto relative mb-[95%] sm:mb-[100%] md:mb-[15%]">
+        <div id="easy" className="container mx-auto relative mb-[95%] sm:mb-[100%] md:mb-[15%] md:h-screen">
 
             <svg className="absolute 
                 left-[-64%] sm:left-[-64%] md:left-[-92%] lg:left-[-88%] xl:left-[-69%]
-                top-[93%] xs:top-[78%] sm:top-[46%] md:top-[-36%] lg:top-[-47%] xl:top-[-102%]
-                w-[230%] sm:w-[230%] md:w-[200%] lg:w-[190%] xl:w-[155%]"
+                top-[93%] xs:top-[78%] sm:top-[46%] md:top-1/2 md:translate-y-[-50%]
+                w-[230%] sm:w-[230%] md:w-[200%] lg:w-[190%] xl:w-[160%]"
                 viewBox="-600 -350 2000 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
                     <circle opacity="0.7" cx="410.101" cy="410.511" r="277.477" transform="rotate(-180 410.101 410.511)" fill="url(#paint0_radial_0_1)" />
@@ -66,7 +66,7 @@ const SimpleProductive: FC = () => {
 
 
 
-            <div className="relative items-center px-10 md:px-0 md:h-[70%]">
+            <div className="relative items-center px-10 md:px-0 md:absolute md:top-1/2 md:translate-y-[-50%]">
                 <div className="flex flex-wrap md:mt-12">
                     <div className="w-full md:w-[35%] m-auto">
                         <div className="relative">
