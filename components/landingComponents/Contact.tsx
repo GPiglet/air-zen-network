@@ -163,7 +163,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
                         </button>
                         <div ref={el => { animSlideUp.current.push(el); animFadeIn.current.push(el) }} className='flex relative z-40'>
                             <div className='mt-5 mr-3'>
-                                <CustomCheckbox checked={dataProtection} onChange={() => changeCheck('dataProtection')} />
+                                <CustomCheckbox checked={dataProtection} onClick={() => changeCheck('dataProtection')} />
                             </div>
                             <p className='font-lato font-light text-left text-base text-white tracking-[2px] my-4'>
                                 {t('landing.contact.description').split('\n')[0]}
@@ -171,7 +171,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
                         </div>
                         <div ref={el => { animSlideUp.current.push(el); animFadeIn.current.push(el) }} className='flex relative z-40'>
                             <div className='mt-5 mr-3'>
-                                <CustomCheckbox checked={dataCollection} onChange={() => changeCheck('dataCollection')} />
+                                <CustomCheckbox checked={dataCollection} onClick={() => changeCheck('dataCollection')} />
                             </div>
                             <p className='font-lato font-light text-left text-base text-white tracking-[2px] my-4'>
                                 {t('landing.contact.description').split('\n')[1]}
