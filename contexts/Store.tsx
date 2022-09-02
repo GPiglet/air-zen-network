@@ -65,12 +65,14 @@ export const StoreProvider: FC<childrenType> = ({ children }) => {
             case 'CHANGE_STEP':
                 return {
                     step: action.payload,
+                    cookie: state.cookie,
                     homeOption: state.homeOption,
                     businessOption: state.businessOption
                 }
             case 'CHANGE_HOME_OPTION':
                 return {
                     step: state.step,
+                    cookie: state.cookie,
                     businessOption: state.businessOption,
                     homeOption: { ...state.homeOption, ...action.payload }
                 }
@@ -78,6 +80,7 @@ export const StoreProvider: FC<childrenType> = ({ children }) => {
                 console.log(action.payload, 'payload---------')
                 return {
                     step: state.step,
+                    cookie: state.cookie,
                     homeOption: state.homeOption,
                     businessOption: { ...state.businessOption, ...action.payload }
                 }

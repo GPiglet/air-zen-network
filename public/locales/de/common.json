@@ -15,26 +15,26 @@
                 {
                     "title": "Home",
                     "subtitle": "Für ein smartes Zuhause.",
-                    "description" : "Störungsfreies und selbstoptimierendes Netz. Zuhause wie beim Profi.",
+                    "description": "Störungsfreies und selbstoptimierendes Netz. Zuhause wie beim Profi.",
                     "list": "Hochstabile Verbindung \n Keine Erfahrung nötig \n Automatische Updates \n Videosupport"
                 },
-               {
+                {
                     "title": "Business",
                     "subtitle": "Für ein vernetztes Unternehmen.",
-                    "description" : "Störungsfreies und selbstoptimierendes Netz. Zuhause wie beim Profi.",
-                   "list": "Hochstabile Verbindung \n Keine Erfahrung nötig \n Automatische Updates \n Videosupport"
+                    "description": "Störungsfreies und selbstoptimierendes Netz. Zuhause wie beim Profi.",
+                    "list": "Hochstabile Verbindung \n Keine Erfahrung nötig \n Automatische Updates \n Videosupport"
                 },
                 {
                     "title": "Education",
                     "subtitle": "Für eine digitale Zukunft.",
-                    "description" : "Störungsfreies und selbstoptimierendes Netz. Zuhause wie beim Profi.",
-                   "list": "Hochstabile Verbindung \n Keine Erfahrung nötig \n Automatische Updates \n Videosupport"
+                    "description": "Störungsfreies und selbstoptimierendes Netz. Zuhause wie beim Profi.",
+                    "list": "Hochstabile Verbindung \n Keine Erfahrung nötig \n Automatische Updates \n Videosupport"
                 },
-               {
+                {
                     "title": "Industril",
                     "subtitle": "Für den digitalen Fortschritt.",
-                    "description" : "Störungsfreies und selbstoptimierendes Netz. Zuhause wie beim Profi.",
-                   "list": "Hochstabile Verbindung \n Keine Erfahrung nötig \n Automatische Updates \n Videosupport"
+                    "description": "Störungsfreies und selbstoptimierendes Netz. Zuhause wie beim Profi.",
+                    "list": "Hochstabile Verbindung \n Keine Erfahrung nötig \n Automatische Updates \n Videosupport"
                 }
             ],
             "solution": "Unsere Lösung"
@@ -64,15 +64,23 @@
             "title": "Referenzen",
             "swiper": [
                 {
-                    "title" : "Volksbank Köln/Bonn",
+                    "title": "Volksbank Köln/Bonn",
                     "list": "WiFi für 30 Standorte \n 150 WLAN Router \n 700 Mitarbeiter \n Kunden-WLAN \n Managed Service"
                 },
                 {
-                    "title" : "Kreissparkasse Tuttlingen",
+                    "title": "Kreissparkasse Tuttlingen",
                     "list": "WiFi für 30 Standorte \n 150 WLAN Router \n 700 Mitarbeiter \n Kunden-WLAN \n Managed Service"
                 },
                 {
-                    "title" : "IHK Schwarzwald-Baar-Heuberg",
+                    "title": "IHK Schwarzwald-Baar-Heuberg",
+                    "list": "WiFi für 30 Standorte \n 150 WLAN Router \n 700 Mitarbeiter \n Kunden-WLAN \n Managed Service"
+                },
+                {
+                    "title": "IHK Schwarzwald-Baar-Heuberg",
+                    "list": "WiFi für 30 Standorte \n 150 WLAN Router \n 700 Mitarbeiter \n Kunden-WLAN \n Managed Service"
+                },
+                {
+                    "title": "IHK Schwarzwald-Baar-Heuberg",
                     "list": "WiFi für 30 Standorte \n 150 WLAN Router \n 700 Mitarbeiter \n Kunden-WLAN \n Managed Service"
                 }
             ]
@@ -98,14 +106,14 @@
             "title": "Home safe Home",
             "description": "Ihre digitale Sicherheit ist unser Anspruch. Unser Security Paket umfasst nicht nur die Trennung ihres beruflich vom privaten Netzwerk wenn Sie im Home Office arbeiten sondern beschützt ebenso ihre Kinder mit einer umfassenden Jugendschutz Funktion.  \n Sicherheit beginnt mit uns direkt an der Quelle des Internetzugangs per Security WatchDog welcher schadhafte Websites bereits vorab für Sie filtert und durch automatische Updates permanent aktualisiert wird. \n Der Internet Pause Button gibt Ihnen die Kontrolle über die Internet Verfügbarkeit aller Nutzer und die individuelle Passwortvergabe ermöglicht nicht nur personalisierte Rechtevergaben nach ihrem Wunsch, sondern erhöht auch die Sicherheit Ihres Wifi enorm."
         },
-        "reliable" : {
+        "reliable": {
             "_comment": "'Zuverlässig' Abschnitt der Seite",
             "tip": "Zuverlässig",
             "title": "So gut, so OmG!",
             "description": "Nach dem Update ist vor dem Update. Gerade für Menschen, die ihr privates Netzwerk im Homeoffice nutzen, stellen verzögerte Updates eine ernste Bedrohung für die sensiblen Daten ihrer Firma. \n Um diesen Bedrohungen immer einen Schritt voraus zu sein, ist unsere Platform an ein Lizensmodell gekoppelt. Das schließt zahlreiche Sicherheits- features ein, von denen Sie kaum etwas bemerken werden, solange wir unsere Arbeit gewissenhaft erledigen:",
             "list": "BotNetz-Schutz \n  Content-Filter für Kinder-Netzwerk \n Content-Filter für Manipulierte Websites \n  Familien Verwaltung mit y für Kinder und Internet-Pause Knopf \n  Automatisch Software Updates \n Live-Support vom Hersteller"
         },
-        "easy" : {
+        "easy": {
             "_comment": "'Einfach' Abschnitt der Seite",
             "tip": "Einfach",
             "title": "entspannter geht nicht!",
@@ -121,7 +129,7 @@
                 "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
             ]
         },
-        "ournode" : {
+        "ournode": {
             "_comment": "'Technik' Abschnitt der Seite",
             "tip": "Technik",
             "title": "Unsere Nodes",
@@ -184,7 +192,7 @@
         }
     },
     "business": {
-        "boost":{
+        "boost": {
             "_comment": "Der obere Abschnitt der Seite.('Boost')",
             "title": "Boost your Business",
             "description": "Ihr Start-Up, Filiale, oder Restaurant soll mit einem sciheren Netz versorgt,   und aus der Ferne wartbar sein?  \n Dann entdecken Sie die innovative Air Zen Technologie für ein zuverlässiges, sicheres und einfaches Netz.",
@@ -334,7 +342,8 @@
                     {
                         "type": "Office ",
                         "content": "WiFi for teams and customers "
-                    }, {
+                    },
+                    {
                         "type": "Home Office",
                         "content": "New Work & multiple devices"
                     }
@@ -373,17 +382,16 @@
                 "oldRouter": "alte Router",
                 "contact": "Für komplexere Projekte können sie uns gern direkt anschreiben"
             }
-
         }
     },
     "education": {
         "classwifi": {
-            "_comment":"Der obere Abschnitt der Seite.",
+            "_comment": "Der obere Abschnitt der Seite.",
             "title": "Klasse, WLAN!",
             "description": "Für die moderne Bildung ist ein zeitgemäßes Netzwerk die Grundlage. AirZen sorgt für zuverlässiges und sicheres Internet für Schulen. Mit schlüsselfertiger Hardware, schulgerechter Einrichtung, mobiler Nutzerverwaltung, sowie einem rundum-sorglos ITSupport. \n Es braucht also keine IT-Abteilung vor Ort. Aber das Beste an der AirZen Technologie: Der kinderleichte Betrieb. Eben einfach das Netzwerk der nächsten Generation."
         },
         "reliable": {
-            "_comment":"'Zuverlässig' Abschnitt der Seite",
+            "_comment": "'Zuverlässig' Abschnitt der Seite",
             "tip": "Zuverlässig",
             "title": "Klassenzimmer digital!",
             "description": "AirZen hat die Komplettlösung für komplexe Anforderungen von Schulen jeder Art und Größe – und ist dabei kinderleicht zu bedienen. \n Neben lückenloser WLAN-Abdeckung sorgt AirZen auch für eine zuverlässige Netzstabilität, auch wenn viele Geräte online sind. Administratoren können unkompliziert Zugänge ermöglichen und mobil verwalten - ganz einfach vom Handy aus. \n Dazu braucht es keine ITSchulung, denn die Bedienung funktioniert ganz intuitiv über die App. Mit AirZen sorgen Sie für ein erst- klassiges Netz in ihrer Schule.",
@@ -399,7 +407,7 @@
             ]
         },
         "secure": {
-            "_comment":"'Sicher'Abschnitt der Seite",
+            "_comment": "'Sicher'Abschnitt der Seite",
             "tip": "Sicher",
             "title": "SCHUTZ wird hier großsgeschrieben!",
             "description": "Von der Grundschule bis zum Hörsaal - im schulischen Netzwerk gibt es viele sensible Daten. AirZen bietet durch die Kombi von hochqualitativem Hersteller- Service und EU- als auch DSGV- konformen Sicherheitskonzepten ein hohes Maß an IT-Sicherheit.  \n Schützen Sie Ihre Schüler und Lehrkräfte zudem mit eigenen WLAN-Passwörtern, Jugendschutzfiltern und separat getrennten Verbindungen.",
@@ -407,35 +415,35 @@
             "sparkle2": "Dieses Feature ermöglicht eine besondere Funktion: XYZ"
         },
         "easy": {
-            "_comment":"'Einfach'Abschnitt der Seite",
+            "_comment": "'Einfach'Abschnitt der Seite",
             "tip": "Einfach",
             "title": "Das kleine Einmaleinfach!",
             "description": "Laptop raus und loslegen. Mit AirZen bekommen Schüler und Lehrer schnell und spielend einfach Zugang ins Netz über ein Self Service Portal. Damit sich alle auf den Unterricht konzentrieren können, läuft alles andere fast automatisch ab - Von der Einrichtung, bis hin zur Wartung mit selbstlernender Softwarepflege. \n Es braucht also keine große IT-Abteilung oder Fachkenntnisse, dank Hardware und Support direkt vom Hersteller. Oder anders gesagt: Mit AirZen geht die Rechnung auf.",
             "sparkle1": "Dieses Feature ermöglicht eine besondere Funktion: XYZ",
             "sparkle2": "Dieses Feature ermöglicht eine besondere Funktion: XYZ",
             "sparkle3": "Dieses Feature ermöglicht eine besondere Funktion: XYZ"
-        },                                        
+        },
         "ournode": {
             "_comment": "Abschnitt 'Unsere Nodes' der Seite",
             "tip": "Technik",
             "title": "Unsere Nodes",
             "description": "Wifi 6 \n 2 wlan module für Access- und Meshing \n Perfektes roaming mit Apple & Android \n unterstützt alle Roaming Standards von Apple iOS und Android Geräten für ein Seamless Romaing. \n Zero-Setup \n Die AirZen App hilft dir bei der kinderleichten Installation. "
-        }                           
+        }
     },
     "industrial": {
         "everything": {
-            "_comment":"Der obere Abschnitt der Seite.",
+            "_comment": "Der obere Abschnitt der Seite.",
             "title": "Alles im Flow halten.",
             "description": "Durch Stabilität, Sicherheit und einfache Nutzung bieten die AirZen weitreichende Individualisierung für industrielle Netzwerke in vielen Bereichen ganz neue Möglichkeiten Prozesse abzuwickeln, neue Leistungen anzubieten und ganz neue Maßstäbe für Industrie 4.0 zu setzen.",
             "cooperation": "In vertrauensvoller Kooperation mit:"
         },
         "reliable": {
-            "_comment":"'Zuverlässig' Abschnitt der Seite",
+            "_comment": "'Zuverlässig' Abschnitt der Seite",
             "tip": "Zuverlässig",
             "title": "Ideen in Serie gebracht",
             "description": "Alles aus einer Hand - von der Idee bis zur Hardware. Sie brauchen ein zuverlässiges Netzwerk oder haben eine neue Anforderung an ihr Bestehendes? \n Die AirZen Technologien sind für den Einsatz in der Industrie konzipiert und sorgen für ein äußerst effizientes Netzwerk auch bei speziellen, industriellen Anforderungen. Egal ob Automatisierung, smartes Management, Fernsteuerung oder Ferndiagnosen -AirZen entwickelt gemeinsam mit Ihnen eine ideale Netzwerk-Variante. Halten Sie alles am Laufen – mit einer  außergewöhnlich zuverlässigen und stabilen Netzwerkabdeckung von AirZen."
         },
-        "referenceproject" : {
+        "referenceproject": {
             "_comment": "'Referenzprojekte' Abschnitt der Seite",
             "title": "Referenzprojekte"
         },
@@ -465,13 +473,15 @@
         "GDPR": "DSGVO Copy",
         "button": "Senden"
     },
-    "footer" : {
+    "footer": {
         "title": "Impressum",
-        "inprint": [{
-            "title": "AirZen Networks Lda.",
-            "description": "Avenida Arriaga, nº30, 1ºA \n 9000-064 Funchal, Portugal",
-            "subdes": "VAT: PT516672169"
-        }],
+        "inprint": [
+            {
+                "title": "AirZen Networks Lda.",
+                "description": "Avenida Arriaga, nº30, 1ºA \n 9000-064 Funchal, Portugal",
+                "subdes": "VAT: PT516672169"
+            }
+        ],
         "readmore": [
             {
                 "title": "Haftungsbeschränkung",
