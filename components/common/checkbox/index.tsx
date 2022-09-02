@@ -1,17 +1,15 @@
-import { clippingParents } from '@popperjs/core'
+
 import React, { FC } from 'react'
 
 type checkboxProps = {
     checked: boolean,
-    state: string,
     onChange: () => void
 }
 
 const CustomCheckbox: FC<checkboxProps> = ({ checked, onChange }) => {
 
     return (
-        <div className='cursor-pointer w-[30px]' onMouseDown={() => { onChange(); }} >
-
+        <div className='cursor-pointer w-[30px]' onMouseDown={() => onChange()} >
             {
                 checked ?
                     (
