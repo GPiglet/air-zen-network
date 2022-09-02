@@ -4,6 +4,7 @@ import FadeIn from 'react-fade-in/lib/FadeIn'
 
 import { StoreContext } from '../../../contexts/Store'
 import Form from '../../common/form'
+import { clippingParents } from '@popperjs/core'
 
 const StepTwo: FC = () => {
     //translate
@@ -21,10 +22,17 @@ const StepTwo: FC = () => {
     })
     const testValue = () => {
         const roomSize = Number(roomRef.current.value)
-        const node = Number(nodeRef.current.value)
-        if (roomSize && node) {
+        let node = null
+        if (roomSize <= 180) {
+            node = 3
+        } else {
+            node = Math.ceil(roomSize / 60)
+        }
+        // const node = Number(nodeRef.current.value)
+        if (roomSize !== 0) {
+            // console.log(true, roomSize)
             setActive(true)
-            var option = {
+            const option = {
                 roomSize,
                 node
             }
@@ -32,6 +40,13 @@ const StepTwo: FC = () => {
 
         } else {
             setActive(false)
+            const option = {
+                roomSize: null,
+                node: null
+            }
+            changeHomeOption?.(option)
+            // console.log(false, roomSize)
+
         }
     }
 
@@ -48,12 +63,12 @@ const StepTwo: FC = () => {
                     <div>
                         <div className="sm:flex items-center">
                             <p>{t('home.form.step2.roomSize').split('\n')[0]}</p>
-                            <input placeholder='z.B. 80' className='custom-input w-[50%] sm:w-[23%] text-inputColor mx-2' ref={roomRef} onChange={() => testValue()} defaultValue={homeOption?.roomSize} />
+                            <input placeholder='z.B. 80' type='number' className='custom-input w-[50%] sm:w-[23%] text-inputColor mx-2' ref={roomRef} onChange={() => testValue()} defaultValue={homeOption?.roomSize} />
                             <span>{t('home.form.step2.roomSize').split('\n')[1]}</span>
                         </div>
                         <div className="sm:flex items-center mt-7">
                             <p>{t('home.form.step2.node').split('\n')[0]}</p>
-                            <input placeholder='4' className='custom-input w-[30%] sm:w-[20%] text-inputColor mx-2' ref={nodeRef} onChange={() => testValue()} defaultValue={homeOption?.node} />
+                            <input placeholder='4' className='custom-input w-[30%] sm:w-[20%] text-inputColor mx-2' ref={nodeRef} readOnly defaultValue={homeOption?.node} />
                             <span> {t('home.form.step2.node').split('\n')[1]}</span>
                         </div>
                     </div>

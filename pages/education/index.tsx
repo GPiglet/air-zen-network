@@ -3,6 +3,7 @@ import React, { FC, useState } from 'react'
 import type { NextPage } from 'next'
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { GetStaticProps } from 'next'
+import { useTranslation } from 'next-i18next'
 
 
 //custom Components
@@ -12,7 +13,7 @@ import Reliable from '../../components/educationComponents/Reliable'
 import Secure from '../../components/educationComponents/Secure'
 import Easy from '../../components/educationComponents/Easy'
 import Contact from '../../components/educationComponents/Contact'
-import { useTranslation } from 'next-i18next'
+import ContactForm from '../../components/common/form/ContactForm'
 
 
 
@@ -45,8 +46,9 @@ const Home: NextPage = () => {
 	]
 
 	return (
-		<div className='back-left-top-gradient-primary overflow-hidden'>
+		<div className='relative back-left-top-gradient-primary overflow-hidden'>
 			<Mainlayout navItems={navItems}>
+				<ContactForm />
 				<ClassWiFi />
 				<Reliable />
 				<Secure />
