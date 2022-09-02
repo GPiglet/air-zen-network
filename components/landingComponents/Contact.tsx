@@ -141,7 +141,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
                         <p ref={el => { animSlideUp.current.push(el); animFadeIn.current.push(el) }} className='text-left text-slate-300 mt-5 mb-2'>Name</p>
                         <div className='custom-input-gradient w-full mb-5' ref={el => { nameRef.current = el; animSlideUp.current.push(el); animFadeIn.current.push(el) }}>
                             <input
-                                className="custom-input text-left w-full"
+                                className="custom-input-dark text-left w-full"
                                 placeholder='Vorname Nachname'
 
                             />
@@ -149,21 +149,21 @@ const Contact = React.forwardRef((props: any, ref: any) => {
                         <p ref={el => { animSlideUp.current.push(el); animFadeIn.current.push(el) }} className='text-left text-slate-300 mb-2'>Email Address</p>
                         <div className='custom-input-gradient w-full mb-5' ref={el => { emailRef.current = el; animSlideUp.current.push(el); animFadeIn.current.push(el) }}>
                             <input
-                                className="custom-input text-left w-full "
+                                className="custom-input-dark text-left w-full "
                                 placeholder='Vorname Nachname'
                                 type="email"
 
                             />
                         </div>
-                        <div className='custom-input-gradient w-full mb-5' ref={el => { messageRef.current = el; animSlideUp.current.push(el); animFadeIn.current.push(el) }}>
+                        <div className='custom-input-gradient w-full mb-5 relative z-10 ' ref={el => { messageRef.current = el; animSlideUp.current.push(el); animFadeIn.current.push(el) }}>
                             <textarea
                                 rows={3}
-                                className="custom-input text-left w-full z-30"
+                                className="custom-input-dark text-left w-full "
                                 placeholder='Ihre Nachricht '
 
                             />
                         </div>
-                        <button ref={el => { animSlideUp.current.push(el); animFadeIn.current.push(el) }} className='text-lgx text-white button-gradient py-2 px-8 rounded-md border border-primary relative'>
+                        <button ref={el => { animSlideUp.current.push(el); animFadeIn.current.push(el) }} className='text-lgx text-white button-gradient py-2 px-8 rounded-md border border-primary relative z-10'>
                             {t('landing.contact.send')}
                         </button>
                         <div ref={el => { animSlideUp.current.push(el); animFadeIn.current.push(el) }} className='flex relative z-40'>
