@@ -6,6 +6,7 @@ type checkboxProps = {
 }
 
 const CustomCheckbox: FC<checkboxProps> = ({ checked, onChange }) => {
+    // console.log(checked, 'Checked!!')
 
     return (
         <div className='cursor-pointer w-[30px]' onClick={() => onChange()}>

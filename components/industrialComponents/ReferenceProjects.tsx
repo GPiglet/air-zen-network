@@ -104,6 +104,8 @@ const ReferenceProjects = React.forwardRef((props: any, ref: any) => {
         gsap.to(slide.getElementsByTagName('ul'), { opacity: 0, display: 'none', duration });
     }
 
+    
+
     const onShowCarousel = (carousel: any, slide: any, shownIndex: number, position: number, onComplete: Function) => {
         const from = shownIndex == 0 ? -Math.floor(100 / carousel.getConfig().shownLength) + '%' : '100%';
         if (carousel.getSelectedIndex() == 0) gsap.fromTo(slide, { left: from }, { left: positions[0][shownIndex], duration });
@@ -123,6 +125,8 @@ const ReferenceProjects = React.forwardRef((props: any, ref: any) => {
             }
         }
         return 200;
+
+        
     }
 
     const config = {
