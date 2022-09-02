@@ -18,7 +18,7 @@ const CertainlySafe: FC = () => {
                     <path opacity="0.6" d="M0.5 345.732C0.5 155.066 155.185 0.500122 346 0.500122C536.815 0.500122 691.5 155.066 691.5 345.732C691.5 536.398 536.815 690.964 346 690.964C155.185 690.964 0.5 536.398 0.5 345.732Z" stroke="url(#paint1_radial_1376_5616)" />
                     <ellipse opacity="0.7" rx="161.634" ry="161.56" transform="matrix(0.499657 0.866223 -0.865827 0.500343 345.839 345.66)" fill="url(#paint2_radial_1376_5616)" />
                 </g>
-                <image href="/images/phone-home.png" x="33.5%" y="20%" className="w-[32%]" />
+                <image href="/images/phone-home1.png" x="33.5%" y="20%" className="w-[32%]" />
 
 
                 <defs>

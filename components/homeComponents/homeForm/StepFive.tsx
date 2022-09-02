@@ -4,6 +4,7 @@ import FadeIn from 'react-fade-in/lib/FadeIn'
 
 import Form from '../../common/form'
 import { StoreContext } from '../../../contexts/Store'
+import CustomCheckbox from '../../common/checkbox'
 
 const StepFive: FC = () => {
 
@@ -12,6 +13,7 @@ const StepFive: FC = () => {
 
     const { homeOption, changeHomeOption } = useContext(StoreContext)
     const [active, setActive] = useState(false)
+    const [deliver, setDeliver] = useState(false)
     const mailRef = useRef<any>();
     const firstNameRef = useRef<any>();
     const surNameRef = useRef<any>();
@@ -54,6 +56,10 @@ const StepFive: FC = () => {
         }
     }
 
+    const changeDeliver = () => {
+        setDeliver(!deliver)
+    }
+
     return (
         <FadeIn delay={0} transitionDuration={1000} className='leading-8'>
             <Form
@@ -71,22 +77,18 @@ const StepFive: FC = () => {
                     <input placeholder='Mail' type='email' required className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={mailRef} onChange={() => testValue()} defaultValue={homeOption?.mail} />
                     <input placeholder='Vorname' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={firstNameRef} onChange={() => testValue()} defaultValue={homeOption?.firstName} />
                     <input placeholder='Nachname' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={surNameRef} onChange={() => testValue()} defaultValue={homeOption?.surName} />
-                    <input placeholder='Straße' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={streetRef} onChange={() => testValue()} defaultValue={homeOption?.street} />
-                    <input placeholder='Haus Nr.' type='number' className='mb-3 ml-2 w-[30%] h-[38px] custom-input text-inputColor' ref={houseNoRef} onChange={() => testValue()} defaultValue={homeOption?.houseNo} />
-                    <input placeholder='Ortsname' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={placeRef} onChange={() => testValue()} defaultValue={homeOption?.placeName} />
-                    <input placeholder='PLZ' type='number' className='mb-3 ml-2 w-[30%] h-[38px] custom-input text-inputColor' ref={postCodeRef} onChange={() => testValue()} defaultValue={homeOption?.postCode} />
+                    <div className='md:flex'>
+                        <input placeholder='Straße' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={streetRef} onChange={() => testValue()} defaultValue={homeOption?.street} />
+                        <input placeholder='Haus Nr.' type='number' className='mb-3 ml-2 w-[30%] h-[38px] custom-input text-inputColor' ref={houseNoRef} onChange={() => testValue()} defaultValue={homeOption?.houseNo} />
+                    </div>
+                    <div className="md:flex">
+                        <input placeholder='Ortsname' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={placeRef} onChange={() => testValue()} defaultValue={homeOption?.placeName} />
+                        <input placeholder='PLZ' type='number' className='mb-3 ml-2 w-[30%] h-[38px] custom-input text-inputColor' ref={postCodeRef} onChange={() => testValue()} defaultValue={homeOption?.postCode} />
+                    </div>
                     <input placeholder='Bundesland' className='mb-3 w-[65%] h-[38px] custom-input text-inputColor' ref={federalRef} onChange={() => testValue()} defaultValue={homeOption?.federalState} />
                     <div className="flex items-center px-2 py-5">
-                        <svg width="53" height="53" className='mr-5' viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="26.5" cy="26.5" r="25" stroke="url(#paint0_linear_1248_3123)" strokeWidth="3" />
-                            <defs>
-                                <linearGradient id="paint0_linear_1248_3123" x1="26.5" y1="0" x2="26.5" y2="53" gradientUnits="userSpaceOnUse">
-                                    <stop stopColor="#01ACE6" />
-                                    <stop offset="1" stopColor="#01ACE6" stopOpacity="0.6" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                        <div>
+                        <CustomCheckbox checked={deliver} onChange={() => changeDeliver()} />
+                        <div className='ml-5'>
                             {
                                 t('home.form.step5.confirm').split('\n').map((item, index) =>
                                     <p key={index}>{item}</p>

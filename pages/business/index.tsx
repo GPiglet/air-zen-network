@@ -3,7 +3,7 @@ import React from 'react'
 import type { NextPage } from 'next'
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { GetStaticProps } from 'next'
-
+import { useTranslation } from 'next-i18next';
 
 
 //custom Components
@@ -16,7 +16,7 @@ import CertainlySafe from '../../components/businessComponents/CertainlySafe'
 import Solution360 from '../../components/businessComponents/Solution360'
 import BusinessNode from '../../components/businessComponents/BusinessNode'
 import WhitePaper from '../../components/businessComponents/WhitePaper'
-import { useTranslation } from 'next-i18next';
+import BusinessForm from '../../components/businessComponents/businessForm';
 
 
 
@@ -49,8 +49,9 @@ const Business: NextPage = () => {
 	]
 
 	return (
-		<div className='back-left-top-gradient-secondary overflow-x-hidden' id='business_page'>
+		<div className='relative back-left-top-gradient-secondary overflow-x-hidden' id='business_page'>
 			<Mainlayout navItems={navItems} >
+				<BusinessForm />
 				<Boost />
 				<Professional />
 				<NewWork />

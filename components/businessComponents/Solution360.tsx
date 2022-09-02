@@ -45,7 +45,7 @@ const Solution360: FC = () => {
                     <path opacity="0.6" d="M116.86 381.896C116.86 235.916 235.246 117.575 381.282 117.575C527.318 117.575 645.703 235.916 645.703 381.896C645.703 527.876 527.318 646.217 381.282 646.217C235.246 646.217 116.86 527.876 116.86 381.896Z" stroke="url(#paint2_radial_1376_6235)" />
                     <ellipse opacity="0.7" rx="134.269" ry="134.181" transform="matrix(0.499509 0.866309 -0.865741 0.500492 381.156 381.838)" fill="url(#paint3_radial_1376_6235)" />
                 </g>
-                <image href="/images/phone-home.png" className='w-[20%]' x="40.5%" y="43%" cx="511.828" cy="696.377" transform="translate(0,0)" />
+                <image href="/images/phone-home1.png" className='w-[20%]' x="40.5%" y="43%" cx="511.828" cy="696.377" transform="translate(0,0)" />
 
                 <defs>
                     <radialGradient id="paint0_radial_1376_6235" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(355.965 286.536) rotate(68.4461) scale(369.576 369.223)">

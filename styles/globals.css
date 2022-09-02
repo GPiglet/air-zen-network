@@ -259,13 +259,13 @@ section {
 /* Custom Input style */
 .custom-input {
   position: relative;
-  border: 1px solid #DADADA;
+  border: 1px solid #00000017;
   background-color: transparent;
   padding: 0.5em 0.75em;
   border-radius: 6px;
   background-clip: padding-box;
-  /* just to show box-shadow still works fine */
   box-shadow: 0 0 0 rgba(255, 255, 255, 0.24), inset 0 0 2px rgba(255, 255, 255, 1);
+
 }
 .custom-input:after{
   position: absolute;

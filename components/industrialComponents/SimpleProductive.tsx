@@ -37,7 +37,7 @@ const SimpleProductive: FC = () => {
                     <path opacity="0.6" d="M0.499695 410.597C0.499695 184.659 183.969 1.49915 410.291 1.49915C636.613 1.49915 820.082 184.659 820.082 410.597C820.082 636.535 636.613 819.695 410.291 819.695C183.969 819.695 0.499695 636.535 0.499695 410.597Z" stroke="url(#paint1_radial_0_1)" />
                     <circle opacity="0.7" cx="410.096" cy="410.504" r="220.436" transform="rotate(60 410.096 410.504)" fill="url(#paint2_radial_0_1)" />
                 </g>
-                <image href="/images/phone-home.png" x="12%" y="11%" className="w-[17%]" />
+                <image href="/images/phone-home1.png" x="12%" y="11%" className="w-[17%]" />
                 <path opacity="0.8" d="M733.385 433.689C806.258 410.368 846.785 333.38 823.905 261.731C801.025 190.083 723.402 150.906 650.53 174.227C577.657 197.548 537.13 274.536 560.01 346.185C582.89 417.833 660.512 457.01 733.385 433.689Z" fill="url(#paint3_radial_0_1)" />
                 <foreignObject className="font-lato-light w-[260px] text-lg text-white hidden md:block" x="16%" y="53%" width="260px" height="100px">
                     <p
