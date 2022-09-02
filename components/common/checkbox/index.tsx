@@ -3,14 +3,13 @@ import React, { FC } from 'react'
 
 type checkboxProps = {
     checked: boolean,
-    state: string,
     onChange: () => void
 }
 
-const CustomCheckbox: FC<checkboxProps> = ({ checked, state, onChange }) => {
+const CustomCheckbox: FC<checkboxProps> = ({ checked, onChange }) => {
 
     return (
-        <div className='cursor-pointer w-[30px]' onMouseDown={() => { onChange(); console.log(checked, state) }} >
+        <div className='cursor-pointer w-[30px]' onMouseDown={() => { onChange(); }} >
             {
                 checked ?
                     (
