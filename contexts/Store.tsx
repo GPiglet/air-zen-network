@@ -29,6 +29,7 @@ type StoreContextType = {
         payMethod?: string
 
     },
+    cookie?: boolean,
     businessOption?: {
         business?: string,
         location?: location[],
@@ -37,7 +38,8 @@ type StoreContextType = {
 
     },
     changeHomeOption?: (homeOption: object) => void,
-    changeBusinessOption?: (businessOption: object) => void
+    changeBusinessOption?: (businessOption: object) => void,
+    changeCookieAllow?: (cookie: boolean) => void
 };
 
 
@@ -46,7 +48,8 @@ const initialState = {
     homeOption: {},
     businessOption: {
         location: [{}]
-    }
+    },
+    cookie: false
 }
 
 export const StoreContext = createContext<StoreContextType>(initialState);
@@ -78,6 +81,13 @@ export const StoreProvider: FC<childrenType> = ({ children }) => {
                     homeOption: state.homeOption,
                     businessOption: { ...state.businessOption, ...action.payload }
                 }
+            case 'COOKIE_ALLOW':
+                return {
+                    step: state.step,
+                    homeOption: state.homeOption,
+                    businessOption: state.businessOption,
+                    cookie: action.payload
+                }
             default:
                 return state;
         }
@@ -87,6 +97,7 @@ export const StoreProvider: FC<childrenType> = ({ children }) => {
         step: state.step,
         homeOption: state.homeOption,
         businessOption: state.businessOption,
+        cookie: state.cookie,
         changeStep: (step: number) => dispatch({
             type: 'CHANGE_STEP',
             payload: step
@@ -98,6 +109,10 @@ export const StoreProvider: FC<childrenType> = ({ children }) => {
         changeBusinessOption: (businessOption: object) => dispatch({
             type: 'CHANGE_BUSINESS_OPTION',
             payload: businessOption
+        }),
+        changeCookieAllow: (cookie: boolean) => dispatch({
+            type: 'COOKIE_ALLOW',
+            payload: cookie
         })
     }
     return (

@@ -6,11 +6,11 @@ const Breadcrumb: FC = () => {
     const router = useRouter()
 
     return (
-        <div className='container relative z-20 m-auto ' onClick={() => router.push({
-            pathname: '/landing',
-            query: { section: 'solutions' }
-        })}>
-            <div className='flex items-center '>
+        <div className='container relative z-20 m-auto ' >
+            <div className='flex items-center w-fit' onClick={() => router.push({
+                pathname: '/landing',
+                query: { section: 'solutions' }
+            })}>
                 <picture>
                     <source srcSet="/images/left-arrow.svg" type="image/webp" />
                     <img src="/images/left-arrow.svg" className='w-[14px] h-[26px] mr-2 cursor-pointer' alt="" />
