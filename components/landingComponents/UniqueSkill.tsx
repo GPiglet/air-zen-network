@@ -351,7 +351,7 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                                             <div className='tracking-widest py-5 md:pt-[80px] md:pb-[100px] xl:pl-[42px] xl:pr-0 px-5 text-white w-full relative  md:h-[300px]'>
                                                 <picture className=''>
                                                     <source srcSet={graphList[index].graph} type="image/webp" />
-                                                    <img src={graphList[index].graph} className={`unique-graph w-[200px] md:w-auto absolute center-x-transform top-[-80px] opacity-50 z-10 ${index % 2 == 0 ? 'left-[80px]' : 'right-[-100px]'} md:left-1/2`} alt="" />
+                                                    <img src={graphList[index].graph} className={`unique-graph w-[200px] md:w-auto absolute center-x-transform top-[-80px] opacity-50 z-0 ${index % 2 == 0 ? 'left-[80px]' : 'right-[-100px]'} md:left-1/2`} alt="" />
                                                 </picture>
                                                 <p className='font-lato text-[22px] uppercase unique-skill-title pb-3'>{item.title}</p>
                                                 <p className='unique-skill-subtitle font-lato-light font-bold text-xl w-[60%] md:w-[180px] pb-3'>{item.subtitle}</p>
