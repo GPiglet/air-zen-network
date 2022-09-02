@@ -68,7 +68,7 @@ const StepFive: FC = () => {
                 breadcrumb={t('home.form.step5.breadcrumb')}
                 buttonString={t('home.form.step5.button')}
                 bgImg='/images/model.png'
-                bgClassName='bottom-[-40px] w-[40%] right-[-5px]'
+                bgClassName='bottom-[-40px] w-[35%] right-[-5px]'
                 width='sm:w-[80%]'
             >
                 <FadeIn transitionDuration={1000} delay={0}>

@@ -175,6 +175,8 @@ const Contact = React.forwardRef((props: any, ref: any) => {
                             </div>
                             <p className='font-lato font-light text-left text-base text-white tracking-[2px] my-4'>
                                 {t('landing.contact.description').split('\n')[1]}
+                                {dataCollection}
+
                             </p>
                         </div>
                         <svg ref={el => { animSlideUp.current.push(el); animFadeIn.current.push(el) }} className='absolute left-1/2 center-x-transform w-[100%] sm:w-[66%] md:w-[130%] bottom-[-140px] sm:bottom-[-190px] md:bottom-[-180px]' viewBox="0 0 412 412" fill="none" xmlns="http://www.w3.org/2000/svg">

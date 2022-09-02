@@ -1,6 +1,6 @@
 //modules
 import React, { FC } from "react"
-import ContactHome from "../common/form/ContactForm";
+import ContactForm from "../common/form/ContactForm";
 import { useTranslation } from "next-i18next";
 
 
@@ -61,7 +61,7 @@ const Contact: FC = () => {
                     </div>
                 </div>
             </div>
-            <ContactHome />
+            {/* <ContactForm /> */}
 
         </div>
 

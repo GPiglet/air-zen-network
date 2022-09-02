@@ -3,6 +3,7 @@ import React, { FC, useState } from 'react'
 import type { NextPage } from 'next'
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { GetStaticProps } from 'next'
+import { useTranslation } from 'next-i18next'
 
 //custom Components
 import Mainlayout from '../../layout/main'
@@ -12,7 +13,7 @@ import ReferenceProjects from '../../components/industrialComponents/ReferencePr
 import SimpleProductive from '../../components/industrialComponents/SimpleProductive'
 import FutureProof from '../../components/industrialComponents/FutureProof'
 import Contact from '../../components/industrialComponents/Contact'
-import { useTranslation } from 'next-i18next'
+import ContactForm from '../../components/common/form/ContactForm'
 
 
 
@@ -45,8 +46,9 @@ const Industrial: NextPage = () => {
 	]
 
 	return (
-		<div className='back-left-top-gradient-secondary overflow-hidden'>
+		<div className='relative back-left-top-gradient-secondary overflow-hidden'>
 			<Mainlayout navItems={navItems} >
+				<ContactForm />
 				<KeepEverything />
 				<IdeaSeries />
 				<ReferenceProjects />
