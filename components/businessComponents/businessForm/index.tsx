@@ -9,7 +9,7 @@ import Contact from './Contact'
 
 const BusinessForm: FC = () => {
 
-    const [formView, setFormView] = useState(true)
+    const [formView, setFormView] = useState(false)
     let step = useContext(StoreContext).step
     const businessOption = useContext(StoreContext).businessOption
     useEffect(() => {
@@ -22,8 +22,8 @@ const BusinessForm: FC = () => {
 
 
     return (
-        <div>
-            <div className='absolute right-[-40px] top-[10%] bg-white w-[100px] cursor-pointer  py-4 px-4 rounded-full z-100' onClick={() => setFormView(!formView)}>
+        <div className='realtive right-0 z-60'>
+            <div className='fixed right-[-40px] top-[10%] bg-white w-[100px] cursor-pointer  py-4 px-4 rounded-full z-100' onClick={() => setFormView(!formView)}>
                 <picture className='max-w-[40px]'>
                     <source srcSet="/images/chat-icon.svg" type="image/webp" />
                     <img src="/images/chat-icon.svg" alt="" />
@@ -32,7 +32,7 @@ const BusinessForm: FC = () => {
 
             </div>
             {
-                <div className={`w-full absolute  ${formView ? ' block right-[-20px]' : 'right-[-100%] md:right-[-550px]'} top-[25%] bg-white  md:w-[550px] rounded-3xl  font-lato form-animate tracking-[0.8em] z-40`}>
+                <div className={`w-full fixed  ${formView ? ' block right-[-20px]' : 'right-[-100%] md:right-[-550px]'} top-[25%] bg-white  md:w-[550px] rounded-3xl  font-lato form-animate tracking-[0.8em] z-40`}>
                     {step === 0 &&
                         <picture>
                             <source src='/images/chat-check.svg' />

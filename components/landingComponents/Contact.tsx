@@ -154,7 +154,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
                         />
                         <textarea
                             rows={3}
-                            className="custom-input text-left w-full mb-5"
+                            className="custom-input text-left w-full mb-5 z-30"
                             placeholder='Ihre Nachricht '
                             ref={el => { messageRef.current = el; animSlideUp.current.push(el); animFadeIn.current.push(el) }}
                         />

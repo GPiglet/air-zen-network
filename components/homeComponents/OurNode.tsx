@@ -58,7 +58,7 @@ const OurNode: FC = () => {
                     </div>
                 </div>
             </div>
-            <HomeForm />
+            {/* <HomeForm /> */}
         </div>
 
     );
