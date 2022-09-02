@@ -204,10 +204,139 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
         }
     }
 
+    const duration = 0.5;
+    const getHoverTimeline = (index: number, duration: number=0.5) => {
+        const width = window.innerWidth < 1440 ? 210 : 280;
+        return gsap.timeline({onReverseComplete: ()=> {gsap.set(animSkills.current[index], {clearProps: 'width,height'})}})
+            .fromTo(
+                animSkills.current[index],
+                {
+                    width,
+                    height: 342,                    
+                },
+                {
+                    width: 350,
+                    height: 450,
+                    duration
+                },
+                0
+            )
+            .fromTo(
+                animSkills.current[index].getElementsByClassName('unique-graph'),
+                {
+                    scale: 1,
+                    opacity: 0.5,
+                },
+                {
+                    scale: 1.2,
+                    opacity: 1,
+                    duration
+                },
+                0
+            )
+            .fromTo(
+                animSkills.current[index].getElementsByClassName('unique-skill-title'),
+                {
+                    y: 0,
+                    opacity: 1,
+                },
+                {
+                    y: -50,
+                    opacity: 0,
+                    duration
+                },
+                0
+            )
+            .fromTo(
+                animSkills.current[index].getElementsByClassName('unique-skill-subtitle'),
+                {
+                    y: 0,
+                },
+                {
+                    y: -50,
+                    duration
+                },
+                0
+            )
+            .fromTo(
+                [...animSkills.current[index].getElementsByClassName('unique-skill-description'),
+                 ...animSkills.current[index].getElementsByClassName('unique-skill-list')],
+                {
+                    y: -50,
+                    opacity: 0,
+                    display: 'hidden',
+                },
+                {
+                    y: -50,
+                    opacity: 1,
+                    display: 'block',
+                    duration
+                },
+                0
+            )
+            .fromTo(
+                animSkills.current[index].getElementsByClassName('unique-skill-sparkle'),
+                {
+                    opacity: 1
+                },
+                {
+                    opacity: 0,
+                    duration
+                },
+                0
+            )
+            .fromTo(
+                animSkills.current[index].getElementsByClassName('unique-skill-button'),
+                {
+                    y: 0,
+                    opacity: 0,
+                    display: 'hidden',
+                },
+                {
+                    y: 120,
+                    opacity: 1,
+                    display: 'flex',
+                    duration
+                },
+                0
+            )
+            .fromTo(
+                animSkills.current[index].getElementsByClassName('unique-skill-button')[0].children[1],
+                {
+                    x: 0,
+                },
+                {
+                    x: 60,
+                    duration
+                },
+                0
+            )
+            
+    }
+    const onMouseEnterSkill = (index: number) => {
+        if ( window.innerWidth < 920 ) return;
+        getHoverTimeline(index).play(0)
+    }
+
+    const onMouseLeaveSkill = (index: number) => {
+        if ( window.innerWidth < 920 ) return;
+        getHoverTimeline(index).reverse(0)
+    }
+
+    const onClickSkill = (index: number) => {
+        // 
+        if ( window.innerWidth < 920 ) {
+            const graphElement = animSkills.current[index].getElementsByClassName('unique-graph')[0];
+            const widthAttribute = window.getComputedStyle(graphElement, null).width;
+            if ( widthAttribute == '200px' ) return;
+        }
+        router.push(graphList[index].href)
+    }
+
 
     return (
         <>
-            <div id='solutions' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='z-10 md:container mx-auto relative justify-center items-center md:pt-20 pb-[200px] md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] md:top-1/2 md:translate-y-[-50%]'>
+            <div id='solutions' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='z-10 md:container mx-auto relative justify-center items-center md:pt-20 pb-[200px] md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] md:top-1/2 md:translate-y-[-470px]'>
                 <div className='mt-[200px] md:mt-[120px]'>
                     <div className=" text-center  text-white">
                         <h1 ref={el => animSideUp.current.push(el)} className="text-title-sm">{t('landing.solution.title')}</h1>
@@ -217,26 +346,26 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                         <div className='md:m-auto md:w-max  '>
                             {
                                 (skillList as unknown as any[]).map((item: any, index: any) => (
-                                    <div ref={el => animSkills.current.push(el)} className='right-[-20px] sm:right-[-70px] w-full md:w-[210px] xl:w-[280px] md:inline-block align-top md:right-auto relative px-5 py-5 flex-1 unique-skill-items unique-skill-animate z-40' key={index}>
+                                    <div ref={el => animSkills.current.push(el)} onClick={()=>onClickSkill(index)} onMouseEnter={()=>onMouseEnterSkill(index)} onMouseLeave={()=>onMouseLeaveSkill(index)} className='cursor-pointer right-[-20px] sm:right-[-70px] w-full md:w-[210px] xl:w-[280px] md:inline-block align-top md:right-auto relative px-5 py-5 flex-1 unique-skill-items unique-skill-animate z-40' key={index}>
                                         <div className=' border-[1px] bg-black  border-slate-600 rounded-md h-full'>
-                                            <div className='tracking-widest py-3 md:pt-[80px] md:pb-[100px] px-[20px] text-white w-full relative  md:h-[300px]'>
+                                            <div className='tracking-widest py-5 md:pt-[80px] md:pb-[100px] xl:pl-[42px] xl:pr-0 px-5 text-white w-full relative  md:h-[300px]'>
                                                 <picture className=''>
                                                     <source srcSet={graphList[index].graph} type="image/webp" />
                                                     <img src={graphList[index].graph} className={`unique-graph w-[200px] md:w-auto absolute center-x-transform top-[-80px] opacity-50 z-10 ${index % 2 == 0 ? 'left-[80px]' : 'right-[-100px]'} md:left-1/2`} alt="" />
                                                 </picture>
                                                 <p className='font-lato text-[22px] uppercase unique-skill-title pb-3'>{item.title}</p>
-                                                <p className='font-lato-light font-bold text-xl w-[60%] md:w-[90%] pb-3'>{item.subtitle}</p>
+                                                <p className='unique-skill-subtitle font-lato-light font-bold text-xl w-[60%] md:w-[180px] pb-3'>{item.subtitle}</p>
                                                 <p className='hidden font-lato font-light text-xl text-lg unique-skill-description pb-3 md:w-[280px]'>{item.description}</p>
                                                 <ul className='hidden list-disc pl-2 unique-skill-list md:w-[280px]'>
                                                     {item.list.split('\n').map((subitem: string, ind: number) => (
                                                         <li className='font-lato text-[16px] font-extralight leading-6' key={ind}>{subitem}</li>
                                                     ))}
                                                 </ul>
-                                                <button onClick={() => router.push(graphList[index].href)} className="cursor-pointer" >
-                                                    <div className='w-[89px] h-[89px] md:w-[65px] md:h-[65px] top-[5px] md:top-auto sparkle absolute right-[10px] sm:right-[80px] md:right-[10px] md:bottom-[22px]'>
-                                                    </div>
-                                                    <div className='hidden unique-skill-button absolute bottom-0' >
-                                                        <p className='text-base text-neutral-700 '>{t('landing.solution.solution')}</p>
+                                                <button onClick={() => router.push(graphList[index].href)} className="cursor-pointer">
+                                                    <div className='unique-skill-sparkle w-[89px] h-[89px] md:w-[65px] md:h-[65px] top-[5px] md:top-auto sparkle absolute right-[10px] sm:right-[80px] md:right-[10px] md:bottom-[22px]'></div>
+                                                    <div className='unique-skill-button absolute bottom-0 flex items-center hidden' >
+                                                        <p className='text-base'>{t('landing.solution.solution')}</p>
+                                                        <div className='sparkle-arrow pl-[28px]'></div>
                                                     </div>
 
                                                 </button>

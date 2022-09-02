@@ -120,17 +120,21 @@ section {
   pointer-events: none;
 }
 
+.unique-skill-items .sparkle-arrow {
+  content: url('/images/sparkle-arrow.svg');
+}
+
 .button-gradient {
   background: linear-gradient(338.69deg, rgba(21, 155, 222, 0.2) 16.02%, #159BDE 151.62%);
 }
 
 /* Uneque Skills section style */
 
-.unique-skill-items:hover .sparkle {
-  content: url('/images/sparkle-arrow.svg');
-  pointer-events: all;
-}
 @media  only screen and (max-width: 920px) {
+  .unique-skill-items:hover .sparkle {
+    content: url('/images/sparkle-arrow.svg');
+    pointer-events: all;
+  }
   section {
     height: 982px;
   }
