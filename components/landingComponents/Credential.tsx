@@ -77,6 +77,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
     }
 
     const clickCellCarousel = (index: number) => {
+        if ( carousel.getSelectedIndex() == index ) return;
         carousel.select(index)
     }
 
@@ -89,6 +90,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
         gsap.to(slide, { left, duration });
         if (refBackCircleCarousel.current && carousel.getSelectedIndex() == shownIndex + position) {
             gsap.to(refBackCircleCarousel.current, { left: parseInt(left) - 4 + '%', duration });
+            gsap.to(animCircle.current[2], {scale: shownIndex%2==0 ? 1 : 0.68});
         }
     }
 
@@ -136,6 +138,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
     const animSideUp = React.useRef<any>([]);
     const animFadeIn = React.useRef<any>([]);
     const animGradient = React.useRef<any>([]);
+    const animCircle = React.useRef<any>([]);
 
     const getShowTimeline = (duration: number = 3) => {
         return gsap.timeline({ paused: true, onReverseComplete: () => { gsap.set([containerRef.current], { display: 'none' }); } })
@@ -169,6 +172,18 @@ const Credential = React.forwardRef((props: any, ref: any) => {
                 { opacity: 1, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 60%)', duration: duration / 2 },
                 duration / 2
             )
+            .fromTo(
+                animCircle.current[0],
+                { scale: 1.2, transformOrigin: 'center center' },
+                { scale: 1, transformOrigin: 'center center', duration: duration / 2 },
+                duration / 2
+            )
+            .fromTo(
+                animCircle.current[2],
+                { scale: 0.4, transformOrigin: 'center center' },
+                { scale: carousel && carousel.getSelectedIndex()%2 != 0 ? 0.68 : 1, transformOrigin: 'center center', duration: duration / 2 },
+                duration / 2
+            )
 
     }
 
@@ -196,6 +211,18 @@ const Credential = React.forwardRef((props: any, ref: any) => {
                 animGradient.current,
                 { opacity: 1, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 60%)' },
                 { opacity: 0, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 80%)', duration },
+                0
+            )
+            .fromTo(
+                animCircle.current[0],
+                { scale: 1, transformOrigin: 'center center' },
+                { scale: 1.2, transformOrigin: 'center center', duration},
+                0
+            )
+            .fromTo(
+                animCircle.current[2],
+                { scale: carousel && carousel.getSelectedIndex()%2 != 0 ? 0.68 : 1, transformOrigin: 'center center' },
+                { scale: 0.4, transformOrigin: 'center center', duration },
                 0
             )
 
@@ -303,9 +330,9 @@ const Credential = React.forwardRef((props: any, ref: any) => {
 
                     <div ref={refBackCircleCarousel} className='hidden absolute w-[120%] md:w-[45%] top-0  md:top-1/2 md:translate-y-[-44%] right-[27%] md:left-[14%]' >
                         <svg viewBox="0 0 736 736" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle opacity="0.3" cx="368.2" cy="368.2" r="338.706" transform="rotate(-120 368.2 368.2)" fill="url(#paint0_radial_0_2)" />
-                            <circle opacity="0.8" cx="368.199" cy="368.2" r="367.206" transform="rotate(-120 368.199 368.2)" stroke="url(#paint1_linear_0_2)" />
-                            <circle opacity="0.4" cx="368.204" cy="367.623" r="311.914" transform="rotate(-120 368.204 367.623)" fill="url(#paint2_radial_0_2)" />
+                            <circle ref={el=>animCircle.current.push(el)} opacity="0.3" cx="368.2" cy="368.2" r="338.706" transform="rotate(-120 368.2 368.2)" fill="url(#paint0_radial_0_2)" />
+                            <circle ref={el=>animCircle.current.push(el)} opacity="0.8" cx="368.199" cy="368.2" r="367.206" transform="rotate(-120 368.199 368.2)" stroke="url(#paint1_linear_0_2)" />
+                            <circle ref={el=>animCircle.current.push(el)} opacity="0.4" cx="368.204" cy="367.623" r="311.914" transform="rotate(-120 368.204 367.623)" fill="url(#paint2_radial_0_2)" />
                             <defs>
                                 <radialGradient id="paint0_radial_0_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(320.569 188.262) rotate(68.4205) scale(697.882)">
                                     <stop stopColor="#7BB690" />
