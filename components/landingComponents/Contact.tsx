@@ -107,7 +107,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
         // window.scrollTo({top: 10})
         gsap.set([containerRef.current, footerRef.current], { display: 'block' });
         if (direction == 'DOWN' && shown) {
-            gsap.set(document.getElementsByClassName('back-left-top-gradient-primary'), { clearProps: "background" });
+            gsap.set(document.getElementsByClassName('back-left-top-gradient-primary'), { background: 'linear-gradient(180.42deg, rgba(1, 172, 230, 0.4) 0%, rgba(1, 172, 230, 0) 20%), #000000' });
             getShowTimeline().play(0);
         }
         // else if ( direction == 'DOWN' && !shown ) getHideTimeline().play(0);
