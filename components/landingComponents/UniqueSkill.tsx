@@ -105,7 +105,7 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
     }
 
     const getHideTimeline = (duration: number = 1.5) => {
-        return gsap.timeline({ paused: true, onComplete: () => { gsap.set([containerRef.current, circleRef.current], { display: 'none' }); } })
+        return gsap.timeline({ paused: true, onComplete: () => { if ( containerRef.current ) gsap.set([containerRef.current, circleRef.current], { display: 'none' }); } })
             .fromTo(
                 animSideUp.current[0],
                 { opacity: 1 },
@@ -138,11 +138,12 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
             );
     }
 
-
-    const startAnim = (direction: string, shown: boolean) => {        
+    const prevAnimation = React.useRef<any>(null);
+    const startAnim = (direction: string, shown: boolean) => {    
+        if ( prevAnimation.current ) prevAnimation.current.kill();    
         gsap.set([containerRef.current, circleRef.current], {display: 'block'});
         if ( direction == 'DOWN' && shown ) {
-            getShowTimeline().fromTo(
+            prevAnimation.current = getShowTimeline().fromTo(
                 animSkills.current,
                 {
                     y: (index) => {
@@ -155,7 +156,7 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
             ).play(0);
         }
         else if ( direction == 'DOWN' && !shown ) {
-            getHideTimeline().fromTo(
+            prevAnimation.current = getHideTimeline().fromTo(
                 animSkills.current,
                 {
                     y: 0,
@@ -172,7 +173,7 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
             ).play(0);
         }
         else if ( direction == 'UP' && shown ) {
-            getHideTimeline().fromTo(
+            prevAnimation.current = getHideTimeline().fromTo(
                 animSkills.current,
                 {
                     y: 0,
@@ -189,7 +190,7 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
             ).reverse(0);
         }
         else if (direction == 'UP' && !shown ) {
-            getShowTimeline().fromTo(
+            prevAnimation.current = getShowTimeline().fromTo(
                 animSkills.current,
                 {
                     y: (index) => {

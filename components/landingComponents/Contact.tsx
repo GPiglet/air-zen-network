@@ -53,7 +53,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
     const animFadeIn = React.useRef<any>([]);
 
     const getShowTimeline = (duration: number = 3) => {
-        return gsap.timeline({ paused: true, onUpdate: () => window.scrollTo({ top: 0 }), onReverseComplete: () => { gsap.set([containerRef.current, footerRef.current], { display: 'none' }) } })
+        return gsap.timeline({ paused: true, onUpdate: () => window.scrollTo({ top: 0 }), onReverseComplete: () => { if ( containerRef.current )gsap.set([containerRef.current, footerRef.current], { display: 'none' }) } })
             .fromTo(
                 animSlideUp.current[0],
                 { opacity: 0 },
@@ -102,18 +102,20 @@ const Contact = React.forwardRef((props: any, ref: any) => {
     const getHideTimeline = (duration: number = 1.5) => {
     }
 
+    const prevAnimation = React.useRef<any>(null);
     const startAnim = (direction: string, shown: boolean) => {
+        if ( prevAnimation.current ) prevAnimation.current.kill();
         // window.scrollTo({top: 10})
         gsap.set([containerRef.current, footerRef.current], { display: 'block' });
         if (direction == 'DOWN' && shown) {
             gsap.set(document.getElementsByClassName('back-left-top-gradient-primary'), { background: 'linear-gradient(180.42deg, rgba(1, 172, 230, 0.2) 0%, rgba(1, 172, 230, 0) 20%), #000000' });
-            getShowTimeline().play(0);
+            prevAnimation.current = getShowTimeline().play(0);
         }
         // else if ( direction == 'DOWN' && !shown ) getHideTimeline().play(0);
         // else if ( direction == 'UP' && shown ) getHideTimeline().reverse(0);
         else if (direction == 'UP' && !shown) {
             gsap.set(document.getElementsByClassName('back-left-top-gradient-primary'), { background: 'transparent' });
-            getShowTimeline().reverse(0);
+            prevAnimation.current = getShowTimeline().reverse(0);
         }
     }
 

@@ -14,7 +14,7 @@ const Hero = React.forwardRef((props: any, ref: any) => {
     const animGradient = React.useRef<any>([]);
 
     const getShowTimeline = (duration: number=1.5) => {
-        return gsap.timeline({onComplete: ()=>{gsap.set([containerRef.current, ...animGradient.current], {display: 'none'});}})
+        return gsap.timeline({onComplete: ()=>{if ( containerRef.current )gsap.set([containerRef.current, ...animGradient.current], {display: 'none'});}})
             .fromTo(
                 animSideUpRefs.current, 
                 {y: 0, opacity: (index, target, targets)=>target.getAttribute('opacity')||1}, 
@@ -49,11 +49,13 @@ const Hero = React.forwardRef((props: any, ref: any) => {
 
     const { t } = useTranslation()
 
+    const prevAnimation = React.useRef<any>(null);
     const startAnim = (direction: string, shown: boolean) => {
+        if ( prevAnimation.current ) prevAnimation.current.kill();
         gsap.set([containerRef.current, ...animGradient.current], {display: 'block'});
         gsap.set(animGradient.current, {background: 'linear-gradient(145deg, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 80%)'})
-        if ( direction == 'UP' && shown ) getShowTimeline().reverse(0);
-        else if (direction == 'DOWN' && !shown ) getShowTimeline().play();
+        if ( direction == 'UP' && shown ) prevAnimation.current = getShowTimeline().reverse(0);
+        else if (direction == 'DOWN' && !shown ) prevAnimation.current = getShowTimeline().play();
     }
     return (
         <>
