@@ -26,6 +26,7 @@ const HomeForm: FC = () => {
     }, [step, homeOption])
 
     const scrollAnchor = () => {
+        console.log('----')
         window.location.href = '#technology'
         setFormView(!formView)
     }

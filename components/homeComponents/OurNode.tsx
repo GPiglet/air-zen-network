@@ -43,7 +43,7 @@ const OurNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
     }
 
     return (
-        <div id="technology" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container mx-auto relative md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] md:top-[50%] md:translate-y-[-50%]">
+        <div id="technology" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="mx-auto relative md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] md:top-[50%] md:translate-y-[-50%] w-full">
 
             <div className="container mx-auto relative px-5 md:px-0 ">
                 <svg className="absolute  bottom-[45%] w-[174%]  md:top-[34%] md:translate-y-[-50%] md:w-[60%] xl:w-[70%]  sm:top-[-17%] sm:w-[120%] left-1/2 translate-x-[-50%]" viewBox="0 0 561 569" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -91,7 +91,7 @@ const OurNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
                     </div>
                 </div>
             </div>
-            <HomeForm />
+            {/* <HomeForm /> */}
         </div>
 
     );
