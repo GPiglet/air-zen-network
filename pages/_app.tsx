@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Air Zen</title>
         <link rel="shortcut icon" href="/brand.svg" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" />
+        {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" /> */}
       </Head>
       <StoreProvider>
         <Component {...pageProps} />
