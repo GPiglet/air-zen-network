@@ -103,10 +103,11 @@ body::-webkit-scrollbar {
 }
 
 
+
+
 /* lato-100italic - latin-ext_latin */
 @font-face {
   font-family: 'Lato-light';
-  font-style: italic;
   font-weight: 100;
   src: url('/fonts/lato-v23-latin-ext_latin-100italic.eot');
   /* IE9 Compat Modes */
@@ -122,8 +123,6 @@ body::-webkit-scrollbar {
     url('/fonts/lato-v23-latin-ext_latin-100italic.svg#Lato') format('svg');
   /* Legacy iOS */
 }
-
-
 
 .main-footer {
   position: -webkit-sticky;
