@@ -21,7 +21,7 @@ const Form: FC<FormProps> = ({ breadcrumb, final, bgImg, submit, buttonString, b
 
     const { changeStep } = useContext(StoreContext)
     let step = useContext(StoreContext).step
-    console.log(buttonActive)
+    // console.log(buttonActive)
 
     return (
         // <FadeIn delay={0} transitionDuration={1000}>

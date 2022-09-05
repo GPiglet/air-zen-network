@@ -48,7 +48,7 @@ const Home: NextPage = () => {
 	return (
 		<div className='relative back-left-top-gradient-primary overflow-hidden'>
 			<Mainlayout navItems={navItems}>
-				<ContactForm />
+				{/* <ContactForm /> */}
 				<ClassWiFi />
 				<Reliable />
 				<Secure />

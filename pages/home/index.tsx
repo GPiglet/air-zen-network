@@ -57,16 +57,16 @@ const Home: NextPage = () => {
 
 	const currentSection = React.useRef<any>(null);
 	const gotoScene = (index: number) => {
-		if ( window.innerWidth < 920 ) return;
+		if (window.innerWidth < 920) return;
 		let direction: string = 'DOWN';
-		if ( refSections.indexOf(currentSection.current) > index ) direction = 'UP';
+		if (refSections.indexOf(currentSection.current) > index) direction = 'UP';
 
-		refSections.forEach(section=>gsap.set(section.current.container, {zIndex: 10}));
-		if ( currentSection.current && currentSection.current.current?.startAnim ) currentSection.current.current?.startAnim(direction, false);
+		refSections.forEach(section => gsap.set(section.current.container, { zIndex: 10 }));
+		if (currentSection.current && currentSection.current.current?.startAnim) currentSection.current.current?.startAnim(direction, false);
 		currentSection.current = refSections[index];
-		if ( currentSection.current && currentSection.current.current?.startAnim ) {
+		if (currentSection.current && currentSection.current.current?.startAnim) {
 			currentSection.current.current?.startAnim(direction, true);
-			gsap.set(currentSection.current.current?.container, {zIndex: 11});
+			gsap.set(currentSection.current.current?.container, { zIndex: 11 });
 		}
 	}
 
@@ -74,23 +74,23 @@ const Home: NextPage = () => {
 	let isLockScroll = false;
 	const onKeyDown = (e: KeyboardEvent) => {
 		console.log('index key down')
-		if ( window.innerWidth < 920 || isLockScroll ) return;
+		if (window.innerWidth < 920 || isLockScroll) return;
 		isLockScroll = true;
 		setTimeout(() => {
 			isLockScroll = false;
 		}, 1500);
 		let index = 0;
-		switch( e.key ) {
+		switch (e.key) {
 			case 'ArrowDown':
 			case 'PageDown':
 				index = refSections.indexOf(currentSection.current) + 1;
-				if ( index >= refSections.length ) return;
+				if (index >= refSections.length) return;
 				break;
 
 			case 'ArrowUp':
 			case 'PageUp':
 				index = refSections.indexOf(currentSection.current) - 1;
-				if ( index < 0 ) return;
+				if (index < 0) return;
 				break;
 			default:
 				return;
@@ -101,20 +101,20 @@ const Home: NextPage = () => {
 	}
 
 	const onMouseWheel = (e: WheelEvent) => {
-		if ( window.innerWidth < 920 || isLockScroll ) return;
+		if (window.innerWidth < 920 || isLockScroll) return;
 		isLockScroll = true;
 		setTimeout(() => {
 			isLockScroll = false;
 		}, 1500);
 
 		let index = 0;
-		if ( e.deltaY > 0 ) { 
+		if (e.deltaY > 0) {
 			index = refSections.indexOf(currentSection.current) + 1;
-			if ( index >= refSections.length ) return;
+			if (index >= refSections.length) return;
 		}
 		else {
 			index = refSections.indexOf(currentSection.current) - 1;
-			if ( index < 0 ) return;
+			if (index < 0) return;
 		}
 
 		gotoScene(index);
@@ -123,24 +123,24 @@ const Home: NextPage = () => {
 
 	React.useEffect(() => {
 		gotoScene(0);
-		window.addEventListener('keydown', onKeyDown, {passive: true});
+		window.addEventListener('keydown', onKeyDown, { passive: true });
 		window.addEventListener('wheel', onMouseWheel);
-		return ()=>{
+		return () => {
 			window.removeEventListener('keydown', onKeyDown);
 			window.removeEventListener('wheel', onMouseWheel);
-		}	
+		}
 	}, [])
 
 	return (
 		<div className='back-left-top-gradient-primary overflow-x-hidden relative'>
 			<Mainlayout navItems={navItems} hasFooter={false}>
 				<HomeForm />
-				<SimplyNetwork ref={refSectionSimplyNetwork}/>
-				<SafeHome ref={refSectionSafeHome}/>
+				<SimplyNetwork ref={refSectionSimplyNetwork} />
+				<SafeHome ref={refSectionSafeHome} />
 				{/* <Reliable />
 				<Easy /> */}
-				<OurNode ref={refSectionOurNode}/>
-				<AnimateFooter ref={refSectionFooter}/>
+				<OurNode ref={refSectionOurNode} />
+				<AnimateFooter ref={refSectionFooter} />
 			</Mainlayout>
 		</div>
 	)

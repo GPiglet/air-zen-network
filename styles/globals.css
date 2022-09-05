@@ -2,9 +2,10 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: lato;
   /* overflow-y: scroll; */
+  -webkit-font-smoothing: subpixel-antialiased;
+  scroll-behavior: smooth;
 }
 
 html {
@@ -103,6 +104,8 @@ body::-webkit-scrollbar {
 }
 
 
+
+
 /* lato-100italic - latin-ext_latin */
 @font-face {
   font-family: 'Lato-light';
@@ -120,6 +123,7 @@ body::-webkit-scrollbar {
     /* Safari, Android, iOS */
     url('/fonts/lato-v23-latin-ext_latin-100italic.svg#Lato') format('svg');
   /* Legacy iOS */
+  unicode-range: U+20-5F, U+61-7A, U+7C, U+A0, U+A7, U+A9, U+C1, U+C4, U+C9, U+CB, U+CD, U+CF, U+D3, U+D6, U+DA, U+DC, U+E1, U+E4, U+E9, U+EB, U+ED, U+EF, U+F3, U+F6, U+FA, U+FC, U+133, U+301, U+2010-2011, U+2013-2014, U+2018-2019, U+201C-201D, U+2020-2021, U+2026, U+2030, U+2032-2033, U+20AC;
 }
 
 .main-footer {

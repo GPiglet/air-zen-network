@@ -6,27 +6,27 @@ import gsap from 'gsap';
 import HomeForm from './homeForm/index'
 
 
-const OurNode: FC<{props?: any, ref: any}> = React.forwardRef((props: any, ref: any) => {
+const OurNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref: any) => {
     //translation
     const { t } = useTranslation()
 
     // animation
-    const getShowTimeline = (duration: number=1.5) => {
-        return gsap.timeline({onReverseComplete: ()=>{gsap.set([containerRef.current], {display: 'none'});}})
+    const getShowTimeline = (duration: number = 1.5) => {
+        return gsap.timeline({ onReverseComplete: () => { gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
-                {y: '+=100', opacity: 0},
-                {y: '-50%', opacity: 1, duration},
+                { y: '+=100', opacity: 0 },
+                { y: '-50%', opacity: 1, duration },
                 0
             )
     }
 
-    const getHideTimeline = (duration: number=1.5) => {
-        return gsap.timeline({onComplete: ()=>{gsap.set([containerRef.current], {display: 'none'});}})
+    const getHideTimeline = (duration: number = 1.5) => {
+        return gsap.timeline({ onComplete: () => { gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
-                {y: '-50%', opacity: 1},
-                {y: '-=100', opacity: 0, duration},
+                { y: '-50%', opacity: 1 },
+                { y: '-=100', opacity: 0, duration },
                 0
             )
     }
@@ -34,16 +34,16 @@ const OurNode: FC<{props?: any, ref: any}> = React.forwardRef((props: any, ref: 
     const containerRef = React.useRef<any>();
     const prevAnimation = React.useRef<any>(null);
     const startAnim = (direction: string, shown: boolean) => {
-        if ( prevAnimation.current ) prevAnimation.current.kill();
-        gsap.set([containerRef.current], {display: 'block'});
-        if ( direction == 'DOWN' && shown ) prevAnimation.current = getShowTimeline().play(0);
-        else if ( direction == 'DOWN' && !shown ) prevAnimation.current = getHideTimeline().play(0);
-        else if ( direction == 'UP' && shown ) prevAnimation.current = getHideTimeline().reverse(0);
-        else if (direction == 'UP' && !shown ) prevAnimation.current = getShowTimeline().reverse(0);
+        if (prevAnimation.current) prevAnimation.current.kill();
+        gsap.set([containerRef.current], { display: 'block' });
+        if (direction == 'DOWN' && shown) prevAnimation.current = getShowTimeline().play(0);
+        else if (direction == 'DOWN' && !shown) prevAnimation.current = getHideTimeline().play(0);
+        else if (direction == 'UP' && shown) prevAnimation.current = getHideTimeline().reverse(0);
+        else if (direction == 'UP' && !shown) prevAnimation.current = getShowTimeline().reverse(0);
     }
 
     return (
-        <div id="technology" ref={(el)=>{containerRef.current=el; if (ref) ref.current = {container: el, startAnim}}} className="container mx-auto relative md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] md:top-[50%] md:translate-y-[-50%]">
+        <div id="technology" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container mx-auto relative md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] md:top-[50%] md:translate-y-[-50%]">
 
             <div className="container mx-auto relative px-5 md:px-0 ">
                 <svg className="absolute  bottom-[45%] w-[174%]  md:top-[34%] md:translate-y-[-50%] md:w-[60%] xl:w-[70%]  sm:top-[-17%] sm:w-[120%] left-1/2 translate-x-[-50%]" viewBox="0 0 561 569" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -91,7 +91,7 @@ const OurNode: FC<{props?: any, ref: any}> = React.forwardRef((props: any, ref: 
                     </div>
                 </div>
             </div>
-            {/* <HomeForm /> */}
+            <HomeForm />
         </div>
 
     );

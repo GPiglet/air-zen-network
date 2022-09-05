@@ -62,7 +62,7 @@ const Contact: FC = () => {
                     </div>
                 </div>
             </div>
-            {/* <ContactForm /> */}
+            <ContactForm />
         </div>
 
     );
