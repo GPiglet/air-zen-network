@@ -29,7 +29,7 @@ module.exports = {
     fontFamily: {
       roboto: ["Roboto", "sans-serif"],
       lato: ["Lato", "sans-serif"],
-      "lato-light": ["Lato-light"],
+      "lato-light": ["Lato-light", "sans-serif"],
     },
   },
   plugins: [
