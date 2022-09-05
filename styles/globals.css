@@ -98,6 +98,10 @@ body::-webkit-scrollbar {
   color: white;
 }
 
+.font-lato-light {
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
 
 
 
