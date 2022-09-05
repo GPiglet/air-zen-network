@@ -28,6 +28,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
 
     const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop, behavior: 'smooth' })
     useEffect(() => {
+        console.log('##')
         if (router.query.section === 'cantact')
             scrollToRef(containerRef)
     }, [])
@@ -53,7 +54,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
     const animFadeIn = React.useRef<any>([]);
 
     const getShowTimeline = (duration: number = 3) => {
-        return gsap.timeline({ paused: true, onUpdate: () => window.scrollTo({ top: 0 }), onReverseComplete: () => { if ( containerRef.current )gsap.set([containerRef.current, footerRef.current], { display: 'none' }) } })
+        return gsap.timeline({ paused: true, onUpdate: () => window.scrollTo({ top: 0 }), onReverseComplete: () => { if (containerRef.current) gsap.set([containerRef.current, footerRef.current], { display: 'none' }) } })
             .fromTo(
                 animSlideUp.current[0],
                 { opacity: 0 },
@@ -104,7 +105,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
 
     const prevAnimation = React.useRef<any>(null);
     const startAnim = (direction: string, shown: boolean) => {
-        if ( prevAnimation.current ) prevAnimation.current.kill();
+        if (prevAnimation.current) prevAnimation.current.kill();
         // window.scrollTo({top: 10})
         gsap.set([containerRef.current, footerRef.current], { display: 'block' });
         if (direction == 'DOWN' && shown) {

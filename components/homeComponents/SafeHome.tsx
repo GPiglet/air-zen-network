@@ -1,30 +1,32 @@
 //modules
-import React, { FC } from "react"
+import React, { FC, useEffect } from "react"
 import { useTranslation } from "next-i18next";
 import gsap from 'gsap';
+import { useRouter } from "next/router";
 
-const SafeHome: FC<{props?: any, ref: any}> = React.forwardRef((props: any, ref: any) => {
+const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref: any) => {
     //translate
     const { t } = useTranslation()
+    const router = useRouter()
     const easyList = t('home.easy.list', { returnObjects: true })
 
     // animation
-    const getShowTimeline = (duration: number=1.5) => {
-        return gsap.timeline({onReverseComplete: ()=>{gsap.set([containerRef.current], {display: 'none'});}})
+    const getShowTimeline = (duration: number = 1.5) => {
+        return gsap.timeline({ onReverseComplete: () => { gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
-                {y: 100, opacity: 0},
-                {y: 0, opacity: 1, duration},
+                { y: 100, opacity: 0 },
+                { y: 0, opacity: 1, duration },
                 0
             )
     }
 
-    const getHideTimeline = (duration: number=1.5) => {
-        return gsap.timeline({onComplete: ()=>{gsap.set([containerRef.current], {display: 'none'});}})
+    const getHideTimeline = (duration: number = 1.5) => {
+        return gsap.timeline({ onComplete: () => { gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
-                {y: 0, opacity: 1},
-                {y: -100, opacity: 0, duration},
+                { y: 0, opacity: 1 },
+                { y: -100, opacity: 0, duration },
                 0
             )
     }
@@ -32,33 +34,34 @@ const SafeHome: FC<{props?: any, ref: any}> = React.forwardRef((props: any, ref:
     const containerRef = React.useRef<any>();
     const prevAnimation = React.useRef<any>(null);
     const startAnim = (direction: string, shown: boolean) => {
-        if ( prevAnimation.current ) prevAnimation.current.kill();
-        gsap.set([containerRef.current], {display: 'block'});
-        if ( direction == 'DOWN' && shown ) prevAnimation.current = getShowTimeline().play(0);
-        else if ( direction == 'DOWN' && !shown ) prevAnimation.current = getHideTimeline().play(0);
-        else if ( direction == 'UP' && shown ) prevAnimation.current = getHideTimeline().reverse(0);
-        else if (direction == 'UP' && !shown ) prevAnimation.current = getShowTimeline().reverse(0);
+        if (prevAnimation.current) prevAnimation.current.kill();
+        gsap.set([containerRef.current], { display: 'block' });
+        if (direction == 'DOWN' && shown) prevAnimation.current = getShowTimeline().play(0);
+        else if (direction == 'DOWN' && !shown) prevAnimation.current = getHideTimeline().play(0);
+        else if (direction == 'UP' && shown) prevAnimation.current = getHideTimeline().reverse(0);
+        else if (direction == 'UP' && !shown) prevAnimation.current = getShowTimeline().reverse(0);
     }
 
     let isLockScroll = false;
-	const onKeyDown = (e: KeyboardEvent) => {
-		if ( window.innerWidth < 920 || isLockScroll ) return;
+
+    const onKeyDown = (e: KeyboardEvent) => {
+        if (window.innerWidth < 920 || isLockScroll) return;
         console.log('sage home keydown');
         e.preventDefault();
         return false;
-	}
+    }
 
     React.useEffect(() => {
-		window.addEventListener('keydown', onKeyDown);
-		// window.addEventListener('wheel', onMouseWheel);
-		return ()=>{
-			window.removeEventListener('keydown', onKeyDown);
-			// window.removeEventListener('wheel', onMouseWheel);
-		}	
-	}, [])
+        window.addEventListener('keydown', onKeyDown);
+        // window.addEventListener('wheel', onMouseWheel);
+        return () => {
+            window.removeEventListener('keydown', onKeyDown);
+            // window.removeEventListener('wheel', onMouseWheel);
+        }
+    }, [])
 
     return (
-        <div id="secure" ref={(el)=>{containerRef.current=el; if (ref) ref.current = {container: el, startAnim}}} className="container mx-auto relative md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
+        <div id="secure" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container mx-auto relative md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
             <svg className="hidden md:block absolute left-[-27%] bottom-[-28%] w-[140%] sm:top-[37%]  md:top-1/2 md:translate-y-[-50%] sm:w-[120%] md:w-[100%] xl:w-[80%]   sm:left-[-10%]  md:left-[-45%] xl:left-[-32%]" viewBox="0 0 804 796" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.4" d="M497.478 697.95C666.249 643.997 760.109 465.887 707.12 300.13C654.13 134.373 474.358 43.7373 305.587 97.69C136.816 151.643 42.9562 329.753 95.9454 495.51C148.935 661.267 328.707 751.903 497.478 697.95Z" fill="url(#paint0_radial_1376_4769)" />
                 <path opacity="0.5" d="M474.04 622.595C600.747 582.09 671.214 448.371 631.432 323.926C591.649 199.481 456.682 131.435 329.975 171.941C203.267 212.447 132.801 346.166 172.583 470.61C212.366 595.055 347.332 663.101 474.04 622.595Z" fill="url(#paint1_radial_1376_4769)" />
@@ -139,7 +142,7 @@ const SafeHome: FC<{props?: any, ref: any}> = React.forwardRef((props: any, ref:
                 </div>
             </div>
 
-            <div className="hidden relative md:fixed md:hidden items-center px-10 md:px-0 h-full">
+            <div className="relative md:fixed md:hidden items-center px-10 md:px-0 h-full">
                 <div className="flex flex-wrap mt-[400px] md:mt-12">
                     <div className="w-full md:w-1/2 m-auto">
                         <div className="relative">

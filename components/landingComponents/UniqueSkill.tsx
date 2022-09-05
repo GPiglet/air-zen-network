@@ -15,7 +15,8 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
     const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop, behavior: 'smooth' })
     useEffect(() => {
         if (router.query.section === 'solutions')
-            scrollToRef(containerRef)
+            // scrollToRef(containerRef)
+            window.location.href = '#solutions'
         if (window.innerWidth > 920)
             setIsMobile(false)
         else
@@ -74,10 +75,10 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
             )
             .fromTo(
                 animFadeIn.current,
-                {opacity: 0},
-                {opacity: 1, duration: duration/2},
-                duration/2
-            )            
+                { opacity: 0 },
+                { opacity: 1, duration: duration / 2 },
+                duration / 2
+            )
             // .fromTo(
             //     animGradient.current[0],
             //     {opacity: 0, background: 'linear-gradient(145deg, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 0%)'},
@@ -105,7 +106,7 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
     }
 
     const getHideTimeline = (duration: number = 1.5) => {
-        return gsap.timeline({ paused: true, onComplete: () => { if ( containerRef.current ) gsap.set([containerRef.current, circleRef.current], { display: 'none' }); } })
+        return gsap.timeline({ paused: true, onComplete: () => { if (containerRef.current) gsap.set([containerRef.current, circleRef.current], { display: 'none' }); } })
             .fromTo(
                 animSideUp.current[0],
                 { opacity: 1 },
@@ -139,23 +140,23 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
     }
 
     const prevAnimation = React.useRef<any>(null);
-    const startAnim = (direction: string, shown: boolean) => {    
-        if ( prevAnimation.current ) prevAnimation.current.kill();    
-        gsap.set([containerRef.current, circleRef.current], {display: 'block'});
-        if ( direction == 'DOWN' && shown ) {
+    const startAnim = (direction: string, shown: boolean) => {
+        if (prevAnimation.current) prevAnimation.current.kill();
+        gsap.set([containerRef.current, circleRef.current], { display: 'block' });
+        if (direction == 'DOWN' && shown) {
             prevAnimation.current = getShowTimeline().fromTo(
                 animSkills.current,
                 {
                     y: (index) => {
-                        return 100+index*100
+                        return 100 + index * 100
                     },
                     opacity: 0,
                 },
-                {y: 0, opacity: 1, duration: 1.5},
+                { y: 0, opacity: 1, duration: 1.5 },
                 1.5
             ).play(0);
         }
-        else if ( direction == 'DOWN' && !shown ) {
+        else if (direction == 'DOWN' && !shown) {
             prevAnimation.current = getHideTimeline().fromTo(
                 animSkills.current,
                 {
@@ -164,15 +165,15 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                 },
                 {
                     y: (index) => {
-                        return -600+index*100
+                        return -600 + index * 100
                     },
                     opacity: 0,
-                    duration:2,
+                    duration: 2,
                 },
                 0
             ).play(0);
         }
-        else if ( direction == 'UP' && shown ) {
+        else if (direction == 'UP' && shown) {
             prevAnimation.current = getHideTimeline().fromTo(
                 animSkills.current,
                 {
@@ -181,7 +182,7 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                 },
                 {
                     y: (index) => {
-                        return -100-index*100
+                        return -100 - index * 100
                     },
                     opacity: 0,
                     duration: 2,
@@ -189,31 +190,31 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                 0
             ).reverse(0);
         }
-        else if (direction == 'UP' && !shown ) {
+        else if (direction == 'UP' && !shown) {
             prevAnimation.current = getShowTimeline().fromTo(
                 animSkills.current,
                 {
                     y: (index) => {
-                        return 600-index*100
+                        return 600 - index * 100
                     },
                     opacity: 0,
-                    
+
                 },
-                {y: 0, opacity: 1,duration: 1.5},
+                { y: 0, opacity: 1, duration: 1.5 },
                 1.5
             ).reverse(0);
         }
     }
 
     const duration = 0.5;
-    const getHoverTimeline = (index: number, duration: number=0.5) => {
+    const getHoverTimeline = (index: number, duration: number = 0.5) => {
         const width = window.innerWidth < 1440 ? 210 : 280;
-        return gsap.timeline({onReverseComplete: ()=> {gsap.set(animSkills.current[index], {clearProps: 'width,height'})}})
+        return gsap.timeline({ onReverseComplete: () => { gsap.set(animSkills.current[index], { clearProps: 'width,height' }) } })
             .fromTo(
                 animSkills.current[index],
                 {
                     width,
-                    height: 342,                    
+                    height: 342,
                 },
                 {
                     width: 350,
@@ -261,7 +262,7 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
             )
             .fromTo(
                 [...animSkills.current[index].getElementsByClassName('unique-skill-description'),
-                 ...animSkills.current[index].getElementsByClassName('unique-skill-list')],
+                ...animSkills.current[index].getElementsByClassName('unique-skill-list')],
                 {
                     y: -50,
                     opacity: 0,
@@ -312,24 +313,24 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                 },
                 0
             )
-            
+
     }
     const onMouseEnterSkill = (index: number) => {
-        if ( window.innerWidth < 920 ) return;
+        if (window.innerWidth < 920) return;
         getHoverTimeline(index).play(0)
     }
 
     const onMouseLeaveSkill = (index: number) => {
-        if ( window.innerWidth < 920 ) return;
+        if (window.innerWidth < 920) return;
         getHoverTimeline(index).reverse(0)
     }
 
     const onClickSkill = (index: number) => {
         // 
-        if ( window.innerWidth < 920 ) {
+        if (window.innerWidth < 920) {
             const graphElement = animSkills.current[index].getElementsByClassName('unique-graph')[0];
             const widthAttribute = window.getComputedStyle(graphElement, null).width;
-            if ( widthAttribute == '200px' ) return;
+            if (widthAttribute == '200px') return;
         }
         router.push(graphList[index].href)
     }
@@ -347,7 +348,7 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                         <div className='md:m-auto md:w-max  '>
                             {
                                 (skillList as unknown as any[]).map((item: any, index: any) => (
-                                    <div ref={el => animSkills.current.push(el)} onClick={()=>onClickSkill(index)} onMouseEnter={()=>onMouseEnterSkill(index)} onMouseLeave={()=>onMouseLeaveSkill(index)} className='cursor-pointer right-[-20px] sm:right-[-70px] w-full md:w-[210px] xl:w-[280px] md:inline-block align-top md:right-auto relative px-5 py-5 flex-1 unique-skill-items unique-skill-animate z-40' key={index}>
+                                    <div ref={el => animSkills.current.push(el)} onClick={() => onClickSkill(index)} onMouseEnter={() => onMouseEnterSkill(index)} onMouseLeave={() => onMouseLeaveSkill(index)} className='cursor-pointer right-[-20px] sm:right-[-70px] w-full md:w-[210px] xl:w-[280px] md:inline-block align-top md:right-auto relative px-5 py-5 flex-1 unique-skill-items unique-skill-animate z-40' key={index}>
                                         <div className=' border-[1px] bg-black  border-slate-600 rounded-md h-full'>
                                             <div className='tracking-widest py-5 md:pt-[80px] md:pb-[100px] xl:pl-[42px] xl:pr-0 px-5 text-white w-full relative  md:h-[300px]'>
                                                 <picture className=''>

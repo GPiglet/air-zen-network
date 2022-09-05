@@ -60,6 +60,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
       pathname: '/landing',
       query: { section: item.href }
     })
+
     setNavbarOpen(false)
   }
 
@@ -112,7 +113,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
                 <li ref={el => animNavButtons.current.push(el)} className={"mx-3 md:m-0 flex items-center cursor-pointer"} key={index} >
                   {
                     main ? (
-                      <Link activeClass="active_scroll" className={section == item.href ? 'active' : ''} smooth spy to={item.href} onClick={() => { routing(item) }}>
+                      <Link activeClass="active_scroll" className={section == item.href ? 'active' : ''} smooth spy to={item.href} onClick={() => routing(item)}>
                         <p className="hover:text-gray-100 text-gray-400  py-4 md:py-2 flex items-center text-lg uppercase font-lato">{item.title}</p>
                       </Link>
                     ) : (
