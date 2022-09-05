@@ -1,4 +1,5 @@
 import React, { FC, useState, useContext, useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 import StepOne from './StepOne'
 import StepTwo from './StepTwo'
@@ -11,6 +12,8 @@ import Final from '../../common/form/final'
 import { StoreContext } from '../../../contexts/Store'
 
 const HomeForm: FC = () => {
+    const router = useRouter()
+
 
     const [formView, setFormView] = useState(false)
     let step = useContext(StoreContext).step
@@ -22,11 +25,16 @@ const HomeForm: FC = () => {
         }
     }, [step, homeOption])
 
+    const scrollAnchor = () => {
+        window.location.href = '#technology'
+        setFormView(!formView)
+    }
+
 
 
     return (
-        <div className='realtive right-0 z-60'>
-            <div className='fixed right-[-40px] top-[10%] bg-white w-[100px] cursor-pointer  py-4 px-4 rounded-full z-100' onClick={() => setFormView(!formView)}>
+        <div className='realtive right-0 z-60' >
+            <div className='fixed right-[-40px] top-[10%] bg-white w-[100px] cursor-pointer  py-4 px-4 rounded-full z-100' onClick={() => scrollAnchor()}>
                 <picture className='max-w-[40px]'>
                     <source srcSet="/images/chat-icon.svg" type="image/webp" />
                     <img src="/images/chat-icon.svg" alt="" />
@@ -35,7 +43,7 @@ const HomeForm: FC = () => {
 
             </div>
             {
-                <div className={`w-full fixed overflow-y-scroll max-h-[75%]  ${formView ? ' block right-[-20px]' : 'right-[-100%] xl:right-[-800px] md:right-[-600px]'} top-[25%] bg-white  md:w-[600px] xl:w-[800px] rounded-xl  font-lato form-animate tracking-[0.8em] z-40`}>
+                <div className={`w-full absolute overflow-y-scroll max-h-[75%]  ${formView ? ' block right-[-20px]' : 'right-[-100%] xl:right-[-800px] md:right-[-600px]'} top-[25%] bg-white  md:w-[600px] xl:w-[800px] rounded-xl  font-lato form-animate tracking-[0.8em] z-40`}>
                     {step === 0 &&
                         <picture>
                             <source src='/images/chat-check.svg' />

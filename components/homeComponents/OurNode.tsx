@@ -9,8 +9,9 @@ const OurNode: FC = () => {
     //translation
     const { t } = useTranslation()
 
+
     return (
-        <div id="technology" className="md:mb-[100px] relative  ">
+        <div id="technology" className="md:mb-[100px] relative">
 
             <div className="container mx-auto relative px-5 md:px-0 ">
                 <svg className="absolute  bottom-[45%] w-[174%]  md:top-[34%] md:translate-y-[-50%] md:w-[60%] xl:w-[70%]  sm:top-[-17%] sm:w-[120%] left-1/2 translate-x-[-50%]" viewBox="0 0 561 569" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -58,7 +59,7 @@ const OurNode: FC = () => {
                     </div>
                 </div>
             </div>
-            {/* <HomeForm /> */}
+            <HomeForm />
         </div>
 
     );

@@ -51,7 +51,7 @@ const Business: NextPage = () => {
 	return (
 		<div className='relative back-left-top-gradient-secondary overflow-x-hidden' id='business_page'>
 			<Mainlayout navItems={navItems} >
-				<BusinessForm />
+				{/* <BusinessForm /> */}
 				<Boost />
 				<Professional />
 				<NewWork />

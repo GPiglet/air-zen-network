@@ -21,9 +21,10 @@ const BusinessForm: FC = () => {
 
 
 
+
     return (
         <div className='realtive right-0 z-60'>
-            <div className='fixed right-[-40px] top-[10%] bg-white w-[100px] cursor-pointer  py-4 px-4 rounded-full z-100' onClick={() => setFormView(!formView)}>
+            <div className='fixed right-[-40px] top-[10%] bg-white w-[100px] cursor-pointer  py-4 px-4 rounded-full z-100' onClick={() => { setFormView(!formView); window.location.href = '#technology' }}>
                 <picture className='max-w-[40px]'>
                     <source srcSet="/images/chat-icon.svg" type="image/webp" />
                     <img src="/images/chat-icon.svg" alt="" />

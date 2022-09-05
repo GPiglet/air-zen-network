@@ -49,7 +49,7 @@ const Home: NextPage = () => {
 	return (
 		<div className='back-left-top-gradient-primary overflow-x-hidden relative'>
 			<Mainlayout navItems={navItems}>
-				<HomeForm />
+				{/* <HomeForm /> */}
 				<SimplyNetwork />
 				<SafeHome />
 				{/* <Reliable />

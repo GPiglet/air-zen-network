@@ -5,6 +5,7 @@ body {
   font-family: lato;
   /* overflow-y: scroll; */
   -webkit-font-smoothing: subpixel-antialiased;
+  scroll-behavior: smooth;
 }
 
 html {

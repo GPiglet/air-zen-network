@@ -143,7 +143,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
     const animCircle = React.useRef<any>([]);
 
     const getShowTimeline = (duration: number = 3) => {
-        return gsap.timeline({ paused: true, onReverseComplete: () => { if ( containerRef.current )gsap.set([containerRef.current], { display: 'none' }); } })
+        return gsap.timeline({ paused: true, onReverseComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 animSideUp.current[0],
                 { opacity: 0 },
@@ -190,7 +190,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
     }
 
     const getHideTimeline = (duration: number = 1.5) => {
-        return gsap.timeline({ paused: true, onComplete: () => { if ( containerRef.current )gsap.set([containerRef.current], { display: 'none' }); } })
+        return gsap.timeline({ paused: true, onComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 animSideUp.current[0],
                 { opacity: 1 },
@@ -232,7 +232,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
 
     const prevAnimation = React.useRef<any>(null);
     const startAnim = (direction: string, shown: boolean) => {
-        if ( prevAnimation.current ) prevAnimation.current.kill();
+        if (prevAnimation.current) prevAnimation.current.kill();
         gsap.set([containerRef.current], { display: 'block' });
         if (direction == 'DOWN' && shown) prevAnimation.current = getShowTimeline().play(0);
         else if (direction == 'DOWN' && !shown) prevAnimation.current = getHideTimeline().play(0);
@@ -246,7 +246,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
 
     return (
         <section id='credentials' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='flex items-center md:items-start md:pt-[160px] md:fixed md:hidden md:w-full md:left-[50%] md:translate-x-[-50%]'>
-            <div className='w-full relative z-50 md:absolute top-1/2 translate-y-[-15%] md:translate-y-[-50%]' style={{ height: '-webkit-fill-available' }}>
+            <div className='w-full relative z-50 md:absolute top-1/2 translate-y-[-15%] md:translate-y-[-50%]'>
                 <div className=' pt-10 pb-[60px] flex justify-center'>
                     <h1 ref={el => animSideUp.current.push(el)} className="text-title-sm relative z-50">{t('landing.credential.title')}</h1>
                 </div>
