@@ -243,7 +243,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
 
     return (
         <section id='credentials' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='flex items-center md:items-start md:pt-[160px] md:fixed md:hidden md:w-full md:left-[50%] md:translate-x-[-50%]'>
-            <div className='w-full relative z-50 md:absolute md:top-1/2 md:translate-y-[-50%]' style={{ height: '-webkit-fill-available' }}>
+            <div className='w-full relative z-50 md:absolute top-1/2 translate-y-[-15%] md:translate-y-[-50%]' style={{ height: '-webkit-fill-available' }}>
                 <div className=' pt-10 pb-[60px] flex justify-center'>
                     <h1 ref={el => animSideUp.current.push(el)} className="text-title-sm relative z-50">{t('landing.credential.title')}</h1>
                 </div>
@@ -310,7 +310,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
                             ))
                         }
                     </AZCarousel>
-                    <svg ref={refBackCircle} className='hidden absolute w-[120%] md:w-[45%] top-0 top-[-40%] md:top-1/2 md:translate-y-[-50%] right-[27%] md:right-[27.5%]' viewBox="0 0 736 736" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg ref={refBackCircle} className='hidden z-[-1] absolute w-[120%] md:w-[45%] top-0 top-[-40%] md:top-1/2 md:translate-y-[-50%] right-[27%] md:right-[27.5%]' viewBox="0 0 736 736" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle opacity="0.3" cx="368.2" cy="368.2" r="338.706" transform="rotate(-120 368.2 368.2)" fill="url(#paint0_radial_0_1)" />
                         <circle opacity="0.8" cx="368.199" cy="368.2" r="367.206" transform="rotate(-120 368.199 368.2)" stroke="url(#paint1_linear_0_1)" />
                         <circle opacity="0.4" cx="368.204" cy="367.623" r="311.914" transform="rotate(-120 368.204 367.623)" fill="url(#paint2_radial_0_1)" />

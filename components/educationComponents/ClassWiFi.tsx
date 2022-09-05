@@ -43,9 +43,9 @@ const ClassWiFi: FC = () => {
         <div className="relative container mx-auto mb-[70%] md:mb-[10%] lg:mb-[15%] xl:mb-[25%] md:h-screen">
             <svg className="
             absolute trigger
-            right-[-30%] sm:right-[-35%] md:right-[-60%] lg:right-[-65%] xl:right-[-62%]
+            right-1/2 translate-x-[50%] md:translate-x-0 md:right-[-60%] lg:right-[-65%] xl:right-[-62%]
             top-[85%] xs:top-[75%] sm:top-[50%] md:top-1/2 md:translate-y-[-50%]
-            w-[180%] sm:w-[180%] md:w-[170%] lg:w-[170%] xl:w-[185%]"
+            w-[200%] sm:w-[180%] md:w-[170%] lg:w-[170%] xl:w-[185%]"
                 viewBox="-600 -350 2000 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path className="box" opacity="0.4" d="M747.782 581.528C819.969 558.451 860.114 482.27 837.45 411.372C814.785 340.474 737.893 301.708 665.706 324.784C593.519 347.861 553.373 424.042 576.038 494.94C598.702 565.838 675.595 604.605 747.782 581.528Z" fill="url(#paint0_linear_0_1)" />
                 <path opacity="0.6" d="M529.836 718.645C689.229 667.69 777.873 499.477 727.828 342.93C677.784 186.383 508 100.783 348.607 151.738C189.214 202.693 100.569 370.906 150.614 527.453C200.659 684 370.442 769.6 529.836 718.645Z" fill="url(#paint1_radial_0_1)" />

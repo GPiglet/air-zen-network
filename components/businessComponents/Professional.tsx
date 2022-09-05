@@ -88,12 +88,12 @@ const Professional: FC = () => {
                         {t('business.professional.title')}
                     </h1>
                     <p className="font-lato-light font-light text-lg tracking-widest">{t('business.professional.subtitle')}</p>
-                    <div className="md:flex justify-between text-lg text-left mt-10">
+                    <div className="md:flex justify-between text-lg text-left mt-10 tracking-[0.08em]">
                         <div className="w-[160px]"></div>
                         {
                             (list as unknown as any[]).map((item, index) => (
                                 <div key={index} className='md:px-5'>
-                                    <p className="font-lato font-medium mb-4">{item.title}</p>
+                                    <p className="font-lato font-medium mb-4 mt-5">{item.title}</p>
                                     <ul className='list-["-"] pl-2 unique-skill-list'>
                                         {item.items.split('\n').map((list: string, ind: number) => (
                                             <li className='font-lato text-base font-light' key={ind}>{list}</li>

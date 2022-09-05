@@ -91,7 +91,7 @@ const SafeHome: FC = () => {
                 </div>
             </div>
 
-            <div className="hidden relative md:hidden items-center px-10 md:px-0 h-full">
+            <div className="relative md:hidden items-center px-10 md:px-0 h-full">
                 <div className="flex flex-wrap mt-[400px] md:mt-12">
                     <div className="w-full md:w-1/2 m-auto">
                         <div className="relative">
