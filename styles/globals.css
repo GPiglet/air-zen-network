@@ -66,6 +66,11 @@ body::-webkit-scrollbar {
   /* background-attachment: fixed; */
 }
 
+.back-right-bottom-gradient-primary {
+  background: radial-gradient(100% 237.07% at 100% 45.06%, rgba(1, 172, 230, 0.6) 0%, rgba(1, 172, 230, 0) 100%), #000000;
+  /* background-attachment: fixed; */
+}
+
 .back-left-top-gradient-secondary {
   background: linear-gradient(170.47deg, #1E4D2E -4.4%, #000000 100%), #000000;
   background-attachment: fixed;
