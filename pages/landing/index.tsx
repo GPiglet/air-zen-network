@@ -100,9 +100,13 @@ const Homepage: NextPage = () => {
 				break;
 		}
 
+		refSections.forEach(section=>gsap.set(section.current.container, {zIndex: 10}));
 		if ( currentSection.current && currentSection.current.current?.startAnim ) currentSection.current.current?.startAnim(direction, false);
 		currentSection.current = refSections[index];
-		if ( currentSection.current && currentSection.current.current?.startAnim ) currentSection.current.current?.startAnim(direction, true);
+		if ( currentSection.current && currentSection.current.current?.startAnim ) {
+			currentSection.current.current?.startAnim(direction, true);
+			gsap.set(currentSection.current.current?.container, {zIndex: 11});
+		}
 	}
 
 	// scroll

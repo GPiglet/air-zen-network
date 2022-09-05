@@ -143,7 +143,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
     const animCircle = React.useRef<any>([]);
 
     const getShowTimeline = (duration: number = 3) => {
-        return gsap.timeline({ paused: true, onReverseComplete: () => { gsap.set([containerRef.current], { display: 'none' }); } })
+        return gsap.timeline({ paused: true, onReverseComplete: () => { if ( containerRef.current )gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 animSideUp.current[0],
                 { opacity: 0 },
@@ -190,7 +190,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
     }
 
     const getHideTimeline = (duration: number = 1.5) => {
-        return gsap.timeline({ paused: true, onComplete: () => { gsap.set([containerRef.current], { display: 'none' }); } })
+        return gsap.timeline({ paused: true, onComplete: () => { if ( containerRef.current )gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 animSideUp.current[0],
                 { opacity: 1 },
@@ -230,12 +230,15 @@ const Credential = React.forwardRef((props: any, ref: any) => {
 
     }
 
+    const prevAnimation = React.useRef<any>(null);
     const startAnim = (direction: string, shown: boolean) => {
+        if ( prevAnimation.current ) prevAnimation.current.kill();
         gsap.set([containerRef.current], { display: 'block' });
-        if (direction == 'DOWN' && shown) getShowTimeline().play(0);
-        else if (direction == 'DOWN' && !shown) getHideTimeline().play(0);
-        else if (direction == 'UP' && shown) getHideTimeline().reverse(0);
-        else if (direction == 'UP' && !shown) getShowTimeline().reverse(0);
+        if (direction == 'DOWN' && shown) prevAnimation.current = getShowTimeline().play(0);
+        else if (direction == 'DOWN' && !shown) prevAnimation.current = getHideTimeline().play(0);
+        else if (direction == 'UP' && shown) prevAnimation.current = getHideTimeline().reverse(0);
+        else if (direction == 'UP' && !shown) prevAnimation.current = getShowTimeline().reverse(0);
+
     }
 
     const router = useRouter()
