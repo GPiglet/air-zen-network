@@ -4,6 +4,8 @@ import type { NextPage } from 'next'
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
+import { useRouter } from 'next/router'
+import { Link } from 'react-scroll'
 import gsap from 'gsap';
 
 
@@ -19,6 +21,7 @@ import AnimateFooter from '../../components/common/footer/AnimateFooter'
 
 const Home: NextPage = () => {
 	const { t } = useTranslation()
+	const router = useRouter()
 
 	const navItems: Array<any> = [
 		{
@@ -130,6 +133,15 @@ const Home: NextPage = () => {
 			window.removeEventListener('wheel', onMouseWheel);
 		}
 	}, [])
+
+	const scrollAnchor = () => {
+		console.log('----')
+		router.push({
+			pathname: '/home',
+			query: { section: 'technology' }
+		})
+		// setFormView(!formView)
+	}
 
 	return (
 		<div className='back-left-top-gradient-primary overflow-x-hidden relative'>

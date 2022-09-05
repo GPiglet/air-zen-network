@@ -1,11 +1,13 @@
 //modules
-import React, { FC } from "react"
+import React, { FC, useEffect } from "react"
 import { useTranslation } from "next-i18next";
 import gsap from 'gsap';
+import { useRouter } from "next/router";
 
 const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref: any) => {
     //translate
     const { t } = useTranslation()
+    const router = useRouter()
     const easyList = t('home.easy.list', { returnObjects: true })
 
     // animation
@@ -41,6 +43,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
     }
 
     let isLockScroll = false;
+
     const onKeyDown = (e: KeyboardEvent) => {
         if (window.innerWidth < 920 || isLockScroll) return;
         console.log('sage home keydown');
