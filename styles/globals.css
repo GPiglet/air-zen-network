@@ -124,6 +124,8 @@ body::-webkit-scrollbar {
   /* Legacy iOS */
 }
 
+
+
 .main-footer {
   position: -webkit-sticky;
   position: sticky;
