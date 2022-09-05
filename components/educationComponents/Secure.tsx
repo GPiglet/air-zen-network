@@ -35,9 +35,9 @@ const Secure: FC = () => {
     return (
         <div id="protection" className="relative container mx-auto mb-[75%] md:mb-0 md:h-screen">
             <svg className="absolute mx-auto 
-            right-[-67%] sm:right-[-63%] md:right-[-85%] lg:right-[-110%] xl:right-[-85%]
-            top-[88%] xs:top-[73%] sm:top-[23%] md:top-1/2 md:translate-y-[-50%]
-            w-[230%] sm:w-[220%] md:w-[200%] lg:w-[230%] xl:w-[200%]" viewBox="-600 -350 2000 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
+            right-1/2 translate-x-[50%] md:translate-x-0 md:right-[-85%] lg:right-[-110%] xl:right-[-85%]
+            top-[88%] xs:top-[50%] sm:top-[23%] md:top-1/2 md:translate-y-[-50%]
+            w-[330%] sm:w-[220%] md:w-[200%] lg:w-[230%] xl:w-[200%]" viewBox="-600 -350 2000 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.3" d="M303.174 715.686C469.992 755.232 637.379 652.461 677.043 486.141C716.707 319.822 613.628 152.935 446.809 113.39C279.991 73.8448 112.604 176.616 72.94 342.935C33.2762 509.255 136.355 676.141 303.174 715.686Z" fill="url(#paint0_radial_1226_5560)" />
                 <image href="/images/education3.png" width="1000" height="370" clipPath="url(#myCircle)" x="-6.5%" y="15.2%" fillOpacity='0.5' />
                 <path opacity="0.5" d="M441.331 620.158C555.295 583.835 618.148 462.279 581.716 348.655C545.283 235.031 423.363 172.367 309.398 208.69C195.433 245.013 132.581 366.569 169.013 480.193C205.445 593.817 327.366 656.481 441.331 620.158Z" fill="url(#paint1_radial_1226_5560)" />

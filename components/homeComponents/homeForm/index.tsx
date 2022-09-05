@@ -35,7 +35,7 @@ const HomeForm: FC = () => {
 
             </div>
             {
-                <div className={`w-full fixed overflow-y-scroll max-h-[80%]  ${formView ? ' block right-[-20px]' : 'right-[-100%] xl:right-[-800px] md:right-[-600px]'} top-[25%] bg-white  md:w-[600px] xl:w-[800px] rounded-xl  font-lato form-animate tracking-[0.8em] z-40`}>
+                <div className={`w-full fixed overflow-y-scroll max-h-[75%]  ${formView ? ' block right-[-20px]' : 'right-[-100%] xl:right-[-800px] md:right-[-600px]'} top-[25%] bg-white  md:w-[600px] xl:w-[800px] rounded-xl  font-lato form-animate tracking-[0.8em] z-40`}>
                     {step === 0 &&
                         <picture>
                             <source src='/images/chat-check.svg' />

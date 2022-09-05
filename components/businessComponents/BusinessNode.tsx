@@ -17,7 +17,7 @@ const BusinessNode: FC = () => {
             {/* mt-[600px] sm:mt-[100%] md:mt-[50%] */}
 
             <div className="relative px-10 md:px-0 container mx-auto ">
-                <svg className="absolute top-[-4%] w-[174%]  md:top-[34%] md:translate-y-[-50%] md:w-[60%] xl:w-[70%] sm:top-[-1%] sm:w-[80%]  left-[50%] translate-x-[-50%]" viewBox="0 0 700 708" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="absolute top-[-4%] w-[174%]  md:w-[60%] xl:w-[70%] sm:top-[-1%] sm:w-[80%]  left-[50%] translate-x-[-50%]" viewBox="0 0 700 708" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <ellipse opacity="0.5" cx="350.002" cy="353.94" rx="311.623" ry="315.088" fill="url(#paint0_radial_1376_6324)" />
                     <path opacity="0.3" d="M565.18 353.94C565.18 474.044 468.836 571.398 350 571.398C231.165 571.398 134.82 474.044 134.82 353.94C134.82 233.836 231.165 136.481 350 136.481C468.836 136.481 565.18 233.836 565.18 353.94Z" stroke="#7BB690" />
                     <path opacity="0.6" d="M699.5 353.73C699.5 548.818 543.019 706.959 350 706.959C156.982 706.959 0.500048 548.818 0.500031 353.73C0.500014 158.641 156.981 0.499986 350 0.499969C543.019 0.499953 699.5 158.641 699.5 353.73Z" stroke="url(#paint1_radial_1376_6324)" />

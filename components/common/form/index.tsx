@@ -26,7 +26,7 @@ const Form: FC<FormProps> = ({ breadcrumb, final, bgImg, submit, buttonString, b
     return (
         // <FadeIn delay={0} transitionDuration={1000}>
         <>
-            <div className={`w-[90%] xl:w-[60%] ${width} tracking-[0.08em] text-lg`}>
+            <div className={`w-[90%]  ${width} tracking-[0.08em] text-lg`}>
                 {
                     breadcrumb && (
                         <div className="flex items-center pb-10 relative z-50">

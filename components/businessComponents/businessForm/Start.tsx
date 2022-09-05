@@ -11,7 +11,7 @@ const Start: FC = () => {
     return (
         <FadeIn delay={0} transitionDuration={1000}>
             <Form
-                buttonType='border border-primary pl-5 pr-12'
+                buttonType='border border-secondary pl-5 pr-12'
                 buttonActive={true}
                 buttonString='zum Konfigurator'
                 width='sm:w-[80%]'

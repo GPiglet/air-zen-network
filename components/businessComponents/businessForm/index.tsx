@@ -32,7 +32,7 @@ const BusinessForm: FC = () => {
 
             </div>
             {
-                <div className={`w-full fixed  ${formView ? ' block right-[-20px]' : 'right-[-100%] md:right-[-550px]'} top-[25%] bg-white  md:w-[550px] rounded-3xl  font-lato form-animate tracking-[0.8em] z-40`}>
+                <div className={`w-full fixed overflow-y-scroll max-h-[75%]  ${formView ? ' block right-[-20px]' : 'right-[-100%] md:right-[-600px] md:right-[-800px]'} top-[25%] bg-white  md:w-[600px] xl:w-[800px] rounded-3xl  font-lato form-animate tracking-[0.8em] z-60`}>
                     {step === 0 &&
                         <picture>
                             <source src='/images/chat-check.svg' />
