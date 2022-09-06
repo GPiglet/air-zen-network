@@ -334,7 +334,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
                     </svg>
 
                     <div ref={refBackCircleCarousel} className='hidden absolute w-[120%] md:w-[45%] top-0  md:top-1/2 md:translate-y-[-44%] right-[27%] md:left-[14%]' >
-                        <svg viewBox="0 0 736 736" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg viewBox="-30 -30 796 796" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle ref={el => animCircle.current.push(el)} opacity="0.3" cx="368.2" cy="368.2" r="338.706" transform="rotate(-120 368.2 368.2)" fill="url(#paint0_radial_0_2)" />
                             <circle ref={el => animCircle.current.push(el)} opacity="0.8" cx="368.199" cy="368.2" r="367.206" transform="rotate(-120 368.199 368.2)" stroke="url(#paint1_linear_0_2)" />
                             <circle ref={el => animCircle.current.push(el)} opacity="0.4" cx="368.204" cy="367.623" r="311.914" transform="rotate(-120 368.204 367.623)" fill="url(#paint2_radial_0_2)" />
