@@ -102,9 +102,10 @@ const Homepage: NextPage = () => {
 
 		refSections.forEach(section=>gsap.set(section.current.container, {zIndex: 10}));
 		if ( currentSection.current && currentSection.current.current?.startAnim ) currentSection.current.current?.startAnim(direction, false);
+		const isFirst = currentSection.current == null ? true : false;
 		currentSection.current = refSections[index];
 		if ( currentSection.current && currentSection.current.current?.startAnim ) {
-			currentSection.current.current?.startAnim(direction, true);
+			currentSection.current.current?.startAnim(direction, true, isFirst);
 			gsap.set(currentSection.current.current?.container, {zIndex: 11});
 		}
 	}
