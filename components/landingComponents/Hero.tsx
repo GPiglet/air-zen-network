@@ -18,7 +18,7 @@ const Hero = React.forwardRef((props: any, ref: any) => {
             .fromTo(
                 animSideUpRefs.current,
                 { y: 0, opacity: (index, target, targets) => target.getAttribute('opacity') || 1 },
-                { y: isFirst ? 0 : -100, opacity: 0, duration },
+                { y: 0, opacity: 0, duration },
                 0
             )
             .fromTo(
