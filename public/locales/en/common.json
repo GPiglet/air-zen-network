@@ -462,5 +462,11 @@
                 "content": "The content published on this website is subject to German copyright and ancillary copyright. Any use not permitted by German copyright and ancillary copyright law requires the prior written consent of the provider or the respective rights holder. This applies in particular to the duplication, processing, translation, storage, processing or reproduction of content in databases or other electronic media and systems. Contents and rights of third parties are marked as such. The unauthorized duplication or forwarding of individual content or complete pages is not permitted and is punishable by law. Only the production of copies and downloads for personal, private and non-commercial use is permitted. The presentation of this website in external frames is only permitted with written permission."
             }
         ]
+    },
+    "cookie": {
+        "accept": "Accept cookies",
+        "customize": "Customize cookies",
+        "content": "We use cookies to personalize content and ads, to provide social media features and to analyze traffic to our website. We anonymize all data records and delete them after the evaluation. We never pass on your data: not even to partners.",
+        "detail": "View Details"
     }
 }

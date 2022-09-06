@@ -93,7 +93,7 @@ const Business: NextPage = () => {
 		refSections.forEach(section => gsap.set(section.current.container, { zIndex: 10 }));
 
 		if (currentIndex != -1 && refSections[currentIndex] != refSections[index] && refSections[currentIndex].current?.startAnim) refSections[currentIndex].current?.startAnim(direction, false);
-		if ( currentIndex == -1 ) gsap.set(refBackGradient.current, { background: backGradientList[index] });
+		if (currentIndex == -1) gsap.set(refBackGradient.current, { background: backGradientList[index] });
 		else gsap.to(refBackGradient.current, { background: backGradientList[index] });
 		currentIndex = currentSectionIndex.current = index;
 		if (refSections[currentIndex].current?.startAnim) {
