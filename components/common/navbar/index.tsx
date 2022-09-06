@@ -137,5 +137,4 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
     </nav>
   );
 };
-Navbar.displayName = 'Navbar';
 export default Navbar
