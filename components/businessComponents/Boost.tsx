@@ -149,5 +149,5 @@ const Boost: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref: 
         </section>
     );
 });
-
+Boost.displayName = 'Boost';
 export default Boost;

@@ -13,12 +13,12 @@ const Hero = React.forwardRef((props: any, ref: any) => {
     const animZoomOutRefs = useRef<any>([]);
     const animGradient = React.useRef<any>([]);
 
-    const getShowTimeline = (duration: number = 1.5) => {
-        return gsap.timeline({ onComplete: () => { if (containerRef.current) gsap.set([containerRef.current, ...animGradient.current], { display: 'none' }); } })
+    const getShowTimeline = (duration: number = 1.5, isFirst: boolean = false) => {
+        const tl = gsap.timeline({ onComplete: () => { if (containerRef.current) gsap.set([containerRef.current, ...animGradient.current], { display: 'none' }); } })
             .fromTo(
                 animSideUpRefs.current,
                 { y: 0, opacity: (index, target, targets) => target.getAttribute('opacity') || 1 },
-                { y: -100, opacity: 0, duration },
+                { y: 0, opacity: 0, duration },
                 0
             )
             .fromTo(
@@ -39,22 +39,25 @@ const Hero = React.forwardRef((props: any, ref: any) => {
                 { opacity: 0, transformOrigin: '50% 50%', duration },
                 0
             )
-            .fromTo(
+            
+            if ( !isFirst ) tl.fromTo(
                 animGradient.current,
                 { opacity: 1 },
                 { opacity: 0 },
                 duration / 2
-            )
+            );
+            return tl;
+
     }
 
     const { t } = useTranslation()
 
     const prevAnimation = React.useRef<any>(null);
-    const startAnim = (direction: string, shown: boolean) => {
+    const startAnim = (direction: string, shown: boolean, isFirst: boolean) => {
         if (prevAnimation.current) prevAnimation.current.kill();
         gsap.set([containerRef.current, ...animGradient.current], { display: 'block' });
-        gsap.set(animGradient.current, { background: 'linear-gradient(145deg, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 80%)' })
-        if (direction == 'UP' && shown) prevAnimation.current = getShowTimeline().reverse(0);
+        gsap.set(animGradient.current, { background: 'linear-gradient(145deg, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 60%)' })
+        if (direction == 'UP' && shown) prevAnimation.current = getShowTimeline(1.5, isFirst).reverse(0);
         else if (direction == 'DOWN' && !shown) prevAnimation.current = getShowTimeline().play();
     }
     return (

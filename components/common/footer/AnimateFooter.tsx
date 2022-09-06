@@ -41,5 +41,6 @@ const AnimateFooter: FC<{props?: any, ref: any}> = React.forwardRef((props: any,
     </section>
   )
 })
+AnimateFooter.displayName = 'AnimateFooter';
 
 export default AnimateFooter

@@ -109,5 +109,5 @@ const CertainlySafe: FC<{ props?: any, ref: any }> = React.forwardRef((props: an
 
     );
 });
-
+CertainlySafe.displayName = 'CertainlySafe';
 export default CertainlySafe

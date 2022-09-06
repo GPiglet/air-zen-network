@@ -3,7 +3,7 @@
         "wifi": {
             "_comment": "Der obere Abschnitt der Seite.",
             "title": "Sei Smart! \n Machs einfach!",
-            "description": "Highend-Netzwerk-Technologien für einen entspannteren Alltag und Arbeitswelt. Und das außergewöhnlich einfach, sicher und zuverlässig.",
+            "description": "Highend-Netzwerk-Technologien für einen entspannteren Alltag und Arbeitswelt. Und das außergewöhnlich einfach, sicher und zuverlässig.",
             "sparkle1": "Dieses Feature ermöglicht eine besondere Funktion: XYZ",
             "sparkle2": "Dieses Feature ermöglicht eine besondere Funktion: XYZ"
         },
@@ -14,13 +14,13 @@
             "list": [
                 {
                     "title": "Home",
-                    "subtitle": "Für ein smartes Zuhause.",
+                    "subtitle": "Für ein smartes Zuhause.",
                     "description": "Störungsfreies und selbstoptimierendes Netz. Zuhause wie beim Profi.",
                     "list": "Hochstabile Verbindung \n Keine Erfahrung nötig \n Automatische Updates \n Videosupport"
                 },
                 {
                     "title": "Business",
-                    "subtitle": "Für ein vernetztes Unternehmen.",
+                    "subtitle": "Für ein vernetztes Unternehmen.",
                     "description": "Störungsfreies und selbstoptimierendes Netz. Zuhause wie beim Profi.",
                     "list": "Hochstabile Verbindung \n Keine Erfahrung nötig \n Automatische Updates \n Videosupport"
                 },
@@ -44,16 +44,16 @@
             "title": "Über Uns",
             "swiper": [
                 {
-                    "title": "Aus Europa. Für Europa.",
-                    "content": "AirZen stellt modernste Netzwerk Technologie in der Schweiz & Europa her. Sicheres WLAN – entwickelt für individuelle Anforderungen und mit hoher Anwenderfreundlichkeit. Der eigenen Herkunft verpflichtet, hilft AirZen allen Kunden dabei mit aktuellen Datenschutz- und Security-Richtlinien Schritt zu halten."
+                    "title": "Aus Europa. Für Europa.",
+                    "content": "AirZen stellt modernste Netzwerk Technologie in der Schweiz & Europa her. Sicheres WLAN – entwickelt für individuelle Anforderungen und mit hoher Anwenderfreundlichkeit. Der eigenen Herkunft verpflichtet, hilft AirZen allen Kunden dabei mit aktuellen Datenschutz- und Security-Richtlinien Schritt zu halten."
                 },
                 {
-                    "title": "Aus Europa. Für Europa.",
-                    "content": "AirZen stellt modernste Netzwerk Technologie in der Schweiz & Europa her. Sicheres WLAN – entwickelt für individuelle Anforderungen und mit hoher Anwenderfreundlichkeit. Der eigenen Herkunft verpflichtet, hilft AirZen allen Kunden dabei mit aktuellen Datenschutz- und Security-Richtlinien Schritt zu halten."
+                    "title": "Aus Europa. Für Europa.",
+                    "content": "AirZen stellt modernste Netzwerk Technologie in der Schweiz & Europa her. Sicheres WLAN – entwickelt für individuelle Anforderungen und mit hoher Anwenderfreundlichkeit. Der eigenen Herkunft verpflichtet, hilft AirZen allen Kunden dabei mit aktuellen Datenschutz- und Security-Richtlinien Schritt zu halten."
                 },
                 {
-                    "title": "Aus Europa. Für Europa.",
-                    "content": "AirZen stellt modernste Netzwerk Technologie in der Schweiz & Europa her. Sicheres WLAN – entwickelt für individuelle Anforderungen und mit hoher Anwenderfreundlichkeit. Der eigenen Herkunft verpflichtet, hilft AirZen allen Kunden dabei mit aktuellen Datenschutz- und Security-Richtlinien Schritt zu halten."
+                    "title": "Aus Europa. Für Europa.",
+                    "content": "AirZen stellt modernste Netzwerk Technologie in der Schweiz & Europa her. Sicheres WLAN – entwickelt für individuelle Anforderungen und mit hoher Anwenderfreundlichkeit. Der eigenen Herkunft verpflichtet, hilft AirZen allen Kunden dabei mit aktuellen Datenschutz- und Security-Richtlinien Schritt zu halten."
                 }
             ],
             "sparkle1": "Dieses Feature ermöglicht eine besondere Funktion: XYZ",
@@ -88,7 +88,7 @@
         "contact": {
             "_comment": "Abschnitt 'Kontakt' der Seite.",
             "title": "Kontakt",
-            "subtitle": "Highend-Netzwerk-Technologien für einen entspannteren Alltag und Arbeitswelt. Und das außer- gewöhnlich einfach, sicher und zuverlässig.",
+            "subtitle": "Highend-Netzwerk-Technologien für einen entspannteren Alltag und Arbeitswelt. Und das außer- gewöhnlich einfach, sicher und zuverlässig.",
             "send": "senden",
             "description": "Ich habe die Datenschutz- erklärung gelesen und stimme der Speicherung und Verarbeitung meiner Daten durch die AirZen Networks Lda zu. \n Ich willige ein, dass meine Daten zur Beantwortung meiner Anfrage elekronisch erhoben und gespeichert werden. Ich kann meine Einwilligung jederzeit widerrufen: privacy@airzen.io "
         },
@@ -110,7 +110,7 @@
             "_comment": "'Zuverlässig' Abschnitt der Seite",
             "tip": "Zuverlässig",
             "title": "So gut, so OmG!",
-            "description": "Nach dem Update ist vor dem Update. Gerade für Menschen, die ihr privates Netzwerk im Homeoffice nutzen, stellen verzögerte Updates eine ernste Bedrohung für die sensiblen Daten ihrer Firma. \n Um diesen Bedrohungen immer einen Schritt voraus zu sein, ist unsere Platform an ein Lizensmodell gekoppelt. Das schließt zahlreiche Sicherheits- features ein, von denen Sie kaum etwas bemerken werden, solange wir unsere Arbeit gewissenhaft erledigen:",
+            "description": "Nach dem Update ist vor dem Update. Gerade für Menschen, die ihr privates Netzwerk im Homeoffice nutzen, stellen verzögerte Updates eine ernste Bedrohung für die sensiblen Daten ihrer Firma. \n Um diesen Bedrohungen immer einen Schritt voraus zu sein, ist unsere Platform an ein Lizensmodell gekoppelt. Das schließt zahlreiche Sicherheits- features ein, von denen Sie kaum etwas bemerken werden, solange wir unsere Arbeit gewissenhaft erledigen:",
             "list": "BotNetz-Schutz \n  Content-Filter für Kinder-Netzwerk \n Content-Filter für Manipulierte Websites \n  Familien Verwaltung mit y für Kinder und Internet-Pause Knopf \n  Automatisch Software Updates \n Live-Support vom Hersteller"
         },
         "easy": {
@@ -138,7 +138,7 @@
         "form": {
             "step1": {
                 "title": "Startklar in Minuten",
-                "description": "Für Home-Office und die Familie: AirZen bietet durch das Set eine störungsfreie und sorglose Highend-Netzwerk-Lösung für Ihr Zuhause.",
+                "description": "Für Home-Office und die Familie: AirZen bietet durch das Set eine störungsfreie und sorglose Highend-Netzwerk-Lösung für Ihr Zuhause.",
                 "button": "zum Konfigurator"
             },
             "step2": {
@@ -251,13 +251,13 @@
             "_comment": "Abschnitt 'Einfach' der Seite",
             "tip": "Einfach",
             "title": "Auf Erfolg eingerichtet!",
-            "description": "Gerade Hotels, Einzelhandel, Versicherungen oder Banken mit vielen Standorten erleichtert ein smartes Standort- und Nutzermanagement inklusive Direktsupport vom Hersteller das Leben. \n Über unsere App können Sie ihr Netzwerk dynamisch erweitern oder updaten und einzelne Nutzer sicher einladen oder sperren. \n Auch Ihr Team kann über ein Self-Service-Portal selbst zu- und eingreifen. Darüber hinaus können Sie sogar eigene Sicherheits-Standards definieren: bestes Feng Shui für Ihre Mitarbeiter und Ihr Wlan."
+            "description": "Gerade Hotels, Einzelhandel, Versicherungen oder Banken mit vielen Standorten erleichtert ein smartes Standort- und Nutzermanagement inklusive Direktsupport vom Hersteller das Leben. \n Über unsere App können Sie ihr Netzwerk dynamisch erweitern oder updaten und einzelne Nutzer sicher einladen oder sperren. \n Auch Ihr Team kann über ein Self-Service-Portal selbst zu- und eingreifen. Darüber hinaus können Sie sogar eigene Sicherheits-Standards definieren: bestes Feng Shui für Ihre Mitarbeiter und Ihr Wlan."
         },
         "secure": {
             "_comment": "Abschnitt 'Sicher' der Seite",
             "tip": "Sicher",
             "title": "Mit Sicherheit sicher!",
-            "description": "Ein sicherer Zugang auf zentrale Firmen-Ressourcen ist wesentlich, um im Großraum- büro, Coworking Space oder Zuhause zu arbeiten. wir bieten einzelne Kennwörter im Sinne von Zero Trust, automatische Rechtebeschränkungen für neue Devises, und ermöglichen Ihnen dennoch volle Konnektivität für all Ihre digitalen Abenteuer. \n So arbeiten Sie und ihr Team überall zu den Sicherheitsrichtlinien Ihres Unternehmens, selbst vom Sofa aus.",
+            "description": "Ein sicherer Zugang auf zentrale Firmen-Ressourcen ist wesentlich, um im Großraum- büro, Coworking Space oder Zuhause zu arbeiten. wir bieten einzelne Kennwörter im Sinne von Zero Trust, automatische Rechtebeschränkungen für neue Devises, und ermöglichen Ihnen dennoch volle Konnektivität für all Ihre digitalen Abenteuer. \n So arbeiten Sie und ihr Team überall zu den Sicherheitsrichtlinien Ihres Unternehmens, selbst vom Sofa aus.",
             "list": [
                 "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
                 "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
@@ -303,20 +303,20 @@
             "paperList": [
                 {
                     "tip": "Whitepaper",
-                    "title": "Home-Office für alle",
-                    "description": "Ob groß oder klein: AirZen bietet vielfältige, individuelle Netzwerklösungen für Ihr Home-Office. Für weitere Infos zu unseren Services und Hardfacts werfen Sie einen Blick in unser Whitepaper.",
+                    "title": "Home-Office für alle",
+                    "description": "Ob groß oder klein: AirZen bietet vielfältige, individuelle Netzwerklösungen für Ihr Home-Office. Für weitere Infos zu unseren Services und Hardfacts werfen Sie einen Blick in unser Whitepaper.",
                     "button": "PDF herunterladen"
                 },
                 {
                     "tip": "Whitepaper",
-                    "title": "Home-Office für alle",
-                    "description": "Ob groß oder klein: AirZen bietet vielfältige, individuelle Netzwerklösungen für Ihr Home-Office. Für weitere Infos zu unseren Services und Hardfacts werfen Sie einen Blick in unser Whitepaper.",
+                    "title": "Home-Office für alle",
+                    "description": "Ob groß oder klein: AirZen bietet vielfältige, individuelle Netzwerklösungen für Ihr Home-Office. Für weitere Infos zu unseren Services und Hardfacts werfen Sie einen Blick in unser Whitepaper.",
                     "button": "PDF herunterladen"
                 },
                 {
                     "tip": "Whitepaper",
-                    "title": "Home-Office für alle",
-                    "description": "Ob groß oder klein: AirZen bietet vielfältige, individuelle Netzwerklösungen für Ihr Home-Office. Für weitere Infos zu unseren Services und Hardfacts werfen Sie einen Blick in unser Whitepaper.",
+                    "title": "Home-Office für alle",
+                    "description": "Ob groß oder klein: AirZen bietet vielfältige, individuelle Netzwerklösungen für Ihr Home-Office. Für weitere Infos zu unseren Services und Hardfacts werfen Sie einen Blick in unser Whitepaper.",
                     "button": "PDF herunterladen"
                 }
             ]
@@ -388,13 +388,13 @@
         "classwifi": {
             "_comment": "Der obere Abschnitt der Seite.",
             "title": "Klasse, WLAN!",
-            "description": "Für die moderne Bildung ist ein zeitgemäßes Netzwerk die Grundlage. AirZen sorgt für zuverlässiges und sicheres Internet für Schulen. Mit schlüsselfertiger Hardware, schulgerechter Einrichtung, mobiler Nutzerverwaltung, sowie einem rundum-sorglos ITSupport. \n Es braucht also keine IT-Abteilung vor Ort. Aber das Beste an der AirZen Technologie: Der kinderleichte Betrieb. Eben einfach das Netzwerk der nächsten Generation."
+            "description": "Für die moderne Bildung ist ein zeitgemäßes Netzwerk die Grundlage. AirZen sorgt für zuverlässiges und sicheres Internet für Schulen. Mit schlüsselfertiger Hardware, schulgerechter Einrichtung, mobiler Nutzerverwaltung, sowie einem rundum-sorglos ITSupport. \n Es braucht also keine IT-Abteilung vor Ort. Aber das Beste an der AirZen Technologie: Der kinderleichte Betrieb. Eben einfach das Netzwerk der nächsten Generation."
         },
         "reliable": {
             "_comment": "'Zuverlässig' Abschnitt der Seite",
             "tip": "Zuverlässig",
             "title": "Klassenzimmer digital!",
-            "description": "AirZen hat die Komplettlösung für komplexe Anforderungen von Schulen jeder Art und Größe – und ist dabei kinderleicht zu bedienen. \n Neben lückenloser WLAN-Abdeckung sorgt AirZen auch für eine zuverlässige Netzstabilität, auch wenn viele Geräte online sind. Administratoren können unkompliziert Zugänge ermöglichen und mobil verwalten - ganz einfach vom Handy aus. \n Dazu braucht es keine ITSchulung, denn die Bedienung funktioniert ganz intuitiv über die App. Mit AirZen sorgen Sie für ein erst- klassiges Netz in ihrer Schule.",
+            "description": "AirZen hat die Komplettlösung für komplexe Anforderungen von Schulen jeder Art und Größe – und ist dabei kinderleicht zu bedienen. \n Neben lückenloser WLAN-Abdeckung sorgt AirZen auch für eine zuverlässige Netzstabilität, auch wenn viele Geräte online sind. Administratoren können unkompliziert Zugänge ermöglichen und mobil verwalten - ganz einfach vom Handy aus. \n Dazu braucht es keine ITSchulung, denn die Bedienung funktioniert ganz intuitiv über die App. Mit AirZen sorgen Sie für ein erst- klassiges Netz in ihrer Schule.",
             "list": [
                 "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
                 "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
@@ -410,7 +410,7 @@
             "_comment": "'Sicher'Abschnitt der Seite",
             "tip": "Sicher",
             "title": "SCHUTZ wird hier großsgeschrieben!",
-            "description": "Von der Grundschule bis zum Hörsaal - im schulischen Netzwerk gibt es viele sensible Daten. AirZen bietet durch die Kombi von hochqualitativem Hersteller- Service und EU- als auch DSGV- konformen Sicherheitskonzepten ein hohes Maß an IT-Sicherheit.  \n Schützen Sie Ihre Schüler und Lehrkräfte zudem mit eigenen WLAN-Passwörtern, Jugendschutzfiltern und separat getrennten Verbindungen.",
+            "description": "Von der Grundschule bis zum Hörsaal - im schulischen Netzwerk gibt es viele sensible Daten. AirZen bietet durch die Kombi von hochqualitativem Hersteller- Service und EU- als auch DSGV- konformen Sicherheitskonzepten ein hohes Maß an IT-Sicherheit.  \n Schützen Sie Ihre Schüler und Lehrkräfte zudem mit eigenen WLAN-Passwörtern, Jugendschutzfiltern und separat getrennten Verbindungen.",
             "sparkle1": "Dieses Feature ermöglicht eine besondere Funktion: XYZ",
             "sparkle2": "Dieses Feature ermöglicht eine besondere Funktion: XYZ"
         },
@@ -418,7 +418,7 @@
             "_comment": "'Einfach'Abschnitt der Seite",
             "tip": "Einfach",
             "title": "Das kleine Einmaleinfach!",
-            "description": "Laptop raus und loslegen. Mit AirZen bekommen Schüler und Lehrer schnell und spielend einfach Zugang ins Netz über ein Self Service Portal. Damit sich alle auf den Unterricht konzentrieren können, läuft alles andere fast automatisch ab - Von der Einrichtung, bis hin zur Wartung mit selbstlernender Softwarepflege. \n Es braucht also keine große IT-Abteilung oder Fachkenntnisse, dank Hardware und Support direkt vom Hersteller. Oder anders gesagt: Mit AirZen geht die Rechnung auf.",
+            "description": "Laptop raus und loslegen. Mit AirZen bekommen Schüler und Lehrer schnell und spielend einfach Zugang ins Netz über ein Self Service Portal. Damit sich alle auf den Unterricht konzentrieren können, läuft alles andere fast automatisch ab - Von der Einrichtung, bis hin zur Wartung mit selbstlernender Softwarepflege. \n Es braucht also keine große IT-Abteilung oder Fachkenntnisse, dank Hardware und Support direkt vom Hersteller. Oder anders gesagt: Mit AirZen geht die Rechnung auf.",
             "sparkle1": "Dieses Feature ermöglicht eine besondere Funktion: XYZ",
             "sparkle2": "Dieses Feature ermöglicht eine besondere Funktion: XYZ",
             "sparkle3": "Dieses Feature ermöglicht eine besondere Funktion: XYZ"
@@ -434,14 +434,14 @@
         "everything": {
             "_comment": "Der obere Abschnitt der Seite.",
             "title": "Alles im Flow halten.",
-            "description": "Durch Stabilität, Sicherheit und einfache Nutzung bieten die AirZen weitreichende Individualisierung für industrielle Netzwerke in vielen Bereichen ganz neue Möglichkeiten Prozesse abzuwickeln, neue Leistungen anzubieten und ganz neue Maßstäbe für Industrie 4.0 zu setzen.",
+            "description": "Durch Stabilität, Sicherheit und einfache Nutzung bieten die AirZen weitreichende Individualisierung für industrielle Netzwerke in vielen Bereichen ganz neue Möglichkeiten Prozesse abzuwickeln, neue Leistungen anzubieten und ganz neue Maßstäbe für Industrie 4.0 zu setzen.",
             "cooperation": "In vertrauensvoller Kooperation mit:"
         },
         "reliable": {
             "_comment": "'Zuverlässig' Abschnitt der Seite",
             "tip": "Zuverlässig",
             "title": "Ideen in Serie gebracht",
-            "description": "Alles aus einer Hand - von der Idee bis zur Hardware. Sie brauchen ein zuverlässiges Netzwerk oder haben eine neue Anforderung an ihr Bestehendes? \n Die AirZen Technologien sind für den Einsatz in der Industrie konzipiert und sorgen für ein äußerst effizientes Netzwerk auch bei speziellen, industriellen Anforderungen. Egal ob Automatisierung, smartes Management, Fernsteuerung oder Ferndiagnosen -AirZen entwickelt gemeinsam mit Ihnen eine ideale Netzwerk-Variante. Halten Sie alles am Laufen – mit einer  außergewöhnlich zuverlässigen und stabilen Netzwerkabdeckung von AirZen."
+            "description": "Alles aus einer Hand - von der Idee bis zur Hardware. Sie brauchen ein zuverlässiges Netzwerk oder haben eine neue Anforderung an ihr Bestehendes? \n Die AirZen Technologien sind für den Einsatz in der Industrie konzipiert und sorgen für ein äußerst effizientes Netzwerk auch bei speziellen, industriellen Anforderungen. Egal ob Automatisierung, smartes Management, Fernsteuerung oder Ferndiagnosen -AirZen entwickelt gemeinsam mit Ihnen eine ideale Netzwerk-Variante. Halten Sie alles am Laufen – mit einer  außergewöhnlich zuverlässigen und stabilen Netzwerkabdeckung von AirZen."
         },
         "referenceproject": {
             "_comment": "'Referenzprojekte' Abschnitt der Seite",
@@ -451,13 +451,13 @@
             "_comment": "'Einfach' Abschnitt der Seite",
             "tip": "Einfach",
             "title": "Einfach Produktiver.",
-            "description": "AirZen bietet Ihnen alles was Sie für den reibungslosen Betrieb brauchen. Profitieren Sie von einer einfachen Einrichtung oder der Integration der ergänzenden Funktionalitäten des Netzwerks, dank automatisierter Infrastruktur zwischen den Routern. Sie erhalten ständigen Zugriff auf alle angeschlossenen Geräte und Maschinen, weltweit und von Zuhause aus. \n Auch entspannt: AirZen ist ein europäisches Unternehmen und hilft Ihnen auch die aktuellen europäisches Datenschutz-Grundverordnung und Anforderungen zu erfüllen. Verwalten Sie alles ganz entspannt über dieselbe Plattform von Router bis IoT-Sensor. Kurzum: Minimieren Sie ihre Aufwand. Steigern Sie ihre Effizienz. Werden Sie ein AirZen."
+            "description": "AirZen bietet Ihnen alles was Sie für den reibungslosen Betrieb brauchen. Profitieren Sie von einer einfachen Einrichtung oder der Integration der ergänzenden Funktionalitäten des Netzwerks, dank automatisierter Infrastruktur zwischen den Routern. Sie erhalten ständigen Zugriff auf alle angeschlossenen Geräte und Maschinen, weltweit und von Zuhause aus. \n Auch entspannt: AirZen ist ein europäisches Unternehmen und hilft Ihnen auch die aktuellen europäisches Datenschutz-Grundverordnung und Anforderungen zu erfüllen. Verwalten Sie alles ganz entspannt über dieselbe Plattform von Router bis IoT-Sensor. Kurzum: Minimieren Sie ihre Aufwand. Steigern Sie ihre Effizienz. Werden Sie ein AirZen."
         },
         "secure": {
             "_comment": "'Sicher' Abschnitt der Seite",
             "tip": "Sicher",
             "title": "Zukunftsicher statt anno dazumal!",
-            "description": "Der Schutz von Maschinen, Anlagen und Netzwerken erfordert einen aktuellen Stand der Technik. Damit der Betrieb störungsfrei abläuft, unterstützt AirZen mit sicheren Netzwerklösungen. \n Eine direkt integrierte Firewall ermöglicht Schutz vor unberechtigtem Zugriff. Mit eigener Hardware, Servern in Europa und dem Siegel 'Made in Switzerland' steht AirZen für optimalen Schutz. Darüber hinaus haben Sie potenzielle Störungen und Sicherheitsmängel zuverlässig im Blick. Das Netzwerk ist verwertbar über Kommandozeile, API oder App. So behalten Sie sicher den Überblick."
+            "description": "Der Schutz von Maschinen, Anlagen und Netzwerken erfordert einen aktuellen Stand der Technik. Damit der Betrieb störungsfrei abläuft, unterstützt AirZen mit sicheren Netzwerklösungen. \n Eine direkt integrierte Firewall ermöglicht Schutz vor unberechtigtem Zugriff. Mit eigener Hardware, Servern in Europa und dem Siegel 'Made in Switzerland' steht AirZen für optimalen Schutz. Darüber hinaus haben Sie potenzielle Störungen und Sicherheitsmängel zuverlässig im Blick. Das Netzwerk ist verwertbar über Kommandozeile, API oder App. So behalten Sie sicher den Überblick."
         },
         "ournode": {
             "_comment": "Abschnitt 'Unsere Nodes' der Seite",

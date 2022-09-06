@@ -142,5 +142,5 @@ const Professional: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
         </section>
     );
 });
-
+Professional.displayName = 'Professional';
 export default Professional;

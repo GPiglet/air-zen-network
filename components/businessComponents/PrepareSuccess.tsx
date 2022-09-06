@@ -141,5 +141,5 @@ const PrepareSuccess: FC<{ props?: any, ref: any }> = React.forwardRef((props: a
 
     );
 });
-
+PrepareSuccess.displayName = 'PrepareSuccess';
 export default PrepareSuccess

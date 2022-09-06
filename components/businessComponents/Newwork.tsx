@@ -105,5 +105,5 @@ const NewWork: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
 
     );
 });
-
+NewWork.displayName = 'NewWork';
 export default NewWork

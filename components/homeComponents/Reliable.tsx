@@ -59,5 +59,5 @@ const Reliable: FC = () => {
 
     );
 };
-
+Reliable.displayName = 'Reliable';
 export default Reliable

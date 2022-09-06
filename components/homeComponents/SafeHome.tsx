@@ -198,5 +198,5 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
 
     );
 });
-
+SafeHome.displayName = 'SafeHome';
 export default SafeHome
