@@ -91,5 +91,5 @@ const SimplyNetwork: FC<{ props?: any, ref: any }> = React.forwardRef((props: an
 
     );
 });
-
+SimplyNetwork.displayName = 'SimplyNetwork';
 export default SimplyNetwork

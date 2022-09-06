@@ -69,5 +69,5 @@ const Easy: FC = () => {
 
     );
 };
-
+Easy.displayName = 'Easy';
 export default Easy

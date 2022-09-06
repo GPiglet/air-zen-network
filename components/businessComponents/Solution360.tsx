@@ -201,5 +201,5 @@ const Solution360: FC<{ props?: any, ref: any }> = React.forwardRef((props: any,
         </section>
     )
 })
-
+Solution360.displayName = 'Solution360';
 export default Solution360
