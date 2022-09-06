@@ -167,28 +167,28 @@ section {
     height: 982px;
   }
 
-  .unique-skill-items:active {
+  /* .unique-skill-items:active {
     height: fit-content;
     cursor: pointer;
-  }
+  } */
 
-  .unique-skill-items:not(:hover) .h-full,
-  .unique-skill-items:not(:active) .h-full {
+  /* .unique-skill-items:not(:active) .h-full, */
+  /* .unique-skill-items:not(:hover) .h-full {
     height: fit-content;
-  }
+  } */
 
   .unique-skill-items,
   .unique-skill-title {
     transition: all 0.6s linear;
   }
 
-  .unique-skill-items:hover .unique-graph,
+  /* .unique-skill-items:hover .unique-graph,
   .unique-skill-items:active .unique-graph {
     width: 80%;
     opacity: 0.7;
     transition: all 0.6s linear;
 
-  }
+  } */
 
   @keyframes showTitle {
     0% {
@@ -206,7 +206,7 @@ section {
     }
   }
 
-  .unique-skill-items:hover .unique-skill-button p,
+  /* .unique-skill-items:hover .unique-skill-button p,
   .unique-skill-items:active .unique-skill-button p {
     color: #ffffffb3;
   }
@@ -219,7 +219,7 @@ section {
   .unique-skill-items:hover .unique-skill-description,
   .unique-skill-items:hover .unique-skill-list {
     display: block;
-  }
+  } */
 }
 
 @media only screen and (min-width: 920px) {

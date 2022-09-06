@@ -327,11 +327,11 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
 
     const onClickSkill = (index: number) => {
         // 
-        if (window.innerWidth < 920) {
-            const graphElement = animSkills.current[index].getElementsByClassName('unique-graph')[0];
-            const widthAttribute = window.getComputedStyle(graphElement, null).width;
-            if (widthAttribute == '200px') return;
-        }
+        // if (window.innerWidth < 920) {
+        //     const graphElement = animSkills.current[index].getElementsByClassName('unique-graph')[0];
+        //     const widthAttribute = window.getComputedStyle(graphElement, null).width;
+        //     if (widthAttribute == '200px') return;
+        // }
         router.push(graphList[index].href)
     }
 
