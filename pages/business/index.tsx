@@ -85,42 +85,42 @@ const Business: NextPage = () => {
 
 	const currentSectionIndex = React.useRef<number>(-1);
 	const gotoScene = (index: number) => {
-		if ( window.innerWidth < 920 ) return;
+		if (window.innerWidth < 920) return;
 		let direction: string = 'DOWN';
 		let currentIndex = currentSectionIndex.current;
-		if ( currentIndex > index ) direction = 'UP';
+		if (currentIndex > index) direction = 'UP';
 
-		refSections.forEach(section=>gsap.set(section.current.container, {zIndex: 10}));
+		refSections.forEach(section => gsap.set(section.current.container, { zIndex: 10 }));
 
-		if ( currentIndex != -1 && refSections[currentIndex] != refSections[index] && refSections[currentIndex].current?.startAnim ) refSections[currentIndex].current?.startAnim(direction, false);
+		if (currentIndex != -1 && refSections[currentIndex] != refSections[index] && refSections[currentIndex].current?.startAnim) refSections[currentIndex].current?.startAnim(direction, false);
 		currentIndex = currentSectionIndex.current = index;
-		gsap.to(refBackGradient.current, {background: backGradientList[index]});
-		if ( refSections[currentIndex].current?.startAnim ) {
+		gsap.to(refBackGradient.current, { background: backGradientList[index] });
+		if (refSections[currentIndex].current?.startAnim) {
 			refSections[currentIndex].current?.startAnim(direction, true, index);
-			gsap.set(refSections[currentIndex].current?.container, {zIndex: 11});
+			gsap.set(refSections[currentIndex].current?.container, { zIndex: 11 });
 		}
 	}
 
 	// scroll
 	let isLockScroll = false;
 	const onKeyDown = (e: KeyboardEvent) => {
-		if ( window.innerWidth < 920 || isLockScroll ) return;
+		if (window.innerWidth < 920 || isLockScroll) return;
 		isLockScroll = true;
 		setTimeout(() => {
 			isLockScroll = false;
 		}, 1000);
 		let index = 0;
-		switch( e.key ) {
+		switch (e.key) {
 			case 'ArrowDown':
 			case 'PageDown':
 				index = currentSectionIndex.current + 1;
-				if ( index >= refSections.length ) return;
+				if (index >= refSections.length) return;
 				break;
 
 			case 'ArrowUp':
 			case 'PageUp':
 				index = currentSectionIndex.current - 1;
-				if ( index < 0 ) return;
+				if (index < 0) return;
 				break;
 			default:
 				return;
@@ -131,20 +131,20 @@ const Business: NextPage = () => {
 	}
 
 	const onMouseWheel = (e: WheelEvent) => {
-		if ( window.innerWidth < 920 || isLockScroll ) return;
+		if (window.innerWidth < 920 || isLockScroll) return;
 		isLockScroll = true;
 		setTimeout(() => {
 			isLockScroll = false;
 		}, 1000);
 
 		let index = 0;
-		if ( e.deltaY > 0 ) { 
+		if (e.deltaY > 0) {
 			index = currentSectionIndex.current + 1;
-			if ( index >= refSections.length ) return;
+			if (index >= refSections.length) return;
 		}
 		else {
 			index = currentSectionIndex.current - 1;
-			if ( index < 0 ) return;
+			if (index < 0) return;
 		}
 
 		gotoScene(index);
@@ -155,25 +155,25 @@ const Business: NextPage = () => {
 		gotoScene(0);
 		window.addEventListener('keydown', onKeyDown);
 		window.addEventListener('wheel', onMouseWheel);
-		return ()=>{
+		return () => {
 			window.removeEventListener('keydown', onKeyDown);
 			window.removeEventListener('wheel', onMouseWheel);
-		}	
+		}
 	}, [])
 
 	return (
 		<div ref={refBackGradient} className='overflow-x-hidden relative h-screen' id='business_page'>
 			<Mainlayout navItems={navItems} hasFooter={false}>
-				{/* <BusinessForm /> */}
-				<Boost ref={refSectionBoost}/>
-				<Professional ref={refSectionProfessional}/>
-				<NewWork ref={refSectionNewWork}/>
-				<PrepareSuccess ref={refSectionPrepareSuccess}/>
-				<CertainlySafe ref={refSectionCertainlySafe}/>
-				<Solution360 ref={refSectionSolution360}/>
-				<BusinessNode ref={refSectionBusinessNode}/>
-				<WhitePaper ref={refSectionWhitePaper}/>
-				<AnimateFooter ref={refSectionFooter}/>
+				<BusinessForm />
+				<Boost ref={refSectionBoost} />
+				<Professional ref={refSectionProfessional} />
+				<NewWork ref={refSectionNewWork} />
+				<PrepareSuccess ref={refSectionPrepareSuccess} />
+				<CertainlySafe ref={refSectionCertainlySafe} />
+				<Solution360 ref={refSectionSolution360} />
+				<BusinessNode ref={refSectionBusinessNode} />
+				<WhitePaper ref={refSectionWhitePaper} />
+				<AnimateFooter ref={refSectionFooter} />
 			</Mainlayout>
 		</div>
 	)
