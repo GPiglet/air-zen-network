@@ -1,19 +1,53 @@
 //modules
 import React, { FC } from "react";
 import { useTranslation } from "next-i18next";
+import gsap from 'gsap';
 
-
-const Professional: FC = () => {
+const Professional: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref: any) => {
     //translate
     const { t } = useTranslation()
+    
 
     const list = t('business.professional.list', { returnObjects: true })
 
+    // animation
+    const getShowTimeline = (duration: number=1.5) => {
+        return gsap.timeline({onReverseComplete: ()=>{gsap.set([containerRef.current], {display: 'none'});}})
+            .fromTo(
+                containerRef.current,
+                { y: 100, opacity: 0 },
+                { y: 0, opacity: 1, duration },
+                0
+            )
+    }
+
+    const getHideTimeline = (duration: number = 1.5) => {
+        return gsap.timeline({ onComplete: () => { gsap.set([containerRef.current], { display: 'none' }); } })
+            .fromTo(
+                containerRef.current,
+                { y: 0, opacity: 1 },
+                { y: -100, opacity: 0, duration },
+                0
+            )
+    }
+
+    const containerRef = React.useRef<any>();
+    const prevAnimation = React.useRef<any>(null);
+    const startAnim = (direction: string, shown: boolean, index: number) => {
+        if ( prevAnimation.current ) prevAnimation.current.kill();
+        gsap.set([containerRef.current], {display: 'flex'});
+        if ( direction == 'DOWN' && shown ) prevAnimation.current = getShowTimeline().play(0);
+        else if ( direction == 'DOWN' && !shown ) prevAnimation.current = getHideTimeline().play(0);
+        else if ( direction == 'UP' && shown ) prevAnimation.current = getHideTimeline().reverse(0);
+        else if (direction == 'UP' && !shown ) prevAnimation.current = getShowTimeline().reverse(0);
+    }
+    
+
     return (
-        <section id="professional" className="pb-16 relative  items-center md:flex container mx-auto ">
+        <section id="professional" ref={(el)=>{containerRef.current=el; if (ref) ref.current = {container: el, startAnim}}} className="pb-16 relative  items-center md:flex container mx-auto md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
 
 
-            <svg className="absolute left-[-75%] bottom-[-71%] sm:top-[45%] md:top-[-10%] xl:top-[-33%] md:w-[100%]   sm:w-[150%] sm:left-[-25%] w-[250%] md:left-[-41%] xl:left-[-40%] " viewBox="0 0 679 681" fill="none" stopOpacity='0.2' xmlns="http://www.w3.org/2000/svg">
+            <svg className="absolute left-[-75%] bottom-[-71%] sm:top-[45%] sm:w-[150%] sm:left-[-25%] w-[250%] xl:left-[-40%] md:top-[34%] md:w-[100%] md:left-[-41%] md:translate-y-[-50%]" viewBox="0 0 679 681" fill="none" stopOpacity='0.2' xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
                     <ellipse opacity="0.7" cx="339.414" cy="340.579" rx="167.901" ry="168.624" transform="rotate(150 339.414 340.579)" fill="url(#paint0_radial_1376_5657)" />
                     <path opacity="0.3" d="M187.495 428.29C138.845 344.025 167.424 236.449 251.324 188.01C335.223 139.57 442.677 168.608 491.327 252.873C539.978 337.138 511.398 444.714 427.499 493.154C343.599 541.593 236.145 512.555 187.495 428.29Z" stroke="#7BB690" />
@@ -107,6 +141,6 @@ const Professional: FC = () => {
             </div>
         </section>
     );
-};
+});
 
 export default Professional;

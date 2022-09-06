@@ -11,6 +11,8 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
     const easyList = t('home.easy.list', { returnObjects: true })
 
     // animation
+    const refAnimContents = React.useRef<any>([]);
+    const refAnimRightImage = React.useRef<any>(null);
     const getShowTimeline = (duration: number = 1.5) => {
         return gsap.timeline({ onReverseComplete: () => { gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
@@ -33,32 +35,49 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
 
     const containerRef = React.useRef<any>();
     const prevAnimation = React.useRef<any>(null);
-    const startAnim = (direction: string, shown: boolean) => {
+    const rightImagePos = ['90%', '50%', '10%'];
+    const startAnim = (direction: string, shown: boolean, index: number) => {
         if (prevAnimation.current) prevAnimation.current.kill();
         gsap.set([containerRef.current], { display: 'block' });
-        if (direction == 'DOWN' && shown) prevAnimation.current = getShowTimeline().play(0);
+        if (direction == 'DOWN' && shown) {
+            if (index == 1) prevAnimation.current = getShowTimeline().play(0);
+            gsap.timeline()
+                .to(
+                    refAnimContents.current,
+                    { opacity: 0, display: 'none' }
+                )
+                .to(
+                    refAnimContents.current[index - 1],
+                    { opacity: 1, display: 'flex' }
+                )
+                .to(
+                    refAnimRightImage.current,
+                    { top: rightImagePos[index - 1], duration: 1 },
+                    0
+                )
+                .play();
+        }
         else if (direction == 'DOWN' && !shown) prevAnimation.current = getHideTimeline().play(0);
-        else if (direction == 'UP' && shown) prevAnimation.current = getHideTimeline().reverse(0);
+        else if (direction == 'UP' && shown) {
+            if (index == 3) prevAnimation.current = getHideTimeline().reverse(0);
+            gsap.timeline()
+                .to(
+                    refAnimContents.current,
+                    { opacity: 0, display: 'none' }
+                )
+                .to(
+                    refAnimContents.current[index - 1],
+                    { opacity: 1, display: 'flex' }
+                )
+                .to(
+                    refAnimRightImage.current,
+                    { top: rightImagePos[index - 1], duration: 1 },
+                    0
+                )
+                .play();
+        }
         else if (direction == 'UP' && !shown) prevAnimation.current = getShowTimeline().reverse(0);
     }
-
-    let isLockScroll = false;
-
-    const onKeyDown = (e: KeyboardEvent) => {
-        if (window.innerWidth < 920 || isLockScroll) return;
-        console.log('sage home keydown');
-        e.preventDefault();
-        return false;
-    }
-
-    React.useEffect(() => {
-        window.addEventListener('keydown', onKeyDown);
-        // window.addEventListener('wheel', onMouseWheel);
-        return () => {
-            window.removeEventListener('keydown', onKeyDown);
-            // window.removeEventListener('wheel', onMouseWheel);
-        }
-    }, [])
 
     return (
         <div id="secure" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container mx-auto relative md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
@@ -84,7 +103,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
             </svg>
 
 
-            <svg className="absolute right-[-52%] top-[57%] sm:top-[32%] md:top-[26%] md:w-[120%] xl:w-[100%]   sm:w-[140%] sm:right-[-20%] w-[204%] md:right-[-70%] xl:right-[-53%] " viewBox="0 0 907 907" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg ref={refAnimRightImage} className="absolute right-[-52%] top-[57%] sm:top-[32%] md:top-[90%] md:w-[120%] xl:w-[100%]   sm:w-[140%] sm:right-[-20%] w-[204%] md:right-[-70%] xl:right-[-53%] md:translate-y-[-50%]" viewBox="0 0 907 907" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.4" d="M538.472 704.59C686.17 656.921 768.31 499.556 721.937 353.106C675.564 206.655 518.239 126.576 370.541 174.245C222.842 221.913 140.702 379.278 187.075 525.729C233.448 672.179 390.774 752.258 538.472 704.59Z" fill="url(#paint0_radial_1376_4815)" />
                 <path opacity="0.5" d="M512.183 639.605C615.95 606.114 673.659 495.555 641.079 392.664C608.499 289.773 497.968 233.513 394.2 267.003C290.433 300.493 232.724 411.052 265.304 513.943C297.884 616.834 408.415 673.095 512.183 639.605Z" fill="url(#paint1_radial_1376_4815)" />
                 <path d="M621.253 399.063C650.392 491.089 598.779 589.983 505.956 619.941C413.134 649.898 314.27 599.571 285.13 507.544C255.99 415.517 307.604 316.624 400.426 286.666C493.249 256.708 592.113 307.036 621.253 399.063Z" stroke="url(#paint2_linear_1376_4815)" />
@@ -114,7 +133,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
             </svg>
 
 
-            <div className="relative md:flex items-center mt-20 md:mt-0 px-10 md:px-0 h-full">
+            <div ref={el => refAnimContents.current.push(el)} className="relative md:flex md:hidden items-center mt-20 md:mt-0 px-10 md:px-0 h-full">
                 <div className="flex flex-wrap ">
                     {/* <div className="w-[20%]"></div> */}
                     <div className="w-full md:w-1/2 m-auto">
@@ -127,7 +146,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                 </div>
             </div>
 
-            <div className=" relative md:fixed md:hidden items-center px-10 md:px-0 h-full mt-[100px] md:mt-0">
+            <div ref={el => refAnimContents.current.push(el)} className=" relative md:fixed md:hidden items-center px-10 md:px-0 h-full mt-[100px] md:mt-0">
                 <div className="flex flex-wrap">
                     {/* <div className="w-[20%]"></div> */}
                     <div className="w-full md:w-1/2 m-auto">
@@ -142,7 +161,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                 </div>
             </div>
 
-            <div className="relative md:fixed md:hidden items-center px-10 md:px-0 h-full">
+            <div ref={el => refAnimContents.current.push(el)} className="relative md:fixed md:hidden items-center px-10 md:px-0 h-full">
                 <div className="flex flex-wrap mt-[400px] md:mt-12">
                     <div className="w-full md:w-1/2 m-auto">
                         <div className="relative">

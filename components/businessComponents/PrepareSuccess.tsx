@@ -1,14 +1,46 @@
 //modules
 import React, { FC } from "react"
 import { useTranslation } from "next-i18next";
+import gsap from 'gsap';
 
-
-const PrepareSuccess: FC = () => {
+const PrepareSuccess: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref: any) => {
     //translate
     const { t } = useTranslation()
 
+    // animation
+    const getShowTimeline = (duration: number=1.5) => {
+        return gsap.timeline({onReverseComplete: ()=>{gsap.set([containerRef.current], {display: 'none'});}})
+            .fromTo(
+                containerRef.current,
+                { y: 100, opacity: 0 },
+                { y: 0, opacity: 1, duration },
+                0
+            )
+    }
+
+    const getHideTimeline = (duration: number = 1.5) => {
+        return gsap.timeline({ onComplete: () => { gsap.set([containerRef.current], { display: 'none' }); } })
+            .fromTo(
+                containerRef.current,
+                { y: 0, opacity: 1 },
+                { y: -100, opacity: 0, duration },
+                0
+            )
+    }
+
+    const containerRef = React.useRef<any>();
+    const prevAnimation = React.useRef<any>(null);
+    const startAnim = (direction: string, shown: boolean, index: number) => {
+        if ( prevAnimation.current ) prevAnimation.current.kill();
+        gsap.set([containerRef.current], {display: 'block'});
+        if ( direction == 'DOWN' && shown ) prevAnimation.current = getShowTimeline().play(0);
+        else if ( direction == 'DOWN' && !shown ) prevAnimation.current = getHideTimeline().play(0);
+        else if ( direction == 'UP' && shown ) prevAnimation.current = getHideTimeline().reverse(0);
+        else if (direction == 'UP' && !shown ) prevAnimation.current = getShowTimeline().reverse(0);
+    }
+
     return (
-        <section id="easy" className="container mx-auto pb-16 relative  py-[150px]">
+        <section id="easy" ref={(el)=>{containerRef.current=el; if (ref) ref.current = {container: el, startAnim}}} className="container mx-auto pb-16 relative  py-[150px] md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
             <svg className="hidden md:block absolute top-1/2 translate-y-[-50%] w-[65%] 2xl:w-[1000px] w-[174%] left-[-25%]" viewBox="0 0 704 704" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
                     <ellipse opacity="0.7" cx="351.991" cy="351.55" rx="217.013" ry="217.214" transform="rotate(-180 351.991 351.55)" fill="url(#paint0_radial_1376_5668)" />
@@ -39,7 +71,7 @@ const PrepareSuccess: FC = () => {
                 </defs>
             </svg>
 
-            <svg className="hidden md:block absolute  right-[-19%] top-[[ w-[28%] 2xl:w-[400px] " viewBox="0 0 413 413" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="hidden md:block absolute right-[-19%] md:translate-y-[-400px] md:top-1/2 w-[28%] 2xl:w-[400px] " viewBox="0 0 413 413" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
                     <circle opacity="0.7" cx="206.097" cy="206.099" r="206.098" transform="rotate(-180 206.097 206.099)" fill="url(#paint0_radial_1376_5811)" />
                     <path opacity="0.6" d="M15.1172 206.04C15.1172 101.108 100.628 16.04 206.117 16.04C311.606 16.04 397.117 101.108 397.117 206.04C397.117 310.972 311.606 396.04 206.117 396.04C100.628 396.04 15.1172 310.972 15.1172 206.04Z" stroke="url(#paint1_radial_1376_5811)" />
@@ -108,6 +140,6 @@ const PrepareSuccess: FC = () => {
         </section>
 
     );
-};
+});
 
 export default PrepareSuccess
