@@ -1,18 +1,52 @@
 //modules
 import React, { FC } from "react";
 import { useTranslation } from "next-i18next";
+import gsap from 'gsap';
 
 // Custom components
 import Breadcrumb from "../../components/common/breadcrumb";
 
-const Boost: FC = () => {
+const Boost: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref: any) => {
     //translate
     const { t } = useTranslation()
 
     const logos = ["volksbank", "adac", "sparkasse", "barSaintJean"];
 
+    // animation
+    const getShowTimeline = (duration: number=1.5) => {
+        return gsap.timeline({onReverseComplete: ()=>{gsap.set([containerRef.current], {display: 'none'});}})
+            .fromTo(
+                containerRef.current,
+                { y: 100, opacity: 0 },
+                { y: 0, opacity: 1, duration },
+                0
+            )
+    }
+
+    const getHideTimeline = (duration: number = 1.5) => {
+        return gsap.timeline({ onComplete: () => { gsap.set([containerRef.current], { display: 'none' }); } })
+            .fromTo(
+                containerRef.current,
+                { y: 0, opacity: 1 },
+                { y: -100, opacity: 0, duration },
+                0
+            )
+    }
+
+    const containerRef = React.useRef<any>();
+    const prevAnimation = React.useRef<any>(null);
+    const startAnim = (direction: string, shown: boolean, index: number) => {
+        if ( prevAnimation.current ) prevAnimation.current.kill();
+        gsap.set([containerRef.current], {display: 'block'});
+        if ( direction == 'DOWN' && shown ) prevAnimation.current = getShowTimeline().play(0);
+        else if ( direction == 'DOWN' && !shown ) prevAnimation.current = getHideTimeline().play(0);
+        else if ( direction == 'UP' && shown ) prevAnimation.current = getHideTimeline().reverse(0);
+        else if (direction == 'UP' && !shown ) prevAnimation.current = getShowTimeline().reverse(0);
+    }
+    
+
     return (
-        <section className="pb-16 relative container mx-auto">
+        <section ref={(el)=>{containerRef.current=el; if (ref) ref.current = {container: el, startAnim}}} className="pb-16 relative container mx-auto md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
 
             <svg className="absolute right-[-42%] bottom-[-30%] top-[69%] md:top-1/2 md:translate-y-[-50%] md:w-[130%] sm:w-[150%] sm:right-[-25%] w-[174%] md:right-[-65%] xl:right-[-44%] " viewBox="0 0 721 703" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.5" d="M487.811 220.384C496.618 193.795 482.244 164.751 455.706 155.514C429.169 146.277 400.516 160.344 391.709 186.933C382.901 213.523 397.275 242.566 423.813 251.803C450.351 261.04 479.003 246.973 487.811 220.384Z" fill="url(#paint0_linear_1376_5373)" />
@@ -35,7 +69,7 @@ const Boost: FC = () => {
                     href="/images/mobile-comment.png"
                     className="w-[16%]"
                     x="39%"
-                    y="50%"
+                    y="58%"
                 />
                 <defs>
                     <clipPath id="businessContentPic1"><circle cx="333" cy="325" r="130" fill="#FFFFFF"></circle></clipPath>
@@ -114,6 +148,6 @@ const Boost: FC = () => {
             </div>
         </section>
     );
-};
+});
 
 export default Boost;

@@ -1,7 +1,8 @@
 import React, { FC } from 'react'
 import { useTranslation } from 'next-i18next'
+import gsap from 'gsap';
 
-const WhitePaper: FC = () => {
+const WhitePaper: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref: any) => {
     //translate
     const { t } = useTranslation()
     const paperList = t('business.whitepaper.paperList', { returnObjects: true })
@@ -50,8 +51,40 @@ const WhitePaper: FC = () => {
         </svg>
     ]
 
+    // animation
+    const getShowTimeline = (duration: number=1.5) => {
+        return gsap.timeline({onReverseComplete: ()=>{gsap.set([containerRef.current], {display: 'none'});}})
+            .fromTo(
+                containerRef.current,
+                { y: 100, opacity: 0 },
+                { y: 0, opacity: 1, duration },
+                0
+            )
+    }
+
+    const getHideTimeline = (duration: number = 1.5) => {
+        return gsap.timeline({ onComplete: () => { gsap.set([containerRef.current], { display: 'none' }); } })
+            .fromTo(
+                containerRef.current,
+                { y: 0, opacity: 1 },
+                { y: -100, opacity: 0, duration },
+                0
+            )
+    }
+
+    const containerRef = React.useRef<any>();
+    const prevAnimation = React.useRef<any>(null);
+    const startAnim = (direction: string, shown: boolean, index: number) => {
+        if ( prevAnimation.current ) prevAnimation.current.kill();
+        gsap.set([containerRef.current], {display: 'flex'});
+        if ( direction == 'DOWN' && shown ) prevAnimation.current = getShowTimeline().play(0);
+        else if ( direction == 'DOWN' && !shown ) prevAnimation.current = getHideTimeline().play(0);
+        else if ( direction == 'UP' && shown ) prevAnimation.current = getHideTimeline().reverse(0);
+        else if (direction == 'UP' && !shown ) prevAnimation.current = getShowTimeline().reverse(0);
+    }
+
     return (
-        <div id='whitepaper' className='container text-white md:flex items-center m-auto py-[100px] md:h-screen'>
+        <div id='whitepaper' ref={(el)=>{containerRef.current=el; if (ref) ref.current = {container: el, startAnim}}} className='container text-white items-center m-auto py-[100px] md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]'>
             <div className='w-full text-center '>
                 <div>
                     <h1 className="text-title-sm ">
@@ -79,6 +112,6 @@ const WhitePaper: FC = () => {
 
         </div>
     )
-}
+})
 
 export default WhitePaper
