@@ -142,7 +142,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                 0
             )
             .fromTo(
-                animSideUp.current,
+                [animSideUp.current, animFadeIn.current],
                 { y: 200 },
                 { y: 0, duration: duration / 2 },
                 duration / 2
@@ -176,7 +176,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                 0
             )
             .fromTo(
-                animSideUp.current,
+                [animSideUp.current, animFadeIn.current],
                 { y: 0 },
                 { y: -100, duration },
                 0
