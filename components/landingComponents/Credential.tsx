@@ -92,7 +92,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
         gsap.to(slide, { left, duration });
         if (refBackCircleCarousel.current && carousel.getSelectedIndex() == shownIndex + position) {
             gsap.to(refBackCircleCarousel.current, { left: parseInt(left) - 4 + '%', duration });
-            gsap.to(animCircle.current[2], { scale: shownIndex % 2 == 0 ? 1 : 0.68 });
+            gsap.to(animCircle.current[2], { scale: carousel.getSelectedIndex() % 2 == 0 ? 1 : 0.78 });
         }
     }
 
@@ -183,7 +183,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
             .fromTo(
                 animCircle.current[2],
                 { scale: 0.4, transformOrigin: 'center center' },
-                { scale: carousel && carousel.getSelectedIndex() % 2 != 0 ? 0.68 : 1, transformOrigin: 'center center', duration: duration / 2 },
+                { scale: carousel && carousel.getSelectedIndex() % 2 != 0 ? 0.78 : 1, transformOrigin: 'center center', duration: duration / 2 },
                 duration / 2
             )
 
@@ -223,7 +223,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
             )
             .fromTo(
                 animCircle.current[2],
-                { scale: carousel && carousel.getSelectedIndex() % 2 != 0 ? 0.68 : 1, transformOrigin: 'center center' },
+                { scale: carousel && carousel.getSelectedIndex() % 2 != 0 ? 0.78 : 1, transformOrigin: 'center center' },
                 { scale: 0.4, transformOrigin: 'center center', duration },
                 0
             )
