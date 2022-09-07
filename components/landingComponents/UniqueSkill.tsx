@@ -328,13 +328,21 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
     const onClickSkill = (index: number) => {
         // 
         if (window.innerWidth < 920) {
-            const graphElement = animSkills.current[index].getElementsByClassName('unique-graph')[0];
-            const widthAttribute = window.getComputedStyle(graphElement, null).width;
-            if (widthAttribute == '200px') return;
+            if ( animSkills.current[index].getAttribute('data-box-opened') == 'false' || !animSkills.current[index].getAttribute('data-box-opened') ) {
+                for ( let i = 0; i < animSkills.current.length; i++ ) {
+                    const opened = i == index ? 'true' : 'false';
+                    animSkills.current[i].setAttribute('data-box-opened', opened);
+                }
+                return;
+            }
         }
+        
+        for ( let i = 0; i < animSkills.current.length; i++ ) {
+            animSkills.current[i].setAttribute('data-box-opened', 'false');
+        }
+
         router.push(graphList[index].href)
     }
-
 
     return (
         <>
@@ -348,7 +356,7 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                         <div className='md:m-auto md:w-max  '>
                             {
                                 (skillList as unknown as any[]).map((item: any, index: any) => (
-                                    <div ref={el => animSkills.current.push(el)} onClick={() => onClickSkill(index)} onMouseEnter={() => onMouseEnterSkill(index)} onMouseLeave={() => onMouseLeaveSkill(index)} className='cursor-pointer right-[-20px] sm:right-[-70px] w-full md:w-[210px] xl:w-[280px] md:inline-block align-top md:right-auto relative px-5 py-5 flex-1 unique-skill-items unique-skill-animate z-40' key={index}>
+                                    <div ref={el => {if ( el != null && animSkills.current.indexOf(el) == -1 )animSkills.current.push(el)}} onClick={() => onClickSkill(index)} onMouseEnter={() => onMouseEnterSkill(index)} onMouseLeave={() => onMouseLeaveSkill(index)} className='cursor-pointer right-[-20px] sm:right-[-70px] w-full md:w-[210px] xl:w-[280px] md:inline-block align-top md:right-auto relative px-5 py-5 flex-1 unique-skill-items unique-skill-animate z-40' key={index}>
                                         <div className=' border-[1px] bg-black  border-slate-600 rounded-md h-full'>
                                             <div className='tracking-widest py-5 md:pt-[80px] md:pb-[100px] xl:pl-[42px] xl:pr-0 px-5 text-white w-full relative  md:h-[300px]'>
                                                 <picture className=''>
