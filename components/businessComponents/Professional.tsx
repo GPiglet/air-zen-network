@@ -130,7 +130,7 @@ const Professional: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
                                     <p className="font-lato font-medium mb-4 mt-5">{item.title}</p>
                                     <ul className='list-["-"] pl-2 unique-skill-list'>
                                         {item.items.split('\n').map((list: string, ind: number) => (
-                                            <li className='font-lato text-base font-light' key={ind}>{list}</li>
+                                            <li className='font-lato text-lg font-light' key={ind}>{list}</li>
                                         ))}
                                     </ul>
                                 </div>
