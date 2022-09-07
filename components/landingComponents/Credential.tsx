@@ -205,8 +205,8 @@ const Credential = React.forwardRef((props: any, ref: any) => {
             )
             .fromTo(
                 animFadeIn.current,
-                { opacity: 1 },
-                { opacity: 0, duration },
+                { opacity: 1, y: 0 },
+                { opacity: 0, y: -100, duration },
                 0
             )
             .fromTo(
