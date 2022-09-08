@@ -118,7 +118,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
                       </Link>
                     ) : (
                       <div onClick={() => routing(item)}>
-                        <p className="hover:text-gray-100 text-gray-400  py-4 md:py-2 flex items-center text-lg uppercase font-lato">{item.title}</p>
+                        <p className={`hover:text-gray-100 ${item.href=='solutions' ? 'text-white' : 'text-gray-400'}  py-4 md:py-2 flex items-center text-lg uppercase font-lato`}>{item.title}</p>
                       </div>
                     )
                   }

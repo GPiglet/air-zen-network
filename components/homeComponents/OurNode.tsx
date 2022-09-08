@@ -52,9 +52,7 @@ const OurNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
     }
 
     useEffect(() => {
-        console.log(router)
         if (router.query.section === 'technology') {
-            console.log('dd')
             scrollToRef(containerRef)
         }
 

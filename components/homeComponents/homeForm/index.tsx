@@ -20,7 +20,6 @@ const HomeForm: FC = () => {
     let step = useContext(StoreContext).step
     const { homeOption } = useContext(StoreContext)
     useEffect(() => {
-        console.log(step, homeOption)
         if (step === 0 && homeOption) {
             ++step
         }
