@@ -109,7 +109,7 @@ const Business: NextPage = () => {
 		isLockScroll = true;
 		setTimeout(() => {
 			isLockScroll = false;
-		}, 1000);
+		}, 1500);
 		let index = 0;
 		switch (e.key) {
 			case 'ArrowDown':
@@ -136,7 +136,7 @@ const Business: NextPage = () => {
 		isLockScroll = true;
 		setTimeout(() => {
 			isLockScroll = false;
-		}, 1000);
+		}, 1500);
 
 		let index = 0;
 		if (e.deltaY > 0) {
@@ -163,7 +163,7 @@ const Business: NextPage = () => {
 	}, [])
 
 	return (
-		<div ref={refBackGradient} className='overflow-x-hidden relative h-screen' id='business_page'>
+		<div ref={refBackGradient} className='relative h-screen' id='business_page'>
 			<Mainlayout navItems={navItems} hasFooter={false}>
 				<BusinessForm />
 				<Boost ref={refSectionBoost} />

@@ -84,7 +84,7 @@ const Home: NextPage = () => {
 		isLockScroll = true;
 		setTimeout(() => {
 			isLockScroll = false;
-		}, 1000);
+		}, 1500);
 		let index = 0;
 		switch( e.key ) {
 			case 'ArrowDown':
@@ -111,7 +111,7 @@ const Home: NextPage = () => {
 		isLockScroll = true;
 		setTimeout(() => {
 			isLockScroll = false;
-		}, 1000);
+		}, 1500);
 
 		let index = 0;
 		if ( e.deltaY > 0 ) { 
@@ -147,7 +147,7 @@ const Home: NextPage = () => {
 	}
 
 	return (
-		<div className='back-right-bottom-gradient-primary overflow-x-hidden relative h-screen'>
+		<div className='back-right-bottom-gradient-primary relative h-screen'>
 			<Mainlayout navItems={navItems} hasFooter={false}>
 				<HomeForm />
 				<SimplyNetwork ref={refSectionSimplyNetwork}/>

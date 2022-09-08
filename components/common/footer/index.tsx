@@ -13,7 +13,7 @@ const Footer: FC = () => {
 
     return (
         <div className='container m-auto'>
-            <div className='relative py-[100px] md:py-[100px] flex justify-center overflow-x-hidden'>
+            <div className='relative py-[100px] md:py-[100px] flex justify-center'>
                 <h1 className="text-title-sm">{t('footer.title')}</h1>
             </div>
             <div className='px-10  grid md:grid-cols-3 tracking-widest text-white pb-12'>

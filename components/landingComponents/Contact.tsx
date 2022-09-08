@@ -23,12 +23,9 @@ const Contact = React.forwardRef((props: any, ref: any) => {
     const emailRef = useRef<any>();
     const messageRef = useRef<any>();
     const containerRef = React.useRef<any>();
-    const footerRef = React.useRef<any>();
-
 
     const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop, behavior: 'smooth' })
     useEffect(() => {
-        console.log('##')
         if (router.query.section === 'cantact')
             scrollToRef(containerRef)
     }, [])
@@ -52,9 +49,10 @@ const Contact = React.forwardRef((props: any, ref: any) => {
     const animSlideLeft = React.useRef<any>([]);
     const animSlideRight = React.useRef<any>([]);
     const animFadeIn = React.useRef<any>([]);
+    const backGradientRef = React.useRef<any>(null);
 
     const getShowTimeline = (duration: number = 3) => {
-        return gsap.timeline({ paused: true, onUpdate: () => window.scrollTo({ top: 0 }), onReverseComplete: () => { if (containerRef.current) gsap.set([containerRef.current, footerRef.current], { display: 'none' }) } })
+        return gsap.timeline({ paused: true, onReverseComplete: () => { if (containerRef.current) gsap.set([containerRef.current, backGradientRef.current], { display: 'none' }) } })
             .fromTo(
                 animSlideUp.current[0],
                 { opacity: 0 },
@@ -91,38 +89,41 @@ const Contact = React.forwardRef((props: any, ref: any) => {
                 { opacity: 1, x: 0, duration: duration / 2 },
                 duration / 2
             )
-            .fromTo(
-                footerRef.current,
-                { opacity: 0 },
-                { opacity: 1, duration: duration / 2 },
-                duration / 2
-            )
+            
 
-    }
-
-    const getHideTimeline = (duration: number = 1.5) => {
     }
 
     const prevAnimation = React.useRef<any>(null);
     const startAnim = (direction: string, shown: boolean) => {
         if (prevAnimation.current) prevAnimation.current.kill();
-        // window.scrollTo({top: 10})
-        gsap.set([containerRef.current, footerRef.current], { display: 'block' });
+        gsap.set([containerRef.current, backGradientRef.current], { display: 'block', y: 0 });
         if (direction == 'DOWN' && shown) {
-            gsap.set(document.getElementsByClassName('back-left-top-gradient-primary'), { background: 'linear-gradient(180.42deg, rgba(1, 172, 230, 0.2) 0%, rgba(1, 172, 230, 0) 20%), #000000' });
+            gsap.set(backGradientRef.current, { background: 'linear-gradient(180.42deg, rgba(1, 172, 230, 0.3) 0%, rgba(1, 172, 230, 0) 50%), #000000' });
             prevAnimation.current = getShowTimeline().play(0);
         }
-        // else if ( direction == 'DOWN' && !shown ) getHideTimeline().play(0);
-        // else if ( direction == 'UP' && shown ) getHideTimeline().reverse(0);
         else if (direction == 'UP' && !shown) {
-            gsap.set(document.getElementsByClassName('back-left-top-gradient-primary'), { background: 'transparent' });
+            gsap.set(backGradientRef.current, { background: 'transparent' });
             prevAnimation.current = getShowTimeline().reverse(0);
         }
     }
 
+    const scroll = (direction: string, offset: number = 17) => {
+        const rect = containerRef.current?.getBoundingClientRect();
+        if( rect.top <= 0 && rect.top > -offset && offset > 0 ) {
+            return false;
+        }
+        if( Math.abs(rect.top) + window.innerHeight + 500 > rect.height && offset < 0 ) {
+            offset = 0;
+        }
+        gsap.set(containerRef.current, {
+            y: '+=' + offset
+        })
+        return true;
+    }
+
     return (
         <>
-            <div id='cantact' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='container m-auto relative py-[120px] md:py-[280px] flex justify-center md:hidden'>
+            <div id='cantact' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim, scroll } }} className='container m-auto relative py-[120px] md:py-[280px] flex justify-center md:fixed md:hidden md:left-1/2 md:translate-x-[-50%]'>
                 <div className=" flex justify-center">
                     <div className='text-white md:w-[50%] xl:w-1/3 text-center relative z-40 px-10 md:px-auto'>
                         <h1 ref={el => animSlideUp.current.push(el)} className="text-title-sm">{t('landing.contact.title')}</h1>
@@ -146,7 +147,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
                             <input
                                 className="custom-input-dark text-left w-full"
                                 placeholder='Vorname Nachname'
-
+                                onKeyDown={(e: any)=>e.stopPropagation()}
                             />
                         </div>
                         <p ref={el => { animSlideUp.current.push(el); animFadeIn.current.push(el) }} className='text-left text-slate-300 mb-2'>Email Address</p>
@@ -155,7 +156,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
                                 className="custom-input-dark text-left w-full "
                                 placeholder='Vorname Nachname'
                                 type="email"
-
+                                onKeyDown={(e: any)=>e.stopPropagation()}
                             />
                         </div>
                         <div className='custom-input-gradient w-full mb-5 relative z-10 ' ref={el => { messageRef.current = el; animSlideUp.current.push(el); animFadeIn.current.push(el) }}>
@@ -163,7 +164,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
                                 rows={3}
                                 className="custom-input-dark text-left w-full "
                                 placeholder='Ihre Nachricht '
-
+                                onKeyDown={(e: any)=>e.stopPropagation()}
                             />
                         </div>
                         <button ref={el => { animSlideUp.current.push(el); animFadeIn.current.push(el) }} className='text-lgx text-white button-gradient py-2 px-8 rounded-md border border-primary relative z-10'>
@@ -206,7 +207,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
 
 
                 {/* Animate svgs */}
-                <svg ref={el => { animSlideLeft.current.push(el) }} className='hidden md:block absolute w-[70%] top-[40%] left-[-20%] center-y-transform' viewBox="0 0 905 910" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg ref={el => { animSlideLeft.current.push(el) }} className='hidden md:block absolute w-[70%] top-[680px] left-[-20%] center-y-transform' viewBox="0 0 905 910" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.2" d="M366.837 821.129C569.435 870.095 772.026 745.822 819.337 543.557C866.647 341.291 740.762 137.628 538.164 88.6614C335.566 39.6951 132.975 163.968 85.6643 366.234C38.3534 568.499 164.238 772.163 366.837 821.129Z" fill="url(#paint0_radial_1452_3608)" />
                     <path opacity="0.5" d="M537.259 745.903C689.099 696.562 773.542 533.675 725.869 382.084C678.196 230.494 516.459 147.605 364.619 196.947C212.78 246.288 128.336 409.175 176.009 560.766C223.683 712.356 385.42 795.245 537.259 745.903Z" fill="url(#paint1_radial_1452_3608)" />
                     <path opacity="0.5" d="M514.454 673.388C626.179 637.082 688.312 517.229 653.234 405.688C618.156 294.148 499.149 233.158 387.425 269.463C275.701 305.769 213.567 425.622 248.645 537.162C283.724 648.703 402.73 709.693 514.454 673.388Z" fill="url(#paint2_radial_1452_3608)" />
@@ -276,8 +277,14 @@ const Contact = React.forwardRef((props: any, ref: any) => {
                         </linearGradient>
                     </defs>
                 </svg>
+                <div className='h-[200px]'></div>
+                <div className='hidden md:block'>
+                    <Footer />
+                </div>
             </div>
-            <div ref={footerRef} className='md:hidden'>
+            <div ref={backGradientRef} className='md:hidden md:fixed md:w-screen md:h-screen md:z-0'>
+            </div>
+            <div className='md:hidden'>
                 <Footer />
             </div>
         </>

@@ -60,53 +60,54 @@ const Homepage: NextPage = () => {
 
 	const router = useRouter();
 	
-	const currentSection = React.useRef<any>(null);
+	const currentSectionIndex = React.useRef<any>(-1);
 	const gotoScene = (name: string) => {
 		if ( window.innerWidth < 920 ) return;
 		let direction: string = 'DOWN', index: number = 0;
 		switch( name ) {
 			case '':	// hero
-				if ( currentSection.current == refSections[0] ) return;
+				if ( currentSectionIndex.current == 0 ) return;
 				index = 0;
 				direction = 'UP';
 				break;
 
 			case navItems[0].href:
-				if ( currentSection.current == refSections[1] ) return;
-				if ( refSections.indexOf(currentSection.current) > 1 ) direction = 'UP';
+				if ( currentSectionIndex.current == 1 ) return;
+				if ( currentSectionIndex.current > 1 ) direction = 'UP';
 				else direction = 'DOWN';
 				index = 1;
 				break;
 
 			case navItems[1].href:
-				if ( currentSection.current == refSections[2] ) return;
-				if ( refSections.indexOf(currentSection.current) > 2 ) direction = 'UP';
+				if ( currentSectionIndex.current == 2 ) return;
+				if ( currentSectionIndex.current > 2 ) direction = 'UP';
 				else direction = 'DOWN';
 				index = 2;
 				break;
 
 			case navItems[2].href:
-				if ( currentSection.current == refSections[3] ) return;
-				if ( refSections.indexOf(currentSection.current) > 3 ) direction = 'UP';
+				if ( currentSectionIndex.current == 3 ) return;
+				if ( currentSectionIndex.current > 3 ) direction = 'UP';
 				else direction = 'DOWN';
 				index = 3;
 				break;
 
 			case navItems[3].href:
-				if ( currentSection.current == refSections[4] ) return;
-				if ( refSections.indexOf(currentSection.current) > 4 ) direction = 'UP';
+				if ( currentSectionIndex.current == 4 ) return;
+				if ( currentSectionIndex.current > 4 ) direction = 'UP';
 				else direction = 'DOWN';
 				index = 4;
 				break;
 		}
 
 		refSections.forEach(section=>gsap.set(section.current.container, {zIndex: 10}));
-		if ( currentSection.current && currentSection.current.current?.startAnim ) currentSection.current.current?.startAnim(direction, false);
-		const isFirst = currentSection.current == null ? true : false;
-		currentSection.current = refSections[index];
-		if ( currentSection.current && currentSection.current.current?.startAnim ) {
-			currentSection.current.current?.startAnim(direction, true, isFirst);
-			gsap.set(currentSection.current.current?.container, {zIndex: 11});
+		const currentIndex = currentSectionIndex.current;
+		if ( currentIndex != -1 && refSections[currentIndex].current?.startAnim ) refSections[currentIndex].current?.startAnim(direction, false);
+		const isFirst = currentIndex == -1 ? true : false;
+		currentSectionIndex.current = index;
+		if ( refSections[index].current && refSections[index].current?.startAnim ) {
+			refSections[index].current?.startAnim(direction, true, isFirst);
+			gsap.set(refSections[index].current?.container, {zIndex: 11});
 		}
 	}
 
@@ -114,6 +115,25 @@ const Homepage: NextPage = () => {
 	let isLockScroll = false;
 	const onKeyDown = (e: KeyboardEvent) => {
 		if ( window.innerWidth < 920 || isLockScroll ) return;
+
+		const currentIndex = currentSectionIndex.current;
+		let scrollOffset = 0;
+		switch( e.key ) {
+			case 'ArrowDown':
+				scrollOffset = -17;
+				break;
+			case 'PageDown':
+				scrollOffset = -100;
+				break;
+			case 'ArrowUp':
+				scrollOffset = 17;
+				break;
+			case 'PageUp':
+				scrollOffset = 100;
+				break;
+		}
+		if ( currentIndex != -1 && refSections[currentIndex].current?.scroll && refSections[currentIndex].current?.scroll(e.key, scrollOffset) ) return;
+
 		isLockScroll = true;
 		setTimeout(() => {
 			isLockScroll = false;
@@ -122,18 +142,18 @@ const Homepage: NextPage = () => {
 		switch( e.key ) {
 			case 'ArrowDown':
 			case 'PageDown':
-				index = refSections.indexOf(currentSection.current) + 1;
+				index = currentIndex + 1;
 				if ( index >= refSections.length ) return;
 				break;
 
 			case 'ArrowUp':
 			case 'PageUp':
-				index = refSections.indexOf(currentSection.current) - 1;
+				index = currentIndex - 1;
 				if ( index < 0 ) return;
 				break;
 			default:
 				return;
-		}
+		}		
 
 		if ( index == 0 ) {
 			router.push({
@@ -151,6 +171,10 @@ const Homepage: NextPage = () => {
 
 	const onMouseWheel = (e: WheelEvent) => {
 		if ( window.innerWidth < 920 || isLockScroll ) return;
+
+		const currentIndex = currentSectionIndex.current;
+		if ( currentIndex != -1 && refSections[currentIndex].current?.scroll && refSections[currentIndex].current?.scroll('Wheel', 0-e.deltaY) ) return;
+
 		isLockScroll = true;
 		setTimeout(() => {
 			isLockScroll = false;
@@ -158,11 +182,11 @@ const Homepage: NextPage = () => {
 
 		let index = 0;
 		if ( e.deltaY > 0 ) { 
-			index = refSections.indexOf(currentSection.current) + 1;
+			index = currentIndex + 1;
 			if ( index >= refSections.length ) return;
 		}
 		else {
-			index = refSections.indexOf(currentSection.current) - 1;
+			index = currentIndex - 1;
 			if ( index < 0 ) return;
 		}
 
@@ -196,7 +220,7 @@ const Homepage: NextPage = () => {
 	}, [router])
 
 	return (
-		<div className='back-left-top-gradient-primary overflow-x-hidden'>
+		<div className='back-left-top-gradient-primary'>
 			<Mainlayout navItems={navItems} hasFooter={false}>
 				<Hero ref={refSectionHero}/>
 				<UniqueSkill ref={refSectionUnequeSkill}/>

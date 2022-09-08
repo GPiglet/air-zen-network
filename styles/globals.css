@@ -3,25 +3,16 @@ body {
   padding: 0;
   margin: 0;
   font-family: lato;
-  /* overflow-y: scroll; */
   -webkit-font-smoothing: subpixel-antialiased;
   scroll-behavior: smooth;
-}
-
-html {
-  /* overflow-x: hidden; */
-}
-
-body {
-  /* overflow-x: hidden; */
   white-space: pre-line;
-  /* overflow-y: scroll; */
-
-  /* overflow-y: hidden; */
   background-color: #000000;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 @media only screen and (max-width: 920px) {
+  html,
   body {
     overflow-y: auto;
   }
@@ -372,7 +363,7 @@ input[type=number] {
 
 
 /* Scrollbar width custom */
-*::-webkit-scrollbar {
+/* *::-webkit-scrollbar {
   width: 0px
 }
 
@@ -388,4 +379,8 @@ input[type=number] {
 *::-webkit-scrollbar-thumb {
   border-radius: 8px;
   background: transparent;
+} */
+
+.about-us-phone {
+  -webkit-transition: opacity 2.0s ease-in;
 }
