@@ -40,10 +40,10 @@ const HomeForm: FC = () => {
 
     return (
         <div className='realtive right-0 z-60' >
-            <div className='fixed right-[-40px] top-[10%] bg-white w-[110px] cursor-pointer  py-4 px-4 rounded-full z-100' onClick={() => scrollAnchor()}>
+            <div className='fixed right-[-40px] top-[13%] bg-white w-[112px] cursor-pointer  p-3 rounded-full z-60' onClick={() => scrollAnchor()}>
                 <picture className='max-w-[40px]'>
                     <source srcSet="/images/chat-icon.svg" type="image/webp" />
-                    <img src="/images/chat-icon.svg" alt="" />
+                    <img width="36px" src="/images/chat-icon.svg" alt="" />
                 </picture>
 
 
