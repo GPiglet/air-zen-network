@@ -110,7 +110,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
 
               navItems.map((item, index) => (
 
-                <li ref={el => animNavButtons.current.push(el)} className={"mx-3 md:m-0 flex items-center cursor-pointer"} key={index} >
+                <li ref={el => {if (el && animNavButtons.current.indexOf(el) == -1) animNavButtons.current.push(el)}} className={"mx-3 md:m-0 flex items-center cursor-pointer"} key={index} >
                   {
                     main ? (
                       <Link activeClass="active_scroll" className={section == item.href ? 'active' : ''} smooth spy to={item.href} onClick={() => routing(item)}>

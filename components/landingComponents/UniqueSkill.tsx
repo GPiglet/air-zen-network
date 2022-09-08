@@ -349,8 +349,8 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
             <div id='solutions' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='z-10 md:container mx-auto relative justify-center items-center md:pt-20 pb-[200px] md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] md:top-1/2 md:translate-y-[-470px]'>
                 <div className='mt-[200px] md:mt-[120px]'>
                     <div className=" text-center  text-white">
-                        <h1 ref={el => animSideUp.current.push(el)} className="text-title-sm">{t('landing.solution.title')}</h1>
-                        <p ref={el => { animSideUp.current.push(el); animFadeIn.current.push(el) }} className="font-lato font-light tracking-widest text-[22px] mt-3">{t('landing.solution.subtitle')}</p>
+                        <h1 ref={el => {if(el && animSideUp.current.indexOf(el) == -1)animSideUp.current.push(el)}} className="text-title-sm">{t('landing.solution.title')}</h1>
+                        <p ref={el => { if(el && animSideUp.current.indexOf(el) == -1)animSideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className="font-lato font-light tracking-widest text-[22px] mt-3">{t('landing.solution.subtitle')}</p>
                     </div>
                     <div className='w-full mt-[160px]'>
                         <div className='md:m-auto md:w-max  '>
@@ -391,9 +391,9 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
 
                 </div>
             </div>
-            <div ref={el => animGradient.current.push(el)} className='z-0 hidden md:block fixed top-0 left-0 w-[100vw] h-[100vh]'></div>
-            <div ref={el => animGradient.current.push(el)} className='z-0 md:container hidden md:block fixed top-1/2  translate-y-[-50%] left-1/2 translate-x-[-50%] w-full h-full max-h-[1080px]'></div>
-            <div ref={el => { circleRef.current = el; animFadeIn.current.push(el) }} className='z-0 md:container hidden fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] w-full' >
+            <div ref={el => {if(el && animGradient.current.indexOf(el) == -1)animGradient.current.push(el)}} className='z-0 hidden md:block fixed top-0 left-0 w-[100vw] h-[100vh]'></div>
+            <div ref={el => {if(el && animGradient.current.indexOf(el) == -1)animGradient.current.push(el)}} className='z-0 md:container hidden md:block fixed top-1/2  translate-y-[-50%] left-1/2 translate-x-[-50%] w-full h-full max-h-[1080px]'></div>
+            <div ref={el => { circleRef.current = el; if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='z-0 md:container hidden fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] w-full' >
                 <svg viewBox="-200 -200 1300 1300" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle opacity="0.5" cx="449" cy="449" r="448.5" transform="rotate(-180 449 449)" stroke="url(#paint0_linear_1362_4341)" />
                     <defs>

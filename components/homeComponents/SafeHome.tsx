@@ -133,7 +133,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
             </svg>
 
 
-            <div ref={el => refAnimContents.current.push(el)} className="relative md:flex md:hidden items-center mt-20 md:mt-0 px-10 md:px-0 h-full">
+            <div ref={el => {if (el && refAnimContents.current.indexOf(el) == -1)refAnimContents.current.push(el)}} className="relative md:flex md:hidden items-center mt-20 md:mt-0 px-10 md:px-0 h-full">
                 <div className="flex flex-wrap ">
                     {/* <div className="w-[20%]"></div> */}
                     <div className="w-full md:w-1/2 m-auto">
@@ -146,7 +146,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                 </div>
             </div>
 
-            <div ref={el => refAnimContents.current.push(el)} className=" relative md:fixed md:hidden items-center px-10 md:px-0 h-full mt-[100px] md:mt-0">
+            <div ref={el => {if (el && refAnimContents.current.indexOf(el) == -1)refAnimContents.current.push(el)}} className=" relative md:fixed md:hidden items-center px-10 md:px-0 h-full mt-[100px] md:mt-0">
                 <div className="flex flex-wrap">
                     {/* <div className="w-[20%]"></div> */}
                     <div className="w-full md:w-1/2 m-auto">
@@ -161,7 +161,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                 </div>
             </div>
 
-            <div ref={el => refAnimContents.current.push(el)} className="relative md:fixed md:hidden items-center px-10 md:px-0 h-full">
+            <div ref={el => {if (el && refAnimContents.current.indexOf(el) == -1)refAnimContents.current.push(el)}} className="relative md:fixed md:hidden items-center px-10 md:px-0 h-full">
                 <div className="flex flex-wrap mt-[400px] md:mt-12">
                     <div className="w-full md:w-1/2 m-auto">
                         <div className="relative">
