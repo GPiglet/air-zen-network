@@ -245,7 +245,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
 
 
     return (
-        <section id='credentials' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='flex items-center md:items-start md:pt-[160px] md:fixed md:hidden md:w-full md:left-[50%] md:translate-x-[-50%]'>
+        <section id='credentials' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='flex md:block mt-[300px] md:mt-0 pt-[50px] md:pt-[160px] h-[670px] md:h-screen items-center md:items-start md:fixed md:hidden md:w-full md:left-[50%] md:translate-x-[-50%]'>
             <div className='w-full relative z-50 md:absolute md:top-1/2 md:translate-y-[-50%]'>
                 <div className=' pt-10 pb-[60px] flex justify-center'>
                     <h1 ref={el => {if(el && animSideUp.current.indexOf(el) == -1)animSideUp.current.push(el)}} className="text-title-sm relative z-50">{t('landing.credential.title')}</h1>

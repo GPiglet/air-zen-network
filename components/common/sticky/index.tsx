@@ -10,7 +10,7 @@ const Sticky: FC = () => {
     const { changeCookieAllow } = useContext(StoreContext)
 
     return (
-        <div className="md:block bg-black fixed bottom-0 w-full py-7 z-60 border border-third border-opacity-30">
+        <div className="md:block bg-black fixed bottom-0 w-full py-7 z-50 border border-third border-opacity-30">
             <div className="container mx-auto flex  md:pl-16 flex-col-reverse md:flex-row">
                 <div className="flex flex-col mx-16 md:ml-0 mt-5 md:mt-0">
                     <button className="w-full md:w-max font-lato text-white text-base bg-gradient-to-r from-secondary to-[#669AB4] py-2.5 px-7 rounded-md" onClick={() => changeCookieAllow?.(true)}>
