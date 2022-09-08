@@ -131,6 +131,8 @@ const Homepage: NextPage = () => {
 			case 'PageUp':
 				scrollOffset = 100;
 				break;
+			default:
+				return;
 		}
 		if ( currentIndex != -1 && refSections[currentIndex].current?.scroll && refSections[currentIndex].current?.scroll(e.key, scrollOffset) ) return;
 

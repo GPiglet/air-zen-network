@@ -6,9 +6,6 @@ import React, { FC } from "react"
 import { useTranslation } from "next-i18next";
 import gsap from 'gsap';
 
-import BusinessForm from "./businessForm";
-
-
 const BusinessNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref: any) => {
     //translate
     const { t } = useTranslation()
@@ -38,7 +35,7 @@ const BusinessNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
     const prevAnimation = React.useRef<any>(null);
     const startAnim = (direction: string, shown: boolean, index: number) => {
         if ( prevAnimation.current ) prevAnimation.current.kill();
-        gsap.set([containerRef.current], {display: 'block'});
+        gsap.set([containerRef.current], {display: 'flex'});
         if ( direction == 'DOWN' && shown ) prevAnimation.current = getShowTimeline().play(0);
         else if ( direction == 'DOWN' && !shown ) prevAnimation.current = getHideTimeline().play(0);
         else if ( direction == 'UP' && shown ) prevAnimation.current = getHideTimeline().reverse(0);
@@ -46,7 +43,7 @@ const BusinessNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
     }
 
     return (
-        <div id="technology" ref={(el)=>{containerRef.current=el; if (ref) ref.current = {container: el, startAnim}}} className="pb-16 relative md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
+        <div id="technology" ref={(el)=>{containerRef.current=el; if (ref) ref.current = {container: el, startAnim}}} className="pb-16 relative md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] md:flex md:items-center">
             {/* mt-[600px] sm:mt-[100%] md:mt-[50%] */}
 
             <div className="relative px-10 md:px-0 container mx-auto ">

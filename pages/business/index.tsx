@@ -106,6 +106,27 @@ const Business: NextPage = () => {
 	let isLockScroll = false;
 	const onKeyDown = (e: KeyboardEvent) => {
 		if (window.innerWidth < 920 || isLockScroll) return;
+		
+		const currentIndex = currentSectionIndex.current;
+		let scrollOffset = 0;
+		switch( e.key ) {
+			case 'ArrowDown':
+				scrollOffset = -17;
+				break;
+			case 'PageDown':
+				scrollOffset = -100;
+				break;
+			case 'ArrowUp':
+				scrollOffset = 17;
+				break;
+			case 'PageUp':
+				scrollOffset = 100;
+				break;
+			default:
+				return;
+		}
+		if ( currentIndex != -1 && refSections[currentIndex].current?.scroll && refSections[currentIndex].current?.scroll(e.key, scrollOffset) ) return;
+
 		isLockScroll = true;
 		setTimeout(() => {
 			isLockScroll = false;
@@ -114,13 +135,13 @@ const Business: NextPage = () => {
 		switch (e.key) {
 			case 'ArrowDown':
 			case 'PageDown':
-				index = currentSectionIndex.current + 1;
+				index = currentIndex + 1;
 				if (index >= refSections.length) return;
 				break;
 
 			case 'ArrowUp':
 			case 'PageUp':
-				index = currentSectionIndex.current - 1;
+				index = currentIndex - 1;
 				if (index < 0) return;
 				break;
 			default:
@@ -133,6 +154,10 @@ const Business: NextPage = () => {
 
 	const onMouseWheel = (e: WheelEvent) => {
 		if (window.innerWidth < 920 || isLockScroll) return;
+
+		const currentIndex = currentSectionIndex.current;
+		if ( currentIndex != -1 && refSections[currentIndex].current?.scroll && refSections[currentIndex].current?.scroll('Wheel', 0-e.deltaY) ) return;
+
 		isLockScroll = true;
 		setTimeout(() => {
 			isLockScroll = false;
@@ -140,11 +165,11 @@ const Business: NextPage = () => {
 
 		let index = 0;
 		if (e.deltaY > 0) {
-			index = currentSectionIndex.current + 1;
+			index = currentIndex + 1;
 			if (index >= refSections.length) return;
 		}
 		else {
-			index = currentSectionIndex.current - 1;
+			index = currentIndex - 1;
 			if (index < 0) return;
 		}
 
