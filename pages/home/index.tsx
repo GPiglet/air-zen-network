@@ -172,7 +172,7 @@ const Home: NextPage = () => {
 	}
 
 	return (
-		<div className='back-right-bottom-gradient-primary relative h-screen'>
+		<div className='back-right-bottom-gradient-primary relative md:h-screen'>
 			<Mainlayout navItems={navItems} hasFooter={false}>
 				<HomeForm />
 				<SimplyNetwork ref={refSectionSimplyNetwork}/>

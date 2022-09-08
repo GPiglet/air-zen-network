@@ -188,7 +188,7 @@ const Business: NextPage = () => {
 	}, [])
 
 	return (
-		<div ref={refBackGradient} className='relative h-screen' id='business_page'>
+		<div ref={refBackGradient} className='relative md:h-screen' id='business_page'>
 			<Mainlayout navItems={navItems} hasFooter={false}>
 				<BusinessForm />
 				<Boost ref={refSectionBoost} />
