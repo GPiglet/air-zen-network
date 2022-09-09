@@ -21,7 +21,7 @@ const OurNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
 
     // animation
     const getShowTimeline = (duration: number = 1.5) => {
-        return gsap.timeline({ onReverseComplete: () => { gsap.set([containerRef.current], { display: 'none' }); } })
+        return gsap.timeline({ onReverseComplete: () => { if (containerRef.current)gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
                 { y: '+=100', opacity: 0 },
@@ -31,7 +31,7 @@ const OurNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
     }
 
     const getHideTimeline = (duration: number = 1.5) => {
-        return gsap.timeline({ onComplete: () => { gsap.set([containerRef.current], { display: 'none' }); } })
+        return gsap.timeline({ onComplete: () => { if (containerRef.current)gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
                 { y: '-50%', opacity: 1 },
