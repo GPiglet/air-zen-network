@@ -24,8 +24,8 @@ const OurNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
         return gsap.timeline({ onReverseComplete: () => { if (containerRef.current)gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
-                { y: '+=100', opacity: 0 },
-                { y: '-50%', opacity: 1, duration },
+                { y: 100, opacity: 0 },
+                { y: 0, opacity: 1, duration },
                 0
             )
     }
@@ -34,8 +34,8 @@ const OurNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
         return gsap.timeline({ onComplete: () => { if (containerRef.current)gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
-                { y: '-50%', opacity: 1 },
-                { y: '-=100', opacity: 0, duration },
+                { y: 0, opacity: 1 },
+                { y: -100, opacity: 0, duration },
                 0
             )
     }
@@ -44,7 +44,7 @@ const OurNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
     const prevAnimation = React.useRef<any>(null);
     const startAnim = (direction: string, shown: boolean) => {
         if (prevAnimation.current) prevAnimation.current.kill();
-        gsap.set([containerRef.current], { display: 'block' });
+        gsap.set([containerRef.current], { display: 'flex' });
         if (direction == 'DOWN' && shown) prevAnimation.current = getShowTimeline().play(0);
         else if (direction == 'DOWN' && !shown) prevAnimation.current = getHideTimeline().play(0);
         else if (direction == 'UP' && shown) prevAnimation.current = getHideTimeline().reverse(0);
@@ -60,7 +60,7 @@ const OurNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
     }, [router])
 
     return (
-        <div id="technology" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="mx-auto relative md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] md:top-[50%] md:translate-y-[-50%] w-full">
+        <div id="technology" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="mx-auto relative md:flex md:items-center md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] w-full">
 
             <div className="container mx-auto relative px-5 md:px-0 ">
                 <svg className="absolute  bottom-[45%] w-[174%]  md:top-[34%] md:translate-y-[-50%] md:w-[60%] xl:w-[70%]  sm:top-[-17%] sm:w-[120%] left-1/2 translate-x-[-50%]" viewBox="0 0 561 569" fill="none" xmlns="http://www.w3.org/2000/svg">
