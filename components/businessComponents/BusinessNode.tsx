@@ -77,7 +77,7 @@ const BusinessNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
                 <div className="flex flex-wrap pt-[400px] md:pt-[42%] align-center">
                     <div className="w-full md:w-[45%] px-10 mx-auto">
                         <p className="font-lato-light font-light text-[22px] text-white">{t('business.ournode.tip')}</p>
-                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em] mb-10">{t('business.ournode.title')}</h1>
+                        <h1 className="text-title-sm-white mb-10">{t('business.ournode.title')}</h1>
                         {
                             t('business.ournode.description').split('\n').map((item, index) =>
                                 index % 2 === 0 ? (

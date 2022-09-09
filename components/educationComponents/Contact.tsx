@@ -46,7 +46,7 @@ const Contact: FC = () => {
                 <div className="mx-auto relative md:pl-[10%]">
                     <div className="w-full md:w-1/2 px-10 mx-auto">
                         <p className="font-lato-light font-light text-[22px] text-white">{t('education.ournode.tip')}</p>
-                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('education.ournode.title')}</h1>
+                        <h1 className="text-title-sm-white">{t('education.ournode.title')}</h1>
                         {
                             t('education.ournode.description').split('\n').map((item, index) =>
                                 index % 2 === 0 ? (

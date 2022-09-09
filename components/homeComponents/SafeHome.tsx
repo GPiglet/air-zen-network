@@ -138,7 +138,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                     {/* <div className="w-[20%]"></div> */}
                     <div className="w-full md:w-1/2 m-auto">
                         <p className="font-lato-light font-light text-[22px] text-white">{t('home.safehome.tip')}</p>
-                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('home.safehome.title')}</h1>
+                        <h1 className="text-title-sm-white">{t('home.safehome.title')}</h1>
                         {t('home.safehome.description').split('\n').map((item, index) =>
                             <p className="font-lato font-light tracking-widest text-white text-lg mt-4" key={index}>{item}</p>
                         )}
@@ -151,7 +151,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                     {/* <div className="w-[20%]"></div> */}
                     <div className="w-full md:w-1/2 m-auto">
                         <p className="font-lato-light font-light text-[22px] text-white">{t('home.reliable.tip')}</p>
-                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('home.reliable.title')}</h1>
+                        <h1 className="text-title-sm-white">{t('home.reliable.title')}</h1>
                         {
                             t('home.reliable.description').split('\n').map((item, index) =>
                                 <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}</p>
@@ -166,7 +166,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                     <div className="w-full md:w-1/2 m-auto">
                         <div className="relative">
                             <p className="font-lato-light font-light text-[22px] text-white">{t('home.easy.tip')}</p>
-                            <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('home.easy.title')}</h1>
+                            <h1 className="text-title-sm-white">{t('home.easy.title')}</h1>
                             {
                                 t('home.easy.description').split('\n').map((item, index) =>
                                     <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}</p>
