@@ -356,23 +356,23 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                         <div className='md:m-auto md:w-max  '>
                             {
                                 (skillList as unknown as any[]).map((item: any, index: any) => (
-                                    <div ref={el => {if ( el != null && animSkills.current.indexOf(el) == -1 )animSkills.current.push(el)}} onClick={() => onClickSkill(index)} onMouseEnter={() => onMouseEnterSkill(index)} onMouseLeave={() => onMouseLeaveSkill(index)} className='cursor-pointer right-[-20px] sm:right-[-70px] w-full md:w-[210px] xl:w-[280px] md:inline-block align-top md:right-auto relative px-5 py-5 flex-1 unique-skill-items unique-skill-animate z-40' key={index}>
-                                        <div className=' border-[1px] bg-black  border-slate-600 rounded-md h-full'>
+                                    <div ref={el => {if ( el != null && animSkills.current.indexOf(el) == -1 )animSkills.current.push(el)}} onClick={() => onClickSkill(index)} onMouseEnter={() => onMouseEnterSkill(index)} onMouseLeave={() => onMouseLeaveSkill(index)} className='cursor-pointer right-[-30px] sm:right-[-70px] w-full md:w-[210px] xl:w-[280px] md:inline-block align-top md:right-auto relative px-5 py-3 md:py-5 flex-1 unique-skill-items unique-skill-animate z-40' key={index}>
+                                        <div className='unique-skill-border-gradient h-[150px] md:h-full'>
                                             <div className='tracking-widest py-5 md:pt-[80px] md:pb-[100px] xl:pl-[42px] xl:pr-0 px-5 text-white w-full relative  md:h-[300px]'>
                                                 <picture className=''>
                                                     <source srcSet={graphList[index].graph} type="image/webp" />
-                                                    <img src={graphList[index].graph} className={`unique-graph w-[200px] md:w-auto absolute center-x-transform top-[-80px] opacity-50 z-0 ${index % 2 == 0 ? 'left-[80px]' : 'right-[-100px]'} md:left-1/2`} alt="" />
+                                                    <img src={graphList[index].graph} className={`unique-graph w-[200px] md:w-auto absolute center-x-transform top-[-30px] md:top-[-80px] opacity-50 z-0 ${index % 2 == 0 ? 'left-[80px]' : 'right-[-100px]'} md:left-1/2`} alt="" />
                                                 </picture>
-                                                <p className='font-lato text-[22px] uppercase unique-skill-title pb-3'>{item.title}</p>
-                                                <p className='unique-skill-subtitle font-lato-light font-bold text-xl w-[60%] md:w-[180px] pb-3'>{item.subtitle}</p>
-                                                <p className='hidden font-lato font-light text-xl text-lg unique-skill-description pb-3 md:w-[280px]'>{item.description}</p>
-                                                <ul className='hidden list-disc pl-2 unique-skill-list md:w-[280px]'>
+                                                <p className='relative font-lato text-[22px] uppercase unique-skill-title pb-3'>{item.title}</p>
+                                                <p className='relative unique-skill-subtitle font-lato-light font-bold text-xl w-[60%] md:w-[180px] pb-3'>{item.subtitle}</p>
+                                                <p className='relative hidden font-lato font-light text-xl text-lg unique-skill-description pb-3 md:w-[280px]'>{item.description}</p>
+                                                <ul className='relative hidden list-disc pl-2 unique-skill-list md:w-[280px]'>
                                                     {item.list.split('\n').map((subitem: string, ind: number) => (
                                                         <li className='font-lato text-[16px] font-extralight leading-6' key={ind}>{subitem}</li>
                                                     ))}
                                                 </ul>
                                                 <button onClick={() => router.push(graphList[index].href)} className="cursor-pointer">
-                                                    <div className='unique-skill-sparkle w-[89px] h-[89px] md:w-[65px] md:h-[65px] top-[5px] md:top-auto sparkle absolute right-[10px] sm:right-[80px] md:right-[10px] md:bottom-[22px]'></div>
+                                                    <div className='unique-skill-sparkle w-[89px] h-[89px] md:w-[65px] md:h-[65px] top-[30px] md:top-auto sparkle absolute right-[10px] sm:right-[80px] md:right-[10px] md:bottom-[22px]'></div>
                                                     <div className='unique-skill-button absolute bottom-0 flex items-center hidden' >
                                                         <p className='text-base'>{t('landing.solution.solution')}</p>
                                                         <div className='sparkle-arrow pl-[28px]'></div>
