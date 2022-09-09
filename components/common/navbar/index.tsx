@@ -100,7 +100,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
         </div>
         <div
           className={
-            "fixed md:static w-screen md:w-auto h-screen md:h-auto top-0 md:top-auto left-0 md:left-auto md:flex flex-grow items-center backdrop-brightness-[0.2] md:backdrop-brightness-100 md:bg-opacity-0 md:shadow-none pt-[8px]" +
+            "fixed md:static w-screen md:w-auto h-screen md:h-auto top-0 md:top-auto left-0 md:left-auto md:flex flex-grow items-center backdrop-blur-sm md:backdrop-blur-none md:bg-opacity-0 md:shadow-none pt-[8px]" +
             (navbarOpen ? " block" : " hidden")
           }
         >
