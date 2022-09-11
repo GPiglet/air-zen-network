@@ -170,8 +170,8 @@ const Credential = React.forwardRef((props: any, ref: any) => {
             )
             .fromTo(
                 animGradient.current,
-                { opacity: 0, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 100%)' },
-                { opacity: 1, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 60%)', duration: duration / 2 },
+                { opacity: 0, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 80%)' },
+                { opacity: 1, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 50%)', duration: duration / 2 },
                 duration / 2
             )
             .fromTo(
@@ -211,7 +211,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
             )
             .fromTo(
                 animGradient.current,
-                { opacity: 1, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 60%)' },
+                { opacity: 1, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 50%)' },
                 { opacity: 0, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 80%)', duration },
                 0
             )
@@ -246,8 +246,8 @@ const Credential = React.forwardRef((props: any, ref: any) => {
 
     return (
         <section id='credentials' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='container md:overflow-hidden flex md:block mt-[300px] md:mt-0 pt-[50px] md:pt-[160px] h-[670px] md:h-screen items-center md:items-start md:fixed md:hidden md:w-full md:left-[50%] md:translate-x-[-50%]'>
-            <div className='w-full relative z-50 md:absolute md:top-1/2 md:translate-y-[-50%]'>
-                <div className=' pt-10 pb-[60px] flex justify-center'>
+            <div className='w-full relative z-50 md:absolute md:top-1/2 md:translate-y-[-60%]'>
+                <div className=' pt-10 pb-[100px] flex justify-center'>
                     <h1 ref={el => {if(el && animSideUp.current.indexOf(el) == -1)animSideUp.current.push(el)}} className="text-title-sm relative z-50">{t('landing.credential.title')}</h1>
                 </div>
                 <div ref={el => {if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el)}}>
