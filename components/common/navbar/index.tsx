@@ -100,7 +100,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
         </div>
         <div
           className={
-            "fixed md:static w-screen md:w-auto h-screen md:h-auto top-0 md:top-auto left-0 md:left-auto md:flex flex-grow items-center backdrop-blur-sm md:backdrop-blur-none md:bg-opacity-0 md:shadow-none pt-[8px]" +
+            "fixed md:static w-screen md:w-auto h-screen md:h-auto top-0 md:top-auto left-0 md:left-auto md:flex flex-grow items-center backdrop-blur-[6px] backdrop-brightness-50 md:backdrop-filter-none md:bg-opacity-0 md:shadow-none pt-[8px]" +
             (navbarOpen ? " block" : " hidden")
           }
         >
@@ -109,7 +109,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
             <path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"/>
           </svg>
           </div>
-          <ul className="flex items-center md:items-start flex-col md:flex-row list-none mr-auto w-full justify-around text-white">
+          <ul className="flex items-start pl-7 md:pl-0 flex-col md:flex-row list-none mr-auto w-full justify-around text-white">
             {
 
               navItems.map((item, index) => (
