@@ -33,6 +33,8 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
 
   const handleNavigation = useCallback(
     (e: any) => {
+      console.log('dd', y)
+
       const window = e.currentTarget
       if (y > window.scrollY && window.innerWidth < 920) { // && (window.innerWidth < 920 || main === false)
         setScrollDown(false)
@@ -43,14 +45,13 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
     }, [y]
   );
 
-  // useEffect(() => {
-  //   setY(window.scrollY);
-  //   window.addEventListener("scroll", handleNavigation);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleNavigation);
-  //   };
-  // }, [handleNavigation]);
+  useEffect(() => {
+    setY(window.scrollY);
+    window.addEventListener("scroll", handleNavigation);
+    return () => {
+      window.removeEventListener("scroll", handleNavigation);
+    };
+  }, []);
 
   // animation
   const animNavButtons = React.useRef<any>([]);
