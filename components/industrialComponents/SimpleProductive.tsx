@@ -71,7 +71,7 @@ const SimpleProductive: FC = () => {
                     <div className="w-full md:w-[35%] m-auto">
                         <div className="relative">
                             <p className="font-lato-ligh font-light text-[22px] text-white">{t('industrial.easy.tip')}</p>
-                            <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('industrial.easy.title')}</h1>
+                            <h1 className="text-title-sm-white">{t('industrial.easy.title')}</h1>
                             {
                                 t('industrial.easy.description').split('\n').map((item, index) =>
                                     <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item} </p>

@@ -62,24 +62,41 @@ module.exports = {
         ".text-title-md": {
           fontFamily: "lato",
           textTransform: "uppercase",
-          fontSize: "40px",
+          fontSize: "36px",
           lineHeight: "58px",
           fontWeight: "900",
           letterSpacing: "0.1em",
           color: "transparent",
           background: "linear-gradient(to right, #bab8b8b0, #fafafa, white)",
           "-webkit-background-clip": "text",
+          "@screen md": {
+            fontSize: "40px",
+          },
         },
         ".text-title-sm": {
           fontFamily: "lato",
           textTransform: "uppercase",
-          fontSize: "32px",
+          fontSize: "28px",
           lineHeight: "48px",
           fontWeight: "900",
           letterSpacing: "0.1em",
           color: "transparent",
           background: "linear-gradient(to right, #bab8b8b0, #fafafa, white)",
           "-webkit-background-clip": "text",
+          "@screen md": {
+            fontSize: "32px",
+          },
+        },
+        ".text-title-sm-white": {
+          fontFamily: "lato",
+          fontWeight: "500",
+          textTransform: "uppercase",
+          fontSize: "28px",
+          letterSpacing: "0.08em",
+          color: "white",
+          "@screen md": {
+            fontSize: "32px",
+          },
         },
       });
     },

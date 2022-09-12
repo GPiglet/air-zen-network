@@ -3,27 +3,47 @@ body {
   padding: 0;
   margin: 0;
   font-family: lato;
-  /* overflow-y: scroll; */
-  -webkit-font-smoothing: subpixel-antialiased;
   scroll-behavior: smooth;
-}
-
-html {
-  /* overflow-x: hidden; */
-}
-
-body {
-  /* overflow-x: hidden; */
   white-space: pre-line;
-  /* overflow-y: scroll; */
-
-  /* overflow-y: hidden; */
   background-color: #000000;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.unique-skill-border-gradient {
+  background: 
+  linear-gradient(black, black) padding-box,
+  linear-gradient(to bottom, rgba(255,255,255,0.7), transparent) border-box;
+  border-radius: 12px;
+  border: 1px solid transparent;
 }
 
 @media only screen and (max-width: 920px) {
+  html,
   body {
     overflow-y: auto;
+  }
+
+  @supports (-webkit-touch-callout: none) {
+    /* CSS specific to iOS devices */ 
+    .font-lato-light {
+      -webkit-text-stroke-width: 0.5px;
+    }
+  }
+  
+  @supports not (-webkit-touch-callout: none) {
+    /* CSS specific to iOS devices */ 
+    .font-lato-light {
+      -webkit-text-stroke-width: 0.2px;
+    }
+  }
+
+  .unique-skill-border-gradient {
+    background: 
+    linear-gradient(black, black) padding-box,
+    linear-gradient(to right, rgba(255,255,255,0.7), transparent) border-box;
+    border-radius: 12px;
+    border: 1px solid transparent;
   }
 }
 
@@ -85,13 +105,6 @@ a {
   color: white;
 }
 
-.font-lato-light {
-  -webkit-font-smoothing: subpixel-antialiased;
-}
-
-
-
-
 /* lato-100italic - latin-ext_latin */
 @font-face {
   font-family: 'Lato-light';
@@ -139,13 +152,13 @@ section {
 /* Uneque Skills section style */
 
 @media only screen and (max-width: 920px) {
-  .unique-skill-items:hover .sparkle {
-    content: url('/images/sparkle-arrow.svg');
-    pointer-events: all;
-  }
-
   section {
     height: 982px;
+  }
+  
+  /* .unique-skill-items:hover .sparkle {
+    content: url('/images/sparkle-arrow.svg');
+    pointer-events: all;
   }
 
   .unique-skill-items:active {
@@ -200,7 +213,7 @@ section {
   .unique-skill-items:hover .unique-skill-description,
   .unique-skill-items:hover .unique-skill-list {
     display: block;
-  }
+  } */
 }
 
 @media only screen and (min-width: 920px) {
@@ -372,7 +385,7 @@ input[type=number] {
 
 
 /* Scrollbar width custom */
-*::-webkit-scrollbar {
+/* *::-webkit-scrollbar {
   width: 0px
 }
 
@@ -388,4 +401,9 @@ input[type=number] {
 *::-webkit-scrollbar-thumb {
   border-radius: 8px;
   background: transparent;
+} */
+
+.about-us-phone {
+  -webkit-transition: opacity 2.0s ease-in;
 }
+

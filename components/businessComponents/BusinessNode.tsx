@@ -6,16 +6,13 @@ import React, { FC } from "react"
 import { useTranslation } from "next-i18next";
 import gsap from 'gsap';
 
-import BusinessForm from "./businessForm";
-
-
 const BusinessNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref: any) => {
     //translate
     const { t } = useTranslation()
 
     // animation
     const getShowTimeline = (duration: number=1.5) => {
-        return gsap.timeline({onReverseComplete: ()=>{gsap.set([containerRef.current], {display: 'none'});}})
+        return gsap.timeline({onReverseComplete: ()=>{if (containerRef.current)gsap.set([containerRef.current], {display: 'none'});}})
             .fromTo(
                 containerRef.current,
                 { y: 100, opacity: 0 },
@@ -25,7 +22,7 @@ const BusinessNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
     }
 
     const getHideTimeline = (duration: number = 1.5) => {
-        return gsap.timeline({ onComplete: () => { gsap.set([containerRef.current], { display: 'none' }); } })
+        return gsap.timeline({ onComplete: () => { if (containerRef.current)gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
                 { y: 0, opacity: 1 },
@@ -38,7 +35,7 @@ const BusinessNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
     const prevAnimation = React.useRef<any>(null);
     const startAnim = (direction: string, shown: boolean, index: number) => {
         if ( prevAnimation.current ) prevAnimation.current.kill();
-        gsap.set([containerRef.current], {display: 'block'});
+        gsap.set([containerRef.current], {display: 'flex'});
         if ( direction == 'DOWN' && shown ) prevAnimation.current = getShowTimeline().play(0);
         else if ( direction == 'DOWN' && !shown ) prevAnimation.current = getHideTimeline().play(0);
         else if ( direction == 'UP' && shown ) prevAnimation.current = getHideTimeline().reverse(0);
@@ -46,7 +43,7 @@ const BusinessNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
     }
 
     return (
-        <div id="technology" ref={(el)=>{containerRef.current=el; if (ref) ref.current = {container: el, startAnim}}} className="pb-16 relative md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
+        <div id="technology" ref={(el)=>{containerRef.current=el; if (ref) ref.current = {container: el, startAnim}}} className="pb-16 relative md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] md:flex md:items-center">
             {/* mt-[600px] sm:mt-[100%] md:mt-[50%] */}
 
             <div className="relative px-10 md:px-0 container mx-auto ">
@@ -80,7 +77,7 @@ const BusinessNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
                 <div className="flex flex-wrap pt-[400px] md:pt-[42%] align-center">
                     <div className="w-full md:w-[45%] px-10 mx-auto">
                         <p className="font-lato-light font-light text-[22px] text-white">{t('business.ournode.tip')}</p>
-                        <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em] mb-10">{t('business.ournode.title')}</h1>
+                        <h1 className="text-title-sm-white mb-10">{t('business.ournode.title')}</h1>
                         {
                             t('business.ournode.description').split('\n').map((item, index) =>
                                 index % 2 === 0 ? (

@@ -302,17 +302,17 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                 },
                 0
             )
-            .fromTo(
-                animSkills.current[index].getElementsByClassName('unique-skill-button')[0].children[1],
-                {
-                    x: 0,
-                },
-                {
-                    x: 60,
-                    duration
-                },
-                0
-            )
+            // .fromTo(
+            //     animSkills.current[index].getElementsByClassName('unique-skill-button')[0].children[1],
+            //     {
+            //         x: 0,
+            //     },
+            //     {
+            //         x: 60,
+            //         duration
+            //     },
+            //     0
+            // )
 
     }
     const onMouseEnterSkill = (index: number) => {
@@ -325,49 +325,163 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
         getHoverTimeline(index).reverse(0)
     }
 
-    const onClickSkill = (index: number) => {
-        // 
-        if (window.innerWidth < 920) {
-            const graphElement = animSkills.current[index].getElementsByClassName('unique-graph')[0];
-            const widthAttribute = window.getComputedStyle(graphElement, null).width;
-            if (widthAttribute == '200px') return;
-        }
-        router.push(graphList[index].href)
+    const getClickTimeline = (index: number, duration: number = 0.5) => {
+        return gsap.timeline({ onReverseComplete: () => { gsap.set(animSkills.current[index], { clearProps: 'height' }) } })
+            .fromTo(
+                animSkills.current[index],
+                {
+                    height: 170,
+                },
+                {
+                    height: 400,
+                    duration
+                },
+                0
+            )
+            .fromTo(
+                animSkills.current[index].getElementsByClassName('unique-graph'),
+                {
+                    scale: 1,
+                    opacity: 0.5,
+                },
+                {
+                    scale: 1.2,
+                    opacity: 1,
+                    duration
+                },
+                0.2
+            )
+            .fromTo(
+                animSkills.current[index].getElementsByClassName('unique-skill-title'),
+                {
+                    y: 0,
+                    opacity: 1,
+                },
+                {
+                    y: -50,
+                    opacity: 0,
+                    duration
+                },
+                0.2
+            )
+            .fromTo(
+                animSkills.current[index].getElementsByClassName('unique-skill-subtitle'),
+                {
+                    y: 0,
+                },
+                {
+                    y: -50,
+                    duration
+                },
+                0.2
+            )
+            .fromTo(
+                [...animSkills.current[index].getElementsByClassName('unique-skill-description'),
+                ...animSkills.current[index].getElementsByClassName('unique-skill-list')],
+                {
+                    y: -50,
+                    opacity: 0,
+                    display: 'hidden',
+                },
+                {
+                    y: -50,
+                    opacity: 1,
+                    display: 'block',
+                    duration
+                },
+                0.2
+            )
+            .fromTo(
+                animSkills.current[index].getElementsByClassName('unique-skill-sparkle'),
+                {
+                    opacity: 1
+                },
+                {
+                    opacity: 0,
+                    duration
+                },
+                0.2
+            )
+            .fromTo(
+                animSkills.current[index].getElementsByClassName('unique-skill-button'),
+                {
+                    opacity: 0,
+                    display: 'hidden',
+                },
+                {
+                    opacity: 1,
+                    display: 'flex',
+                    duration
+                },
+                0.2
+            )
+            // .fromTo(
+            //     animSkills.current[index].getElementsByClassName('unique-skill-button')[0].children[1],
+            //     {
+            //         x: 0,
+            //     },
+            //     {
+            //         x: 110,
+            //         duration
+            //     },
+            //     0.2
+            // )
+
     }
 
+    const onClickSkill = (index: number) => {
+        // 
+        if (window.innerWidth < 920) {            
+            if ( animSkills.current[index].getAttribute('data-box-opened') == 'false' || !animSkills.current[index].getAttribute('data-box-opened') ) {
+                getClickTimeline(index).play(0);
+                for ( let i = 0; i < animSkills.current.length; i++ ) {
+                    const opened = i == index ? 'true' : 'false';
+                    if ( animSkills.current[i].getAttribute('data-box-opened') == 'true' ) getClickTimeline(i).reverse(0);
+                    animSkills.current[i].setAttribute('data-box-opened', opened);
+                }
+                return;
+            }
+        }
+        
+        for ( let i = 0; i < animSkills.current.length; i++ ) {
+            animSkills.current[i].setAttribute('data-box-opened', 'false');
+        }
+
+        router.push(graphList[index].href)
+    }
 
     return (
         <>
             <div id='solutions' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='z-10 md:container mx-auto relative justify-center items-center md:pt-20 pb-[200px] md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] md:top-1/2 md:translate-y-[-470px]'>
-                <div className='mt-[200px] md:mt-[120px]'>
+                <div className='mt-[200px] md:mt-[135px]'>
                     <div className=" text-center  text-white">
-                        <h1 ref={el => animSideUp.current.push(el)} className="text-title-sm">{t('landing.solution.title')}</h1>
-                        <p ref={el => { animSideUp.current.push(el); animFadeIn.current.push(el) }} className="font-lato font-light tracking-widest text-[22px] mt-3">{t('landing.solution.subtitle')}</p>
+                        <h1 ref={el => {if(el && animSideUp.current.indexOf(el) == -1)animSideUp.current.push(el)}} className="text-title-sm">{t('landing.solution.title')}</h1>
+                        <p ref={el => { if(el && animSideUp.current.indexOf(el) == -1)animSideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className="font-lato font-light tracking-widest text-[22px] mt-3">{t('landing.solution.subtitle')}</p>
                     </div>
-                    <div className='w-full mt-[160px]'>
+                    <div className='w-full mt-[145px]'>
                         <div className='md:m-auto md:w-max  '>
                             {
                                 (skillList as unknown as any[]).map((item: any, index: any) => (
-                                    <div ref={el => animSkills.current.push(el)} onClick={() => onClickSkill(index)} onMouseEnter={() => onMouseEnterSkill(index)} onMouseLeave={() => onMouseLeaveSkill(index)} className='cursor-pointer right-[-20px] sm:right-[-70px] w-full md:w-[210px] xl:w-[280px] md:inline-block align-top md:right-auto relative px-5 py-5 flex-1 unique-skill-items unique-skill-animate z-40' key={index}>
-                                        <div className=' border-[1px] bg-black  border-slate-600 rounded-md h-full'>
-                                            <div className='tracking-widest py-5 md:pt-[80px] md:pb-[100px] xl:pl-[42px] xl:pr-0 px-5 text-white w-full relative  md:h-[300px]'>
+                                    <div ref={el => {if ( el != null && animSkills.current.indexOf(el) == -1 )animSkills.current.push(el)}} onClick={() => onClickSkill(index)} onMouseEnter={() => onMouseEnterSkill(index)} onMouseLeave={() => onMouseLeaveSkill(index)} className='cursor-pointer right-[-30px] sm:right-[-70px] w-full h-[170px] md:h-auto md:w-[210px] xl:w-[280px] md:inline-block align-top md:right-auto relative px-5 py-3 md:py-5 flex-1 unique-skill-items unique-skill-animate z-40' key={index}>
+                                        <div className='unique-skill-border-gradient h-full'>
+                                            <div className='tracking-widest py-5 md:pt-[80px] md:pb-[100px] xl:pl-[42px] xl:pr-0 pl-8 pr-5 text-white w-full relative  md:h-[300px]'>
                                                 <picture className=''>
                                                     <source srcSet={graphList[index].graph} type="image/webp" />
-                                                    <img src={graphList[index].graph} className={`unique-graph w-[200px] md:w-auto absolute center-x-transform top-[-80px] opacity-50 z-0 ${index % 2 == 0 ? 'left-[80px]' : 'right-[-100px]'} md:left-1/2`} alt="" />
+                                                    <img src={graphList[index].graph} className={`unique-graph w-[200px] md:w-auto absolute center-x-transform top-[-30px] md:top-[-80px] opacity-50 z-0 ${index % 2 == 0 ? 'left-[80px]' : 'right-[-100px]'} md:left-1/2`} alt="" />
                                                 </picture>
-                                                <p className='font-lato text-[22px] uppercase unique-skill-title pb-3'>{item.title}</p>
-                                                <p className='unique-skill-subtitle font-lato-light font-bold text-xl w-[60%] md:w-[180px] pb-3'>{item.subtitle}</p>
-                                                <p className='hidden font-lato font-light text-xl text-lg unique-skill-description pb-3 md:w-[280px]'>{item.description}</p>
-                                                <ul className='hidden list-disc pl-2 unique-skill-list md:w-[280px]'>
+                                                <p className='relative font-lato text-[22px] uppercase unique-skill-title pb-3'>{item.title}</p>
+                                                <p className='relative unique-skill-subtitle font-lato-light font-bold text-xl w-[60%] md:w-[180px] pb-3'>{item.subtitle}</p>
+                                                <p className='relative hidden font-lato font-light text-xl text-lg unique-skill-description pb-3 md:w-[280px]'>{item.description}</p>
+                                                <ul className='relative hidden list-disc pl-2 unique-skill-list md:w-[280px]'>
                                                     {item.list.split('\n').map((subitem: string, ind: number) => (
                                                         <li className='font-lato text-[16px] font-extralight leading-6' key={ind}>{subitem}</li>
                                                     ))}
                                                 </ul>
                                                 <button onClick={() => router.push(graphList[index].href)} className="cursor-pointer">
-                                                    <div className='unique-skill-sparkle w-[89px] h-[89px] md:w-[65px] md:h-[65px] top-[5px] md:top-auto sparkle absolute right-[10px] sm:right-[80px] md:right-[10px] md:bottom-[22px]'></div>
-                                                    <div className='unique-skill-button absolute bottom-0 flex items-center hidden' >
+                                                    <div className='unique-skill-sparkle w-[89px] h-[89px] md:w-[65px] md:h-[65px] top-[30px] md:top-auto sparkle absolute right-[10px] sm:right-[80px] md:right-[10px] md:bottom-[22px]'></div>
+                                                    <div className='unique-skill-button absolute bottom-0 flex items-center justify-between w-full hidden' >
                                                         <p className='text-base'>{t('landing.solution.solution')}</p>
-                                                        <div className='sparkle-arrow pl-[28px]'></div>
+                                                        <div className='sparkle-arrow mr-[70px]'></div>
                                                     </div>
 
                                                 </button>
@@ -383,9 +497,9 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
 
                 </div>
             </div>
-            <div ref={el => animGradient.current.push(el)} className='z-0 hidden md:block fixed top-0 left-0 w-[100vw] h-[100vh]'></div>
-            <div ref={el => animGradient.current.push(el)} className='z-0 md:container hidden md:block fixed top-1/2  translate-y-[-50%] left-1/2 translate-x-[-50%] w-full h-full max-h-[1080px]'></div>
-            <div ref={el => { circleRef.current = el; animFadeIn.current.push(el) }} className='z-0 md:container hidden fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] w-full' >
+            <div ref={el => {if(el && animGradient.current.indexOf(el) == -1)animGradient.current.push(el)}} className='z-0 hidden md:block fixed top-0 left-0 w-[100vw] h-[100vh]'></div>
+            <div ref={el => {if(el && animGradient.current.indexOf(el) == -1)animGradient.current.push(el)}} className='z-0 md:container hidden md:block fixed top-1/2  translate-y-[-50%] left-1/2 translate-x-[-50%] w-full h-full max-h-[1080px]'></div>
+            <div ref={el => { circleRef.current = el; if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='z-0 md:container hidden fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] w-full' >
                 <svg viewBox="-200 -200 1300 1300" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle opacity="0.5" cx="449" cy="449" r="448.5" transform="rotate(-180 449 449)" stroke="url(#paint0_linear_1362_4341)" />
                     <defs>

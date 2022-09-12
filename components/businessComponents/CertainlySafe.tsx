@@ -11,7 +11,7 @@ const CertainlySafe: FC<{ props?: any, ref: any }> = React.forwardRef((props: an
 
     // animation
     const getShowTimeline = (duration: number=1.5) => {
-        return gsap.timeline({onReverseComplete: ()=>{gsap.set([containerRef.current], {display: 'none'});}})
+        return gsap.timeline({onReverseComplete: ()=>{if (containerRef.current)gsap.set([containerRef.current], {display: 'none'});}})
             .fromTo(
                 containerRef.current,
                 { y: 100, opacity: 0 },
@@ -21,7 +21,7 @@ const CertainlySafe: FC<{ props?: any, ref: any }> = React.forwardRef((props: an
     }
 
     const getHideTimeline = (duration: number = 1.5) => {
-        return gsap.timeline({ onComplete: () => { gsap.set([containerRef.current], { display: 'none' }); } })
+        return gsap.timeline({ onComplete: () => { if (containerRef.current)gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
                 { y: 0, opacity: 1 },
@@ -75,7 +75,7 @@ const CertainlySafe: FC<{ props?: any, ref: any }> = React.forwardRef((props: an
                     <div className="w-full md:w-2/5 m-auto">
                         <div className="relative">
                             <p className="font-lato-light font-light text-[22px] text-white">{t('business.secure.tip')}</p>
-                            <h1 className="font-lato font-medium text-[32px] text-white uppercase tracking-[0.08em]">{t('business.secure.title')}</h1>
+                            <h1 className="text-title-sm-white">{t('business.secure.title')}</h1>
                             {
                                 t('business.secure.description').split('\n').map((item, index) =>
 

@@ -14,7 +14,7 @@ const SimplyNetwork: FC<{ props?: any, ref: any }> = React.forwardRef((props: an
 
     // animation
     const getShowTimeline = (duration: number = 1.5) => {
-        return gsap.timeline({ onReverseComplete: () => { gsap.set([containerRef.current], { display: 'none' }); } })
+        return gsap.timeline({ onReverseComplete: () => { if (containerRef.current)gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
                 { y: -100, opacity: 0 },

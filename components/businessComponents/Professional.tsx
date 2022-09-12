@@ -12,7 +12,7 @@ const Professional: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
 
     // animation
     const getShowTimeline = (duration: number=1.5) => {
-        return gsap.timeline({onReverseComplete: ()=>{gsap.set([containerRef.current], {display: 'none'});}})
+        return gsap.timeline({onReverseComplete: ()=>{if (containerRef.current)gsap.set([containerRef.current], {display: 'none'});}})
             .fromTo(
                 containerRef.current,
                 { y: 100, opacity: 0 },
@@ -22,7 +22,7 @@ const Professional: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
     }
 
     const getHideTimeline = (duration: number = 1.5) => {
-        return gsap.timeline({ onComplete: () => { gsap.set([containerRef.current], { display: 'none' }); } })
+        return gsap.timeline({ onComplete: () => { if (containerRef.current)gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
                 { y: 0, opacity: 1 },
@@ -130,7 +130,7 @@ const Professional: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
                                     <p className="font-lato font-medium mb-4 mt-5">{item.title}</p>
                                     <ul className='list-["-"] pl-2 unique-skill-list'>
                                         {item.items.split('\n').map((list: string, ind: number) => (
-                                            <li className='font-lato text-base font-light' key={ind}>{list}</li>
+                                            <li className='font-lato text-lg font-light' key={ind}>{list}</li>
                                         ))}
                                     </ul>
                                 </div>

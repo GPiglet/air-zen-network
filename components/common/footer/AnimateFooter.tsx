@@ -35,10 +35,24 @@ const AnimateFooter: FC<{props?: any, ref: any}> = React.forwardRef((props: any,
     else if (direction == 'UP' && !shown ) prevAnimation.current = getShowTimeline().reverse(0);
   }
 
+  const scroll = (direction: string, offset: number = 17) => {
+    const rect = containerRef.current?.getBoundingClientRect();
+    if( rect.top <= 0 && rect.top > -offset && offset > 0 ) {
+      return false;
+    }
+    if( Math.abs(rect.top) + window.innerHeight + 300 > rect.height && offset < 0 ) {
+      offset = 0;
+    }
+    gsap.set(containerRef.current, {
+        y: '+=' + offset
+    })
+    return true;
+  }
+
   return (
-    <section ref={(el)=>{containerRef.current=el; if (ref) ref.current = {container: el, startAnim}}} className="container mx-auto pt-16 relative md:hidden">
+    <div ref={(el)=>{containerRef.current=el; if (ref) ref.current = {container: el, startAnim, scroll}}} className="container mx-auto pt-16 relative md:hidden">
       <Footer />
-    </section>
+    </div>
   )
 })
 AnimateFooter.displayName = 'AnimateFooter';

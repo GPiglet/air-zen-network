@@ -92,7 +92,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
         gsap.to(slide, { left, duration });
         if (refBackCircleCarousel.current && carousel.getSelectedIndex() == shownIndex + position) {
             gsap.to(refBackCircleCarousel.current, { left: parseInt(left) - 4 + '%', duration });
-            gsap.to(animCircle.current[2], { scale: carousel.getSelectedIndex() % 2 == 0 ? 1 : 0.78 });
+            gsap.to(animCircle.current[2], { scale: carousel.getSelectedIndex() % 2 == 0 ? 1 : 0.88 });
         }
     }
 
@@ -170,8 +170,8 @@ const Credential = React.forwardRef((props: any, ref: any) => {
             )
             .fromTo(
                 animGradient.current,
-                { opacity: 0, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 100%)' },
-                { opacity: 1, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 60%)', duration: duration / 2 },
+                { opacity: 0, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 80%)' },
+                { opacity: 1, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 50%)', duration: duration / 2 },
                 duration / 2
             )
             .fromTo(
@@ -183,7 +183,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
             .fromTo(
                 animCircle.current[2],
                 { scale: 0.4, transformOrigin: 'center center' },
-                { scale: carousel && carousel.getSelectedIndex() % 2 != 0 ? 0.78 : 1, transformOrigin: 'center center', duration: duration / 2 },
+                { scale: carousel && carousel.getSelectedIndex() % 2 != 0 ? 0.88 : 1, transformOrigin: 'center center', duration: duration / 2 },
                 duration / 2
             )
 
@@ -205,13 +205,13 @@ const Credential = React.forwardRef((props: any, ref: any) => {
             )
             .fromTo(
                 animFadeIn.current,
-                { opacity: 1 },
-                { opacity: 0, duration },
+                { opacity: 1, y: 0 },
+                { opacity: 0, y: -100, duration },
                 0
             )
             .fromTo(
                 animGradient.current,
-                { opacity: 1, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 60%)' },
+                { opacity: 1, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 50%)' },
                 { opacity: 0, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 80%)', duration },
                 0
             )
@@ -223,7 +223,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
             )
             .fromTo(
                 animCircle.current[2],
-                { scale: carousel && carousel.getSelectedIndex() % 2 != 0 ? 0.78 : 1, transformOrigin: 'center center' },
+                { scale: carousel && carousel.getSelectedIndex() % 2 != 0 ? 0.88 : 1, transformOrigin: 'center center' },
                 { scale: 0.4, transformOrigin: 'center center', duration },
                 0
             )
@@ -245,12 +245,12 @@ const Credential = React.forwardRef((props: any, ref: any) => {
 
 
     return (
-        <section id='credentials' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='flex items-center md:items-start md:pt-[160px] md:fixed md:hidden md:w-full md:left-[50%] md:translate-x-[-50%]'>
-            <div className='w-full relative z-50 md:absolute top-1/2 translate-y-[-15%] md:translate-y-[-50%]'>
-                <div className=' pt-10 pb-[60px] flex justify-center'>
-                    <h1 ref={el => animSideUp.current.push(el)} className="text-title-sm relative z-50">{t('landing.credential.title')}</h1>
+        <section id='credentials' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='container md:overflow-hidden flex md:block mt-[300px] md:mt-0 pt-[50px] md:pt-[160px] h-[670px] md:h-screen items-center md:items-start md:fixed md:hidden md:w-full md:left-[50%] md:translate-x-[-50%]'>
+            <div className='w-full relative z-50 md:absolute md:top-1/2 md:translate-y-[-60%]'>
+                <div className=' pt-10 pb-[100px] flex justify-center'>
+                    <h1 ref={el => {if(el && animSideUp.current.indexOf(el) == -1)animSideUp.current.push(el)}} className="text-title-sm relative z-50">{t('landing.credential.title')}</h1>
                 </div>
-                <div ref={el => animFadeIn.current.push(el)}>
+                <div ref={el => {if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el)}}>
                     <Flickity
                         {...flickityProps}
 
@@ -335,9 +335,9 @@ const Credential = React.forwardRef((props: any, ref: any) => {
 
                     <div ref={refBackCircleCarousel} className='hidden absolute w-[120%] md:w-[45%] top-0  md:top-1/2 md:translate-y-[-44%] right-[27%] md:left-[14%]' >
                         <svg viewBox="-30 -30 796 796" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle ref={el => animCircle.current.push(el)} opacity="0.3" cx="368.2" cy="368.2" r="338.706" transform="rotate(-120 368.2 368.2)" fill="url(#paint0_radial_0_2)" />
-                            <circle ref={el => animCircle.current.push(el)} opacity="0.8" cx="368.199" cy="368.2" r="367.206" transform="rotate(-120 368.199 368.2)" stroke="url(#paint1_linear_0_2)" />
-                            <circle ref={el => animCircle.current.push(el)} opacity="0.4" cx="368.204" cy="367.623" r="311.914" transform="rotate(-120 368.204 367.623)" fill="url(#paint2_radial_0_2)" />
+                            <circle ref={el => {if(el && animCircle.current.indexOf(el) == -1)animCircle.current.push(el)}} opacity="0.3" cx="368.2" cy="368.2" r="338.706" transform="rotate(-120 368.2 368.2)" fill="url(#paint0_radial_0_2)" />
+                            <circle ref={el => {if(el && animCircle.current.indexOf(el) == -1)animCircle.current.push(el)}} opacity="0.8" cx="368.199" cy="368.2" r="367.206" transform="rotate(-120 368.199 368.2)" stroke="url(#paint1_linear_0_2)" />
+                            <circle ref={el => {if(el && animCircle.current.indexOf(el) == -1)animCircle.current.push(el)}} opacity="0.4" cx="368.204" cy="367.623" r="311.914" transform="rotate(-120 368.204 367.623)" fill="url(#paint2_radial_0_2)" />
                             <defs>
                                 <radialGradient id="paint0_radial_0_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(320.569 188.262) rotate(68.4205) scale(697.882)">
                                     <stop stopColor="#7BB690" />
@@ -356,7 +356,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
                     </div>
                 </div>
             </div>
-            <div ref={el => animGradient.current.push(el)} className='z-0 hidden md:block fixed top-1/2 left-1/2 center-transform w-full h-full'></div>
+            <div ref={el => {if(el && animGradient.current.indexOf(el) == -1)animGradient.current.push(el)}} className='z-0 hidden md:block fixed top-1/2 left-1/2 center-transform w-full h-full'></div>
         </section>
     )
 })

@@ -29,7 +29,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
     } else {
       setMain(false)
     }
-  })
+  }, [])
 
   const handleNavigation = useCallback(
     (e: any) => {
@@ -51,7 +51,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
     return () => {
       window.removeEventListener("scroll", handleNavigation);
     };
-  }, []);
+  }, [handleNavigation]);
 
   // animation
   const animNavButtons = React.useRef<any>([]);
@@ -73,7 +73,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
 
   return (
 
-    <nav className={`${scrolldown ? 'hidden' : 'block'}  md:top-[40px] lg:top-[62px] md:py-5 pb-20 md:pb-0 bg-gradient-to-b from-black md:from-transparent to-transparent fixed w-full items-center z-60`}>
+    <nav className={`${y > 0 && scrolldown ? 'hidden' : 'block'}  md:top-[40px] lg:top-[62px] md:py-5 pb-10 md:pb-0 bg-gradient-to-b from-black md:from-transparent to-transparent fixed w-full items-center z-[70]`}>
       <div className="container px-4 mx-auto flex flex-wrap relative items-center justify-between">
         <div className="w-full relative flex justify-between md:w-auto md:static md:block md:justify-start md:w-1/4  px-5 pt-5 md:px-0 md:pt-0">
           <div className=" cursor-pointer" onClick={() => router.push('/landing')}>
@@ -102,24 +102,29 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
         </div>
         <div
           className={
-            "md:flex flex-grow items-center bg-gray-900 md:bg-opacity-0 md:shadow-none pt-[8px]" +
+            "fixed md:static w-screen md:w-auto h-screen md:h-auto top-0 md:top-auto left-0 md:left-auto md:flex flex-grow items-center backdrop-blur-[6px] backdrop-brightness-50 md:backdrop-filter-none md:bg-opacity-0 md:shadow-none pt-[8px]" +
             (navbarOpen ? " block" : " hidden")
           }
         >
-          <ul className="flex flex-col md:flex-row list-none mr-auto w-full justify-around text-white">
+          <div className="flex p-5 justify-end md:hidden" onClick={() => setNavbarOpen(false)}>
+            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px">
+              <path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z" />
+            </svg>
+          </div>
+          <ul className="flex items-start pl-7 md:pl-0 flex-col md:flex-row list-none mr-auto w-full justify-around text-white">
             {
 
               navItems.map((item, index) => (
 
-                <li ref={el => animNavButtons.current.push(el)} className={"mx-3 md:m-0 flex items-center cursor-pointer"} key={index} >
+                <li ref={el => { if (el && animNavButtons.current.indexOf(el) == -1) animNavButtons.current.push(el) }} className={"mx-3 md:m-0 flex items-center cursor-pointer"} key={index} >
                   {
                     main ? (
                       <Link activeClass="active_scroll" className={section == item.href ? 'active' : ''} smooth spy to={item.href} onClick={() => routing(item)}>
-                        <p className="hover:text-gray-100 text-gray-400  py-4 md:py-2 flex items-center text-lg uppercase font-lato">{item.title}</p>
+                        <p className="md:hover:text-gray-100 md:text-gray-400 text-white py-4 md:py-2 flex items-center text-lg uppercase font-lato">{item.title}</p>
                       </Link>
                     ) : (
                       <div onClick={() => routing(item)}>
-                        <p className="hover:text-gray-100 text-gray-400  py-4 md:py-2 flex items-center text-lg uppercase font-lato">{item.title}</p>
+                        <p className={`md:hover:text-gray-100 ${item.href == 'solutions' ? 'text-white' : 'md:text-gray-400'}  py-4 md:py-2 flex items-center text-lg uppercase font-lato`}>{item.title}</p>
                       </div>
                     )
                   }
