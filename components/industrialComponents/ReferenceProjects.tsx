@@ -28,6 +28,8 @@ const ReferenceProjects = React.forwardRef((props: any, ref: any) => {
     const imageList = [
         '/images/volskbank.png',
         '/images/districtbank.png',
+        '/images/districtbank.png',
+        '/images/districtbank.png',
         '/images/districtbank.png'
     ]
 
@@ -136,92 +138,47 @@ const ReferenceProjects = React.forwardRef((props: any, ref: any) => {
     }
 
 
-    // animation
-    const animSideUp = React.useRef<any>([]);
-    const animFadeIn = React.useRef<any>([]);
-    const animGradient = React.useRef<any>([]);
-
-    const getShowTimeline = (duration: number = 3) => {
-        return gsap.timeline({ paused: true, onReverseComplete: () => { gsap.set([containerRef.current], { display: 'none' }); } })
-            .fromTo(
-                animSideUp.current[0],
-                { opacity: 0 },
-                { opacity: 1, duration },
-                0
-            )
-            .fromTo(
-                animSideUp.current,
-                { y: 600 },
-                { y: 200, duration: duration / 2 },
-                0
-            )
-            .fromTo(
-                animSideUp.current,
-                { y: 200 },
-                { y: 0, duration: duration / 2 },
-                duration / 2
-            )
-            .fromTo(
-                animFadeIn.current,
-                { opacity: 0, y: 200 },
-                { opacity: 1, y: 0, duration: duration / 2 },
-                duration / 2
-            )
-            .fromTo(
-                animGradient.current,
-                { opacity: 0, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 100%)' },
-                { opacity: 1, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 60%)', duration: duration / 2 },
-                duration / 2
-            )
-
+   // animation
+   const getShowTimeline = (duration: number=1.5) => {
+    return gsap.timeline({onReverseComplete: ()=>{if (containerRef.current)gsap.set([containerRef.current], {display: 'none'});}})
+        .fromTo(
+            containerRef.current,
+            { y: 100, opacity: 0 },
+            { y: 0, opacity: 1, duration },
+            0
+        )
     }
 
     const getHideTimeline = (duration: number = 1.5) => {
-        return gsap.timeline({ paused: true, onComplete: () => { gsap.set([containerRef.current], { display: 'none' }); } })
+        return gsap.timeline({ onComplete: () => { if (containerRef.current)gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
-                animSideUp.current[0],
-                { opacity: 1 },
-                { opacity: 0, duration },
+                containerRef.current,
+                { y: 0, opacity: 1 },
+                { y: -100, opacity: 0, duration },
                 0
             )
-            .fromTo(
-                animSideUp.current,
-                { y: 0 },
-                { y: -100, duration },
-                0
-            )
-            .fromTo(
-                animFadeIn.current,
-                { opacity: 1 },
-                { opacity: 0, duration },
-                0
-            )
-            .fromTo(
-                animGradient.current,
-                { opacity: 1, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 60%)' },
-                { opacity: 0, background: 'radial-gradient(circle, rgba(123, 182, 144, 0.5) 0%, rgba(123, 182, 144, 0) 80%)', duration },
-                0
-            )
-
     }
 
-    const startAnim = (direction: string, shown: boolean) => {
-        gsap.set([containerRef.current], { display: 'block' });
-        if (direction == 'DOWN' && shown) getShowTimeline().play(0);
-        else if (direction == 'DOWN' && !shown) getHideTimeline().play(0);
-        else if (direction == 'UP' && shown) getHideTimeline().reverse(0);
-        else if (direction == 'UP' && !shown) getShowTimeline().reverse(0);
+    const prevAnimation = React.useRef<any>(null);
+    const startAnim = (direction: string, shown: boolean, index: number) => {
+        if ( prevAnimation.current ) prevAnimation.current.kill();
+        gsap.set([containerRef.current], {display: 'block'});
+        if ( direction == 'DOWN' && shown ) prevAnimation.current = getShowTimeline().play(0);
+        else if ( direction == 'DOWN' && !shown ) prevAnimation.current = getHideTimeline().play(0);
+        else if ( direction == 'UP' && shown ) prevAnimation.current = getHideTimeline().reverse(0);
+        else if (direction == 'UP' && !shown ) prevAnimation.current = getShowTimeline().reverse(0);
     }
+
 
     const router = useRouter()
 
     return (
-        <section id='credentials' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='flex items-center md:items-start md:pt-[160px] md:w-screen h-fit md:h-screen my-[100px] md:my-0 relative'>
+        <section id='credentials' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='container md:overflow-hidden flex items-center md:items-start md:pt-[160px] md:w-screen h-fit my-[100px] md:my-0 relative md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]'>
             <div className='w-full relative z-50 md:absolute md:top-1/2 md:translate-y-[-50%]' style={{ height: '-webkit-fill-available' }}>
                 <div className=' pt-10 pb-[60px] flex justify-center'>
-                    <h1 ref={el => {if (el && animSideUp.current.indexOf(el) == -1)animSideUp.current.push(el)}} className="text-title-sm relative z-50">{t('landing.credential.title')}</h1>
+                    <h1 className="text-title-sm relative z-50">{t('landing.credential.title')}</h1>
                 </div>
-                <div ref={el => {if (el && animFadeIn.current.indexOf(el) == -1) animFadeIn.current.push(el)}}>
+                <div>
                     <Flickity
                         {...flickityProps}
 
@@ -327,7 +284,6 @@ const ReferenceProjects = React.forwardRef((props: any, ref: any) => {
                     </div>
                 </div>
             </div>
-            <div ref={el => {if(el && animGradient.current.indexOf(el) == -1) animGradient.current.push(el)}} className='z-0 hidden md:block fixed top-1/2 left-1/2 center-transform w-full h-full'></div>
         </section>
     )
 })

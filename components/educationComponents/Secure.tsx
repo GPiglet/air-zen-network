@@ -1,39 +1,46 @@
 //modules
 import React, { FC } from "react"
 import gsap from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useTranslation } from 'next-i18next';
 
-gsap.registerPlugin(ScrollTrigger)
-
-const Secure: FC = () => {
+const Secure: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref: any) => {
     //translate
     const { t } = useTranslation()
 
-    // const tl = gsap.timeline({
-    //     scrollTrigger: {
-    //       trigger: ".trigger",
-    //       start: "center bottom",
-    //       end: "center top",
-    //       scrub: 3,
-    //       markers: true
-    //     }
-    // });
+    // animation
+    const getShowTimeline = (duration: number=1.5) => {
+        return gsap.timeline({onReverseComplete: ()=>{if (containerRef.current)gsap.set([containerRef.current], {display: 'none'});}})
+            .fromTo(
+                containerRef.current,
+                { y: 100, opacity: 0 },
+                { y: 0, opacity: 1, duration },
+                0
+            )
+    }
 
-    // React.useEffect(() => {
+    const getHideTimeline = (duration: number = 1.5) => {
+        return gsap.timeline({ onComplete: () => { if (containerRef.current)gsap.set([containerRef.current], { display: 'none' }); } })
+            .fromTo(
+                containerRef.current,
+                { y: 0, opacity: 1 },
+                { y: -100, opacity: 0, duration },
+                0
+            )
+    }
 
-    //     tl.to(".box", {
-    //             duration: 2,
-    //             scale: 1.5,
-    //             opacity: 0,
-    //             transformOrigin: "50% 50%",
-    //             stagger: 1
-    //         })
-
-    // },[])
+    const containerRef = React.useRef<any>();
+    const prevAnimation = React.useRef<any>(null);
+    const startAnim = (direction: string, shown: boolean, index: number) => {
+        if ( prevAnimation.current ) prevAnimation.current.kill();
+        gsap.set([containerRef.current], {display: 'block'});
+        if ( direction == 'DOWN' && shown ) prevAnimation.current = getShowTimeline().play(0);
+        else if ( direction == 'DOWN' && !shown ) prevAnimation.current = getHideTimeline().play(0);
+        else if ( direction == 'UP' && shown ) prevAnimation.current = getHideTimeline().reverse(0);
+        else if (direction == 'UP' && !shown ) prevAnimation.current = getShowTimeline().reverse(0);
+    }
 
     return (
-        <div id="protection" className="relative container mx-auto mb-[75%] md:mb-0 md:h-screen">
+        <div id="protection" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="relative container mx-auto mb-[75%] md:mb-0 md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
             <svg className="absolute mx-auto 
             right-1/2 translate-x-[50%] md:translate-x-0 md:right-[-85%] lg:right-[-110%] xl:right-[-85%]
             top-[88%] xs:top-[50%] sm:top-[23%] md:top-1/2 md:translate-y-[-50%]
@@ -92,6 +99,6 @@ const Secure: FC = () => {
         </div>
 
     );
-};
-
+});
+Secure.displayName = 'Secure';
 export default Secure

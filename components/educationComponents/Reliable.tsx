@@ -1,42 +1,49 @@
 //modules
 import React, { FC } from "react"
 import gsap from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useTranslation } from 'next-i18next';
 
-gsap.registerPlugin(ScrollTrigger)
-
-const Reliable: FC = () => {
+const Reliable: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref: any) => {
 
     //usetranslate
     const { t } = useTranslation()
     const list = t('education.reliable.list', { returnObjects: true })
 
 
-    // const tl = gsap.timeline({
-    //     scrollTrigger: {
-    //       trigger: ".trigger",
-    //       start: "center bottom",
-    //       end: "center top",
-    //       scrub: 3,
-    //       markers: true
-    //     }
-    // });
+    // animation
+    const getShowTimeline = (duration: number=1.5) => {
+        return gsap.timeline({onReverseComplete: ()=>{if (containerRef.current)gsap.set([containerRef.current], {display: 'none'});}})
+            .fromTo(
+                containerRef.current,
+                { y: 100, opacity: 0 },
+                { y: 0, opacity: 1, duration },
+                0
+            )
+    }
 
-    // React.useEffect(() => {
+    const getHideTimeline = (duration: number = 1.5) => {
+        return gsap.timeline({ onComplete: () => { if (containerRef.current)gsap.set([containerRef.current], { display: 'none' }); } })
+            .fromTo(
+                containerRef.current,
+                { y: 0, opacity: 1 },
+                { y: -100, opacity: 0, duration },
+                0
+            )
+    }
 
-    //     tl.to(".box", {
-    //             duration: 2,
-    //             scale: 1.5,
-    //             opacity: 0,
-    //             transformOrigin: "50% 50%",
-    //             stagger: 1
-    //         })
-
-    // },[])
+    const containerRef = React.useRef<any>();
+    const prevAnimation = React.useRef<any>(null);
+    const startAnim = (direction: string, shown: boolean, index: number) => {
+        if ( prevAnimation.current ) prevAnimation.current.kill();
+        gsap.set([containerRef.current], {display: 'block'});
+        if ( direction == 'DOWN' && shown ) prevAnimation.current = getShowTimeline().play(0);
+        else if ( direction == 'DOWN' && !shown ) prevAnimation.current = getHideTimeline().play(0);
+        else if ( direction == 'UP' && shown ) prevAnimation.current = getHideTimeline().reverse(0);
+        else if (direction == 'UP' && !shown ) prevAnimation.current = getShowTimeline().reverse(0);
+    }
 
     return (
-        <div id="classroom" className="container mx-auto relative mb-[80%] sm:mb-[100%] md:mb-[0%] xl:mb-[10%] md:h-screen">
+        <div id="classroom" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container mx-auto relative mb-[80%] sm:mb-[100%] md:mb-[0%] xl:mb-[10%] md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
 
             <svg className="absolute trigger 
             left-[50%] translate-x-[-50%] md:translate-x-0 md:left-[-75%] lg:left-[-90%] xl:left-[-81%]
@@ -98,6 +105,6 @@ const Reliable: FC = () => {
         </div>
 
     );
-};
-
+});
+Reliable.displayName = 'Reliable';
 export default Reliable
