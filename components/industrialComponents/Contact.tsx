@@ -2,14 +2,46 @@
 import React, { FC } from "react"
 import ContactForm from "../common/form/ContactForm";
 import { useTranslation } from "next-i18next";
+import gsap from "gsap";
 
-
-const Contact: FC = () => {
+const Contact: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref: any) => {
     //translate
     const { t } = useTranslation()
 
+    // animation
+    const getShowTimeline = (duration: number=1.5) => {
+        return gsap.timeline({onReverseComplete: ()=>{if (containerRef.current)gsap.set([containerRef.current], {display: 'none'});}})
+            .fromTo(
+                containerRef.current,
+                { y: 100, opacity: 0 },
+                { y: 0, opacity: 1, duration },
+                0
+            )
+    }
+
+    const getHideTimeline = (duration: number = 1.5) => {
+        return gsap.timeline({ onComplete: () => { if (containerRef.current)gsap.set([containerRef.current], { display: 'none' }); } })
+            .fromTo(
+                containerRef.current,
+                { y: 0, opacity: 1 },
+                { y: -100, opacity: 0, duration },
+                0
+            )
+    }
+
+    const containerRef = React.useRef<any>();
+    const prevAnimation = React.useRef<any>(null);
+    const startAnim = (direction: string, shown: boolean, index: number) => {
+        if ( prevAnimation.current ) prevAnimation.current.kill();
+        gsap.set([containerRef.current], {display: 'block'});
+        if ( direction == 'DOWN' && shown ) prevAnimation.current = getShowTimeline().play(0);
+        else if ( direction == 'DOWN' && !shown ) prevAnimation.current = getHideTimeline().play(0);
+        else if ( direction == 'UP' && shown ) prevAnimation.current = getHideTimeline().reverse(0);
+        else if (direction == 'UP' && !shown ) prevAnimation.current = getShowTimeline().reverse(0);
+    }
+
     return (
-        <div id="technology" className="relative md:mb-[0] ">
+        <div id="technology" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="relative md:mb-[0] md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
             <div className="container mx-auto relative mt-[800px] xs:mt-[800px] sm:mt-[1100px] md:mt-[700px]">
                 <svg className="absolute
                 top-[-78%] xs:top-[-127%] sm:top-[-565px] md:top-[-130%] lg:top-[-150%] xl:top-[-250%]
@@ -66,6 +98,6 @@ const Contact: FC = () => {
         </div>
 
     );
-};
+});
 
 export default Contact
