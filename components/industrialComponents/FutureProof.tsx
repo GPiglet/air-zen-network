@@ -80,7 +80,7 @@ const FutureProof: FC<{ props?: any, ref: any }> = React.forwardRef((props: any,
                     <path opacity="0.6" d="M0.500122 473.727C0.500122 153.277 260.715 -106.5 581.709 -106.5C902.703 -106.5 1162.92 153.277 1162.92 473.727C1162.92 794.176 902.703 1053.95 581.709 1053.95C260.715 1053.95 0.500122 794.176 0.500122 473.727Z" stroke="url(#paint1_radial_0_1)" />
                     <circle opacity="0.7" cx="581.433" cy="473.596" r="312.533" transform="rotate(60 581.433 473.596)" fill="url(#paint2_radial_0_1)" />
                 </g>
-                <image href="/images/macbook.png" x="19.2%" y="22%" className="w-[78%]"></image>
+                <image href="/images/macbook.png" x="11.2%" y="22%" className="w-[92%]" ></image>
                 <path opacity="0.8" d="M356.221 443.186C429.094 419.864 469.621 342.876 446.741 271.228C423.861 199.579 346.238 160.402 273.366 183.723C200.493 207.044 159.966 284.032 182.846 355.681C205.726 427.329 283.348 466.507 356.221 443.186Z" fill="url(#paint3_radial_0_1)" />
                 <defs>
                     <radialGradient id="paint0_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(526.119 264.609) rotate(68.4205) scale(810.588)">
