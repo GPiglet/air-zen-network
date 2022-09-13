@@ -9,6 +9,8 @@ import AZCarousel from '../common/carousel';
 const ReferenceProjects = React.forwardRef((props: any, ref: any) => {
     const [carousel, setCarousel] = React.useState<any>(null);
 
+    const animCircle = React.useRef<any>([]);
+
     //translate
     const { t } = useTranslation()
     const refBackCircle = React.useRef<SVGSVGElement>(null);
@@ -91,6 +93,7 @@ const ReferenceProjects = React.forwardRef((props: any, ref: any) => {
         gsap.to(slide, { left, duration });
         if (refBackCircleCarousel.current && carousel.getSelectedIndex() == shownIndex + position) {
             gsap.to(refBackCircleCarousel.current, { left: parseInt(left) - 4 + '%', duration });
+            gsap.to(animCircle.current[2], { transformOrigin: 'center center', scale: carousel.getSelectedIndex() % 2 == 0 ? 1 : 0.88 });
         }
     }
 
@@ -263,9 +266,9 @@ const ReferenceProjects = React.forwardRef((props: any, ref: any) => {
 
                     <div ref={refBackCircleCarousel} className='hidden absolute w-[120%] md:w-[45%] top-0  md:top-1/2 md:translate-y-[-44%] right-[27%] md:left-[14%]' >
                         <svg viewBox="0 0 736 736" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle opacity="0.3" cx="368.2" cy="368.2" r="338.706" transform="rotate(-120 368.2 368.2)" fill="url(#paint0_radial_0_2)" />
-                            <circle opacity="0.8" cx="368.199" cy="368.2" r="367.206" transform="rotate(-120 368.199 368.2)" stroke="url(#paint1_linear_0_2)" />
-                            <circle opacity="0.4" cx="368.204" cy="367.623" r="311.914" transform="rotate(-120 368.204 367.623)" fill="url(#paint2_radial_0_2)" />
+                            <circle ref={el => { if (el && animCircle.current.indexOf(el) == -1) animCircle.current.push(el) }} opacity="0.3" cx="368.2" cy="368.2" r="338.706" transform="rotate(-120 368.2 368.2)" fill="url(#paint0_radial_0_2)" />
+                            <circle ref={el => { if (el && animCircle.current.indexOf(el) == -1) animCircle.current.push(el) }} opacity="0.8" cx="368.199" cy="368.2" r="367.206" transform="rotate(-120 368.199 368.2)" stroke="url(#paint1_linear_0_2)" />
+                            <circle ref={el => { if (el && animCircle.current.indexOf(el) == -1) animCircle.current.push(el) }} opacity="0.4" cx="368.204" cy="367.623" r="311.914" transform="rotate(-120 368.204 367.623)" fill="url(#paint2_radial_0_2)" />
                             <defs>
                                 <radialGradient id="paint0_radial_0_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(320.569 188.262) rotate(68.4205) scale(697.882)">
                                     <stop stopColor="#7BB690" />

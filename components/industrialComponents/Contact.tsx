@@ -41,7 +41,7 @@ const Contact: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
     }
 
     return (
-        <div id="technology" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="relative md:h-screen md:flex items-center md:hidden md:left-[50%] md:translate-x-[-50%]">
+        <div id="contact" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="relative container mx-auto md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
             <div className="container mx-auto relative flex items-center">
 
                 <div className="mx-auto relative ">
@@ -101,5 +101,5 @@ const Contact: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
 
     );
 });
-
+Contact.displayName = 'Contact';
 export default Contact
