@@ -14,7 +14,7 @@ const SimplyNetwork: FC<{ props?: any, ref: any }> = React.forwardRef((props: an
 
     // animation
     const getShowTimeline = (duration: number = 1.5) => {
-        return gsap.timeline({ onReverseComplete: () => { if (containerRef.current)gsap.set([containerRef.current], { display: 'none' }); } })
+        return gsap.timeline({ onReverseComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
                 { y: -100, opacity: 0 },
@@ -34,6 +34,20 @@ const SimplyNetwork: FC<{ props?: any, ref: any }> = React.forwardRef((props: an
 
     return (
         <section ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container mx-auto pb-16 relative md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
+
+            <div className="relative md:absolute md:top-1/2 md:translate-y-[-50%] items-center px-10 md:px-0 pt-[150px] md:pt-0">
+                <Breadcrumb />
+                <div className="flex flex-wrap mt-12">
+                    <div className="w-full md:w-[510px]">
+                        <h1 className="text-title-sm"> {t("home.simply.title")}</h1>
+                        {
+                            t('home.simply.description').split('\n').map((item, index) => (
+                                <p className="font-lato font-light tracking-widest text-white text-lg mt-4" key={index}>{item}</p>
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
             <svg className="absolute right-[-36%] bottom-[-27%] md:top-1/2 md:translate-y-[-50%] md:w-[100%] md:right-[-53%]  xl:w-[120%]   sm:top-[37%] sm:w-[120%] sm:right-[-12%] w-[174%]  xl:right-[-44%] " viewBox="0 0 817 828" fill="none" xmlns="http://www.w3.org/2000/svg">
 
                 <path opacity="0.6" d="M259.493 676.355C116.557 593.32 67.3899 408.41 149.686 263.345C231.983 118.279 414.572 68.0028 557.507 151.038C700.443 234.072 749.61 418.982 667.314 564.048C585.017 709.114 402.428 759.389 259.493 676.355Z" stroke="url(#paint0_linear_1376_4715)" />
@@ -72,21 +86,6 @@ const SimplyNetwork: FC<{ props?: any, ref: any }> = React.forwardRef((props: an
                 </defs>
                 <image href="/images/homeContent1.png" width="600" height="350" clipPath="url(#myCircle)" x="12.5%" y="29%" fillOpacity='0.5' />
             </svg>
-
-
-            <div className="relative md:absolute md:top-1/2 md:translate-y-[-50%] items-center px-10 md:px-0 pt-[150px] md:pt-0">
-                <Breadcrumb />
-                <div className="flex flex-wrap mt-12">
-                    <div className="w-full md:w-[510px]">
-                        <h1 className="text-title-sm"> {t("home.simply.title")}</h1>
-                        {
-                            t('home.simply.description').split('\n').map((item, index) => (
-                                <p className="font-lato font-light tracking-widest text-white text-lg mt-4" key={index}>{item}</p>
-                            ))
-                        }
-                    </div>
-                </div>
-            </div>
         </section>
 
     );
