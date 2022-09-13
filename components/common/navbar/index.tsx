@@ -33,8 +33,6 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
 
   const handleNavigation = useCallback(
     (e: any) => {
-      console.log('dd', y)
-
       const window = e.currentTarget
       if (y > window.scrollY && window.innerWidth < 920) { // && (window.innerWidth < 920 || main === false)
         setScrollDown(false)
