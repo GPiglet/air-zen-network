@@ -13,8 +13,8 @@ const Boost: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref: 
     const logos = ["volksbank", "adac", "sparkasse", "barSaintJean"];
 
     // animation
-    const getShowTimeline = (duration: number=1.5) => {
-        return gsap.timeline({onReverseComplete: ()=>{if (containerRef.current)gsap.set([containerRef.current], {display: 'none'});}})
+    const getShowTimeline = (duration: number = 1.5) => {
+        return gsap.timeline({ onReverseComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
                 { y: 100, opacity: 0 },
@@ -24,7 +24,7 @@ const Boost: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref: 
     }
 
     const getHideTimeline = (duration: number = 1.5) => {
-        return gsap.timeline({ onComplete: () => { if (containerRef.current)gsap.set([containerRef.current], { display: 'none' }); } })
+        return gsap.timeline({ onComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
                 { y: 0, opacity: 1 },
@@ -36,19 +36,56 @@ const Boost: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref: 
     const containerRef = React.useRef<any>();
     const prevAnimation = React.useRef<any>(null);
     const startAnim = (direction: string, shown: boolean, index: number) => {
-        if ( prevAnimation.current ) prevAnimation.current.kill();
-        gsap.set([containerRef.current], {display: 'block'});
-        if ( direction == 'DOWN' && shown ) prevAnimation.current = getShowTimeline().play(0);
-        else if ( direction == 'DOWN' && !shown ) prevAnimation.current = getHideTimeline().play(0);
-        else if ( direction == 'UP' && shown ) prevAnimation.current = getHideTimeline().reverse(0);
-        else if (direction == 'UP' && !shown ) prevAnimation.current = getShowTimeline().reverse(0);
+        if (prevAnimation.current) prevAnimation.current.kill();
+        gsap.set([containerRef.current], { display: 'block' });
+        if (direction == 'DOWN' && shown) prevAnimation.current = getShowTimeline().play(0);
+        else if (direction == 'DOWN' && !shown) prevAnimation.current = getHideTimeline().play(0);
+        else if (direction == 'UP' && shown) prevAnimation.current = getHideTimeline().reverse(0);
+        else if (direction == 'UP' && !shown) prevAnimation.current = getShowTimeline().reverse(0);
     }
-    
+
 
     return (
-        <section ref={(el)=>{containerRef.current=el; if (ref) ref.current = {container: el, startAnim}}} className="pb-16 relative container mx-auto md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
+        <section ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="pb-16 relative container mx-auto md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
 
-            <svg className="absolute right-[-42%] bottom-[-30%] top-[69%] md:top-1/2 md:translate-y-[-50%] md:w-[130%] sm:w-[150%] sm:right-[-25%] w-[174%] md:right-[-65%] xl:right-[-44%] " viewBox="0 0 721 703" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className="relative items-center px-10 md:px-0 md:absolute md:top-1/2 md:translate-y-[-50%] pt-[150px] md:pt-0">
+                <Breadcrumb />
+                <div className="flex flex-wrap mt-12">
+                    <div className="w-full md:w-1/2">
+                        <h1 className="text-title-md">
+                            {t('business.boost.title')}
+                        </h1>
+                        {
+                            t('business.boost.description').split('\n').map((item, index) =>
+                                <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>
+                                    {item}
+                                </p>
+                            )
+                        }
+                        <div className="mt-12">
+                            <p className="font-lato-light font-light text-lg text-white  ">
+                                {t('business.boost.cooperation')}
+                            </p>
+                            <div className="flex justify-between items-center mt-12">
+                                {logos.map((item, index) => (
+                                    <picture className="h-[50px] w-[40px] sm:w-auto" key={index}>
+                                        <source
+                                            srcSet={`/images/logos/${item}-logo.svg`}
+                                            type="image/webp"
+                                        />
+                                        <img
+                                            src={`/images/logos/logos/${item}-logo.svg`}
+                                            className="w-full h-full mr-2 cursor-pointer"
+                                            alt=""
+                                        />
+                                    </picture>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <svg className="md:absolute translate-x-[-11%] md:translate-x-0 right-[-42%] bottom-[-30%] top-[69%] md:top-1/2 md:translate-y-[-50%] md:w-[130%] sm:w-[150%] sm:right-[-25%] w-[174%] md:right-[-65%] xl:right-[-44%] " viewBox="0 50 721 603" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.5" d="M487.811 220.384C496.618 193.795 482.244 164.751 455.706 155.514C429.169 146.277 400.516 160.344 391.709 186.933C382.901 213.523 397.275 242.566 423.813 251.803C450.351 261.04 479.003 246.973 487.811 220.384Z" fill="url(#paint0_linear_1376_5373)" />
                 <path opacity="0.3" d="M184.445 435.678C248.808 517.946 367.101 534.24 448.66 472.071C530.219 409.903 544.16 292.814 479.797 210.546C415.434 128.278 297.141 111.984 215.582 174.153C134.023 236.321 120.083 353.41 184.445 435.678Z" fill="url(#paint1_radial_1376_5373)" />
                 <path opacity="0.8" d="M216.811 413.726C268.577 477.999 362.169 489.533 425.854 439.488C489.539 389.443 499.201 296.77 447.434 232.497C395.668 168.224 302.076 156.69 238.391 206.735C174.706 256.78 165.044 349.454 216.811 413.726Z" fill="url(#paint2_radial_1376_5373)" />
@@ -107,45 +144,6 @@ const Boost: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref: 
                     </radialGradient>
                 </defs>
             </svg>
-
-
-            <div className="relative items-center px-10 md:px-0 md:absolute md:top-1/2 md:translate-y-[-50%] pt-[150px] md:pt-0">
-                <Breadcrumb />
-                <div className="flex flex-wrap mt-12">
-                    <div className="w-full md:w-1/2">
-                        <h1 className="text-title-md">
-                            {t('business.boost.title')}
-                        </h1>
-                        {
-                            t('business.boost.description').split('\n').map((item, index) =>
-                                <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>
-                                    {item}
-                                </p>
-                            )
-                        }
-                        <div className="mt-12">
-                            <p className="font-lato-light font-light text-lg text-white  ">
-                                {t('business.boost.cooperation')}
-                            </p>
-                            <div className="flex justify-between items-center mt-12">
-                                {logos.map((item, index) => (
-                                    <picture className="h-[50px] w-[40px] sm:w-auto" key={index}>
-                                        <source
-                                            srcSet={`/images/logos/${item}-logo.svg`}
-                                            type="image/webp"
-                                        />
-                                        <img
-                                            src={`/images/logos/logos/${item}-logo.svg`}
-                                            className="w-full h-full mr-2 cursor-pointer"
-                                            alt=""
-                                        />
-                                    </picture>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </section>
     );
 });

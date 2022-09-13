@@ -6,13 +6,13 @@ import gsap from 'gsap';
 const Professional: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref: any) => {
     //translate
     const { t } = useTranslation()
-    
+
 
     const list = t('business.professional.list', { returnObjects: true })
 
     // animation
-    const getShowTimeline = (duration: number=1.5) => {
-        return gsap.timeline({onReverseComplete: ()=>{if (containerRef.current)gsap.set([containerRef.current], {display: 'none'});}})
+    const getShowTimeline = (duration: number = 1.5) => {
+        return gsap.timeline({ onReverseComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
                 { y: 100, opacity: 0 },
@@ -22,7 +22,7 @@ const Professional: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
     }
 
     const getHideTimeline = (duration: number = 1.5) => {
-        return gsap.timeline({ onComplete: () => { if (containerRef.current)gsap.set([containerRef.current], { display: 'none' }); } })
+        return gsap.timeline({ onComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
                 { y: 0, opacity: 1 },
@@ -34,20 +34,43 @@ const Professional: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
     const containerRef = React.useRef<any>();
     const prevAnimation = React.useRef<any>(null);
     const startAnim = (direction: string, shown: boolean, index: number) => {
-        if ( prevAnimation.current ) prevAnimation.current.kill();
-        gsap.set([containerRef.current], {display: 'flex'});
-        if ( direction == 'DOWN' && shown ) prevAnimation.current = getShowTimeline().play(0);
-        else if ( direction == 'DOWN' && !shown ) prevAnimation.current = getHideTimeline().play(0);
-        else if ( direction == 'UP' && shown ) prevAnimation.current = getHideTimeline().reverse(0);
-        else if (direction == 'UP' && !shown ) prevAnimation.current = getShowTimeline().reverse(0);
+        if (prevAnimation.current) prevAnimation.current.kill();
+        gsap.set([containerRef.current], { display: 'flex' });
+        if (direction == 'DOWN' && shown) prevAnimation.current = getShowTimeline().play(0);
+        else if (direction == 'DOWN' && !shown) prevAnimation.current = getHideTimeline().play(0);
+        else if (direction == 'UP' && shown) prevAnimation.current = getHideTimeline().reverse(0);
+        else if (direction == 'UP' && !shown) prevAnimation.current = getShowTimeline().reverse(0);
     }
-    
+
 
     return (
-        <section id="professional" ref={(el)=>{containerRef.current=el; if (ref) ref.current = {container: el, startAnim}}} className="pb-16 relative  items-center md:flex container mx-auto md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
+        <section id="professional" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="pb-16 relative  items-center md:flex container mx-auto md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
 
+            <div className="md:pt-[0] md:mt-0 relative text-center text-white px-10">
+                <div className="w-full">
+                    <h1 className="text-title-sm">
+                        {t('business.professional.title')}
+                    </h1>
+                    <p className="font-lato-light font-light text-lg tracking-widest">{t('business.professional.subtitle')}</p>
+                    <div className="md:flex justify-between text-lg text-left mt-10 tracking-[0.08em]">
+                        <div className="w-[160px]"></div>
+                        {
+                            (list as unknown as any[]).map((item, index) => (
+                                <div key={index} className='md:px-5'>
+                                    <p className="font-lato font-medium mb-4 mt-5">{item.title}</p>
+                                    <ul className='list-["-"] pl-2 unique-skill-list'>
+                                        {item.items.split('\n').map((list: string, ind: number) => (
+                                            <li className='font-lato text-lg font-light' key={ind}>{list}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
 
-            <svg className="absolute left-[-75%] bottom-[-71%] sm:top-[45%] sm:w-[150%] sm:left-[-25%] w-[250%] xl:left-[-40%] md:top-[34%] md:w-[100%] md:left-[-41%] md:translate-y-[-50%]" viewBox="0 0 679 681" fill="none" stopOpacity='0.2' xmlns="http://www.w3.org/2000/svg">
+            <svg className="md:absolute translate-x-[-14%] md:translate-x-0 left-[-75%] bottom-[-71%] sm:top-[45%] sm:w-[150%] sm:left-[-25%] w-[250%] xl:left-[-40%] md:top-[34%] md:w-[100%] md:left-[-41%] md:translate-y-[-50%]" viewBox="0 50 679 550" fill="none" stopOpacity='0.2' xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
                     <ellipse opacity="0.7" cx="339.414" cy="340.579" rx="167.901" ry="168.624" transform="rotate(150 339.414 340.579)" fill="url(#paint0_radial_1376_5657)" />
                     <path opacity="0.3" d="M187.495 428.29C138.845 344.025 167.424 236.449 251.324 188.01C335.223 139.57 442.677 168.608 491.327 252.873C539.978 337.138 511.398 444.714 427.499 493.154C343.599 541.593 236.145 512.555 187.495 428.29Z" stroke="#7BB690" />
@@ -61,7 +84,7 @@ const Professional: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
                     clipPath="url(#businessContentPic2)"
                     className="opacity-60"
                     x="13%"
-                    y="23%"
+                    y="28%"
 
                 />
                 <defs>
@@ -116,29 +139,6 @@ const Professional: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
                     </radialGradient>
                 </defs>
             </svg>
-            <div className="pt-[70%] md:pt-[0] md:mt-0 relative text-center text-white px-10">
-                <div className="w-full">
-                    <h1 className="text-title-sm">
-                        {t('business.professional.title')}
-                    </h1>
-                    <p className="font-lato-light font-light text-lg tracking-widest">{t('business.professional.subtitle')}</p>
-                    <div className="md:flex justify-between text-lg text-left mt-10 tracking-[0.08em]">
-                        <div className="w-[160px]"></div>
-                        {
-                            (list as unknown as any[]).map((item, index) => (
-                                <div key={index} className='md:px-5'>
-                                    <p className="font-lato font-medium mb-4 mt-5">{item.title}</p>
-                                    <ul className='list-["-"] pl-2 unique-skill-list'>
-                                        {item.items.split('\n').map((list: string, ind: number) => (
-                                            <li className='font-lato text-lg font-light' key={ind}>{list}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            ))
-                        }
-                    </div>
-                </div>
-            </div>
         </section>
     );
 });
