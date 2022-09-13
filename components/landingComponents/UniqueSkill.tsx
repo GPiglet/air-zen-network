@@ -302,17 +302,17 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                 },
                 0
             )
-            // .fromTo(
-            //     animSkills.current[index].getElementsByClassName('unique-skill-button')[0].children[1],
-            //     {
-            //         x: 0,
-            //     },
-            //     {
-            //         x: 60,
-            //         duration
-            //     },
-            //     0
-            // )
+        // .fromTo(
+        //     animSkills.current[index].getElementsByClassName('unique-skill-button')[0].children[1],
+        //     {
+        //         x: 0,
+        //     },
+        //     {
+        //         x: 60,
+        //         duration
+        //     },
+        //     0
+        // )
 
     }
     const onMouseEnterSkill = (index: number) => {
@@ -415,35 +415,35 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                 },
                 0.2
             )
-            // .fromTo(
-            //     animSkills.current[index].getElementsByClassName('unique-skill-button')[0].children[1],
-            //     {
-            //         x: 0,
-            //     },
-            //     {
-            //         x: 110,
-            //         duration
-            //     },
-            //     0.2
-            // )
+        // .fromTo(
+        //     animSkills.current[index].getElementsByClassName('unique-skill-button')[0].children[1],
+        //     {
+        //         x: 0,
+        //     },
+        //     {
+        //         x: 110,
+        //         duration
+        //     },
+        //     0.2
+        // )
 
     }
 
     const onClickSkill = (index: number) => {
         // 
-        if (window.innerWidth < 920) {            
-            if ( animSkills.current[index].getAttribute('data-box-opened') == 'false' || !animSkills.current[index].getAttribute('data-box-opened') ) {
+        if (window.innerWidth < 920) {
+            if (animSkills.current[index].getAttribute('data-box-opened') == 'false' || !animSkills.current[index].getAttribute('data-box-opened')) {
                 getClickTimeline(index).play(0);
-                for ( let i = 0; i < animSkills.current.length; i++ ) {
+                for (let i = 0; i < animSkills.current.length; i++) {
                     const opened = i == index ? 'true' : 'false';
-                    if ( animSkills.current[i].getAttribute('data-box-opened') == 'true' ) getClickTimeline(i).reverse(0);
+                    if (animSkills.current[i].getAttribute('data-box-opened') == 'true') getClickTimeline(i).reverse(0);
                     animSkills.current[i].setAttribute('data-box-opened', opened);
                 }
                 return;
             }
         }
-        
-        for ( let i = 0; i < animSkills.current.length; i++ ) {
+
+        for (let i = 0; i < animSkills.current.length; i++) {
             animSkills.current[i].setAttribute('data-box-opened', 'false');
         }
 
@@ -452,17 +452,17 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
 
     return (
         <>
-            <div id='solutions' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='z-10 md:container mx-auto relative justify-center items-center md:pt-20 pb-[200px] md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] md:top-1/2 md:translate-y-[-470px]'>
-                <div className='mt-[200px] md:mt-[135px]'>
+            <div id='solutions' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='z-10 md:container mx-auto relative justify-center items-center md:pt-20 pb-[100px] md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] md:top-1/2 md:translate-y-[-470px]'>
+                <div className='md:mt-[135px]'>
                     <div className=" text-center  text-white">
-                        <h1 ref={el => {if(el && animSideUp.current.indexOf(el) == -1)animSideUp.current.push(el)}} className="text-title-sm">{t('landing.solution.title')}</h1>
-                        <p ref={el => { if(el && animSideUp.current.indexOf(el) == -1)animSideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className="font-lato font-light tracking-widest text-[22px] mt-3">{t('landing.solution.subtitle')}</p>
+                        <h1 ref={el => { if (el && animSideUp.current.indexOf(el) == -1) animSideUp.current.push(el) }} className="text-title-sm">{t('landing.solution.title')}</h1>
+                        <p ref={el => { if (el && animSideUp.current.indexOf(el) == -1) animSideUp.current.push(el); if (el && animFadeIn.current.indexOf(el) == -1) animFadeIn.current.push(el) }} className="font-lato font-light tracking-widest text-[22px] mt-3">{t('landing.solution.subtitle')}</p>
                     </div>
                     <div className='w-full mt-[145px]'>
                         <div className='md:m-auto md:w-max  '>
                             {
                                 (skillList as unknown as any[]).map((item: any, index: any) => (
-                                    <div ref={el => {if ( el != null && animSkills.current.indexOf(el) == -1 )animSkills.current.push(el)}} onClick={() => onClickSkill(index)} onMouseEnter={() => onMouseEnterSkill(index)} onMouseLeave={() => onMouseLeaveSkill(index)} className='cursor-pointer right-[-30px] sm:right-[-70px] w-full h-[170px] md:h-auto md:w-[210px] xl:w-[280px] md:inline-block align-top md:right-auto relative px-5 py-3 md:py-5 flex-1 unique-skill-items unique-skill-animate z-40' key={index}>
+                                    <div ref={el => { if (el != null && animSkills.current.indexOf(el) == -1) animSkills.current.push(el) }} onClick={() => onClickSkill(index)} onMouseEnter={() => onMouseEnterSkill(index)} onMouseLeave={() => onMouseLeaveSkill(index)} className='cursor-pointer right-[-30px] sm:right-[-70px] w-full h-[170px] md:h-auto md:w-[210px] xl:w-[280px] md:inline-block align-top md:right-auto relative px-5 py-3 md:py-5 flex-1 unique-skill-items unique-skill-animate z-40' key={index}>
                                         <div className='unique-skill-border-gradient h-full'>
                                             <div className='tracking-widest py-5 md:pt-[80px] md:pb-[100px] xl:pl-[42px] xl:pr-0 pl-8 pr-5 text-white w-full relative  md:h-[300px]'>
                                                 <picture className=''>
@@ -497,9 +497,9 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
 
                 </div>
             </div>
-            <div ref={el => {if(el && animGradient.current.indexOf(el) == -1)animGradient.current.push(el)}} className='z-0 hidden md:block fixed top-0 left-0 w-[100vw] h-[100vh]'></div>
-            <div ref={el => {if(el && animGradient.current.indexOf(el) == -1)animGradient.current.push(el)}} className='z-0 md:container hidden md:block fixed top-1/2  translate-y-[-50%] left-1/2 translate-x-[-50%] w-full h-full max-h-[1080px]'></div>
-            <div ref={el => { circleRef.current = el; if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='z-0 md:container hidden fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] w-full' >
+            <div ref={el => { if (el && animGradient.current.indexOf(el) == -1) animGradient.current.push(el) }} className='z-0 hidden md:block fixed top-0 left-0 w-[100vw] h-[100vh]'></div>
+            <div ref={el => { if (el && animGradient.current.indexOf(el) == -1) animGradient.current.push(el) }} className='z-0 md:container hidden md:block fixed top-1/2  translate-y-[-50%] left-1/2 translate-x-[-50%] w-full h-full max-h-[1080px]'></div>
+            <div ref={el => { circleRef.current = el; if (el && animFadeIn.current.indexOf(el) == -1) animFadeIn.current.push(el) }} className='z-0 md:container hidden fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] w-full' >
                 <svg viewBox="-200 -200 1300 1300" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle opacity="0.5" cx="449" cy="449" r="448.5" transform="rotate(-180 449 449)" stroke="url(#paint0_linear_1362_4341)" />
                     <defs>

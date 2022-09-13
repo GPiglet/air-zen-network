@@ -70,7 +70,7 @@ const Professional: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
                 </div>
             </div>
 
-            <svg className="md:absolute translate-x-[-14%] md:translate-x-0 left-[-75%] bottom-[-71%] sm:top-[45%] sm:w-[150%] sm:left-[-25%] w-[250%] xl:left-[-40%] md:top-[34%] md:w-[100%] md:left-[-41%] md:translate-y-[-50%]" viewBox="0 50 679 550" fill="none" stopOpacity='0.2' xmlns="http://www.w3.org/2000/svg">
+            <svg className="md:absolute translate-x-[-28%]  sm:translate-x-[-14%] md:translate-x-0 left-[-75%] bottom-[-71%] sm:top-[45%] sm:w-[150%] sm:left-[-25%] w-[250%] xl:left-[-40%] md:top-[34%] md:w-[100%] md:left-[-41%] md:translate-y-[-50%]" viewBox="0 50 679 550" fill="none" stopOpacity='0.2' xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
                     <ellipse opacity="0.7" cx="339.414" cy="340.579" rx="167.901" ry="168.624" transform="rotate(150 339.414 340.579)" fill="url(#paint0_radial_1376_5657)" />
                     <path opacity="0.3" d="M187.495 428.29C138.845 344.025 167.424 236.449 251.324 188.01C335.223 139.57 442.677 168.608 491.327 252.873C539.978 337.138 511.398 444.714 427.499 493.154C343.599 541.593 236.145 512.555 187.495 428.29Z" stroke="#7BB690" />

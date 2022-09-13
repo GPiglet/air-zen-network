@@ -25,7 +25,7 @@ const ContactForm: FC = () => {
             <div className={`fixed z-60 ${formView ? ' block right-[0%]' : 'right-[-100%] sm:right-[-500px] opacity-0.7 '} top-[20%] w-[90%] sm:w-[500px] form-animate`} onClick={() => showChat()}>
 
                 <div className='relative'>
-                    <svg className='fixed top-[-48px] left-[-37px]' width="277" height="219" viewBox="0 0 277 219" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className='absolute top-[-48px] left-[-37px]' width="277" height="219" viewBox="0 0 277 219" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M129.293 215.398C71.8441 227.511 15.2595 189.912 2.92224 131.397C-9.41506 72.8825 27.1731 15.6397 84.6218 3.52718C142.071 -8.58532 198.655 29.013 210.992 87.5279C223.33 146.043 186.741 203.286 129.293 215.398Z" stroke="url(#paint0_linear_0_1)" />
                         <defs>
                             <linearGradient id="paint0_linear_0_1" x1="131.072" y1="129.791" x2="30.2147" y2="24.9748" gradientUnits="userSpaceOnUse">

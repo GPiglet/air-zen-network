@@ -62,9 +62,22 @@ const Hero = React.forwardRef((props: any, ref: any) => {
     }
     return (
         <>
-            <section ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container mx-auto pb-16 relative pt-32 md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
+            <section ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container mx-auto pb-16 relative pt-32 md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
 
-                <svg className="absolute right-[-52%] top-[250px] sm:top-[20%] md:top-[50%] md:translate-y-[-35%] sm:w-[120%] sm:right-[-20%] w-[174%] md:right-[-27%] lg:right-[-25%] md:w-[105%] " viewBox="-220 0 1450 2114" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div ref={el => { if (el && animSideUpRefs.current.indexOf(el) == -1) animSideUpRefs.current.push(el) }} className="relative md:absolute px-10 z-10 flex items-center md:h-[70%] hero-fade">
+                    <div className="flex flex-wrap ">
+                        <div className="w-full md:w-2/5">
+                            <h1 className="text-title-md">{t("landing.wifi.title")} </h1>
+                            {
+                                t('landing.wifi.description').split('\n').map((item, index) => (
+                                    <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}</p>
+                                ))
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <svg className="md:absolute translate-x-[-12%] md:translate-x-0 right-[-52%] top-[250px] sm:top-[20%] md:top-[50%] md:translate-y-[-45%] sm:w-[120%] sm:right-[-20%] w-[174%] md:right-[-27%] lg:right-[-25%] md:w-[105%] " viewBox="-220 0 1450 1700" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path ref={el => { if (el && animSideUpRefs.current.indexOf(el) == -1) animSideUpRefs.current.push(el) }} className='hero-fade' opacity="0.33" d="M50.0812 701.846C55.2566 989.408 335.109 1200.06 627.722 1301.88C920.334 1403.71 1234.95 1659.84 1242.99 2106.91C1245.57 2250.91 1245.77 155.351 1242.99 0.000182753C1013.21 121.659 900.23 166.66 594.437 171.818C288.643 176.976 44.9057 414.284 50.0812 701.846Z" fill="url(#paint0_linear_967_2268)" />
                     <circle ref={el => { if (el && animZoomInRefs.current.indexOf(el) == -1) animZoomInRefs.current.push(el) }} opacity="0.7" cx="511.729" cy="696.732" r="346.322" fill="url(#paint1_radial_967_2268)" />
                     <foreignObject ref={el => { if (el && animSideUpRefs.current.indexOf(el) == -1) animSideUpRefs.current.push(el) }} className="font-lato-light w-[260px] text-lg text-white hidden md:block hero-fade" x="59%" y="23.4%" width="260px" height="100px">
@@ -100,18 +113,6 @@ const Hero = React.forwardRef((props: any, ref: any) => {
                         </radialGradient>
                     </defs>
                 </svg>
-                <div ref={el => { if (el && animSideUpRefs.current.indexOf(el) == -1) animSideUpRefs.current.push(el) }} className="relative md:absolute px-10 z-10 flex items-center md:h-[70%] hero-fade">
-                    <div className="flex flex-wrap ">
-                        <div className="w-full md:w-2/5">
-                            <h1 className="text-title-md">{t("landing.wifi.title")} </h1>
-                            {
-                                t('landing.wifi.description').split('\n').map((item, index) => (
-                                    <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}</p>
-                                ))
-                            }
-                        </div>
-                    </div>
-                </div>
             </section>
             <div ref={el => { if (el && animGradient.current.indexOf(el) == -1) animGradient.current.push(el) }} className='z-0 hidden md:block fixed top-0 left-0 w-[100vw] h-[100vh]'></div>
         </>

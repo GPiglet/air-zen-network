@@ -42,7 +42,7 @@ const CertainlySafe: FC<{ props?: any, ref: any }> = React.forwardRef((props: an
     }
 
     return (
-        <section ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="pb-16 relative container mx-auto  py-[150px] md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
+        <section ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="pb-16 relative container mx-auto md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
 
             <div className="relative items-center md:pt-0 px-10 md:px-0 md:absolute md:top-1/2 md:translate-y-[-50%]">
                 <div className="flex flex-wrap md:mt-12">

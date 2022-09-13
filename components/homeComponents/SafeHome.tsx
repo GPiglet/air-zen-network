@@ -82,7 +82,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
     return (
         <div id="secure" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container mx-auto relative md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
 
-            <div ref={el => { if (el && refAnimContents.current.indexOf(el) == -1) refAnimContents.current.push(el) }} className="relative md:flex md:hidden items-center mt-20 md:mt-0 px-10 md:px-0 h-full">
+            <div ref={el => { if (el && refAnimContents.current.indexOf(el) == -1) refAnimContents.current.push(el) }} className="relative md:flex md:hidden items-center md:mt-0 px-10 md:px-0 h-full">
                 <div className="flex flex-wrap ">
                     {/* <div className="w-[20%]"></div> */}
                     <div className="w-full md:w-1/2 m-auto">
