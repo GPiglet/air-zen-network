@@ -83,20 +83,20 @@ const FutureProof: FC<{ props?: any, ref: any }> = React.forwardRef((props: any,
                 <path opacity="0.8" d="M356.221 443.186C429.094 419.864 469.621 342.876 446.741 271.228C423.861 199.579 346.238 160.402 273.366 183.723C200.493 207.044 159.966 284.032 182.846 355.681C205.726 427.329 283.348 466.507 356.221 443.186Z" fill="url(#paint0_radial_1376_7993)" />
                 <defs>
                 <radialGradient id="paint0_radial_1376_7934" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(251.701 231.113) rotate(68.4205) scale(810.588)">
-                <stop stop-color="#7BB690"/>
-                <stop offset="1" stop-color="#7BB690" stop-opacity="0"/>
+                <stop stopColor="#7BB690"/>
+                <stop offset="1" stopColor="#7BB690" stop-opacity="0"/>
                 </radialGradient>
                 <radialGradient id="paint1_radial_1376_7934" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-177.139 642.65) rotate(-36.2932) scale(1152.08 1154.03)">
-                <stop stop-color="#7BB690"/>
-                <stop offset="1" stop-color="#7BB690" stop-opacity="0"/>
+                <stop stopColor="#7BB690"/>
+                <stop offset="1" stopColor="#7BB690" stop-opacity="0"/>
                 </radialGradient>
                 <radialGradient id="paint2_radial_1376_7934" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(263.065 274.067) rotate(68.4205) scale(643.954)">
-                <stop stop-color="#7BB690"/>
-                <stop offset="1" stop-color="#7BB690" stop-opacity="0"/>
+                <stop stopColor="#7BB690"/>
+                <stop offset="1" stopColor="#7BB690" stop-opacity="0"/>
                 </radialGradient>
                 <radialGradient id="paint0_radial_1376_7993" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(263.065 274.067) rotate(79.2367) scale(272.408 277.082)">
-                <stop stop-color="#479CDA"/>
-                <stop offset="1" stop-color="#60A9AF" stop-opacity="0"/>
+                <stop stopColor="#479CDA"/>
+                <stop offset="1" stopColor="#60A9AF" stop-opacity="0"/>
                 </radialGradient>
                 </defs>
             </svg>

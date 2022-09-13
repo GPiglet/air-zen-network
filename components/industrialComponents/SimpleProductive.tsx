@@ -111,16 +111,16 @@ const SimpleProductive: FC<{ props?: any, ref: any }> = React.forwardRef((props:
                 <image href="/images/sparkle.svg" className="w-[49px] h-[47px] hidden md:block" x="33%" y="90%" cx="511.828" cy="696.377" />
                 <defs>
                 <radialGradient id="paint0_radial_1376_7865" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(261.499 262.103) rotate(68.4205) scale(571.724)">
-                <stop stop-color="#7BB690"/>
-                <stop offset="1" stop-color="#7BB690" stop-opacity="0"/>
+                <stop stopColor="#7BB690"/>
+                <stop offset="1" stopColor="#7BB690" stop-opacity="0"/>
                 </radialGradient>
                 <radialGradient id="paint1_radial_1376_7865" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-40.9695 552.367) rotate(-36.2932) scale(812.584 813.959)">
-                <stop stop-color="#7BB690"/>
-                <stop offset="1" stop-color="#7BB690" stop-opacity="0"/>
+                <stop stopColor="#7BB690"/>
+                <stop offset="1" stopColor="#7BB690" stop-opacity="0"/>
                 </radialGradient>
                 <radialGradient id="paint2_radial_1376_7865" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(269.515 292.397) rotate(68.4205) scale(454.194)">
-                <stop stop-color="#7BB690"/>
-                <stop offset="1" stop-color="#7BB690" stop-opacity="0"/>
+                <stop stopColor="#7BB690"/>
+                <stop offset="1" stopColor="#7BB690" stop-opacity="0"/>
                 </radialGradient>
                 </defs>
             </svg>
@@ -128,8 +128,8 @@ const SimpleProductive: FC<{ props?: any, ref: any }> = React.forwardRef((props:
             <path opacity="0.8" d="M179.803 266.689C252.676 243.368 293.203 166.38 270.323 94.7315C247.443 23.0828 169.82 -16.0944 96.9476 7.22662C24.0749 30.5477 -16.4522 107.536 6.42771 179.185C29.3076 250.833 106.93 290.01 179.803 266.689Z" fill="url(#paint0_radial_1376_7896)"/>
             <defs>
             <radialGradient id="paint0_radial_1376_7896" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(135.763 41.4762) rotate(79.2367) scale(272.408 277.082)">
-            <stop stop-color="#479CDA"/>
-            <stop offset="1" stop-color="#60A9AF" stop-opacity="0"/>
+            <stop stopColor="#479CDA"/>
+            <stop offset="1" stopColor="#60A9AF" stop-opacity="0"/>
             </radialGradient>
             </defs>
             </svg>

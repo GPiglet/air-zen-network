@@ -76,24 +76,24 @@ const Secure: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref:
                 <image href="/images/sparkle.svg" className="w-[49px] h-[47px] hidden md:block" x="45%" y="69.5%" cx="511.828" cy="696.377" />
                 <defs>
                     <radialGradient id="paint0_radial_1376_7128" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(572.468 172.523) rotate(103.496) scale(733.46 720.456)">
-                        <stop stop-color="#2294C3" />
-                        <stop offset="1" stop-color="#2294C3" stop-opacity="0" />
+                        <stop stopColor="#2294C3" />
+                        <stop offset="1" stopColor="#2294C3" stop-opacity="0" />
                     </radialGradient>
                     <radialGradient id="paint1_radial_1376_7128" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(423.621 264.694) rotate(72.9824) scale(511.461 503.035)">
-                        <stop stop-color="#2294C3" />
-                        <stop offset="1" stop-color="#2294C3" stop-opacity="0" />
+                        <stop stopColor="#2294C3" />
+                        <stop offset="1" stopColor="#2294C3" stop-opacity="0" />
                     </radialGradient>
                     <linearGradient id="paint2_linear_1376_7128" x1="418.88" y1="297.941" x2="542.542" y2="677.067" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#159BDE" />
-                        <stop offset="1" stop-color="#159BDE" stop-opacity="0" />
+                        <stop stopColor="#159BDE" />
+                        <stop offset="1" stopColor="#159BDE" stop-opacity="0" />
                     </linearGradient>
                     <linearGradient id="paint3_linear_1376_7128" x1="362.588" y1="118.269" x2="603.017" y2="855.38" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#159BDE" />
-                        <stop offset="1" stop-color="#159BDE" stop-opacity="0" />
+                        <stop stopColor="#159BDE" />
+                        <stop offset="1" stopColor="#159BDE" stop-opacity="0" />
                     </linearGradient>
                     <linearGradient id="paint4_linear_1376_7128" x1="383.873" y1="186.207" x2="580.149" y2="787.953" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#159BDE" />
-                        <stop offset="1" stop-color="#159BDE" stop-opacity="0" />
+                        <stop stopColor="#159BDE" />
+                        <stop offset="1" stopColor="#159BDE" stop-opacity="0" />
                     </linearGradient>
                 </defs>
             </svg>

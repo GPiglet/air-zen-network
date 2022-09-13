@@ -58,16 +58,16 @@ const Contact: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
                         <image href="/images/model-group.png" x="25.6%" y="35%" fillOpacity='0.5' className="w-[50%]" />
                         <defs>
                             <linearGradient id="paint0_linear_1376_7348" x1="133.706" y1="253.491" x2="598.633" y2="667.12" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#159BDE" />
-                                <stop offset="1" stop-color="#159BDE" stop-opacity="0" />
+                                <stop stopColor="#159BDE" />
+                                <stop offset="1" stopColor="#159BDE" stop-opacity="0" />
                             </linearGradient>
                             <radialGradient id="paint1_radial_1376_7348" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(335.736 136.541) rotate(72.7249) scale(601.08 610.126)">
-                                <stop stop-color="#2294C3" />
-                                <stop offset="1" stop-color="#2294C3" stop-opacity="0" />
+                                <stop stopColor="#2294C3" />
+                                <stop offset="1" stopColor="#2294C3" stop-opacity="0" />
                             </radialGradient>
                             <radialGradient id="paint2_radial_1376_7348" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(357.962 232.377) rotate(72.7249) scale(397.388 403.369)">
-                                <stop stop-color="#2294C3" />
-                                <stop offset="1" stop-color="#2294C3" stop-opacity="0" />
+                                <stop stopColor="#2294C3" />
+                                <stop offset="1" stopColor="#2294C3" stop-opacity="0" />
                             </radialGradient>
                             <linearGradient id="paint3_linear_1376_7348" x1="352.524" y1="252.42" x2="450.665" y2="558.269" gradientUnits="userSpaceOnUse">
                                 <stop />
