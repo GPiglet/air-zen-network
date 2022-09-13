@@ -33,6 +33,8 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
 
   const handleNavigation = useCallback(
     (e: any) => {
+      console.log('dd', y)
+
       const window = e.currentTarget
       if (y > window.scrollY && window.innerWidth < 920) { // && (window.innerWidth < 920 || main === false)
         setScrollDown(false)
@@ -104,17 +106,17 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
             (navbarOpen ? " block" : " hidden")
           }
         >
-          <div className="flex p-5 justify-end md:hidden" onClick={()=>setNavbarOpen(false)}>
-          <svg fill="#fff" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">
-            <path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"/>
-          </svg>
+          <div className="flex p-5 justify-end md:hidden" onClick={() => setNavbarOpen(false)}>
+            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px">
+              <path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z" />
+            </svg>
           </div>
           <ul className="flex items-start pl-7 md:pl-0 flex-col md:flex-row list-none mr-auto w-full justify-around text-white">
             {
 
               navItems.map((item, index) => (
 
-                <li ref={el => {if (el && animNavButtons.current.indexOf(el) == -1) animNavButtons.current.push(el)}} className={"mx-3 md:m-0 flex items-center cursor-pointer"} key={index} >
+                <li ref={el => { if (el && animNavButtons.current.indexOf(el) == -1) animNavButtons.current.push(el) }} className={"mx-3 md:m-0 flex items-center cursor-pointer"} key={index} >
                   {
                     main ? (
                       <Link activeClass="active_scroll" className={section == item.href ? 'active' : ''} smooth spy to={item.href} onClick={() => routing(item)}>
@@ -122,7 +124,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
                       </Link>
                     ) : (
                       <div onClick={() => routing(item)}>
-                        <p className={`md:hover:text-gray-100 ${item.href=='solutions' ? 'text-white' : 'md:text-gray-400'}  py-4 md:py-2 flex items-center text-lg uppercase font-lato`}>{item.title}</p>
+                        <p className={`md:hover:text-gray-100 ${item.href == 'solutions' ? 'text-white' : 'md:text-gray-400'}  py-4 md:py-2 flex items-center text-lg uppercase font-lato`}>{item.title}</p>
                       </div>
                     )
                   }

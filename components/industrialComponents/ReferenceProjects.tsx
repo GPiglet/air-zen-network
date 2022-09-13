@@ -138,19 +138,19 @@ const ReferenceProjects = React.forwardRef((props: any, ref: any) => {
     }
 
 
-   // animation
-   const getShowTimeline = (duration: number=1.5) => {
-    return gsap.timeline({onReverseComplete: ()=>{if (containerRef.current)gsap.set([containerRef.current], {display: 'none'});}})
-        .fromTo(
-            containerRef.current,
-            { y: 100, opacity: 0 },
-            { y: 0, opacity: 1, duration },
-            0
-        )
+    // animation
+    const getShowTimeline = (duration: number = 1.5) => {
+        return gsap.timeline({ onReverseComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
+            .fromTo(
+                containerRef.current,
+                { y: 100, opacity: 0 },
+                { y: 0, opacity: 1, duration },
+                0
+            )
     }
 
     const getHideTimeline = (duration: number = 1.5) => {
-        return gsap.timeline({ onComplete: () => { if (containerRef.current)gsap.set([containerRef.current], { display: 'none' }); } })
+        return gsap.timeline({ onComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
                 { y: 0, opacity: 1 },
@@ -161,19 +161,19 @@ const ReferenceProjects = React.forwardRef((props: any, ref: any) => {
 
     const prevAnimation = React.useRef<any>(null);
     const startAnim = (direction: string, shown: boolean, index: number) => {
-        if ( prevAnimation.current ) prevAnimation.current.kill();
-        gsap.set([containerRef.current], {display: 'block'});
-        if ( direction == 'DOWN' && shown ) prevAnimation.current = getShowTimeline().play(0);
-        else if ( direction == 'DOWN' && !shown ) prevAnimation.current = getHideTimeline().play(0);
-        else if ( direction == 'UP' && shown ) prevAnimation.current = getHideTimeline().reverse(0);
-        else if (direction == 'UP' && !shown ) prevAnimation.current = getShowTimeline().reverse(0);
+        if (prevAnimation.current) prevAnimation.current.kill();
+        gsap.set([containerRef.current], { display: 'block' });
+        if (direction == 'DOWN' && shown) prevAnimation.current = getShowTimeline().play(0);
+        else if (direction == 'DOWN' && !shown) prevAnimation.current = getHideTimeline().play(0);
+        else if (direction == 'UP' && shown) prevAnimation.current = getHideTimeline().reverse(0);
+        else if (direction == 'UP' && !shown) prevAnimation.current = getShowTimeline().reverse(0);
     }
 
 
     const router = useRouter()
 
     return (
-        <section id='credentials' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='container md:overflow-hidden flex items-center md:items-start md:pt-[160px] md:w-screen h-fit my-[100px] md:my-0 relative md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]'>
+        <section id='credentials' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='container md:overflow-hidden flex items-center md:items-start md:pt-[160px] md:w-screen h-fit my-[130px] md:my-0 relative md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]'>
             <div className='w-full relative z-50 md:absolute md:top-1/2 md:translate-y-[-50%]' style={{ height: '-webkit-fill-available' }}>
                 <div className=' pt-10 pb-[60px] flex justify-center'>
                     <h1 className="text-title-sm relative z-50">{t('landing.credential.title')}</h1>
@@ -241,7 +241,7 @@ const ReferenceProjects = React.forwardRef((props: any, ref: any) => {
                             ))
                         }
                     </AZCarousel>
-                    <svg ref={refBackCircle} className='hidden absolute w-[120%] md:w-[45%] top-0 top-[-40%] md:top-1/2 md:translate-y-[-50%] right-[27%] md:right-[27.5%]' viewBox="0 0 736 736" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg ref={refBackCircle} className='z-[-10] hidden absolute w-[120%] md:w-[45%] top-[-50%] md:top-1/2 md:translate-y-[-50%] left-[-50%] md:right-[27.5%]' viewBox="0 0 736 736" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle opacity="0.3" cx="368.2" cy="368.2" r="338.706" transform="rotate(-120 368.2 368.2)" fill="url(#paint0_radial_0_1)" />
                         <circle opacity="0.8" cx="368.199" cy="368.2" r="367.206" transform="rotate(-120 368.199 368.2)" stroke="url(#paint1_linear_0_1)" />
                         <circle opacity="0.4" cx="368.204" cy="367.623" r="311.914" transform="rotate(-120 368.204 367.623)" fill="url(#paint2_radial_0_1)" />

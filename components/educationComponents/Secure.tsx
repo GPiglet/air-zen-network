@@ -8,8 +8,8 @@ const Secure: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref:
     const { t } = useTranslation()
 
     // animation
-    const getShowTimeline = (duration: number=1.5) => {
-        return gsap.timeline({onReverseComplete: ()=>{if (containerRef.current)gsap.set([containerRef.current], {display: 'none'});}})
+    const getShowTimeline = (duration: number = 1.5) => {
+        return gsap.timeline({ onReverseComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
                 { y: 100, opacity: 0 },
@@ -19,7 +19,7 @@ const Secure: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref:
     }
 
     const getHideTimeline = (duration: number = 1.5) => {
-        return gsap.timeline({ onComplete: () => { if (containerRef.current)gsap.set([containerRef.current], { display: 'none' }); } })
+        return gsap.timeline({ onComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
                 { y: 0, opacity: 1 },
@@ -31,22 +31,35 @@ const Secure: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref:
     const containerRef = React.useRef<any>();
     const prevAnimation = React.useRef<any>(null);
     const startAnim = (direction: string, shown: boolean, index: number) => {
-        if ( prevAnimation.current ) prevAnimation.current.kill();
-        gsap.set([containerRef.current], {display: 'block'});
-        if ( direction == 'DOWN' && shown ) prevAnimation.current = getShowTimeline().play(0);
-        else if ( direction == 'DOWN' && !shown ) prevAnimation.current = getHideTimeline().play(0);
-        else if ( direction == 'UP' && shown ) prevAnimation.current = getHideTimeline().reverse(0);
-        else if (direction == 'UP' && !shown ) prevAnimation.current = getShowTimeline().reverse(0);
+        if (prevAnimation.current) prevAnimation.current.kill();
+        gsap.set([containerRef.current], { display: 'block' });
+        if (direction == 'DOWN' && shown) prevAnimation.current = getShowTimeline().play(0);
+        else if (direction == 'DOWN' && !shown) prevAnimation.current = getHideTimeline().play(0);
+        else if (direction == 'UP' && shown) prevAnimation.current = getHideTimeline().reverse(0);
+        else if (direction == 'UP' && !shown) prevAnimation.current = getShowTimeline().reverse(0);
     }
 
     return (
-        <div id="protection" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="relative container mx-auto mb-[75%] md:mb-0 md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
-            <svg className="absolute mx-auto 
-            right-1/2 translate-x-[50%] md:translate-x-0 md:right-[-85%] lg:right-[-110%] xl:right-[-85%]
-            top-[88%] xs:top-[50%] sm:top-[23%] md:top-1/2 md:translate-y-[-50%]
-            w-[330%] sm:w-[220%] md:w-[200%] lg:w-[230%] xl:w-[200%]" viewBox="-600 -350 2000 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div id="protection" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="relative container mx-auto md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
+            <div className="relative items-center px-10 md:px-0 md:absolute md:top-1/2 md:translate-y-[-50%]">
+                <div className="flex flex-col mt-12 md:mt-18">
+                    <div className="w-full md:w-2/5 md:ml-[10%]">
+                        <p className="font-lato-ligh font-light text-[22px] text-white">{t('education.secure.tip')}</p>
+                        <h1 className="text-title-sm">{t('education.secure.title')}</h1>
+                        {
+                            t('education.secure.description').split('\n').map((item, index) =>
+                                <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}</p>
+                            )
+                        }
+                    </div>
+                </div>
+            </div>
+            <svg className="md:absolute mx-auto 
+            right-1/2 translate-x-[-4%] md:translate-x-[50%] md:translate-x-0 md:right-[-6%] xl:right-[4%]
+            top-[88%] xs:top-[50%] sm:top-[23%] md:top-1/2 md:translate-y-[-40%]
+            w-[150%] md:w-[100%] xl:w-[95%]" viewBox="0 0 1000 800" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.3" d="M303.174 715.686C469.992 755.232 637.379 652.461 677.043 486.141C716.707 319.822 613.628 152.935 446.809 113.39C279.991 73.8448 112.604 176.616 72.94 342.935C33.2762 509.255 136.355 676.141 303.174 715.686Z" fill="url(#paint0_radial_1226_5560)" />
-                <image href="/images/education3.png" width="1000" height="370" clipPath="url(#myCircle)" x="-6.5%" y="15.2%" fillOpacity='0.5' />
+                <image href="/images/education3.png" width="1000" height="400" clipPath="url(#myCircle)" x="-15%" y="25%" fillOpacity='0.5' />
                 <path opacity="0.5" d="M441.331 620.158C555.295 583.835 618.148 462.279 581.716 348.655C545.283 235.031 423.363 172.367 309.398 208.69C195.433 245.013 132.581 366.569 169.013 480.193C205.445 593.817 327.366 656.481 441.331 620.158Z" fill="url(#paint1_radial_1226_5560)" />
                 <path opacity="0.6" d="M689.967 314.529C745.553 487.891 649.656 673.358 475.771 728.779C301.886 784.201 115.864 688.588 60.278 515.226C4.69146 341.864 100.589 156.397 274.473 100.976C448.358 45.5548 634.38 141.167 689.967 314.529Z" stroke="url(#paint3_linear_1226_5560)" />
                 <path d="M536.827 363.337C565.377 452.376 516.124 547.633 426.815 576.098C337.507 604.562 241.966 555.455 213.416 466.416C184.867 377.377 234.12 282.121 323.428 253.656C412.737 225.191 508.278 274.299 536.827 363.337Z" stroke="url(#paint2_linear_1226_5560)" />
@@ -82,20 +95,6 @@ const Secure: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref:
                     </clipPath>
                 </defs>
             </svg>
-            <div className="relative items-center px-10 md:px-0 md:absolute md:top-1/2 md:translate-y-[-50%]">
-                <div className="flex flex-col mt-12 md:mt-18">
-                    <div className="w-full md:w-2/5 md:ml-[10%]">
-                        <p className="font-lato-ligh font-light text-[22px] text-white">{t('education.secure.tip')}</p>
-                        <h1 className="text-title-sm">{t('education.secure.title')}</h1>
-                        {
-                            t('education.secure.description').split('\n').map((item, index) =>
-                                <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}</p>
-                            )
-                        }
-                    </div>
-                </div>
-            </div>
-
         </div>
 
     );

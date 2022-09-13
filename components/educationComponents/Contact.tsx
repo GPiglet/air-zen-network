@@ -11,8 +11,8 @@ const Contact: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
     const { t } = useTranslation()
 
     // animation
-    const getShowTimeline = (duration: number=1.5) => {
-        return gsap.timeline({onReverseComplete: ()=>{if (containerRef.current)gsap.set([containerRef.current], {display: 'none'});}})
+    const getShowTimeline = (duration: number = 1.5) => {
+        return gsap.timeline({ onReverseComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
                 { y: 100, opacity: 0 },
@@ -22,7 +22,7 @@ const Contact: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
     }
 
     const getHideTimeline = (duration: number = 1.5) => {
-        return gsap.timeline({ onComplete: () => { if (containerRef.current)gsap.set([containerRef.current], { display: 'none' }); } })
+        return gsap.timeline({ onComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
                 { y: 0, opacity: 1 },
@@ -34,57 +34,54 @@ const Contact: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
     const containerRef = React.useRef<any>();
     const prevAnimation = React.useRef<any>(null);
     const startAnim = (direction: string, shown: boolean, index: number) => {
-        if ( prevAnimation.current ) prevAnimation.current.kill();
-        gsap.set([containerRef.current], {display: 'block'});
-        if ( direction == 'DOWN' && shown ) prevAnimation.current = getShowTimeline().play(0);
-        else if ( direction == 'DOWN' && !shown ) prevAnimation.current = getHideTimeline().play(0);
-        else if ( direction == 'UP' && shown ) prevAnimation.current = getHideTimeline().reverse(0);
-        else if (direction == 'UP' && !shown ) prevAnimation.current = getShowTimeline().reverse(0);
+        if (prevAnimation.current) prevAnimation.current.kill();
+        gsap.set([containerRef.current], { display: 'flex' });
+        if (direction == 'DOWN' && shown) prevAnimation.current = getShowTimeline().play(0);
+        else if (direction == 'DOWN' && !shown) prevAnimation.current = getHideTimeline().play(0);
+        else if (direction == 'UP' && shown) prevAnimation.current = getHideTimeline().reverse(0);
+        else if (direction == 'UP' && !shown) prevAnimation.current = getShowTimeline().reverse(0);
     }
 
     return (
 
-        <div id="technology" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="relative mt-[100%] sm:mt-[45%] md:mt-[60%] lg:mt-[50%] md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
-            <div className="container mx-auto relative">
-                <svg className="absolute
-                top-[-78%] xs:top-[-127%] sm:top-[-565px] md:top-[-130%] lg:top-[-150%] xl:top-[-250%]
-                w-[220%] sm:w-[170%] md:w-[160%] lg:w-[160%] xl:w-[160%]
-                left-1/2 translate-x-[-50%]"
-                    viewBox="-600 -350 2000 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path opacity="0.7" d="M376.09 41.1328C598.38 -1.14335 813.492 148.063 856.541 374.416C899.59 600.769 754.268 818.524 531.979 860.8C309.689 903.076 94.5768 753.871 51.5279 527.517C8.47893 301.164 153.8 83.4089 376.09 41.1328Z" stroke="url(#paint0_linear_0_1)" />
-                    <path opacity="0.3" d="M562.868 790.362C753.811 729.321 860.001 527.812 800.051 340.279C740.1 152.746 536.711 50.2033 345.768 111.244C154.825 172.284 48.6346 373.793 108.585 561.326C168.536 748.86 371.925 851.402 562.868 790.362Z" fill="url(#paint1_radial_0_1)" />
-                    <path opacity="0.5" d="M526.114 683.802C652.351 643.446 722.556 510.224 682.921 386.241C643.287 262.259 508.821 194.465 382.584 234.821C256.347 275.176 186.142 408.398 225.777 532.381C265.411 656.364 399.877 724.157 526.114 683.802Z" fill="url(#paint2_radial_0_1)" />
-                    <path opacity="0.5" d="M639.605 400.089C671.721 500.553 614.838 608.535 512.505 641.249C410.172 673.963 301.199 619.002 269.082 518.537C236.966 418.073 293.849 310.091 396.182 277.377C498.516 244.663 607.489 299.624 639.605 400.089Z" stroke="url(#paint3_linear_0_1)" strokeWidth="2" />
-                    <image href="/images/model-group.png" x="10.6%" y="20%" fillOpacity='0.5' className="w-[24%]" />
-                    <defs>
-                        <linearGradient id="paint0_linear_0_1" x1="133.393" y1="277.702" x2="689.269" y2="774.1" gradientUnits="userSpaceOnUse">
-                            <stop stopColor="#159BDE" />
-                            <stop offset="1" stopColor="#159BDE" stopOpacity="0" />
-                        </linearGradient>
-                        <radialGradient id="paint1_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(375.738 137.933) rotate(72.664) scale(718.593 731.658)">
-                            <stop stopColor="#2294C3" />
-                            <stop offset="1" stopColor="#2294C3" stopOpacity="0" />
-                        </radialGradient>
-                        <radialGradient id="paint2_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(402.398 252.466) rotate(72.664) scale(475.079 483.717)">
-                            <stop stopColor="#2294C3" />
-                            <stop offset="1" stopColor="#2294C3" stopOpacity="0" />
-                        </radialGradient>
-                        <linearGradient id="paint3_linear_0_1" x1="395.878" y1="276.424" x2="512.809" y2="642.202" gradientUnits="userSpaceOnUse">
-                            <stop />
-                            <stop offset="1" stopOpacity="0" />
-                        </linearGradient>
-                    </defs>
-                </svg>
+        <div id="technology" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="relative md:h-screen md:fixed md:hidden w-full">
+            <div className="container mx-auto relative flex items-center">
 
-
-                <div className="mx-auto relative md:pl-[10%]">
-                    <div className="w-full md:w-1/2 px-10 mx-auto">
+                <div className="mx-auto relative">
+                    <svg className="md:absolute md:top-[-10%] translate-x-[-17%]
+                xl:top-[-10%] w-[150%] md:w-[60%] xl:w-[90%]
+                md:left-1/2 md:translate-x-[-50%]" viewBox="0 0 802 806" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.7" d="M336.038 55.6223C521.295 20.2571 700.575 145.072 736.454 334.431C772.332 523.79 651.216 705.95 465.959 741.315C280.702 776.68 101.422 651.865 65.543 462.506C29.6645 273.148 150.781 90.9875 336.038 55.6223Z" stroke="url(#paint0_linear_1376_7348)" />
+                        <path opacity="0.3" d="M491.731 682.458C650.905 631.382 739.427 462.771 689.451 305.853C639.475 148.936 469.926 63.1339 310.752 114.209C151.579 165.285 63.0564 333.896 113.032 490.814C163.008 647.731 332.557 733.533 491.731 682.458Z" fill="url(#paint1_radial_1376_7348)" />
+                        <path opacity="0.5" d="M461.094 593.296C566.327 559.529 624.851 448.056 591.811 344.314C558.771 240.572 446.678 183.846 341.444 217.613C236.211 251.38 177.687 362.853 210.727 466.595C243.767 570.337 355.86 627.063 461.094 593.296Z" fill="url(#paint2_radial_1376_7348)" />
+                        <path opacity="0.5" d="M555.542 355.946C582.287 439.923 534.917 530.184 449.697 557.53C364.478 584.875 273.729 538.933 246.983 454.956C220.238 370.979 267.608 280.718 352.828 253.373C438.047 226.028 528.796 271.969 555.542 355.946Z" stroke="url(#paint3_linear_1376_7348)" stroke-width="2" />
+                        <image href="/images/model-group.png" x="25.6%" y="35%" fillOpacity='0.5' className="w-[50%]" />
+                        <defs>
+                            <linearGradient id="paint0_linear_1376_7348" x1="133.706" y1="253.491" x2="598.633" y2="667.12" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#159BDE" />
+                                <stop offset="1" stop-color="#159BDE" stop-opacity="0" />
+                            </linearGradient>
+                            <radialGradient id="paint1_radial_1376_7348" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(335.736 136.541) rotate(72.7249) scale(601.08 610.126)">
+                                <stop stop-color="#2294C3" />
+                                <stop offset="1" stop-color="#2294C3" stop-opacity="0" />
+                            </radialGradient>
+                            <radialGradient id="paint2_radial_1376_7348" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(357.962 232.377) rotate(72.7249) scale(397.388 403.369)">
+                                <stop stop-color="#2294C3" />
+                                <stop offset="1" stop-color="#2294C3" stop-opacity="0" />
+                            </radialGradient>
+                            <linearGradient id="paint3_linear_1376_7348" x1="352.524" y1="252.42" x2="450.665" y2="558.269" gradientUnits="userSpaceOnUse">
+                                <stop />
+                                <stop offset="1" stop-opacity="0" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <div className="w-full md:w-2/3 xl:1/2 px-10 mx-auto md:mt-[30%] xl:mt-[50%]">
                         <p className="font-lato-light font-light text-[22px] text-white">{t('education.ournode.tip')}</p>
                         <h1 className="text-title-sm-white">{t('education.ournode.title')}</h1>
                         {
                             t('education.ournode.description').split('\n').map((item, index) =>
                                 index % 2 === 0 ? (
-                                    <p className="font-lato tracking-widest text-white text-lg mt-3 font-normal" key={index}>{item}</p>
+                                    <p className="font-lato tracking-widest text-white text-lg font-normal" key={index}>{item}</p>
                                 ) : (
                                     <div key={index}>
                                         <p className="font-lato font-light tracking-widest text-white text-lg" >{item}
@@ -96,7 +93,7 @@ const Contact: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
                     </div>
                 </div>
             </div>
-            <ContactForm />
+            {/* <ContactForm /> */}
         </div>
 
     );
