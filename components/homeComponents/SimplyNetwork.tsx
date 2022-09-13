@@ -33,7 +33,7 @@ const SimplyNetwork: FC<{ props?: any, ref: any }> = React.forwardRef((props: an
     }
 
     return (
-        <section ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container mx-auto pb-16 relative md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
+        <section ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container mx-auto relative md:fixed md:h-screen md:hidden md:left-[50%] md:translate-x-[-50%]">
 
             <div className="relative md:absolute md:top-1/2 md:translate-y-[-50%] items-center px-10 md:px-0 pt-[150px] md:pt-0">
                 <Breadcrumb />
@@ -48,7 +48,7 @@ const SimplyNetwork: FC<{ props?: any, ref: any }> = React.forwardRef((props: an
                     </div>
                 </div>
             </div>
-            <svg className="absolute right-[-36%] bottom-[-27%] md:top-1/2 md:translate-y-[-50%] md:w-[100%] md:right-[-53%]  xl:w-[120%]   sm:top-[37%] sm:w-[120%] sm:right-[-12%] w-[174%]  xl:right-[-44%] " viewBox="0 0 817 828" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="md:absolute translate-x-[-9%] md:translate-x-0 right-[-36%] bottom-[-27%] md:top-1/2 md:translate-y-[-50%] md:w-[100%] md:right-[-53%]  xl:w-[120%]   sm:top-[37%] sm:w-[120%] sm:right-[-12%] w-[174%]  xl:right-[-44%] " viewBox="0 0 817 828" fill="none" xmlns="http://www.w3.org/2000/svg">
 
                 <path opacity="0.6" d="M259.493 676.355C116.557 593.32 67.3899 408.41 149.686 263.345C231.983 118.279 414.572 68.0028 557.507 151.038C700.443 234.072 749.61 418.982 667.314 564.048C585.017 709.114 402.428 759.389 259.493 676.355Z" stroke="url(#paint0_linear_1376_4715)" />
                 <path opacity="0.6" d="M156.234 267.676C76.0933 408.942 124.025 588.918 263.293 669.663C402.561 750.408 580.427 701.346 660.568 560.079C740.709 418.813 692.777 238.837 553.509 158.092C414.241 77.3475 236.375 126.41 156.234 267.676Z" fill="url(#paint1_radial_1376_4715)" />

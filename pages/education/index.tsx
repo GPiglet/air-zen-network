@@ -64,29 +64,29 @@ const Education: NextPage = () => {
 
 	const currentSectionIndex = React.useRef<number>(-1);
 	const gotoScene = (index: number) => {
-		if ( window.innerWidth < 920 ) return;
+		if (window.innerWidth < 920) return;
 		let direction: string = 'DOWN';
 		let currentIndex = currentSectionIndex.current;
-		if ( currentIndex > index ) direction = 'UP';
+		if (currentIndex > index) direction = 'UP';
 
-		refSections.forEach(section=>gsap.set(section.current.container, {zIndex: 10}));
+		refSections.forEach(section => gsap.set(section.current.container, { zIndex: 10 }));
 
-		if ( currentIndex != -1 && refSections[currentIndex] != refSections[index] && refSections[currentIndex].current?.startAnim ) refSections[currentIndex].current?.startAnim(direction, false);
+		if (currentIndex != -1 && refSections[currentIndex] != refSections[index] && refSections[currentIndex].current?.startAnim) refSections[currentIndex].current?.startAnim(direction, false);
 		currentIndex = currentSectionIndex.current = index;
-		if ( refSections[currentIndex].current?.startAnim ) {
+		if (refSections[currentIndex].current?.startAnim) {
 			refSections[currentIndex].current?.startAnim(direction, true, index);
-			gsap.set(refSections[currentIndex].current?.container, {zIndex: 11});
+			gsap.set(refSections[currentIndex].current?.container, { zIndex: 11 });
 		}
 	}
 
 	// scroll
 	let isLockScroll = false;
 	const onKeyDown = (e: KeyboardEvent) => {
-		if ( window.innerWidth < 920 || isLockScroll ) return;
+		if (window.innerWidth < 920 || isLockScroll) return;
 
 		const currentIndex = currentSectionIndex.current;
 		let scrollOffset = 0;
-		switch( e.key ) {
+		switch (e.key) {
 			case 'ArrowDown':
 				scrollOffset = -17;
 				break;
@@ -102,24 +102,24 @@ const Education: NextPage = () => {
 			default:
 				return;
 		}
-		if ( currentIndex != -1 && refSections[currentIndex].current?.scroll && refSections[currentIndex].current?.scroll(e.key, scrollOffset) ) return;
+		if (currentIndex != -1 && refSections[currentIndex].current?.scroll && refSections[currentIndex].current?.scroll(e.key, scrollOffset)) return;
 
 		isLockScroll = true;
 		setTimeout(() => {
 			isLockScroll = false;
 		}, 1500);
 		let index = 0;
-		switch( e.key ) {
+		switch (e.key) {
 			case 'ArrowDown':
 			case 'PageDown':
 				index = currentIndex + 1;
-				if ( index >= refSections.length ) return;
+				if (index >= refSections.length) return;
 				break;
 
 			case 'ArrowUp':
 			case 'PageUp':
 				index = currentIndex - 1;
-				if ( index < 0 ) return;
+				if (index < 0) return;
 				break;
 			default:
 				return;
@@ -130,10 +130,10 @@ const Education: NextPage = () => {
 	}
 
 	const onMouseWheel = (e: WheelEvent) => {
-		if ( window.innerWidth < 920 || isLockScroll ) return;
+		if (window.innerWidth < 920 || isLockScroll) return;
 
 		const currentIndex = currentSectionIndex.current;
-		if ( currentIndex != -1 && refSections[currentIndex].current?.scroll && refSections[currentIndex].current?.scroll('Wheel', 0-e.deltaY) ) return;
+		if (currentIndex != -1 && refSections[currentIndex].current?.scroll && refSections[currentIndex].current?.scroll('Wheel', 0 - e.deltaY)) return;
 
 		isLockScroll = true;
 		setTimeout(() => {
@@ -141,13 +141,13 @@ const Education: NextPage = () => {
 		}, 1500);
 
 		let index = 0;
-		if ( e.deltaY > 0 ) { 
+		if (e.deltaY > 0) {
 			index = currentIndex + 1;
-			if ( index >= refSections.length ) return;
+			if (index >= refSections.length) return;
 		}
 		else {
 			index = currentIndex - 1;
-			if ( index < 0 ) return;
+			if (index < 0) return;
 		}
 
 		gotoScene(index);
@@ -158,22 +158,22 @@ const Education: NextPage = () => {
 		gotoScene(0);
 		window.addEventListener('keydown', onKeyDown);
 		window.addEventListener('wheel', onMouseWheel);
-		return ()=>{
+		return () => {
 			window.removeEventListener('keydown', onKeyDown);
 			window.removeEventListener('wheel', onMouseWheel);
-		}	
+		}
 	}, [])
 
 
 	return (
 		<div className='relative back-right-bottom-gradient-primary md:h-screen'>
 			<Mainlayout navItems={navItems} hasFooter={false}>
-				{/* <ContactForm /> */}
-				<ClassWiFi ref={refSectionClassWifi}/>
-				<Reliable ref={refSectionReliable}/>
-				<Secure ref={refSectionSecure}/>
-				<Easy ref={refSectionEasy}/>
-				<Contact ref={refSectionContact}/>
+				<ContactForm />
+				<ClassWiFi ref={refSectionClassWifi} />
+				<Reliable ref={refSectionReliable} />
+				<Secure ref={refSectionSecure} />
+				<Easy ref={refSectionEasy} />
+				<Contact ref={refSectionContact} />
 				<AnimateFooter ref={refSectionFooter} />
 			</Mainlayout>
 		</div>

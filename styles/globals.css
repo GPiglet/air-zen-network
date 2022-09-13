@@ -133,7 +133,7 @@ a {
 }
 
 section {
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .unique-skill-items .sparkle {
@@ -153,7 +153,7 @@ section {
 
 @media only screen and (max-width: 920px) {
   section {
-    height: 982px;
+    /* height: 982px; */
   }
   
   /* .unique-skill-items:hover .sparkle {

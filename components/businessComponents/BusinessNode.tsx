@@ -11,8 +11,8 @@ const BusinessNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
     const { t } = useTranslation()
 
     // animation
-    const getShowTimeline = (duration: number=1.5) => {
-        return gsap.timeline({onReverseComplete: ()=>{if (containerRef.current)gsap.set([containerRef.current], {display: 'none'});}})
+    const getShowTimeline = (duration: number = 1.5) => {
+        return gsap.timeline({ onReverseComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
                 { y: 100, opacity: 0 },
@@ -22,7 +22,7 @@ const BusinessNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
     }
 
     const getHideTimeline = (duration: number = 1.5) => {
-        return gsap.timeline({ onComplete: () => { if (containerRef.current)gsap.set([containerRef.current], { display: 'none' }); } })
+        return gsap.timeline({ onComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
                 { y: 0, opacity: 1 },
@@ -34,20 +34,20 @@ const BusinessNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
     const containerRef = React.useRef<any>();
     const prevAnimation = React.useRef<any>(null);
     const startAnim = (direction: string, shown: boolean, index: number) => {
-        if ( prevAnimation.current ) prevAnimation.current.kill();
-        gsap.set([containerRef.current], {display: 'flex'});
-        if ( direction == 'DOWN' && shown ) prevAnimation.current = getShowTimeline().play(0);
-        else if ( direction == 'DOWN' && !shown ) prevAnimation.current = getHideTimeline().play(0);
-        else if ( direction == 'UP' && shown ) prevAnimation.current = getHideTimeline().reverse(0);
-        else if (direction == 'UP' && !shown ) prevAnimation.current = getShowTimeline().reverse(0);
+        if (prevAnimation.current) prevAnimation.current.kill();
+        gsap.set([containerRef.current], { display: 'flex' });
+        if (direction == 'DOWN' && shown) prevAnimation.current = getShowTimeline().play(0);
+        else if (direction == 'DOWN' && !shown) prevAnimation.current = getHideTimeline().play(0);
+        else if (direction == 'UP' && shown) prevAnimation.current = getHideTimeline().reverse(0);
+        else if (direction == 'UP' && !shown) prevAnimation.current = getShowTimeline().reverse(0);
     }
 
     return (
-        <div id="technology" ref={(el)=>{containerRef.current=el; if (ref) ref.current = {container: el, startAnim}}} className="pb-16 relative md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] md:flex md:items-center">
+        <div id="technology" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="pb-16 relative md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] md:flex md:items-center">
             {/* mt-[600px] sm:mt-[100%] md:mt-[50%] */}
 
             <div className="relative px-10 md:px-0 container mx-auto ">
-                <svg className="absolute top-[-4%] w-[174%]  md:w-[60%] xl:w-[70%] sm:top-[-1%] sm:w-[80%]  left-[50%] translate-x-[-50%]" viewBox="0 0 700 708" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="md:absolute top-[-4%] w-[140%]  md:w-[60%] xl:w-[70%] sm:top-[-1%]   left-[50%] translate-x-[-15%] md:translate-x-[-50%]" viewBox="0 0 700 708" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <ellipse opacity="0.5" cx="350.002" cy="353.94" rx="311.623" ry="315.088" fill="url(#paint0_radial_1376_6324)" />
                     <path opacity="0.3" d="M565.18 353.94C565.18 474.044 468.836 571.398 350 571.398C231.165 571.398 134.82 474.044 134.82 353.94C134.82 233.836 231.165 136.481 350 136.481C468.836 136.481 565.18 233.836 565.18 353.94Z" stroke="#7BB690" />
                     <path opacity="0.6" d="M699.5 353.73C699.5 548.818 543.019 706.959 350 706.959C156.982 706.959 0.500048 548.818 0.500031 353.73C0.500014 158.641 156.981 0.499986 350 0.499969C543.019 0.499953 699.5 158.641 699.5 353.73Z" stroke="url(#paint1_radial_1376_6324)" />
@@ -74,7 +74,7 @@ const BusinessNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
                         </radialGradient>
                     </defs>
                 </svg>
-                <div className="flex flex-wrap pt-[400px] md:pt-[42%] align-center">
+                <div className="flex flex-wrap md:pt-[42%] align-center">
                     <div className="w-full md:w-[45%] px-10 mx-auto">
                         <p className="font-lato-light font-light text-[22px] text-white">{t('business.ournode.tip')}</p>
                         <h1 className="text-title-sm-white mb-10">{t('business.ournode.title')}</h1>

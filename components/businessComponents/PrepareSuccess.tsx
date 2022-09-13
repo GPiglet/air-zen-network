@@ -8,8 +8,8 @@ const PrepareSuccess: FC<{ props?: any, ref: any }> = React.forwardRef((props: a
     const { t } = useTranslation()
 
     // animation
-    const getShowTimeline = (duration: number=1.5) => {
-        return gsap.timeline({onReverseComplete: ()=>{if (containerRef.current)gsap.set([containerRef.current], {display: 'none'});}})
+    const getShowTimeline = (duration: number = 1.5) => {
+        return gsap.timeline({ onReverseComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
                 { y: 100, opacity: 0 },
@@ -19,7 +19,7 @@ const PrepareSuccess: FC<{ props?: any, ref: any }> = React.forwardRef((props: a
     }
 
     const getHideTimeline = (duration: number = 1.5) => {
-        return gsap.timeline({ onComplete: () => { if (containerRef.current)gsap.set([containerRef.current], { display: 'none' }); } })
+        return gsap.timeline({ onComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
                 { y: 0, opacity: 1 },
@@ -31,17 +31,35 @@ const PrepareSuccess: FC<{ props?: any, ref: any }> = React.forwardRef((props: a
     const containerRef = React.useRef<any>();
     const prevAnimation = React.useRef<any>(null);
     const startAnim = (direction: string, shown: boolean, index: number) => {
-        if ( prevAnimation.current ) prevAnimation.current.kill();
-        gsap.set([containerRef.current], {display: 'block'});
-        if ( direction == 'DOWN' && shown ) prevAnimation.current = getShowTimeline().play(0);
-        else if ( direction == 'DOWN' && !shown ) prevAnimation.current = getHideTimeline().play(0);
-        else if ( direction == 'UP' && shown ) prevAnimation.current = getHideTimeline().reverse(0);
-        else if (direction == 'UP' && !shown ) prevAnimation.current = getShowTimeline().reverse(0);
+        if (prevAnimation.current) prevAnimation.current.kill();
+        gsap.set([containerRef.current], { display: 'block' });
+        if (direction == 'DOWN' && shown) prevAnimation.current = getShowTimeline().play(0);
+        else if (direction == 'DOWN' && !shown) prevAnimation.current = getHideTimeline().play(0);
+        else if (direction == 'UP' && shown) prevAnimation.current = getHideTimeline().reverse(0);
+        else if (direction == 'UP' && !shown) prevAnimation.current = getShowTimeline().reverse(0);
     }
 
     return (
-        <section id="easy" ref={(el)=>{containerRef.current=el; if (ref) ref.current = {container: el, startAnim}}} className="container mx-auto pb-16 relative  py-[150px] md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
-            <svg className="hidden md:block absolute top-1/2 translate-y-[-50%] w-[65%] 2xl:w-[1000px] w-[174%] left-[-25%]" viewBox="0 0 704 704" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <section id="easy" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container mx-auto pb-16 relative      md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
+
+            <div className="relative items-center px-10 md:px-0 md:absolute md:top-1/2 md:translate-y-[-50%]">
+                <div className="flex flex-wrap md:mt-12">
+                    <div className="w-full md:w-2/5 m-auto">
+                        <div className="relative">
+                            <p className="font-lato-light font-light text-[22px] text-white">{t('business.preparesuccess.tip')}</p>
+                            <h1 className="text-title-sm-white">{t('business.preparesuccess.title')}</h1>
+                            {
+                                t('business.preparesuccess.description').split('\n').map((item, index) =>
+                                    <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}
+                                    </p>
+                                )
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <svg className="md:absolute top-1/2 translate-x-[-6%] md:translate-x-0 md:translate-y-[-50%] w-[110%] 2xl:w-[1000px] w-[174%] left-[-25%]" viewBox="0 0 704 704" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
                     <ellipse opacity="0.7" cx="351.991" cy="351.55" rx="217.013" ry="217.214" transform="rotate(-180 351.991 351.55)" fill="url(#paint0_radial_1376_5668)" />
                     <path opacity="0.3" d="M53.0685 351.55C53.0685 186.305 186.901 52.3491 351.991 52.3491C517.081 52.3491 650.914 186.305 650.914 351.55C650.914 516.795 517.081 650.751 351.991 650.751C186.901 650.751 53.0685 516.795 53.0685 351.55Z" stroke="#7BB690" />
@@ -118,25 +136,6 @@ const PrepareSuccess: FC<{ props?: any, ref: any }> = React.forwardRef((props: a
                     </radialGradient>
                 </defs>
             </svg>
-
-
-
-            <div className="relative items-center px-10 md:px-0 md:absolute md:top-1/2 md:translate-y-[-50%]">
-                <div className="flex flex-wrap mt-[400px] md:mt-12">
-                    <div className="w-full md:w-2/5 m-auto">
-                        <div className="relative">
-                            <p className="font-lato-light font-light text-[22px] text-white">{t('business.preparesuccess.tip')}</p>
-                            <h1 className="text-title-sm-white">{t('business.preparesuccess.title')}</h1>
-                            {
-                                t('business.preparesuccess.description').split('\n').map((item, index) =>
-                                    <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}
-                                    </p>
-                                )
-                            }
-                        </div>
-                    </div>
-                </div>
-            </div>
         </section>
 
     );
