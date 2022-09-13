@@ -84,19 +84,19 @@ const FutureProof: FC<{ props?: any, ref: any }> = React.forwardRef((props: any,
                 <defs>
                 <radialGradient id="paint0_radial_1376_7934" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(251.701 231.113) rotate(68.4205) scale(810.588)">
                 <stop stopColor="#7BB690"/>
-                <stop offset="1" stopColor="#7BB690" stop-opacity="0"/>
+                <stop offset="1" stopColor="#7BB690" stopOpacity="0"/>
                 </radialGradient>
                 <radialGradient id="paint1_radial_1376_7934" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-177.139 642.65) rotate(-36.2932) scale(1152.08 1154.03)">
                 <stop stopColor="#7BB690"/>
-                <stop offset="1" stopColor="#7BB690" stop-opacity="0"/>
+                <stop offset="1" stopColor="#7BB690" stopOpacity="0"/>
                 </radialGradient>
                 <radialGradient id="paint2_radial_1376_7934" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(263.065 274.067) rotate(68.4205) scale(643.954)">
                 <stop stopColor="#7BB690"/>
-                <stop offset="1" stopColor="#7BB690" stop-opacity="0"/>
+                <stop offset="1" stopColor="#7BB690" stopOpacity="0"/>
                 </radialGradient>
                 <radialGradient id="paint0_radial_1376_7993" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(263.065 274.067) rotate(79.2367) scale(272.408 277.082)">
                 <stop stopColor="#479CDA"/>
-                <stop offset="1" stopColor="#60A9AF" stop-opacity="0"/>
+                <stop offset="1" stopColor="#60A9AF" stopOpacity="0"/>
                 </radialGradient>
                 </defs>
             </svg>

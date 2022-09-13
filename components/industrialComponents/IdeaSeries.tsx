@@ -110,15 +110,15 @@ const IdeaSeries: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, 
                 <defs>
                 <radialGradient id="paint0_radial_1376_7745" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(261.499 262.676) rotate(68.4205) scale(571.724)">
                 <stop stopColor="#7BB690"/>
-                <stop offset="1" stopColor="#7BB690" stop-opacity="0"/>
+                <stop offset="1" stopColor="#7BB690" stopOpacity="0"/>
                 </radialGradient>
                 <radialGradient id="paint1_radial_1376_7745" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-40.9695 552.94) rotate(-36.2932) scale(812.584 813.959)">
                 <stop stopColor="#7BB690"/>
-                <stop offset="1" stopColor="#7BB690" stop-opacity="0"/>
+                <stop offset="1" stopColor="#7BB690" stopOpacity="0"/>
                 </radialGradient>
                 <radialGradient id="paint2_radial_1376_7745" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(271.302 299.714) rotate(68.4205) scale(428.038)">
                 <stop stopColor="#7BB690"/>
-                <stop offset="1" stopColor="#7BB690" stop-opacity="0"/>
+                <stop offset="1" stopColor="#7BB690" stopOpacity="0"/>
                 </radialGradient>
                 </defs>
             </svg>
@@ -127,7 +127,7 @@ const IdeaSeries: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, 
             <defs>
             <radialGradient id="paint0_radial_1376_7778" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(120.458 36.3818) rotate(79.2367) scale(240.017 244.135)">
             <stop stopColor="#479CDA"/>
-            <stop offset="1" stopColor="#60A9AF" stop-opacity="0"/>
+            <stop offset="1" stopColor="#60A9AF" stopOpacity="0"/>
             </radialGradient>
             </defs>
             </svg>

@@ -112,15 +112,15 @@ const SimpleProductive: FC<{ props?: any, ref: any }> = React.forwardRef((props:
                 <defs>
                 <radialGradient id="paint0_radial_1376_7865" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(261.499 262.103) rotate(68.4205) scale(571.724)">
                 <stop stopColor="#7BB690"/>
-                <stop offset="1" stopColor="#7BB690" stop-opacity="0"/>
+                <stop offset="1" stopColor="#7BB690" stopOpacity="0"/>
                 </radialGradient>
                 <radialGradient id="paint1_radial_1376_7865" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-40.9695 552.367) rotate(-36.2932) scale(812.584 813.959)">
                 <stop stopColor="#7BB690"/>
-                <stop offset="1" stopColor="#7BB690" stop-opacity="0"/>
+                <stop offset="1" stopColor="#7BB690" stopOpacity="0"/>
                 </radialGradient>
                 <radialGradient id="paint2_radial_1376_7865" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(269.515 292.397) rotate(68.4205) scale(454.194)">
                 <stop stopColor="#7BB690"/>
-                <stop offset="1" stopColor="#7BB690" stop-opacity="0"/>
+                <stop offset="1" stopColor="#7BB690" stopOpacity="0"/>
                 </radialGradient>
                 </defs>
             </svg>
@@ -129,7 +129,7 @@ const SimpleProductive: FC<{ props?: any, ref: any }> = React.forwardRef((props:
             <defs>
             <radialGradient id="paint0_radial_1376_7896" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(135.763 41.4762) rotate(79.2367) scale(272.408 277.082)">
             <stop stopColor="#479CDA"/>
-            <stop offset="1" stopColor="#60A9AF" stop-opacity="0"/>
+            <stop offset="1" stopColor="#60A9AF" stopOpacity="0"/>
             </radialGradient>
             </defs>
             </svg>

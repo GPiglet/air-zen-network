@@ -63,7 +63,7 @@ const Secure: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref:
                 <path d="M664.516 427.551C697.362 532.386 640.694 644.526 537.967 678.033C435.239 711.541 325.326 653.736 292.48 548.901C259.634 444.066 316.302 331.926 419.029 298.419C521.757 264.911 631.67 322.716 664.516 427.551Z" stroke="url(#paint2_linear_1376_7128)" className="translate-y-[9px]"/>
                 <path opacity="0.6" d="M840.613 370.114C904.549 574.181 794.244 792.48 594.262 857.709C394.28 922.939 180.323 810.407 116.387 606.341C52.4511 402.274 162.755 183.976 362.737 118.746C562.719 53.5162 776.676 166.048 840.613 370.114Z" stroke="url(#paint3_linear_1376_7128)" />
                 <path opacity="0.6" d="M774.024 391.831C826.204 558.376 736.182 736.532 572.974 789.767C409.767 843.002 235.152 751.164 182.972 584.62C130.792 418.075 220.815 239.918 384.022 186.684C547.229 133.449 721.844 225.287 774.024 391.831Z" stroke="url(#paint4_linear_1376_7128)" />
-                <image href="/images/education3.png" width="430" height="430" x="29%" y="29%" fill-opacity="0.5"></image>
+                <image href="/images/education3.png" width="430" height="430" x="29%" y="29%" fillOpacity="0.5"></image>
                 <foreignObject className="font-lato-light text-lg text-white hidden md:block" x="50%" y="15%" width="250px" height="100px">
                     <p
                     >{t('education.secure.sparkle1')}</p>
@@ -77,23 +77,23 @@ const Secure: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref:
                 <defs>
                     <radialGradient id="paint0_radial_1376_7128" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(572.468 172.523) rotate(103.496) scale(733.46 720.456)">
                         <stop stopColor="#2294C3" />
-                        <stop offset="1" stopColor="#2294C3" stop-opacity="0" />
+                        <stop offset="1" stopColor="#2294C3" stopOpacity="0" />
                     </radialGradient>
                     <radialGradient id="paint1_radial_1376_7128" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(423.621 264.694) rotate(72.9824) scale(511.461 503.035)">
                         <stop stopColor="#2294C3" />
-                        <stop offset="1" stopColor="#2294C3" stop-opacity="0" />
+                        <stop offset="1" stopColor="#2294C3" stopOpacity="0" />
                     </radialGradient>
                     <linearGradient id="paint2_linear_1376_7128" x1="418.88" y1="297.941" x2="542.542" y2="677.067" gradientUnits="userSpaceOnUse">
                         <stop stopColor="#159BDE" />
-                        <stop offset="1" stopColor="#159BDE" stop-opacity="0" />
+                        <stop offset="1" stopColor="#159BDE" stopOpacity="0" />
                     </linearGradient>
                     <linearGradient id="paint3_linear_1376_7128" x1="362.588" y1="118.269" x2="603.017" y2="855.38" gradientUnits="userSpaceOnUse">
                         <stop stopColor="#159BDE" />
-                        <stop offset="1" stopColor="#159BDE" stop-opacity="0" />
+                        <stop offset="1" stopColor="#159BDE" stopOpacity="0" />
                     </linearGradient>
                     <linearGradient id="paint4_linear_1376_7128" x1="383.873" y1="186.207" x2="580.149" y2="787.953" gradientUnits="userSpaceOnUse">
                         <stop stopColor="#159BDE" />
-                        <stop offset="1" stopColor="#159BDE" stop-opacity="0" />
+                        <stop offset="1" stopColor="#159BDE" stopOpacity="0" />
                     </linearGradient>
                 </defs>
             </svg>
