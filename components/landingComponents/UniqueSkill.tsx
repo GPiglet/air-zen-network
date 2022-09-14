@@ -452,13 +452,13 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
 
     return (
         <>
-            <div id='solutions' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='z-10 md:container mx-auto relative justify-center items-center md:pt-20 pb-[100px] md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] md:top-1/2 md:translate-y-[-470px]'>
+            <div id='solutions' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='z-10 md:container mx-auto relative justify-center items-center mt-[-50px] md:mt-0 md:pt-20 pb-[100px] md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] md:top-1/2 md:translate-y-[-470px]'>
                 <div className='md:mt-[135px]'>
                     <div className=" text-center  text-white">
                         <h1 ref={el => { if (el && animSideUp.current.indexOf(el) == -1) animSideUp.current.push(el) }} className="text-title-sm">{t('landing.solution.title')}</h1>
                         <p ref={el => { if (el && animSideUp.current.indexOf(el) == -1) animSideUp.current.push(el); if (el && animFadeIn.current.indexOf(el) == -1) animFadeIn.current.push(el) }} className="font-lato font-light tracking-widest text-[22px] mt-3">{t('landing.solution.subtitle')}</p>
                     </div>
-                    <div className='w-full mt-[145px]'>
+                    <div className='w-full mt-[80px] md:mt-[145px]'>
                         <div className='md:m-auto md:w-max  '>
                             {
                                 (skillList as unknown as any[]).map((item: any, index: any) => (

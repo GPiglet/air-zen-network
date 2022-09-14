@@ -136,6 +136,8 @@ section {
   /* height: 100vh; */
 }
 
+
+
 .unique-skill-items .sparkle {
   content: url('/images/sparkle.svg');
   pointer-events: none;
@@ -288,6 +290,10 @@ section {
 
 .credential-carousel .is-selected svg {
   display: block !important;
+}
+
+.is-selected img{
+  transform: scaleX(1.2) scaleY(1.5);
 }
 
 
