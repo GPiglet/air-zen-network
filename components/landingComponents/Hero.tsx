@@ -62,7 +62,7 @@ const Hero = React.forwardRef((props: any, ref: any) => {
     }
     return (
         <>
-            <section ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container mx-auto pb-16 relative pt-32 md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
+            <section ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container mx-auto relative pt-32 md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
 
                 <div ref={el => { if (el && animSideUpRefs.current.indexOf(el) == -1) animSideUpRefs.current.push(el) }} className="relative md:absolute px-10 z-10 flex items-center md:h-[70%] hero-fade">
                     <div className="flex flex-wrap ">

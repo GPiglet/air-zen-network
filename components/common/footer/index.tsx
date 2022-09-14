@@ -13,7 +13,7 @@ const Footer: FC = () => {
 
     return (
         <div className='container m-auto'>
-            <div className='relative py-[100px] md:py-[100px] flex justify-center'>
+            <div className='relative pb-[40px] md:py-[100px] flex justify-center'>
                 <h1 className="text-title-sm">{t('footer.title')}</h1>
             </div>
             <div className='px-10  grid md:grid-cols-3 tracking-widest text-white pb-12'>
@@ -28,7 +28,7 @@ const Footer: FC = () => {
                     ))
                 }
             </div>
-            <div className='px-10 grid md:grid-cols-3 tracking-widest text-white pb-[300px]'>
+            <div className='px-10 grid md:grid-cols-3 tracking-widest text-white md:pb-[100px]'>
                 {
                     (readmore as unknown as any[]).map((item, index) => (
                         <div className='w-full px-2 ml-8 text-left text-lg font-lato md:mb-16 relative' key={index}>

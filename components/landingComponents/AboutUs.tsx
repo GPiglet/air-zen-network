@@ -25,6 +25,15 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
     const animFadeIn = React.useRef<any>([]);
     const animGradient = React.useRef<any>([]);
     const animCircle = React.useRef<any>(null);
+    const [imgX, setImgX] = useState(40.5);
+    const [imgY, setImgY] = useState(33);
+
+    useEffect(() => {
+        if (window.innerWidth < 920) {
+            setImgX(27)
+            setImgY(2)
+        }
+    })
 
 
     const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop, behavior: 'smooth' })
@@ -219,7 +228,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                 <div className=' z-50 w-full md:absolute md:top-1/2 md:translate-y-[-50%]'>
                     <div>
                         <div className="text-center">
-                            <h1 ref={el => { if (el && animSideUp.current.indexOf(el) == -1) animSideUp.current.push(el) }} className="relative z-40 text-title-sm mt-20 md:mt-0">{t('landing.aboutus.title')} </h1>
+                            <h1 ref={el => { if (el && animSideUp.current.indexOf(el) == -1) animSideUp.current.push(el) }} className="relative z-40 text-title-sm md:mt-0">{t('landing.aboutus.title')} </h1>
                         </div>
                         <div ref={el => { if (el && animFadeIn.current.indexOf(el) == -1) animFadeIn.current.push(el) }} className=' md:flex relative'>
                             <picture className={`${selected + 1 === sliderList.length ? 'hidden' : ''} `}>
@@ -264,7 +273,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                                     <path ref={el => { if (el && animCrouselScaleSm.current.indexOf(el) == -1) animCrouselScaleSm.current.push(el) }} d="M951.031 647.325C951.031 804.45 823.656 931.825 666.531 931.825C509.406 931.825 382.031 804.45 382.031 647.325C382.031 490.2 509.406 362.825 666.531 362.825C823.656 362.825 951.031 490.2 951.031 647.325Z" stroke="url(#paint2_linear_0_1)" />
                                     <path opacity="0.3" d="M1166.5 647C1166.5 922.866 942.862 1146.5 666.996 1146.5C391.13 1146.5 167.496 922.866 167.496 647C167.496 371.134 391.13 147.5 666.996 147.5C942.862 147.5 1166.5 371.134 1166.5 647Z" stroke="url(#paint3_linear_0_1)" />
                                     <path opacity="0.5" d="M1.49603 647C1.49606 289.948 290.944 0.500034 647.996 0.500066C1005.05 0.500097 1294.5 289.948 1294.5 647C1294.5 1004.05 1005.05 1293.5 647.996 1293.5C290.944 1293.5 1.496 1004.05 1.49603 647Z" stroke="url(#paint4_linear_0_1)" />
-                                    <image className='about-us-phone ' href={carouselImg} x="40.5%" y="33%" width='293' cx="511.828" cy="696.377" transform="translate(0,0)" />
+                                    <image className='about-us-phone w-1/2 md:w-[293px]' href={carouselImg} x={imgX + '%'} y={imgY + '%'} width='293' cx="511.828" cy="696.377" transform="translate(0,0)" />
                                     <foreignObject className="font-lato-light  w-[260px] text-lg text-white hidden md:block" x="67.5%" y="61.5%" width="260px" height="100px">
                                         <p
                                         >{t('landing.aboutus.sparkle1')}</p>
