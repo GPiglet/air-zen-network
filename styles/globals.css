@@ -296,6 +296,10 @@ section {
   transform: scaleX(1.2) scaleY(1.5);
 }
 
+.is-selected>div{
+  padding-top: 40px;
+}
+
 
 /* Custom Input style */
 .custom-input-gradient {
