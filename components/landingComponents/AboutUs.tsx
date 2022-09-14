@@ -44,7 +44,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
 
 
     const imageList = [
-        '/images/phone-home1.png',
+        '/images/landing-screen1.png',
         '/images/phone-home2.png',
         '/images/phone-home3.png',
         '/images/phone-home2.png',
@@ -233,11 +233,11 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                         <div ref={el => { if (el && animFadeIn.current.indexOf(el) == -1) animFadeIn.current.push(el) }} className=' md:flex relative'>
                             <picture className={`${selected + 1 === sliderList.length ? 'hidden' : ''} `}>
                                 <source srcSet="/images/sparkle-arrow.svg" type="image/webp" />
-                                <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('next')} className='w-[47px] h-[93px] hidden md:block cursor-pointer absolute right-[47px]  top-1/2 center-y-transform z-50  ' />
+                                <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('next')} className='w-[47px] h-[93px] cursor-pointer absolute right-[20px] md:right-[47px]  top-[20%] md:top-1/2 center-y-transform z-50  ' />
                             </picture>
                             <picture className={`${selected === 0 ? 'hidden' : ''}`}>
                                 <source srcSet="/images/sparkle-arrow.svg" type="image/webp" />
-                                <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('prev')} className={`w-[47px] h-[93px] hidden md:block  cursor-pointer absolute left-[47px] sparkle-arrow-reverse transform-none top-1/2 center-y-transform z-50 `} />
+                                <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('prev')} className={`w-[47px] h-[93px]  cursor-pointer absolute left-[20px] md:left-[47px] sparkle-arrow-reverse transform-none top-[20%] md:top-1/2 center-y-transform z-50 `} />
                             </picture>
                             <div className='md:w-[10%]'></div>
                             <div className='w-full md:w-2/5 z-40 relative '>
@@ -267,13 +267,13 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                             </div>
                             <div className='relative w-full md:w-2/5 mdLh-[300px] w:h-auto'>
 
-                                <svg className='md:absolute translate-x-[-13%] z-30 top-[-85%] left-[-50%] md:top-[85%] md:translate-y-[-50%]  sm:top-[-70%] sm:left-[-2%] w-[130%] xl:left-[-63%] md:left-[-100%] md:w-[100%] xl:w-[249%] ' viewBox="0 0 1295 1294" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg className='md:absolute translate-x-[-13%] z-30 top-[-85%] left-[-50%] md:top-[85%] md:translate-y-[-50%]  sm:top-[-70%] sm:left-[-2%] w-[130%] xl:left-[-45%] md:left-[-100%] md:w-[100%] xl:w-[249%] ' viewBox="0 0 1295 1294" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path ref={el => { if (el && animCrouselScaleLg.current.indexOf(el) == -1) animCrouselScaleLg.current.push(el) }} opacity="0.5" d="M666.531 1047.33C887.445 1047.33 1066.53 868.239 1066.53 647.325C1066.53 426.411 887.445 247.325 666.531 247.325C445.617 247.325 266.531 426.411 266.531 647.325C266.531 868.239 445.617 1047.33 666.531 1047.33Z" fill="url(#paint0_radial_0_1)" />
                                     <path ref={el => { if (el && animCrouselScaleLg.current.indexOf(el) == -1) animCrouselScaleLg.current.push(el) }} opacity="0.5" d="M741.941 880.701C873.371 838.685 946.464 699.983 905.199 570.899C863.934 441.816 723.937 371.234 592.506 413.25C461.076 455.265 387.983 593.968 429.249 723.051C470.514 852.134 610.511 922.716 741.941 880.701Z" fill="url(#paint1_radial_0_1)" />
                                     <path ref={el => { if (el && animCrouselScaleSm.current.indexOf(el) == -1) animCrouselScaleSm.current.push(el) }} d="M951.031 647.325C951.031 804.45 823.656 931.825 666.531 931.825C509.406 931.825 382.031 804.45 382.031 647.325C382.031 490.2 509.406 362.825 666.531 362.825C823.656 362.825 951.031 490.2 951.031 647.325Z" stroke="url(#paint2_linear_0_1)" />
                                     <path opacity="0.3" d="M1166.5 647C1166.5 922.866 942.862 1146.5 666.996 1146.5C391.13 1146.5 167.496 922.866 167.496 647C167.496 371.134 391.13 147.5 666.996 147.5C942.862 147.5 1166.5 371.134 1166.5 647Z" stroke="url(#paint3_linear_0_1)" />
                                     <path opacity="0.5" d="M1.49603 647C1.49606 289.948 290.944 0.500034 647.996 0.500066C1005.05 0.500097 1294.5 289.948 1294.5 647C1294.5 1004.05 1005.05 1293.5 647.996 1293.5C290.944 1293.5 1.496 1004.05 1.49603 647Z" stroke="url(#paint4_linear_0_1)" />
-                                    <image className='about-us-phone w-1/2 md:w-[293px]' href={carouselImg} x={imgX + '%'} y={imgY + '%'} width='293' cx="511.828" cy="696.377" transform="translate(0,0)" />
+                                    <image className='about-us-phone w-[48%] md:w-[293px]' href={carouselImg} x={imgX + '%'} y={imgY + '%'} width='293' cx="511.828" cy="696.377" transform="translate(0,0)" />
                                     <foreignObject className="font-lato-light  w-[260px] text-lg text-white hidden md:block" x="67.5%" y="61.5%" width="260px" height="100px">
                                         <p
                                         >{t('landing.aboutus.sparkle1')}</p>
