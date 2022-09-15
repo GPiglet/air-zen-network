@@ -462,7 +462,7 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                         <div className='md:m-auto md:w-max  '>
                             {
                                 (skillList as unknown as any[]).map((item: any, index: any) => (
-                                    <div ref={el => { if (el != null && animSkills.current.indexOf(el) == -1) animSkills.current.push(el) }} onClick={() => onClickSkill(index)} onMouseEnter={() => onMouseEnterSkill(index)} onMouseLeave={() => onMouseLeaveSkill(index)} className='cursor-pointer right-[-30px] sm:right-[-70px] w-full h-[170px] md:h-auto md:w-[210px] xl:w-[280px] md:inline-block align-top md:right-auto relative px-5 py-3 md:py-5 flex-1 unique-skill-items unique-skill-animate z-40' key={index}>
+                                    <div ref={el => { if (el != null && animSkills.current.indexOf(el) == -1) animSkills.current.push(el) }} onClick={() => onClickSkill(index)} onMouseEnter={() => onMouseEnterSkill(index)} onMouseLeave={() => onMouseLeaveSkill(index)} className='relative px-5 py-3 flex-1 unique-skill-items unique-skill-animate z-40 cursor-pointer right-[-30px] w-full h-[170px] align-top sm:right-[0] sm:w-[80%] sm:ml-auto md:h-auto md:w-[210px] md:inline-block md:right-auto md:py-5 xl:w-[280px]' key={index}>
                                         <div className='unique-skill-border-gradient h-full'>
                                             <div className='tracking-widest py-5 md:pt-[80px] md:pb-[100px] xl:pl-[42px] xl:pr-0 pl-8 pr-5 text-white w-full relative  md:h-[300px]'>
                                                 <picture className=''>
@@ -470,8 +470,8 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                                                     <img src={graphList[index].graph} className={`unique-graph w-[200px] md:w-auto absolute center-x-transform top-[-30px] md:top-[-80px] opacity-50 z-0 ${index % 2 == 0 ? 'left-[80px]' : 'right-[-100px]'} md:left-1/2`} alt="" />
                                                 </picture>
                                                 <p className='relative font-lato text-[22px] uppercase unique-skill-title pb-3'>{item.title}</p>
-                                                <p className='relative unique-skill-subtitle font-lato-light font-bold text-xl w-[60%] md:w-[180px] pb-3'>{item.subtitle}</p>
-                                                <p className='relative hidden font-lato font-light text-xl text-lg unique-skill-description pb-3 md:w-[280px]'>{item.description}</p>
+                                                <p className='relative unique-skill-subtitle font-lato-light font-bold text-xl w-[60%] sm:w-[180px] pb-3'>{item.subtitle}</p>
+                                                <p className='relative hidden font-lato font-light text-xl text-lg unique-skill-description pb-3 sm:w-[280px]'>{item.description}</p>
                                                 <ul className='relative hidden list-disc pl-2 unique-skill-list md:w-[280px]'>
                                                     {item.list.split('\n').map((subitem: string, ind: number) => (
                                                         <li className='font-lato text-[16px] font-extralight leading-6' key={ind}>{subitem}</li>

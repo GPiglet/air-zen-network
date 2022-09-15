@@ -251,7 +251,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
 
 
     return (
-        <section id='credentials' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='container md:overflow-hidden flex md:block mt-14 md:mt-0 md:pt-[160px] h-[80vh] md:h-screen items-center md:items-start md:fixed md:hidden md:w-full md:left-[50%] md:translate-x-[-50%]'>
+        <section id='credentials' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='container md:overflow-hidden flex md:block mt-14 sm:mt-56 md:mt-0 md:pt-[160px] h-[80vh] md:h-screen items-center md:items-start md:fixed md:hidden md:w-full md:left-[50%] md:translate-x-[-50%]'>
             <div className='w-full relative z-50 md:absolute md:top-1/2 md:translate-y-[-60%]'>
                 <div className=' pt-10 pb-8 md:pb-24 flex justify-center'>
                     <h1 ref={el => { if (el && animSideUp.current.indexOf(el) == -1) animSideUp.current.push(el) }} className="text-title-sm relative z-50">{t('landing.credential.title')}</h1>
@@ -327,7 +327,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
                             ))
                         }
                     </AZCarousel>
-                    <svg ref={refBackCircle} className='hidden z-[-1] absolute w-[180%] top-[-74%] right-[10%]' viewBox="0 0 736 736" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg ref={refBackCircle} className='hidden z-[-1] absolute w-[180%] top-[-74%] right-[10%] sm:w-[120%] sm:right-[30%]' viewBox="0 0 736 736" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle className='scale-[0.6] origin-center' opacity="0.3" cx="368.2" cy="368.2" r="338.706" transform="rotate(-120 368.2 368.2)" fill="url(#paint0_radial_0_1)" />
                         <circle className="hidden" opacity="0.8" cx="368.199" cy="368.2" r="367.206" transform="rotate(-120 368.199 368.2)" stroke="url(#paint1_linear_0_1)" />
                         <circle opacity="0.4" cx="368.204" cy="367.623" r="311.914" transform="rotate(-120 368.204 367.623)" fill="url(#paint2_radial_0_1)" />
