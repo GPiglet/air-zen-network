@@ -63,7 +63,7 @@ a {
 @tailwind utilities;
 
 .back-left-top-gradient-primary {
-  background: linear-gradient(146.42deg, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 80%), #000000;
+  background: linear-gradient(146.42deg, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 12%), #000000;
   /* background-attachment: fixed; */
 }
 
@@ -280,25 +280,36 @@ section {
   /* transition: all .4s ease-in-out; */
 }
 
+.credential-detail.mobile img,
+.credential-detail.mobile ul {
+  transition: opacity .5s ease-in-out;
+}
+
 /* .credential-detail:hover ul {
     display: block;
   } */
 
-.credential-carousel .is-selected ul {
+/* .credential-carousel .is-selected ul {
   display: block;
 }
 
 .credential-carousel .is-selected svg {
   display: block !important;
-}
+} */
 
 .is-selected img{
-  transform: scaleX(1.2) scaleY(1.5);
+  /* transform: scaleX(1.2) scaleY(1.5); */
+  opacity: 1;  
 }
 
-.is-selected>div{
-  padding-top: 40px;
+.is-selected ul{
+  /* transform: scaleX(1.2) scaleY(1.5); */
+  opacity: 1;  
 }
+
+/* .is-selected>div{
+  padding-top: 40px;
+} */
 
 
 /* Custom Input style */
@@ -412,8 +423,4 @@ input[type=number] {
   border-radius: 8px;
   background: transparent;
 } */
-
-.about-us-phone {
-  -webkit-transition: opacity 2.0s ease-in;
-}
 

@@ -12,7 +12,7 @@ const Footer: FC = () => {
     const readmore = t('footer.readmore', { returnObjects: true })
 
     return (
-        <div className='container m-auto'>
+        <div className='container m-auto pb-[150px]'>
             <div className='relative pb-[40px] md:py-[100px] flex justify-center'>
                 <h1 className="text-title-sm">{t('footer.title')}</h1>
             </div>

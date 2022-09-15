@@ -25,6 +25,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
     const animFadeIn = React.useRef<any>([]);
     const animGradient = React.useRef<any>([]);
     const animCircle = React.useRef<any>(null);
+    const animPhoneImage = React.useRef<any>(null);
     const [imgX, setImgX] = useState(40.5);
     const [imgY, setImgY] = useState(33);
 
@@ -44,10 +45,10 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
 
 
     const imageList = [
-        '/images/landing-screen1.png',
-        '/images/phone-home2.png',
-        '/images/phone-home3.png',
-        '/images/phone-home2.png',
+        '/images/aboutus1.png',
+        '/images/aboutus2.png',
+        '/images/aboutus3.png',
+        '/images/aboutus4.png',
     ]
 
     //Flickity
@@ -57,11 +58,18 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
     const [carouselImg, setCarouselImg] = useState(imageList[0])
 
     useEffect(() => {
-        if (flkty)
+        if (flkty) {
             flkty.on('settle', () => {
                 setSelected(flkty.selectedIndex)
-
             })
+            flkty.on('change', () => {
+                const img = imageList[flkty.selectedIndex];
+                gsap.to(animPhoneImage.current, {opacity: 0, onComplete: ()=>{
+                    gsap.to(animPhoneImage.current, {opacity: 1})
+                    setCarouselImg(img);
+                }});
+            })
+        }
     }, [flkty])
 
     const flickity = (c: Flickity) => {
@@ -87,14 +95,22 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
     const svgGroupAnimation = (state: string) => {
 
         if (state === 'next') {
-            setCarouselImg(imageList[flkty.selectedIndex + 1])
+            // const img = imageList[flkty.selectedIndex + 1];
+            // gsap.to(animPhoneImage.current, {opacity: 0, onComplete: ()=>{
+            //     gsap.to(animPhoneImage.current, {opacity: 1})
+            //     setCarouselImg(img);
+            // }});
 
             flkty.next()
             carousel.next()
             gsap.to(animCrouselScaleLg.current, { duration: 0.8, scale: (1 + (flkty.selectedIndex + 1) * 0.03), transformOrigin: "50% 50%", })
             gsap.to(animCrouselScaleSm.current, { duration: 0.8, scale: (1 + (flkty.selectedIndex + 1) * 0.05), transformOrigin: "50% 50%", })
         } else {
-            setCarouselImg(imageList[flkty.selectedIndex - 1])
+            // const img = imageList[flkty.selectedIndex - 1];
+            // gsap.to(animPhoneImage.current, {opacity: 0, onComplete: ()=>{
+            //     gsap.to(animPhoneImage.current, {opacity: 1})
+            //     setCarouselImg(img);
+            // }});
 
             flkty.previous()
             carousel.prev()
@@ -230,7 +246,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                         <div className="text-center">
                             <h1 ref={el => { if (el && animSideUp.current.indexOf(el) == -1) animSideUp.current.push(el) }} className="relative z-40 text-title-sm md:mt-0">{t('landing.aboutus.title')} </h1>
                         </div>
-                        <div ref={el => { if (el && animFadeIn.current.indexOf(el) == -1) animFadeIn.current.push(el) }} className=' md:flex relative'>
+                        <div ref={el => { if (el && animFadeIn.current.indexOf(el) == -1) animFadeIn.current.push(el) }} className=' md:flex relative top-[-80px] md:top-0'>
                             <picture className={`${selected + 1 === sliderList.length ? 'hidden' : ''} `}>
                                 <source srcSet="/images/sparkle-arrow.svg" type="image/webp" />
                                 <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('next')} className='w-[47px] h-[93px] cursor-pointer absolute right-[20px] md:right-[47px]  top-[20%] md:top-1/2 center-y-transform z-50  ' />
@@ -265,15 +281,15 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                                     }
                                 </AZCarousel>
                             </div>
-                            <div className='relative w-full md:w-2/5 mdLh-[300px] w:h-auto'>
+                            <div className='relative h-[400px] w-full md:w-2/5 md:h-[300px] w:h-auto'>
 
-                                <svg className='md:absolute translate-x-[-13%] z-30 top-[-85%] left-[-50%] md:top-[85%] md:translate-y-[-50%]  sm:top-[-70%] sm:left-[-2%] w-[130%] xl:left-[-45%] md:left-[-100%] md:w-[100%] xl:w-[249%] ' viewBox="0 0 1295 1294" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg className='w-[180%] md:w-[100%] xl:w-[249%] absolute translate-x-[-50%] z-30 top-[-220px] left-[45%] md:translate-x-[-13%] md:top-[85%] md:translate-y-[-50%]  sm:top-[-70%] sm:left-[-2%] xl:left-[-45%]  ' viewBox="0 0 1295 1294" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path ref={el => { if (el && animCrouselScaleLg.current.indexOf(el) == -1) animCrouselScaleLg.current.push(el) }} opacity="0.5" d="M666.531 1047.33C887.445 1047.33 1066.53 868.239 1066.53 647.325C1066.53 426.411 887.445 247.325 666.531 247.325C445.617 247.325 266.531 426.411 266.531 647.325C266.531 868.239 445.617 1047.33 666.531 1047.33Z" fill="url(#paint0_radial_0_1)" />
                                     <path ref={el => { if (el && animCrouselScaleLg.current.indexOf(el) == -1) animCrouselScaleLg.current.push(el) }} opacity="0.5" d="M741.941 880.701C873.371 838.685 946.464 699.983 905.199 570.899C863.934 441.816 723.937 371.234 592.506 413.25C461.076 455.265 387.983 593.968 429.249 723.051C470.514 852.134 610.511 922.716 741.941 880.701Z" fill="url(#paint1_radial_0_1)" />
                                     <path ref={el => { if (el && animCrouselScaleSm.current.indexOf(el) == -1) animCrouselScaleSm.current.push(el) }} d="M951.031 647.325C951.031 804.45 823.656 931.825 666.531 931.825C509.406 931.825 382.031 804.45 382.031 647.325C382.031 490.2 509.406 362.825 666.531 362.825C823.656 362.825 951.031 490.2 951.031 647.325Z" stroke="url(#paint2_linear_0_1)" />
                                     <path opacity="0.3" d="M1166.5 647C1166.5 922.866 942.862 1146.5 666.996 1146.5C391.13 1146.5 167.496 922.866 167.496 647C167.496 371.134 391.13 147.5 666.996 147.5C942.862 147.5 1166.5 371.134 1166.5 647Z" stroke="url(#paint3_linear_0_1)" />
-                                    <path opacity="0.5" d="M1.49603 647C1.49606 289.948 290.944 0.500034 647.996 0.500066C1005.05 0.500097 1294.5 289.948 1294.5 647C1294.5 1004.05 1005.05 1293.5 647.996 1293.5C290.944 1293.5 1.496 1004.05 1.49603 647Z" stroke="url(#paint4_linear_0_1)" />
-                                    <image className='about-us-phone w-[48%] md:w-[293px]' href={carouselImg} x={imgX + '%'} y={imgY + '%'} width='293' cx="511.828" cy="696.377" transform="translate(0,0)" />
+                                    <path className="hidden md:block" opacity="0.5" d="M1.49603 647C1.49606 289.948 290.944 0.500034 647.996 0.500066C1005.05 0.500097 1294.5 289.948 1294.5 647C1294.5 1004.05 1005.05 1293.5 647.996 1293.5C290.944 1293.5 1.496 1004.05 1.49603 647Z" stroke="url(#paint4_linear_0_1)" />
+                                    <image ref={animPhoneImage} className='w-[32%] translate-x-[-5%] md:translate-x-0 md:w-[293px]' href={carouselImg} x='40.5%' y='33%' width='293' cx="511.828" cy="696.377" transform="translate(0,0)" />
                                     <foreignObject className="font-lato-light  w-[260px] text-lg text-white hidden md:block" x="67.5%" y="61.5%" width="260px" height="100px">
                                         <p
                                         >{t('landing.aboutus.sparkle1')}</p>
