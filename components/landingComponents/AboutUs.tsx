@@ -290,11 +290,11 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                                     <path opacity="0.3" d="M1166.5 647C1166.5 922.866 942.862 1146.5 666.996 1146.5C391.13 1146.5 167.496 922.866 167.496 647C167.496 371.134 391.13 147.5 666.996 147.5C942.862 147.5 1166.5 371.134 1166.5 647Z" stroke="url(#paint3_linear_0_1)" />
                                     <path className="hidden md:block" opacity="0.5" d="M1.49603 647C1.49606 289.948 290.944 0.500034 647.996 0.500066C1005.05 0.500097 1294.5 289.948 1294.5 647C1294.5 1004.05 1005.05 1293.5 647.996 1293.5C290.944 1293.5 1.496 1004.05 1.49603 647Z" stroke="url(#paint4_linear_0_1)" />
                                     <image ref={animPhoneImage} className='w-[32%] translate-x-[-5%] md:translate-x-0 md:w-[293px]' href={carouselImg} x='40.5%' y='33%' width='293' cx="511.828" cy="696.377" transform="translate(0,0)" />
-                                    <foreignObject className="font-lato-light  w-[260px] text-lg text-white hidden md:block" x="67.5%" y="61.5%" width="260px" height="100px">
+                                    <foreignObject className="font-lato-light  w-[260px] text-sm text-white hidden md:block" x="67.5%" y="61.5%" width="260px" height="100px">
                                         <p
                                         >{t('landing.aboutus.sparkle1')}</p>
                                     </foreignObject>
-                                    <foreignObject className="font-lato-light  w-[260px] text-lg text-white hidden md:block" x="9%" y="74.5%" width="260px" height="100px">
+                                    <foreignObject className="font-lato-light  w-[260px] text-sm text-white hidden md:block" x="9%" y="74.5%" width="260px" height="100px">
                                         <p
                                         >{t('landing.aboutus.sparkle2')}</p>
                                     </foreignObject>

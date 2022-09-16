@@ -104,7 +104,7 @@ const SimpleProductive: FC<{ props?: any, ref: any }> = React.forwardRef((props:
                 </g>
                 <image href="/images/phone-home1.png" x="29%" y="23%" className="w-[44%]" />
                 <path opacity="0.8" d="M303.843 695.245C368.051 674.697 403.759 606.863 383.6 543.734C363.44 480.605 295.048 446.086 230.84 466.634C166.633 487.182 130.924 555.016 151.084 618.145C171.243 681.274 239.636 715.793 303.843 695.245Z" fill="url(#paint3_radial_0_1)" />
-                <foreignObject className="font-lato-light  w-[260px] text-lg text-white hidden md:block" x="40%" y="90%" width="260px" height="100px">
+                <foreignObject className="font-lato-light  w-[260px] text-sm text-white hidden md:block" x="40%" y="90%" width="260px" height="100px">
                     <p
                     >Dieses Feature ermöglicht eine besondere Funktion: XYZ</p>
                 </foreignObject>
