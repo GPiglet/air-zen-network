@@ -15,7 +15,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
     const refBackCircleCarousel = React.useRef<HTMLDivElement>(null);
     const containerRef = React.useRef<any>();
 
-    const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop, behavior: 'smooth' })
+    const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop + 400, behavior: 'smooth' })
     useEffect(() => {
         if (router.query.section === 'credentials')
             scrollToRef(containerRef)
