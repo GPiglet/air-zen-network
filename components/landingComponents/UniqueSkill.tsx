@@ -470,7 +470,7 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                                                     <img src={graphList[index].graph} className={`unique-graph w-[200px] md:w-auto absolute center-x-transform top-[-30px] md:top-[-80px] opacity-50 z-0 ${index % 2 == 0 ? 'left-[80px]' : 'right-[-100px]'} md:left-1/2`} alt="" />
                                                 </picture>
                                                 <p className='relative font-lato text-[22px] uppercase unique-skill-title pb-3'>{item.title}</p>
-                                                <p className='relative unique-skill-subtitle font-lato-light font-bold text-xl w-[60%] sm:w-[180px] pb-3'>{item.subtitle}</p>
+                                                <p className='relative unique-skill-subtitle font-lato-light font-bold text-xl w-[70%] sm:w-[180px] pb-3'>{item.subtitle}</p>
                                                 <p className='relative hidden font-lato font-light text-xl text-lg unique-skill-description pb-3 sm:w-[280px]'>{item.description}</p>
                                                 <ul className='relative hidden list-disc pl-2 unique-skill-list md:w-[280px]'>
                                                     {item.list.split('\n').map((subitem: string, ind: number) => (
