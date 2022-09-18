@@ -1,5 +1,5 @@
 //import modules
-import React, { FC, ReactNode, useContext } from 'react';
+import React, { FC, ReactNode, useContext, useEffect, useState } from 'react';
 
 //import components
 import Navbar from '../../components/common/navbar'
@@ -7,6 +7,7 @@ import Sticky from '../../components/common/sticky'
 import Footer from '../../components/common/footer'
 
 import { StoreContext } from '../../contexts/Store'
+import { getStorage } from '../../services/storage.service'
 
 
 type MainlayoutProps = {
@@ -17,7 +18,12 @@ type MainlayoutProps = {
 
 const Mainlayout: FC<MainlayoutProps> = ({ children, navItems, hasFooter = true }) => {
 
-    const { cookie } = useContext(StoreContext)
+    const [cookie, setCookie] = useState(false)
+    useEffect(() => {
+        //const cookie = useContext(StoreContext)
+        const cookie = getStorage('cookieAllow')
+        setCookie(Boolean(cookie))
+    }, [])
 
     return (
         <div>
