@@ -102,7 +102,7 @@ const IdeaSeries: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, 
                     <circle opacity="0.7" cx="410.098" cy="409.507" r="207.742" transform="rotate(60 410.098 409.507)" fill="url(#paint2_radial_1376_7745)" />
                 </g>
                 <image href="/images/phone-home1.png" x="29%" y="15%" className="w-[44%]" />
-                <foreignObject className="font-lato-light  w-[260px] text-lg text-white hidden md:block" x="45%" y="93%" width="260px" height="100px">
+                <foreignObject className="font-lato-light  w-[260px] text-sm text-white hidden md:block" x="45%" y="93%" width="260px" height="100px">
                     <p
                     >Dieses Feature ermöglicht eine besondere Funktion: XYZ</p>
                 </foreignObject>

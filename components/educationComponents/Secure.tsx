@@ -64,12 +64,12 @@ const Secure: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref:
                 <path opacity="0.6" d="M840.613 370.114C904.549 574.181 794.244 792.48 594.262 857.709C394.28 922.939 180.323 810.407 116.387 606.341C52.4511 402.274 162.755 183.976 362.737 118.746C562.719 53.5162 776.676 166.048 840.613 370.114Z" stroke="url(#paint3_linear_1376_7128)" />
                 <path opacity="0.6" d="M774.024 391.831C826.204 558.376 736.182 736.532 572.974 789.767C409.767 843.002 235.152 751.164 182.972 584.62C130.792 418.075 220.815 239.918 384.022 186.684C547.229 133.449 721.844 225.287 774.024 391.831Z" stroke="url(#paint4_linear_1376_7128)" />
                 <image href="/images/education3.png" width="430" height="430" x="29%" y="29%" fillOpacity="0.5"></image>
-                <foreignObject className="font-lato-light text-lg text-white hidden md:block" x="50%" y="15%" width="250px" height="100px">
+                <foreignObject className="font-lato-light text-sm text-white hidden md:block" x="50%" y="15%" width="250px" height="100px">
                     <p
                     >{t('education.secure.sparkle1')}</p>
                 </foreignObject>
                 <image href="/images/sparkle.svg" className="w-[49px] h-[47px] hidden md:block" x="45%" y="15.5%" cx="511.828" cy="696.377" />
-                <foreignObject className="font-lato-light text-lg text-white hidden md:block" x="50%" y="69%" width="250px" height="100px">
+                <foreignObject className="font-lato-light text-sm text-white hidden md:block" x="50%" y="69%" width="250px" height="100px">
                     <p
                     >{t('education.secure.sparkle2')}</p>
                 </foreignObject>

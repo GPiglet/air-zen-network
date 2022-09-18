@@ -12,7 +12,7 @@ const Footer: FC = () => {
     const readmore = t('footer.readmore', { returnObjects: true })
 
     return (
-        <div className='container m-auto'>
+        <div className='container m-auto pb-[150px]'>
             <div className='relative pb-[40px] md:py-[100px] flex justify-center'>
                 <h1 className="text-title-sm">{t('footer.title')}</h1>
             </div>
@@ -31,7 +31,7 @@ const Footer: FC = () => {
             <div className='px-10 grid md:grid-cols-3 tracking-widest text-white md:pb-[100px]'>
                 {
                     (readmore as unknown as any[]).map((item, index) => (
-                        <div className='w-full px-2 ml-8 text-left text-lg font-lato md:mb-16 relative' key={index}>
+                        <div className='w-full px-2 text-left text-lg font-lato md:mb-16 relative' key={index}>
                             <p className='font-normal mb-10'>{item.title}</p>
 
                             <ReadMore>

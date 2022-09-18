@@ -24,7 +24,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
     const messageRef = useRef<any>();
     const containerRef = React.useRef<any>();
 
-    const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop, behavior: 'smooth' })
+    const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop + 400, behavior: 'smooth' })
     useEffect(() => {
         if (router.query.section === 'cantact')
             scrollToRef(containerRef)
