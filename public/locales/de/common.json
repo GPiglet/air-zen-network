@@ -15,26 +15,22 @@
                 {
                     "title": "Home",
                     "subtitle": "Für ein smartes Zuhause.",
-                    "description": "Störungsfreies und selbstoptimierendes Netz. Zuhause wie beim Profi.",
-                    "list": "Hochstabile Verbindung \n Keine Erfahrung nötig \n Automatische Updates \n Videosupport"
+                    "description": "Ein vernetztes Zuhause mit sicherem, lückenlosem und selbstoptimierendem WLAN. Ideal für das HomeOffice und die ganze Familie."
                 },
                 {
                     "title": "Business",
                     "subtitle": "Für ein vernetztes Unternehmen.",
-                    "description": "Störungsfreies und selbstoptimierendes Netz. Zuhause wie beim Profi.",
-                    "list": "Hochstabile Verbindung \n Keine Erfahrung nötig \n Automatische Updates \n Videosupport"
+                    "description": "Das Team und ihre Kunden - damit jeder überall und jederzeit vernetzt ist, gibt es die sicheren und innovativen Netzwerklösungen von AirZen."
                 },
                 {
                     "title": "Education",
                     "subtitle": "Für eine digitale Zukunft.",
-                    "description": "Störungsfreies und selbstoptimierendes Netz. Zuhause wie beim Profi.",
-                    "list": "Hochstabile Verbindung \n Keine Erfahrung nötig \n Automatische Updates \n Videosupport"
+                    "description": "Digitaler Wandel, Homeschooling, Verwaltung - damit alles funktioniert braucht es ein komplexes WLAN mit kinderleichter Handhabe."
                 },
                 {
                     "title": "Industril",
                     "subtitle": "Für den digitalen Fortschritt.",
-                    "description": "Störungsfreies und selbstoptimierendes Netz. Zuhause wie beim Profi.",
-                    "list": "Hochstabile Verbindung \n Keine Erfahrung nötig \n Automatische Updates \n Videosupport"
+                    "description": "Innovative Ideen brauchen individuelle Lösungen - auch im großen Stil. AirZen hilft bei der Lösung industrieller Netzwerk-Aufgaben."
                 }
             ],
             "solution": "Unsere Lösung"
@@ -97,8 +93,8 @@
     "home": {
         "simply": {
             "_comment": "Der obere Abschnitt der Seite.",
-            "title": "EINFACH GUTES NETZ.",
-            "description": "AirZen macht Schluss mit unsicheren Netzwerken und nervigen Verbindungsabbrüchen. Dank ausgeklügelter Mesh-Technologie halten sie ihr Zuhause immer im On. \n   Erleben Sie die neue Form der Internet Nutzung in ihrem Zuhause. AirZen ist vergleichbar eines Internet Betriebssystems, dass nicht nur den Standard für Sicherheit und Privatsphäre ihrer Daten neu definiert. "
+            "title": "smarter Alltag- smartes WLAN",
+            "description": "Smart Home und New Work, ein vernetztes Zuhause braucht Technik, die macht was sie soll. Ein störungsfreies Netzwerk, das sicher ist und echte Privatsphäre schafft. Eine App, die Übersicht, Support und Kontrolle bietet, ohne kompliziert zu sein."
         },
         "safehome": {
             "_comment": "'sicherer' Abschnitt der Seite",
@@ -153,7 +149,7 @@
             "_comment": "'Technik' Abschnitt der Seite",
             "tip": "Technik",
             "title": "Unsere Nodes",
-            "description": "Wifi 6 \n 2 wlan module für Access- und Meshing \n Perfektes roaming mit Apple & Android \n unterstützt alle Roaming Standards von Apple iOS und Android Geräten für ein Seamless Romaing. \n Zero-Setup \n Die AirZen App hilft dir bei der kinderleichten Installation. "
+            "description": "WiFi6 \n Die neueste WLAN-Technik für Ihr Zuhause. \n Perfektes roaming mit Apple & Android \n unterstützt alle Roaming Standards von Apple iOS und Android Geräten für ein Seamless Romaing. \n Plug & Play \n Spielend leichte Installation mit der AirZen App."
         },
         "form": {
             "step1": {
