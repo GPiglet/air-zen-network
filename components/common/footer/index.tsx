@@ -28,7 +28,7 @@ const Footer: FC = () => {
                     ))
                 }
             </div>
-            <div className='px-10 grid md:grid-cols-3 tracking-widest text-white md:pb-[100px]'>
+            <div className='px-16 md:px-10 grid md:grid-cols-3 tracking-widest text-white md:pb-[100px]'>
                 {
                     (readmore as unknown as any[]).map((item, index) => (
                         <div className='w-full px-2 text-left text-lg font-lato md:mb-16 relative' key={index}>
