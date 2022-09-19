@@ -104,29 +104,49 @@
             "_comment": "'sicherer' Abschnitt der Seite",
             "tip": "Sicher",
             "title": "Home safe Home",
-            "description": "Ihre digitale Sicherheit ist unser Anspruch. Unser Security Paket umfasst nicht nur die Trennung ihres beruflich vom privaten Netzwerk wenn Sie im Home Office arbeiten sondern beschützt ebenso ihre Kinder mit einer umfassenden Jugendschutz Funktion.  \n Sicherheit beginnt mit uns direkt an der Quelle des Internetzugangs per Security WatchDog welcher schadhafte Websites bereits vorab für Sie filtert und durch automatische Updates permanent aktualisiert wird. \n Der Internet Pause Button gibt Ihnen die Kontrolle über die Internet Verfügbarkeit aller Nutzer und die individuelle Passwortvergabe ermöglicht nicht nur personalisierte Rechtevergaben nach ihrem Wunsch, sondern erhöht auch die Sicherheit Ihres Wifi enorm."
+            "description": "Sicherheit fängt beim Netzwerk an. Das AirZen Security Paket umfasst die Trennung des beruflichen vom privaten Netzwerk. Weitere umfassende Security Features, wie der Live-Filter für schadhafte Websites und Viren-BotNetzen können um eine Jugendschutzfunktion erweitert werden. Sorgenfreiheit neu definiert und das direkt an der Quelle.",
+            "list": [
+                "My Home Is My Castle. \n Erhalten Sie Schutz & Kontrolle über ihr WLAN."
+            ]
         },
         "reliable": {
             "_comment": "'Zuverlässig' Abschnitt der Seite",
             "tip": "Zuverlässig",
-            "title": "So gut, so OmG!",
-            "description": "Nach dem Update ist vor dem Update. Gerade für Menschen, die ihr privates Netzwerk im Homeoffice nutzen, stellen verzögerte Updates eine ernste Bedrohung für die sensiblen Daten ihrer Firma. \n Um diesen Bedrohungen immer einen Schritt voraus zu sein, ist unsere Platform an ein Lizensmodell gekoppelt. Das schließt zahlreiche Sicherheits- features ein, von denen Sie kaum etwas bemerken werden, solange wir unsere Arbeit gewissenhaft erledigen:",
-            "list": "BotNetz-Schutz \n  Content-Filter für Kinder-Netzwerk \n Content-Filter für Manipulierte Websites \n  Familien Verwaltung mit y für Kinder und Internet-Pause Knopf \n  Automatisch Software Updates \n Live-Support vom Hersteller"
+            "title": "IMMER IN VERBINDUNG.",
+            "description": "Endlich Profi WLAN Technik für Zuhause - so leistungsstark wie in der Industrie, so benutzerfreundlich wie noch nie. Um WLAN-Frust vorzubeugen, sorgen drei AirZen Nodes im Set dank ausgeklügelter Mesh-Technologie für lückenlose WLAN-Verbindungen. Die Nutzung, Verwaltung und Sicherheit ist damit wie im Office, nur Zuhause.",
+            "list": ["Stabile Verbindungen \n  Das AirZen Set bietet WLAN überall in ihrem Zuhause."]
         },
         "easy": {
             "_comment": "'Einfach' Abschnitt der Seite",
             "tip": "Einfach",
-            "title": "entspannter geht nicht!",
-            "description": "Kühlschrank, Toaster und Playstation: Air Zen ist hochkompatibel. Updaten Sie ihr Heim-Netz mit minutenschneller Einrichtung. Alles was Sie dazu brauchen ist eine Internetverbindung. \n Und das Entspannteste daran: Es richtet sich fast wie von selbst ein, dank unserer Mesh Technologie. So reibungslos wie die Installation läuft dann auch die eigenständige Wartung und Verwaltung ab.",
+            "title": "EINFACH IST GUT, AUTOMATISCH BESSER.",
+            "description": "Auspacken, einstecken und durchstarten. Das Netzwerk richtet sich fast wie von selbst ein, dank automatisierter Einrichtung, ganz ohne Techniker:in. Alles was man braucht ist eine Internetverbindung. So reibungslos wie die Installation läuft dann auch die eigenständige Wartung und Verwaltung ab - klingt entspannt, ist es auch. ",
             "list": [
-                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
-                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
-                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
-            ],
+                "Familienverwaltung per App \n Individuelle Passwörter für jedes Familienmitglied. ",
+                "Smart Roaming \n Die beste Verbindung zu den AirZen Nodes - automatisch.",
+                "Sicheres Smart Home \n Alle “Things” haben ein eigenes Netzwerk."
+            ]
+        },
+        "easyDigital": {
+            "_comment": "'Einfach' Abschnitt der Seite",
+            "tip": "Einfach",
+            "title": "Digitale Auszeit.",
+            "description": "Immer im On leben, aber auch mal Pause machen. Jedes Familienmitglied und Smart Home Gerät erhält einen eigenen, gesicherten Zugang. Mit der WLAN-Pause Funktion kann die Netzwerknutzung begrenzt und reguliert werden. So kann im HomeOffice gearbeitet werden, während der Bildschirm im Kinderzimmer Pause hat.",
             "list": [
-                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
-                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
-                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
+                "Individuelle Pause Funktion \n Internetpause in wenigen Sekunden per App.",
+                "Internet-Timer  \n Legen Sie fest wann das WLAN nutzbar ist.",
+                "Jugendschutzfunktion \n Schutz vor schädlichen Einflüssen im Internet."
+            ]
+        },
+        "security": {
+            "_comment": "'Einfach' Abschnitt der Seite",
+            "tip": "Sicherheit",
+            "title": "immer up to date",
+            "description": "Nach dem Update ist vor dem Update. Teil unseres ganzheitlichen „Network as a Service“ Ansatz ist es, Zuverlässigkeit durch automatische Softwareaktualisierungen für größtmöglichen Schutz und WLAN-Qualitätssicherung zu bieten. Auf AirZen ist auch bei Störungen Verlass und das schnell, direkt per Live-Chat in der AirZen App.",
+            "list": [
+                "BotNet Erkennung \n Ein Virus braucht Befehle, wir erschweren dies.",
+                "Automatisierte Updates \n Sicherheit durch aktuellste Firmware & Security Filter.",
+                "Malware Filter \n Betrügerische Websites werden weitgehend gefiltert."
             ]
         },
         "ournode": {

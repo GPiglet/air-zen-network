@@ -50,8 +50,8 @@ const Home: NextPage = () => {
 		refSectionSafeHome,
 		refSectionSafeHome,
 		refSectionSafeHome,
-		refSectionSafeHome,
-		refSectionSafeHome,
+		// refSectionSafeHome,
+		// refSectionSafeHome,
 		refSectionOurNode,
 		refSectionFooter
 	];

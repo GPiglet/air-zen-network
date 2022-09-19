@@ -104,24 +104,49 @@
             "_comment": "'SaveHome' section of page",
             "tip": "Secure",
             "title": "Home safe Home",
-            "description": "Your digital security is our goal. Our security package not only includes the separation of your professional from the private network when you work in the home office, but also protects your children with a comprehensive youth protection function. \n Security begins with us right at the source of Internet access via Security WatchDog, which filters malicious websites for you in advance and is constantly updated through automatic updates. \n The Internet Pause button gives you control over the Internet availability of all users and the individual password assignment not only enables personalized assignment of rights according to your wishes, but also increases the security of your Wifi enormously."
+            "description": "Security starts with the network. The AirZen security package includes the separation of the professional from the private network. Other comprehensive security features, such as the live filter for malicious websites and virus botnets, can be expanded to include a youth protection function. Redefining peace of mind and straight to the source.",
+            "list": [
+                "My Home Is My Castle. \n Get protection & control over your WiFi."
+            ]
         },
         "reliable": {
             "_comment": "'Reliable' section of page",
             "tip": "Reliable",
-            "title": "So good, so OmG!",
-            "description": "After the update is before the update. Especially for people who use their private network in their home office, delayed updates pose a serious threat to their company's sensitive data. \n In order to always be one step ahead of these threats, our platform is on coupled with a license model, which includes numerous security features that you will hardly notice as long as we do our job conscientiously:",
-            "list": "Botnet protection \n Content filter for children's network \n Content filter for manipulated websites \n Family management with y for children and Internet pause button \n Automatic software updates \n Live support from the manufacturer"
+            "title": "ALWAYS IN CONNECTION.",
+            "description": "Finally professional WiFi technology for the home - as powerful as in industry, as user-friendly as never before. To prevent WiFi frustration, three AirZen nodes in a set ensure seamless WiFi connections thanks to sophisticated mesh technology. The use, administration and security is like in the office, only at home.",
+            "list": ["Stable connections \n  The AirZen Set provides WiFi anywhere in your home."]
         },
         "easy": {
             "_comment": "'Easy' section of page",
             "tip": "Easy",
-            "title": "couldn't be more relaxed!",
-            "description": "Fridge, toaster and Playstation: Air Zen is highly compatible. Update your home network with setup in minutes. All you need is an internet connection. \n And the most relaxing thing about it: It almost adjusts itself thanks to our mesh technology. The independent maintenance and administration then runs just as smoothly as the installation.",
+            "title": "SIMPLE IS GOOD, AUTOMATICALLY BETTER.",
+            "description": "Unpack, plug in and get started. The network sets itself up almost by itself, thanks to automated setup, without any technicians. All you need is an internet connection. The independent maintenance and administration then runs as smoothly as the installation - it sounds relaxed, and it is.",
             "list": [
-                "Safe wifi for kids \n including internet filter and pause button",
-                "Safe wifi for kids \n including internet filter and pause button",
-                "Safe wifi for kids \n including internet filter and pause button"
+                "Family management via app \n Individual passwords for each family member.",
+                "Smart Roaming \n The best connection to the AirZen nodes - automatically.",
+                "Secure Smart Home \n All “Things” have their own network."
+            ]
+        },
+        "easyDigital": {
+            "_comment": "'Einfach' Abschnitt der Seite",
+            "tip": "Einfach",
+            "title": "Digital break.",
+            "description": "Always live in the On, but also take a break from time to time. Each family member and smart home device has its own secure access. With the WLAN pause function, network use can be limited and regulated. You can work in the home office while the screen in the children's room has a break.",
+            "list": [
+                "Individual pause function \n Internet break in a few seconds via app.",
+                "internet timer  \n Determine when the WLAN can be used.",
+                "youth protection function \n Protection against harmful influences on the Internet."
+            ]
+        },
+        "security": {
+            "_comment": "'Einfach' Abschnitt der Seite",
+            "tip": "security",
+            "title": "always up-to-date",
+            "description": "After the update is before the update. Part of our holistic \"Network as a Service\" approach is to offer reliability through automatic software updates for maximum protection and WiFi quality assurance. You can also rely on AirZen in the event of a fault and quickly, directly via live chat in the AirZen app.",
+            "list": [
+                "BotNet detection \n A virus needs orders, we make it difficult.",
+                "Automated updates \n Security through the latest firmware & security filter.",
+                "malware filters \n Fraudulent websites are largely filtered."
             ]
         },
         "ournode": {
