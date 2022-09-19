@@ -141,7 +141,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
                                 </linearGradient>
                             </defs>
                         </svg>
-                        <p ref={el => {if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='font-lato text-lg text-white mt-11 text-left tracking-widest'>{t('landing.contact.subtitle')}</p>
+                        {/* <p ref={el => {if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='font-lato text-lg text-white mt-11 text-left tracking-widest'>{t('landing.contact.subtitle')}</p> */}
                         <p ref={el => {if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='text-left text-slate-300 mt-5 mb-2'>Name</p>
                         <div className='custom-input-gradient w-full mb-5' ref={el => { nameRef.current = el; animSlideUp.current.push(el); animFadeIn.current.push(el) }}>
                             <input
