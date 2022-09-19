@@ -86,7 +86,8 @@
             "title": "Contact",
             "subtitle": "High-end network technologies for a relaxed everyday life and working environment. And it is extraordinarily simple, safe and reliable.",
             "send": "Send",
-            "description": "I have read the privacy policy and agree to the storage and processing of my data by AirZen Networks Lda. \n I agree that my data will be collected and stored electronically to answer my request. I can withdraw my consent at any time: privacy@airzen.io"
+            "description": "I have read the \nprivacy policy\n and agree to the storage and processing of my data by AirZen Networks Lda. \n I agree that my data will be collected and stored electronically to answer my request. I can withdraw my consent at any time: privacy@airzen.io",
+            "href": "https://www.plume.com/legal/"
         },
         "menu": "Solutions \n About us \n References \n Contact"
     },
