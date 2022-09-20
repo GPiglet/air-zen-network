@@ -61,6 +61,9 @@ module.exports = {
             maxWidth: "1300px",
           },
         },
+        ".initial":{
+          position : "initial !important"
+        },
         ".text-title-md": {
           fontFamily: "lato",
           textTransform: "uppercase",
