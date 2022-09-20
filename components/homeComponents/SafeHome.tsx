@@ -46,7 +46,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
     console.log(sliderList)
 
     const flickityProps = {
-        className: "carousel-nav pl-[55px] md:h-[70%] mt-[120px] md:hidden",
+        className: "carousel-nav home-carousel pl-[55px] h-screen mt-[120px] md:hidden ",
         options: {
             asNavFor: ".carousel-main",
             contain: true,
@@ -217,7 +217,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
 
             {/*right-side animation*/}
             <div className="realtive md:initial h-[30rem] sm:h-[37rem] md:h-0">
-                <svg ref={refAnimRightImage} className="absolute translate-x-[-27%] sm:translate-x-[-14%] md:translate-x-0 top-[24%] sm:top-[30%] md:top-[90%] md:w-[120%] xl:w-[100%]   sm:w-[140%] w-[220%] md:right-[-70%] xl:right-[-53%] md:translate-y-[-50%]" viewBox="0 60 907 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg ref={refAnimRightImage} className="absolute translate-x-[-27%] sm:translate-x-[-14%] md:translate-x-0 top-[24%] sm:top-[22%] md:top-[90%] md:w-[120%] xl:w-[100%]   sm:w-[140%] w-[220%] md:right-[-70%] xl:right-[-53%] md:translate-y-[-50%]" viewBox="0 60 907 750" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.4" d="M538.472 704.59C686.17 656.921 768.31 499.556 721.937 353.106C675.564 206.655 518.239 126.576 370.541 174.245C222.842 221.913 140.702 379.278 187.075 525.729C233.448 672.179 390.774 752.258 538.472 704.59Z" fill="url(#paint0_radial_1376_4815)" />
                     <path opacity="0.5" d="M512.183 639.605C615.95 606.114 673.659 495.555 641.079 392.664C608.499 289.773 497.968 233.513 394.2 267.003C290.433 300.493 232.724 411.052 265.304 513.943C297.884 616.834 408.415 673.095 512.183 639.605Z" fill="url(#paint1_radial_1376_4815)" />
                     <path d="M621.253 399.063C650.392 491.089 598.779 589.983 505.956 619.941C413.134 649.898 314.27 599.571 285.13 507.544C255.99 415.517 307.604 316.624 400.426 286.666C493.249 256.708 592.113 307.036 621.253 399.063Z" stroke="url(#paint2_linear_1376_4815)" />
@@ -335,10 +335,10 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                             }
 
                         </Flickity>
-                        <AZCarousel className="hidden md:block carousel-nav pl-[55px]" onInit={onInitCarousel} onSelect={onSelectCarousel} onShow={onShowCarousel} onHide={onHideCarousel} onCalcHeight={onCalcHeight}>
+                        <AZCarousel className="hidden md:block carousel-nav home-carousel pl-[55px]" onInit={onInitCarousel} onSelect={onSelectCarousel} onShow={onShowCarousel} onHide={onHideCarousel} onCalcHeight={onCalcHeight}>
                             {
                                 (sliderList as unknown as any[]).map((item, ind) => (
-                                    <div className="absolute">
+                                    <div className="absolute top-1/2 translate-y-[-50%]">
                                         <p className="font-lato-light font-light text-[22px] text-white">{item.tip}</p>
                                         <h1 className="text-title-sm-white">{item.title}</h1>
                                         {
@@ -370,10 +370,13 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                     </div>
                 </div>
             </div>
+            <mask id="fade" maskContentUnits="objectBoundingBox">
+                <rect width="1" height="1" fill="url(#fadeGrad)" />
+            </mask>
 
             {/*left animation for carousal*/}
-            <div className="relative h-[25rem] sm:h-[30rem] md:h-0 block md:hidden">
-                <svg className="md:absolute translate-x-[-16%] sm:translate-x-[-8%] md:translate-x-0 left-[-27%] top-[28.5%] w-[150%] sm:top-[37%]  md:top-1/2 translate-y-[-50%] md:translate-y-[-50%] sm:w-[120%] md:w-[100%] xl:w-[70%]   sm:left-[-10%]  md:left-[-45%] xl:left-[-20%]" viewBox="0 0 804 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className="relative h-[30rem] sm:h-[30rem] md:h-0 block md:hidden">
+                <svg className="md:absolute translate-x-[-16%] sm:translate-x-[-8%] md:translate-x-0 left-[-27%] top-[28.5%] w-[150%] sm:top-[37%]  md:top-1/2 translate-y-[-45%] sm:translate-y-[-16%] md:translate-y-[-50%] sm:w-[120%] md:w-[100%] xl:w-[70%]   sm:left-[-10%]  md:left-[-45%] xl:left-[-20%]" viewBox="0 0 804 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.4" d="M497.478 697.95C666.249 643.997 760.109 465.887 707.12 300.13C654.13 134.373 474.358 43.7373 305.587 97.69C136.816 151.643 42.9562 329.753 95.9454 495.51C148.935 661.267 328.707 751.903 497.478 697.95Z" fill="url(#paint0_radial_1376_4769)" />
                     <path opacity="0.5" d="M474.04 622.595C600.747 582.09 671.214 448.371 631.432 323.926C591.649 199.481 456.682 131.435 329.975 171.941C203.267 212.447 132.801 346.166 172.583 470.61C212.366 595.055 347.332 663.101 474.04 622.595Z" fill="url(#paint1_radial_1376_4769)" />
                     <path d="M586.13 339.163C618.068 439.068 561.499 546.433 459.757 578.958C358.015 611.483 249.656 556.841 217.719 456.937C185.781 357.032 242.35 249.667 344.092 217.142C445.834 184.617 554.193 239.258 586.13 339.163Z" stroke="url(#paint2_linear_1376_4769)" />

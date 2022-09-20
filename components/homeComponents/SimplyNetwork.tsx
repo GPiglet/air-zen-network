@@ -54,12 +54,13 @@ const SimplyNetwork: FC<{ props?: any, ref: any }> = React.forwardRef((props: an
                     <path opacity="0.6" d="M207.243 296.694C143.239 409.515 181.519 553.25 292.744 617.735C403.968 682.221 546.018 643.038 610.022 530.218C674.025 417.398 635.745 273.663 524.521 209.177C413.297 144.691 271.246 183.874 207.243 296.694Z" fill="url(#paint2_radial_1376_4715)" />
                     <path opacity="0.6" d="M170.266 269.414C196.873 319.921 258.548 338.68 308.023 311.311C357.498 283.943 376.036 220.812 349.429 170.305C322.823 119.797 261.147 101.039 211.672 128.408C162.198 155.776 143.659 218.906 170.266 269.414Z" fill="url(#paint3_radial_1376_4715)" />
                     <path opacity="0.3" d="M424.577 500.01C410.309 554.202 441.15 609.471 493.462 623.456C545.775 637.442 599.749 604.847 614.017 550.655C628.285 496.463 597.444 441.194 545.132 427.209C492.819 413.223 438.845 445.818 424.577 500.01Z" fill="url(#paint4_radial_1376_4715)" />
-
+                    <mask id="mask0_1376_4721" style={{ "maskType": "alpha" }} maskUnits="userSpaceOnUse" x="0" y="0" width="768" height="769">
+                        <circle cx="50%" cy="54%" r="180" fill="url(#paint0_linear_1376_4721)" />
+                    </mask>
+                    <g mask="url(#mask0_1376_4721)"><rect x="-21%" y="-27%" width="767.11" height="787.11" rx="0" fill="url(#pattern0)"></rect></g>
                     {/* <image href="/images/HomeContentPic1.png" className=" w-[44%]"  x="28.5%" y="29%"  /> */}
                     <defs>
                         <clipPath id="myCircle"><circle cx="413" cy="415" r="200" fill="#FFFFFF"></circle></clipPath>
-
-
                         <linearGradient id="paint0_linear_1376_4715" x1="300.536" y1="135.46" x2="504.148" y2="674.285" gradientUnits="userSpaceOnUse">
                             <stop stopColor="#669AB4" />
                             <stop offset="1" stopColor="#669AB4" stopOpacity="0" />
@@ -80,9 +81,18 @@ const SimplyNetwork: FC<{ props?: any, ref: any }> = React.forwardRef((props: an
                             <stop stopColor="#2294C3" />
                             <stop offset="1" stopColor="#2294C3" stopOpacity="0" />
                         </radialGradient>
+                        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlinkHref="#image0_1376_4721" transform="translate(-0.375957 -0.125) scale(0.00296532 0.00301907)" />
+                        </pattern>
+                        <linearGradient id="paint0_linear_1376_4721" x1="483.623" y1="436.498" x2="24.2094" y2="64.8759" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#D9D9D9" />
+                            <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
+                        </linearGradient>
+                        <image id="image0_1376_4721" href="/images/homeContent1.png" className="gradient-image" width="400" height="180" x="22.5%" y="27%" clip-path="url(#myCircle)" fill-opacity="0.5"></image>
                     </defs>
-                    <image href="/images/homeContent1.png" width="700" height="600" clipPath="url(#myCircle)" x="7.5%" y="18%" fillOpacity="0.5"></image>
                 </svg>
+
+
             </div>
         </section>
 
