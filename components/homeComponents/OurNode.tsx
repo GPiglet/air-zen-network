@@ -95,8 +95,8 @@ const OurNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
 
                         <defs>
                             <linearGradient id="paint0_linear_0_1" x1="82.8653" y1="175.091" x2="432.822" y2="480.141" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#159BDE" />
-                                <stop offset="1" stop-color="#159BDE" stop-opacity="0" />
+                                <stop />
+                                <stop offset="1" stopOpacity="0" />
                             </linearGradient>
                             <radialGradient id="paint1_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(232.243 86.8322) rotate(73.054) scale(452.809 451.926)">
                                 <stop stopColor="#2294C3" />
@@ -109,10 +109,6 @@ const OurNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
                             <linearGradient id="paint3_linear_0_1" x1="244.657" y1="174.283" x2="319.955" y2="404.2" gradientUnits="userSpaceOnUse">
                                 <stop />
                                 <stop offset="1" stopOpacity="0" />
-                            </linearGradient>
-                            <linearGradient id="paint0_linear_902_3184" x1="49.7046" y1="131.264" x2="344.333" y2="399.489" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#159BDE" />
-                                <stop offset="1" stop-color="#159BDE" stop-opacity="0" />
                             </linearGradient>
                         </defs>
                     </svg>
