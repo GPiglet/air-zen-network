@@ -23,7 +23,7 @@ const Mainlayout: FC<MainlayoutProps> = ({ children, navItems, hasFooter = true 
         //const cookie = useContext(StoreContext)
         const cookie = getStorage('cookieAllow')
         setCookie(Boolean(cookie))
-    }, [])
+    })
 
     return (
         <div>
