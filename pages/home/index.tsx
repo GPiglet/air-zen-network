@@ -4,8 +4,6 @@ import type { NextPage } from 'next'
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
-import { useRouter } from 'next/router'
-import { Link } from 'react-scroll'
 import gsap from 'gsap';
 
 
@@ -13,15 +11,12 @@ import gsap from 'gsap';
 import Mainlayout from '../../layout/main'
 import SimplyNetwork from '../../components/homeComponents/SimplyNetwork'
 import SafeHome from '../../components/homeComponents/SafeHome'
-import Reliable from '../../components/homeComponents/Reliable'
-import Easy from '../../components/homeComponents/Easy'
 import OurNode from '../../components/homeComponents/OurNode'
 import HomeForm from '../../components/homeComponents/homeForm'
 import AnimateFooter from '../../components/common/footer/AnimateFooter'
 
 const Home: NextPage = () => {
 	const { t } = useTranslation()
-	const router = useRouter()
 
 	const navItems: Array<any> = [
 		{
@@ -55,6 +50,8 @@ const Home: NextPage = () => {
 		refSectionSafeHome,
 		refSectionSafeHome,
 		refSectionSafeHome,
+		// refSectionSafeHome,
+		// refSectionSafeHome,
 		refSectionOurNode,
 		refSectionFooter
 	];
@@ -162,23 +159,12 @@ const Home: NextPage = () => {
 		}	
 	}, [])
 
-	const scrollAnchor = () => {
-		console.log('----')
-		router.push({
-			pathname: '/home',
-			query: { section: 'technology' }
-		})
-		// setFormView(!formView)
-	}
-
 	return (
-		<div className='back-right-bottom-gradient-primary relative md:h-screen'>
+		<div className='back-left-top-gradient-primary back-right-bottom-gradient-primary relative md:h-screen'>
 			<Mainlayout navItems={navItems} hasFooter={false}>
 				<HomeForm />
 				<SimplyNetwork ref={refSectionSimplyNetwork}/>
 				<SafeHome ref={refSectionSafeHome}/>
-				{/* <Reliable />
-				<Easy /> */}
 				<OurNode ref={refSectionOurNode}/>
 				<AnimateFooter ref={refSectionFooter}/>
 			</Mainlayout>

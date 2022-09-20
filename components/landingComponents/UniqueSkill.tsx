@@ -295,7 +295,7 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                     display: 'hidden',
                 },
                 {
-                    y: 120,
+                    y: 100,
                     opacity: 1,
                     display: 'flex',
                     duration
@@ -333,7 +333,7 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                     height: 170,
                 },
                 {
-                    height: 400,
+                    height: 360,
                     duration
                 },
                 0
@@ -471,12 +471,12 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                                                 </picture>
                                                 <p className='relative font-lato text-[22px] uppercase unique-skill-title pb-3'>{item.title}</p>
                                                 <p className='relative unique-skill-subtitle font-lato-light font-bold text-xl w-[70%] sm:w-[180px] pb-3'>{item.subtitle}</p>
-                                                <p className='relative hidden font-lato font-light text-xl text-lg unique-skill-description pb-3 sm:w-[280px]'>{item.description}</p>
-                                                <ul className='relative hidden list-disc pl-2 unique-skill-list md:w-[280px]'>
+                                                <p className='relative hidden font-lato font-light text-lg unique-skill-description pb-3 sm:w-[250px]'>{item.description}</p>
+                                                {/* <ul className='relative hidden list-disc pl-2 unique-skill-list md:w-[280px]'>
                                                     {item.list.split('\n').map((subitem: string, ind: number) => (
                                                         <li className='font-lato text-[16px] font-extralight leading-6' key={ind}>{subitem}</li>
                                                     ))}
-                                                </ul>
+                                                </ul> */}
                                                 <button onClick={() => router.push(graphList[index].href)} className="cursor-pointer">
                                                     <div className='unique-skill-sparkle w-[89px] h-[89px] md:w-[65px] md:h-[65px] top-[30px] md:top-auto sparkle absolute right-[10px] sm:right-[80px] md:right-[10px] md:bottom-[22px]'></div>
                                                     <div className='unique-skill-button absolute bottom-0 flex items-center justify-between w-full hidden' >

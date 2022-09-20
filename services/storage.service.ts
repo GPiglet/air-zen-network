@@ -9,7 +9,6 @@ export const setStorage = (key:string, data:any) => {
     let data = localStorage.getItem(key);
     try {
       //data = JSON.parse(data);
-      console.log(data,'------------')
     } catch (err) {
       // data = data;
     }

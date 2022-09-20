@@ -18,17 +18,17 @@ type MainlayoutProps = {
 
 const Mainlayout: FC<MainlayoutProps> = ({ children, navItems, hasFooter = true }) => {
 
-    const [cookie, setCookie] = useState(false)
+    const [cookie, setCookie] = useState(true)
     useEffect(() => {
         //const cookie = useContext(StoreContext)
         const cookie = getStorage('cookieAllow')
         setCookie(Boolean(cookie))
-    })
+    }, [])
 
     return (
         <div>
             <Navbar navItems={navItems} />
-            {cookie ? '' : <Sticky />}
+            {!cookie && <Sticky />}
 
             {children}
             {hasFooter && <Footer />}

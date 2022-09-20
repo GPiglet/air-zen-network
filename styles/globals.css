@@ -18,6 +18,16 @@ body {
   border: 1px solid transparent;
 }
 
+.back-right-bottom-gradient-primary {
+  background: radial-gradient(100% 237.07% at 100% 45.06%, rgba(1, 172, 230, 0.6) 0%, rgba(1, 172, 230, 0) 100%), #000000;
+  /* background-attachment: fixed; */
+}
+
+.back-left-top-gradient-secondary {
+  background: linear-gradient(170.47deg, #1E4D2E -4.4%, #000000 100%), #000000;
+  background-attachment: fixed;
+}
+
 @media only screen and (max-width: 920px) {
   html,
   body {
@@ -36,6 +46,11 @@ body {
     .font-lato-light {
       -webkit-text-stroke-width: 0.2px;
     }
+  }
+
+  .back-left-top-gradient-primary {
+    background: linear-gradient(146.42deg, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 12%), #000000;
+    /* background-attachment: fixed; */
   }
 
   .unique-skill-border-gradient {
@@ -61,21 +76,6 @@ a {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.back-left-top-gradient-primary {
-  background: linear-gradient(146.42deg, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 12%), #000000;
-  /* background-attachment: fixed; */
-}
-
-.back-right-bottom-gradient-primary {
-  background: radial-gradient(100% 237.07% at 100% 45.06%, rgba(1, 172, 230, 0.6) 0%, rgba(1, 172, 230, 0) 100%), #000000;
-  /* background-attachment: fixed; */
-}
-
-.back-left-top-gradient-secondary {
-  background: linear-gradient(170.47deg, #1E4D2E -4.4%, #000000 100%), #000000;
-  background-attachment: fixed;
-}
 
 .center-transform {
   transform: translate(-50%, -50%);

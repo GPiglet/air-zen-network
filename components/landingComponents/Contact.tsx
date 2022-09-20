@@ -141,7 +141,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
                                 </linearGradient>
                             </defs>
                         </svg>
-                        <p ref={el => {if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='font-lato text-lg text-white mt-11 text-left tracking-widest'>{t('landing.contact.subtitle')}</p>
+                        {/* <p ref={el => {if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='font-lato text-lg text-white mt-11 text-left tracking-widest'>{t('landing.contact.subtitle')}</p> */}
                         <p ref={el => {if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='text-left text-slate-300 mt-5 mb-2'>Name</p>
                         <div className='custom-input-gradient w-full mb-5' ref={el => { nameRef.current = el; animSlideUp.current.push(el); animFadeIn.current.push(el) }}>
                             <input
@@ -176,6 +176,8 @@ const Contact = React.forwardRef((props: any, ref: any) => {
                             </div>
                             <p className='font-lato font-light text-left text-base text-white tracking-[2px] my-4'>
                                 {t('landing.contact.description').split('\n')[0]}
+                                <a href={t('landing.contact.href')} className="underline">{t('landing.contact.description').split('\n')[1]}</a>
+                                {t('landing.contact.description').split('\n')[2]}
                             </p>
                         </div>
                         <div ref={el => { if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='flex relative z-40'>
@@ -183,7 +185,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
                                 <CustomCheckbox checked={dataCollection} onClick={() => changeCheck('dataCollection')} />
                             </div>
                             <p className='font-lato font-light text-left text-base text-white tracking-[2px] my-4'>
-                                {t('landing.contact.description').split('\n')[1]}
+                                {t('landing.contact.description').split('\n')[3]}
                                 {dataCollection}
 
                             </p>
