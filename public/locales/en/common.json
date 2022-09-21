@@ -113,7 +113,7 @@
             "description": "Finally professional WiFi technology for the home - as powerful as in industry, as user-friendly as never before. To prevent WiFi frustration, three AirZen nodes in a set ensure seamless WiFi connections thanks to sophisticated mesh technology. The use, administration and security is like in the office, only at home.",
             "list": ["Stable connections \n  The AirZen Set provides WiFi anywhere in your home."]
         },
-        "easy": {
+        "easy":{
             "_comment": "'Easy' section of page",
             "tip": "Easy",
             "title": "SIMPLE IS GOOD, AUTOMATICALLY BETTER.",
@@ -124,7 +124,19 @@
                 "Secure Smart Home \n All “Things” have their own network."
             ]
         },
-        "easyDigital": {
+       "swiper": [
+        {
+            "_comment": "'Easy' section of page",
+            "tip": "Easy",
+            "title": "SIMPLE IS GOOD, AUTOMATICALLY BETTER.",
+            "description": "Unpack, plug in and get started. The network sets itself up almost by itself, thanks to automated setup, without any technicians. All you need is an internet connection. The independent maintenance and administration then runs as smoothly as the installation - it sounds relaxed, and it is.",
+            "list": [
+                "Family management via app \n Individual passwords for each family member.",
+                "Smart Roaming \n The best connection to the AirZen nodes - automatically.",
+                "Secure Smart Home \n All “Things” have their own network."
+            ]
+        },
+       {
             "_comment": "'Einfach' Abschnitt der Seite",
             "tip": "Einfach",
             "title": "Digital break.",
@@ -135,7 +147,7 @@
                 "youth protection function \n Protection against harmful influences on the Internet."
             ]
         },
-        "security": {
+        {
             "_comment": "'Einfach' Abschnitt der Seite",
             "tip": "security",
             "title": "always up-to-date",
@@ -145,7 +157,8 @@
                 "Automated updates \n Security through the latest firmware & security filter.",
                 "malware filters \n Fraudulent websites are largely filtered."
             ]
-        },
+        }
+       ],
         "ournode": {
             "_comment": "'Technology' section of page",
             "tip": "Technology",

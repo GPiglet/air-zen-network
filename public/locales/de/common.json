@@ -113,7 +113,7 @@
             "description": "Endlich Profi WLAN Technik für Zuhause - so leistungsstark wie in der Industrie, so benutzerfreundlich wie noch nie. Um WLAN-Frust vorzubeugen, sorgen drei AirZen Nodes im Set dank ausgeklügelter Mesh-Technologie für lückenlose WLAN-Verbindungen. Die Nutzung, Verwaltung und Sicherheit ist damit wie im Office, nur Zuhause.",
             "list": ["Stabile Verbindungen \n  Das AirZen Set bietet WLAN überall in ihrem Zuhause."]
         },
-        "easy": {
+        "easy":{
             "_comment": "'Einfach' Abschnitt der Seite",
             "tip": "Einfach",
             "title": "EINFACH IST GUT, AUTOMATISCH BESSER.",
@@ -124,28 +124,41 @@
                 "Sicheres Smart Home \n Alle “Things” haben ein eigenes Netzwerk."
             ]
         },
-        "easyDigital": {
-            "_comment": "'Einfach' Abschnitt der Seite",
-            "tip": "Einfach",
-            "title": "Digitale Auszeit.",
-            "description": "Immer im On leben, aber auch mal Pause machen. Jedes Familienmitglied und Smart Home Gerät erhält einen eigenen, gesicherten Zugang. Mit der WLAN-Pause Funktion kann die Netzwerknutzung begrenzt und reguliert werden. So kann im HomeOffice gearbeitet werden, während der Bildschirm im Kinderzimmer Pause hat.",
-            "list": [
-                "Individuelle Pause Funktion \n Internetpause in wenigen Sekunden per App.",
-                "Internet-Timer  \n Legen Sie fest wann das WLAN nutzbar ist.",
-                "Jugendschutzfunktion \n Schutz vor schädlichen Einflüssen im Internet."
-            ]
-        },
-        "security": {
-            "_comment": "'Einfach' Abschnitt der Seite",
-            "tip": "Sicherheit",
-            "title": "immer up to date",
-            "description": "Nach dem Update ist vor dem Update. Teil unseres ganzheitlichen „Network as a Service“ Ansatz ist es, Zuverlässigkeit durch automatische Softwareaktualisierungen für größtmöglichen Schutz und WLAN-Qualitätssicherung zu bieten. Auf AirZen ist auch bei Störungen Verlass und das schnell, direkt per Live-Chat in der AirZen App.",
-            "list": [
-                "BotNet Erkennung \n Ein Virus braucht Befehle, wir erschweren dies.",
-                "Automatisierte Updates \n Sicherheit durch aktuellste Firmware & Security Filter.",
-                "Malware Filter \n Betrügerische Websites werden weitgehend gefiltert."
-            ]
-        },
+        "swiper": [
+            {
+                "_comment": "'Einfach' Abschnitt der Seite",
+                "tip": "Einfach",
+                "title": "EINFACH IST GUT, AUTOMATISCH BESSER.",
+                "description": "Auspacken, einstecken und durchstarten. Das Netzwerk richtet sich fast wie von selbst ein, dank automatisierter Einrichtung, ganz ohne Techniker:in. Alles was man braucht ist eine Internetverbindung. So reibungslos wie die Installation läuft dann auch die eigenständige Wartung und Verwaltung ab - klingt entspannt, ist es auch. ",
+                "list": [
+                    "Familienverwaltung per App \n Individuelle Passwörter für jedes Familienmitglied. ",
+                    "Smart Roaming \n Die beste Verbindung zu den AirZen Nodes - automatisch.",
+                    "Sicheres Smart Home \n Alle “Things” haben ein eigenes Netzwerk."
+                ]
+            },
+            {
+                "_comment": "'Einfach' Abschnitt der Seite",
+                "tip": "Einfach",
+                "title": "Digitale Auszeit.",
+                "description": "Immer im On leben, aber auch mal Pause machen. Jedes Familienmitglied und Smart Home Gerät erhält einen eigenen, gesicherten Zugang. Mit der WLAN-Pause Funktion kann die Netzwerknutzung begrenzt und reguliert werden. So kann im HomeOffice gearbeitet werden, während der Bildschirm im Kinderzimmer Pause hat.",
+                "list": [
+                    "Individuelle Pause Funktion \n Internetpause in wenigen Sekunden per App.",
+                    "Internet-Timer  \n Legen Sie fest wann das WLAN nutzbar ist.",
+                    "Jugendschutzfunktion \n Schutz vor schädlichen Einflüssen im Internet."
+                ]
+            },
+            {
+                "_comment": "'Einfach' Abschnitt der Seite",
+                "tip": "Sicherheit",
+                "title": "immer up to date",
+                "description": "Nach dem Update ist vor dem Update. Teil unseres ganzheitlichen „Network as a Service“ Ansatz ist es, Zuverlässigkeit durch automatische Softwareaktualisierungen für größtmöglichen Schutz und WLAN-Qualitätssicherung zu bieten. Auf AirZen ist auch bei Störungen Verlass und das schnell, direkt per Live-Chat in der AirZen App.",
+                "list": [
+                    "BotNet Erkennung \n Ein Virus braucht Befehle, wir erschweren dies.",
+                    "Automatisierte Updates \n Sicherheit durch aktuellste Firmware & Security Filter.",
+                    "Malware Filter \n Betrügerische Websites werden weitgehend gefiltert."
+                ]
+            }
+        ],
         "ournode": {
             "_comment": "'Technik' Abschnitt der Seite",
             "tip": "Technik",

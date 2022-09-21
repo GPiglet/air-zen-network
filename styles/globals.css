@@ -260,6 +260,18 @@ section {
   margin-bottom: 40px;
 }
 
+.home-carousel {
+  height: 100vh !important;
+}
+
+.gradient-image {
+  /*filter: grayscale(100%) contrast(0.9);*/
+}
+
+.gradient-image:after{
+  /*background-image: linear-gradient(45deg, darken(#13abdb,5%), #B10DC9);*/
+}
+
 .carousel-nav:focus-visible {
   outline: none;
 }
