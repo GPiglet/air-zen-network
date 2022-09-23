@@ -29,7 +29,9 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                     opacity: 0, onComplete: () => {
                         gsap.to(document.getElementsByClassName('carousel-images')[flkty.selectedIndex], { opacity: 1 });
                     }
-                })
+                });
+                gsap.set('.desc-divs', {display: 'none'});
+                gsap.set(document.getElementsByClassName('desc-divs')[flkty.selectedIndex], {display: 'block'});
             })
         }
     }, [flkty])
@@ -69,8 +71,9 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
         setCarousel(carousel);
     }
 
-    const onSelectCarousel = (carousel: any, slide: any, selectedIndex: number, position: number) => {
+    const onSelectCarousel = (carousel: any, slide: any, selectedIndex: number, position: number, where: string) => {
         setSelected(selectedIndex);
+        if ( window.innerWidth < 920 || where != 'select' ) return;
         gsap.to(".phone-images", {
             opacity: 0, onComplete: () => {
                 gsap.to(document.getElementsByClassName('phone-images')[selectedIndex + 2], { opacity: 1 });
@@ -196,13 +199,13 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
     return (
         <div id="secure" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container mx-auto relative md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
             {/*left side animation*/}
-            <div className="relative h-[41rem] sm:h-[52rem] md:static md:h-auto">
+            <div className="relative h-[38rem] sm:h-[52rem] md:static md:h-auto">
                 <svg className="absolute left-[50%] translate-x-[-50%] top-[-60px] w-[270%] sm:top-0 sm:w-[120%] md:left-[10%] md:top-1/2 md:translate-y-[-50%] md:w-[60%] md:mt-[70px]" viewBox="0 0 804 796" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.4" d="M497.478 697.95C666.249 643.997 760.109 465.887 707.12 300.13C654.13 134.373 474.358 43.7373 305.587 97.69C136.816 151.643 42.9562 329.753 95.9454 495.51C148.935 661.267 328.707 751.903 497.478 697.95Z" fill="url(#paint0_radial_1376_4769)" />
                     <path opacity="0.5" d="M474.04 622.595C600.747 582.09 671.214 448.371 631.432 323.926C591.649 199.481 456.682 131.435 329.975 171.941C203.267 212.447 132.801 346.166 172.583 470.61C212.366 595.055 347.332 663.101 474.04 622.595Z" fill="url(#paint1_radial_1376_4769)" />
                     <path d="M586.13 339.163C618.068 439.068 561.499 546.433 459.757 578.958C358.015 611.483 249.656 556.841 217.719 456.937C185.781 357.032 242.35 249.667 344.092 217.142C445.834 184.617 554.193 239.258 586.13 339.163Z" stroke="url(#paint2_linear_1376_4769)" />
                     {['Home1.png', 'Home2.png', 'Home3.png', 'Home4.png', 'Home5.png'].map((item, ind) => 
-                        <image key={ind} href={"/images/" + item} x="32.5%" y="10%" fillOpacity='0.5' className={`${ind==0?'' : 'opacity-0'} phone-images w-[25%] translate-x-[4%] sm:translate-x-0 sm:w-[35%] md:translate-y-[4%]`} />
+                        <image key={ind} href={"/images/" + item} x="32.5%" y="10%" fillOpacity='0.5' className={`${ind==0?'' : 'opacity-0'} phone-images w-[25%] translate-x-[4%] sm:translate-x-0 sm:w-[35%] md:translate-y-[4%] 4xl:w-[43%] 4xl:translate-x-[-5%] 4xl:translate-y-[1%]`} />
                     )}
                     <defs>
                         <radialGradient id="paint0_radial_1376_4769" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(332.077 121.28) rotate(72.664) scale(635.151 646.7)">
@@ -243,8 +246,8 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
             </div>
 
             {/*right-side animation*/}
-            <div className="realtive z-0 md:static h-[40rem] sm:h-0">
-                <svg ref={refAnimRightImage} className="absolute translate-x-[-27%] top-[22%] w-[220%] sm:translate-x-[6%] sm:top-[20%] sm:w-[140%] md:translate-x-0 md:top-[90%] md:mt-[70px] md:w-[70%] md:right-[-30%] md:translate-y-[-50%]" viewBox="0 60 907 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className="realtive z-0 md:static h-[32rem] sm:h-0">
+                <svg ref={refAnimRightImage} className="absolute translate-x-[-27%] top-[25%] w-[220%] sm:translate-x-[6%] sm:top-[20%] sm:w-[140%] md:translate-x-0 md:top-[90%] md:mt-[70px] md:w-[70%] md:right-[-30%] md:translate-y-[-50%]" viewBox="0 60 907 750" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.4" d="M538.472 704.59C686.17 656.921 768.31 499.556 721.937 353.106C675.564 206.655 518.239 126.576 370.541 174.245C222.842 221.913 140.702 379.278 187.075 525.729C233.448 672.179 390.774 752.258 538.472 704.59Z" fill="url(#paint0_radial_1376_4815)" />
                     <path opacity="0.5" d="M512.183 639.605C615.95 606.114 673.659 495.555 641.079 392.664C608.499 289.773 497.968 233.513 394.2 267.003C290.433 300.493 232.724 411.052 265.304 513.943C297.884 616.834 408.415 673.095 512.183 639.605Z" fill="url(#paint1_radial_1376_4815)" />
                     <path d="M621.253 399.063C650.392 491.089 598.779 589.983 505.956 619.941C413.134 649.898 314.27 599.571 285.13 507.544C255.99 415.517 307.604 316.624 400.426 286.666C493.249 256.708 592.113 307.036 621.253 399.063Z" stroke="url(#paint2_linear_1376_4815)" />
@@ -322,14 +325,12 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
             </div>
 
             {/*Carousal*/}
-            <div ref={el => { if (el && refAnimContents.current.indexOf(el) == -1) refAnimContents.current.push(el) }} className="relative w-full h-full z-10 md:fixed md:hidden md:px-0 md:mt-0 md:pl-[25%]">
+            <div ref={el => { if (el && refAnimContents.current.indexOf(el) == -1) refAnimContents.current.push(el) }} className="carousel-content relative w-full h-full z-10 md:fixed md:hidden md:px-0 md:mt-0 md:pl-[25%]">
                 <picture className={`${selected + 1 === sliderList.length ? 'hidden' : ''} `}>
-                    <source srcSet="/images/sparkle-arrow.svg" type="image/webp" />
-                    <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('next')} className='w-[47px] h-[93px] cursor-pointer absolute right-[20px] md:right-[230px]  bottom-[20%] md:bottom-auto md:top-1/2 center-y-transform z-50  ' />
+                    <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('next')} className='w-[47px] h-[93px] cursor-pointer absolute right-[20px] md:right-[230px]  top-[60%] md:bottom-auto md:top-1/2 center-y-transform z-50  ' />
                 </picture>
                 <picture className={`${selected === 0 ? 'hidden' : ''}`}>
-                    <source srcSet="/images/sparkle-arrow.svg" type="image/webp" />
-                    <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('prev')} className={`w-[47px] h-[93px]  cursor-pointer absolute left-[20px] md:left-[-70px] sparkle-arrow-reverse transform-none bottom-[20%] md:bottom-auto md:top-1/2 center-y-transform z-50 `} />
+                    <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('prev')} className={`z-50 w-[47px] h-[93px] sparkle-arrow-reverse top-[60%] cursor-pointer absolute left-[20px] md:left-[-70px] md:bottom-auto md:top-1/2 4xl:left-[-110px]`} />
                 </picture>
                 <div className="flex flex-col md:w-full md:justify-center">
                     <div className="w-full mx-auto md:w-[70%] md:mx-0">
@@ -338,22 +339,14 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                         >
                             {
                                 (sliderList as unknown as any[]).map((item, ind) => (
-                                    <div className="relative w-[90%] md:w-full mr-4 opacity-50" key={ind}>
-                                        <p className="font-lato-light font-light text-[22px] text-white">{item.tip}</p>
-                                        <h1 className="text-title-sm-white">{item.title}</h1>
-                                        {
-                                            item.description.split('\n').map((sentence: string, index: number) =>
-                                                <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{sentence}</p>
-                                            )
-                                        }
+                                    <div className="relative w-full mr-4 opacity-50" key={ind}>
+                                        {/* <p className="font-lato-light font-light text-[22px] text-white">{item.tip}</p> */}
+                                        <h1 className="text-title-sm-white text-center text-[22px] translate-x-[-20px]">{item.title}</h1>                                        
                                         <div className="grid md:grid-cols-2 w-full mt-8">
                                             {
                                                 (item.list as unknown as any[]).map((list, index) =>
                                                     <div className="flex mb-12 w-[90%] md:w-full" key={index}>
-                                                        <picture>
-                                                            <source srcSet="/images/check-icon.svg" type="image/webp" />
-                                                            <img src="/images/check-icon.svg" className="w-[28px] h-[22px] mr-[10px]" alt="" />
-                                                        </picture>
+                                                        <img src="/images/check-icon.svg" className="w-[28px] h-[22px] mr-[15px]" alt="" />
                                                         <div className="text-white tracking-[0.08em]">
                                                             <p className="font-lato text-lg font-medium">{list.split('\n')[0]} </p>
                                                             <p className="font-lato-light text-lg font-light">{list.split('\n')[1]}</p>
@@ -361,8 +354,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                                                     </div>
                                                 )
                                             }
-
-                                        </div>
+                                        </div>                                        
                                     </div>
                                 ))
                             }
@@ -383,10 +375,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                                             {
                                                 (item.list as unknown as any[]).map((list, index) =>
                                                     <div className="flex mb-12 w-[90%] md:w-full" key={index}>
-                                                        <picture>
-                                                            <source srcSet="/images/check-icon.svg" type="image/webp" />
-                                                            <img src="/images/check-icon.svg" className="w-[28px] h-[22px] mr-[10px]" alt="" />
-                                                        </picture>
+                                                        <img src="/images/check-icon.svg" className="w-[28px] h-[22px] mr-[15px]" alt="" />
                                                         <div className="text-white tracking-[0.08em]">
                                                             <p className="font-lato text-lg font-medium">{list.split('\n')[0]} </p>
                                                             <p className="font-lato-light text-lg font-light">{list.split('\n')[1]}</p>
@@ -405,13 +394,13 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
             </div>
 
             {/*left animation for carousal*/}
-            <div className="relative z-0 h-[40rem] sm:h-[40rem] md:hidden">
+            <div className="relative z-0 h-[38rem] sm:h-[40rem] md:hidden">
                 <svg className="absolute translate-x-[-50%] left-[50%] top-[-50%] w-[150%] sm:w-[120%] sm:top-[-30%] md:left-[10%] md:top-1/2 md:translate-y-[-50%] md:w-[60%] md:mt-[70px]" viewBox="0 0 804 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.4" d="M497.478 697.95C666.249 643.997 760.109 465.887 707.12 300.13C654.13 134.373 474.358 43.7373 305.587 97.69C136.816 151.643 42.9562 329.753 95.9454 495.51C148.935 661.267 328.707 751.903 497.478 697.95Z" fill="url(#paint0_radial_1376_4769)" />
                     <path opacity="0.5" d="M474.04 622.595C600.747 582.09 671.214 448.371 631.432 323.926C591.649 199.481 456.682 131.435 329.975 171.941C203.267 212.447 132.801 346.166 172.583 470.61C212.366 595.055 347.332 663.101 474.04 622.595Z" fill="url(#paint1_radial_1376_4769)" />
                     <path d="M586.13 339.163C618.068 439.068 561.499 546.433 459.757 578.958C358.015 611.483 249.656 556.841 217.719 456.937C185.781 357.032 242.35 249.667 344.092 217.142C445.834 184.617 554.193 239.258 586.13 339.163Z" stroke="url(#paint2_linear_1376_4769)" />
                     {['Home3.png', 'Home4.png', 'Home5.png'].map((item, ind) => 
-                        <image key={ind} href={"/images/" + item} x="32.5%" y="10%" fillOpacity='0.5' className={`${ind == 0 ? '' : 'opacity-0'} carousel-images w-[45%] translate-x-[-5%] translate-y-[30%] sm:translate-y-0 sm:translate-x-0 sm:w-[35%]`} />
+                        <image key={ind} href={"/images/" + item} x="32.5%" y="10%" fillOpacity='0.5' className={`${ind == 0 ? '' : 'opacity-0'} carousel-images w-[50%] translate-x-[-8%] translate-y-[23%] sm:translate-y-0 sm:translate-x-0 sm:w-[35%]`} />
                     )}
                     <defs>
                         <radialGradient id="paint0_radial_1376_4769" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(332.077 121.28) rotate(72.664) scale(635.151 646.7)">
@@ -427,7 +416,18 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                             <stop offset="1" stopColor="#159BDE" stopOpacity="0" />
                         </linearGradient>
                     </defs>
-                </svg>
+                </svg>                
+            </div>
+            <div className="md:hidden">
+            {
+                (sliderList as unknown as any[]).map((item, ind) => (
+                    <div className={`desc-divs relative w-full px-10 mb-20 ${ind == 0 ? '' : 'hidden'}`} key={ind}>
+                        {item.description.split('\n').map((sentence: string, index: number) =>
+                            <p className="font-lato font-light tracking-widest text-white text-lg" key={index}>{sentence}</p>
+                        )}
+                    </div>
+                ))
+            }
             </div>
         </div>
 

@@ -62,7 +62,7 @@ const OurNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
     return (
         <div id="technology" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="mx-auto relative md:flex md:items-center md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] w-full">
 
-            <div className="container mx-auto relative px-5 md:px-0 ">
+            <div className="container mx-auto relative">
 
                 <div className="flex flex-wrap md:pt-[42%] align-center">
                     <div className="w-full md:w-[45%] px-10 mx-auto">

@@ -99,7 +99,7 @@ const AZCarousel: FC<AZCarouselProps> = ({children, className, onInit, onChange,
     const select = (index: number) => {
         if ( currentOnDeselect ) currentOnDeselect(carousel, slides[selectedIndex], selectedIndex, position);
         selectedIndex = index;
-        if ( currentOnSelect ) currentOnSelect(carousel, slides[selectedIndex], selectedIndex, position);
+        if ( currentOnSelect ) currentOnSelect(carousel, slides[selectedIndex], selectedIndex, position, 'select');
 
         const [from, end] = getFromTo(position);
         let pos = 0;
@@ -137,7 +137,7 @@ const AZCarousel: FC<AZCarouselProps> = ({children, className, onInit, onChange,
         
         change(position);
         selectedIndex = position;
-        if ( currentOnSelect) currentOnSelect(carousel, slides[selectedIndex], selectedIndex, position);
+        if ( currentOnSelect) currentOnSelect(carousel, slides[selectedIndex], selectedIndex, position, 'init');
 
         // Draggable.create(slides, {
         //     type: 'x', 
@@ -159,7 +159,7 @@ const AZCarousel: FC<AZCarouselProps> = ({children, className, onInit, onChange,
     const redraw = () => {
         change(position);
         selectedIndex = position;
-        if ( currentOnSelect) currentOnSelect(carousel, slides[selectedIndex], selectedIndex, position);
+        if ( currentOnSelect) currentOnSelect(carousel, slides[selectedIndex], selectedIndex, position, 'redraw');
     }
 
     const onResize = () => {
