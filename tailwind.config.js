@@ -81,7 +81,7 @@ module.exports = {
         ".text-title-sm": {
           fontFamily: "lato",
           textTransform: "uppercase",
-          fontSize: "28px",
+          fontSize: "26px",
           lineHeight: "48px",
           fontWeight: "900",
           letterSpacing: "0.1em",
@@ -96,7 +96,7 @@ module.exports = {
           fontFamily: "lato",
           fontWeight: "500",
           textTransform: "uppercase",
-          fontSize: "28px",
+          fontSize: "26px",
           letterSpacing: "0.08em",
           color: "white",
           "@screen md": {

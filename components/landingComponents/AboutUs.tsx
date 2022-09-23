@@ -237,7 +237,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                                 >
                                     {
                                         (sliderList as unknown as any[]).map((item, ind) => (
-                                            <div className='w-[80%] md:w-full mr-12' key={ind}>
+                                            <div className='w-[80%] md:w-full mr-12 opacity-50' key={ind}>
                                                 <p className="font-lato uppercase font-black text-[22px] text-transparent bg-clip-text bg-gradient-to-r from-gray-400 via-gray-200 to-white tracking-widest">{item.title}</p>
                                                 <p className="font-lato font-light tracking-widest text-white text-lg mt-3">{item.content}</p>
                                             </div>

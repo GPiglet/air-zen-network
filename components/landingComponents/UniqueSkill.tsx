@@ -471,7 +471,7 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                                                 </picture>
                                                 <p className='relative font-lato text-[22px] uppercase unique-skill-title pb-3'>{item.title}</p>
                                                 <p className='relative unique-skill-subtitle font-lato-light font-bold text-xl w-[70%] sm:w-[180px] pb-3'>{item.subtitle}</p>
-                                                <p className='relative hidden font-lato font-light text-lg unique-skill-description pb-3 sm:w-[250px]'>{item.description}</p>
+                                                <p className='text-hyphens relative hidden font-lato font-light text-lg unique-skill-description pb-3 sm:w-[250px]'>{item.description}</p>
                                                 {/* <ul className='relative hidden list-disc pl-2 unique-skill-list md:w-[280px]'>
                                                     {item.list.split('\n').map((subitem: string, ind: number) => (
                                                         <li className='font-lato text-[16px] font-extralight leading-6' key={ind}>{subitem}</li>

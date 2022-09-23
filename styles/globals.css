@@ -309,6 +309,7 @@ section {
   display: block !important;
 } */
 
+.is-selected,
 .is-selected img{
   /* transform: scaleX(1.2) scaleY(1.5); */
   opacity: 1;  
@@ -436,3 +437,10 @@ input[type=number] {
   background: transparent;
 } */
 
+.text-hyphens {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  /* text-align: justify; */
+}

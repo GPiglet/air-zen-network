@@ -11,10 +11,6 @@ import gsap from 'gsap'
 
 const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref: any) => {
 
-    const animCrouselScaleLg = React.useRef<any>([]);
-    const animCrouselScaleSm = React.useRef<any>([]);
-
-
     //translate
     const { t } = useTranslation()
 
@@ -29,9 +25,9 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                 setSelected(flkty.selectedIndex)
             })
             flkty.on('change', () => {
-                gsap.to(".phone-images", {
+                gsap.to(".carousel-images", {
                     opacity: 0, onComplete: () => {
-                        gsap.to(document.getElementsByClassName('phone-images')[flkty.selectedIndex], { opacity: 1 });
+                        gsap.to(document.getElementsByClassName('carousel-images')[flkty.selectedIndex], { opacity: 1 });
                     }
                 })
             })
@@ -43,10 +39,9 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
     }
 
     const sliderList = t('home.swiper', { returnObjects: true })
-    console.log(sliderList)
 
     const flickityProps = {
-        className: "carousel-nav home-carousel pl-[55px] h-screen mt-[120px] md:hidden ",
+        className: "carousel-nav pl-[36px] mt-[120px] md:hidden ",
         options: {
             asNavFor: ".carousel-main",
             contain: true,
@@ -63,14 +58,9 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
         if (state === 'next') {
             flkty.next()
             carousel.next()
-            gsap.to(animCrouselScaleLg.current, { duration: 0.8, scale: (1 + (flkty.selectedIndex + 1) * 0.03), transformOrigin: "50% 50%", })
-            gsap.to(animCrouselScaleSm.current, { duration: 0.8, scale: (1 + (flkty.selectedIndex + 1) * 0.05), transformOrigin: "50% 50%", })
         } else {
             flkty.previous()
             carousel.prev()
-            gsap.to(animCrouselScaleLg.current, { duration: 0.8, scale: (1 - (flkty.selectedIndex + 1) * 0.03), transformOrigin: "50% 50%", })
-            gsap.to(animCrouselScaleSm.current, { duration: 0.8, scale: (1 - (flkty.selectedIndex + 1) * 0.05), transformOrigin: "50% 50%", })
-
         }
     }
 
@@ -81,10 +71,15 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
 
     const onSelectCarousel = (carousel: any, slide: any, selectedIndex: number, position: number) => {
         setSelected(selectedIndex);
+        gsap.to(".phone-images", {
+            opacity: 0, onComplete: () => {
+                gsap.to(document.getElementsByClassName('phone-images')[selectedIndex + 2], { opacity: 1 });
+            }
+        })
     }
 
     const onShowCarousel = (carousel: any, slide: any, shownIndex: number, position: number, onComplete: Function) => {
-        const leftFromTo = (position - carousel.getPosition() > 0) ? ['50%', '20%'] : ['0', '20%'];       // next : prev
+        const leftFromTo = (position - carousel.getPosition() > 0) ? ['20%', '0'] : ['-10%', '0'];       // next : prev
         gsap.fromTo(slide, { opacity: 0, left: leftFromTo[0] }, {
             opacity: 1, left: leftFromTo[1], duration: 1.5, onComplete: () => {
                 if (onComplete) onComplete();
@@ -93,19 +88,13 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
     }
 
     const onHideCarousel = (carousel: any, slide: any, hiddenIndex: number, position: number, onComplete: Function) => {
-        const leftFromTo = (position - carousel.getPosition() > 0) ? ['20%', '0'] : ['20%', '50%'];       // next : prev
+        const leftFromTo = (position - carousel.getPosition() > 0) ? ['0', '-10%'] : ['0', '20%'];       // next : prev
         gsap.fromTo(slide, { opacity: 1, left: leftFromTo[0] }, {
             opacity: 0, left: leftFromTo[1], duration: 1, onComplete: () => {
                 if (onComplete) onComplete();
             }
         });
     }
-
-    const onCalcHeight = (carousel: any) => {
-        return carousel.slides[carousel.getSelectedIndex()].getBoundingClientRect().height;
-    }
-
-    const easyList = t('home.easy.list', { returnObjects: true })
 
     // animation
     const refAnimContents = React.useRef<any>([]);
@@ -138,7 +127,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
         gsap.set([containerRef.current], { display: 'block' });
         if (direction == 'DOWN' && shown) {
             if (index == 1) prevAnimation.current = getShowTimeline().play(0);
-            gsap.timeline()
+            const tl = gsap.timeline()
                 .to(
                     refAnimContents.current,
                     { opacity: 0, display: 'none' }
@@ -151,13 +140,27 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                     refAnimRightImage.current,
                     { top: rightImagePos[index - 1], duration: 1 },
                     0
+                );
+            
+            if ( index == 1 ) tl.play();
+            else {
+                tl.to(
+                    '.phone-images',
+                    { opacity: 0},
+                    0
+                )
+                .to(
+                    document.getElementsByClassName('phone-images')[index-1],
+                    {opacity:1},
+                    0.5
                 )
                 .play();
+            }
         }
         else if (direction == 'DOWN' && !shown) prevAnimation.current = getHideTimeline().play(0);
         else if (direction == 'UP' && shown) {
             if (index == 3) prevAnimation.current = getHideTimeline().reverse(0);
-            gsap.timeline()
+            const tl = gsap.timeline()
                 .to(
                     refAnimContents.current,
                     { opacity: 0, display: 'none' }
@@ -170,8 +173,22 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                     refAnimRightImage.current,
                     { top: rightImagePos[index - 1], duration: 1 },
                     0
+                );
+
+            if ( index == 3 ) tl.play();
+            else {
+                tl.to(
+                    '.phone-images',
+                    { opacity: 0},
+                    0
+                )
+                .to(
+                    document.getElementsByClassName('phone-images')[index-1],
+                    {opacity:1},
+                    0.5
                 )
                 .play();
+            }
         }
         else if (direction == 'UP' && !shown) prevAnimation.current = getShowTimeline().reverse(0);
     }
@@ -179,12 +196,14 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
     return (
         <div id="secure" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container mx-auto relative md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
             {/*left side animation*/}
-            <div className="relative md:initial  h-[54rem] sm:h-[50rem] md:h-0">
-                <svg className="md:absolute translate-x-[-31%] sm:translate-x-[-8%] md:translate-x-0 left-[-27%] top-[28.5%] w-[270%] sm:top-[37%]  md:top-1/2 md:translate-y-[-50%]  sm:w-[120%] md:w-[100%] xl:w-[70%]   sm:left-[-10%]  md:left-[-45%] xl:left-[-20%]" viewBox="0 0 804 796" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className="relative h-[41rem] sm:h-[52rem] md:static md:h-auto">
+                <svg className="absolute left-[50%] translate-x-[-50%] top-[-60px] w-[270%] sm:top-0 sm:w-[120%] md:left-[10%] md:top-1/2 md:translate-y-[-50%] md:w-[60%] md:mt-[70px]" viewBox="0 0 804 796" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.4" d="M497.478 697.95C666.249 643.997 760.109 465.887 707.12 300.13C654.13 134.373 474.358 43.7373 305.587 97.69C136.816 151.643 42.9562 329.753 95.9454 495.51C148.935 661.267 328.707 751.903 497.478 697.95Z" fill="url(#paint0_radial_1376_4769)" />
                     <path opacity="0.5" d="M474.04 622.595C600.747 582.09 671.214 448.371 631.432 323.926C591.649 199.481 456.682 131.435 329.975 171.941C203.267 212.447 132.801 346.166 172.583 470.61C212.366 595.055 347.332 663.101 474.04 622.595Z" fill="url(#paint1_radial_1376_4769)" />
                     <path d="M586.13 339.163C618.068 439.068 561.499 546.433 459.757 578.958C358.015 611.483 249.656 556.841 217.719 456.937C185.781 357.032 242.35 249.667 344.092 217.142C445.834 184.617 554.193 239.258 586.13 339.163Z" stroke="url(#paint2_linear_1376_4769)" />
-                    <image href="/images/aboutus1.png" x="32.5%" y="10%" fillOpacity='0.5' className="w-[25%] translate-x-[4%] sm:translate-x-0 sm:w-[35%]" />
+                    {['Home1.png', 'Home2.png', 'Home3.png', 'Home4.png', 'Home5.png'].map((item, ind) => 
+                        <image key={ind} href={"/images/" + item} x="32.5%" y="10%" fillOpacity='0.5' className={`${ind==0?'' : 'opacity-0'} phone-images w-[25%] translate-x-[4%] sm:translate-x-0 sm:w-[35%] md:translate-y-[4%]`} />
+                    )}
                     <defs>
                         <radialGradient id="paint0_radial_1376_4769" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(332.077 121.28) rotate(72.664) scale(635.151 646.7)">
                             <stop stopColor="#2294C3" />
@@ -201,23 +220,31 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                     </defs>
                 </svg>
             </div>
-            <div ref={el => { if (el && refAnimContents.current.indexOf(el) == -1) refAnimContents.current.push(el) }} className="relative md:flex md:hidden items-center md:mt-0 px-10 md:px-0 h-full">
-                <div className="flex flex-wrap ">
-                    <div className="md:w-[15%]"></div>
-                    <div className="w-full md:w-2/5 m-auto">
-                        <p className="font-lato-light font-light text-[22px] text-white">{t('home.safehome.tip')}</p>
+
+            <div ref={el => { if (el && refAnimContents.current.indexOf(el) == -1) refAnimContents.current.push(el) }} className="relative px-10 h-full z-10 items-center md:flex md:hidden md:mt-0 md:px-0 md:pl-[25%]">
+                <div className="flex flex-col-reverse md:flex-col text-white">
+                    <div className="w-full sm:w-[58%] sm:mx-0 sm:mt-[10rem] md:w-2/3 m-auto">
+                        <p className="font-lato-light font-light text-[22px] ">{t('home.safehome.tip')}</p>
                         <h1 className="text-title-sm-white">{t('home.safehome.title')}</h1>
                         {t('home.safehome.description').split('\n').map((item, index) =>
-                            <p className="font-lato font-light tracking-widest text-white text-lg mt-4" key={index}>{item}</p>
+                            <p className="font-lato font-light tracking-widest text-lg mt-4" key={index}>{item}</p>
                         )}
                     </div>
+                    <div className="relative left-[-20px] w-full mx-auto mb-[100px] sm:w-1/2 md:w-2/3 md:mb-0 md:mt-[100px] md:mx-0">
+                        <div className="font-lato text-lg font-medium">
+                            <img src="/images/sparkle.svg" className="w-[49px] h-[47px] inline"/>
+                            {t('home.safehome.list', { returnObjects: true })[0].split('\n')[0]}
+                        </div>
+                        <div className="font-lato-light text-lg font-light pl-[50px]">
+                            {t('home.safehome.list', { returnObjects: true })[0].split('\n')[1]}
+                        </div>
+                    </div>
                 </div>
-
             </div>
 
             {/*right-side animation*/}
-            <div className="realtive md:initial h-[30rem] sm:h-[37rem] md:h-0">
-                <svg ref={refAnimRightImage} className="absolute translate-x-[-27%] sm:translate-x-[-14%] md:translate-x-0 top-[24%] sm:top-[22%] md:top-[90%] md:w-[120%] xl:w-[100%]   sm:w-[140%] w-[220%] md:right-[-70%] xl:right-[-53%] md:translate-y-[-50%]" viewBox="0 60 907 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className="realtive z-0 md:static h-[40rem] sm:h-0">
+                <svg ref={refAnimRightImage} className="absolute translate-x-[-27%] top-[22%] w-[220%] sm:translate-x-[6%] sm:top-[20%] sm:w-[140%] md:translate-x-0 md:top-[90%] md:mt-[70px] md:w-[70%] md:right-[-30%] md:translate-y-[-50%]" viewBox="0 60 907 750" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.4" d="M538.472 704.59C686.17 656.921 768.31 499.556 721.937 353.106C675.564 206.655 518.239 126.576 370.541 174.245C222.842 221.913 140.702 379.278 187.075 525.729C233.448 672.179 390.774 752.258 538.472 704.59Z" fill="url(#paint0_radial_1376_4815)" />
                     <path opacity="0.5" d="M512.183 639.605C615.95 606.114 673.659 495.555 641.079 392.664C608.499 289.773 497.968 233.513 394.2 267.003C290.433 300.493 232.724 411.052 265.304 513.943C297.884 616.834 408.415 673.095 512.183 639.605Z" fill="url(#paint1_radial_1376_4815)" />
                     <path d="M621.253 399.063C650.392 491.089 598.779 589.983 505.956 619.941C413.134 649.898 314.27 599.571 285.13 507.544C255.99 415.517 307.604 316.624 400.426 286.666C493.249 256.708 592.113 307.036 621.253 399.063Z" stroke="url(#paint2_linear_1376_4815)" />
@@ -248,7 +275,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
             </div>
 
             {/*left side animation, desktop:hidden mobile:show*/}
-            <div className="relative h-[45rem] sm:h-[50rem] md:h-0 block md:hidden">
+            <div className="relative h-[39rem] sm:h-[50rem] md:h-0 block md:hidden">
                 <svg className="md:absolute translate-x-[-33%] sm:translate-x-[-8%] md:translate-x-0 left-[-27%] top-[28.5%] w-[310%] sm:top-[37%]  md:top-1/2 md:translate-y-[-50%] sm:w-[120%] md:w-[100%] xl:w-[70%]   sm:left-[-10%]  md:left-[-45%] xl:left-[-20%]" viewBox="0 0 804 796" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.4" d="M497.478 697.95C666.249 643.997 760.109 465.887 707.12 300.13C654.13 134.373 474.358 43.7373 305.587 97.69C136.816 151.643 42.9562 329.753 95.9454 495.51C148.935 661.267 328.707 751.903 497.478 697.95Z" fill="url(#paint0_radial_1376_4769)" />
                     <path opacity="0.5" d="M474.04 622.595C600.747 582.09 671.214 448.371 631.432 323.926C591.649 199.481 456.682 131.435 329.975 171.941C203.267 212.447 132.801 346.166 172.583 470.61C212.366 595.055 347.332 663.101 474.04 622.595Z" fill="url(#paint1_radial_1376_4769)" />
@@ -271,41 +298,47 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                 </svg>
             </div>
 
-
-            <div ref={el => { if (el && refAnimContents.current.indexOf(el) == -1) refAnimContents.current.push(el) }} className=" relative md:fixed md:hidden items-center px-10 md:px-0 h-full md:mt-0">
-                <div className="flex flex-wrap">
-                    <div className="w-[15%]"></div>
-                    <div className="w-full md:w-2/5 m-auto">
-                        <p className="font-lato-light font-light text-[22px] text-white">{t('home.reliable.tip')}</p>
+            <div ref={el => { if (el && refAnimContents.current.indexOf(el) == -1) refAnimContents.current.push(el) }} className="relative items-center px-10 h-full z-10 md:fixed md:hidden md:px-0 md:mt-0 md:pl-[25%]">
+                <div className="flex flex-col-reverse md:flex-col text-white">
+                    <div className="w-full m-auto md:w-[60%] md:mx-0 md:mt-[10rem]">
+                        <p className="font-lato-light font-light text-[22px]">{t('home.reliable.tip')}</p>
                         <h1 className="text-title-sm-white">{t('home.reliable.title')}</h1>
                         {
                             t('home.reliable.description').split('\n').map((item, index) =>
-                                <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}</p>
+                                <p className="font-lato font-light tracking-widest text-lg mt-3" key={index}>{item}</p>
                             )
                         }
+                    </div>
+                    <div className="relative left-[-20px] m-auto mb-[100px] w-full sm:w-1/2 md:w-2/3 md:mb-0 md:mt-[100px] md:mx-0">
+                        <div className="font-lato text-lg font-medium">
+                            <img src="/images/sparkle.svg" className="w-[49px] h-[47px] inline"/>
+                            {t('home.reliable.list', { returnObjects: true })[0].split('\n')[0]}
+                        </div>
+                        <div className="font-lato-light text-lg font-light pl-[50px]">
+                            {t('home.reliable.list', { returnObjects: true })[0].split('\n')[1]}
+                        </div>
                     </div>
                 </div>
             </div>
 
             {/*Carousal*/}
-            <div ref={el => { if (el && refAnimContents.current.indexOf(el) == -1) refAnimContents.current.push(el) }} className="md:hidden relative  w-full h-full">
+            <div ref={el => { if (el && refAnimContents.current.indexOf(el) == -1) refAnimContents.current.push(el) }} className="relative w-full h-full z-10 md:fixed md:hidden md:px-0 md:mt-0 md:pl-[25%]">
                 <picture className={`${selected + 1 === sliderList.length ? 'hidden' : ''} `}>
                     <source srcSet="/images/sparkle-arrow.svg" type="image/webp" />
-                    <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('next')} className='w-[47px] h-[93px] cursor-pointer absolute right-[20px] md:right-[47px]  bottom-[20%] md:bottom-auto md:top-1/2 center-y-transform z-50  ' />
+                    <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('next')} className='w-[47px] h-[93px] cursor-pointer absolute right-[20px] md:right-[230px]  bottom-[20%] md:bottom-auto md:top-1/2 center-y-transform z-50  ' />
                 </picture>
                 <picture className={`${selected === 0 ? 'hidden' : ''}`}>
                     <source srcSet="/images/sparkle-arrow.svg" type="image/webp" />
-                    <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('prev')} className={`w-[47px] h-[93px]  cursor-pointer absolute left-[20px] md:left-[47px] sparkle-arrow-reverse transform-none bottom-[20%] md:bottom-auto md:top-1/2 center-y-transform z-50 `} />
+                    <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('prev')} className={`w-[47px] h-[93px]  cursor-pointer absolute left-[20px] md:left-[-70px] sparkle-arrow-reverse transform-none bottom-[20%] md:bottom-auto md:top-1/2 center-y-transform z-50 `} />
                 </picture>
-                <div className="flex flex-wrap md:mt-12 w-full md:absolute h-auto">
-                    <div className="w-[15%]"></div>
-                    <div className="w-full md:w-[50%] mx-auto">
+                <div className="flex flex-col md:w-full md:justify-center">
+                    <div className="w-full mx-auto md:w-[70%] md:mx-0">
                         <Flickity
                             {...flickityProps}
                         >
                             {
                                 (sliderList as unknown as any[]).map((item, ind) => (
-                                    <div className="relative">
+                                    <div className="relative w-[90%] md:w-full mr-4 opacity-50" key={ind}>
                                         <p className="font-lato-light font-light text-[22px] text-white">{item.tip}</p>
                                         <h1 className="text-title-sm-white">{item.title}</h1>
                                         {
@@ -335,12 +368,12 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                             }
 
                         </Flickity>
-                        <AZCarousel className="hidden md:block carousel-nav home-carousel pl-[55px]" onInit={onInitCarousel} onSelect={onSelectCarousel} onShow={onShowCarousel} onHide={onHideCarousel} onCalcHeight={onCalcHeight}>
+                        <AZCarousel className="hidden md:block carousel-nav pl-[55px] top-[-150px]" onInit={onInitCarousel} onSelect={onSelectCarousel} onShow={onShowCarousel} onHide={onHideCarousel}>
                             {
                                 (sliderList as unknown as any[]).map((item, ind) => (
-                                    <div className="absolute top-1/2 translate-y-[-50%]">
+                                    <div className="md:w-full" key={ind}>
                                         <p className="font-lato-light font-light text-[22px] text-white">{item.tip}</p>
-                                        <h1 className="text-title-sm-white">{item.title}</h1>
+                                        <h1 className="text-title-sm-white w-[90%]">{item.title}</h1>
                                         {
                                             item.description.split('\n').map((sentence: string, index: number) =>
                                                 <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{sentence}</p>
@@ -370,17 +403,16 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                     </div>
                 </div>
             </div>
-            <mask id="fade" maskContentUnits="objectBoundingBox">
-                <rect width="1" height="1" fill="url(#fadeGrad)" />
-            </mask>
 
             {/*left animation for carousal*/}
-            <div className="relative h-[30rem] sm:h-[30rem] md:h-0 block md:hidden">
-                <svg className="md:absolute translate-x-[-16%] sm:translate-x-[-8%] md:translate-x-0 left-[-27%] top-[28.5%] w-[150%] sm:top-[37%]  md:top-1/2 translate-y-[-45%] sm:translate-y-[-16%] md:translate-y-[-50%] sm:w-[120%] md:w-[100%] xl:w-[70%]   sm:left-[-10%]  md:left-[-45%] xl:left-[-20%]" viewBox="0 0 804 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className="relative z-0 h-[40rem] sm:h-[40rem] md:hidden">
+                <svg className="absolute translate-x-[-50%] left-[50%] top-[-50%] w-[150%] sm:w-[120%] sm:top-[-30%] md:left-[10%] md:top-1/2 md:translate-y-[-50%] md:w-[60%] md:mt-[70px]" viewBox="0 0 804 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.4" d="M497.478 697.95C666.249 643.997 760.109 465.887 707.12 300.13C654.13 134.373 474.358 43.7373 305.587 97.69C136.816 151.643 42.9562 329.753 95.9454 495.51C148.935 661.267 328.707 751.903 497.478 697.95Z" fill="url(#paint0_radial_1376_4769)" />
                     <path opacity="0.5" d="M474.04 622.595C600.747 582.09 671.214 448.371 631.432 323.926C591.649 199.481 456.682 131.435 329.975 171.941C203.267 212.447 132.801 346.166 172.583 470.61C212.366 595.055 347.332 663.101 474.04 622.595Z" fill="url(#paint1_radial_1376_4769)" />
                     <path d="M586.13 339.163C618.068 439.068 561.499 546.433 459.757 578.958C358.015 611.483 249.656 556.841 217.719 456.937C185.781 357.032 242.35 249.667 344.092 217.142C445.834 184.617 554.193 239.258 586.13 339.163Z" stroke="url(#paint2_linear_1376_4769)" />
-                    <image href="/images/Home2.png" x="32.5%" y="10%" fillOpacity='0.5' className="w-[45%] translate-x-[-5%] translate-y-[30%] sm:translate-y-0 sm:translate-x-0 sm:w-[35%]" />
+                    {['Home3.png', 'Home4.png', 'Home5.png'].map((item, ind) => 
+                        <image key={ind} href={"/images/" + item} x="32.5%" y="10%" fillOpacity='0.5' className={`${ind == 0 ? '' : 'opacity-0'} carousel-images w-[45%] translate-x-[-5%] translate-y-[30%] sm:translate-y-0 sm:translate-x-0 sm:w-[35%]`} />
+                    )}
                     <defs>
                         <radialGradient id="paint0_radial_1376_4769" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(332.077 121.28) rotate(72.664) scale(635.151 646.7)">
                             <stop stopColor="#2294C3" />
