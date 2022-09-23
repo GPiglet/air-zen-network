@@ -27,10 +27,8 @@ const Credential = React.forwardRef((props: any, ref: any) => {
 
     const imageList = [
         '/images/volskbank.png',
+        '/images/kreissparkasse.png',
         '/images/districtbank.png',
-        '/images/districtbank.png',
-        '/images/volskbank.png',
-        '/images/volskbank.png',
     ]
 
     //Flickity
