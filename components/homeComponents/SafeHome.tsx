@@ -102,23 +102,22 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
     // animation
     const refAnimContents = React.useRef<any>([]);
     const refAnimRightImage = React.useRef<any>(null);
-    const getShowTimeline = (duration: number = 1.5) => {
+    const getShowTimeline = (duration: number = 1) => {
         return gsap.timeline({ onReverseComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
                 { y: 100, opacity: 0 },
                 { y: 0, opacity: 1, duration },
-                0
+                1
             )
     }
 
-    const getHideTimeline = (duration: number = 1.5) => {
+    const getHideTimeline = (duration: number = 1) => {
         return gsap.timeline({ onComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
                 { y: 0, opacity: 1 },
                 { y: -100, opacity: 0, duration },
-                0
             )
     }
 
@@ -162,7 +161,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
         }
         else if (direction == 'DOWN' && !shown) prevAnimation.current = getHideTimeline().play(0);
         else if (direction == 'UP' && shown) {
-            if (index == 3) prevAnimation.current = getHideTimeline().reverse(0);
+            if (index == 3) prevAnimation.current = getHideTimeline(1).reverse(0).delay(1);
             const tl = gsap.timeline()
                 .to(
                     refAnimContents.current,
@@ -365,7 +364,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                                 (sliderList as unknown as any[]).map((item, ind) => (
                                     <div className="md:w-full" key={ind}>
                                         <p className="font-lato-light font-light text-[22px] text-white">{item.tip}</p>
-                                        <h1 className="text-title-sm-white w-[90%]">{item.title}</h1>
+                                        <h1 className="text-title-sm-white w-[84%]">{item.title}</h1>
                                         {
                                             item.description.split('\n').map((sentence: string, index: number) =>
                                                 <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{sentence}</p>

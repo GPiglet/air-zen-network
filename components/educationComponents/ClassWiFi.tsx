@@ -12,17 +12,17 @@ const ClassWiFi: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, r
     const { t } = useTranslation()
 
     // animation
-    const getShowTimeline = (duration: number = 1.5) => {
+    const getShowTimeline = (duration: number = 1) => {
         return gsap.timeline({ onReverseComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
                 { y: 100, opacity: 0 },
                 { y: 0, opacity: 1, duration },
-                0
+                1
             )
     }
 
-    const getHideTimeline = (duration: number = 1.5) => {
+    const getHideTimeline = (duration: number = 1) => {
         return gsap.timeline({ onComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
@@ -37,10 +37,8 @@ const ClassWiFi: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, r
     const startAnim = (direction: string, shown: boolean, index: number) => {
         if (prevAnimation.current) prevAnimation.current.kill();
         gsap.set([containerRef.current], { display: 'block' });
-        if (direction == 'DOWN' && shown) prevAnimation.current = getShowTimeline().play(0);
-        else if (direction == 'DOWN' && !shown) prevAnimation.current = getHideTimeline().play(0);
-        else if (direction == 'UP' && shown) prevAnimation.current = getHideTimeline().reverse(0);
-        else if (direction == 'UP' && !shown) prevAnimation.current = getShowTimeline().reverse(0);
+        if (direction == 'DOWN' && !shown) prevAnimation.current = getHideTimeline().play(0);
+        else if (direction == 'UP' && shown) prevAnimation.current = getHideTimeline().reverse(0).delay(1);
     }
 
     return (

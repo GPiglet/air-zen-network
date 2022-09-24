@@ -13,7 +13,7 @@ const SimplyNetwork: FC<{ props?: any, ref: any }> = React.forwardRef((props: an
     const { t } = useTranslation()
 
     // animation
-    const getShowTimeline = (duration: number = 1.5) => {
+    const getShowTimeline = (duration: number = 1) => {
         return gsap.timeline({ onReverseComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
             .fromTo(
                 containerRef.current,
@@ -35,7 +35,7 @@ const SimplyNetwork: FC<{ props?: any, ref: any }> = React.forwardRef((props: an
     const startAnim = (direction: string, shown: boolean) => {
         if (prevAnimation.current) prevAnimation.current.kill();
         gsap.set([containerRef.current], { display: 'block' });
-        if (direction == 'UP' && shown) prevAnimation.current = getShowTimeline().play(0);
+        if (direction == 'UP' && shown) prevAnimation.current = getShowTimeline().delay(1);
         else if (direction == 'DOWN' && !shown) prevAnimation.current = getShowTimeline().reverse(0);
     }
 
