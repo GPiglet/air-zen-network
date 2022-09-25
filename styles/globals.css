@@ -53,6 +53,11 @@ body {
     /* background-attachment: fixed; */
   }
 
+  .back-left-top-gradient-secondary {
+    background: linear-gradient(146.42deg, rgba(30, 77, 46, 0.6) 0%, rgba(30, 77, 46, 0) 12%), #000000;
+    background-attachment: scroll;
+  }
+
   .unique-skill-border-gradient {
     background: 
     linear-gradient(black, black) padding-box,

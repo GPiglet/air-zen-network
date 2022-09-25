@@ -198,8 +198,8 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
     return (
         <div id="secure" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container mx-auto relative md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
             {/*left side animation*/}
-            <div className="relative h-[38rem] sm:h-[52rem] md:static md:h-auto">
-                <svg className="absolute left-[50%] translate-x-[-50%] top-[-60px] w-[270%] sm:top-0 sm:w-[120%] md:left-[10%] md:top-1/2 md:translate-y-[-50%] md:w-[60%] md:mt-[70px]" viewBox="0 0 804 796" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className="relative h-[44rem] sm:h-[52rem] md:static md:h-auto">
+                <svg className="absolute left-[50%] translate-x-[-50%] top-[-60px] w-[310%] sm:top-0 sm:w-[120%] md:left-[10%] md:top-1/2 md:translate-y-[-50%] md:w-[60%] md:mt-[70px]" viewBox="0 0 804 796" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.4" d="M497.478 697.95C666.249 643.997 760.109 465.887 707.12 300.13C654.13 134.373 474.358 43.7373 305.587 97.69C136.816 151.643 42.9562 329.753 95.9454 495.51C148.935 661.267 328.707 751.903 497.478 697.95Z" fill="url(#paint0_radial_1376_4769)" />
                     <path opacity="0.5" d="M474.04 622.595C600.747 582.09 671.214 448.371 631.432 323.926C591.649 199.481 456.682 131.435 329.975 171.941C203.267 212.447 132.801 346.166 172.583 470.61C212.366 595.055 347.332 663.101 474.04 622.595Z" fill="url(#paint1_radial_1376_4769)" />
                     <path d="M586.13 339.163C618.068 439.068 561.499 546.433 459.757 578.958C358.015 611.483 249.656 556.841 217.719 456.937C185.781 357.032 242.35 249.667 344.092 217.142C445.834 184.617 554.193 239.258 586.13 339.163Z" stroke="url(#paint2_linear_1376_4769)" />
@@ -326,10 +326,10 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
             {/*Carousal*/}
             <div ref={el => { if (el && refAnimContents.current.indexOf(el) == -1) refAnimContents.current.push(el) }} className="carousel-content relative w-full h-full z-10 md:fixed md:hidden md:px-0 md:mt-0 md:pl-[25%]">
                 <picture className={`${selected + 1 === sliderList.length ? 'hidden' : ''} `}>
-                    <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('next')} className='w-[47px] h-[93px] cursor-pointer absolute right-[20px] md:right-[230px]  top-[60%] md:bottom-auto md:top-1/2 center-y-transform z-50  ' />
+                    <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('next')} className='top-[90%] w-[47px] h-[93px] cursor-pointer absolute right-[20px] md:right-[230px] md:bottom-auto md:top-1/2 center-y-transform z-50  ' />
                 </picture>
                 <picture className={`${selected === 0 ? 'hidden' : ''}`}>
-                    <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('prev')} className={`z-50 w-[47px] h-[93px] sparkle-arrow-reverse top-[60%] cursor-pointer absolute left-[20px] md:left-[-70px] md:bottom-auto md:top-1/2 4xl:left-[-110px]`} />
+                    <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('prev')} className={`top-[90%] z-50 w-[47px] h-[93px] sparkle-arrow-reverse cursor-pointer absolute left-[20px] md:left-[-70px] md:bottom-auto md:top-1/2 4xl:left-[-110px]`} />
                 </picture>
                 <div className="flex flex-col md:w-full md:justify-center">
                     <div className="w-full mx-auto md:w-[70%] md:mx-0">
