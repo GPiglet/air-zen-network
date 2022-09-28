@@ -2,6 +2,7 @@
 import React, { FC } from "react"
 import { useTranslation } from "next-i18next";
 import gsap from 'gsap';
+import Sparkle from "../common/sparkle";
 
 const PrepareSuccess: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref: any) => {
     //translate
@@ -40,10 +41,10 @@ const PrepareSuccess: FC<{ props?: any, ref: any }> = React.forwardRef((props: a
     }
 
     return (
-        <section id="easy" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container mx-auto pb-16 relative      md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
+        <section id="easy" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container relative mx-auto pb-16 sm:pb-32 md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
 
             <div className="relative items-center px-10 md:px-0 md:absolute md:top-1/2 md:translate-y-[-50%]">
-                <div className="flex flex-wrap md:mt-12">
+                <div className="flex flex-wrap sm:w-[65%] md:mt-12 md:w-full">
                     <div className="w-full md:w-2/5 m-auto">
                         <div className="relative">
                             <p className="font-lato-light font-light text-[22px] text-white">{t('business.preparesuccess.tip')}</p>
@@ -59,35 +60,34 @@ const PrepareSuccess: FC<{ props?: any, ref: any }> = React.forwardRef((props: a
                 </div>
             </div>
 
-            <svg className="md:absolute top-1/2 translate-x-[-6%] md:translate-x-0 md:translate-y-[-50%] w-[110%] 2xl:w-[1000px] w-[174%] left-[-25%]" viewBox="0 0 704 704" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g opacity="0.8">
-                    <ellipse opacity="0.7" cx="351.991" cy="351.55" rx="217.013" ry="217.214" transform="rotate(-180 351.991 351.55)" fill="url(#paint0_radial_1376_5668)" />
-                    <path opacity="0.3" d="M53.0685 351.55C53.0685 186.305 186.901 52.3491 351.991 52.3491C517.081 52.3491 650.914 186.305 650.914 351.55C650.914 516.795 517.081 650.751 351.991 650.751C186.901 650.751 53.0685 516.795 53.0685 351.55Z" stroke="#7BB690" />
-                    <path opacity="0.6" d="M0.5 351.732C0.5 157.752 157.872 0.500122 352 0.500122C546.128 0.500122 703.5 157.752 703.5 351.732C703.5 545.712 546.128 702.964 352 702.964C157.872 702.964 0.5 545.712 0.5 351.732Z" stroke="url(#paint1_radial_1376_5668)" />
-                    <ellipse opacity="0.7" rx="134.63" ry="134.568" transform="matrix(0.499652 0.866226 -0.865824 0.500348 351.838 351.659)" fill="url(#paint2_radial_1376_5668)" />
-                </g>
-                <image href="/images/model.png" x="34%" y="35%" className="w-[32%]" />
-                <foreignObject className="font-lato-light w-[260px] text-sm text-white hidden md:block" x="40%" y="87.4%" width="260px" height="100px">
-                    <p
-                    >Dieses Feature ermöglicht eine besondere Funktion: XYZ</p>
-                </foreignObject>
-                <image href="/images/sparkle.svg" className="w-[49px] h-[47px] hidden md:block" x="34.5%" y="86.5%" cx="511.828" cy="696.377" />
-
-                <defs>
-                    <radialGradient id="paint0_radial_1376_5668" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(321.474 236.155) rotate(68.4387) scale(447.5 447.197)">
-                        <stop stopColor="#7BB690" />
-                        <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
-                    </radialGradient>
-                    <radialGradient id="paint1_radial_1376_5668" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(58.8649 474.332) rotate(-36.3186) scale(697.365 698.739)">
-                        <stop stopColor="#7BB690" />
-                        <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
-                    </radialGradient>
-                    <radialGradient id="paint2_radial_1376_5668" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(115.698 63.0786) rotate(68.4114) scale(277.286 277.379)">
-                        <stop stopColor="#7BB690" />
-                        <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
-                    </radialGradient>
-                </defs>
-            </svg>
+            <div className="relative h-[25rem] sm:h-0 md:static md:h-auto">
+                <svg className="absolute top-[-40%] left-[50%] translate-x-[-50%] w-[174%] sm:w-full sm:left-[80%] sm:top-[-600px] md:top-1/2 md:left-[-25%] md:translate-x-0 md:translate-y-[-50%] 2xl:w-[1000px]" viewBox="0 0 704 704" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.8">
+                        <circle opacity="0.7" cx="206.097" cy="206.099" r="206.098" className="translate-x-[21%] translate-y-[21%]" transform="rotate(-180 206.097 206.099)" fill="url(#paint0_radial_1376_5811)" />
+                        <path className="opacity-0 md:opacity-30" d="M53.0685 351.55C53.0685 186.305 186.901 52.3491 351.991 52.3491C517.081 52.3491 650.914 186.305 650.914 351.55C650.914 516.795 517.081 650.751 351.991 650.751C186.901 650.751 53.0685 516.795 53.0685 351.55Z" stroke="#7BB690" />
+                        <path className="opacity-0 md:opacity-60" d="M0.5 351.732C0.5 157.752 157.872 0.500122 352 0.500122C546.128 0.500122 703.5 157.752 703.5 351.732C703.5 545.712 546.128 702.964 352 702.964C157.872 702.964 0.5 545.712 0.5 351.732Z" stroke="url(#paint1_radial_1376_5811)" />
+                        <circle opacity="0.7" cx="205.952" cy="206.202" r="127.77" className="translate-x-[21%] translate-y-[21%]" transform="rotate(60 205.952 206.202)" fill="url(#paint2_radial_1376_5811)" />
+                    </g>
+                    <image href="/images/model.png" x="34%" y="28%" className="w-[32%]" />
+                    <defs>
+                        <radialGradient id="paint0_radial_1376_5811" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(177.114 96.6091) rotate(68.4205) scale(424.652)">
+                            <stop stopColor="#7BB690" />
+                            <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
+                        </radialGradient>
+                        <radialGradient id="paint1_radial_1376_5811" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(46.6417 272.441) rotate(-36.1964) scale(378.797 379.034)">
+                            <stop stopColor="#7BB690" />
+                            <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
+                        </radialGradient>
+                        <radialGradient id="paint2_radial_1376_5811" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(187.984 138.324) rotate(68.4205) scale(263.262)">
+                            <stop stopColor="#7BB690" />
+                            <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
+                        </radialGradient>
+                    </defs>
+                </svg>
+                <div className="absolute z-[2] md:top-1/2 md:left-[-25%] md:translate-x-0 md:translate-y-[-50%] 2xl:w-[1000px]">
+                    <Sparkle className="relative w-[240px] left-[38%] top-[426px]">{t('business.preparesuccess.sparkle1')}</Sparkle>
+                </div>
+            </div>
 
             <svg className="hidden md:block absolute right-[-19%] md:translate-y-[-400px] md:top-1/2 w-[28%] 2xl:w-[400px] " viewBox="0 0 413 413" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">

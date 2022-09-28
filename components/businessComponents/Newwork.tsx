@@ -76,31 +76,31 @@ const NewWork: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
                     </div>
                 </div>
             </div>
-
-            <svg className="md:absolute translate-x-[-10%] left-[50%] md:translate-x-[-50%] md:translate-x-0 bottom-[-50%] w-[140%] sm:top-[70%]  md:top-1/2 md:translate-y-[-50%] sm:w-[120%] md:w-[100%] xl:w-[80%]  md:left-[-45%] xl:left-[-25%]" viewBox="0 0 692 692" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g opacity="0.8">
-                    <ellipse opacity="0.7" cx="345.838" cy="345.661" rx="233.997" ry="234.212" transform="rotate(-180 345.838 345.661)" fill="url(#paint0_radial_1376_5616)" />
-                    <path opacity="0.3" d="M101.168 345.66C101.168 210.409 210.711 100.766 345.838 100.766C480.965 100.766 590.508 210.409 590.508 345.66C590.508 480.912 480.965 590.555 345.838 590.555C210.711 590.555 101.168 480.912 101.168 345.66Z" stroke="#7BB690" />
-                    <path opacity="0.6" d="M0.5 345.732C0.5 155.066 155.185 0.500122 346 0.500122C536.815 0.500122 691.5 155.066 691.5 345.732C691.5 536.398 536.815 690.964 346 690.964C155.185 690.964 0.5 536.398 0.5 345.732Z" stroke="url(#paint1_radial_1376_5616)" />
-                    <ellipse opacity="0.7" rx="161.634" ry="161.56" transform="matrix(0.499657 0.866223 -0.865827 0.500343 345.839 345.66)" fill="url(#paint2_radial_1376_5616)" />
-                </g>
-                <image href="/images/phone-home1.png" x="33.5%" y="20%" className="w-[32%]" />
-
-                <defs>
-                    <radialGradient id="paint0_radial_1376_5616" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(312.933 221.236) rotate(68.4384) scale(482.519 482.196)">
-                        <stop stopColor="#7BB690" />
-                        <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
-                    </radialGradient>
-                    <radialGradient id="paint1_radial_1376_5616" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(57.8615 466.241) rotate(-36.3183) scale(685.475 686.823)">
-                        <stop stopColor="#7BB690" />
-                        <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
-                    </radialGradient>
-                    <radialGradient id="paint2_radial_1376_5616" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(138.904 75.7314) rotate(68.4115) scale(332.905 333.016)">
-                        <stop stopColor="#7BB690" />
-                        <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
-                    </radialGradient>
-                </defs>
-            </svg>
+            <div className="relative h-[46rem] sm:h-[46rem] md:static md:h-auto">
+                <svg className="absolute top-[-10%] w-[230%] translate-x-[-50%] left-[50%] sm:top-[-15%] sm:w-[120%] md:translate-x-[-50%] md:left-[-15%] md:translate-x-0 md:top-[53%] md:translate-y-[-50%] md:w-[64%] 4xl:w-[90%]  4xl:left-[-35%] 4xl:top-[50%]" viewBox="0 0 692 692" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.8">
+                        <ellipse opacity="0.7" cx="345.838" cy="345.661" rx="233.997" ry="234.212" transform="rotate(-180 345.838 345.661)" fill="url(#paint0_radial_1376_5668)"/>
+                        <path className="opacity-0 md:opacity-30" d="M101.168 345.66C101.168 210.409 210.711 100.766 345.838 100.766C480.965 100.766 590.508 210.409 590.508 345.66C590.508 480.912 480.965 590.555 345.838 590.555C210.711 590.555 101.168 480.912 101.168 345.66Z" stroke="#7BB690"/>
+                        <path className="opacity-0 md:opacity-60" d="M0.5 345.732C0.5 155.066 155.185 0.500122 346 0.500122C536.815 0.500122 691.5 155.066 691.5 345.732C691.5 536.398 536.815 690.964 346 690.964C155.185 690.964 0.5 536.398 0.5 345.732Z" stroke="url(#paint1_radial_1376_5668)"/>
+                        <ellipse opacity="0.7" rx="161.634" ry="161.56" transform="matrix(0.499657 0.866223 -0.865827 0.500343 345.839 345.66)" fill="url(#paint2_radial_1376_5668)"/>
+                    </g>
+                    <image href="/images/Business2.png" x="33.5%" y="16%" className="w-[32%] md:translate-y-[5%] md:translate-x-[1%]" />
+                    <defs>
+                        <radialGradient id="paint0_radial_1376_5668" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(321.474 236.155) rotate(68.4387) scale(447.5 447.197)">
+                            <stop stopColor="#7BB690" />
+                            <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
+                        </radialGradient>
+                        <radialGradient id="paint1_radial_1376_5668" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(58.8649 474.332) rotate(-36.3186) scale(697.365 698.739)">
+                            <stop stopColor="#7BB690" />
+                            <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
+                        </radialGradient>
+                        <radialGradient id="paint2_radial_1376_5668" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(115.698 63.0786) rotate(68.4114) scale(277.286 277.379)">
+                            <stop stopColor="#7BB690" />
+                            <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
+                        </radialGradient>
+                    </defs>
+                </svg>
+            </div>
         </section>
 
     );

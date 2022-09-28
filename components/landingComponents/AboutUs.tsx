@@ -5,6 +5,7 @@ import "flickity/dist/flickity.css"
 import gsap from "gsap";
 import { useTranslation } from "next-i18next";
 import { useRouter } from 'next/router';
+import Sparkle from '../common/sparkle';
 
 
 
@@ -54,7 +55,14 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                     opacity: 0, onComplete: () => {
                         gsap.to(document.getElementsByClassName('phone-images')[flkty.selectedIndex], { opacity: 1 });
                     }
-                })
+                });
+                gsap.to(".sparkle-divs", {
+                    opacity: 0, 
+                    display: 'none',
+                    onComplete: () => {
+                        gsap.to(document.getElementsByClassName('sparkle-divs')[flkty.selectedIndex], { opacity: 1, display: 'block'});
+                    }
+                });
             })
         }
     }, [flkty])
@@ -69,6 +77,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
             asNavFor: ".carousel-main",
             contain: true,
             pageDots: false,
+            draggable: false,
             selectedAttraction: 0.01,
             friction: 0.17,
             fade: true
@@ -255,8 +264,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                                 </AZCarousel>
                             </div>
                             <div className='relative h-[400px] w-full md:static md:w-2/5'>
-
-                                <svg className='absolute w-[180%] sm:top-[-70%] sm:w-[120%] translate-x-[-50%] z-30 top-[-220px] left-[45%] md:w-full md:left-[25%] md:translate-x-0 md:top-[50%] md:translate-y-[-50%]' viewBox="0 0 1295 1294" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg className='z-0 absolute w-[180%] sm:top-[-70%] sm:w-[120%] translate-x-[-50%] top-[-220px] left-[45%] md:w-full md:left-[25%] md:translate-x-0 md:top-[50%] md:translate-y-[-50%]' viewBox="0 0 1295 1294" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path ref={el => { if (el && animCrouselScaleLg.current.indexOf(el) == -1) animCrouselScaleLg.current.push(el) }} opacity="0.5" d="M666.531 1047.33C887.445 1047.33 1066.53 868.239 1066.53 647.325C1066.53 426.411 887.445 247.325 666.531 247.325C445.617 247.325 266.531 426.411 266.531 647.325C266.531 868.239 445.617 1047.33 666.531 1047.33Z" fill="url(#paint0_radial_0_1)" />
                                     <path ref={el => { if (el && animCrouselScaleLg.current.indexOf(el) == -1) animCrouselScaleLg.current.push(el) }} opacity="0.5" d="M741.941 880.701C873.371 838.685 946.464 699.983 905.199 570.899C863.934 441.816 723.937 371.234 592.506 413.25C461.076 455.265 387.983 593.968 429.249 723.051C470.514 852.134 610.511 922.716 741.941 880.701Z" fill="url(#paint1_radial_0_1)" />
                                     <path ref={el => { if (el && animCrouselScaleSm.current.indexOf(el) == -1) animCrouselScaleSm.current.push(el) }} d="M951.031 647.325C951.031 804.45 823.656 931.825 666.531 931.825C509.406 931.825 382.031 804.45 382.031 647.325C382.031 490.2 509.406 362.825 666.531 362.825C823.656 362.825 951.031 490.2 951.031 647.325Z" stroke="url(#paint2_linear_0_1)" />
@@ -265,16 +273,6 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                                     {imageList.map((item, ind) =>
                                         <image key={ind} className={`phone-images absolute ${ind == 0 ? '' : 'opacity-0'} w-[32%] translate-x-[-5%] md:translate-x-0 md:w-[293px]`} href={item} x='40.5%' y='33%' width='293' cx="511.828" cy="696.377" transform="translate(0,0)" />
                                     )}
-                                    <foreignObject className="font-lato-light  w-[260px] text-sm text-white hidden md:block" x="67.5%" y="61.5%" width="260px" height="100px">
-                                        <p
-                                        >{t('landing.aboutus.sparkle1')}</p>
-                                    </foreignObject>
-                                    <foreignObject className="font-lato-light  w-[260px] text-sm text-white hidden md:block" x="9%" y="74.5%" width="260px" height="100px">
-                                        <p
-                                        >{t('landing.aboutus.sparkle2')}</p>
-                                    </foreignObject>
-                                    <image href="/images/sparkle.svg" className=" w-[49px] h-[47px] hidden md:block " x="5%" y="74%" cx="511.828" cy="696.377" />
-                                    <image href="/images/sparkle.svg" className=" w-[49px] h-[47px] hidden md:block " x="64%" y="61%" cx="511.828" cy="696.377" />
                                     <defs>
                                         <radialGradient id="paint0_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(689.034 286.09) rotate(90.385) scale(806.303 806.304)">
                                             <stop stopColor="#2294C3" />
@@ -298,6 +296,16 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                                         </linearGradient>
                                     </defs>
                                 </svg>
+                                <div className="absolute z-[2] md:w-full md:left-[25%] md:translate-x-0 md:top-[50%] md:translate-y-[-50%]">
+                                    {
+                                        (sliderList as unknown as any[]).map((item, ind) => (
+                                            <div key={ind} className={`sparkle-divs ${ind == 0 ? '' : 'hidden'}`}>
+                                                <Sparkle className="relative w-[280px] left-[4.8%] top-[360px]">{item.sparkle1}</Sparkle>
+                                                <Sparkle className="relative w-[280px] left-[64%] top-[157px]">{item.sparkle2}</Sparkle>
+                                            </div>
+                                        ))
+                                    }
+                                </div>
                             </div>
 
                         </div>
@@ -306,15 +314,6 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
             </section>
             <div ref={el => { if (el && animGradient.current.indexOf(el) == -1) animGradient.current.push(el) }} className='z-0 md:container hidden md:block fixed top-0 md:top-[50%] md:translate-y-[-50%] left-1/2 translate-x-[-50%] w-full h-full max-h-[1080px]'></div>
             <div ref={animCircle} className='z-0 md:container hidden fixed top-1/2 left-1/2 center-transform w-full' >
-                {/* <svg viewBox="-200 -200 1300 1300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle opacity="0.5" cx="449" cy="449" r="448.5" transform="rotate(-180 449 449)" stroke="url(#paint0_linear_1362_4341)" />
-                <defs>
-                    <linearGradient id="paint0_linear_1362_4341" x1="449" y1="-3.05176e-05" x2="449" y2="898" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="white" />
-                        <stop offset="1" stopColor="white" stopOpacity="0" />
-                    </linearGradient>
-                </defs>
-            </svg> */}
             </div>
         </>
     )

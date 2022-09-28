@@ -66,9 +66,9 @@ const Business: NextPage = () => {
 		refSectionNewWork,
 		refSectionPrepareSuccess,
 		refSectionCertainlySafe,
+		refSectionWhitePaper,
 		refSectionSolution360,
 		refSectionBusinessNode,
-		refSectionWhitePaper,
 		refSectionFooter
 	];
 	const backGradientList = [
@@ -196,9 +196,9 @@ const Business: NextPage = () => {
 				<NewWork ref={refSectionNewWork} />
 				<PrepareSuccess ref={refSectionPrepareSuccess} />
 				<CertainlySafe ref={refSectionCertainlySafe} />
+				<WhitePaper ref={refSectionWhitePaper} />
 				<Solution360 ref={refSectionSolution360} />
 				<BusinessNode ref={refSectionBusinessNode} />
-				<WhitePaper ref={refSectionWhitePaper} />
 				<AnimateFooter ref={refSectionFooter} />
 			</Mainlayout>
 		</div>

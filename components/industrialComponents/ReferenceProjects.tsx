@@ -58,6 +58,7 @@ const ReferenceProjects = React.forwardRef((props: any, ref: any) => {
         className: "credential-carousel relative z-50 md:hidden",
         options: {
             asNavFor: ".carousel-main",
+            draggable: false,
             pageDots: false
         },
         flickityRef: flickity

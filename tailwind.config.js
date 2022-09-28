@@ -82,7 +82,7 @@ module.exports = {
           fontFamily: "lato",
           textTransform: "uppercase",
           fontSize: "26px",
-          lineHeight: "48px",
+          lineHeight: "36px",
           fontWeight: "900",
           letterSpacing: "0.1em",
           color: "transparent",

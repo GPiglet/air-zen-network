@@ -50,6 +50,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
             pageDots: false,
             selectedAttraction: 0.01,
             friction: 0.17,
+            draggable: false,
             fade: true
         },
         flickityRef: flickity
@@ -326,7 +327,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
             {/*Carousal*/}
             <div ref={el => { if (el && refAnimContents.current.indexOf(el) == -1) refAnimContents.current.push(el) }} className="carousel-content relative w-full h-full z-10 md:fixed md:hidden md:px-0 md:mt-0 md:pl-[25%]">
                 <picture className={`${selected + 1 === sliderList.length ? 'hidden' : ''} `}>
-                    <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('next')} className='top-[90%] w-[47px] h-[93px] cursor-pointer absolute right-[20px] md:right-[230px] md:bottom-auto md:top-1/2 center-y-transform z-50  ' />
+                    <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('next')} className='top-[90%] w-[47px] h-[93px] cursor-pointer absolute right-[20px] md:right-[230px] md:bottom-auto md:top-1/2 center-y-transform z-50' />
                 </picture>
                 <picture className={`${selected === 0 ? 'hidden' : ''}`}>
                     <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('prev')} className={`top-[90%] z-50 w-[47px] h-[93px] sparkle-arrow-reverse cursor-pointer absolute left-[20px] md:left-[-70px] md:bottom-auto md:top-1/2 4xl:left-[-110px]`} />
@@ -340,7 +341,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                                 (sliderList as unknown as any[]).map((item, ind) => (
                                     <div className="relative w-full mr-4 opacity-50" key={ind}>
                                         {/* <p className="font-lato-light font-light text-[22px] text-white">{item.tip}</p> */}
-                                        <h1 className="text-title-sm-white text-center text-[22px] translate-x-[-20px]">{item.title}</h1>                                        
+                                        <h1 className="text-title-sm-white text-center text-[22px] translate-x-[-20px]">{item.title}</h1>
                                         <div className="grid md:grid-cols-2 w-full mt-8">
                                             {
                                                 (item.list as unknown as any[]).map((list, index) =>

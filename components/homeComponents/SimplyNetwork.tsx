@@ -42,7 +42,7 @@ const SimplyNetwork: FC<{ props?: any, ref: any }> = React.forwardRef((props: an
     return (
         <section ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container mx-auto relative md:fixed md:h-screen md:hidden md:left-[50%] md:translate-x-[-50%]">
 
-            <div className="relative items-center px-10 pt-[250px] sm:pt-[200px] md:top-1/2 md:translate-y-[-50%] md:px-0 md:pt-0">
+            <div className="relative items-center px-10 pt-[190px] sm:pt-[200px] md:top-1/2 md:translate-y-[-50%] md:px-0 md:pt-0">
                 <Breadcrumb />
                 <div className="flex flex-wrap mt-12 relative z-10">
                     <div className="w-full sm:w-[400px] md:w-[510px]">
@@ -54,7 +54,7 @@ const SimplyNetwork: FC<{ props?: any, ref: any }> = React.forwardRef((props: an
                         }
                     </div>
                 </div>
-                <svg className="z-0 top-[-55px] absolute translate-x-[-16%] bottom-[-27%] w-[160%] sm:translate-x-[-9%] sm:top-[-20%] sm:w-[120%] sm:right-[-42%] md:translate-x-0 md:top-1/2 md:translate-y-[-50%] md:w-[100%] md:right-[-53%]  xl:w-[120%] xl:right-[-44%] " viewBox="0 0 817 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="z-0 left-0 top-[-55px] absolute w-[140%] sm:left-auto sm:top-[-20%] sm:w-[120%] sm:right-[-33%] md:translate-x-0 md:top-1/2 md:translate-y-[-50%] md:w-[100%] md:right-[-53%]  xl:w-[120%] xl:right-[-44%] " viewBox="0 0 817 750" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.2" d="M259.493 676.355C116.557 593.32 67.3899 408.41 149.686 263.345C231.983 118.279 414.572 68.0028 557.507 151.038C700.443 234.072 749.61 418.982 667.314 564.048C585.017 709.114 402.428 759.389 259.493 676.355Z" stroke="url(#paint0_linear_1376_4715)" />
                     <path opacity="0.6" d="M156.234 267.676C76.0933 408.942 124.025 588.918 263.293 669.663C402.561 750.408 580.427 701.346 660.568 560.079C740.709 418.813 692.777 238.837 553.509 158.092C414.241 77.3475 236.375 126.41 156.234 267.676Z" fill="url(#paint1_radial_1376_4715)" />
                     <path opacity="0.6" d="M207.243 296.694C143.239 409.515 181.519 553.25 292.744 617.735C403.968 682.221 546.018 643.038 610.022 530.218C674.025 417.398 635.745 273.663 524.521 209.177C413.297 144.691 271.246 183.874 207.243 296.694Z" fill="url(#paint2_radial_1376_4715)" />

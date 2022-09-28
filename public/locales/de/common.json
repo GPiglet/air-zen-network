@@ -4,8 +4,8 @@
             "_comment": "Der obere Abschnitt der Seite.",
             "title": "Sei Smart! \n Machs einfach!",
             "description": "Highend-Netzwerk-Technologien für einen entspannteren Alltag und Arbeitswelt. Und das außergewöhnlich einfach, sicher und zuverlässig.",
-            "sparkle1": "Dieses Feature ermöglicht eine besondere Funktion: XYZ",
-            "sparkle2": "Dieses Feature ermöglicht eine besondere Funktion: XYZ"
+            "sparkle1": "Innovative WLAN & 5G Technologie aus Europa",
+            "sparkle2": "Schwerpunkt auf Sicherheit & einfache Bedienung per App"
         },
         "solution": {
             "_comment": "Abschnitt 'Einzigartige Technologie' der Seite",
@@ -41,23 +41,29 @@
             "swiper": [
                 {
                     "title": "Aus Europa. Für Europa.",
-                    "content": "AirZen stellt modernste Netzwerk Technologie in Europa her. Sicheres WLAN - entwickelt für individuelle Anforderungen und hoher Anwenderfreundlichkeit. Der eigenen Herkunft verpflichtet, hilft AirZen allen Kunden dabei mit den aktuellen Datenschutz- und Security-Richtlinien Schritt zu halten"
+                    "content": "AirZen stellt modernste Netzwerk Technologie in Europa her. Sicheres WLAN - entwickelt für individuelle Anforderungen und hoher Anwenderfreundlichkeit. Der eigenen Herkunft verpflichtet, hilft AirZen allen Kunden dabei mit den aktuellen Datenschutz- und Security-Richtlinien Schritt zu halten",
+                    "sparkle1": "Network as a Service Plattform",
+                    "sparkle2": "Sicherheit, Zuverlässigkeit & Leistungs­fähigkeit aus einer Hand"
                 },
                 {
                     "title": "Unsere Stärke. Ihr Schutz.",
-                    "content": "Jedes Unternehmen ist einzigartig. Daher müssen es die Netzwerklösungen auch sein. AirZen maximiert Sicherheit mit maßgeschneiderten WLAN-Lösungen auf der Grundlage von Security by Design und reduziert die Komplexität der IT für alle Anwender:innen."
+                    "content": "Jedes Unternehmen ist einzigartig. Daher müssen es die Netzwerklösungen auch sein. AirZen maximiert Sicherheit mit maßgeschneiderten WLAN-Lösungen auf der Grundlage von Security by Design und reduziert die Komplexität der IT für alle Anwender:innen.",
+                    "sparkle1": "Automatische Updates & aktuellste Security-Filter",
+                    "sparkle2": "Managed Service zur Entlastung der IT-Abteilung"
                 },
                 {
                     "title": "Einer für alle und alles bei Einem.",
-                    "content": "AirZen ist nicht nur IT-Hersteller, sondern vielmehr ganzheitlicher IT-Partner. Von der Entwicklung, Produktion und Betreuung bietet AirZen eigene, passgenaue WLAN-Lösungen für Unternehmen aller Branchen sowie  öffentliche Einrichtungen - und das alles aus einer Hand."
+                    "content": "AirZen ist nicht nur IT-Hersteller, sondern vielmehr ganzheitlicher IT-Partner. Von der Entwicklung, Produktion und Betreuung bietet AirZen eigene, passgenaue WLAN-Lösungen für Unternehmen aller Branchen sowie  öffentliche Einrichtungen - und das alles aus einer Hand.",
+                    "sparkle1": "20 Jahre WLAN-Technologie Expertise",
+                    "sparkle2": "Ganzheitlicher IT-Partner mit deutschsprachigem Live-Support"
                 },
                 {
                     "title": "Immer Besser.",
-                    "content": "Die AirZen Netzwerklösungen sind so konzipiert, dass sie außergewöhnlich einfach zu installieren sind, sicheren WLAN-Zugang bieten und die Zuverlässigkeit liefern, welche für digitale Arbeitsplätze nötig ist. Dabei bildet die AirZen Technologie ein flexibles Fundament, das sich kontinuierlich weiterentwickelt und neue Angebote bietet."
+                    "content": "Die AirZen Netzwerklösungen sind so konzipiert, dass sie außergewöhnlich einfach zu installieren sind, sicheren WLAN-Zugang bieten und die Zuverlässigkeit liefern, welche für digitale Arbeitsplätze nötig ist. Dabei bildet die AirZen Technologie ein flexibles Fundament, das sich kontinuierlich weiterentwickelt und neue Angebote bietet.",
+                    "sparkle1": "Individuelle Passwörter je Nutzer:innen für maximale Sicherheit",
+                    "sparkle2": "Plug & Play für sorgenfreie Einrichtung auch ohne IT-Kenntnisse"
                 }
-            ],
-            "sparkle1": "Dieses Feature ermöglicht eine besondere Funktion: XYZ",
-            "sparkle2": "Dieses Feature ermöglicht eine besondere Funktion: XYZ"
+            ]            
         },
         "credential": {
             "_comment": "Abschnitt 'Referenzen' der Seite.",
@@ -221,39 +227,25 @@
         "boost": {
             "_comment": "Der obere Abschnitt der Seite.('Boost')",
             "title": "Boost your Business",
-            "description": "Ihr Start-Up, Filiale, oder Restaurant soll mit einem sciheren Netz versorgt,   und aus der Ferne wartbar sein?  \n Dann entdecken Sie die innovative Air Zen Technologie für ein zuverlässiges, sicheres und einfaches Netz.",
-            "cooperation": "In vertrauensvoller Kooperation mit:"
+            "description": "Netzwerkmanagement für Unternehmen jeder Art und Größe. AirZen ist ideal für Kunden, die neue Technologien einführen möchten, neue Standorte aufbauen oder die Auslagerung der Netzwerkverwaltung planen. \nAirZen steht für einfache und sichere europäische Netzwerk-Management-Lösungen und Einführung der innovativen Fernwartung.",
+            "cooperation": "Unternehmen, die uns vertrauen:"
         },
         "professional": {
             "_comment": "Abschnitt 'Professional Walan' der Seite",
-            "title": "Profesionelles Wlan ",
-            "subtitle": "für Teams, Büros und Kunden",
+            "title": "Profesionelles Wlan",
+            "subtitle": "für standortübergreifende & smarte IT-Security.",
             "list": [
                 {
                     "title": "Office & Teams",
-                    "items": "Zerotrust: individuelle Kennwörter \n Self-Service Portal für Mitarbeiter \n Managed Service & Live- Support per App, optional auch für Mitarbeiter"
+                    "items": "Smarte WLAN-Sicherheit \n Team Self-Service-Portal \n Remote Standort Verwaltung"
                 },
                 {
                     "title": "Homeoffice",
-                    "items": "Security im Home-Office: Seperate Business und Privat-Netze \n Plug & Play, keine  IT-Erfahrung nötig \n  Router-Set mit Mesh-Technologie"
+                    "items": "IT-Security auch Zuhause \n Plug & Play Installation \n Live Support per App"
                 },
                 {
                     "title": "Kunden & Gäste WLAN",
-                    "items": "Marketing im Gäste WLAN per App konfigurierbar \n kontinuierlich Rechtssicher und DSGVO-Konform \n Individalisierbar nach Branche (Premium-WLAN, Gäste-WLAN uvm.)"
-                }
-            ],
-            "list": [
-                {
-                    "title": "Office & Teams",
-                    "items": "Zerotrust: individuelle Kennwörter \n Self-Service Portal für Mitarbeiter \n Managed Service & Live- Support per App, optional auch für Mitarbeiter"
-                },
-                {
-                    "title": "Homeoffice",
-                    "items": "Security im Home-Office: Seperate Business und Privat-Netze \n Plug & Play, keine  IT-Erfahrung nötig \n  Router-Set mit Mesh-Technologie"
-                },
-                {
-                    "title": "Kunden & Gäste WLAN",
-                    "items": "Marketing im Gäste WLAN per App konfigurierbar \n kontinuierlich Rechtssicher und DSGVO-Konform \n Individalisierbar nach Branche (Premium-WLAN, Gäste-WLAN uvm.)"
+                    "items": "Sorgenfreier Zugang \n Marketing-Funktionen \n DSGVO konform"
                 }
             ]
         },
@@ -261,88 +253,127 @@
             "_comment": "Abschnitt 'Zuverlässig' der Seite",
             "tip": "Zuverlässig",
             "title": "New Work, leicht gemacht!",
-            "description": "Nach dem Update ist vor dem Update. Gerade bei Home Office Lösungen ist ihr Netzwerk vielen Potentiellen Angriffen ausgesetzt. \n Um diesen Bedrohungen immer einen Schritt voraus zu sein, ist unsere Platform an ein Lizensmodell gekoppelt. Das schließt zahlreiche Sicherheitsfeatures ein, von denen Sie kaum etwas bemerken werden:",
+            "description": "Nach dem Update ist vor dem Update. Gerade bei mobilen Arbeitsplätzen ist ihr Netzwerk vielen potenziellen Angriffen ausgesetzt. \n Um diesen Bedrohungen immer einen Schritt voraus zu sein, ist unsere Plattform an ein Lizenzmodell gekoppelt. Das schließt zahlreiche Sicherheitsfeatures ein, die im Hintergrund aktiv sind.",
             "list": [
-                "Zero Trust Konzept \n Je Mitarbeiter ein Kennwort",
-                "Live Protection \n c",
-                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
-            ],
-            "list": [
-                "Zero Trust Konzept \n Je Mitarbeiter ein Kennwort",
-                "Live Protection \n c",
-                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
+                "Technik made in Europa \n Technologie & Bürokratie perfekt vereint.",
+                "Automatisierte Updates \n Sicherheit durch aktuellste Firmware & Security Filter.",
+                "Security Features \n BotNetze & Malware proaktiv abwehren."
             ]
         },
         "preparesuccess": {
             "_comment": "Abschnitt 'Einfach' der Seite",
             "tip": "Einfach",
             "title": "Auf Erfolg eingerichtet!",
-            "description": "Gerade Hotels, Einzelhandel, Versicherungen oder Banken mit vielen Standorten erleichtert ein smartes Standort- und Nutzermanagement inklusive Direktsupport vom Hersteller das Leben. \n Über unsere App können Sie ihr Netzwerk dynamisch erweitern oder updaten und einzelne Nutzer sicher einladen oder sperren. \n Auch Ihr Team kann über ein Self-Service-Portal selbst zu- und eingreifen. Darüber hinaus können Sie sogar eigene Sicherheits-Standards definieren: bestes Feng Shui für Ihre Mitarbeiter und Ihr Wlan."
+            "description": "Gerade Unternehmen mit vielen Standorten erleichtert ein smartes Standort- und Nutzermanagement inklusive Direktsupport per Live-Chat das Leben. \n Über unsere App können Sie ihr Netzwerk dynamisch erweitern oder updaten und einzelne Nutzer:innen sicher einladen oder sperren. \n Auch Ihr Team kann über ein Self-Service-Portal selbst zu- und eingreifen. Darüber hinaus können Sie selbst eigene Sicherheitsstandards definieren: bestes Feng Shui für Ihre Mitarbeiter:innen und Ihr WLAN.",
+            "sparkle1": "Entlastung der IT per Remote Standort Management"
         },
         "secure": {
             "_comment": "Abschnitt 'Sicher' der Seite",
             "tip": "Sicher",
             "title": "Mit Sicherheit sicher!",
-            "description": "Ein sicherer Zugang auf zentrale Firmen-Ressourcen ist wesentlich, um im Großraum- büro, Coworking Space oder Zuhause zu arbeiten. wir bieten einzelne Kennwörter im Sinne von Zero Trust, automatische Rechtebeschränkungen für neue Devises, und ermöglichen Ihnen dennoch volle Konnektivität für all Ihre digitalen Abenteuer. \n So arbeiten Sie und ihr Team überall zu den Sicherheitsrichtlinien Ihres Unternehmens, selbst vom Sofa aus.",
+            "description": "IT-Security ist von nun an Chefsache, dank AirZen müssen Sie kein Experte sein. Wir helfen Ihnen und ihrem IT-Team dabei die Widerstandsfähigkeit ihrer Netzwerks aufzubauen. \n Unsere Aufgabe ist es, Hard- und Software aktuell zu halten und “IT-Security-By-Design” umzusetzen. \n Die AirZen-Tools helfen Ihnen dabei Sicherheit mühelos in ihr Netzwerk zu integrieren - egal ob im Office, Fahrzeugen, HomeOffice oder anderen Segmenten des Unternehmens.",
             "list": [
-                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
-                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
-                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
-            ],
-            "list": [
-                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
-                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
-                "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
+                "Sichere Team-Verwaltung \n Individuelle Passwörter pro Mitarbeiter:innen.",
+                "Device Management \n Bringen Sie Struktur in die Vielzahl von Endgeräten.",
+                "Self Service Portal \n Alle Mitarbeiter:innen sicher & einfach hinzufügen."
             ]
         },
         "solution": {
             "_comment": "Abschnitt '360°' der Seite",
-            "title": "360° Lösung für Unternehmen",
             "swiper": [
-                [
-                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
-                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
-                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
-                ],
-                [
-                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
-                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
-                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
-                ],
-                [
-                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
-                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf",
-                    "Sicheres Wlan für Kinder \n inclusive Internet-Filter und Pause Knopf"
-                ]
+                {
+                    "title": "360° Lösung für Unternehmen",
+                    "list": [
+                        "Technologie aus Europa \n Smarte Netzwerk-Technik für sichere Unternehmens-IT.",
+                        "Smarte Verwaltung \n Übersichtliche & einfache Verwaltung per App & CLI.",
+                        "Managed Service \n Zugriff auf Netzwerk-Experten von AirZen als Service."
+                    ]
+                },
+                {
+                    "title": "Alles aus einer hand",
+                    "list": [
+                        "Standort Management \n Remote ganz einfach alle Standorte verwalten.",
+                        "Team Verwaltung \n Sicher & einfach alle im Team ins Netzwerk bringen.",
+                        "Gäste WLAN & HomeOffice \n Inklusive umfangreichen Netzwerk Funktionen."
+                    ]
+                },
+                {
+                    "title": "Managed service",
+                    "list": [
+                        "Netzwerk Expertise \n Wir verwalten Ihr Netzwerk gemäß ihren Wünschen.",
+                        "Support Live Chat \n Direkter Support ohne lange Wartezeiten.",
+                        "Ticket Verwaltung \n Smarte Chats mit unseren Experten - einfach als Tickets."
+                    ]
+                },
+                {
+                    "title": "Team Self Service",
+                    "list": [
+                        "Smarter WLAN Zugang \n Teammitglieder können selbst  ihre Geräte verwalten.",
+                        "Per App oder Web \n Auch ohne IT-Kenntnisse einfach zu bedienen. ",
+                        "Optionales Service Portal \n Self-Service passt nicht? Es gibt weitere Möglichkeiten."
+                    ]
+                },
+                {
+                    "title": "smart wifi security",
+                    "list": [
+                        "Device Management \n Jedes Passwort funktioniert nur mit einem Gerät.",
+                        "Immer in Verbindung \n Das Team kann direkt auf die Live-Chat Funktion zugreifen.",
+                        "Company Services \n HomeOffice-Set per App direkt nach Hause bestellen."
+                    ]
+                },
+                {
+                    "title": "security by design",
+                    "list": [
+                        "Mit & ohne App \n Legen Sie fest, wie das Team den Self-Service nutzen kann.",
+                        "Individuelle Security \n Entscheiden Sie selbst wie der Zugriff geregelt ist.",
+                        "User-Management \n WLAN-Verwaltung so leicht wie noch nie zuvor."
+                    ]
+                },
+                {
+                    "title": "HomeOffice",
+                    "list": [
+                        "HomeOffice? Aber sicher! \n Sichern Sie das HomeOffice ab. Ganz einfach mit AirZen.",
+                        "Getrennte Netze \n Das private Netzwerk ist abgetrennt vom HomeOffice.",
+                        "VPN, 5G & More \n Viele Möglichkeiten für ein professionelles HomeOffice."
+                    ]
+                },
+                {
+                    "title": "Public WiFi",
+                    "list": [
+                        "WLAN für Kunden & Gäste \n Nutzen Sie ihr WLAN als Marketing-Tool.",
+                        "Sicher & Einfach \n Gäste WLAN-Security für ein sicheres Kundenerlebnis.",
+                        "Ihr Design \n Passen Sie das WLAN-Portal ihren Vorstellungen an."
+                    ]
+                }
             ]
         },
         "ournode": {
             "_comment": "Abschnitt 'Unsere Nodes' der Seite",
             "tip": "Technik",
             "title": "Unsere Nodes",
-            "description": "Wifi 6 \n 2 wlan module für Access- und Meshing \n Perfektes roaming mit Apple & Android \n unterstützt alle Roaming Standards von Apple iOS und Android Geräten für ein Seamless Romaing. \n Zero-Setup \n Die AirZen App hilft dir bei der kinderleichten Installation. "
+            "description": "Wifi 6 \n Die neueste WLAN-Technik für Ihr Business. \n Perfektes Roaming mit Apple & Android \n Unterstützt alle Roaming Standards von Apple iOS und Android Geräten für ein Seamless Roaming. \n Plug & Play \n Spielend leichte Installation mit der AirZen App."
         },
         "whitepaper": {
             "_comment": "Abschnitt 'Whitepaper' der Seite",
             "title": "Whitepaper",
-            "subtitle": "Hier finden Sie tiefer gehende Informationen zu unserem Service.",
+            "subtitle": "Hier finden Sie umfangreiche Informationen zu unserem Service.",
             "paperList": [
                 {
                     "tip": "Whitepaper",
-                    "title": "Home-Office für alle",
-                    "description": "Ob groß oder klein: AirZen bietet vielfältige, individuelle Netzwerklösungen für Ihr Home-Office. Für weitere Infos zu unseren Services und Hardfacts werfen Sie einen Blick in unser Whitepaper.",
+                    "title": "Business WiFi",
+                    "description": "Einfache & sichere europäische Netzwerk-Management-Lösungen inkl. innovativer Fernwartung.",
                     "button": "PDF herunterladen"
                 },
                 {
                     "tip": "Whitepaper",
-                    "title": "Home-Office für alle",
-                    "description": "Ob groß oder klein: AirZen bietet vielfältige, individuelle Netzwerklösungen für Ihr Home-Office. Für weitere Infos zu unseren Services und Hardfacts werfen Sie einen Blick in unser Whitepaper.",
+                    "title": "HomeOffice",
+                    "description": "Sichere Trennung des beruflichen vom privaten Netz. AirZen bietet ein sicher & einfach verwaltbares Netzwerk für ihr HomeOffice.",
                     "button": "PDF herunterladen"
                 },
                 {
                     "tip": "Whitepaper",
-                    "title": "Home-Office für alle",
-                    "description": "Ob groß oder klein: AirZen bietet vielfältige, individuelle Netzwerklösungen für Ihr Home-Office. Für weitere Infos zu unseren Services und Hardfacts werfen Sie einen Blick in unser Whitepaper.",
+                    "title": "Public Wifi",
+                    "description": "Smartes Gäste-WLAN, das einen idealen Eindruck hinterlässt, sicher & frei von Rechtssorgen.",
                     "button": "PDF herunterladen"
                 }
             ]
@@ -437,17 +468,17 @@
             "tip": "Sicher",
             "title": "SCHUTZ wird hier großsgeschrieben!",
             "description": "Von der Grundschule bis zum Hörsaal - im schulischen Netzwerk gibt es viele sensible Daten. AirZen bietet durch die Kombi von hochqualitativem Hersteller- Service und EU- als auch DSGV- konformen Sicherheitskonzepten ein hohes Maß an IT-Sicherheit.  \n Schützen Sie Ihre Schüler und Lehrkräfte zudem mit eigenen WLAN-Passwörtern, Jugendschutzfiltern und separat getrennten Verbindungen.",
-            "sparkle1": "Dieses Feature ermöglicht eine besondere Funktion: XYZ",
-            "sparkle2": "Dieses Feature ermöglicht eine besondere Funktion: XYZ"
+            "sparkle1": "EU & DGVO konforme Netzwerklösung inkl. innovativer Fernwartung.",
+            "sparkle2": "Automatisierte Updates Sicherheit durch aktuellste Firmware & Security Filter."
         },
         "easy": {
             "_comment": "'Einfach'Abschnitt der Seite",
             "tip": "Einfach",
             "title": "Das kleine Einmaleinfach!",
             "description": "Laptop raus und loslegen. Mit AirZen bekommen Schüler und Lehrer schnell und spielend einfach Zugang ins Netz über ein Self Service Portal. Damit sich alle auf den Unterricht konzentrieren können, läuft alles andere fast automatisch ab - Von der Einrichtung, bis hin zur Wartung mit selbstlernender Softwarepflege. \n Es braucht also keine große IT-Abteilung oder Fachkenntnisse, dank Hardware und Support direkt vom Hersteller. Oder anders gesagt: Mit AirZen geht die Rechnung auf.",
-            "sparkle1": "Dieses Feature ermöglicht eine besondere Funktion: XYZ",
-            "sparkle2": "Dieses Feature ermöglicht eine besondere Funktion: XYZ",
-            "sparkle3": "Dieses Feature ermöglicht eine besondere Funktion: XYZ"
+            "sparkle1": "User-Management WLAN-Verwaltung so leicht wie noch nie zuvor.",
+            "sparkle2": "Plug & Play Spielend leichte Installation mit der AirZen App.",
+            "sparkle3": "Support Live Chat Direkter Support ohne lange Wartezeiten."
         },
         "ournode": {
             "_comment": "Abschnitt 'Unsere Nodes' der Seite",
