@@ -7,9 +7,9 @@ const WhitePaper: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, 
     const { t } = useTranslation()
     const paperList = t('business.whitepaper.paperList', { returnObjects: true })
     const graphList = [
-        <img src="/images/whitepaper-back1.svg" className='absolute left-[50%] translate-x-[-50%] max-w-[120%] top-[-90px] md:left-[-65px] md:translate-x-0'/>,
-        <img src="/images/whitepaper-back2.svg" className='absolute left-[50%] translate-x-[-50%] max-w-[120%] top-[-90px] md:left-[-65px] md:translate-x-0'/>,
-        <img src="/images/whitepaper-back3.svg" className='absolute left-[50%] translate-x-[-50%] max-w-[120%] top-[-90px] md:left-[-65px] md:translate-x-0'/>
+        <img key={0} src="/images/whitepaper-back1.svg" className='absolute left-[50%] translate-x-[-50%] max-w-[120%] top-[-90px] md:left-[-65px] md:translate-x-0'/>,
+        <img key={1} src="/images/whitepaper-back2.svg" className='absolute left-[50%] translate-x-[-50%] max-w-[120%] top-[-90px] md:left-[-65px] md:translate-x-0'/>,
+        <img key={2} src="/images/whitepaper-back3.svg" className='absolute left-[50%] translate-x-[-50%] max-w-[120%] top-[-90px] md:left-[-65px] md:translate-x-0'/>
     ]
 
     // animation
