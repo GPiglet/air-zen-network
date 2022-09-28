@@ -26,9 +26,15 @@ const Credential = React.forwardRef((props: any, ref: any) => {
     const carouselList = t('landing.credential.swiper', { returnObjects: true })
 
     const imageList = [
-        '/images/volskbank.png',
-        '/images/kreissparkasse.png',
-        '/images/districtbank.png',
+        '/images/landing-credential1.png',
+        '/images/landing-credential2.png',
+        '/images/landing-credential3.png',
+        '/images/landing-credential4.png',
+        '/images/landing-credential5.png',
+        '/images/landing-credential6.png',
+        '/images/landing-credential7.png',
+        '/images/landing-credential8.png',
+        '/images/landing-credential9.png',
     ]
 
     //Flickity
@@ -280,7 +286,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
                                         <div className='w-full py-2 px-2'>
                                             <p className='font-lato text-[22px] text-white'>{item.title}</p>
                                         </div>
-                                        <ul className='w-full   md:w-1/2 pl-2 px-2 text-white list-disc opacity-0'>
+                                        <ul className={`w-full md:w-1/2 pl-2 px-2 text-white ${item.list.split('\n').length > 1 ? 'list-disc' : 'list-none'} opacity-0`}>
                                             {
                                                 item.list.split('\n').map((detail: string, ind: number) => (
                                                     <li className='font-lato text-base font-light' key={ind}>{detail}</li>
@@ -309,11 +315,11 @@ const Credential = React.forwardRef((props: any, ref: any) => {
                                         <source srcSet={imageList[index]} type="image/webp" />
                                         <img src={imageList[index]} className="w-[80%]" alt="" />
                                     </picture>
-                                    <div className='md:flex md:p-7'>
-                                        <div className='w-full md:w-1/2 px-2'>
+                                    <div className='flex pt-7 w-[110%] ml-[1.2rem]'>
+                                        <div className='w-[40%] px-2'>
                                             <p className='font-lato text-[22px] text-white'>{item.title}</p>
                                         </div>
-                                        <ul className='w-full   md:w-1/2 pl-2 px-2 text-white list-disc hidden'>
+                                        <ul className={`w-[60%] pl-2 px-2 text-white ${item.list.split('\n').length > 1 ? 'list-disc' : 'list-none'} hidden`}>
                                             {
                                                 item.list.split('\n').map((detail: string, ind: number) => (
                                                     <li className='font-lato text-base font-light' key={ind}>{detail}</li>

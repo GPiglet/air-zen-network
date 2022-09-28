@@ -70,16 +70,40 @@
             "title": "Referenzen",
             "swiper": [
                 {
-                    "title": "Volksbank Köln/Bonn",
-                    "list": "WiFi für 30 Standorte \n 150 WLAN Router \n 700 Mitarbeiter \n Kunden-WLAN \n Managed Service"
+                    "title": "Volksbank Köln / Bonn",
+                    "list": "AirZen WLAN & Plattform für 37 Standorte. AirZenOS Module Business & Public als Managed Service über die AirZen Cloud. Zusätzliches SD-WAN, VPN, & Gast-Portal."
                 },
                 {
                     "title": "Kreissparkasse Tuttlingen",
-                    "list": "WiFi für 30 Standorte \n 150 WLAN Router \n 700 Mitarbeiter \n Kunden-WLAN \n Managed Service"
+                    "list": "AirZen WLAN & Plattform für 28 Standorte. AirZenOS Module Business & Public als Managed Service über die AirZen-Cloud. Zusätzliches SD-WAN, VPN, & Gast-Portal."
                 },
                 {
-                    "title": "IHK Schwarzwald-Baar-Heuberg",
-                    "list": "WiFi für 30 Standorte \n 150 WLAN Router \n 700 Mitarbeiter \n Kunden-WLAN \n Managed Service"
+                    "title": "Sparkasse Karlsruhe",
+                    "list": "AirZen WLAN & Plattform für 43 Standorte. AirZenOS Module Business & Public als Managed Service über die AirZen Cloud. Zusätzliches SD-WAN, VPN, & Gast-Portal."
+                },
+                {
+                    "title": "Sparkasse Hochfranken",
+                    "list": "AirZen WLAN & Plattform für 11 Standorte. AirZenOS Module Business & Public als Managed Service über die AirZen Cloud. Zusätzliches SD-WAN, VPN, & Gast-Portal."
+                },
+                {
+                    "title": "Oldenburger Volksbank",
+                    "list": "AirZen WLAN & Plattform für 13 Standorte. AirZenOS Module Business & Public als Managed Service über die AirZen Cloud. Zusätzliches SD-WAN, VPN, & Gast-Portal."
+                },
+                {
+                    "title": "Vereinte Volksbank Bramgau Osnabrück",
+                    "list": "AirZen WLAN & Plattform für 12 Standorte. AirZenOS Module Business & Public als Managed Service über die AirZen Cloud. Zusätzliches SD-WAN, VPN, & Gast-Portal."
+                },
+                {
+                    "title": "Sparkasse Zwickau",
+                    "list": "AirZen WLAN & Plattform für 26 Standorte. AirZenOS Module Business & Public als Managed Service über die AirZen Cloud. Zusätzliches SD-WAN, VPN, & Gast-Portal."
+                },
+                {
+                    "title": "Lutherstasdt Wittenberg",
+                    "list": "AirZen WLAN & Plattform für die Stadtverwaltung. AirZenOS Module Public als Managed Service über die AirZen Cloud. Zusätzliches SD-WAN, VPN, & Gast-Portal."
+                },
+                {
+                    "title": "Wernigerode im Harz Tourismus",
+                    "list": "AirZen WLAN & Plattform für den Tourismus. AirZenOS Module Public als Managed Service über die AirZen Cloud. Zusätzliches SD-WAN, VPN, & Gast-Portal."
                 }
             ]
         },
@@ -497,7 +521,25 @@
         },
         "referenceproject": {
             "_comment": "'Referenzprojekte' Abschnitt der Seite",
-            "title": "Referenzprojekte"
+            "title": "Referenzprojekte",
+            "swiper": [
+                {
+                    "title": "Deutsches Luft- & Raumfahrtzentrum",
+                    "list": "Zukunftsfähige Mobilität."
+                },
+                {
+                    "title": "Volkswagen AG",
+                    "list": "Zukünftige Verkehrskommunikation."
+                },
+                {
+                    "title": "Feuerwehr Düsseldorf",
+                    "list": "Sichere Vernetzung von Rettungskräften."
+                },
+                {
+                    "title": "Chemiepark Linz",
+                    "list": "Moderne Sicherheitstechnik."
+                }
+            ]
         },
         "easy": {
             "_comment": "'Einfach' Abschnitt der Seite",

@@ -70,16 +70,40 @@
             "title": "Credentials",
             "swiper": [
                 {
-                    "title": "Volksbank Köln/Bonn",
-                    "list": "WiFi for 30 locations \n 150 wireless routers \n 700 employees \n Customer WiFi \n managed services"
+                    "title": "Volksbank Köln / Bonn",
+                    "list": "AirZen WLAN & Plattform für 37 Standorte. AirZenOS Module Business & Public als Managed Service über die AirZen Cloud. Zusätzliches SD-WAN, VPN, & Gast-Portal."
                 },
                 {
                     "title": "Kreissparkasse Tuttlingen",
-                    "list": "WiFi for 30 locations \n 150 wireless routers \n 700 employees \n Customer WiFi \n managed services"
+                    "list": "AirZen WLAN & Plattform für 28 Standorte. AirZenOS Module Business & Public als Managed Service über die AirZen-Cloud. Zusätzliches SD-WAN, VPN, & Gast-Portal."
                 },
                 {
-                    "title": "IHK Schwarzwald-Baar-Heuberg",
-                    "list": "WiFi for 30 locations \n 150 wireless routers \n 700 employees \n Customer WiFi \n managed services"
+                    "title": "Sparkasse Karlsruhe",
+                    "list": "AirZen WLAN & Plattform für 43 Standorte. AirZenOS Module Business & Public als Managed Service über die AirZen Cloud. Zusätzliches SD-WAN, VPN, & Gast-Portal."
+                },
+                {
+                    "title": "Sparkasse Hochfranken",
+                    "list": "AirZen WLAN & Plattform für 11 Standorte. AirZenOS Module Business & Public als Managed Service über die AirZen Cloud. Zusätzliches SD-WAN, VPN, & Gast-Portal."
+                },
+                {
+                    "title": "Oldenburger Volksbank",
+                    "list": "AirZen WLAN & Plattform für 13 Standorte. AirZenOS Module Business & Public als Managed Service über die AirZen Cloud. Zusätzliches SD-WAN, VPN, & Gast-Portal."
+                },
+                {
+                    "title": "Vereinte Volksbank Bramgau Osnabrück",
+                    "list": "AirZen WLAN & Plattform für 12 Standorte. AirZenOS Module Business & Public als Managed Service über die AirZen Cloud. Zusätzliches SD-WAN, VPN, & Gast-Portal."
+                },
+                {
+                    "title": "Sparkasse Zwickau",
+                    "list": "AirZen WLAN & Plattform für 26 Standorte. AirZenOS Module Business & Public als Managed Service über die AirZen Cloud. Zusätzliches SD-WAN, VPN, & Gast-Portal."
+                },
+                {
+                    "title": "Lutherstasdt Wittenberg",
+                    "list": "AirZen WLAN & Plattform für die Stadtverwaltung. AirZenOS Module Public als Managed Service über die AirZen Cloud. Zusätzliches SD-WAN, VPN, & Gast-Portal."
+                },
+                {
+                    "title": "Wernigerode im Harz Tourismus",
+                    "list": "AirZen WLAN & Plattform für den Tourismus. AirZenOS Module Public als Managed Service über die AirZen Cloud. Zusätzliches SD-WAN, VPN, & Gast-Portal."
                 }
             ]
         },
@@ -497,7 +521,25 @@
         },
         "referenceproject": {
             "_comment": "'Reference projects' section of page",
-            "title": "Reference projects"
+            "title": "Reference projects",
+            "swiper": [
+                {
+                    "title": "Deutsches Luft- & Raumfahrtzentrum",
+                    "list": "Zukunftsfähige Mobilität."
+                },
+                {
+                    "title": "Volkswagen AG",
+                    "list": "Zukünftige Verkehrskommunikation."
+                },
+                {
+                    "title": "Feuerwehr Düsseldorf",
+                    "list": "Sichere Vernetzung von Rettungskräften."
+                },
+                {
+                    "title": "Chemiepark Linz",
+                    "list": "Moderne Sicherheitstechnik."
+                }
+            ]
         },
         "easy": {
             "_comment": "'Easy' section of page",

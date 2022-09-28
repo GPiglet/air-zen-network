@@ -25,14 +25,14 @@ const ReferenceProjects = React.forwardRef((props: any, ref: any) => {
 
 
 
-    const carouselList = t('landing.credential.swiper', { returnObjects: true })
+    const carouselList = t('industrial.referenceproject.swiper', { returnObjects: true })
 
     const imageList = [
-        '/images/volskbank.png',
-        '/images/districtbank.png',
-        '/images/districtbank.png',
-        '/images/districtbank.png',
-        '/images/districtbank.png'
+        '/images/industrial-reference1.png',
+        '/images/industrial-reference2.png',
+        '/images/industrial-reference3.png',
+        '/images/industrial-reference4.png',
+        '/images/industrial-reference5.png'
     ]
 
     //Flickity
@@ -186,7 +186,7 @@ const ReferenceProjects = React.forwardRef((props: any, ref: any) => {
         <section id='credentials' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='container md:overflow-hidden flex md:block mt-32 sm:mt-56 md:mt-0 md:pt-[160px] h-[80vh] md:h-screen items-center md:items-start md:fixed md:hidden md:w-full md:left-[50%] md:translate-x-[-50%]'>
             <div className='w-full relative z-50 md:absolute md:top-1/2 md:translate-y-[-60%]'>
                 <div className='pt-10 pb-8 4xl:pb-24 flex justify-center'>
-                    <h1 className="text-title-sm relative z-50">{t('landing.credential.title')}</h1>
+                    <h1 className="text-title-sm relative z-50">{t('industrial.referenceproject.title')}</h1>
                 </div>
                 <picture className={`${selected + 1 === carouselList.length ? 'hidden' : ''} `}>
                     <source srcSet="/images/sparkle-arrow.svg" type="image/webp" />
@@ -214,7 +214,7 @@ const ReferenceProjects = React.forwardRef((props: any, ref: any) => {
                                         <div className='w-full py-2 px-2'>
                                             <p className='font-lato text-[22px] text-white'>{item.title}</p>
                                         </div>
-                                        <ul className='w-full   md:w-1/2 pl-2 px-2 text-white list-disc opacity-0'>
+                                        <ul className={`w-full md:w-1/2 pl-2 px-2 text-white ${item.list.split('\n').length > 1 ? 'list-disc' : 'list-none'} opacity-0`}>
                                             {
                                                 item.list.split('\n').map((detail: string, ind: number) => (
                                                     <li className='font-lato text-base font-light' key={ind}>{detail}</li>
@@ -243,11 +243,11 @@ const ReferenceProjects = React.forwardRef((props: any, ref: any) => {
                                         <source srcSet={imageList[index]} type="image/webp" />
                                         <img src={imageList[index]} className="w-[80%]" alt="" />
                                     </picture>
-                                    <div className='md:flex md:p-7'>
-                                        <div className='w-full md:w-1/2 px-2'>
+                                    <div className='flex pt-7 w-[110%] ml-[1.2rem]'>
+                                        <div className='w-1/2 px-2'>
                                             <p className='font-lato text-[22px] text-white'>{item.title}</p>
                                         </div>
-                                        <ul className='w-full   md:w-1/2 pl-2 px-2 text-white list-disc hidden'>
+                                        <ul className={`w-1/2 pl-2 px-2 text-white ${item.list.split('\n').length > 1 ? 'list-disc' : 'list-none'} hidden`}>
                                             {
                                                 item.list.split('\n').map((detail: string, ind: number) => (
                                                     <li className='font-lato text-base font-light' key={ind}>{detail}</li>
