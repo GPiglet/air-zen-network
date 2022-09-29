@@ -456,7 +456,7 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                 <div className='md:mt-[200px] 4xl:mt-[135px]'>
                     <div className=" text-center  text-white">
                         <h1 ref={el => { if (el && animSideUp.current.indexOf(el) == -1) animSideUp.current.push(el) }} className="text-title-sm">{t('landing.solution.title')}</h1>
-                        <p ref={el => { if (el && animSideUp.current.indexOf(el) == -1) animSideUp.current.push(el); if (el && animFadeIn.current.indexOf(el) == -1) animFadeIn.current.push(el) }} className="font-lato font-light tracking-widest text-[22px] mt-3">{t('landing.solution.subtitle')}</p>
+                        <p ref={el => { if (el && animSideUp.current.indexOf(el) == -1) animSideUp.current.push(el); if (el && animFadeIn.current.indexOf(el) == -1) animFadeIn.current.push(el) }} className="font-lato font-light tracking-widest text-xl mt-3">{t('landing.solution.subtitle')}</p>
                     </div>
                     <div className='w-full mt-[80px] 4xl:mt-[145px]'>
                         <div className='md:m-auto md:w-max  '>
@@ -480,7 +480,7 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                                                 <button onClick={() => router.push(graphList[index].href)} className="cursor-pointer">
                                                     <div className='unique-skill-sparkle w-[89px] h-[89px] md:w-[65px] md:h-[65px] top-[30px] md:top-auto sparkle absolute right-[10px] sm:right-[80px] md:right-[10px] md:bottom-[22px]'></div>
                                                     <div className='unique-skill-button absolute bottom-0 flex items-center justify-between w-full hidden' >
-                                                        <p className='text-base'>{t('landing.solution.solution')}</p>
+                                                        <p className='text-lg'>{t('landing.solution.solution')}</p>
                                                         <div className='sparkle-arrow mr-[70px]'></div>
                                                     </div>
 
