@@ -29,7 +29,7 @@ const ContactFormSide: FC = () => {
 
     return (
         <div className='realtive right-0 z-60'>
-            <div className='fixed right-[-40px] top-[115px] bg-white w-[112px] cursor-pointer  p-3 rounded-full z-60' onClick={() => { setFormView(!formView); window.location.href = '#technology' }}>
+            <div className='fixed right-[-40px] top-[115px] bg-white w-[112px] cursor-pointer  p-3 rounded-full z-60' onClick={() => { setFormView(!formView); /*window.location.href = '#technology'*/ }}>
                 <picture className='max-w-[40px]'>
                     <source srcSet="/images/chat-icon.svg" type="image/webp" />
                     <img width="36px" src="/images/chat-icon.svg" alt="" />
