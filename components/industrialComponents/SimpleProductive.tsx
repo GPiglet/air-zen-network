@@ -7,20 +7,7 @@ const SimpleProductive: FC<{ props?: any, ref: any }> = React.forwardRef((props:
     //translate
     const { t } = useTranslation()
 
-    const hintList = [
-        {
-            title: 'Sicheres Wlan für Kinder',
-            description: 'inclusive Internet-Filter und Pause Knopf'
-        },
-        {
-            title: 'Sicheres Wlan für Kinder',
-            description: 'inclusive Internet-Filter und Pause Knopf'
-        },
-        {
-            title: 'Sicheres Wlan für Kinder',
-            description: 'inclusive Internet-Filter und Pause Knopf'
-        },
-    ]
+    const hintList: any = t('industrial.easy.hint', { returnObjects: true });
 
     // animation
     const getShowTimeline = (duration: number = 1) => {
@@ -71,7 +58,7 @@ const SimpleProductive: FC<{ props?: any, ref: any }> = React.forwardRef((props:
                             }
                             <div className="hidden md:block md:absolute  top-[62px] left-[110%] w-[80%]">
                                 {
-                                    hintList.map((item, index) => (
+                                    hintList.map((item: any, index: number) => (
                                         <div className="flex mb-12" key={index}>
                                             <picture>
                                                 <source srcSet="/images/check-icon.svg" type="image/webp" />

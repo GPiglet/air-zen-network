@@ -47,7 +47,7 @@ const ClassWiFi: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, r
                 <Breadcrumb />
                 <div className="flex flex-wrap mt-12">
                     <div className="w-full md:w-7/12 md:max-w-[417px] lg:max-w-[617px]">
-                        <h1 className="text-title-md">{t('education.classwifi.title')}</h1>
+                        <h1 className="text-title-sm">{t('education.classwifi.title')}</h1>
                         {
                             t('education.classwifi.description').split('\n').map((item, index) =>
                                 <p className="font-lato font-light tracking-widest text-white text-lg mt-3" key={index}>{item}</p>

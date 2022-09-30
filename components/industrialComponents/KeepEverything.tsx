@@ -74,7 +74,7 @@ const KeepEverything: FC<{ props?: any, ref: any }> = React.forwardRef((props: a
                 <Breadcrumb />
                 <div className="md:flex items-center mt-5 ">
                     <div className="md:w-[350px] xl:w-[30%]">
-                        <h1 className="text-title-md w-[90%]">
+                        <h1 className="text-title-sm w-[90%]">
                             {t('industrial.everything.title')}
                         </h1>
                         <p className="font-lato font-light tracking-widest text-lg mt-3">
@@ -84,7 +84,7 @@ const KeepEverything: FC<{ props?: any, ref: any }> = React.forwardRef((props: a
                     </div>
                 </div>
             </div>
-            <div className="md:absolute md:bottom-[10%] w-full text-white z-20">
+            {/* <div className="md:absolute md:bottom-[10%] w-full text-white z-20">
                 <div className="flex items-end mt-20">
                     <p className="m-auto font-lato-light italic text-lg tracking-[0.08em]">In vertrauensvoller Kooperation mit:</p>
                 </div>
@@ -98,7 +98,7 @@ const KeepEverything: FC<{ props?: any, ref: any }> = React.forwardRef((props: a
                         ))
                     }
                 </div>
-            </div>
+            </div> */}
             <svg className="md:absolute 
             right-[-35%] md:right-[-35%]  xl:right-[-47%] z-10
             top-[90%] xs:top-[75%] sm:top-[65%] md:top-1/2 md:translate-y-[-50%]

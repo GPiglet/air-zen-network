@@ -7,20 +7,7 @@ const IdeaSeries: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, 
     //translate
     const { t } = useTranslation()
 
-    const hintList = [
-        {
-            title: 'Sicheres Wlan für Kinder',
-            description: 'inclusive Internet-Filter und Pause Knopf'
-        },
-        {
-            title: 'Sicheres Wlan für Kinder',
-            description: 'inclusive Internet-Filter und Pause Knopf'
-        },
-        {
-            title: 'Sicheres Wlan für Kinder',
-            description: 'inclusive Internet-Filter und Pause Knopf'
-        },
-    ]
+    const hintList: any = t('industrial.reliable.hint', { returnObjects: true });
 
     // animation
     const getShowTimeline = (duration: number = 1) => {
@@ -70,13 +57,13 @@ const IdeaSeries: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, 
                             }
                             <div className="hidden md:block md:absolute  top-[62px] left-[110%] w-[80%]">
                                 {
-                                    hintList.map((item, index) => (
+                                    hintList.map((item: any, index: number) => (
                                         <div className="flex mb-12" key={index}>
                                             <picture>
                                                 <source srcSet="/images/check-icon.svg" type="image/webp" />
                                                 <img src="/images/check-icon.svg" className="w-[28px] h-[22px] mr-[10px]" alt="" />
                                             </picture>
-                                            <div className="text-white tracking-[0.08em] w-2/3">
+                                            <div className="text-white tracking-[0.08em] w-[70%]">
                                                 <p className="font-lato text-lg font-medium">{item.title} </p>
                                                 <p className="font-lato-light text-lg font-light">{item.description}</p>
                                             </div>

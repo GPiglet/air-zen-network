@@ -517,7 +517,21 @@
             "_comment": "'Reliable' section of page",
             "tip": "Reliable",
             "title": "ideas used in series",
-            "description": "Everything from a single source - from the idea to the hardware. Do you need a reliable network or do you have a new requirement for your existing network? \n The AirZen technologies are designed for use in industry and ensure an extremely efficient network even with special industrial requirements. Whether automation, smart management, remote control or remote diagnostics - AirZen will develop an ideal network variant together with you. Keep everything running with exceptionally reliable and stable network coverage from AirZen."
+            "description": "Everything from a single source - from the idea to the hardware. Do you need a reliable network or do you have a new requirement for your existing network? \n The AirZen technologies are designed for use in industry and ensure an extremely efficient network even with special industrial requirements. Whether automation, smart management, remote control or remote diagnostics - AirZen will develop an ideal network variant together with you. Keep everything running with exceptionally reliable and stable network coverage from AirZen.",
+            "hint": [
+                {
+                    "title": "Technologie aus Europa",
+                    "description": "Smarte Netzwerk-Technik für moderne Industrie-Projekte."
+                },
+                {
+                    "title": "Auch für raue Umgebungen",
+                    "description": "Wetterfeste Produkte lassen Sie nicht im Regen stehen."
+                },
+                {
+                    "title": "API Netzwerk-Plattform",
+                    "description": "Netzwerk-Ereignisse & Aktionen per API steuern."
+                }
+            ]
         },
         "referenceproject": {
             "_comment": "'Reference projects' section of page",
@@ -545,7 +559,21 @@
             "_comment": "'Easy' section of page",
             "tip": "Easy",
             "title": "Simply more productive.",
-            "description": "AirZen offers you everything you need for smooth operation. Enjoy easy setup or integration of the network's complementary functionalities, thanks to automated infrastructure between routers. You get constant access to all connected devices and machines, worldwide and from home. \n Also relaxed: AirZen is a European company and also helps you to comply with the current European data protection basic regulation and requirements. Easily manage everything from routers to IoT sensors on the same platform. In short: Minimize your effort. Increase your efficiency. Become an AirZen."
+            "description": "AirZen offers you everything you need for smooth operation. Enjoy easy setup or integration of the network's complementary functionalities, thanks to automated infrastructure between routers. You get constant access to all connected devices and machines, worldwide and from home. \n Also relaxed: AirZen is a European company and also helps you to comply with the current European data protection basic regulation and requirements. Easily manage everything from routers to IoT sensors on the same platform. In short: Minimize your effort. Increase your efficiency. Become an AirZen.",
+            "hint": [
+                {
+                    "title": "Über 20 Jahre Erfahrung",
+                    "description": "Innovationen entstehen aus gelösten Problemen."
+                },
+                {
+                    "title": "Netz-Werkzeuge",
+                    "description": "Netzwerk ist ein Handwerk, wir haben die Tools dafür."
+                },
+                {
+                    "title": "5G, WiFi, LoRa, Linux",
+                    "description": "Wir sprechen Wireless & Linux, unsere API übersetzt."
+                }
+            ]
         },
         "secure": {
             "_comment": "'Secure' section of page",
