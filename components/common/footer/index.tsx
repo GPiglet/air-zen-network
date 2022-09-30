@@ -47,7 +47,7 @@ const Footer: FC = () => {
                             <p className='font-medium'>{legal.title}</p>
                             <p>{legal.subdesc}</p>
                             {legal.links.map((link: string, ind: number) =>
-                                <p><a href={legalLinks[ind]} className='underline'>{link}</a></p>
+                                <p key={ind}><a href={legalLinks[ind]} className='underline'>{link}</a></p>
                             )}
                         </div>
                     </ReadMore>
