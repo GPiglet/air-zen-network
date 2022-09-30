@@ -1,7 +1,11 @@
-import { useEffect, useRef } from "react";
+import React, { FC, useEffect, useRef } from "react";
 import { WidgetInstance } from 'friendly-challenge';
 
-const FriendlyCaptcha = () => {
+type FriendlyCaptchaProps = {
+  style?: string
+}
+
+const FriendlyCaptcha = ({style}: FriendlyCaptchaProps) => {
   const container = useRef<any>();
   const widget = useRef<any>();
 
@@ -30,7 +34,7 @@ const FriendlyCaptcha = () => {
   }, [container]);
 
   return (
-    <div ref={container} className="frc-captcha !max-w-full mb-4" data-sitekey="FCMTMQCA17VA97CU" />
+    <div ref={container} className={`frc-captcha ${style} !max-w-full mb-4`} data-sitekey="FCMTMQCA17VA97CU" />
   );
 }
 

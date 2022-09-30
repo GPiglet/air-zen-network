@@ -35,7 +35,7 @@ const NewsLetterForm :FC<NewsLetterFormProps> = () => {
               type="email"
           />
       </div>
-      <FriendlyCaptcha />
+      <FriendlyCaptcha style="dark" />
       <div className='flex justify-between items-end mb-4'>
           <div className='relative top-5 ml-10 font-lato font-base'>
               DSGVO
@@ -60,8 +60,6 @@ const NewsLetterForm :FC<NewsLetterFormProps> = () => {
           </div>
           <p className='font-lato font-light text-left text-base text-white tracking-[2px] my-4'>
               {t('landing.contact.description').split('\n')[3]}
-              {dataCollection}
-
           </p>
       </div>
     </>

@@ -14,7 +14,7 @@ import ReferenceProjects from '../../components/industrialComponents/ReferencePr
 import SimpleProductive from '../../components/industrialComponents/SimpleProductive'
 import FutureProof from '../../components/industrialComponents/FutureProof'
 import Contact from '../../components/industrialComponents/Contact'
-import ContactForm from '../../components/common/form/ContactFormSide'
+import ContactFormSide from '../../components/common/form/ContactFormSide'
 import AnimateFooter from '../../components/common/footer/AnimateFooter'
 
 
@@ -170,7 +170,7 @@ const Industrial: NextPage = () => {
 	return (
 		<div className='relative back-left-top-gradient-secondary overflow-hidden md:h-screen'>
 			<Mainlayout navItems={navItems} hasFooter={false}>
-				<ContactForm />
+				<ContactFormSide />
 				<KeepEverything ref={refSectionKeepEverything}/>
 				<IdeaSeries ref={refSectionIdeaSeries}/>
 				<ReferenceProjects ref={refSectionReferenceProjects}/>

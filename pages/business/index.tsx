@@ -19,6 +19,7 @@ import BusinessNode from '../../components/businessComponents/BusinessNode'
 import WhitePaper from '../../components/businessComponents/WhitePaper'
 import BusinessForm from '../../components/businessComponents/businessForm';
 import AnimateFooter from '../../components/common/footer/AnimateFooter';
+import ContactFormSide from '../../components/common/form/ContactFormSide';
 
 
 
@@ -190,7 +191,7 @@ const Business: NextPage = () => {
 	return (
 		<div ref={refBackGradient} className='back-left-top-gradient-secondary relative md:h-screen' id='business_page'>
 			<Mainlayout navItems={navItems} hasFooter={false}>
-				<BusinessForm />
+				<ContactFormSide />
 				<Boost ref={refSectionBoost} />
 				<Professional ref={refSectionProfessional} />
 				<NewWork ref={refSectionNewWork} />

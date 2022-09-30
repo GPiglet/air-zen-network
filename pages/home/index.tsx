@@ -14,6 +14,7 @@ import SafeHome from '../../components/homeComponents/SafeHome'
 import OurNode from '../../components/homeComponents/OurNode'
 import HomeForm from '../../components/homeComponents/homeForm'
 import AnimateFooter from '../../components/common/footer/AnimateFooter'
+import ContactFormSide from '../../components/common/form/ContactFormSide'
 
 const Home: NextPage = () => {
 	const { t } = useTranslation()
@@ -162,7 +163,7 @@ const Home: NextPage = () => {
 	return (
 		<div className='back-left-top-gradient-primary back-right-bottom-gradient-primary relative md:h-screen'>
 			<Mainlayout navItems={navItems} hasFooter={false}>
-				<HomeForm />
+				<ContactFormSide />
 				<SimplyNetwork ref={refSectionSimplyNetwork}/>
 				<SafeHome ref={refSectionSafeHome}/>
 				<OurNode ref={refSectionOurNode}/>
