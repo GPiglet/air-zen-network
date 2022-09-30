@@ -5,9 +5,9 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 import { useTranslation } from 'next-i18next';
 
-import CustomCheckbox from '../common/checkbox';
 import { useRouter } from 'next/router';
 import Footer from '../common/footer';
+import ContactForm from '../common/form/ContactForm';
 
 
 const Contact = React.forwardRef((props: any, ref: any) => {
@@ -19,9 +19,6 @@ const Contact = React.forwardRef((props: any, ref: any) => {
     const [dataProtection, setDataProtection] = useState(false)
     const [dataCollection, setDataCollection] = useState(false)
 
-    const nameRef = useRef<any>();
-    const emailRef = useRef<any>();
-    const messageRef = useRef<any>();
     const containerRef = React.useRef<any>();
 
     const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop + 400, behavior: 'smooth' })
@@ -29,20 +26,6 @@ const Contact = React.forwardRef((props: any, ref: any) => {
         if (router.query.section === 'cantact')
             scrollToRef(containerRef)
     }, [])
-
-    const changeCheck = (type: string) => {
-        switch (type) {
-            case 'dataProtection':
-                setDataProtection(!dataProtection)
-                break;
-            case 'dataCollection':
-                setDataCollection(!dataCollection)
-                break;
-
-            default:
-                break;
-        }
-    }
 
     // animation
     const animSlideUp = React.useRef<any>([]);
@@ -142,55 +125,10 @@ const Contact = React.forwardRef((props: any, ref: any) => {
                             </defs>
                         </svg>
                         {/* <p ref={el => {if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='font-lato text-lg text-white mt-11 text-left tracking-widest'>{t('landing.contact.subtitle')}</p> */}
-                        <p ref={el => {if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='text-left text-slate-300 mt-5 mb-2'>Name</p>
-                        <div className='custom-input-gradient w-full mb-5' ref={el => { nameRef.current = el; animSlideUp.current.push(el); animFadeIn.current.push(el) }}>
-                            <input
-                                className="custom-input-dark text-left w-full"
-                                placeholder='Vorname Nachname'
-                                onKeyDown={(e: any)=>e.stopPropagation()}
-                            />
+                        <div className="relative z-10" ref={el => { if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }}>
+                            <ContactForm />
                         </div>
-                        <p ref={el => {if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='text-left text-slate-300 mb-2'>Email Address</p>
-                        <div className='custom-input-gradient w-full mb-5' ref={el => { emailRef.current = el; if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }}>
-                            <input
-                                className="custom-input-dark text-left w-full "
-                                placeholder='Vorname Nachname'
-                                type="email"
-                                onKeyDown={(e: any)=>e.stopPropagation()}
-                            />
-                        </div>
-                        <div className='custom-input-gradient w-full mb-5 relative z-10 ' ref={el => { messageRef.current = el; if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }}>
-                            <textarea
-                                rows={3}
-                                className="custom-input-dark text-left w-full "
-                                placeholder='Ihre Nachricht '
-                                onKeyDown={(e: any)=>e.stopPropagation()}
-                            />
-                        </div>
-                        <button ref={el => { if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='text-lgx text-white button-gradient py-2 px-8 rounded-md border border-primary relative z-10'>
-                            {t('landing.contact.send')}
-                        </button>
-                        <div ref={el => { if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='flex relative z-40'>
-                            <div className='mt-5 mr-3'>
-                                <CustomCheckbox checked={dataProtection} onClick={() => changeCheck('dataProtection')} />
-                            </div>
-                            <p className='font-lato font-light text-left text-base text-white tracking-[2px] my-4'>
-                                {t('landing.contact.description').split('\n')[0]}
-                                <a href={t('landing.contact.href')} className="underline text-[1.125rem]">{t('landing.contact.description').split('\n')[1]}</a>
-                                {t('landing.contact.description').split('\n')[2]}
-                            </p>
-                        </div>
-                        <div ref={el => { if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='flex relative z-40'>
-                            <div className='mt-5 mr-3'>
-                                <CustomCheckbox checked={dataCollection} onClick={() => changeCheck('dataCollection')} />
-                            </div>
-                            <p className='font-lato font-light text-left text-base text-white tracking-[2px] my-4'>
-                                {t('landing.contact.description').split('\n')[3]}
-                                {dataCollection}
-
-                            </p>
-                        </div>
-                        <svg ref={el => { if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='absolute left-1/2 center-x-transform w-[100%] sm:w-[66%] md:w-[130%] bottom-[-140px] sm:bottom-[-190px] md:bottom-[-180px]' viewBox="0 0 412 412" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg ref={el => { if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='z-0 absolute left-1/2 center-x-transform w-[100%] sm:w-[66%] md:w-[130%] bottom-[-140px] sm:bottom-[-190px] md:bottom-[-180px]' viewBox="0 0 412 412" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path opacity="0.7" d="M291.677 300.824C240.073 347.051 160.058 341.948 112.961 289.373C65.8641 236.798 69.5612 156.705 121.165 110.478C172.769 64.2515 252.785 69.3545 299.881 121.93C346.978 174.505 343.281 254.598 291.677 300.824Z" stroke="url(#paint0_linear_1374_3891)" strokeWidth="2" />
                             <path opacity="0.3" d="M304.085 314.68C244.955 367.649 153.288 361.791 99.3426 301.57C45.3966 241.349 49.6204 149.592 108.75 96.6239C167.879 43.6559 259.546 49.5138 313.492 109.735C367.438 169.956 363.214 261.712 304.085 314.68Z" stroke="url(#paint1_linear_1374_3891)" />
                             <defs>
@@ -279,7 +217,8 @@ const Contact = React.forwardRef((props: any, ref: any) => {
                         </linearGradient>
                     </defs>
                 </svg>
-                <div className='h-[200px]'></div>
+                <div className='h-[200px]'>
+                </div>
                 <div className='hidden md:block'>
                     <Footer />
                 </div>

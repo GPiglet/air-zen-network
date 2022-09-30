@@ -3,7 +3,7 @@ import React, { FC } from "react"
 import { useTranslation } from 'next-i18next';
 import gsap from "gsap";
 
-import ContactForm from "../common/form/ContactForm";
+import ContactForm from "../common/form/ContactFormSide";
 
 
 const Contact: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref: any) => {

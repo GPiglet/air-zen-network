@@ -1,31 +1,26 @@
 import React, {FC, useEffect, useState} from 'react'
 
 type ReadmoreProps = {
-    children: string
+  title: string,
+  children?: React.ReactNode
 }
 
-const ReadMore :FC<ReadmoreProps> = ({children}) => {
+const ReadMore :FC<ReadmoreProps> = ({title, children}) => {
+    const [isReadMore, setIsReadMore] = useState(true);
 
-    //window size
-    const [isMobile, setIsMobile] = useState(false)
-   
-
-    useEffect(() => {
-       if(window.innerWidth < 920) setIsMobile(true)
-      }, [])
-
-    const text = children;
-    const [isReadMore, setIsReadMore] = useState(true)
     const toggleReadMore = () => {
       setIsReadMore(!isReadMore)
     };
     return (
-      <p className="font-light mb-5">{isReadMore ? (isMobile ? text.slice(0, 0) : text.slice(0, 200) + '...')  : text}
-       <picture>
-        <source srcSet={isReadMore ? '/images/sparkle.svg' : '/images/sparkle-minus.svg'} type="image/webp" />
-        <img src={isReadMore ? '/images/sparkle.svg' : '/images/sparkle-minus.svg'} alt="" className={`absolute md:relative top-[-20px] md:top-auto left-[-50px] md:left-auto cursor-pointer w-[65px] ${isReadMore ? 'h-[67px]' : 'h-[66px]'}`} onClick={toggleReadMore}/>
-        </picture>
-      </p>
+      <div className="font-light mb-5">
+        <div className='relative flex items-center left-[-24px]'>
+          <img src={isReadMore ? '/images/sparkle.svg' : '/images/sparkle-minus.svg'} alt="" className='cursor-pointer w-[65px] h-[67px]' onClick={toggleReadMore}/>
+          <p className='cursor-pointer' onClick={toggleReadMore}>{title}</p>
+        </div>
+        <div className={`${isReadMore ? 'hidden' : ''} pt-10`}>
+          {children}
+        </div>
+      </div>
     );
   };
 

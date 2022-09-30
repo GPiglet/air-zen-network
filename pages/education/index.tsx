@@ -13,7 +13,7 @@ import Reliable from '../../components/educationComponents/Reliable'
 import Secure from '../../components/educationComponents/Secure'
 import Easy from '../../components/educationComponents/Easy'
 import Contact from '../../components/educationComponents/Contact'
-import ContactForm from '../../components/common/form/ContactForm'
+import ContactForm from '../../components/common/form/ContactFormSide'
 import AnimateFooter from '../../components/common/footer/AnimateFooter'
 
 

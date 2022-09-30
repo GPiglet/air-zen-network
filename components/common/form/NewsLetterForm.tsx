@@ -3,10 +3,10 @@ import { useTranslation } from 'next-i18next';
 import CustomCheckbox from '../checkbox';
 import FriendlyCaptcha from '../FriendlyCaptcha';
 
-type ContactFormProps = {
+type NewsLetterFormProps = {
 }
 
-const ContactForm :FC<ContactFormProps> = () => {
+const NewsLetterForm :FC<NewsLetterFormProps> = () => {
   const { t } = useTranslation();
   const [dataProtection, setDataProtection] = useState(false)
   const [dataCollection, setDataCollection] = useState(false)
@@ -27,26 +27,12 @@ const ContactForm :FC<ContactFormProps> = () => {
 
   return (
     <>
-      <p className='text-left text-slate-300 mt-5 mb-2'>Name</p>
-      <div className='custom-input-gradient w-full mb-5'>
-          <input
-              className="custom-input-dark text-left w-full"
-              placeholder='Vorname Nachname'
-          />
-      </div>
       <p className='text-left text-slate-300 mb-2'>Email Address</p>
       <div className='custom-input-gradient w-full mb-5'>
           <input
               className="custom-input-dark text-left w-full "
               placeholder='Vorname Nachname'
               type="email"
-          />
-      </div>
-      <div className='custom-input-gradient w-full mb-5 relative z-10 '>
-          <textarea
-              rows={3}
-              className="custom-input-dark text-left w-full "
-              placeholder='Ihre Nachricht '
           />
       </div>
       <FriendlyCaptcha />
@@ -82,4 +68,4 @@ const ContactForm :FC<ContactFormProps> = () => {
   );
 };
 
-export default ContactForm;
+export default NewsLetterForm;

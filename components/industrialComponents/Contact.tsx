@@ -1,6 +1,6 @@
 //modules
 import React, { FC } from "react"
-import ContactForm from "../common/form/ContactForm";
+import ContactForm from "../common/form/ContactFormSide";
 import { useTranslation } from "next-i18next";
 import gsap from "gsap";
 

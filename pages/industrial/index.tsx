@@ -14,7 +14,7 @@ import ReferenceProjects from '../../components/industrialComponents/ReferencePr
 import SimpleProductive from '../../components/industrialComponents/SimpleProductive'
 import FutureProof from '../../components/industrialComponents/FutureProof'
 import Contact from '../../components/industrialComponents/Contact'
-import ContactForm from '../../components/common/form/ContactForm'
+import ContactForm from '../../components/common/form/ContactFormSide'
 import AnimateFooter from '../../components/common/footer/AnimateFooter'
 
 

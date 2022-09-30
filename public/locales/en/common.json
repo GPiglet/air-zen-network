@@ -569,27 +569,52 @@
     },
     "footer": {
         "title": "imprint",
-        "imprint": [
+        "legal": 
             {
-                "title": "AirZen Networks Lda.",
-                "description": "Avenida Arriaga, nº30, 1ºA \n 9000-064 Funchal, Portugal",
-                "subdes": "VAT: PT516672169"
-            }
-        ],
-        "readmore": [
-            {
-                "title": "Limitation of Liability",
-                "content": "The contents of this website are created with utmost care. However, the provider assumes no liability for the correctness, completeness and topicality of the content provided. The content of the website is used at the user's own risk. Contributions marked by name reflect the opinion of the respective author and not always the opinion of the provider. The mere use of the provider's website does not result in any contractual relationship between the user and the provider."
+                "title": "Legal",
+                "description": [
+                    "AirZen Networks Lda.",
+                    "Avenida Arriaga, nº30, 1ºA",
+                    "9000-064 Funchal, Portugal",
+                    "VAT: PT516672169"
+                ],
+                "readmore": "alle rechtlichen Hinweise",
+                "subdesc": "Nachfolgend finden Sie eine Auswahl aller Dokumente & Formulare.",
+                "links": [
+                    "Kontakformular",
+                    "Allgemeine Geschäftsbedingungen",
+                    "Gast-WLAN Nutzungsbedingungen",
+                    "Datenschutzbestimmungen",
+                    "Cloud-Service Vereinbarung",
+                    "Endnutzer-Lizenvertrag",
+                    "Verkaufsbedingungen",
+                    "Website-Nutzungsbedingungen",
+                    "Cookie-Richtlinie",
+                    "Löschantrag",
+                    "Newsletter abmelden",
+                    "DSGVO-Daten anfordern",
+                    "Bug-Bounty",
+                    "Behörden"
+                ]
             },
+        "partner": 
             {
-                "title": "External Links",
-                "content": "This website contains links to third-party websites ('external links'). These websites are the responsibility of the respective operators. When the external links were first linked, the provider checked the third-party content for any legal violations. At the time, no legal violations were apparent. The provider has no influence whatsoever on the current and future design and content of the linked pages. The setting of external links does not mean that the provider adopts the content behind the reference or link as his own. Constant monitoring of the external links is not reasonable for the provider without concrete evidence of legal violations. However, if we become aware of legal violations, such external links will be deleted immediately."
+                "title": "Partner-Bereich",
+                "description": [
+                    "AirZen ist Team-Work.",
+                    "Sie möchten als IT-Partner AirZen für Ihre Kunden anbieten? Hier entlang."
+                ],
+                "readmore": "Mehr erfahren"                
             },
+        "newsletter": 
             {
-                "title": "Copyright and ancillary copyright",
-                "content": "The content published on this website is subject to German copyright and ancillary copyright. Any use not permitted by German copyright and ancillary copyright law requires the prior written consent of the provider or the respective rights holder. This applies in particular to the duplication, processing, translation, storage, processing or reproduction of content in databases or other electronic media and systems. Contents and rights of third parties are marked as such. The unauthorized duplication or forwarding of individual content or complete pages is not permitted and is punishable by law. Only the production of copies and downloads for personal, private and non-commercial use is permitted. The presentation of this website in external frames is only permitted with written permission."
+                "title": "Newsletter",
+                "description": [
+                    "Neugierig?",
+                    "Erhalten Sie unseren Newsletter maximal einmal pro Monat!"
+                ],
+                "readmore": "jetzt abnonieren"                
             }
-        ]
     },
     "cookie": {
         "accept": "Accept cookies",
