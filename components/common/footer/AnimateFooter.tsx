@@ -50,7 +50,7 @@ const AnimateFooter: FC<{props?: any, ref: any}> = React.forwardRef((props: any,
   }
 
   return (
-    <div ref={(el)=>{containerRef.current=el; if (ref) ref.current = {container: el, startAnim, scroll}}} className="container mx-auto pt-16 relative md:hidden">
+    <div ref={(el)=>{containerRef.current=el; if (ref) ref.current = {container: el, startAnim, scroll}}} className="container mx-auto pt-36 relative md:hidden">
       <Footer />
     </div>
   )
