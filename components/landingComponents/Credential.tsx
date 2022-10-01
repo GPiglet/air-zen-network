@@ -332,11 +332,11 @@ const Credential = React.forwardRef((props: any, ref: any) => {
                         }
                     </AZCarousel>
                     <svg ref={refBackCircle} className='hidden z-[-1] absolute w-[180%] top-[-74%] right-[10%] sm:w-[120%] sm:right-[30%]' viewBox="0 0 736 736" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle className='scale-[0.6] origin-center' opacity="0.3" cx="368.2" cy="368.2" r="338.706" transform="rotate(-120 368.2 368.2)" fill="url(#paint0_radial_0_1)" />
+                        <circle className='scale-[0.6] origin-center' opacity="0.3" cx="368.2" cy="368.2" r="338.706" transform="rotate(-120 368.2 368.2)" fill="url(#paint0_radial_0_12)" />
                         <circle className="hidden" opacity="0.8" cx="368.199" cy="368.2" r="367.206" transform="rotate(-120 368.199 368.2)" stroke="url(#paint1_linear_0_1)" />
                         <circle opacity="0.4" cx="368.204" cy="367.623" r="311.914" transform="rotate(-120 368.204 367.623)" fill="url(#paint2_radial_0_1)" />
                         <defs>
-                            <radialGradient id="paint0_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(320.569 188.262) rotate(68.4205) scale(697.882)">
+                            <radialGradient id="paint0_radial_0_12" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(320.569 188.262) rotate(68.4205) scale(697.882)">
                                 <stop stopColor="#7BB690" />
                                 <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
                             </radialGradient>

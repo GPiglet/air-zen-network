@@ -43,7 +43,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
     const sliderList = t('home.swiper', { returnObjects: true })
 
     const flickityProps = {
-        className: "carousel-nav pl-[36px] mt-[120px] md:hidden ",
+        className: "carousel-nav px-[30px] mt-[120px] md:hidden ",
         options: {
             asNavFor: ".carousel-main",
             contain: true,

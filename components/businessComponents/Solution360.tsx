@@ -41,7 +41,7 @@ const Solution360: FC<{ props?: any, ref: any }> = React.forwardRef((props: any,
     }
 
     const flickityProps = {
-        className: "carousel-nav pl-[55px] md:hidden",
+        className: "carousel-nav px-[30px] md:hidden",
         options: {
             asNavFor: ".carousel-main",
             contain: true,

@@ -62,9 +62,9 @@ const ContactForm :FC<ContactFormProps> = () => {
           <div className='mt-5 mr-3'>
               <CustomCheckbox checked={dataProtection} onClick={() => changeCheck('dataProtection')} />
           </div>
-          <p className='font-lato font-light text-left text-base text-white tracking-[2px] my-4'>
+          <p className='font-lato font-light text-left text-sm text-white tracking-[2px] my-4'>
               {t('landing.contact.description').split('\n')[0]}
-              <a href={t('landing.contact.href')} className="underline text-[1.125rem]">{t('landing.contact.description').split('\n')[1]}</a>
+              <a href={t('landing.contact.href')} className="underline text-base">{t('landing.contact.description').split('\n')[1]}</a>
               {t('landing.contact.description').split('\n')[2]}
           </p>
       </div>
@@ -72,7 +72,7 @@ const ContactForm :FC<ContactFormProps> = () => {
           <div className='mt-5 mr-3'>
               <CustomCheckbox checked={dataCollection} onClick={() => changeCheck('dataCollection')} />
           </div>
-          <p className='font-lato font-light text-left text-base text-white tracking-[2px] my-4'>
+          <p className='font-lato font-light text-left text-sm text-white tracking-[2px] my-4'>
               {t('landing.contact.description').split('\n')[3]}
           </p>
       </div>

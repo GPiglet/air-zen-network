@@ -45,26 +45,7 @@ const BusinessNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
     return (
         <div id="technology" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="pb-16 relative w-full md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] md:flex md:items-center">
             <div className="container mx-auto relative">
-                <div className="z-10 relative flex flex-wrap md:pt-[42%] align-center">
-                    <div className="w-full md:w-[45%] px-10 mx-auto">
-                        <p className="font-lato-light font-light text-[22px] text-white">{t('business.ournode.tip')}</p>
-                        <h1 className="text-title-sm-white mb-10">{t('business.ournode.title')}</h1>
-                        {
-                            t('business.ournode.description').split('\n').map((item, index) =>
-                                index % 2 === 0 ? (
-                                    <p className="font-lato tracking-widest text-white text-lg mt-3 font-normal" key={index}>{item}</p>
-                                ) : (
-                                    < div key={index}>
-                                        <p className="font-lato font-light tracking-widest text-white text-lg" >{item}
-                                        </p><br />
-                                    </div>
-                                )
-                            )
-                        }
-                    </div>
-                </div>
-
-                <div className="z-0 relative md:initial h-[25rem] sm:h-[30rem] md:h-0">
+                <div className="z-0 relative md:initial h-[20rem] sm:h-[30rem] md:h-0">
                     <svg className="absolute left-[50%] translate-x-[-50%] top-[-30%] w-[140%] sm:top-[-60%] sm:w-full md:w-[60%] md:top-[34%] md:translate-y-[-50%] 4xl:w-[55%]" viewBox="0 0 700 708" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <ellipse opacity="0.5" cx="350.002" cy="353.94" rx="311.623" ry="315.088" fill="url(#paint0_radial_1376_6324)" />
                         <path opacity="0.3" d="M565.18 353.94C565.18 474.044 468.836 571.398 350 571.398C231.165 571.398 134.82 474.044 134.82 353.94C134.82 233.836 231.165 136.481 350 136.481C468.836 136.481 565.18 233.836 565.18 353.94Z" stroke="#7BB690" />
@@ -92,6 +73,25 @@ const BusinessNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
                             </radialGradient>
                         </defs>
                     </svg>
+                </div>
+
+                <div className="z-10 relative flex flex-wrap md:pt-[42%] align-center">
+                    <div className="w-full md:w-[45%] px-10 mx-auto">
+                        <p className="font-lato-light font-light text-[22px] text-white">{t('business.ournode.tip')}</p>
+                        <h1 className="text-title-sm-white mb-10">{t('business.ournode.title')}</h1>
+                        {
+                            t('business.ournode.description').split('\n').map((item, index) =>
+                                index % 2 === 0 ? (
+                                    <p className="font-lato tracking-widest text-white text-lg mt-3 font-normal" key={index}>{item}</p>
+                                ) : (
+                                    < div key={index}>
+                                        <p className="font-lato font-light tracking-widest text-white text-lg" >{item}
+                                        </p><br />
+                                    </div>
+                                )
+                            )
+                        }
+                    </div>
                 </div>
             </div>
 
