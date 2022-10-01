@@ -3,14 +3,14 @@ import React, { FC } from "react"
 import { useTranslation } from "next-i18next";
 
 
-const Reliable: FC = () => {
+const Reliable: FC = () => {    
     //translate
     const { t } = useTranslation()
 
     return (
         <section id="reliable" className="container mx-auto pb-16 relative flex items-center py-[150px]">
 
-            <svg className="absolute right-[-52%] top-[76%] sm:top-[45%] md:top-[-26%] xl:top-[-20%] md:w-[120%] xl:w-[100%]   sm:w-[140%] sm:right-[-20%] w-[204%] md:right-[-60%] xl:right-[-43%] " viewBox="0 0 907 907" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="absolute right-[-52%] top-[76%] sm:top-[45%] md:top-[-26%] xl:top-[-20%] md:w-[120%] xl:w-[100%] sm:w-[140%] sm:right-[-20%] w-[204%] md:right-[-60%] xl:right-[-43%] " viewBox="0 0 907 907" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.4" d="M538.472 704.59C686.17 656.921 768.31 499.556 721.937 353.106C675.564 206.655 518.239 126.576 370.541 174.245C222.842 221.913 140.702 379.278 187.075 525.729C233.448 672.179 390.774 752.258 538.472 704.59Z" fill="url(#paint0_radial_1376_4815)" />
                 <path opacity="0.5" d="M512.183 639.605C615.95 606.114 673.659 495.555 641.079 392.664C608.499 289.773 497.968 233.513 394.2 267.003C290.433 300.493 232.724 411.052 265.304 513.943C297.884 616.834 408.415 673.095 512.183 639.605Z" fill="url(#paint1_radial_1376_4815)" />
                 <path d="M621.253 399.063C650.392 491.089 598.779 589.983 505.956 619.941C413.134 649.898 314.27 599.571 285.13 507.544C255.99 415.517 307.604 316.624 400.426 286.666C493.249 256.708 592.113 307.036 621.253 399.063Z" stroke="url(#paint2_linear_1376_4815)" />

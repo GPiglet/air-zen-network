@@ -10,6 +10,23 @@ import AZCarousel from '../common/carousel';
 import gsap from 'gsap'
 
 const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref: any) => {
+    // spardle margin top
+    const [relH1, setRelH1] = useState(0)
+    const [relH2, setRelH2] = useState(0)
+
+    useEffect(() => {
+        if(window.innerWidth < 540){
+            console.log(window.innerWidth)
+            let width = 41 + (window.innerWidth -400) * 0.1;
+            setRelH1(width)
+            setRelH2(width-5)
+        }
+        if(window.innerWidth>540 && window.innerWidth < 920){
+            let width = 32 + (window.innerWidth - 550) * 8/150;
+            setRelH1(width)
+            setRelH2(width)
+        }
+    }, [])
 
     //translate
     const { t } = useTranslation()
@@ -199,7 +216,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
     return (
         <div id="secure" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container mx-auto relative md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
             {/*left side animation*/}
-            <div className="relative h-[44rem] sm:h-[52rem] md:static md:h-auto">
+            <div className="relative h-[44rem] sm:h-[52rem] md:static md:h-auto" style={{height: `${relH1}rem`}}>
                 <svg className="absolute left-[50%] translate-x-[-50%] top-[-60px] w-[310%] sm:top-0 sm:w-[120%] md:left-[10%] md:top-1/2 md:translate-y-[-50%] md:w-[60%] md:mt-[70px]" viewBox="0 0 804 796" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.4" d="M497.478 697.95C666.249 643.997 760.109 465.887 707.12 300.13C654.13 134.373 474.358 43.7373 305.587 97.69C136.816 151.643 42.9562 329.753 95.9454 495.51C148.935 661.267 328.707 751.903 497.478 697.95Z" fill="url(#paint0_radial_1376_4769)" />
                     <path opacity="0.5" d="M474.04 622.595C600.747 582.09 671.214 448.371 631.432 323.926C591.649 199.481 456.682 131.435 329.975 171.941C203.267 212.447 132.801 346.166 172.583 470.61C212.366 595.055 347.332 663.101 474.04 622.595Z" fill="url(#paint1_radial_1376_4769)" />
@@ -224,7 +241,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                 </svg>
             </div>
 
-            <div ref={el => { if (el && refAnimContents.current.indexOf(el) == -1) refAnimContents.current.push(el) }} className="relative px-10 h-full z-10 items-center md:flex md:hidden md:mt-0 md:px-0 md:pl-[25%]">
+            <div ref={el => { if (el && refAnimContents.current.indexOf(el) == -1) refAnimContents.current.push(el) }} className={`relative px-10 h-full z-10 items-center md:flex md:hidden md:px-0 md:pl-[25%] `} >
                 <div className="flex flex-col-reverse md:flex-col text-white">
                     <div className="w-full sm:w-[58%] sm:mx-0 sm:mt-[10rem] md:w-2/3 m-auto">
                         <p className="font-lato-light font-light text-[22px] ">{t('home.safehome.tip')}</p>
@@ -278,7 +295,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
             </div>
 
             {/*left side animation, desktop:hidden mobile:show*/}
-            <div className="relative h-[39rem] sm:h-[50rem] md:h-0 block md:hidden">
+            <div className="relative h-[39rem] sm:h-[50rem] md:h-0 block md:hidden" style={{height: `${relH2+1}rem`}}>
                 <svg className="md:absolute translate-x-[-33%] sm:translate-x-[-8%] md:translate-x-0 left-[-27%] top-[28.5%] w-[310%] sm:top-[37%]  md:top-1/2 md:translate-y-[-50%] sm:w-[120%] md:w-[100%] xl:w-[70%]   sm:left-[-10%]  md:left-[-45%] xl:left-[-20%]" viewBox="0 0 804 796" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.4" d="M497.478 697.95C666.249 643.997 760.109 465.887 707.12 300.13C654.13 134.373 474.358 43.7373 305.587 97.69C136.816 151.643 42.9562 329.753 95.9454 495.51C148.935 661.267 328.707 751.903 497.478 697.95Z" fill="url(#paint0_radial_1376_4769)" />
                     <path opacity="0.5" d="M474.04 622.595C600.747 582.09 671.214 448.371 631.432 323.926C591.649 199.481 456.682 131.435 329.975 171.941C203.267 212.447 132.801 346.166 172.583 470.61C212.366 595.055 347.332 663.101 474.04 622.595Z" fill="url(#paint1_radial_1376_4769)" />
@@ -301,7 +318,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                 </svg>
             </div>
 
-            <div ref={el => { if (el && refAnimContents.current.indexOf(el) == -1) refAnimContents.current.push(el) }} className="relative items-center px-10 h-full z-10 md:fixed md:hidden md:px-0 md:mt-0 md:pl-[25%]">
+            <div ref={el => { if (el && refAnimContents.current.indexOf(el) == -1) refAnimContents.current.push(el) }} className="relative items-center px-10 h-full z-10 md:fixed md:hidden md:px-0 md:mt-0 md:pl-[25%]" >
                 <div className="flex flex-col-reverse md:flex-col text-white">
                     <div className="w-full m-auto md:w-[60%] md:mx-0 md:mt-[10rem]">
                         <p className="font-lato-light font-light text-[22px]">{t('home.reliable.tip')}</p>
@@ -421,7 +438,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
             <div className="md:hidden">
             {
                 (sliderList as unknown as any[]).map((item, ind) => (
-                    <div className={`desc-divs relative w-full px-10 mb-20 ${ind == 0 ? '' : 'hidden'}`} key={ind}>
+                    <div className={`desc-divs relative w-full px-10 mb-20 ${ind == 0 ? '' : 'hidden'}`} key={ind} >
                         {item.description.split('\n').map((sentence: string, index: number) =>
                             <p className="font-lato font-light tracking-widest text-white text-lg" key={index}>{sentence}</p>
                         )}
