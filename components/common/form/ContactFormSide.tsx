@@ -69,35 +69,35 @@ const ContactFormSide: FC = () => {
                                             placeholder='Vorname Nachname'
                                             id="first-name"
                                             autoComplete="given-name"
-                                            className="block w-full shadow-sm sm:text-lg border-gray-300 border-[1px] rounded-md px-3 py-1"
+                                            className="block w-full shadow-sm border-gray-300 border-[1px] rounded-md px-3 py-1"
                                         />
                                     </div>
 
                                     <div className="col-span-6 sm:col-span-4">
                                         <label htmlFor="email-address" className="block text-sm font-medium text-gray-700">
-                                            <p className='text-[16px] font-semibold tracking-[.08em] my-[5px]'>Mail</p>
+                                            <p className='text-[16px] font-semibold tracking-[.08em] my-[5px]'>Email Address</p>
                                         </label>
                                         <input
                                             type="email"
                                             name="email-address"
-                                            placeholder='examplemail@provider.com'
+                                            placeholder='example@email.com'
                                             id="email-address"
                                             autoComplete="email"
-                                            className="block w-full shadow-sm sm:text-lg border-gray-300 border-[1px] rounded-md px-3 py-1"
+                                            className="block w-full shadow-sm border-gray-300 border-[1px] rounded-md px-3 py-1"
                                         />
                                     </div>
 
                                     <div>
-                                        <label htmlFor="about" className="block text-sm font-medium text-gray-700">
+                                        {/* <label htmlFor="about" className="block text-sm font-medium text-gray-700">
                                             <p className='text-base font-semibold tracking-[.08em] my-[5px]'>{t('contactForm.message')}</p>
-                                        </label>
+                                        </label> */}
                                         <div className="mt-1">
                                             <textarea
                                                 id="about"
                                                 name="about"
                                                 rows={3}
-                                                className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md px-3 py-1"
-                                                placeholder={t('contactForm.placeholder')}
+                                                className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full border border-gray-300 rounded-md px-3 py-1"
+                                                placeholder={t('contactForm.message')}
                                                 defaultValue={''}
                                             />
                                         </div>

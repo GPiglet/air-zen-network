@@ -38,7 +38,7 @@ const ContactForm :FC<ContactFormProps> = () => {
       <div className='custom-input-gradient w-full mb-5'>
           <input
               className="custom-input-dark text-left w-full "
-              placeholder='Vorname Nachname'
+              placeholder='example@email.com'
               type="email"
           />
       </div>

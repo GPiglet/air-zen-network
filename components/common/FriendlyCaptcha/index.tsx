@@ -10,13 +10,13 @@ const FriendlyCaptcha = ({style}: FriendlyCaptchaProps) => {
   const widget = useRef<any>();
 
   const doneCallback = (solution: any) => {
-    console.log('Captcha was solved. The form can be submitted.');
-    console.log(solution);
+    // console.log('Captcha was solved. The form can be submitted.');
+    // console.log(solution);
   }
 
   const errorCallback = (err: any) => {
-    console.log('There was an error when trying to solve the Captcha.');
-    console.log(err);
+    // console.log('There was an error when trying to solve the Captcha.');
+    // console.log(err);
   }
 
   useEffect(() => {
