@@ -15,9 +15,9 @@ const ReadMore :FC<ReadmoreProps> = ({title, children}) => {
       <div className="font-light mb-5">
         <div className='relative flex items-center left-[-24px]'>
           <img src={isReadMore ? '/images/sparkle.svg' : '/images/sparkle-minus.svg'} alt="" className='cursor-pointer w-[50px] h-[51px]' onClick={toggleReadMore}/>
-          <p className='cursor-pointer' onClick={toggleReadMore}>{title}</p>
+          <p className='cursor-pointer font-medium' onClick={toggleReadMore}>{title}</p>
         </div>
-        <div className={`${isReadMore ? 'hidden' : ''} pt-10`}>
+        <div className={`${isReadMore ? 'hidden' : ''} pt-6`}>
           {children}
         </div>
       </div>

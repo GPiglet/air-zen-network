@@ -37,15 +37,14 @@ const Footer: FC = () => {
             </div>
             <div className='px-10 grid md:grid-cols-3 gap-6 pb-[100px] md:pb-[200px]'>
                 <div className='font-lato text-lg text-white tracking-widest'>
-                    <p className='font-medium pb-6'>{legal.title}</p>
-                    <p className='font-medium'>{legal.description[0]}</p>
-                    <p className='font-light'>{legal.description[1]}</p>
-                    <p className='font-light'>{legal.description[2]}</p>
-                    <p className='font-light'>{legal.description[3]}</p>
-                    <ReadMore title={legal.readmore}>
+                    {/* <p className='font-medium pb-6'>{legal.title}</p>                     */}
+                    <ReadMore title={legal.title}>
+                        <p className='font-medium'>{legal.description[0]}</p>
+                        <p className='font-light'>{legal.description[1]}</p>
+                        <p className='font-light'>{legal.description[2]}</p>
+                        <p className='font-light pb-6'>{legal.description[3]}</p>
+                        <p className='font-medium'>{legal.readmore}</p>
                         <div className='flex flex-col gap-6'>
-                            <p className='font-medium'>{legal.title}</p>
-                            <p>{legal.subdesc}</p>
                             {legal.links.map((link: string, ind: number) =>
                                 <p key={ind}><a href={legalLinks[ind]} className='underline'>{link}</a></p>
                             )}
@@ -54,19 +53,17 @@ const Footer: FC = () => {
                 </div>
 
                 <div className='font-lato text-lg text-white tracking-widest'>
-                    <p className='font-medium pb-6'>{partner.title}</p>
-                    <p className='font-light pb-6'>{partner.description[0]}</p>
-                    <p className='font-light'>{partner.description[1]}</p>
-                    <ReadMore title={partner.readmore}>
+                    <ReadMore title={partner.title}>
+                        <p className='font-light pb-6'>{partner.description[0]}</p>
+                        <p className='font-light'>{partner.description[1]}</p>
                         <ContactForm />
                     </ReadMore>
                 </div>
 
                 <div className='font-lato text-lg text-white tracking-widest'>
-                    <p className='font-medium pb-6'>{newsletter.title}</p>
-                    <p className='font-light pb-6'>{newsletter.description[0]}</p>
-                    <p className='font-light'>{newsletter.description[1]}</p>
-                    <ReadMore title={newsletter.readmore}>
+                    <ReadMore title={newsletter.title}>
+                        <p className='font-light pb-6'>{newsletter.description[0]}</p>
+                        <p className='font-light'>{newsletter.description[1]}</p>
                         <NewsLetterForm />
                     </ReadMore>
                 </div>
