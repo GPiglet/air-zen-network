@@ -64,7 +64,7 @@ const ContactForm :FC<ContactFormProps> = () => {
           </div>
           <p className='font-lato font-light text-left text-sm text-white tracking-[2px] my-4'>
               {t('landing.contact.description').split('\n')[0]}
-              <a href={t('landing.contact.href')} className="underline text-base">{t('landing.contact.description').split('\n')[1]}</a>
+              <a target="blank" href={t('landing.contact.href')} className="underline text-base">{t('landing.contact.description').split('\n')[1]}</a>
               {t('landing.contact.description').split('\n')[2]}
           </p>
       </div>
