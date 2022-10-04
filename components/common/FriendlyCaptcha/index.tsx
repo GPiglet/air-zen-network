@@ -2,16 +2,18 @@ import React, { FC, useEffect, useRef } from "react";
 import { WidgetInstance } from 'friendly-challenge';
 
 type FriendlyCaptchaProps = {
+  solutionRef?: any,
   style?: string
 }
 
-const FriendlyCaptcha = ({style}: FriendlyCaptchaProps) => {
+const FriendlyCaptcha = ({solutionRef, style}: FriendlyCaptchaProps) => {
   const container = useRef<any>();
   const widget = useRef<any>();
 
   const doneCallback = (solution: any) => {
     // console.log('Captcha was solved. The form can be submitted.');
     // console.log(solution);
+    if ( solutionRef ) solutionRef.current = solution;
   }
 
   const errorCallback = (err: any) => {

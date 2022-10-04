@@ -10,6 +10,7 @@ const ContactForm :FC<ContactFormProps> = () => {
   const { t } = useTranslation();
   const [dataProtection, setDataProtection] = useState(false)
   const [dataCollection, setDataCollection] = useState(false)
+  const refCaptcha = React.useRef<any>(null);
 
   const changeCheck = (type: string) => {
     switch (type) {
@@ -24,6 +25,10 @@ const ContactForm :FC<ContactFormProps> = () => {
             break;
     }
   }
+
+  React.useEffect(() => {
+    //console.log(refCaptcha.current)
+  }, [refCaptcha.current])
 
   return (
     <>
@@ -49,7 +54,7 @@ const ContactForm :FC<ContactFormProps> = () => {
               placeholder='Ihre Nachricht '
           />
       </div>
-      <FriendlyCaptcha style="dark" />
+      <FriendlyCaptcha style="dark" solutionRef={refCaptcha}/>
       <div className='flex justify-between items-end mb-4'>
           <div className='relative top-5 ml-10 font-lato font-base'>
               DSGVO
