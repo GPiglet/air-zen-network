@@ -205,13 +205,73 @@ const Homepage: NextPage = () => {
 		}
 	}
 
+	let startY = 0, prevY = 0;
+	const onTouchStart = (e: TouchEvent) => {
+		startY = prevY = e.changedTouches[0].pageY;
+	}
+
+	const onTouchEnd = (e: TouchEvent) => {
+		if ( window.innerWidth < 920 || isLockScroll ) return;
+
+		const deltaY = startY - e.changedTouches[0].pageY;
+		const currentIndex = currentSectionIndex.current;
+		if ( currentIndex != -1 && refSections[currentIndex].current?.scroll )
+			refSections[currentIndex].current?.scroll('Wheel', e.changedTouches[0].pageY - prevY);
+
+		isLockScroll = true;
+		setTimeout(() => {
+			isLockScroll = false;
+		}, 3000);
+
+		let index = 0;
+		if ( deltaY > 10 ) { 
+			index = currentIndex + 1;
+			if ( index >= refSections.length ) return;
+		}
+		else if (deltaY < -10 ) {
+			index = currentIndex - 1;
+			if ( index < 0 ) return;
+		}
+		else
+			return;
+
+		if ( index == 0 ) {
+			router.push({
+				pathname: '/landing',
+			})
+		}
+		else {
+			router.push({
+				pathname: '/landing',
+				query: {section: navItems[index-1].href}
+			})
+		}
+	}
+
+	const onTouchMove = (e: TouchEvent) => {
+		if ( window.innerWidth < 920 ) return;
+
+		const deltaY = e.changedTouches[0].pageY - prevY;
+		prevY = e.changedTouches[0].pageY;
+		const currentIndex = currentSectionIndex.current;
+		if ( currentIndex != -1 && refSections[currentIndex].current?.scroll )
+			refSections[currentIndex].current?.scroll('Wheel', deltaY);
+
+	}
+
 	React.useEffect(() => {
 		gsap.registerPlugin(ScrollToPlugin);
 		window.addEventListener('keydown', onKeyDown);
 		window.addEventListener('wheel', onMouseWheel);
+		window.addEventListener('touchstart', onTouchStart);
+		window.addEventListener('touchend', onTouchEnd);
+		window.addEventListener('touchmove', onTouchMove);
 		return ()=>{
 			window.removeEventListener('keydown', onKeyDown);
 			window.removeEventListener('wheel', onMouseWheel);
+			window.removeEventListener('touchstart', onTouchStart);
+			window.removeEventListener('touchend', onTouchEnd);
+			window.removeEventListener('touchmove', onTouchMove);
 		}	
 	}, [])
 

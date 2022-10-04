@@ -154,14 +154,64 @@ const Education: NextPage = () => {
 
 	}
 
+	let startY = 0, prevY = 0;
+	const onTouchStart = (e: TouchEvent) => {
+		startY = prevY = e.changedTouches[0].pageY;
+	}
+
+	const onTouchEnd = (e: TouchEvent) => {
+		if ( window.innerWidth < 920 || isLockScroll ) return;
+
+		const deltaY = startY - e.changedTouches[0].pageY;
+		const currentIndex = currentSectionIndex.current;
+		if ( currentIndex != -1 && refSections[currentIndex].current?.scroll )
+			refSections[currentIndex].current?.scroll('Wheel', e.changedTouches[0].pageY - prevY);
+
+		isLockScroll = true;
+		setTimeout(() => {
+			isLockScroll = false;
+		}, 1500);
+
+		let index = 0;
+		if ( deltaY > 10 ) { 
+			index = currentIndex + 1;
+			if ( index >= refSections.length ) return;
+		}
+		else if ( deltaY < -10 ) {
+			index = currentIndex - 1;
+			if ( index < 0 ) return;
+		}
+		else
+			return;
+
+		gotoScene(index);
+	}
+
+	const onTouchMove = (e: TouchEvent) => {
+		if ( window.innerWidth < 920 ) return;
+
+		const deltaY = e.changedTouches[0].pageY - prevY;
+		prevY = e.changedTouches[0].pageY;
+		const currentIndex = currentSectionIndex.current;
+		if ( currentIndex != -1 && refSections[currentIndex].current?.scroll )
+			refSections[currentIndex].current?.scroll('Wheel', deltaY);
+
+	}
+
 	React.useEffect(() => {
 		gotoScene(0);
 		window.addEventListener('keydown', onKeyDown);
 		window.addEventListener('wheel', onMouseWheel);
-		return () => {
+		window.addEventListener('touchstart', onTouchStart);
+		window.addEventListener('touchend', onTouchEnd);
+		window.addEventListener('touchmove', onTouchMove);
+		return ()=>{
 			window.removeEventListener('keydown', onKeyDown);
 			window.removeEventListener('wheel', onMouseWheel);
-		}
+			window.removeEventListener('touchstart', onTouchStart);
+			window.removeEventListener('touchend', onTouchEnd);
+			window.removeEventListener('touchmove', onTouchMove);
+		}	
 	}, [])
 
 
