@@ -1,24 +1,117 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect, useState, useRef } from 'react'
 import { useTranslation } from 'next-i18next'
 import CustomCheckbox from '../checkbox'
 import FriendlyCaptcha from '../FriendlyCaptcha';
+import ContactApi from '../../../services/contact.service';
 
 const ContactFormSide: FC = () => {
     //translate
     const { t } = useTranslation();
 
-    const [dataCollection, setDataCollection] = React.useState(false)
+    const [username, setUsername] = useState<string>('');
+    const [emailAddress, setEmailAddress] = useState<string>('');
+    const [description, setDescription] = useState<string>('');
+    const [captchaSolution, setCaptchaSolution] = useState<any>(null);
+    const [dataProtection, setDataProtection] = useState<boolean>(false);
+    const [dataCollection, setDataCollection] = useState<boolean>(false);
+
+    const [validUsername, setValidUsername] = useState<boolean>(true);
+    const [validEmailAddress, setValidEmailAddress] = useState<boolean>(true);
+    const [validDSGVO, setValidDSGVO] = useState<boolean>(true);
+    const [autoSend, setAutoSend] = useState<boolean>(false);
+
+    const refUsername = useRef<HTMLInputElement>(null);
+    const refEmailAddress = useRef<HTMLInputElement>(null);
+    const refCaptcha = useRef<any>(null);
 
     const changeCheck = (type: string) => {
         switch (type) {
+            case 'dataProtection':
+                setDataProtection(!dataProtection);
+                if ( !dataProtection && dataCollection ) setValidDSGVO(true);
+                else setValidDSGVO(false);
+                break;
             case 'dataCollection':
-                setDataCollection(!dataCollection)
+                setDataCollection(!dataCollection);
+                if ( dataProtection && !dataCollection ) setValidDSGVO(true);
+                else setValidDSGVO(false);
                 break;
 
             default:
                 break;
         }
     }
+
+    // onchange input
+    const onChangeInput = (value:string, setValue: (value: string)=>void, setValid: (valid: boolean)=>void) => {
+        if ( value.trim() )
+        setValid(true);
+        else
+        setValid(false);
+
+        setValue(value);
+    }
+
+    //onclick send
+    const onClickSend = () => {
+        if ( !captchaSolution && refCaptcha.current ) refCaptcha.current.start();
+
+        if ( !username.trim() ) {
+            setValidUsername(false);
+            refUsername.current?.focus();
+            return;
+        }
+
+        if ( !emailAddress.trim() ) {
+            setValidEmailAddress(false);
+            refEmailAddress.current?.focus();
+            return;
+        }
+
+        if ( !dataCollection || !dataProtection ) {
+            setValidDSGVO(false);
+            return;
+        }
+
+        if ( !captchaSolution ) {
+            setAutoSend(true);
+            return;
+        }
+
+        ContactApi.create(
+            {
+                username,
+                emailAddress,
+                description,
+                captchaSolution,
+            },
+            (res: any) => {
+                alert(t('landing.contact.successMessage'));
+                setUsername('');
+                setEmailAddress('');
+                setDescription('');
+                refCaptcha.current.reset();
+            },
+            (err: any) => {
+                alert(t('landing.contact.failedMessage'));
+            }
+        )
+    }
+
+    const onCaptchaReady = () => {
+        setCaptchaSolution(null);
+    }
+
+    const onCaptchaDone = (solution: any) => {
+        setCaptchaSolution(solution);
+    }
+
+    useEffect(() => {
+        if ( autoSend ) {
+            onClickSend();
+            setAutoSend(false);
+        }
+    }, [captchaSolution])
 
     const showChat = () => {
         if (!formView)
@@ -49,41 +142,47 @@ const ContactFormSide: FC = () => {
                             </linearGradient>
                         </defs>
                     </svg> */}
-                    <div className='relative bg-white md:block w-[100%] rounded-l-[50px] pt-[50px] font-lato'>
+                    <div className='relative bg-white md:block w-[100%] rounded-l-[50px] pt-[50px] font-lato h-[80vh] overflow-y-auto'>
                         <svg className='absolute top-[15px] right-[15px] cursor-pointer' onClick={() => { setFormView(false); }} width="25" height="27" viewBox="0 0 37 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <line x1="0.707107" y1="1.29289" x2="35.7071" y2="36.2929" stroke="#159BDE" strokeWidth="2" />
                             <line x1="35.7071" y1="2.70711" x2="0.707107" y2="37.7071" stroke="#159BDE" strokeWidth="2" />
                         </svg>
                         <h1 className='text-[32px] font-semibold uppercase tracking-[.08em] ml-[10%]'>{t('contactForm.cotact')}</h1>
 
-                        <form action="#" method="POST" className='w-[90%] sm:w-[80%] md:w-[90%] max-w-[600px] pb-[40px]'>
+                        <div className='w-[90%] sm:w-[80%] md:w-[90%] max-w-[600px] pb-[40px]'>
                             <div className=" sm:overflow-hidden">
                                 <div className="px-4 py-5 bg-white space-y-6 sm:p-6 ml-[10%] ">
                                     <div className="col-span-6 sm:col-span-3">
                                         <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">
-                                            <p className='text-[16px] font-semibold tracking-[.08em] my-[5px]'>Name</p>
+                                            <p className={`text-[16px] font-semibold tracking-[.08em] my-[5px] ${validUsername ? '' : 'text-red-300'}`}>{t('landing.contact.nameLabel')}</p>
                                         </label>
                                         <input
+                                            ref={refUsername}
                                             type="text"
                                             name="first-name"
-                                            placeholder='Vorname Nachname'
+                                            placeholder={t('landing.contact.namePlaceholder')}
                                             id="first-name"
                                             autoComplete="given-name"
                                             className="block w-full shadow-sm border-gray-300 border-[1px] rounded-md px-3 py-1"
+                                            value={username}
+                                            onChange={(e)=>onChangeInput(e.target.value, setUsername, setValidUsername)}
                                         />
                                     </div>
 
                                     <div className="col-span-6 sm:col-span-4">
                                         <label htmlFor="email-address" className="block text-sm font-medium text-gray-700">
-                                            <p className='text-[16px] font-semibold tracking-[.08em] my-[5px]'>Email Address</p>
+                                            <p className={`text-[16px] font-semibold tracking-[.08em] my-[5px] ${validEmailAddress ? '' : 'text-red-300'}`}>{t('landing.contact.emailLabel')}</p>
                                         </label>
                                         <input
+                                            ref={refEmailAddress}
                                             type="email"
                                             name="email-address"
-                                            placeholder='example@email.com'
+                                            placeholder={t('landing.contact.emailPlaceholder')}
                                             id="email-address"
                                             autoComplete="email"
                                             className="block w-full shadow-sm border-gray-300 border-[1px] rounded-md px-3 py-1"
+                                            value={emailAddress}
+                                            onChange={(e)=>onChangeInput(e.target.value, setEmailAddress, setValidEmailAddress)}
                                         />
                                     </div>
 
@@ -97,22 +196,40 @@ const ContactFormSide: FC = () => {
                                                 name="about"
                                                 rows={3}
                                                 className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full border border-gray-300 rounded-md px-3 py-1"
-                                                placeholder={t('contactForm.message')}
-                                                defaultValue={''}
+                                                placeholder={t('landing.contact.descPlaceholder')}
+                                                value={description}
+                                                onChange={(e)=>setDescription(e.target.value)}
                                             />
                                         </div>
                                     </div>
-                                    <FriendlyCaptcha />
-                                    <div className='flex relative z-40 items-center justify-between'>
-                                        <div className='mr-3'>
-                                            <CustomCheckbox checked={dataCollection} onClick={() => changeCheck('dataCollection')} />
+                                    <div className={`mb-4`}>
+                                        <FriendlyCaptcha widgetRef={refCaptcha} onReady={onCaptchaReady} onDone={onCaptchaDone}/>
+                                    </div>
+                                    <div className='flex justify-between items-end mb-4'>
+                                        <div className={`relative top-[0.25rem] ml-10 font-lato font-base ${validDSGVO ? '' : 'text-red-300'}`}>
+                                        {t('landing.contact.DSGVOLabel')}
                                         </div>
-                                        <p className='font-lato font-medium text-base text-gray-700 tracking-[2px] w-[110px]'>
-                                            {t('contactForm.GDPR')}
-                                        </p>
-                                        <button className='text-lgx text-white button-gradient py-2 px-8 rounded-md relative z-10'>
+                                        <button className={`text-lgx text-white button-gradient border-primary py-2 px-8 rounded-md border relative z-10`} onClick={()=>onClickSend()}>
                                             {t('landing.contact.send')}
                                         </button>
+                                    </div>
+                                    <div className='flex relative z-40'>
+                                        <div className='mt-5 mr-3'>
+                                            <CustomCheckbox checked={dataProtection} onClick={() => changeCheck('dataProtection')} />
+                                        </div>
+                                        <p className='font-lato font-light text-left text-sm tracking-[2px]'>
+                                            {t('landing.contact.description').split('\n')[0]}
+                                            <a target="blank" href={t('landing.contact.href')} className="underline text-base">{t('landing.contact.description').split('\n')[1]}</a>
+                                            {t('landing.contact.description').split('\n')[2]}
+                                        </p>
+                                    </div>
+                                    <div className='flex relative z-40'>
+                                        <div className='mt-5 mr-3'>
+                                            <CustomCheckbox checked={dataCollection} onClick={() => changeCheck('dataCollection')} />
+                                        </div>
+                                        <p className='font-lato font-light text-left text-sm tracking-[2px]'>
+                                            {t('landing.contact.description').split('\n')[3]}
+                                        </p>
                                     </div>
                                 </div>
 
@@ -127,7 +244,7 @@ const ContactFormSide: FC = () => {
                                     </div>
                                 </div> */}
                             </div>
-                        </form>
+                        </div>
 
                         {/* <svg className='absolute top-[-48px] left-[-37px]' width="277" height="219" viewBox="0 0 277 219" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path opacity="0.7" d="M125.574 197.766C77.7025 207.86 30.5325 176.53 20.2465 127.744C9.96052 78.9585 40.4663 31.2515 88.3383 21.1581C136.21 11.0648 183.38 42.3946 193.666 91.1804C203.952 139.966 173.446 187.673 125.574 197.766Z" stroke="url(#paint1_linear_0_1)" strokeWidth="2" />

@@ -1,19 +1,26 @@
 import React, { FC, useEffect, useRef } from "react";
 import { WidgetInstance } from 'friendly-challenge';
+import { useRouter } from 'next/router'
 
 type FriendlyCaptchaProps = {
-  solutionRef?: any,
+  widgetRef?: any,
+  onReady?: any,
+  onDone?: any,
   style?: string
 }
 
-const FriendlyCaptcha = ({solutionRef, style}: FriendlyCaptchaProps) => {
+const FriendlyCaptcha = ({widgetRef, onReady, onDone, style}: FriendlyCaptchaProps) => {
   const container = useRef<any>();
-  const widget = useRef<any>();
+  const widget = widgetRef ? widgetRef : useRef<any>();
+  const router = useRouter();
 
+  const readyCallback = () => {
+    if ( onReady ) onReady();
+  }
   const doneCallback = (solution: any) => {
     // console.log('Captcha was solved. The form can be submitted.');
     // console.log(solution);
-    if ( solutionRef ) solutionRef.current = solution;
+    if ( onDone ) onDone(solution);
   }
 
   const errorCallback = (err: any) => {
@@ -24,9 +31,10 @@ const FriendlyCaptcha = ({solutionRef, style}: FriendlyCaptchaProps) => {
   useEffect(() => {
     if (!widget.current && container.current) {
       widget.current = new WidgetInstance(container.current, { 
-        startMode: "auto",
-        doneCallback: doneCallback,
-        errorCallback: errorCallback 
+        startMode: "focus",
+        doneCallback,
+        errorCallback,
+        readyCallback,
       });
     }
 
@@ -36,7 +44,7 @@ const FriendlyCaptcha = ({solutionRef, style}: FriendlyCaptchaProps) => {
   }, [container]);
 
   return (
-    <div ref={container} className={`frc-captcha ${style} !max-w-full mb-4`} data-sitekey="FCMTMQCA17VA97CU" />
+    <div ref={container} className={`frc-captcha ${style} !max-w-full`} data-sitekey="FCMTMQCA17VA97CU" data-lang={router.locale}/>
   );
 }
 

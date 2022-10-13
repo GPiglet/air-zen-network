@@ -20,7 +20,7 @@
                 {
                     "title": "Business",
                     "subtitle": "Für ein vernetztes Unternehmen.",
-                    "description": "Das Team und ihre Kunden, damit jeder überall und jederzeit vernetzt ist, gibt es die sicheren und innovativen Netzwerklösungen von AirZen."
+                    "description": "Das Team und ihre Kunden, damit jeder überall und jederzeit vernetzt ist, gibt es die sicheren und innovativen Netzwerklösungen von AirZen."
                 },
                 {
                     "title": "Education",
@@ -40,7 +40,7 @@
             "title": "Über Uns",
             "swiper": [
                 {
-                    "title": "Aus Europa. Für Europa.",
+                    "title": "Aus Europa. Für Europa.",
                     "content": "AirZen stellt modernste Netzwerk Technologie in Europa her. Sicheres WLAN - entwickelt für individuelle Anforderungen und hoher Anwenderfreundlichkeit. Der eigenen Herkunft verpflichtet, hilft AirZen allen Kunden dabei mit den aktuellen Datenschutz- und Security-Richtlinien Schritt zu halten",
                     "sparkle1": "Network as a Service Plattform",
                     "sparkle2": "Sicherheit, Zuverlässigkeit & Leistungs­fähigkeit aus einer Hand"
@@ -113,6 +113,14 @@
             "subtitle": "Highend-Netzwerk-Technologien für einen entspannteren Alltag und Arbeitswelt. Und das außer- gewöhnlich einfach, sicher und zuverlässig.",
             "send": "senden",
             "description": "Ich habe die \nDatenschutz- erklärung\n gelesen und stimme der Speicherung und Verarbeitung meiner Daten durch die AirZen Networks Lda zu. \n Ich willige ein, dass meine Daten zur Beantwortung meiner Anfrage elekronisch erhoben und gespeichert werden. Ich kann meine Einwilligung jederzeit widerrufen: privacy@airzen.io ",
+            "nameLabel": "Name*",
+            "namePlaceholder": "Vorname Nachname",
+            "emailLabel": "Email Address*",
+            "emailPlaceholder": "example@email.com",
+            "descPlaceholder": "Ihre Nachricht",
+            "DSGVOLabel": "DSGVO",
+            "successMessage": "Erfolgreich gesendet.",
+            "failedMessage": "Konnte jetzt nicht senden. Bitte versuchen Sie es später erneut.",
             "href": "https://airzen.io/files/230922_airzen_dataprotection_de.pdf"
         },
         "menu": "Lösungen \n Über uns \n Referenzen \n Kontakt"
@@ -288,7 +296,7 @@
             "_comment": "Abschnitt 'Einfach' der Seite",
             "tip": "Einfach",
             "title": "Auf Erfolg eingerichtet!",
-            "description": "Gerade Unternehmen mit vielen Standorten erleichtert ein smartes Standort- und Nutzermanagement inklusive Direktsupport per Live-Chat das Leben. \n Über unsere App können Sie ihr Netzwerk dynamisch erweitern oder updaten und einzelne Nutzer:innen sicher einladen oder sperren. \n Auch Ihr Team kann über ein Self-Service-Portal selbst zu- und eingreifen. Darüber hinaus können Sie selbst eigene Sicherheitsstandards definieren: bestes Feng Shui für Ihre Mitarbeiter:innen und Ihr WLAN.",
+            "description": "Gerade Unternehmen mit vielen Standorten erleichtert ein smartes Standort- und Nutzermanagement inklusive Direktsupport per Live-Chat das Leben. \n Über unsere App können Sie ihr Netzwerk dynamisch erweitern oder updaten und einzelne Nutzer:innen sicher einladen oder sperren. \n Auch Ihr Team kann über ein Self-Service-Portal selbst zu- und eingreifen. Darüber hinaus können Sie selbst eigene Sicherheitsstandards definieren: bestes Feng Shui für Ihre Mitarbeiter:innen und Ihr WLAN.",
             "sparkle1": "Entlastung der IT per Remote Standort Management"
         },
         "secure": {
@@ -391,7 +399,7 @@
                 {
                     "tip": "Whitepaper",
                     "title": "HomeOffice",
-                    "description": "Sichere Trennung des beruflichen vom privaten Netz. AirZen bietet ein sicher & einfach verwaltbares Netzwerk für ihr HomeOffice.",
+                    "description": "Sichere Trennung des beruflichen vom privaten Netz. AirZen bietet ein sicher & einfach verwaltbares Netzwerk für ihr HomeOffice.",
                     "button": "PDF herunterladen"
                 },
                 {
@@ -469,13 +477,13 @@
         "classwifi": {
             "_comment": "Der obere Abschnitt der Seite.",
             "title": "Klasse, WLAN!",
-            "description": "Für die moderne Bildung ist ein zeitgemäßes Netzwerk unabdingbar. AirZen sorgt für zuverlässiges und sicheres Internet in Bildungseinrichtungen. Mit schlüsselfertiger Hardware, schulgerechter Einrichtung, mobiler Nutzerverwaltung, sowie einem Rundum-sorglos-IT-Support.\nDas Beste an der AirZen Technologie: der kinderleichte Betrieb. Das Netzwerk der nächsten Generation benötigt somit keine IT-Abteilung vor Ort."
+            "description": "Für die moderne Bildung ist ein zeitgemäßes Netzwerk unabdingbar. AirZen sorgt für zuverlässiges und sicheres Internet in Bildungseinrichtungen. Mit schlüsselfertiger Hardware, schulgerechter Einrichtung, mobiler Nutzerverwaltung, sowie einem Rundum-sorglos-IT-Support.\nDas Beste an der AirZen Technologie: der kinderleichte Betrieb. Das Netzwerk der nächsten Generation benötigt somit keine IT-Abteilung vor Ort."
         },
         "reliable": {
             "_comment": "'Zuverlässig' Abschnitt der Seite",
             "tip": "Zuverlässig",
             "title": "Bildung digital!",
-            "description": "AirZen hat die Lösung für komplexe Anforderungen von Bildungseinrichtungen jeder Art und Größe – und ist dabei sehr einfach zu bedienen.\nNeben lückenloser WLAN-Abdeckung sorgt AirZen auch für eine zuverlässige Netzstabilität, auch wenn viele Geräte online sind. Administratoren können unkompliziert Zugänge ermöglichen und mobil verwalten - ganz einfach vom Handy aus.\nDazu braucht es keine IT-Schulung, denn die Bedienung erfolgt intuitiv per App. Mit AirZen sorgen Sie für ein erstklassiges Netz.",
+            "description": "AirZen hat die Lösung für komplexe Anforderungen von Bildungseinrichtungen jeder Art und Größe – und ist dabei sehr einfach zu bedienen.\nNeben lückenloser WLAN-Abdeckung sorgt AirZen auch für eine zuverlässige Netzstabilität, auch wenn viele Geräte online sind. Administratoren können unkompliziert Zugänge ermöglichen und mobil verwalten - ganz einfach vom Handy aus.\nDazu braucht es keine IT-Schulung, denn die Bedienung erfolgt intuitiv per App. Mit AirZen sorgen Sie für ein erstklassiges Netz.",
             "list": [
                 "Sichere User-Verwaltung \n Passwörter & Rechtevergabe individuell je Nutzer:innen.",
                 "Managed Service \n Schutz & Kontrolle über ihr Netzwerk ohne eigene IT.",
@@ -486,7 +494,7 @@
             "_comment": "'Sicher'Abschnitt der Seite",
             "tip": "Sicher",
             "title": "SCHUTZ wird hier großsgeschrieben!",
-            "description": "Von der Grundschule bis zum Hörsaal - im schulischen Netzwerk gibt es viele sensible Daten. AirZen bietet durch die Kombination von hochqualitativen Hersteller- Service und EU als auch DSGVO konformen Sicherheitskonzepten ein hohes Maß an IT-Sicherheit.\nSchützen Sie Ihre Schüler und Lehrkräfte außerdem mit eigenen WLAN-Passwörtern, Jugendschutzfiltern und separat getrennten Verbindungen.",
+            "description": "Von der Grundschule bis zum Hörsaal - im schulischen Netzwerk gibt es viele sensible Daten. AirZen bietet durch die Kombination von hochqualitativen Hersteller- Service und EU als auch DSGVO konformen Sicherheitskonzepten ein hohes Maß an IT-Sicherheit.\nSchützen Sie Ihre Schüler und Lehrkräfte außerdem mit eigenen WLAN-Passwörtern, Jugendschutzfiltern und separat getrennten Verbindungen.",
             "sparkle1": "EU & DGVO konforme Netzwerklösung inkl. innovativer Fernwartung.",
             "sparkle2": "Automatisierte Updates Sicherheit durch aktuellste Firmware & Security Filter."
         },
@@ -494,7 +502,7 @@
             "_comment": "'Einfach'Abschnitt der Seite",
             "tip": "Einfach",
             "title": "Das kleine Einmaleinfach!",
-            "description": "Laptop raus und loslegen. Mit AirZen bekommen Schüler und Lehrer schnell und spielend einfach Zugang ins Netz über ein Self Service Portal. Damit sich alle auf den Unterricht konzentrieren können, läuft alles andere fast automatisch ab - von der Einrichtung, bis hin zur Wartung mit selbstlernender Software.\nEs braucht also keine große IT-Abteilung oder Fachkenntnisse, dank Hardware und Support direkt vom Hersteller. Oder anders gesagt: Mit AirZen geht die Rechnung auf.",
+            "description": "Laptop raus und loslegen. Mit AirZen bekommen Schüler und Lehrer schnell und spielend einfach Zugang ins Netz über ein Self Service Portal. Damit sich alle auf den Unterricht konzentrieren können, läuft alles andere fast automatisch ab - von der Einrichtung, bis hin zur Wartung mit selbstlernender Software.\nEs braucht also keine große IT-Abteilung oder Fachkenntnisse, dank Hardware und Support direkt vom Hersteller. Oder anders gesagt: Mit AirZen geht die Rechnung auf.",
             "sparkle1": "User-Management WLAN-Verwaltung so leicht wie noch nie zuvor.",
             "sparkle2": "Plug & Play Spielend leichte Installation mit der AirZen App.",
             "sparkle3": "Support Live Chat Direkter Support ohne lange Wartezeiten."
@@ -510,14 +518,14 @@
         "everything": {
             "_comment": "Der obere Abschnitt der Seite.",
             "title": "Lösungs-orientiert.",
-            "description": "Durch Stabilität, Sicherheit und einfache Nutzung bietet AirZen weitreichende Individualisierung für industrielle Netzwerke in vielen Bereichen, ganz neue Möglichkeiten Prozesse abzuwickeln, neue Leistungen anzubieten und ganz neue Maßstäbe für Industrie 4.0 zu setzen.",
+            "description": "Durch Stabilität, Sicherheit und einfache Nutzung bietet AirZen weitreichende Individualisierung für industrielle Netzwerke in vielen Bereichen, ganz neue Möglichkeiten Prozesse abzuwickeln, neue Leistungen anzubieten und ganz neue Maßstäbe für Industrie 4.0 zu setzen.",
             "cooperation": "In vertrauensvoller Kooperation mit:"
         },
         "reliable": {
             "_comment": "'Zuverlässig' Abschnitt der Seite",
             "tip": "Zuverlässig",
             "title": "Ideen in Serie.",
-            "description": "Alles aus einer Hand - von der Idee bis zur Hardware. Sie brauchen ein zuverlässiges Netzwerk oder haben eine neue Anforderung an ihr Bestehendes?\nDie AirZen Technologien sind für den Einsatz in der Industrie konzipiert und sorgen für ein äußerst effizientes Netzwerk auch bei speziellen, industriellen Anforderungen. Egal ob Automatisierung, smartes Management, Fernsteuerung oder Fernwartung - AirZen entwickelt gemeinsam mit Ihnen die ideale Netzwerk-Variante, mit einer außergewöhnlich zuverlässigen und stabilen Netzwerkabdeckung.",
+            "description": "Alles aus einer Hand - von der Idee bis zur Hardware. Sie brauchen ein zuverlässiges Netzwerk oder haben eine neue Anforderung an ihr Bestehendes?\nDie AirZen Technologien sind für den Einsatz in der Industrie konzipiert und sorgen für ein äußerst effizientes Netzwerk auch bei speziellen, industriellen Anforderungen. Egal ob Automatisierung, smartes Management, Fernsteuerung oder Fernwartung - AirZen entwickelt gemeinsam mit Ihnen die ideale Netzwerk-Variante, mit einer außergewöhnlich zuverlässigen und stabilen Netzwerkabdeckung.",
             "hint": [
                 {
                     "title": "Technologie aus Europa",
@@ -579,7 +587,7 @@
             "_comment": "'Sicher' Abschnitt der Seite",
             "tip": "Sicher",
             "title": "Zukunftsicher statt anno dazumal!",
-            "description": "Der Schutz von Maschinen, Anlagen und Netzwerken erfordert einen aktuellen Stand der Technik. AirZen bietet sichere und widerstandsfähige europäische Netzwerk-Management-Lösungen mit einer direkt integrierten Firewall und automatisierten Updates.\nMit eigener Hard- und Software, inklusive Servern in Europa steht AirZen für optimalen Schutz. Darüber hinaus haben Sie potenzielle Störungen zuverlässig im Blick. Das Netzwerk ist verwaltbar per Kommandozeile, API oder App. So behalten Sie sicher den Überblick."
+            "description": "Der Schutz von Maschinen, Anlagen und Netzwerken erfordert einen aktuellen Stand der Technik. AirZen bietet sichere und widerstandsfähige europäische Netzwerk-Management-Lösungen mit einer direkt integrierten Firewall und automatisierten Updates.\nMit eigener Hard- und Software, inklusive Servern in Europa steht AirZen für optimalen Schutz. Darüber hinaus haben Sie potenzielle Störungen zuverlässig im Blick. Das Netzwerk ist verwaltbar per Kommandozeile, API oder App. So behalten Sie sicher den Überblick."
         },
         "ournode": {
             "_comment": "Abschnitt 'Unsere Nodes' der Seite",
@@ -599,7 +607,7 @@
         "title": "Impressum",
         "legal": 
             {
-                "title": "Legal",
+                "title": "Company & Legal",
                 "description": [
                     "AirZen Networks Lda.",
                     "Avenida Arriaga, nº30, 1ºA",
