@@ -3,7 +3,7 @@ import { WidgetInstance } from 'friendly-challenge';
 import { useRouter } from 'next/router'
 
 type FriendlyCaptchaProps = {
-  widgetRef?: any,
+  widgetRef: any,
   onReady?: any,
   onDone?: any,
   style?: string
@@ -11,7 +11,7 @@ type FriendlyCaptchaProps = {
 
 const FriendlyCaptcha = ({widgetRef, onReady, onDone, style}: FriendlyCaptchaProps) => {
   const container = useRef<any>();
-  const widget = widgetRef ? widgetRef : useRef<any>();
+  const widget = widgetRef;
   const router = useRouter();
 
   const readyCallback = () => {
