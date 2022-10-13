@@ -110,9 +110,9 @@ const Professional: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
                 </g>
                 <image
                     href="/images/businessContent3.png"
-                    className="w-[63%]"
-                    x="17%"
-                    y="17%"
+                    className="w-[74%]"
+                    x="13%"
+                    y="13%"
                 />
                 <defs>
                     <clipPath id="businessContentPic3"><circle cx="263" cy="261" r="130" fill="#FFFFFF"></circle></clipPath>

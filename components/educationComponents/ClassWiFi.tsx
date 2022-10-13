@@ -67,9 +67,9 @@ const ClassWiFi: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, r
                 <path opacity="0.6" d="M772.189 328.102C830.003 508.953 727.599 703.297 543.439 762.169C359.279 821.042 163.13 722.139 105.315 541.288C47.5009 360.437 149.905 166.094 334.065 107.221C518.225 48.3491 714.375 147.252 772.189 328.102Z" stroke="url(#paint2_linear_0_1)" />
                 <path opacity="0.7" d="M295.42 565.648C309.691 610.291 284.415 658.275 238.94 672.812C193.465 687.35 145.041 662.926 130.77 618.284C116.499 573.641 141.775 525.657 187.25 511.12C232.725 496.582 281.149 521.006 295.42 565.648Z" stroke="url(#paint4_linear_0_1)" />
                 <path opacity="0.4" d="M624.774 486.429C502.5 463.549 385.161 542.353 362.689 662.443C340.218 782.533 421.123 898.434 543.397 921.314C665.671 944.194 783.01 865.39 805.481 745.3C827.953 625.209 747.047 509.309 624.774 486.429Z" fill="url(#paint5_linear_0_1)" />
-                <image href="/images/education1.png" width="750" height="950" clipPath="url(#myCircle1)" x="3.5%" y="-3%" fillOpacity='1' />
+                <image href="/images/education1.png" width="500" height="500" clipPath="url(#myCircle1)" x="17%" y="17%" fillOpacity='1' />
                 <path opacity="0.4" d="M422.931 610.715C370.622 701.317 400.353 816.411 489.337 867.786C578.32 919.161 692.86 887.361 745.169 796.76C797.478 706.158 767.747 591.063 678.764 539.689C589.78 488.314 475.24 520.114 422.931 610.715Z" fill="url(#paint6_linear_0_1)" />
-                <image href="/images/education2.png" width="480" height="780" clipPath="url(#myCircle2)" x="25%" y="28%" fillOpacity='1' />
+                <image href="/images/education2.png" width="300" height="300" clipPath="url(#myCircle2)" x="39%" y="50%" fillOpacity='1' />
                 <path opacity="0.7" d="M242.271 683.229C293.59 666.824 322.13 612.665 306.017 562.262C289.905 511.859 235.24 484.299 183.921 500.705C132.602 517.111 104.062 571.27 120.175 621.672C136.287 672.075 190.952 699.635 242.271 683.229Z" fill="url(#paint3_linear_0_1)" />
                 <defs>
                     <linearGradient id="paint0_linear_0_1" x1="120.324" y1="9.04857" x2="223.189" y2="330.823" gradientUnits="userSpaceOnUse">
