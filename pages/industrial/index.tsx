@@ -43,7 +43,7 @@ const Industrial: NextPage = () => {
 		{
 			id: 4,
 			title: t('landing.menu').split('\n')[3],
-			href: 'cantact'
+			href: 'contact'
 		},
 	]
 

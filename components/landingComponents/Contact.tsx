@@ -23,7 +23,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
 
     const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop + 400, behavior: 'smooth' })
     useEffect(() => {
-        if (router.query.section === 'cantact')
+        if (router.query.section === 'contact')
             scrollToRef(containerRef)
     }, [])
 
@@ -106,7 +106,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
 
     return (
         <>
-            <div id='cantact' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim, scroll } }} className='container m-auto relative py-[120px] md:py-[280px] flex justify-center md:fixed md:hidden md:left-1/2 md:translate-x-[-50%]'>
+            <div id='contact' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim, scroll } }} className='container m-auto relative py-[120px] md:py-[280px] flex justify-center md:fixed md:hidden md:left-1/2 md:translate-x-[-50%]'>
                 <div className=" flex justify-center">
                     <div className='text-white md:w-[50%] xl:w-1/3 text-center relative z-40 px-10 md:px-auto'>
                         <h1 ref={el => {if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el)}} className="text-title-sm">{t('landing.contact.title')}</h1>
