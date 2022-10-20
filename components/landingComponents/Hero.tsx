@@ -79,7 +79,7 @@ const Hero = React.forwardRef((props: any, ref: any) => {
                 </div>
 
                 <div className="relative md:static h-[30rem] sm:h-[56rem] md:h-0">                    
-                    <svg className="absolute left-1/2 translate-x-[-50%] top-[-175px] w-[174%] sm:top-0 sm:w-[120%] sm:right-[-20%] md:absolute md:left-auto md:translate-x-0 md:top-[60%] md:translate-y-[-45%] md:right-[-20%] md:w-[105%] 4xl:top-[55%] 4xl:right-[-33%] 5xl:w-[150%] 5xl:top-[50%] 5xl:right-[-73%]" viewBox="-220 0 1450 1700" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="absolute left-1/2 translate-x-[-50%] top-[-175px] w-[174%] sm:top-0 sm:w-[120%] sm:right-[-20%] md:absolute md:left-auto md:translate-x-0 md:top-[54%] md:translate-y-[-45%] md:right-[-20%] md:w-[105%] xl:top-[60%] 4xl:top-[55%] 4xl:right-[-33%] 5xl:w-[150%] 5xl:top-[50%] 5xl:right-[-73%]" viewBox="-220 0 1450 1700" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path ref={el => { if (el && animSideUpRefs.current.indexOf(el) == -1) animSideUpRefs.current.push(el) }} className='hero-fade' opacity="0.33" d="M50.0812 701.846C55.2566 989.408 335.109 1200.06 627.722 1301.88C920.334 1403.71 1234.95 1659.84 1242.99 2106.91C1245.57 2250.91 1245.77 155.351 1242.99 0.000182753C1013.21 121.659 900.23 166.66 594.437 171.818C288.643 176.976 44.9057 414.284 50.0812 701.846Z" fill="url(#paint0_linear_967_2268)" />
                         <circle ref={el => { if (el && animZoomInRefs.current.indexOf(el) == -1) animZoomInRefs.current.push(el) }} opacity="0.7" cx="511.729" cy="696.732" r="346.322" fill="url(#paint1_radial_967_2268)" />
                         <circle ref={el => { if (el && animZoomOutRefs.current.indexOf(el) == -1) animZoomOutRefs.current.push(el) }} opacity="0.3" cx="512.408" cy="696.273" r="362.358" stroke="#7BB690" />
@@ -105,9 +105,9 @@ const Hero = React.forwardRef((props: any, ref: any) => {
                             </radialGradient>
                         </defs>
                     </svg>
-                    <div ref={el => {if (el && animSideUpRefs.current.indexOf(el) == -1) animSideUpRefs.current.push(el)}} className="absolute z-[2] md:translate-x-0 md:top-[60%] md:translate-y-[-45%] md:right-[-20%] md:w-[105%] 4xl:top-[55%] 4xl:right-[-33%] 5xl:w-[150%] 5xl:top-[50%] 5xl:right-[-73%]">
-                        <Sparkle className="relative w-[240px] left-[70%] top-[-260px] 5xl:top-[-382px]">{t('landing.wifi.sparkle1')}</Sparkle>
-                        <Sparkle className="relative w-[240px] left-[65%] 5xl:top-[30px]">{t('landing.wifi.sparkle2')}</Sparkle>
+                    <div ref={el => {if (el && animSideUpRefs.current.indexOf(el) == -1) animSideUpRefs.current.push(el)}} className="absolute z-[2] md:translate-x-0 md:top-[54%] md:translate-y-[-45%] md:right-[-20%] md:w-[105%] xl:top-[60%] 4xl:top-[55%] 4xl:right-[-33%] 5xl:w-[150%] 5xl:top-[50%] 5xl:right-[-73%]">
+                        <Sparkle className="relative w-[240px] left-[70%] top-[-175px] xl:top-[-260px] 5xl:top-[-382px]">{t('landing.wifi.sparkle1')}</Sparkle>
+                        <Sparkle className="relative w-[240px] left-[63%] xl:left-[65%] 5xl:top-[30px]">{t('landing.wifi.sparkle2')}</Sparkle>
                     </div>
                 </div>
             </section>

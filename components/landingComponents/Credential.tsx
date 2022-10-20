@@ -107,12 +107,14 @@ const Credential = React.forwardRef((props: any, ref: any) => {
     }
 
     const onSelectCarousel = (carousel: any, slide: any, selectedIndex: number, position: number) => {
+        gsap.set(slide.children[1], {width: '110%'});
         gsap.to(slide.children[0].children[1], { width: '120%', maxWidth: '120%', duration });
         gsap.to(slide, { opacity: 1, duration });
         gsap.to(slide.getElementsByTagName('ul'), { opacity: 1, display: 'block', duration });
     }
 
     const onDeselectCarousel = (carousel: any, slide: any, selectedIndex: number, position: number) => {
+        gsap.to(slide.children[1], {clearProps: 'width', duration});
         gsap.to(slide.children[0].children[1], { width: '80%', maxWidth: '100%', duration });
         gsap.to(slide, { opacity: 0.5, duration });
         gsap.to(slide.getElementsByTagName('ul'), { opacity: 0, display: 'none', duration });
@@ -298,7 +300,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
                             ))
                         }
                     </Flickity>
-                    <AZCarousel className='credential-carousel ml-[30px] md:ml-auto relative z-50 hidden md:block' config={config}
+                    <AZCarousel className='credential-carousel relative z-50 hidden ml-[30px] md:top-[50px] md:ml-auto md:block xl:top-0' config={config}
                         onInit={onInitCarousel}
                         onShow={onShowCarousel}
                         onHide={onHideCarousel}
@@ -315,11 +317,11 @@ const Credential = React.forwardRef((props: any, ref: any) => {
                                         <source srcSet={imageList[index]} type="image/webp" />
                                         <img src={imageList[index]} className="w-[80%]" alt="" />
                                     </picture>
-                                    <div className='flex pt-7 w-[110%] ml-[1.2rem]'>
-                                        <div className='w-[40%] px-2'>
+                                    <div className='flex flex-col w-[80%] pt-4 ml-[1.2rem] xl:flex-row xl:w-[110%] xl:pt-7'>
+                                        <div className='w-full px-2 xl:w-[40%]'>
                                             <p className='font-lato text-[22px] text-white'>{item.title}</p>
                                         </div>
-                                        <ul className={`w-[60%] pl-2 px-2 text-white ${item.list.split('\n').length > 1 ? 'list-disc' : 'list-none'} hidden`}>
+                                        <ul className={`w-full p-2 text-white ${item.list.split('\n').length > 1 ? 'list-disc' : 'list-none'} hidden xl:w-[60%]`}>
                                             {
                                                 item.list.split('\n').map((detail: string, ind: number) => (
                                                     <li className='font-lato text-base font-light' key={ind}>{detail}</li>
@@ -351,7 +353,7 @@ const Credential = React.forwardRef((props: any, ref: any) => {
                         </defs>
                     </svg>
 
-                    <div ref={refBackCircleCarousel} className='hidden absolute w-[120%] md:w-[45%] top-0  md:top-1/2 md:translate-y-[-44%] right-[27%] md:left-[14%]' >
+                    <div ref={refBackCircleCarousel} className='hidden absolute w-[120%] md:w-[50%] md:top-[45%] md:translate-x-[-5%] md:translate-y-[-44%] right-[27%] md:left-[14%] xl:w-[45%] xl:top-1/2 xl:translate-x-0' >
                         <svg viewBox="-30 -30 796 796" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle ref={el => { if (el && animCircle.current.indexOf(el) == -1) animCircle.current.push(el) }} opacity="0.3" cx="368.2" cy="368.2" r="338.706" transform="rotate(-120 368.2 368.2)" fill="url(#paint0_radial_0_2)" />
                             <circle ref={el => { if (el && animCircle.current.indexOf(el) == -1) animCircle.current.push(el) }} opacity="0.8" cx="368.199" cy="368.2" r="367.206" transform="rotate(-120 368.199 368.2)" stroke="url(#paint1_linear_0_2)" />

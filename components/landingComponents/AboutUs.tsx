@@ -227,7 +227,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
             <section id='aboutus' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='z-10 container m-auto relative items-center md:py-20 md:fixed md:hidden md:h-screen md:left-[50%] md:translate-x-[-50%] md:flex'>
                 <div className='z-50 w-full'>
                         <div className="text-center">
-                            <h1 ref={el => { if (el && animSideUp.current.indexOf(el) == -1) animSideUp.current.push(el) }} className="relative z-40 text-title-sm md:mt-0 md:top-[-40px]">{t('landing.aboutus.title')} </h1>
+                            <h1 ref={el => { if (el && animSideUp.current.indexOf(el) == -1) animSideUp.current.push(el) }} className="relative z-40 text-title-sm md:mt-0 md:top-0 4xl:top-[-40px]">{t('landing.aboutus.title')} </h1>
                         </div>
                         <div ref={el => { if (el && animFadeIn.current.indexOf(el) == -1) animFadeIn.current.push(el) }} className=' md:flex relative top-[-80px] md:top-0'>
                             <picture className={`${selected + 1 === sliderList.length ? 'hidden' : ''} `}>
@@ -299,8 +299,8 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                                     {
                                         (sliderList as unknown as any[]).map((item, ind) => (
                                             <div key={ind} className={`sparkle-divs ${ind == 0 ? '' : 'hidden'}`}>
-                                                <Sparkle className="relative w-[280px] left-[4.8%] top-[360px]">{item.sparkle1}</Sparkle>
-                                                <Sparkle className="relative w-[280px] left-[64%] top-[157px]">{item.sparkle2}</Sparkle>
+                                                <Sparkle className="relative w-[280px] left-[13.75%] xl:left-[4.8%] top-[360px]">{item.sparkle1}</Sparkle>
+                                                <Sparkle className="relative w-[280px] left-[62%] xl:left-[64%] top-[114px] xl:top-[157px]">{item.sparkle2}</Sparkle>
                                             </div>
                                         ))
                                     }

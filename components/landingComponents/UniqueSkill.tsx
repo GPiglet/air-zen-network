@@ -3,26 +3,19 @@ import React, { FC, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import gsap from "gsap";
 import { useTranslation } from 'next-i18next';
-import { useState } from 'react';
+import mobileAndTabletCheck from '../common/detectBrowser';
 
 const UniqueSkill = React.forwardRef((props: any, ref: any) => {
-    const [isMobile, setIsMobile] = useState(false)
-
     //translate
     const { t } = useTranslation()
 
-    const router = useRouter()
     const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop, behavior: 'smooth' })
     useEffect(() => {
         if (router.query.section === 'solutions')
-            // scrollToRef(containerRef)
-            window.location.href = '#solutions'
-        if (window.innerWidth > 920)
-            setIsMobile(false)
-        else
-            setIsMobile(true)
+            scrollToRef(containerRef)
     }, [])
 
+    const router = useRouter()
     const skillList = t('landing.solution.list', { returnObjects: true })
 
     const graphList = [
@@ -208,7 +201,7 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
 
     const duration = 0.5;
     const getHoverTimeline = (index: number, duration: number = 0.5) => {
-        const width = window.innerWidth < 1440 ? 210 : 280;
+        const width = window.innerWidth < 1440 ? 260 : 280;
         return gsap.timeline({ onReverseComplete: () => { gsap.set(animSkills.current[index], { clearProps: 'width,height' }) } })
             .fromTo(
                 animSkills.current[index],
@@ -316,12 +309,12 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
 
     }
     const onMouseEnterSkill = (index: number) => {
-        if (window.innerWidth < 920) return;
+        if ( window.innerWidth < 920 ) return;
         getHoverTimeline(index).play(0)
     }
 
     const onMouseLeaveSkill = (index: number) => {
-        if (window.innerWidth < 920) return;
+        if ( window.innerWidth < 920 ) return;
         getHoverTimeline(index).reverse(0)
     }
 
@@ -431,12 +424,12 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
 
     const onClickSkill = (index: number) => {
         // 
-        if (window.innerWidth < 920) {
+        if ( mobileAndTabletCheck() ) {
             if (animSkills.current[index].getAttribute('data-box-opened') == 'false' || !animSkills.current[index].getAttribute('data-box-opened')) {
-                getClickTimeline(index).play(0);
+                if ( window.innerWidth < 920 ) getClickTimeline(index).play(0);
                 for (let i = 0; i < animSkills.current.length; i++) {
                     const opened = i == index ? 'true' : 'false';
-                    if (animSkills.current[i].getAttribute('data-box-opened') == 'true') getClickTimeline(i).reverse(0);
+                    if (animSkills.current[i].getAttribute('data-box-opened') == 'true' && window.innerWidth < 920 ) getClickTimeline(i).reverse(0);
                     animSkills.current[i].setAttribute('data-box-opened', opened);
                 }
                 return;
@@ -452,7 +445,7 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
 
     return (
         <>
-            <div id='solutions' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='z-10 md:container mx-auto relative justify-center items-center mt-[-50px] md:mt-0 md:pt-20 pb-[100px] md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] md:top-1/2 md:translate-y-[-470px]'>
+            <div id='solutions' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='z-10 xl:container mx-auto relative justify-center items-center mt-[-50px] md:mt-0 md:pt-20 pb-[100px] md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] md:top-1/2 md:translate-y-[-470px]'>
                 <div className='md:mt-[200px] 4xl:mt-[135px]'>
                     <div className=" text-center  text-white">
                         <h1 ref={el => { if (el && animSideUp.current.indexOf(el) == -1) animSideUp.current.push(el) }} className="text-title-sm">{t('landing.solution.title')}</h1>
@@ -462,7 +455,7 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                         <div className='md:m-auto md:w-max  '>
                             {
                                 (skillList as unknown as any[]).map((item: any, index: any) => (
-                                    <div ref={el => { if (el != null && animSkills.current.indexOf(el) == -1) animSkills.current.push(el) }} onClick={() => onClickSkill(index)} onMouseEnter={() => onMouseEnterSkill(index)} onMouseLeave={() => onMouseLeaveSkill(index)} className='relative px-5 py-3 flex-1 unique-skill-items unique-skill-animate z-40 cursor-pointer right-[-30px] w-full h-[170px] align-top sm:right-[0] sm:w-[80%] sm:ml-auto md:h-auto md:w-[210px] md:inline-block md:right-auto md:py-5 xl:w-[280px]' key={index}>
+                                    <div ref={el => { if (el != null && animSkills.current.indexOf(el) == -1) animSkills.current.push(el) }} onClick={() => onClickSkill(index)} onMouseEnter={() => onMouseEnterSkill(index)} onMouseLeave={() => onMouseLeaveSkill(index)} className='relative px-5 py-3 flex-1 unique-skill-items unique-skill-animate z-40 cursor-pointer right-[-30px] w-full h-[170px] align-top sm:right-[0] sm:w-[80%] sm:ml-auto md:h-auto md:w-[260px] md:inline-block md:right-auto md:py-5 xl:w-[280px]' key={index}>
                                         <div className='unique-skill-border-gradient h-full'>
                                             <div className='tracking-widest py-5 md:pt-[80px] md:pb-[100px] xl:pl-[42px] xl:pr-0 pl-8 pr-5 text-white w-full relative  md:h-[300px]'>
                                                 <picture className=''>
