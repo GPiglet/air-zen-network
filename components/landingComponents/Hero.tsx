@@ -85,7 +85,7 @@ const Hero = React.forwardRef((props: any, ref: any) => {
                         <circle ref={el => { if (el && animZoomOutRefs.current.indexOf(el) == -1) animZoomOutRefs.current.push(el) }} opacity="0.3" cx="512.408" cy="696.273" r="362.358" stroke="#7BB690" />
                         <path ref={el => { if (el && animSideUpRefs.current.indexOf(el) == -1) animSideUpRefs.current.push(el) }} className='hero-fade' opacity="0.6" d="M1023.68 696.224C1023.68 978.288 794.632 1206.95 512.089 1206.95C229.545 1206.95 0.5 978.288 0.5 696.224C0.5 414.16 229.545 185.5 512.089 185.5C794.632 185.5 1023.68 414.16 1023.68 696.224Z" stroke="url(#paint2_radial_967_2268)" />
                         <circle ref={el => { if (el && animZoomOutRefs.current.indexOf(el) == -1) animZoomOutRefs.current.push(el) }} opacity="0.7" cx="511.828" cy="696.377" r="259.285" transform="rotate(-90.105 511.828 696.377)" fill="url(#paint3_radial_967_2268)" />
-                        <image ref={heroImgRef} className='hero-fade' href="/images/model.png" x="24.5%" y="30%" cx="511.828" cy="696.377" transform="translate(0,0)" />
+                        <image ref={heroImgRef} width="311px" className='hero-fade' href="/images/model.png" x="24.5%" y="30%" cx="511.828" cy="696.377" transform="translate(0,0)" />
                         <defs>
                             <linearGradient id="paint0_linear_967_2268" x1="278.213" y1="680.928" x2="1245.06" y2="732.717" gradientUnits="userSpaceOnUse">
                                 <stop stopColor="#7BB690" />
