@@ -91,7 +91,7 @@ const OurNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
                     </svg>
                 </div>
 
-                <div className="relative z-10 flex flex-wrap md:pt-[42%] align-center">
+                <div className="relative z-10 flex flex-wrap md:pt-[50%] xl:pt-[42%] align-center">
                     <div className="w-full md:w-[45%] px-10 mx-auto">
                         <p className="font-lato-light font-light text-[22px] text-white">{t('home.ournode.tip')}</p>
                         <h1 className="text-title-sm-white mb-10">{t('home.ournode.title')}</h1>

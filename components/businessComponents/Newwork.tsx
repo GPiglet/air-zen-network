@@ -64,7 +64,7 @@ const NewWork: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
                                                 <source srcSet="/images/check-icon.svg" type="image/webp" />
                                                 <img src="/images/check-icon.svg" className="w-[28px] h-[22px] mr-[10px]" alt="" />
                                             </picture>
-                                            <div className="text-white tracking-[0.08em] w-2/3">
+                                            <div className="text-white tracking-[0.08em] w-2/3 md:w-full xl:w-2/3">
                                                 <p className="font-lato text-lg font-medium">{item.split('\n')[0]} </p>
                                                 <p className="font-lato-light text-lg font-light">{item.split('\n')[1]}</p>
                                             </div>

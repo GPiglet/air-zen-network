@@ -45,7 +45,7 @@ const PrepareSuccess: FC<{ props?: any, ref: any }> = React.forwardRef((props: a
 
             <div className="relative items-center px-10 md:px-0 md:absolute md:top-1/2 md:translate-y-[-50%]">
                 <div className="flex flex-wrap sm:w-[65%] md:mt-12 md:w-full">
-                    <div className="w-full md:w-2/5 m-auto">
+                    <div className="w-full md:pl-[230px] md:w-[90%] xl:pl-0 xl:w-2/5 m-auto">
                         <div className="relative">
                             <p className="font-lato-light font-light text-[22px] text-white">{t('business.preparesuccess.tip')}</p>
                             <h1 className="text-title-sm-white">{t('business.preparesuccess.title')}</h1>
@@ -61,7 +61,7 @@ const PrepareSuccess: FC<{ props?: any, ref: any }> = React.forwardRef((props: a
             </div>
 
             <div className="relative h-[25rem] sm:h-0 md:static md:h-auto">
-                <svg className="absolute top-[-40%] left-[50%] translate-x-[-50%] w-[174%] sm:w-full sm:left-[80%] sm:top-[-600px] md:top-1/2 md:left-[-25%] md:translate-x-0 md:translate-y-[-50%] 2xl:w-[1000px]" viewBox="0 0 704 704" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="absolute top-[-40%] left-[50%] translate-x-[-50%] w-[174%] sm:w-full sm:left-[80%] sm:top-[-600px] md:top-1/2 md:left-[-25%] md:translate-x-0 md:translate-y-[-50%] md:w-[75%] xl:w-full 2xl:w-[1000px]" viewBox="0 0 704 704" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g opacity="0.8">
                         <circle opacity="0.7" cx="206.097" cy="206.099" r="206.098" className="translate-x-[21%] translate-y-[21%]" transform="rotate(-180 206.097 206.099)" fill="url(#paint0_radial_1376_5811)" />
                         <path className="opacity-0 md:opacity-30" d="M53.0685 351.55C53.0685 186.305 186.901 52.3491 351.991 52.3491C517.081 52.3491 650.914 186.305 650.914 351.55C650.914 516.795 517.081 650.751 351.991 650.751C186.901 650.751 53.0685 516.795 53.0685 351.55Z" stroke="#7BB690" />
@@ -84,8 +84,8 @@ const PrepareSuccess: FC<{ props?: any, ref: any }> = React.forwardRef((props: a
                         </radialGradient>
                     </defs>
                 </svg>
-                <div className="absolute z-[2] md:top-1/2 md:left-[-25%] md:translate-x-0 md:translate-y-[-50%] 2xl:w-[1000px]">
-                    <Sparkle className="relative w-[240px] left-[38%] top-[426px]">{t('business.preparesuccess.sparkle1')}</Sparkle>
+                <div className="absolute z-[2] w-full md:top-1/2 md:left-[-25%] md:translate-x-0 md:translate-y-[-50%] md:w-[75%] xl:w-full 2xl:w-[1000px]">
+                    <Sparkle className="relative w-[240px] left-[38%] md:top-[220px] xl:top-[325px] 4xl:top-[426px]">{t('business.preparesuccess.sparkle1')}</Sparkle>
                 </div>
             </div>
 
@@ -113,7 +113,7 @@ const PrepareSuccess: FC<{ props?: any, ref: any }> = React.forwardRef((props: a
                 </defs>
             </svg>
 
-            <svg className="hidden md:block absolute right-0 w-[60%] top-1/2 right-[-22%] 2xl:w-[900px] " viewBox="0 0 394 397" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="hidden md:block absolute right-0 w-[60%] md:top-[60%] xl:top-1/2 right-[-22%] 2xl:w-[900px] " viewBox="0 0 394 397" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.8">
                     <ellipse opacity="0.7" cx="197.123" cy="198.596" rx="176.638" ry="177.817" transform="rotate(-180 197.123 198.596)" fill="url(#paint0_radial_1376_5831)" />
                     <path opacity="0.6" d="M43.4369 198.595C43.4369 113.704 112.244 44.8866 197.121 44.8866C281.998 44.8866 350.805 113.704 350.805 198.595C350.805 283.485 281.998 352.303 197.121 352.303C112.244 352.303 43.4369 283.485 43.4369 198.595Z" stroke="url(#paint1_radial_1376_5831)" />

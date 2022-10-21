@@ -133,10 +133,10 @@ const Solution360: FC<{ props?: any, ref: any }> = React.forwardRef((props: any,
             <div className='z-10 relative md:absolute md:top-1/2 md:translate-y-[-50%] w-full'>
                 <div className='relative flex'>
                     <picture className={`${selected + 1 === sliderList.length ? 'hidden' : ''} `}>
-                        <img src="/images/sparkle-arrow.svg" alt='' onClick={() => onClickNext()} className="top-[90%] w-[47px] h-[93px] cursor-pointer absolute right-[20px] md:right-[230px] md:bottom-auto md:top-1/2 center-y-transform z-50" />
+                        <img src="/images/sparkle-arrow.svg" alt='' onClick={() => onClickNext()} className="top-[90%] w-[47px] h-[93px] cursor-pointer absolute right-[20px] md:right-[100px] xl:right-[230px] md:bottom-auto md:top-1/2 center-y-transform z-50" />
                     </picture>
                     <picture className={`${selected === 0 ? 'hidden' : ''}`}>
-                        <img src="/images/sparkle-arrow.svg" alt='' onClick={() => onClickPrev()} className={`top-[90%] z-50 w-[47px] h-[93px] sparkle-arrow-reverse cursor-pointer absolute left-[20px] md:left-[-70px] md:bottom-auto md:top-1/2 4xl:left-[130px]`} />
+                        <img src="/images/sparkle-arrow.svg" alt='' onClick={() => onClickPrev()} className={`top-[90%] z-50 w-[47px] h-[93px] sparkle-arrow-reverse cursor-pointer absolute left-[20px] md:left-[70px] md:bottom-auto md:top-1/2 4xl:left-[130px]`} />
                     </picture>
                     <div className='md:w-1/2'></div>
                     <div className='w-full md:w-1/2'>
@@ -169,8 +169,8 @@ const Solution360: FC<{ props?: any, ref: any }> = React.forwardRef((props: any,
                             {
                                 (sliderList as unknown as any[]).map((item, ind) => (
                                     <div className="md:w-full" key={ind}>
-                                        <h1 className="relative text-title-sm-white w-[84%] 4xl:top-[-160px] 4xl:left-[-50%] 4xl:w-full 4xl:text-center">{item.title}</h1>
-                                        <div className="relative grid grid-cols-1 left-[-60px] w-[65%] mt-8">
+                                        <h1 className="relative text-title-sm-white md:text-center md:w-[110%] md:top-[-90px] md:left-[-50%] 4xl:top-[-160px] xl:w-full">{item.title}</h1>
+                                        <div className="relative grid grid-cols-1 left-[-60px] md:w-[80%] xl:w-[65%] mt-8">
                                             {
                                                 (item.list as unknown as any[]).map((list, index) =>
                                                     <div className="flex mb-12 w-[90%] md:w-full" key={index}>
@@ -194,7 +194,7 @@ const Solution360: FC<{ props?: any, ref: any }> = React.forwardRef((props: any,
             </div>
             {/*left animation for carousal*/}
             <div className="relative z-0 h-[44rem] sm:h-[50rem] md:static md:h-auto">
-                <svg className='absolute z-0 top-[-40%] left-1/2 translate-x-[-50%] w-[230%] sm:top-[-25%] sm:w-[140%] md:translate-x-0 md:top-[50%] md:translate-y-[-50%] md:w-[115%] md:left-[-27%] md:w-[100%] 4xl:w-[110%] 4xl:left-[-25%] 4xl:top-[50%]' viewBox={`0 100 763 ${isMobile ? '690' : '590'}`} fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className='absolute z-0 top-[-40%] left-1/2 translate-x-[-50%] w-[230%] sm:top-[-25%] sm:w-[140%] md:translate-x-0 md:top-[50%] md:translate-y-[-50%] md:left-[-27%] md:w-[110%] xl:w-full 4xl:w-[110%] 4xl:left-[-25%] 4xl:top-[50%]' viewBox={`0 100 763 ${isMobile ? '690' : '590'}`} fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g opacity="0.8">
                         <ellipse opacity="0.7" cx="381.16" cy="381.842" rx="179.165" ry="179.4" transform="rotate(-180 381.16 381.842)" fill="url(#paint0_radial_1376_6235)" />
                         <circle opacity="0.3" r="220" transform="matrix(-0.706643 0.70757 -0.706643 -0.70757 381.25 381.749)" stroke="url(#paint1_linear_1376_6235)" />
@@ -204,9 +204,9 @@ const Solution360: FC<{ props?: any, ref: any }> = React.forwardRef((props: any,
                     </g>
                     {
                         ['Business4.png', 'Business5.png', 'Business6.png', 'Business7.png', 'Business8.png', 'Business9.png', 'Business10.png', 'Business11.png'].map((item, ind) =>
-                            <image key={ind} href={"/images/" + item} x="32.5%" y="20%" fillOpacity='0.5' className={`${ind == 0 ? '' : 'opacity-0'} carousel-images w-[34%] translate-x-0 translate-y-[23%] sm:translate-y-0 sm:translate-x-[16px] sm:w-[30%] 4xl:w-[22%] 4xl:translate-y-[195px] 4xl:translate-x-[47px]`} />   
+                            <image key={ind} href={"/images/" + item} x="32.5%" y="20%" fillOpacity='0.5' className={`${ind == 0 ? '' : 'opacity-0'} carousel-images w-[34%] translate-x-0 translate-y-[23%] sm:translate-y-0 sm:translate-x-[16px] sm:w-[30%] md:w-[24%] md:translate-x-[35px] md:translate-y-[195px] 4xl:translate-x-[47px] 4xl:w-[22%]`} />   
                     )}
-                    <image href="/images/app-download.svg" className='hidden md:block w-[20%]' x="49%" y="93%" cx="511.828" cy="696.377" transform="translate(0,0)" />
+                    <image href="/images/app-download.svg" className='hidden md:block w-[20%]' x="49%" y="93%" cx="511.828" cy="696.377" transform="md:translate-y-[30px] 4xl:translate(0,0)" />
                     <defs>
                         <radialGradient id="paint0_radial_1376_6235" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(355.965 286.536) rotate(68.4461) scale(369.576 369.223)">
                             <stop stopColor="#7BB690" />

@@ -344,13 +344,13 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
             {/*Carousal*/}
             <div ref={el => { if (el && refAnimContents.current.indexOf(el) == -1) refAnimContents.current.push(el) }} className="carousel-content relative w-full h-full z-10 md:fixed md:hidden md:px-0 md:mt-0 md:pl-[25%]">
                 <picture className={`${selected + 1 === sliderList.length ? 'hidden' : ''} `}>
-                    <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('next')} className='top-[90%] w-[47px] h-[93px] cursor-pointer absolute right-[20px] md:right-[230px] md:bottom-auto md:top-1/2 center-y-transform z-50' />
+                    <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('next')} className='top-[90%] w-[47px] h-[93px] cursor-pointer absolute right-[20px] md::right-[-10px] xl:right-[230px] md:bottom-auto md:top-1/2 center-y-transform z-50' />
                 </picture>
                 <picture className={`${selected === 0 ? 'hidden' : ''}`}>
                     <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('prev')} className={`top-[90%] z-50 w-[47px] h-[93px] sparkle-arrow-reverse cursor-pointer absolute left-[20px] md:left-[-70px] md:bottom-auto md:top-1/2 4xl:left-[-110px]`} />
                 </picture>
                 <div className="flex flex-col md:w-full md:justify-center">
-                    <div className="w-full mx-auto md:w-[70%] md:mx-0">
+                    <div className="w-full mx-auto md:w-[90%] xl:w-[70%] md:mx-0">
                         <Flickity
                             {...flickityProps}
                         >

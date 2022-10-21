@@ -56,17 +56,17 @@ const WhitePaper: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, 
                 <div className='md:flex justify-between text-left mt-[120px]'>
                     {
                         (paperList as unknown as any[]).map((item, index) =>
-                            <div className='relative w-full px-12 mb-64 md:mb-10 md:w-1/3' key={index}>
+                            <div className='relative w-full px-12 mb-64 md:px-6 md:mb-10 md:w-1/3 xl:px-12' key={index}>
                                 <div className='relative z-0'>
                                     {graphList[index]}
                                 </div>
                                 <div className='relative z-10 text-center md:text-left'>
-                                    <button className='absolute left-[50%] translate-x-[-50%] w-[80%] mt-72 bg-white rounded-full text-black p-3 uppercase font-lato md:mt-80 md:left-0 md:translate-x-0'>{item.button}</button>
+                                    <button className='absolute left-[50%] translate-x-[-50%] w-[80%] mt-72 bg-white rounded-full text-black p-3 uppercase font-lato md:mt-72 md:left-0 md:translate-x-0 xl:mt-80'>{item.button}</button>
                                     <p className="font-lato-light font-light text-lg tracking-widest">{item.tip}</p>
                                     <h1 className="text-title-sm-white mt-4">
                                         {item.title}
                                     </h1>
-                                    <p className='font-lato text-lg mt-14'>{item.description}</p>
+                                    <p className='font-lato text-lg mt-14 md:mt-8 xl:mt-14'>{item.description}</p>
                                 </div>                                
                             </div>
                         )                        

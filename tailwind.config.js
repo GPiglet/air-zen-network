@@ -88,7 +88,7 @@ module.exports = {
           color: "transparent",
           background: "linear-gradient(to right, #bab8b8b0, #fafafa, white)",
           "-webkit-background-clip": "text",
-          "@screen md": {
+          "@screen xl": {
             fontSize: "32px",
           },
         },
@@ -99,7 +99,7 @@ module.exports = {
           fontSize: "26px",
           letterSpacing: "0.08em",
           color: "white",
-          "@screen md": {
+          "@screen xl": {
             fontSize: "32px",
           },
         },

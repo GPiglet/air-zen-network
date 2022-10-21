@@ -75,7 +75,7 @@ const BusinessNode: FC<{ props?: any, ref: any }> = React.forwardRef((props: any
                     </svg>
                 </div>
 
-                <div className="z-10 relative flex flex-wrap md:pt-[42%] align-center">
+                <div className="z-10 relative flex flex-wrap md:pt-[55%] xl:pt-[42%] align-center">
                     <div className="w-full md:w-[45%] px-10 mx-auto">
                         <p className="font-lato-light font-light text-[22px] text-white">{t('business.ournode.tip')}</p>
                         <h1 className="text-title-sm-white mb-10">{t('business.ournode.title')}</h1>
