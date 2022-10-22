@@ -42,9 +42,9 @@ const Secure: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref:
 
     return (
         <div id="protection" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="relative container mx-auto md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
-            <div className="relative items-center px-10 md:px-0 md:absolute md:top-1/2 md:translate-y-[-50%]">
-                <div className="flex flex-col mt-12 md:mt-18">
-                    <div className="w-full md:w-2/5 md:ml-[20%]">
+            <div className="relative items-center px-10 md:px-0 sm:w-[60%] md:absolute md:top-1/2 md:translate-y-[-50%] md:w-full">
+                <div className="flex flex-col mt-20">
+                    <div className="w-full md:w-2/5 md:ml-[2%]">
                         <p className="font-lato-ligh font-light text-[22px] text-white">{t('education.secure.tip')}</p>
                         <h1 className="text-title-sm">{t('education.secure.title')}</h1>
                         {
@@ -55,11 +55,8 @@ const Secure: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref:
                     </div>
                 </div>
             </div>
-            <div>
-                <svg className="md:absolute mx-auto 
-                right-1/2 translate-x-[-18%] md:translate-x-[50%] md:translate-x-0 md:right-[-6%] xl:right-[10%]
-                top-[88%] xs:top-[50%] sm:top-[23%] md:top-1/2 md:translate-y-[-40%]
-                w-[150%] md:w-[100%] xl:w-[85%]" viewBox="0 0 910 967" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className="realtive z-0 md:static h-[20rem] sm:h-0">
+                <svg className="absolute mx-auto top-[46%] w-[150%] left-1/2 translate-x-[-50%] sm:left-[75%] sm:translate-x-[-50%] sm:top-[-50%] sm:w-full md:left-[-12%] md:top-1/2 md:translate-y-[-48%] md:translate-x-[50%] md:w-[100%] xl:w-[85%]" viewBox="0 0 910 967" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.3" d="M395.764 842.219C587.589 888.755 780.068 767.815 825.677 572.091C871.287 376.366 752.756 179.975 560.931 133.438C369.106 86.9012 176.628 207.842 131.018 403.566C85.4086 599.291 203.939 795.682 395.764 842.219Z" fill="url(#paint0_radial_1376_7128)" />
                     <path opacity="0.5" d="M554.63 729.8C685.678 687.055 757.952 544.008 716.059 410.296C674.165 276.584 533.969 202.841 402.92 245.586C271.872 288.331 199.598 431.378 241.491 565.09C283.385 698.802 423.582 772.545 554.63 729.8Z" fill="url(#paint1_radial_1376_7128)" />
                     <path d="M664.516 427.551C697.362 532.386 640.694 644.526 537.967 678.033C435.239 711.541 325.326 653.736 292.48 548.901C259.634 444.066 316.302 331.926 419.029 298.419C521.757 264.911 631.67 322.716 664.516 427.551Z" stroke="url(#paint2_linear_1376_7128)" className="translate-y-[9px]"/>
@@ -89,9 +86,7 @@ const Secure: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref:
                         </linearGradient>
                     </defs>
                 </svg>
-                <div className="absolute z-[2] md:translate-x-[50%] md:translate-x-0 md:right-[-6%] xl:right-[10%]
-                top-[88%] xs:top-[50%] sm:top-[23%] md:top-1/2 md:translate-y-[-40%]
-                w-[150%] md:w-[100%] xl:w-[85%]">
+                <div className="absolute z-[2] md:translate-x-[50%] md:right-[32%] md:top-1/2 md:translate-y-[-48%] md:w-[100%] xl:w-[85%]">
                     <Sparkle className="relative w-[300px] left-[46%] top-[-230px]">{t('education.secure.sparkle1')}</Sparkle>
                     <Sparkle className="relative w-[300px] left-[46%] top-[350px]">{t('education.secure.sparkle2')}</Sparkle>
                 </div>

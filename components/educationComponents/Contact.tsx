@@ -46,11 +46,9 @@ const Contact: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
 
         <div id="technology" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="relative md:h-screen md:fixed md:hidden w-full">
             <div className="container mx-auto relative flex items-center">
-
                 <div className="mx-auto relative">
-                    <svg className="md:absolute md:top-[-10%] translate-x-[-17%]
-                xl:top-[-10%] w-[150%] md:w-[60%] xl:w-[90%]
-                md:left-1/2 md:translate-x-[-50%]" viewBox="0 0 802 806" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div className="z-0 relative md:initial h-[26rem] sm:h-[36rem] md:h-0">
+                    <svg className="absolute translate-x-[-17%] w-[150%] sm:left-1/2 sm:translate-x-[-50%] sm:w-full md:top-[-10%] md:w-[60%] xl:top-[-10%] xl:w-[90%]" viewBox="0 0 802 806" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path opacity="0.7" d="M336.038 55.6223C521.295 20.2571 700.575 145.072 736.454 334.431C772.332 523.79 651.216 705.95 465.959 741.315C280.702 776.68 101.422 651.865 65.543 462.506C29.6645 273.148 150.781 90.9875 336.038 55.6223Z" stroke="url(#paint0_linear_1376_7348)" />
                         <path opacity="0.3" d="M491.731 682.458C650.905 631.382 739.427 462.771 689.451 305.853C639.475 148.936 469.926 63.1339 310.752 114.209C151.579 165.285 63.0564 333.896 113.032 490.814C163.008 647.731 332.557 733.533 491.731 682.458Z" fill="url(#paint1_radial_1376_7348)" />
                         <path opacity="0.5" d="M461.094 593.296C566.327 559.529 624.851 448.056 591.811 344.314C558.771 240.572 446.678 183.846 341.444 217.613C236.211 251.38 177.687 362.853 210.727 466.595C243.767 570.337 355.86 627.063 461.094 593.296Z" fill="url(#paint2_radial_1376_7348)" />
@@ -75,21 +73,24 @@ const Contact: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
                             </linearGradient>
                         </defs>
                     </svg>
-                    <div className="w-full md:w-2/3 xl:1/2 px-10 mx-auto md:mt-[30%] xl:mt-[50%]">
-                        <p className="font-lato-light font-light text-[22px] text-white">{t('education.ournode.tip')}</p>
-                        <h1 className="text-title-sm-white">{t('education.ournode.title')}</h1>
-                        {
-                            t('education.ournode.description').split('\n').map((item, index) =>
-                                index % 2 === 0 ? (
-                                    <p className="font-lato tracking-widest text-white text-lg font-normal" key={index}>{item}</p>
-                                ) : (
-                                    <div key={index}>
-                                        <p className="font-lato font-light tracking-widest text-white text-lg" >{item}
-                                        </p><br />
-                                    </div>
+                    </div>
+                    <div className="relative z-10 flex flex-wrap md:pt-[50%] xl:pt-[42%] align-center 4xl:pt-[55%]">
+                        <div className="w-full md:w-[55%] px-10 mx-auto">
+                            <p className="font-lato-light font-light text-[22px] text-white">{t('education.ournode.tip')}</p>
+                            <h1 className="text-title-sm-white mb-10">{t('education.ournode.title')}</h1>
+                            {
+                                t('education.ournode.description').split('\n').map((item, index) =>
+                                    index % 2 === 0 ? (
+                                        <p className="font-lato tracking-widest text-white text-lg font-normal mt-3" key={index}>{item}</p>
+                                    ) : (
+                                        <div key={index}>
+                                            <p className="font-lato font-light tracking-widest text-white text-lg" >{item}
+                                            </p><br />
+                                        </div>
+                                    )
                                 )
-                            )
-                        }
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

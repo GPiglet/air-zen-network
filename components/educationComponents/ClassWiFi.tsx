@@ -43,7 +43,7 @@ const ClassWiFi: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, r
 
     return (
         <div ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="relative container mx-auto md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
-            <div className="container mx-auto relative itemsCenter px-10 md:px-0 md:absolute md:top-1/2 md:translate-y-[-50%] pt-[150px] md:pt-0">
+            <div className="z-10 container mx-auto relative px-10 sm:mx-0 sm:w-[60%] md:px-0 md:absolute md:top-1/2 md:translate-y-[-50%] md:w-full pt-[150px] md:pt-0">
                 <Breadcrumb />
                 <div className="flex flex-wrap mt-12">
                     <div className="w-full md:w-7/12 md:max-w-[417px] lg:max-w-[617px]">
@@ -56,11 +56,7 @@ const ClassWiFi: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, r
                     </div>
                 </div>
             </div>
-            <svg className="
-            md:absolute trigger
-            right-1/2 translate-x-[-10%]  md:translate-x-0 md:right-[-40%] xl:right-[-20%]
-            md:top-1/2 md:translate-y-[-40%]
-            w-[150%] sm-w-[100%] md:w-[100%] xl:w-[80%]"
+            <svg className="z-0 absolute left-[60px] top-[-55px] w-[140%] sm:left-auto sm:top-[-5%] sm:w-[100%] sm:right-[-33%] md:translate-x-0 md:right-[-40%] md:top-1/2 md:translate-y-[-40%] md:w-[100%] xl:w-[80%] xl:right-[-20%]"
                 viewBox="0 0 1100 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.4" d="M747.782 581.528C819.969 558.451 860.114 482.27 837.45 411.372C814.785 340.474 737.893 301.708 665.706 324.784C593.519 347.861 553.373 424.042 576.038 494.94C598.702 565.838 675.595 604.605 747.782 581.528Z" fill="url(#paint3_linear_0_1)" />
                 <path opacity="0.6" d="M529.836 718.645C689.229 667.69 777.873 499.477 727.828 342.93C677.784 186.383 508 100.783 348.607 151.738C189.214 202.693 100.569 370.906 150.614 527.453C200.659 684 370.442 769.6 529.836 718.645Z" fill="url(#paint1_radial_0_1)" />
@@ -69,7 +65,7 @@ const ClassWiFi: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, r
                 <path opacity="0.4" d="M624.774 486.429C502.5 463.549 385.161 542.353 362.689 662.443C340.218 782.533 421.123 898.434 543.397 921.314C665.671 944.194 783.01 865.39 805.481 745.3C827.953 625.209 747.047 509.309 624.774 486.429Z" fill="url(#paint5_linear_0_1)" />
                 <image href="/images/education1.png" width="500" height="500" clipPath="url(#myCircle1)" x="17%" y="17%" fillOpacity='1' />
                 <path opacity="0.4" d="M422.931 610.715C370.622 701.317 400.353 816.411 489.337 867.786C578.32 919.161 692.86 887.361 745.169 796.76C797.478 706.158 767.747 591.063 678.764 539.689C589.78 488.314 475.24 520.114 422.931 610.715Z" fill="url(#paint6_linear_0_1)" />
-                <image href="/images/education2.png" width="300" height="300" clipPath="url(#myCircle2)" x="39%" y="50%" fillOpacity='1' />
+                <image href="/images/education2.png" width="300" height="300" clipPath="url(#myCircle2)" x="39%" y="50%" className="opacity-30 md:opacity-100" />
                 <path opacity="0.7" d="M242.271 683.229C293.59 666.824 322.13 612.665 306.017 562.262C289.905 511.859 235.24 484.299 183.921 500.705C132.602 517.111 104.062 571.27 120.175 621.672C136.287 672.075 190.952 699.635 242.271 683.229Z" fill="url(#paint3_linear_0_1)" />
                 <defs>
                     <linearGradient id="paint0_linear_0_1" x1="120.324" y1="9.04857" x2="223.189" y2="330.823" gradientUnits="userSpaceOnUse">

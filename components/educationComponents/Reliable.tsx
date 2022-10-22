@@ -44,6 +44,28 @@ const Reliable: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
 
     return (
         <div id="classroom" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container mx-auto relative md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
+            <div className="relative h-[44rem] sm:h-[52rem] md:static md:h-auto">
+                <svg className="absolute left-[50%] top-[-25px] translate-x-[-50%] w-[230%] sm:top-[100px] sm:w-[120%] md:left-[12%] md:top-1/2 md:translate-y-[-50%] md:translate-x-[-50%] md:w-[60%] 4xl:left-[12%] 4xl:w-[80%]" viewBox="0 0 800 790" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path className="box" opacity="0.4" d="M497.478 697.949C666.249 643.996 760.109 465.886 707.12 300.129C654.13 134.372 474.358 43.7363 305.587 97.689C136.816 151.642 42.9562 329.752 95.9454 495.509C148.935 661.266 328.707 751.902 497.478 697.949Z" fill="url(#paint0_radial_1376_7045)" />
+                    <path opacity="0.5" d="M474.04 622.595C600.747 582.09 671.214 448.371 631.432 323.926C591.649 199.481 456.682 131.435 329.975 171.941C203.267 212.447 132.801 346.166 172.583 470.61C212.366 595.055 347.332 663.101 474.04 622.595Z" fill="url(#paint1_radial_1376_7045)" />
+                    <path d="M586.13 339.163C618.068 439.068 561.499 546.433 459.757 578.958C358.015 611.483 249.656 556.841 217.719 456.937C185.781 357.032 242.35 249.667 344.092 217.142C445.834 184.617 554.193 239.259 586.13 339.163Z" stroke="url(#paint2_linear_1376_7045)" />
+                    <image href="/images/phone-home1.png" x="33%" y="10%" fillOpacity="0.5" className="w-[34%] md:translate-y-[8%]"></image>
+                    <defs>
+                        <radialGradient id="paint0_radial_1376_7045" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(332.077 121.279) rotate(72.664) scale(635.151 646.7)">
+                            <stop stopColor="#2294C3" />
+                            <stop offset="1" stopColor="#2294C3" stopOpacity="0" />
+                        </radialGradient>
+                        <radialGradient id="paint1_radial_1376_7045" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(349.863 189.652) rotate(72.664) scale(476.85 485.52)">
+                            <stop stopColor="#2294C3" />
+                            <stop offset="1" stopColor="#2294C3" stopOpacity="0" />
+                        </radialGradient>
+                        <linearGradient id="paint2_linear_1376_7045" x1="343.94" y1="216.666" x2="459.909" y2="579.434" gradientUnits="userSpaceOnUse">
+                            <stop stopColor="#159BDE" />
+                            <stop offset="1" stopColor="#159BDE" stopOpacity="0" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
             <div className="relative px-10 md:px-0 pt-[0%] md:absolute md:top-1/2 md:translate-y-[-50%]">
                 <div className="flex flex-wrap md:mt-12">
                     <div className="w-full md:w-2/5 m-auto">
@@ -77,30 +99,6 @@ const Reliable: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                     </div>
                 </div>
             </div>
-            <svg className="md:absolute trigger 
-            left-[50%] translate-x-[-17%] md:translate-x-[-50%] md:translate-x-0 md:left-[-39%] xl:left-[-25%]
-            top-[93%] xs:top-[56%] sm:top-[140px] md:top-1/2 md:translate-y-[-50%]
-            w-[150%] md:w-[90%] xl:w-[70%]" viewBox="0 0 800 790" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path className="box" opacity="0.4" d="M497.478 697.949C666.249 643.996 760.109 465.886 707.12 300.129C654.13 134.372 474.358 43.7363 305.587 97.689C136.816 151.642 42.9562 329.752 95.9454 495.509C148.935 661.266 328.707 751.902 497.478 697.949Z" fill="url(#paint0_radial_1376_7045)" />
-                <path opacity="0.5" d="M474.04 622.595C600.747 582.09 671.214 448.371 631.432 323.926C591.649 199.481 456.682 131.435 329.975 171.941C203.267 212.447 132.801 346.166 172.583 470.61C212.366 595.055 347.332 663.101 474.04 622.595Z" fill="url(#paint1_radial_1376_7045)" />
-                <path d="M586.13 339.163C618.068 439.068 561.499 546.433 459.757 578.958C358.015 611.483 249.656 556.841 217.719 456.937C185.781 357.032 242.35 249.667 344.092 217.142C445.834 184.617 554.193 239.259 586.13 339.163Z" stroke="url(#paint2_linear_1376_7045)" />
-                <image href="/images/phone-home1.png" x="33%" y="18%" fillOpacity="0.5" className="w-[34%]"></image>
-                <defs>
-                    <radialGradient id="paint0_radial_1376_7045" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(332.077 121.279) rotate(72.664) scale(635.151 646.7)">
-                        <stop stopColor="#2294C3" />
-                        <stop offset="1" stopColor="#2294C3" stopOpacity="0" />
-                    </radialGradient>
-                    <radialGradient id="paint1_radial_1376_7045" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(349.863 189.652) rotate(72.664) scale(476.85 485.52)">
-                        <stop stopColor="#2294C3" />
-                        <stop offset="1" stopColor="#2294C3" stopOpacity="0" />
-                    </radialGradient>
-                    <linearGradient id="paint2_linear_1376_7045" x1="343.94" y1="216.666" x2="459.909" y2="579.434" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#159BDE" />
-                        <stop offset="1" stopColor="#159BDE" stopOpacity="0" />
-                    </linearGradient>
-                </defs>
-            </svg>
-
         </div>
 
     );
