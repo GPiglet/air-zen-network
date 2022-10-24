@@ -42,49 +42,47 @@ const Contact: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
 
     return (
         <div id="contact" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="relative container mx-auto md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
-            <div className="container mx-auto relative flex items-center">
+            <div className="container mx-auto relative">
+                <div className="z-0 relative md:initial h-[20rem] sm:h-[30rem] md:h-0">
+                    <svg className="absolute left-[50%] translate-x-[-50%] top-[-30%] w-[140%] sm:top-[-60%] sm:w-full md:w-[60%] md:top-[34%] md:translate-y-[-50%] 4xl:w-[55%]" viewBox="0 0 700 708" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse opacity="0.5" cx="350.002" cy="353.94" rx="311.623" ry="315.088" fill="url(#paint0_radial_1376_6324)" />
+                        <path opacity="0.3" d="M565.18 353.94C565.18 474.044 468.836 571.398 350 571.398C231.165 571.398 134.82 474.044 134.82 353.94C134.82 233.836 231.165 136.481 350 136.481C468.836 136.481 565.18 233.836 565.18 353.94Z" stroke="#7BB690" />
+                        <path opacity="0.6" d="M699.5 353.73C699.5 548.818 543.019 706.959 350 706.959C156.982 706.959 0.500048 548.818 0.500031 353.73C0.500014 158.641 156.981 0.499986 350 0.499969C543.019 0.499953 699.5 158.641 699.5 353.73Z" stroke="url(#paint1_radial_1376_6324)" />
+                        <ellipse opacity="0.7" rx="133.751" ry="132.932" transform="matrix(-0.495398 -0.868666 0.863344 -0.504616 350.162 353.803)" fill="url(#paint2_radial_1376_6324)" />
+                        <ellipse opacity="0.4" rx="203.013" ry="201.769" transform="matrix(-0.495398 -0.868666 0.863344 -0.504616 350.163 353.803)" fill="url(#paint3_radial_1376_6324)" />
+                        <image href="/images/model-group.png" x="15%" y="35%" fillOpacity='0.5' className="w-[70%]" />
 
-                <div className="mx-auto relative ">
-                    <svg className="md:absolute md:top-[-10%] translate-x-[-12%]
-                xl:top-[-10%] w-[150%] md:w-[60%] xl:w-[90%]
-                md:left-1/2 md:translate-x-[-50%]"
-                        viewBox="0 0 1000 900" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <ellipse opacity="0.5" cx="456" cy="455.5" rx="406" ry="405.5" fill="url(#paint0_radial_1376_8017)" />
-                        <path opacity="0.3" d="M736.5 455.5C736.5 610.139 610.917 735.5 456 735.5C301.083 735.5 175.5 610.139 175.5 455.5C175.5 300.861 301.083 175.5 456 175.5C610.917 175.5 736.5 300.861 736.5 455.5Z" stroke="#7BB690" />
-                        <path opacity="0.6" d="M911.5 455.23C911.5 706.369 707.567 909.959 456 909.959C204.434 909.959 0.500062 706.369 0.50004 455.23C0.500018 204.09 204.434 0.499982 456 0.49996C707.567 0.499938 911.5 204.09 911.5 455.23Z" stroke="url(#paint1_radial_1376_8017)" />
-                        <circle opacity="0.7" cx="456.212" cy="455.325" r="172.655" transform="rotate(-120 456.212 455.325)" fill="url(#paint2_radial_1376_8017)" />
-                        <circle opacity="0.4" cx="456.21" cy="455.325" r="262.062" transform="rotate(-120 456.21 455.325)" fill="url(#paint3_radial_1376_8017)" />
-                        <image href="/images/model-group.png" x="20%" y="35%" fillOpacity='0.5' className="w-[50%]" />
                         <defs>
-                            <radialGradient id="paint0_radial_1376_8017" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(398.906 240.078) rotate(68.3963) scale(835.646 836.397)">
+                            <radialGradient id="paint0_radial_1376_6324" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(306.18 186.549) rotate(68.6363) scale(648.257 643.031)">
                                 <stop stopColor="#7BB690" />
                                 <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
                             </radialGradient>
-                            <radialGradient id="paint1_radial_1376_8017" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(835.743 296.554) rotate(143.707) scale(903.111 904.639)">
+                            <radialGradient id="paint1_radial_1376_6324" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(641.47 230.433) rotate(143.37) scale(696.192 699.892)">
                                 <stop stopColor="#7BB690" />
                                 <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
                             </radialGradient>
-                            <radialGradient id="paint2_radial_1376_8017" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(431.932 363.602) rotate(68.4205) scale(355.744)">
+                            <radialGradient id="paint2_radial_1376_6324" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(114.942 62.3117) rotate(68.2998) scale(274.126 275.355)">
                                 <stop stopColor="#7BB690" />
                                 <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
                             </radialGradient>
-                            <radialGradient id="paint3_radial_1376_8017" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(419.358 316.104) rotate(68.4205) scale(539.962)">
+                            <radialGradient id="paint3_radial_1376_6324" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(174.464 94.5792) rotate(68.2998) scale(416.08 417.945)">
                                 <stop stopColor="#7BB690" />
                                 <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
                             </radialGradient>
                         </defs>
                     </svg>
+                </div>
 
-
-                    <div className="w-full md:w-2/3 xl:1/2 px-10 mx-auto md:mt-[30%] xl:mt-[50%]">
-                        <p className="font-lato-light font-light text-[22px] text-white">{t('education.ournode.tip')}</p>
-                        <h1 className="text-title-sm-white">{t('education.ournode.title')}</h1>
+                <div className="z-10 relative flex flex-wrap md:pt-[55%] xl:pt-[42%] align-center">
+                    <div className="w-full md:w-[45%] px-10 mx-auto">
+                        <p className="font-lato-light font-light text-[22px] text-white">{t('industrial.ournode.tip')}</p>
+                        <h1 className="text-title-sm-white mb-10">{t('industrial.ournode.title')}</h1>
                         {
                             t('industrial.ournode.description').split('\n').map((item, index) =>
                                 index % 2 === 0 ? (
-                                    <p className="font-lato tracking-widest text-white text-lg font-normal" key={index}>{item}</p>
+                                    <p className="font-lato tracking-widest text-white text-lg mt-3 font-normal" key={index}>{item}</p>
                                 ) : (
-                                    <div key={index}>
+                                    < div key={index}>
                                         <p className="font-lato font-light tracking-widest text-white text-lg" >{item}
                                         </p><br />
                                     </div>
@@ -92,7 +90,6 @@ const Contact: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref
                             )
                         }
                     </div>
-
                 </div>
             </div>
             {/* <ContactForm /> */}

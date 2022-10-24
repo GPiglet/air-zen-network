@@ -49,7 +49,7 @@ const FutureProof: FC<{ props?: any, ref: any }> = React.forwardRef((props: any,
     return (
         <div id="secure" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="relative container mx-auto md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
 
-            <div className="container mx-auto flex self-center relative text-white px-10 md:absolute md:top-1/2 md:translate-y-[-50%]">
+            <div className="z-10 container mx-auto flex self-center relative text-white px-10 md:absolute md:top-1/2 md:translate-y-[-50%]">
                 <svg className="absolute hidden md:block
             w-[30%] z-50
             bottom-[-10%] md:bottom-[-70%]
@@ -68,7 +68,7 @@ const FutureProof: FC<{ props?: any, ref: any }> = React.forwardRef((props: any,
                     </div>
                 </div>
             </div>
-            <svg className="md:absolute translate-x-[-10%]
+            <svg className="hidden md:block md:absolute translate-x-[-10%]
             left-[-49%] md:left-[-45%] xl:left-[-30%] z-10
             top-[90%] xs:top-[75%] sm:top-[50%] md:top-1/2 md:translate-y-[-50%]
             w-[100%] md:w-[100%] xl:w-[80%]"

@@ -70,11 +70,11 @@ const KeepEverything: FC<{ props?: any, ref: any }> = React.forwardRef((props: a
                 </defs>
             </svg>
 
-            <div className="container mx-auto relative items-center text-white px-10 md:px-0 pt-[150px] md:pt-0 md:absolute md:top-1/2 md:translate-y-[-50%]">
+            <div className="z-10 container mx-auto relative items-center text-white px-10 md:px-0 pt-[150px] md:pt-0 md:absolute md:top-1/2 md:translate-y-[-50%]">
                 <Breadcrumb />
                 <div className="md:flex items-center mt-5 ">
-                    <div className="md:w-[350px] xl:w-[30%]">
-                        <h1 className="text-title-sm w-[90%]">
+                    <div className="md:w-[50%] 4xl:w-[40%]">
+                        <h1 className="text-title-sm-white w-[90%]">
                             {t('industrial.everything.title')}
                         </h1>
                         <p className="font-lato font-light tracking-widest text-lg mt-3">
@@ -99,10 +99,7 @@ const KeepEverything: FC<{ props?: any, ref: any }> = React.forwardRef((props: a
                     }
                 </div>
             </div> */}
-            <svg className="md:absolute 
-            right-[-35%] md:right-[-35%]  xl:right-[-47%] z-10
-            top-[90%] xs:top-[75%] sm:top-[65%] md:top-1/2 md:translate-y-[-50%]
-            w-[110%] md:w-[90%] xl:w-[105%]"
+            <svg className="z-0 absolute right-[-35%] top-[36px] w-[110%] sm:top-[65%] md:left-auto md:top-1/2 md:right-[-35%] md:translate-y-[-50%] md:w-[90%] xl:right-[-47%] xl:w-[105%]"
                 viewBox="0 0 1000 600" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.8" d="M678.873 519.526C809.282 477.167 881.807 337.33 840.862 207.192C799.918 77.0538 661.008 5.89465 530.599 48.2536C400.19 90.6125 327.665 230.449 368.609 360.587C409.554 490.725 548.464 561.885 678.873 519.526Z" fill="url(#paint0_radial_0_1)" />
                 <path opacity="0.8" d="M792.368 222.938C824.906 326.358 767.272 437.49 663.631 471.154C559.989 504.818 449.597 448.265 417.059 344.845C384.52 241.425 442.155 130.293 545.796 96.629C649.437 62.9648 759.829 119.518 792.368 222.938Z" stroke="url(#paint1_linear_0_1)" />

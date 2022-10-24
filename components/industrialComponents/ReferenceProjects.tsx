@@ -183,18 +183,18 @@ const ReferenceProjects = React.forwardRef((props: any, ref: any) => {
     const router = useRouter()
 
     return (
-        <section id='credentials' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='container md:overflow-hidden flex md:block mt-32 sm:mt-56 md:mt-0 md:pt-[160px] h-[80vh] md:h-screen items-center md:items-start md:fixed md:hidden md:w-full md:left-[50%] md:translate-x-[-50%]'>
-            <div className='w-full relative z-50 md:absolute md:top-1/2 md:translate-y-[-60%]'>
-                <div className='pt-10 pb-8 4xl:pb-24 flex justify-center'>
+        <section id='credentials' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='container md:overflow-hidden flex md:block mt-20 sm:mt-56 md:mt-0 md:pt-[160px] md:h-screen md:items-center md:items-start md:fixed md:hidden md:w-full md:left-[50%] md:translate-x-[-50%]'>
+            <div className='w-full relative z-50 pb-40 md:pb-0 md:absolute md:top-1/2 md:translate-y-[-60%]'>
+                <div className='md:pt-10 pb-8 4xl:pb-24 flex justify-center'>
                     <h1 className="text-title-sm relative z-50">{t('industrial.referenceproject.title')}</h1>
                 </div>
                 <picture className={`${selected + 1 === carouselList.length ? 'hidden' : ''} `}>
                     <source srcSet="/images/sparkle-arrow.svg" type="image/webp" />
-                    <img src="/images/sparkle-arrow.svg" alt=''  className='md:hidden w-[47px] h-[93px] cursor-pointer absolute right-[10px] top-[40%] center-y-transform z-50' />
+                    <img src="/images/sparkle-arrow.svg" alt=''  className='md:hidden w-[47px] h-[93px] cursor-pointer absolute right-[10px] top-[28%] center-y-transform z-50' />
                 </picture>
                 <picture className={`${selected === 0 ? 'hidden' : ''}`}>
                     <source srcSet="/images/sparkle-arrow.svg" type="image/webp" />
-                    <img src="/images/sparkle-arrow.svg" alt=''  className='md:hidden w-[47px] h-[93px] cursor-pointer absolute left-[10px] sparkle-arrow-reverse transform-none top-[40%] center-y-transform z-50' />
+                    <img src="/images/sparkle-arrow.svg" alt=''  className='md:hidden w-[47px] h-[93px] cursor-pointer absolute left-[10px] sparkle-arrow-reverse transform-none top-[28%] center-y-transform z-50' />
                 </picture>
                 <div>
                     <Flickity
@@ -259,20 +259,20 @@ const ReferenceProjects = React.forwardRef((props: any, ref: any) => {
                             ))
                         }
                     </AZCarousel>
-                    <svg ref={refBackCircle} className='hidden z-[-1] absolute w-[180%] top-[-74%] right-[10%] sm:w-[120%] sm:right-[30%]' viewBox="0 0 736 736" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle className='scale-[0.6] origin-center' opacity="0.3" cx="368.2" cy="368.2" r="338.706" transform="rotate(-120 368.2 368.2)" fill="url(#paint0_radial_0_1)" />
-                        <circle className="hidden" opacity="0.8" cx="368.199" cy="368.2" r="367.206" transform="rotate(-120 368.199 368.2)" stroke="url(#paint1_linear_0_1)" />
-                        <circle opacity="0.4" cx="368.204" cy="367.623" r="311.914" transform="rotate(-120 368.204 367.623)" fill="url(#paint2_radial_0_1)" />
+                    <svg ref={refBackCircle} className='hidden z-[-1] absolute w-[140%] top-[-74%] right-[20%] sm:w-[120%] sm:right-[30%]' viewBox="0 0 736 736" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle opacity="0.3" cx="368.2" cy="368.2" r="338.706" transform="rotate(-120 368.2 368.2)" fill="url(#paint0_radial_0_21)" />
+                        <circle opacity="0.8" cx="368.199" cy="368.2" r="367.206" transform="rotate(-120 368.199 368.2)" stroke="url(#paint1_linear_0_21)" />
+                        <circle opacity="0.4" cx="368.204" cy="367.623" r="210" transform="rotate(-120 368.204 367.623)" fill="url(#paint2_radial_0_21)" />
                         <defs>
-                            <radialGradient id="paint0_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(320.569 188.262) rotate(68.4205) scale(697.882)">
+                            <radialGradient id="paint0_radial_0_21" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(320.569 188.262) rotate(68.4205) scale(697.882)">
                                 <stop stopColor="#7BB690" />
                                 <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
                             </radialGradient>
-                            <linearGradient id="paint1_linear_0_1" x1="368.199" y1="0.493683" x2="368.199" y2="735.905" gradientUnits="userSpaceOnUse">
+                            <linearGradient id="paint1_linear_0_21" x1="368.199" y1="0.493683" x2="368.199" y2="735.905" gradientUnits="userSpaceOnUse">
                                 <stop stopColor="#7BB790" />
                                 <stop offset="1" stopColor="#7BB790" stopOpacity="0" />
                             </linearGradient>
-                            <radialGradient id="paint2_radial_0_1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(341.918 353.047) rotate(82.9191) scale(427.785)">
+                            <radialGradient id="paint2_radial_0_21" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(341.918 353.047) rotate(82.9191) scale(427.785)">
                                 <stop stopColor="#7BB690" />
                                 <stop offset="1" stopColor="#7BB690" stopOpacity="0" />
                             </radialGradient>
