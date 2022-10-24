@@ -3,7 +3,6 @@ import React from 'react'
 import type { NextPage } from 'next'
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { GetStaticProps } from 'next'
-import { useTranslation } from 'next-i18next';
 import gsap from 'gsap';
 
 
@@ -17,7 +16,6 @@ import CertainlySafe from '../../components/businessComponents/CertainlySafe'
 import Solution360 from '../../components/businessComponents/Solution360'
 import BusinessNode from '../../components/businessComponents/BusinessNode'
 import WhitePaper from '../../components/businessComponents/WhitePaper'
-import BusinessForm from '../../components/businessComponents/businessForm';
 import AnimateFooter from '../../components/common/footer/AnimateFooter';
 import ContactFormSide from '../../components/common/form/ContactFormSide';
 
@@ -25,31 +23,6 @@ import ContactFormSide from '../../components/common/form/ContactFormSide';
 
 
 const Business: NextPage = () => {
-	const { t } = useTranslation()
-
-
-	const navItems: Array<any> = [
-		{
-			id: 1,
-			title: t('landing.menu').split('\n')[0],
-			href: 'solutions'
-		},
-		{
-			id: 2,
-			title: t('landing.menu').split('\n')[1],
-			href: 'aboutus'
-		},
-		{
-			id: 3,
-			title: t('landing.menu').split('\n')[2],
-			href: 'credentials'
-		},
-		{
-			id: 4,
-			title: t('landing.menu').split('\n')[3],
-			href: 'contact'
-		},
-	]
 
 	const refBackGradient = React.useRef<any>(null);
 	const refSectionBoost = React.useRef<any>(null);
@@ -240,7 +213,7 @@ const Business: NextPage = () => {
 
 	return (
 		<div ref={refBackGradient} className='back-left-top-gradient-secondary relative md:h-screen' id='business_page'>
-			<Mainlayout navItems={navItems} hasFooter={false}>
+			<Mainlayout hasFooter={false}>
 				<ContactFormSide />
 				<Boost ref={refSectionBoost} />
 				<Professional ref={refSectionProfessional} />

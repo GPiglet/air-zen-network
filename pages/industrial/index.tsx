@@ -3,7 +3,6 @@ import React, { FC, useState } from 'react'
 import type { NextPage } from 'next'
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { GetStaticProps } from 'next'
-import { useTranslation } from 'next-i18next'
 import gsap from "gsap";
 
 //custom Components
@@ -17,36 +16,7 @@ import Contact from '../../components/industrialComponents/Contact'
 import ContactFormSide from '../../components/common/form/ContactFormSide'
 import AnimateFooter from '../../components/common/footer/AnimateFooter'
 
-
-
-
 const Industrial: NextPage = () => {
-	const { t } = useTranslation()
-
-
-	const navItems: Array<any> = [
-		{
-			id: 1,
-			title: t('landing.menu').split('\n')[0],
-			href: 'solutions'
-		},
-		{
-			id: 2,
-			title: t('landing.menu').split('\n')[1],
-			href: 'aboutus'
-		},
-		{
-			id: 3,
-			title: t('landing.menu').split('\n')[2],
-			href: 'credentials'
-		},
-		{
-			id: 4,
-			title: t('landing.menu').split('\n')[3],
-			href: 'contact'
-		},
-	]
-
 	const refSectionKeepEverything = React.useRef<any>(null);
 	const refSectionIdeaSeries = React.useRef<any>(null);
 	const refSectionReferenceProjects = React.useRef<any>(null);
@@ -219,7 +189,7 @@ const Industrial: NextPage = () => {
 
 	return (
 		<div className='relative back-left-top-gradient-secondary overflow-hidden md:h-screen'>
-			<Mainlayout navItems={navItems} hasFooter={false}>
+			<Mainlayout hasFooter={false}>
 				<ContactFormSide />
 				<KeepEverything ref={refSectionKeepEverything}/>
 				<IdeaSeries ref={refSectionIdeaSeries}/>

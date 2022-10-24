@@ -3,7 +3,6 @@ import React, { FC } from 'react'
 import type { NextPage } from 'next'
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { GetStaticProps } from 'next'
-import { useTranslation } from 'next-i18next'
 import gsap from 'gsap';
 import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
 import { useRouter } from "next/router";
@@ -12,50 +11,34 @@ import { useRouter } from "next/router";
 import Mainlayout from '../../layout/main'
 import Hero from '../../components/landingComponents/Hero'
 import UniqueSkill from '../../components/landingComponents/UniqueSkill'
+import Technology from '../../components/landingComponents/Technology'
 import AboutUs from '../../components/landingComponents/AboutUs'
 import Credential from '../../components/landingComponents/Credential'
 import Contact from '../../components/landingComponents/Contact'
 
 const Homepage: NextPage = () => {
-	//translate
-	const { t } = useTranslation()
-
 	// animation
-
 	const refSectionHero = React.useRef<any>(null);
 	const refSectionUnequeSkill = React.useRef<any>(null);
+	const refSectionTechnology = React.useRef<any>(null);
 	const refSectionAboutUs = React.useRef<any>(null);
 	const refSectionCredential = React.useRef<any>(null);
 	const refSectionContact = React.useRef<any>(null);
 	const refSections: any[] = [
 		refSectionHero,
 		refSectionUnequeSkill,
-		refSectionAboutUs,
+		refSectionTechnology,
 		refSectionCredential,
+		refSectionAboutUs,
 		refSectionContact
 	];
 
-	const navItems: Array<any> = [
-		{
-			id: 1,
-			title: t('landing.menu').split('\n')[0],
-			href: 'solutions'
-		},
-		{
-			id: 2,
-			title: t('landing.menu').split('\n')[1],
-			href: 'aboutus'
-		},
-		{
-			id: 3,
-			title: t('landing.menu').split('\n')[2],
-			href: 'credentials'
-		},
-		{
-			id: 4,
-			title: t('landing.menu').split('\n')[3],
-			href: 'contact'
-		},
+	const navItemHrefs = [
+			'solutions',
+			'technology',
+			'credentials',
+			'aboutus',
+			'contact'
 	]
 
 	const router = useRouter();
@@ -71,32 +54,38 @@ const Homepage: NextPage = () => {
 				direction = 'UP';
 				break;
 
-			case navItems[0].href:
+			case navItemHrefs[0]:
 				if ( currentSectionIndex.current == 1 ) return;
 				if ( currentSectionIndex.current > 1 ) direction = 'UP';
 				else direction = 'DOWN';
 				index = 1;
 				break;
 
-			case navItems[1].href:
+			case navItemHrefs[1]:
 				if ( currentSectionIndex.current == 2 ) return;
 				if ( currentSectionIndex.current > 2 ) direction = 'UP';
 				else direction = 'DOWN';
 				index = 2;
 				break;
 
-			case navItems[2].href:
+			case navItemHrefs[2]:
 				if ( currentSectionIndex.current == 3 ) return;
 				if ( currentSectionIndex.current > 3 ) direction = 'UP';
 				else direction = 'DOWN';
 				index = 3;
 				break;
 
-			case navItems[3].href:
+			case navItemHrefs[3]:
 				if ( currentSectionIndex.current == 4 ) return;
 				if ( currentSectionIndex.current > 4 ) direction = 'UP';
 				else direction = 'DOWN';
 				index = 4;
+				break;
+			case navItemHrefs[4]:
+				if ( currentSectionIndex.current == 5 ) return;
+				if ( currentSectionIndex.current > 5 ) direction = 'UP';
+				else direction = 'DOWN';
+				index = 5;
 				break;
 		}
 
@@ -165,7 +154,7 @@ const Homepage: NextPage = () => {
 		else {
 			router.push({
 				pathname: '/landing',
-				query: {section: navItems[index-1].href}
+				query: {section: navItemHrefs[index-1]}
 			})
 		}
 
@@ -200,7 +189,7 @@ const Homepage: NextPage = () => {
 		else {
 			router.push({
 				pathname: '/landing',
-				query: {section: navItems[index-1].href}
+				query: {section: navItemHrefs[index-1]}
 			})
 		}
 	}
@@ -243,7 +232,7 @@ const Homepage: NextPage = () => {
 		else {
 			router.push({
 				pathname: '/landing',
-				query: {section: navItems[index-1].href}
+				query: {section: navItemHrefs[index-1]}
 			})
 		}
 	}
@@ -283,11 +272,12 @@ const Homepage: NextPage = () => {
 
 	return (
 		<div className='back-left-top-gradient-primary'>
-			<Mainlayout navItems={navItems} hasFooter={false}>
+			<Mainlayout hasFooter={false}>
 				<Hero ref={refSectionHero}/>
 				<UniqueSkill ref={refSectionUnequeSkill}/>
-				<AboutUs ref={refSectionAboutUs}/>
+				<Technology ref={refSectionTechnology}/>
 				<Credential ref={refSectionCredential}/>
+				<AboutUs ref={refSectionAboutUs}/>
 				<Contact ref={refSectionContact}/>
 			</Mainlayout>
 			{/* <div className='hidden md:block w-[100vw] h-[100vh]'></div> */}
