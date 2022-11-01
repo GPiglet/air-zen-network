@@ -1,5 +1,5 @@
 //modules
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import type { NextPage } from 'next'
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { GetStaticProps } from 'next'
@@ -15,8 +15,13 @@ import Technology from '../../components/landingComponents/Technology'
 import AboutUs from '../../components/landingComponents/AboutUs'
 import Credential from '../../components/landingComponents/Credential'
 import Contact from '../../components/landingComponents/Contact'
+import { WhitePaperFormContext, WhitePaperType } from '../../contexts/WhitePaperFormContext';
+import WhitePaperForm from '../../components/common/form/WhitePaperForm';
 
 const Homepage: NextPage = () => {
+	const [isShow, setIsShow] = useState<boolean>(false);
+	const [whitePaper, setWhitePaper] = useState<WhitePaperType | null>(null);
+
 	// animation
 	const refSectionHero = React.useRef<any>(null);
 	const refSectionUnequeSkill = React.useRef<any>(null);
@@ -271,17 +276,20 @@ const Homepage: NextPage = () => {
 	}, [router])
 
 	return (
-		<div className='back-left-top-gradient-primary'>
-			<Mainlayout hasFooter={false}>
-				<Hero ref={refSectionHero}/>
-				<UniqueSkill ref={refSectionUnequeSkill}/>
-				<Technology ref={refSectionTechnology}/>
-				<Credential ref={refSectionCredential}/>
-				<AboutUs ref={refSectionAboutUs}/>
-				<Contact ref={refSectionContact}/>
-			</Mainlayout>
-			{/* <div className='hidden md:block w-[100vw] h-[100vh]'></div> */}
-		</div>
+		<WhitePaperFormContext.Provider value={{isShow, whitePaper, showForm: setIsShow, setWhitePaper}}>
+			<WhitePaperForm />
+			<div className='back-left-top-gradient-primary'>
+				<Mainlayout hasFooter={false}>
+					<Hero ref={refSectionHero}/>
+					<UniqueSkill ref={refSectionUnequeSkill}/>
+					<Technology ref={refSectionTechnology}/>
+					<Credential ref={refSectionCredential}/>
+					<AboutUs ref={refSectionAboutUs}/>
+					<Contact ref={refSectionContact}/>
+				</Mainlayout>
+				{/* <div className='hidden md:block w-[100vw] h-[100vh]'></div> */}
+			</div>
+		</WhitePaperFormContext.Provider>
 	)
 }
 
