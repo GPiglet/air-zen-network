@@ -1,8 +1,10 @@
 import React, {FC, useEffect, useState, useRef} from 'react'
 import { useTranslation } from 'next-i18next';
-import CustomCheckbox from '../checkbox';
+import CustomCheckbox from '../widgets/checkbox';
 import FriendlyCaptcha from '../FriendlyCaptcha';
 import NewsletterApi from '../../../services/newsletter.service';
+import CustomInput from '../widgets/input';
+import SendButton from '../widgets/button/SendButton';
 
 type NewsLetterFormProps = {
 }
@@ -15,7 +17,9 @@ const NewsLetterForm :FC<NewsLetterFormProps> = () => {
   const [captchaSolution, setCaptchaSolution] = useState<any>(null);
 
   const [validEmailAddress, setValidEmailAddress] = useState<boolean>(true);
-  const [validDSGVO, setValidDSGVO] = useState<boolean>(true);
+  const [validDSGVOProtection, setValidDSGVOProtection] = useState<boolean>(true);
+  const [validDSGVOCollection, setValidDSGVOCollection] = useState<boolean>(true);
+  const [buttonDisabled, setButtonDisabled] = useState<boolean>(false);
 
   const refEmailAddress = useRef<HTMLInputElement>(null);
   const refCaptcha = useRef<any>(null);
@@ -24,13 +28,13 @@ const NewsLetterForm :FC<NewsLetterFormProps> = () => {
     switch (type) {
         case 'dataProtection':
             setDataProtection(!dataProtection);
-            if ( !dataProtection && dataCollection ) setValidDSGVO(true);
-            else setValidDSGVO(false);
+            if ( !dataProtection ) setValidDSGVOProtection(true);
+            else setValidDSGVOProtection(false);
             break;
         case 'dataCollection':
             setDataCollection(!dataCollection);
-            if ( dataProtection && !dataCollection ) setValidDSGVO(true);
-            else setValidDSGVO(false);
+            if ( !dataCollection ) setValidDSGVOCollection(true);
+            else setValidDSGVOCollection(false);
             break;
 
         default:
@@ -58,13 +62,19 @@ const NewsLetterForm :FC<NewsLetterFormProps> = () => {
       return;
     }
 
-    if ( !dataCollection || !dataProtection ) {
-      setValidDSGVO(false);
+    if ( !dataProtection ) {
+      setValidDSGVOProtection(false);
+      return;
+    }
+
+    if ( !dataCollection ) {
+      setValidDSGVOCollection(false);
       return;
     }
 
     if ( !captchaSolution ) return;
 
+    setButtonDisabled(true);
     NewsletterApi.create(
       {
         emailAddress,
@@ -72,11 +82,13 @@ const NewsLetterForm :FC<NewsLetterFormProps> = () => {
       },
       (res: any) => {
         alert(t('landing.contact.successMessage'));
+        setButtonDisabled(false);
         setEmailAddress('');
         refCaptcha.current.reset();
       },
       (err: any) => {
         alert(t('landing.contact.failedMessage'));
+        setButtonDisabled(false);
       }
     )
   }
@@ -91,45 +103,34 @@ const NewsLetterForm :FC<NewsLetterFormProps> = () => {
 
   return (
     <>
-      <p className={`text-left ${validEmailAddress ? 'text-slate-300' : 'text-red-300'} mb-2`}>{t('landing.contact.emailLabel')}</p>
-      <div className='custom-input-gradient w-full mb-5'>
-          <input
-              ref={refEmailAddress}
-              className="custom-input-dark text-left w-full "
-              placeholder={t('landing.contact.emailPlaceholder')}
-              type="email"
-              value={emailAddress}
-              onChange={(e)=>onChangeInput(e.target.value, setEmailAddress, setValidEmailAddress)}
-          />
-      </div>
+      <p className={`text-left mb-2`}>{t('landing.contact.emailLabel')}</p>
+      <CustomInput className="mb-5" ref={refEmailAddress} invalid={!validEmailAddress} value={emailAddress}
+        placeholder={t('landing.contact.namePlaceholder')}
+        onChange={(e: any)=>onChangeInput(e.target.value, setEmailAddress, setValidEmailAddress)}
+      />
       <div className={`mb-4`}>
         <FriendlyCaptcha style="dark" widgetRef={refCaptcha} onReady={onCaptchaReady} onDone={onCaptchaDone}/>
       </div>
       <div className='flex justify-between items-end mb-4'>
-          <div className={`relative top-5 ml-10 font-lato font-base ${validDSGVO ? '' : 'text-red-300'}`}>
-          {t('landing.contact.DSGVOLabel')}
-          </div>
-          <button className='text-lgx text-white button-gradient py-2 px-8 rounded-md border border-primary relative z-10' onClick={()=>onClickSend()}>
-              {t('landing.contact.send')}
-          </button>
+        <div className='relative ml-10 font-lato font-base'>
+          { (!validDSGVOCollection || !validDSGVOProtection) ? 'Please check DSGVO.' : ''}
+        </div>
+        <SendButton title={t('landing.contact.send')} disabled={buttonDisabled} onClick={()=>onClickSend()} />
+      </div>
+      <div className={`relative top-5 ml-10 font-lato font-base`}>
+        {t('landing.contact.DSGVOLabel')}
       </div>
       <div className='flex relative z-40'>
-          <div className='mt-5 mr-3'>
-              <CustomCheckbox checked={dataProtection} onClick={() => changeCheck('dataProtection')} />
-          </div>
-          <p className='font-lato font-light text-left text-sm text-white tracking-[2px] my-4'>
-              {t('landing.contact.description').split('\n')[0]}
-              <a href={t('landing.contact.href')} className="underline text-base">{t('landing.contact.description').split('\n')[1]}</a>
-              {t('landing.contact.description').split('\n')[2]}
-          </p>
+        <CustomCheckbox checked={dataProtection} valid={validDSGVOProtection} onClick={() => changeCheck('dataProtection')}>
+          {t('landing.contact.description').split('\n')[0]}
+          <a target="blank" href={t('landing.contact.href')} className="underline text-base">{t('landing.contact.description').split('\n')[1]}</a>
+          {t('landing.contact.description').split('\n')[2]}
+        </CustomCheckbox>
       </div>
       <div className='flex relative z-40'>
-          <div className='mt-5 mr-3'>
-              <CustomCheckbox checked={dataCollection} onClick={() => changeCheck('dataCollection')} />
-          </div>
-          <p className='font-lato font-light text-left text-sm text-white tracking-[2px] my-4'>
-              {t('landing.contact.description').split('\n')[3]}
-          </p>
+        <CustomCheckbox checked={dataCollection} valid={validDSGVOCollection} onClick={() => changeCheck('dataCollection')}>
+          {t('landing.contact.description').split('\n')[3]}
+        </CustomCheckbox>
       </div>
     </>
   );

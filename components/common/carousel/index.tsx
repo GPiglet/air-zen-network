@@ -73,6 +73,8 @@ const AZCarousel: FC<AZCarouselProps> = ({children, className, onInit, onChange,
             }
         }
 
+        if ( refContainer.current && currentOnCalcHeight ) refContainer.current.style.height = currentOnCalcHeight(carousel) + 'px';
+
         position = pos;
     }
 

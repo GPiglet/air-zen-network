@@ -1,8 +1,10 @@
 import React, { FC, useEffect, useState, useRef } from 'react'
 import { useTranslation } from 'next-i18next'
-import CustomCheckbox from '../checkbox'
+import CustomCheckbox from '../widgets/checkbox'
 import FriendlyCaptcha from '../FriendlyCaptcha';
 import ContactApi from '../../../services/contact.service';
+import CloseIcon from '../widgets/icons/CloseIcon';
+import SendButton from '../widgets/button/SendButton';
 
 const ContactFormSide: FC = () => {
     //translate
@@ -17,8 +19,10 @@ const ContactFormSide: FC = () => {
 
     const [validUsername, setValidUsername] = useState<boolean>(true);
     const [validEmailAddress, setValidEmailAddress] = useState<boolean>(true);
-    const [validDSGVO, setValidDSGVO] = useState<boolean>(true);
+    const [validDSGVOProtection, setValidDSGVOProtection] = useState<boolean>(true);
+    const [validDSGVOCollection, setValidDSGVOCollection] = useState<boolean>(true);
     const [autoSend, setAutoSend] = useState<boolean>(false);
+    const [buttonDisabled, setButtonDisabled] = useState<boolean>(false);
 
     const refUsername = useRef<HTMLInputElement>(null);
     const refEmailAddress = useRef<HTMLInputElement>(null);
@@ -28,13 +32,13 @@ const ContactFormSide: FC = () => {
         switch (type) {
             case 'dataProtection':
                 setDataProtection(!dataProtection);
-                if ( !dataProtection && dataCollection ) setValidDSGVO(true);
-                else setValidDSGVO(false);
+                if ( !dataProtection ) setValidDSGVOProtection(true);
+                else setValidDSGVOProtection(false);
                 break;
             case 'dataCollection':
                 setDataCollection(!dataCollection);
-                if ( dataProtection && !dataCollection ) setValidDSGVO(true);
-                else setValidDSGVO(false);
+                if ( !dataCollection ) setValidDSGVOCollection(true);
+                else setValidDSGVOCollection(false);
                 break;
 
             default:
@@ -68,8 +72,13 @@ const ContactFormSide: FC = () => {
             return;
         }
 
-        if ( !dataCollection || !dataProtection ) {
-            setValidDSGVO(false);
+        if ( !dataProtection ) {
+            setValidDSGVOProtection(false);
+            return;
+        }
+
+        if ( !dataCollection ) {
+            setValidDSGVOCollection(false);
             return;
         }
 
@@ -78,6 +87,7 @@ const ContactFormSide: FC = () => {
             return;
         }
 
+        setButtonDisabled(true);
         ContactApi.create(
             {
                 username,
@@ -87,6 +97,7 @@ const ContactFormSide: FC = () => {
             },
             (res: any) => {
                 alert(t('landing.contact.successMessage'));
+                setButtonDisabled(false);
                 setUsername('');
                 setEmailAddress('');
                 setDescription('');
@@ -94,6 +105,7 @@ const ContactFormSide: FC = () => {
             },
             (err: any) => {
                 alert(t('landing.contact.failedMessage'));
+                setButtonDisabled(false);
             }
         )
     }
@@ -143,18 +155,15 @@ const ContactFormSide: FC = () => {
                         </defs>
                     </svg> */}
                     <div className='relative bg-white md:block w-[100%] rounded-l-[50px] pt-[50px] font-lato h-[80vh] overflow-y-auto'>
-                        <svg className='absolute top-[15px] right-[15px] cursor-pointer' onClick={() => { setFormView(false); }} width="25" height="27" viewBox="0 0 37 39" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <line x1="0.707107" y1="1.29289" x2="35.7071" y2="36.2929" stroke="#159BDE" strokeWidth="2" />
-                            <line x1="35.7071" y1="2.70711" x2="0.707107" y2="37.7071" stroke="#159BDE" strokeWidth="2" />
-                        </svg>
+                        <CloseIcon className='absolute right-4 top-4 cursor-pointer' onClick={() => setFormView(false)} />
                         <h1 className='text-[32px] font-semibold uppercase tracking-[.08em] ml-[10%]'>{t('contactForm.cotact')}</h1>
 
                         <div className='w-[90%] sm:w-[80%] md:w-[90%] max-w-[600px] pb-[40px]'>
                             <div className=" sm:overflow-hidden">
-                                <div className="px-4 py-5 bg-white space-y-6 sm:p-6 ml-[10%] ">
+                                <div className="px-2 py-5 bg-white space-y-6 ml-[10%] ">
                                     <div className="col-span-6 sm:col-span-3">
                                         <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">
-                                            <p className={`text-[16px] font-semibold tracking-[.08em] my-[5px] ${validUsername ? '' : 'text-red-300'}`}>{t('landing.contact.nameLabel')}</p>
+                                            <p className={`text-[16px] font-semibold tracking-[.08em] my-[5px] ${validUsername ? '' : 'text-black'}`}>{t('landing.contact.nameLabel')}</p>
                                         </label>
                                         <input
                                             ref={refUsername}
@@ -171,7 +180,7 @@ const ContactFormSide: FC = () => {
 
                                     <div className="col-span-6 sm:col-span-4">
                                         <label htmlFor="email-address" className="block text-sm font-medium text-gray-700">
-                                            <p className={`text-[16px] font-semibold tracking-[.08em] my-[5px] ${validEmailAddress ? '' : 'text-red-300'}`}>{t('landing.contact.emailLabel')}</p>
+                                            <p className={`text-[16px] font-semibold tracking-[.08em] my-[5px] ${validEmailAddress ? '' : 'text-black'}`}>{t('landing.contact.emailLabel')}</p>
                                         </label>
                                         <input
                                             ref={refEmailAddress}
@@ -206,30 +215,25 @@ const ContactFormSide: FC = () => {
                                         <FriendlyCaptcha widgetRef={refCaptcha} onReady={onCaptchaReady} onDone={onCaptchaDone}/>
                                     </div>
                                     <div className='flex justify-between items-end mb-4'>
-                                        <div className={`relative top-[0.25rem] ml-10 font-lato font-base ${validDSGVO ? '' : 'text-red-300'}`}>
+                                        <div className='relative ml-10 font-lato font-base'>
+                                            { (!validDSGVOCollection || !validDSGVOProtection) ? 'Please check DSGVO.' : ''}
+                                        </div>                                        
+                                        <SendButton title={t('landing.contact.send')} disabled={buttonDisabled} onClick={()=>onClickSend()} />
+                                    </div>
+                                    <div className={`relative top-[0.25rem] ml-10 font-lato font-base`}>
                                         {t('landing.contact.DSGVOLabel')}
-                                        </div>
-                                        <button className={`text-lgx text-white button-gradient border-primary py-2 px-8 rounded-md border relative z-10`} onClick={()=>onClickSend()}>
-                                            {t('landing.contact.send')}
-                                        </button>
                                     </div>
                                     <div className='flex relative z-40'>
-                                        <div className='mt-5 mr-3'>
-                                            <CustomCheckbox checked={dataProtection} onClick={() => changeCheck('dataProtection')} />
-                                        </div>
-                                        <p className='font-lato font-light text-left text-sm tracking-[2px]'>
+                                        <CustomCheckbox checked={dataProtection} valid={validDSGVOProtection} onClick={() => changeCheck('dataProtection')} style="dark">
                                             {t('landing.contact.description').split('\n')[0]}
                                             <a target="blank" href={t('landing.contact.href')} className="underline text-base">{t('landing.contact.description').split('\n')[1]}</a>
                                             {t('landing.contact.description').split('\n')[2]}
-                                        </p>
+                                        </CustomCheckbox>
                                     </div>
                                     <div className='flex relative z-40'>
-                                        <div className='mt-5 mr-3'>
-                                            <CustomCheckbox checked={dataCollection} onClick={() => changeCheck('dataCollection')} />
-                                        </div>
-                                        <p className='font-lato font-light text-left text-sm tracking-[2px]'>
+                                        <CustomCheckbox checked={dataCollection} valid={validDSGVOCollection} onClick={() => changeCheck('dataCollection')} style="dark">
                                             {t('landing.contact.description').split('\n')[3]}
-                                        </p>
+                                        </CustomCheckbox>
                                     </div>
                                 </div>
 

@@ -4,7 +4,7 @@ import FadeIn from 'react-fade-in/lib/FadeIn'
 
 import Form from '../../common/form'
 import { StoreContext } from '../../../contexts/Store'
-import CustomCheckbox from '../../common/checkbox'
+import CustomCheckbox from '../../common/widgets/checkbox'
 
 const StepFive: FC = () => {
 

@@ -458,10 +458,7 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
                                     <div ref={el => { if (el != null && animSkills.current.indexOf(el) == -1) animSkills.current.push(el) }} onClick={() => onClickSkill(index)} onMouseEnter={() => onMouseEnterSkill(index)} onMouseLeave={() => onMouseLeaveSkill(index)} className='relative px-5 py-3 flex-1 unique-skill-items unique-skill-animate z-40 cursor-pointer right-[-30px] w-full h-[170px] align-top sm:right-[0] sm:w-[80%] sm:ml-auto md:h-auto md:w-[260px] md:inline-block md:right-auto md:py-5 xl:w-[280px]' key={index}>
                                         <div className='unique-skill-border-gradient h-full'>
                                             <div className='tracking-widest py-5 md:pt-[80px] md:pb-[100px] xl:pl-[42px] xl:pr-0 pl-8 pr-5 text-white w-full relative  md:h-[300px]'>
-                                                <picture className=''>
-                                                    <source srcSet={graphList[index].graph} type="image/webp" />
-                                                    <img src={graphList[index].graph} className={`unique-graph w-[200px] md:w-auto absolute center-x-transform top-[-30px] md:top-[-80px] opacity-50 z-0 ${index % 2 == 0 ? 'left-[80px]' : 'right-[-100px]'} md:left-1/2`} alt="" />
-                                                </picture>
+                                                <img src={graphList[index].graph} className={`unique-graph w-[200px] md:w-auto absolute center-x-transform top-[-30px] md:top-[-80px] opacity-50 z-0 ${index % 2 == 0 ? 'left-[80px]' : 'right-[-100px]'} md:left-1/2`} alt="" />
                                                 <p className='relative font-lato text-[22px] uppercase unique-skill-title pb-3'>{item.title}</p>
                                                 <p className='relative unique-skill-subtitle font-lato-light font-bold text-xl w-[70%] sm:w-[180px] pb-3'>{item.subtitle}</p>
                                                 <p className='text-hyphens relative hidden font-lato font-light text-lg unique-skill-description pb-3 sm:w-[250px]'>{item.description}</p>
