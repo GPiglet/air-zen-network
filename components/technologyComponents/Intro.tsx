@@ -15,8 +15,8 @@ const Intro: FC<props> = ({className = '', children}) => {
           </g>
           <defs>
           <linearGradient id="paint0_linear_5690_2543" x1="56.4474" y1="47.0748" x2="56.4473" y2="1269.8" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#7BB690"/>
-          <stop offset="1" stop-color="#79B390" stop-opacity="0"/>
+          <stop stopColor="#7BB690"/>
+          <stop offset="1" stopColor="#79B390" stopOpacity="0"/>
           </linearGradient>
           </defs>
         </svg>
