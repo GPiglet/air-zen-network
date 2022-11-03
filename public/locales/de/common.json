@@ -98,7 +98,7 @@
                     "list": "AirZen WLAN & Plattform für 26 Standorte. AirZenOS Module Business & Public als Managed Service über die AirZen Cloud. Zusätzliches SD-WAN, VPN, & Gast-Portal."
                 },
                 {
-                    "title": "Lutherstasdt Wittenberg",
+                    "title": "Lutherstadt Wittenberg",
                     "list": "AirZen WLAN & Plattform für die Stadtverwaltung. AirZenOS Module Public als Managed Service über die AirZen Cloud. Zusätzliches SD-WAN, VPN, & Gast-Portal."
                 },
                 {
@@ -187,7 +187,7 @@
                 "title": "immer up to date",
                 "description": "Nach dem Update ist vor dem Update. Teil unseres ganzheitlichen Network-as-a-Service-Ansatzes ist es, Zuverlässigkeit durch automatische Softwareaktualisierungen für größtmöglichen Schutz und WLAN-Qualitätssicherung zu bieten. Auf AirZen ist auch bei Störungen Verlass – und das schnell, direkt per Live-Chat in der AirZen App.",
                 "list": [
-                    "BotNet-Erkennung \n Ein Virus braucht Befehle. Wir erschweren dies.",
+                    "BotNet-Blocker \n Ein Virus braucht Befehle. Wir erschweren dies.",
                     "Automatisierte Updates \n Sicherheit durch aktuellste Firmware & Security-Filter.",
                     "Malware-Filter \n Betrügerische Websites werden weitgehend gefiltert."
                 ]
@@ -264,7 +264,7 @@
         },
         "professional": {
             "_comment": "Abschnitt 'Professional WLAN' der Seite",
-            "title": "Profesionelles WLAN",
+            "title": "Professionelles WLAN",
             "subtitle": "für standortübergreifende & smarte IT-Security.",
             "list": [
                 {
@@ -303,7 +303,7 @@
             "_comment": "Abschnitt 'Sicher' der Seite",
             "tip": "Sicher",
             "title": "Mit Sicherheit sicher!",
-            "description": "IT-Security ist von nun an Chefsache, denn dank AirZen müssen Sie kein Experte sein. Wir helfen Ihnen und Ihrem IT-Team dabei, die Widerstandsfähigkeit ihres Netzwerks aufzubauen. \n Unsere Aufgabe ist es, Hard- und Software aktuell zu halten und “IT-Security-By-Design” umzusetzen. \n Die AirZen-Tools helfen Ihnen dabei, Sicherheit mühelos in ihr Netzwerk zu integrieren – egal ob im Office, Fahrzeugen, Homeoffice oder anderen Segmenten des Unternehmens.",
+            "description": "IT-Security ist von nun an Chefsache, denn dank AirZen müssen Sie kein Experte sein. Wir helfen Ihnen und Ihrem IT-Team dabei, die Widerstandsfähigkeit Ihres Netzwerks aufzubauen. \n Unsere Aufgabe ist es, Hard- und Software aktuell zu halten und “IT-Security-By-Design” umzusetzen. \n Die AirZen-Tools helfen Ihnen dabei, Sicherheit mühelos in Ihr Netzwerk zu integrieren – egal ob im Office, Fahrzeugen, Homeoffice oder anderen Segmenten des Unternehmens.",
             "list": [
                 "Sichere Team-Verwaltung \n Individuelle Passwörter pro Mitarbeiter:innen.",
                 "Device Management \n Bringen Sie Struktur in die Vielzahl von Endgeräten.",

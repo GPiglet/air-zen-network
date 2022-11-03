@@ -1,4 +1,4 @@
-# Air Zen
+# AirZen
 
 Next.js + Tailwind CSS + GASP
 

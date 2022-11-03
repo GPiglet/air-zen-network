@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Air Zen</title>
+        <title>AirZen Networks</title>
         <link rel="shortcut icon" href="/brand.svg" />
       </Head>
       <StoreProvider>

@@ -14,20 +14,20 @@ const Footer: FC = () => {
     const newsletter:any = t('footer.newsletter', { returnObjects: true });
 
     const legalLinks = [
-        "https://airzen.io/links/contact_de",
-        "http://airzen.io/files/230922_airzen_agb_de.pdf",
-        "http://airzen.io/files/230922_airzen_wifi_usage_de.pdf",
-        "http://airzen.io/files/230922_airzen_dataprotection_de.pdf",
-        "http://airzen.io/files/230922_airzen_cloud_de.pdf",
-        "http://airzen.io/files/230922_airzen_enduser_de.pdf",
-        "http://airzen.io/files/230922_airzen_sale_de.pdf",
-        "http://airzen.io/files/230922_airzen_website_de.pdf",
-        "http://airzen.io/files/230922_airzen_cookie_de.pdf",
-        "http://airzen.io/links/delete_request_de",
-        "http://airzen.io/links/nonewsletter_de",
-        "http://airzen.io/links/delete_request_de",
-        "http://airzen.io/links/dsgvo_request_de",
-        "http://airzen.io/links/bugbounty",
+        "/files/230922_airzen_agb_de.pdf",
+        "/files/230922_airzen_agb_de.pdf",
+        "/files/230922_airzen_agb_de.pdf",
+        "/files/230922_airzen_agb_de.pdf",
+        "/files/230922_airzen_agb_de.pdf",
+        "/files/230922_airzen_agb_de.pdf",
+        "/files/230922_airzen_agb_de.pdf",
+        "/files/230922_airzen_agb_de.pdf",
+        "/files/230922_airzen_agb_de.pdf",
+        "/files/230922_airzen_agb_de.pdf",
+        "/files/230922_airzen_agb_de.pdf",
+        "/files/230922_airzen_agb_de.pdf",
+        "/files/230922_airzen_agb_de.pdf",
+        "/files/230922_airzen_agb_de.pdf",
     ];
 
     return (
