@@ -55,10 +55,17 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
   const animNavButtons = React.useRef<any>([]);
 
   const routing = (item: any) => {
-    router.push({
-      pathname: '/landing',
-      query: { section: item.href }
-    })
+    if ( item.pageType == 'own' ) {
+      router.push({
+        pathname: item.href
+      })
+    }
+    else {
+      router.push({
+        pathname: '/landing',
+        query: { section: item.href }
+      })
+    }
 
     setNavbarOpen(false)
   }

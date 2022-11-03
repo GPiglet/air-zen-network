@@ -34,8 +34,8 @@ const Mainlayout: FC<MainlayoutProps> = ({ children, navItems, hasFooter = true 
 		},
         {
 			id: 2,
-			title: 'Technology',
-			href: 'technology'
+			title: t('landing.menu').split('\n')[1],
+			href: 'aboutus'
 		},
         {
             id: 3,
@@ -44,13 +44,19 @@ const Mainlayout: FC<MainlayoutProps> = ({ children, navItems, hasFooter = true 
         },
 		{
 			id: 4,
-			title: t('landing.menu').split('\n')[1],
-			href: 'aboutus'
-		},
-		{
-			id: 5,
 			title: t('landing.menu').split('\n')[3],
 			href: 'contact'
+		},
+
+        {
+            id: 0,
+        },
+
+        {
+			id: 5,
+			title: 'Technology',
+			href: '/technology',
+            pageType: 'own',
 		},
 	]
 
