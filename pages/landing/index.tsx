@@ -11,28 +11,20 @@ import { useRouter } from "next/router";
 import Mainlayout from '../../layout/main'
 import Hero from '../../components/landingComponents/Hero'
 import UniqueSkill from '../../components/landingComponents/UniqueSkill'
-import Technology from '../../components/landingComponents/Technology'
 import AboutUs from '../../components/landingComponents/AboutUs'
 import Credential from '../../components/landingComponents/Credential'
 import Contact from '../../components/landingComponents/Contact'
-import { WhitePaperFormContext, WhitePaperType } from '../../contexts/WhitePaperFormContext';
-import WhitePaperForm from '../../components/common/form/WhitePaperForm';
 
 const Homepage: NextPage = () => {
-	const [isShow, setIsShow] = useState<boolean>(false);
-	const [whitePaper, setWhitePaper] = useState<WhitePaperType | null>(null);
-
 	// animation
 	const refSectionHero = React.useRef<any>(null);
 	const refSectionUnequeSkill = React.useRef<any>(null);
-	const refSectionTechnology = React.useRef<any>(null);
 	const refSectionAboutUs = React.useRef<any>(null);
 	const refSectionCredential = React.useRef<any>(null);
 	const refSectionContact = React.useRef<any>(null);
 	const refSections: any[] = [
 		refSectionHero,
 		refSectionUnequeSkill,
-		refSectionTechnology,
 		refSectionCredential,
 		refSectionAboutUs,
 		refSectionContact
@@ -40,7 +32,6 @@ const Homepage: NextPage = () => {
 
 	const navItemHrefs = [
 			'solutions',
-			'technology',
 			'credentials',
 			'aboutus',
 			'contact'
@@ -85,12 +76,6 @@ const Homepage: NextPage = () => {
 				if ( currentSectionIndex.current > 4 ) direction = 'UP';
 				else direction = 'DOWN';
 				index = 4;
-				break;
-			case navItemHrefs[4]:
-				if ( currentSectionIndex.current == 5 ) return;
-				if ( currentSectionIndex.current > 5 ) direction = 'UP';
-				else direction = 'DOWN';
-				index = 5;
 				break;
 		}
 
@@ -276,20 +261,16 @@ const Homepage: NextPage = () => {
 	}, [router])
 
 	return (
-		<WhitePaperFormContext.Provider value={{isShow, whitePaper, showForm: setIsShow, setWhitePaper}}>
-			<WhitePaperForm />
-			<div className='back-left-top-gradient-primary'>
-				<Mainlayout hasFooter={false}>
-					<Hero ref={refSectionHero}/>
-					<UniqueSkill ref={refSectionUnequeSkill}/>
-					<Technology ref={refSectionTechnology}/>
-					<Credential ref={refSectionCredential}/>
-					<AboutUs ref={refSectionAboutUs}/>
-					<Contact ref={refSectionContact}/>
-				</Mainlayout>
-				{/* <div className='hidden md:block w-[100vw] h-[100vh]'></div> */}
-			</div>
-		</WhitePaperFormContext.Provider>
+		<div className='back-left-top-gradient-primary'>
+			<Mainlayout hasFooter={false}>
+				<Hero ref={refSectionHero}/>
+				<UniqueSkill ref={refSectionUnequeSkill}/>
+				<Credential ref={refSectionCredential}/>
+				<AboutUs ref={refSectionAboutUs}/>
+				<Contact ref={refSectionContact}/>
+			</Mainlayout>
+			{/* <div className='hidden md:block w-[100vw] h-[100vh]'></div> */}
+		</div>
 	)
 }
 
