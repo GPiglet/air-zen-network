@@ -65,7 +65,7 @@ const RoadMap: FC<props> = ({className = ''}) => {
   return (
     <div className={`relative text-white ${className}`}>
       <p className='text-center text-2xl mb-10'>ROADMAP</p>
-      <div className='flex flex-col md:flex-row gap-10 md:gap-32 justify-center'>
+      <div className='flex flex-col md:flex-row gap-10 xl:gap-32 justify-center'>
         <div className='flex flex-col md:flex-row gap-10'>
           <p className='relative top-[16px] md:top-[-18px] font-bold text-[4rem] ml-[5rem] md:ml-0'>22</p>
           <div className=''>

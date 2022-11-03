@@ -48,7 +48,7 @@ const Touchpoints: FC<props> = ({className = ''}) => {
   ]
   return (
     <div className={`relative text-white ${className}`}>
-      <p className='text-lg mb-10 uppercase text-center md:text-left'>Touchpoints</p>
+      <p className='text-lg mb-10 uppercase text-center xl:text-left'>Touchpoints</p>
       <div className='flex flex-col gap-4 items-center md:items-start'>
         {
           points.map ( 

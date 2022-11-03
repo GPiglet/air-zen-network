@@ -64,7 +64,7 @@ const Services: FC<props> = ({className = ''}) => {
   ]
     return (
       <div className={`relative text-white ${className}`}>
-        <p className='text-lg mb-10 uppercase text-center md:text-left'>Services</p>
+        <p className='text-lg mb-10 uppercase text-center xl:text-left'>Services</p>
         <div className='flex flex-col gap-4 items-center md:items-start'>
           {
             services.map ( 

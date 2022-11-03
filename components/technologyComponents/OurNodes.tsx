@@ -20,8 +20,8 @@ const OurNodes: FC<props> = ({className = ''}) => {
           '2x GBit-Ethernet',
           'AirZenOS, Mesh & Roaming'
         ],
-        imageWidthClass: 'w-[120px] md:w-[260px]',
-        itemWidthClass: 'w-[220px] md:w-[280px]',
+        imageWidthClass: 'w-[120px] xl:w-[260px]',
+        itemWidthClass: 'w-[220px] xl:w-[280px]',
       },
   
       {
@@ -35,8 +35,8 @@ const OurNodes: FC<props> = ({className = ''}) => {
           'Power over Ethernet',
           'AirZenOS, Mesh & Roaming'
         ],
-        imageWidthClass: 'w-[120px] md:w-[260px]',
-        itemWidthClass: 'w-[220px] md:w-[280px]',
+        imageWidthClass: 'w-[120px] xl:w-[260px]',
+        itemWidthClass: 'w-[220px] xl:w-[280px]',
       },
     ],
 
@@ -52,8 +52,8 @@ const OurNodes: FC<props> = ({className = ''}) => {
           'Power over Ethernet',
           'AirZenOS, Mesh & Roaming'
         ],
-        imageWidthClass: 'w-[120px] md:w-auto',
-        itemWidthClass: 'w-[220px] md:w-[280px]',
+        imageWidthClass: 'w-[120px] xl:w-auto',
+        itemWidthClass: 'w-[220px] xl:w-[280px]',
       },    
   
       {
@@ -68,8 +68,8 @@ const OurNodes: FC<props> = ({className = ''}) => {
           'Wetterfest & Shock-Resistent',
           'AirZenOS, Mesh & Roaming'
         ],
-        imageWidthClass: 'w-[120px] md:w-auto',
-        itemWidthClass: 'w-[220px] md:w-[280px]',
+        imageWidthClass: 'w-[120px] xl:w-auto',
+        itemWidthClass: 'w-[220px] xl:w-[280px]',
       },
     ]
 

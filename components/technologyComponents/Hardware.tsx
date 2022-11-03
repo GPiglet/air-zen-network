@@ -7,7 +7,7 @@ type props = {
 const Hardware: FC<props> = ({className = ''}) => {
     return (
       <div className={`relative text-white ${className}`}>
-        <p className='text-lg mb-10 uppercase text-center md:text-left'>Hardware</p>
+        <p className='text-lg mb-10 uppercase text-center xl:text-left'>Hardware</p>
         <div className='flex flex-row md:flex-col gap-10 md:gap-6 justify-center md:justify-start'>
           <img src="/images/model.png" className="w-[140px] md:w-[120px] h-fit" />
           <div className='w-[170px]'>

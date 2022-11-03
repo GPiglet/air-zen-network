@@ -8,7 +8,7 @@ type props = {
 const Heading: FC<props> = ({className = '', children}) => {
     return (
       <div className={`relative ${className}`}>
-        <svg className="relative w-full md:w-[120%]" viewBox="0 0 360 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="relative top-[-2%] left-1/2 xl:left-0 translate-x-[-50%] xl:translate-x-0 w-[360px]" viewBox="0 0 360 420" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path opacity="0.5" d="M71.4783 368.638C131.913 429.073 229.981 429.04 290.52 368.565C351.058 308.089 351.143 210.072 290.708 149.638C230.273 89.2029 132.205 89.2359 71.6664 149.711C11.1278 210.186 11.0436 308.203 71.4783 368.638Z" fill="url(#paint0_radial_5683_2127)"/>
           <path d="M234.118 167.966C183.67 138.856 119.128 156.191 89.9593 206.684C60.7904 257.177 78.0404 321.707 128.488 350.816C178.936 379.926 243.478 362.591 272.647 312.098C301.816 261.605 284.566 197.075 234.118 167.966Z" fill="url(#paint1_radial_5683_2127)"/>
           <path opacity="0.4" d="M135.568 393.335C61.6752 368.118 22.1608 287.835 47.3087 214.018C72.4566 140.202 152.745 100.803 226.638 126.02C300.531 151.237 340.045 231.52 314.897 305.337C289.749 379.153 209.461 418.552 135.568 393.335Z" stroke="url(#paint2_linear_5683_2127)"/>
@@ -29,7 +29,7 @@ const Heading: FC<props> = ({className = '', children}) => {
         </svg>
 
 
-        <svg className="absolute left-1/2 md:left-0 translate-x-[-50%] md:translate-x-0 top-[1%] w-1/2 md:w-[60%]" viewBox="0 0 200 274" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="absolute left-1/2 xl:left-0 translate-x-[-50%] xl:translate-x-0 top-[-4%] w-[200px]" viewBox="0 0 200 274" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path opacity="0.7" d="M29.8872 111.838C16.1133 151.627 37.1112 195.098 76.7875 208.932C116.464 222.767 159.794 201.727 173.568 161.938C187.342 122.15 166.344 78.6792 126.668 64.8444C86.9912 51.0096 43.6612 72.0495 29.8872 111.838Z" fill="url(#paint0_radial_5701_2089)"/>
           <path opacity="0.7" d="M82.7488 88.1333C54.8778 99.6195 41.4123 131.193 52.673 158.654C63.9336 186.115 95.6561 199.065 123.527 187.579C151.398 176.093 164.864 144.52 153.603 117.058C142.342 89.5974 110.62 76.6471 82.7488 88.1333Z" fill="url(#paint1_radial_5701_2089)"/>
           <g clipPath="url(#clip0_5701_2089)">
