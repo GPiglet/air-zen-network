@@ -52,12 +52,13 @@ const CompanyHistory: FC<props> = ({className = ''}) => {
   const gotoHistory = (action: string) => {
     const viewRect = refHistories.current?.parentElement?.getBoundingClientRect();
     const viewWidth = viewRect ? viewRect.width : 0;
+    if ( gsap.isTweening(refHistories.current) ) return;
     if ( action == 'next' ) {
-      if ( (histories.length - startIndex) * historyPanelWidth <= viewWidth ) return;
+      if ( (histories.length - startIndex) * historyPanelWidth <= viewWidth + 50 ) return;
       else {
         gsap.to(refHistories.current, {x: '-=' + historyPanelWidth});
         setStartIndex(startIndex + 1);
-        if ( (histories.length - startIndex - 1) * historyPanelWidth <= viewWidth ) gsap.set('.nav-next', {display: 'none'});
+        if ( (histories.length - startIndex - 1) * historyPanelWidth <= viewWidth + 50 ) gsap.set('.nav-next', {display: 'none'});
       }
       gsap.set('.nav-prev', {display: 'block'});
     }
