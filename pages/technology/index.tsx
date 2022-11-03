@@ -19,32 +19,31 @@ import OwnLayout from '../../layout/own';
 const Technology: NextPage = () => {
   const router = useRouter()
   return (
-    <div className='relative'>
-      <OwnLayout hasFooter={false}>
-        <div className='z-0 absolute hidden md:block md:static top-[-180px] w-full h-[480px] md:h-0 overflow-hidden'>
-        <svg className='absolute bottom-0 md:top-[-8%] left-1/2 translate-x-[-50%] w-[150%] md:w-[990px]' viewBox="0 0 994 985" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path opacity="0.4" d="M615.476 863.499C824.278 796.749 940.401 576.393 874.843 371.319C809.285 166.245 586.872 54.1116 378.07 120.861C169.268 187.611 53.1451 407.968 118.703 613.041C184.261 818.115 406.674 930.249 615.476 863.499Z" fill="url(#paint0_radial_5689_2335)"/>
-            <path opacity="0.5" d="M586.48 770.269C743.242 720.156 830.423 554.72 781.204 400.757C731.986 246.795 565.006 162.609 408.244 212.723C251.483 262.836 164.302 428.272 213.52 582.234C262.739 736.196 429.719 820.382 586.48 770.269Z" fill="url(#paint1_radial_5689_2335)"/>
-            <path d="M725.268 419.576C764.801 543.241 694.778 676.138 568.843 716.397C442.908 756.656 308.779 689.022 269.246 565.356C229.713 441.691 299.736 308.794 425.671 268.535C551.606 228.276 685.735 295.91 725.268 419.576Z" stroke="url(#paint2_linear_5689_2335)"/>
-            <defs>
-            <radialGradient id="paint0_radial_5689_2335" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(410.843 150.047) rotate(72.664) scale(785.805 800.092)">
-                <stop stopColor="#2294C3"/>
-                <stop offset="1" stopColor="#2294C3" stopOpacity="0"/>
-            </radialGradient>
-            <radialGradient id="paint1_radial_5689_2335" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(432.849 234.634) rotate(72.664) scale(589.955 600.681)">
-                <stop stopColor="#2294C3"/>
-                <stop offset="1" stopColor="#2294C3" stopOpacity="0"/>
-            </radialGradient>
-            <linearGradient id="paint2_linear_5689_2335" x1="425.518" y1="268.059" x2="568.995" y2="716.873" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#159BDE"/>
-                <stop offset="1" stopColor="#159BDE" stopOpacity="0"/>
-            </linearGradient>
-            </defs>
-        </svg>
+    <OwnLayout hasFooter={false}>
+        <div className='z-0 top-[-180px] w-full overflow-hidden'>
+            <svg className='absolute top-[-2%] md:top-[-8%] left-1/2 translate-x-[-50%] w-[150%] md:w-[990px]' viewBox="0 0 994 985" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.4" d="M615.476 863.499C824.278 796.749 940.401 576.393 874.843 371.319C809.285 166.245 586.872 54.1116 378.07 120.861C169.268 187.611 53.1451 407.968 118.703 613.041C184.261 818.115 406.674 930.249 615.476 863.499Z" fill="url(#paint0_radial_5689_2335)"/>
+                <path opacity="0.5" d="M586.48 770.269C743.242 720.156 830.423 554.72 781.204 400.757C731.986 246.795 565.006 162.609 408.244 212.723C251.483 262.836 164.302 428.272 213.52 582.234C262.739 736.196 429.719 820.382 586.48 770.269Z" fill="url(#paint1_radial_5689_2335)"/>
+                <path d="M725.268 419.576C764.801 543.241 694.778 676.138 568.843 716.397C442.908 756.656 308.779 689.022 269.246 565.356C229.713 441.691 299.736 308.794 425.671 268.535C551.606 228.276 685.735 295.91 725.268 419.576Z" stroke="url(#paint2_linear_5689_2335)"/>
+                <defs>
+                <radialGradient id="paint0_radial_5689_2335" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(410.843 150.047) rotate(72.664) scale(785.805 800.092)">
+                    <stop stopColor="#2294C3"/>
+                    <stop offset="1" stopColor="#2294C3" stopOpacity="0"/>
+                </radialGradient>
+                <radialGradient id="paint1_radial_5689_2335" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(432.849 234.634) rotate(72.664) scale(589.955 600.681)">
+                    <stop stopColor="#2294C3"/>
+                    <stop offset="1" stopColor="#2294C3" stopOpacity="0"/>
+                </radialGradient>
+                <linearGradient id="paint2_linear_5689_2335" x1="425.518" y1="268.059" x2="568.995" y2="716.873" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#159BDE"/>
+                    <stop offset="1" stopColor="#159BDE" stopOpacity="0"/>
+                </linearGradient>
+                </defs>
+            </svg>
         </div>
 
         {/* Headline */}
-        <div className='z-10 text-center text-white mb-10 md:mb-32'>
+        <div className='z-10 text-center text-white mb-20 md:mb-32 pt-[120px] md:pt-[200px]'>
         <p className="font-lato font-light tracking-widest text-xl mb-3">Software Defined Networking</p>
         <h1 className="text-title-sm">the <b>Airzen</b> Plattform</h1>
         </div>
@@ -53,10 +52,10 @@ const Technology: NextPage = () => {
         <Intro>
         <div className='flex flex-col md:flex-row gap-20 justify-enter'>
             <Heading className='top-[-2rem]'>
-            <div className='absolute left-1/2 md:left-[55%] translate-x-[-50%] top-[62%] md:top-[46%] translate-y-[-50%] w-[60%] md:w-[75%] text-center md:text-left text-white tracking-widest'>
-                <p className=''>SOFTWARE DEFINED NETWORK TECHNOLOGY</p>
-                <p className='font-light'>über 40 Micro Services & digitale Infrastruktur</p>
-            </div>
+                <div className='absolute left-1/2 md:left-[55%] translate-x-[-50%] top-[62%] md:top-[46%] translate-y-[-50%] w-[60%] md:w-[75%] text-center md:text-left text-white tracking-widest'>
+                    <p className=''>SOFTWARE DEFINED NETWORK TECHNOLOGY</p>
+                    <p className='font-light'>über 40 Micro Services & digitale Infrastruktur</p>
+                </div>
             </Heading>
             <Hardware className='mt-[-8rem] md:mt-0'/>
             <Touchpoints />
@@ -75,8 +74,7 @@ const Technology: NextPage = () => {
 
         {/* roadmap */}
         <RoadMap className='my-10' />     
-      </OwnLayout>     
-    </div>
+    </OwnLayout>     
   )
 }
 export default Technology
