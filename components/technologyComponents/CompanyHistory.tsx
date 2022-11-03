@@ -5,7 +5,7 @@ type props = {
   className?: string,
 }
 
-const History: FC<props> = ({className = ''}) => {
+const CompanyHistory: FC<props> = ({className = ''}) => {
   const histories = [
     {
       duration: '1999',
@@ -106,4 +106,4 @@ const History: FC<props> = ({className = ''}) => {
   )
 }
 
-export default History
+export default CompanyHistory

@@ -129,7 +129,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
                       </Link>
                     ) : (
                       <div onClick={() => routing(item)}>
-                        <p className={`md:hover:text-gray-100 ${item.href == 'solutions' ? 'text-white' : 'md:text-gray-400'}  py-4 md:py-2 flex items-center text-lg uppercase font-lato`}>{item.title}</p>
+                        <p className={`md:hover:text-gray-100 ${ (router.pathname.indexOf(item.href) != -1) || (navItems.filter(item=>router.pathname.indexOf(item.href)!=-1).length == 0 && item.href == 'solutions') ? 'active' : 'md:text-gray-400'}  py-4 md:py-2 flex items-center text-lg uppercase font-lato`}>{item.title}</p>
                       </div>
                     )
                   }
