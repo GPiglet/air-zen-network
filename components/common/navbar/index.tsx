@@ -2,17 +2,56 @@
 import React, { FC, useState, useEffect, useCallback } from "react"
 import { Router, useRouter } from "next/router";
 import { Link } from 'react-scroll'
+import { useTranslation } from 'next-i18next'
 import gsap from "gsap";
 
 import LocaleSwitcher from '../../common/localeSwitcher'
 
 
 type NaveProps = {
-  navItems: Array<any>,
+  navItems?: Array<any>,
 }
 
 
 const Navbar: FC<NaveProps> = ({ navItems }) => {
+  const { t } = useTranslation()
+  const defaultNavItems: Array<any> = [
+		{
+			id: 1,
+			title: t('landing.menu').split('\n')[0],
+			href: 'solutions'
+		},
+        {
+			id: 2,
+			title: t('landing.menu').split('\n')[1],
+			href: 'aboutus'
+		},
+        {
+            id: 3,
+            title: t('landing.menu').split('\n')[2],
+            href: 'credentials'
+        },
+		{
+			id: 4,
+			title: t('landing.menu').split('\n')[3],
+			href: 'contact'
+		},
+
+        {
+            id: 0,
+        },
+
+        {
+			id: 5,
+			title: 'Technology',
+			href: '/technology',
+            pageType: 'own',
+		},
+	]
+
+  if ( !navItems ) {
+    navItems = defaultNavItems;
+  }
 
   const [navbarOpen, setNavbarOpen] = React.useState(false)
   const [scrolldown, setScrollDown] = useState(false)
@@ -119,7 +158,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
           <ul className="flex items-start pl-7 md:pl-0 flex-col md:flex-row list-none mr-auto w-full justify-around text-white">
             {
 
-              navItems.map((item, index) => (
+              navItems?.map((item, index) => (
 
                 <li ref={el => { if (el && animNavButtons.current.indexOf(el) == -1) animNavButtons.current.push(el) }} className={"mx-3 md:m-0 flex items-center cursor-pointer"} key={index} >
                   {
@@ -129,7 +168,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
                       </Link>
                     ) : (
                       <div onClick={() => routing(item)}>
-                        <p className={`md:hover:text-gray-100 ${ (router.pathname.indexOf(item.href) != -1) || (navItems.filter(item=>router.pathname.indexOf(item.href)!=-1).length == 0 && item.href == 'solutions') ? 'active' : 'md:text-gray-400'}  py-4 md:py-2 flex items-center text-lg uppercase font-lato`}>{item.title}</p>
+                        <p className={`md:hover:text-gray-100 ${ (router.pathname.indexOf(item.href) != -1) || (navItems?.filter(item=>router.pathname.indexOf(item.href)!=-1).length == 0 && item.href == 'solutions') ? 'active' : 'md:text-gray-400'}  py-4 md:py-2 flex items-center text-lg uppercase font-lato`}>{item.title}</p>
                       </div>
                     )
                   }
