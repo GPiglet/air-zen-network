@@ -16,9 +16,10 @@ type props = {
     children: ReactNode,
     navItems?: Array<any>,
     hasFooter?: boolean,
+    className?: string,
 };
 
-const OwnLayout: FC<props> = ({ children, navItems, hasFooter = true }) => {   
+const OwnLayout: FC<props> = ({ children, navItems, hasFooter = true, className }) => {   
     const [cookie, setCookie] = useState(true)
     useEffect(() => {
         const cookie = getStorage('cookieAllow')
@@ -109,7 +110,7 @@ const OwnLayout: FC<props> = ({ children, navItems, hasFooter = true }) => {
     return (
         <>
             <Navbar navItems={navItems} />
-            <div ref={containerRef} className='relative container flex flex-col justify-center m-auto'>
+            <div ref={containerRef} className={`container ${className}`}>
                 {!cookie && <Sticky />}
                 {children}
                 {hasFooter && <Footer />}

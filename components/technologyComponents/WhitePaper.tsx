@@ -61,7 +61,7 @@ const WhitePaper: FC<props> = ({className = ''}) => {
   }
   return (
     <div className={`relative text-white ${className}`}>
-      <p className='text-center text-2xl mb-10 mt-20 md:mt-0'>WHITEPAPER</p>
+      <p className='text-center text-2xl mb-10'>WHITEPAPER</p>
       <div className='flex flex-col md:flex-row gap-20 justify-center text-lg items-center'>
         {
           papers.map(

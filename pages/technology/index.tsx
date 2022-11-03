@@ -19,7 +19,7 @@ import OwnLayout from '../../layout/own';
 const Technology: NextPage = () => {
   const router = useRouter()
   return (
-    <OwnLayout hasFooter={false}>
+    <OwnLayout hasFooter={false} className='relative flex flex-col justify-center m-auto gap-20 md:gap-40'>
         <div className='z-0 absolute top-0 w-full h-[600px] overflow-hidden'>
             <svg className='absolute bottom-[-10%] left-1/2 translate-x-[-50%] w-[990px]' viewBox="0 0 994 985" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.4" d="M615.476 863.499C824.278 796.749 940.401 576.393 874.843 371.319C809.285 166.245 586.872 54.1116 378.07 120.861C169.268 187.611 53.1451 407.968 118.703 613.041C184.261 818.115 406.674 930.249 615.476 863.499Z" fill="url(#paint0_radial_5689_2335)"/>
@@ -43,7 +43,7 @@ const Technology: NextPage = () => {
         </div>
 
         {/* Headline */}
-        <div className='z-10 text-center text-white mb-20 xl:mb-32 pt-[120px] md:pt-[200px]'>
+        <div className='z-10 text-center text-white pt-[120px] md:pt-[200px]'>
         <p className="font-lato font-light tracking-widest text-xl mb-3">Software Defined Networking</p>
         <h1 className="text-title-sm">the <b>Airzen</b> Plattform</h1>
         </div>
@@ -69,13 +69,13 @@ const Technology: NextPage = () => {
         <WhitePaper className='my-10'/>
 
         {/* Our Nodes */}
-        <OurNodes className='my-20'/>
+        <OurNodes className='my-10'/>
 
         {/* history */}
-        <CompanyHistory className='my-10'/>
+        <CompanyHistory/>
 
         {/* roadmap */}
-        <RoadMap className='my-10' />     
+        <RoadMap/>     
     </OwnLayout>     
   )
 }
