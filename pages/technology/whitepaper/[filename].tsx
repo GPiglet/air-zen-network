@@ -129,7 +129,7 @@ const WhitePaper: NextPage = (props:any) => {
                 router.back();
             },
             (err: any) => {
-                alert('error.');
+                alert(t('whitepaperDownloadForm.error.apiError'));
                 setButtonDisabled(false);
             }
         )
@@ -166,21 +166,21 @@ const WhitePaper: NextPage = (props:any) => {
                 </div>
                 <div>
                     <div className='flex flex-col md:flex-row md:gap-10'>
-                    <CustomInput placeholder="Firmenname (optional)" className="max-w-[500px] mb-5"
+                    <CustomInput placeholder={t('whitepaperDownloadForm.companynameInput.placeholder')} className="max-w-[500px] mb-5"
                         ref={refCompanyname} invalid={false} value={compannyname}
                         onChange={(e: any)=>onChangeInput(e.target.value, setCompanyname)}
                     />
-                    <CustomInput placeholder="Ihre-Email" className="max-w-[500px] mb-5"
+                    <CustomInput placeholder={t('whitepaperDownloadForm.emailInput.placeholder')} className="max-w-[500px] mb-5"
                         ref={refEmailAddress} invalid={!validEmailAddress} value={emailAddress}
                         onChange={(e: any)=>onChangeInput(e.target.value, setEmailAddress, setValidEmailAddress)}
                     />
                     </div>
                     <div className='flex flex-col md:flex-row gap-5 md:gap-10'>
-                    <CustomInput placeholder="Vorname" className="max-w-[500px]"
+                    <CustomInput placeholder={t('whitepaperDownloadForm.firstnameInput.placeholder')} className="max-w-[500px]"
                         ref={refFirstname} invalid={!validFirstname} value={firstname}
                         onChange={(e: any)=>onChangeInput(e.target.value, setFirstname, setValidFirstname)}
                     />
-                    <CustomInput placeholder="Nachname" className="max-w-[500px]"
+                    <CustomInput placeholder={t('whitepaperDownloadForm.lastnameInput.placeholder')} className="max-w-[500px]"
                         ref={refLastname} invalid={!validLastname} value={lastname}
                         onChange={(e: any)=>onChangeInput(e.target.value, setLastname)}
                     />
@@ -188,7 +188,7 @@ const WhitePaper: NextPage = (props:any) => {
                 </div>
                 <div className='flex flex-col gap-4 w-full'>
                     <div className={`relative top-[0.25rem] ml-10 font-lato font-base`}>
-                        {(!validDSGVOCollection || !validDSGVOProtection) ? 'Please check DSGVO.' : t('landing.contact.DSGVOLabel')}
+                        {(!validDSGVOCollection || !validDSGVOProtection) ? t('landing.contact.DSGVOErrorMsg') : t('landing.contact.DSGVOLabel')}
                     </div>
                     <div className='flex gap-4'>
                         <CustomCheckbox checked={dataProtection} valid={validDSGVOProtection} onClick={() => changeCheck('dataProtection')}>
@@ -205,7 +205,7 @@ const WhitePaper: NextPage = (props:any) => {
                     <FriendlyCaptcha widgetRef={refCaptcha} onReady={onCaptchaReady} onDone={onCaptchaDone} style="dark"/>
                 </div>
                 <div className='text-center'>
-                    <SendButton title="PDF erhalten" disabled={buttonDisabled} onClick={()=>onClickSend()} className='bg-white border border-[#01ACE6] rounded-[32px] text-center text-black/70 uppercase w-[210px] h-[50px]' fillClassName='fill-black/70'/>
+                    <SendButton title={t('whitepaperDownloadForm.sendButton.title')} disabled={buttonDisabled} onClick={()=>onClickSend()} className='bg-white border border-[#01ACE6] rounded-[32px] text-center text-black/70 uppercase w-[210px] h-[50px]' fillClassName='fill-black/70'/>
                 </div>
             </div>
         </OwnLayout>

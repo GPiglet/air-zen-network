@@ -1,4 +1,5 @@
 import React, { FC, useState, useRef } from 'react'
+import { useTranslation } from 'next-i18next'
 import gsap from "gsap";
 
 type props = {
@@ -6,44 +7,9 @@ type props = {
 }
 
 const CompanyHistory: FC<props> = ({className = ''}) => {
-  const histories = [
-    {
-      duration: '1999',
-      title: 'Wlan Anfänge',
-      descriptions: [
-        'Der erste WLAN-Standard wurde der Welt vorgestellt. Das Air Zen Team setzt sich hauptsächlich aus Autodidakten zusammen, die seit ihrer Kindheit eine Leidenschaft für Linux & Netzwerke besitzen.'        
-      ]
-    },
-    {
-      duration: '2004 - 2016',
-      title: 'Industrielle Projekte',
-      descriptions: [
-        'Vorgängerprojekte unseres Teams entwickelten in dieser Zeit verschiedene kundenspezifische Industrie-Projekte und führten diese auf Basis eigener WLAN-Hard &-Software durch.',
-        'Von Beginn an konnten wir uns durch Technikaffinität an industriellen Sonderlösungen beteiligen. Zahlreiche Projekte ermöglichten uns den Kontakt zu unabhängigen und innovativen Herstellern.'
-      ]
-    },
-    {
-      duration: '2016 - 2020',
-      title: 'Learning by doing',
-      descriptions: [
-        'Ab 2016 fokussierten wir uns maßgeblich auf cloudbasierte Netzwerk-Technologie mit dem Schwerpunkt des Kunden-WLAN. Die zentrale Plattform, um remote Netzwerke zu steuern wurde durch die vorangegangenen Entwicklungen im Bereich Public-WLAN ergänzt: elementare Bestandteile einer ganzheitlichen Lösung für Unternehmensnetzwerke.'        
-      ]
-    },
-    {
-      duration: '2023',
-      title: 'Themenschwerpunkt Sicherheit',
-      descriptions: [
-        'IT-Security, die wenig Aufmerksamkeit durch ihre Anwender:innen benötigt und automatisiert ihren Dienst verrichtet ist einer unserer Leitsätze für das Jahr 2023. Der Schwerpunkt liegt darauf, Kunden & Nutzer:innen des WLANs vor externen Bedrohungen zu schützen. Parallel zu diesem Schutz steht die weitere Vereinfachung der Cloud-Komponente im Fokus. Ziel ist es, dass jedes Unternehmen selbst seine eigene AirZen-Cloud betreiben kann - mit oder ohne Managed Service über uns.'        
-      ]
-    },
-    {
-      duration: '2024',
-      title: 'Fokus Europa',
-      descriptions: [
-        'Aus unserer Sicht gibt es Stand 2022 aus Europa keine State-Of-The-Art Netzwerk-Technologie. Auch sind uns abseits der eigenen Aktivitäten keine gleichwertigen Versuche bekannt. Wir möchten uns dieser Herausforderung stellen und planen den Ausbau unseres Ansatzes, um alle Core-Elemente Moderner Netzwerktechnologie abzubilden.'
-      ]
-    },
-  ]
+  const { t } = useTranslation();
+  const items = t('technology.histories.items', { returnObjects: true });
+  const histories: Array<any> = Array.isArray(items) ? items : [];
 
   //custome carousel
   const historyPanelWidth = 420;
@@ -74,7 +40,7 @@ const CompanyHistory: FC<props> = ({className = ''}) => {
   }
   return (
     <div className={`relative text-white ${className}`}>
-      <p className='text-center text-2xl mb-10 uppercase'>Herkunft</p>
+      <p className='text-center text-2xl mb-10 uppercase'>{t('technology.histories.title')}</p>
       <div className='w-full h-fit overflow-hidden ml-[10%] md:ml-0'>
         <div className='z-50 history-nav-back nav-next absolute right-0 w-[300px] h-full'>
           <img src="/images/sparkle-arrow.svg" alt='Next' className='w-[47px] h-[93px] top-[52%] cursor-pointer absolute right-[20px] md:right-[47px] md:top-1/2 center-y-transform z-50' onClick={()=>{gotoHistory('next')}}/>
@@ -92,7 +58,7 @@ const CompanyHistory: FC<props> = ({className = ''}) => {
                 <p className='mb-6 uppercase'>{history.title}</p>
                 {
                   history.descriptions.map (
-                    (description, index2) =>
+                    (description: string, index2: number) =>
                     <p key={index2} className='font-light mb-4 w-[80%]'>
                       {description}
                     </p>

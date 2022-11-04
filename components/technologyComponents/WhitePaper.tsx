@@ -1,67 +1,28 @@
 import React, { FC, useState, useRef, useContext } from 'react'
 import { useRouter } from "next/router"
+import { useTranslation } from 'next-i18next'
 
-import Button from './Button'
+import DownloadButton from './DownloadButton'
 
 type props = {
   className?: string,
 }
 
 const WhitePaper: FC<props> = ({className = ''}) => {
-  const router = useRouter();
+  const { t } = useTranslation();
+  const items: Array<any> = t('technology.whitepapers.items', { returnObjects: true });
 
-  const papers = [
-    {
-      title: 'System Overview',
-      description: 'Überblick des AirZen Systems in Funktionsweise, Aufbau & Prozessen.',
-      download: {
-        type: 'page',
-        filename: 'solution overview'
-      },
-      width: 250,
-    },
-    {
-      title: 'Technology Details',
-      description: 'Technisch versierte Dokumentation der AirZen OS Software.',
-      download: {
-        type: 'file',
-        filename: 'https://airzen.io/whitepaper/Technology Details.pdf'
-      },
-      width: 250,
-    },
-    {
-      title: 'Leistungen',
-      description: 'Leistungsverzeichnis aller Services & Produkte.',
-      download: {
-        type: 'file',
-        filename: 'https://airzen.io/whitepaper/Leistungen.pdf'
-      },
-      width: 225,
-    }
-  ]
-
-  const onClickDownload = (data: any) => {
-    
-    if ( data.type == 'file' ) {
-      window.open(data.filename, '_blank');
-    }
-    else {
-      router.push({
-        pathname: 'technology/whitepaper/' + data.filename,
-      })
-    }
-  }
   return (
     <div className={`relative text-white ${className}`}>
-      <p className='text-center text-2xl mb-10'>WHITEPAPER</p>
+      <p className='text-center text-2xl mb-10 uppercase'>{t('technology.whitepapers.title')}</p>
       <div className='flex flex-col md:flex-row gap-20 justify-center text-lg items-center'>
         {
-          papers.map(
+          Array.isArray(items) && items.map(
             (paper, index) => 
             <div key={index} className='text-center md:text-left' style={{width: paper.width}}>
               <p className='mb-4 text-center md:text-left'>{paper.title}</p>
               <p className='font-light min-h-[100px] text-center md:text-left'>{paper.description}</p>
-              <Button title="PDF DOWNLOAD" onClick={()=>onClickDownload(paper.download)}/>
+              <DownloadButton title="PDF DOWNLOAD" item={paper.download}/>
             </div>
           )
         }

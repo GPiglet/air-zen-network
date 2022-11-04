@@ -1,70 +1,18 @@
 import React, { FC } from 'react'
+import { useTranslation } from 'next-i18next'
 
 type props = {
   className?: string,
 }
 
 const RoadMap: FC<props> = ({className = ''}) => {
-  const roadmaps = [
-    {
-      year: 22,
-      quarter: 'Q3',
-      title: 'Node H6',
-      description: 'Produktrealease\nMesh WLAN Router\nfür Home(Office) mit\nAirZen OS.',
-    },
+  const { t } = useTranslation();
+  const items = t('technology.roadmaps.items', { returnObjects: true });
+  const roadmaps: Array<any> = Array.isArray(items) ? items : [];
 
-    {
-      year: 22,
-      quarter: 'Q4',
-      title: 'Node M5',
-      description: 'Produktrealease\nMobile Router\nfür raue Umgebungen mit\n5G, WLAN & 24h Batterie.',
-    },
-
-    {
-      year: 23,
-      quarter: 'Q1',
-      title: 'Node H5',
-      description: '5G Home&Business Router\nfür den Innenbereich',
-    },
-
-    {
-      year: 23,
-      quarter: '',
-      title: 'Mesh VPN',
-      description: 'Automatische Mobile &\nSecure Netzwerke',
-    },
-
-    {
-      year: 23,
-      quarter: 'Q2',
-      title: 'Home App',
-      description: 'AirZen App Home\nfür Privatkunden.',
-    },
-
-    {
-      year: 23,
-      quarter: '',
-      title: 'Node B7',
-      description: 'WiFi6 Business Router\nmit Pro-Bandbreite.',
-    },
-
-    {
-      year: 23,
-      quarter: 'Q3',
-      title: 'Private Cloud',
-      description: 'Public Release\nAirZen OS Private Cloud.\nSelf-Hosted AirZen\nSystem.',
-    },
-
-    {
-      year: 23,
-      quarter: 'Q4',
-      title: 'AirZen Things',
-      description: 'Produkt Launch mehrerer\nInternet of Things basierter\nSensoren für Home & Business.',
-    },
-  ]
   return (
     <div className={`relative text-white ${className}`}>
-      <p className='text-center text-2xl mb-10'>ROADMAP</p>
+      <p className='text-center text-2xl mb-10 uppercase'>{t('technology.roadmaps.title')}</p>
       <div className='flex flex-col md:flex-row gap-10 xl:gap-32 justify-center'>
         <div className='flex flex-col md:flex-row gap-10'>
           <p className='relative top-[16px] md:top-[-18px] font-bold text-[4rem] ml-[5rem] md:ml-0'>22</p>

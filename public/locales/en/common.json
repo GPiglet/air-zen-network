@@ -110,6 +110,7 @@
         "contact": {
             "_comment": "Contact' section of the page.",
             "DSGVOLabel": "GDPR",
+            "DSGVOErrorMsg": "Please check GDPR.",
             "emailLabel": "Email address*",
             "successMessage": "Sent successfully.",
             "emailPlaceholder": "example@email.com",
@@ -657,5 +658,327 @@
         "customize": "Customise cookies",
         "content": "We use cookies to personalise our content and ads, offer social media features, and analyse website traffic. During this process, all data records are anonymised and deleted after the evaluation. We never share your data, not even with partners. ",
         "detail": "Show details"
+    },
+    "technology": {
+        "headline": {
+            "title": "the Airzen Plattform",
+            "subtitle": "Software Defined Networking"
+        },
+        "intro": {
+            "heading": {
+                "title": "SOFTWARE DEFINED NETWORK TECHNOLOGY",
+                "subtitle": "über 40 Micro Services & digitale Infrastruktur"
+            },
+            "hardware": {
+                "title": "Hardware",
+                "image": "/images/model.png",
+                "items": [
+                    {
+                        "title": "AirZen Nodes",
+                        "description": "Router, Access, Mesh & Security"
+                    },
+                    {
+                        "title": "unterstützte Interfaces",
+                        "description": "Ethernet, DSL, Fiber, Bluetooth & BLE, WiFi6, LoRa, 5G & 4G, Starlink, GPS/GNNS & Iridium"
+                    }
+                ]
+            },
+            "touchpoints": {
+                "title": "Touchpoints",
+                "items": [
+                    {
+                        "title": "WiFi",
+                        "description": "mehrere virtuell getrennte Netze",
+                        "icon": "/images/icons/icon-tech-wifi.svg"
+                    },
+                    {
+                        "title": "Portal",
+                        "description": "umfassender Self-Service",
+                        "icon": "/images/icons/icon-tech-portal.svg"
+                    },
+                    {
+                        "title": "APP",
+                        "description": "volle Transparenz",
+                        "icon": "/images/icons/icon-tech-app.svg"
+                    },
+                    {
+                        "title": "Command Line",
+                        "description": "volle Kontrolle",
+                        "icon": "/images/icons/icon-tech-cmdline.svg"
+                    },
+                    {
+                        "title": "AirZen Team",
+                        "description": "Managed Service",
+                        "icon": "/images/icons/icon-tech-tool.svg"
+                    }
+                ]
+            },
+            "services": {
+                "title": "Services",
+                "items": [
+                    {
+                        "title": "Administration",
+                        "description": "smarte Automatismen, umfassende Analysetools, autonome Updates",
+                        "icon": "/images/icons/icon-tech-admin.svg",
+                        "itemWidth": 240
+                    },
+                    {
+                        "title": "Nutzer Netzwerke",
+                        "description": "mehrere Standorte im selben Netz oder mehrere Subnetze in einem Standort",
+                        "icon": "/images/icons/icon-tech-net1.svg",
+                        "itemWidth": 240
+                    },
+                    {
+                        "title": "Gäste-Netzwerk",
+                        "description": "sicher abgetrennt und mit Marketingfunktion",
+                        "icon": "/images/icons/icon-tech-net2.svg",
+                        "itemWidth": 240
+                    },
+                    {
+                        "title": "Geräte & Internet of Things",
+                        "description": "volle Konnektivität mit hohen Sicherheitsstandards",
+                        "icon": "/images/icons/icon-tech-internet.svg",
+                        "itemWidth": 260
+                    },
+                    {
+                        "title": "VPN, digitale Netzwerke",
+                        "description": "detaillierte Zugriffsrechte, ausgeprägte Cybersecurity",
+                        "icon": "/images/icons/icon-tech-vpn.svg",
+                        "itemWidth": 260
+                    }
+                ]
+            }            
+        },
+        "whitepapers": {
+            "title": "Whitepaper",
+            "items": [
+                {
+                    "title": "System Overview",
+                    "description": "Überblick des AirZen Systems in Funktionsweise, Aufbau & Prozessen.",
+                    "download": {
+                        "type": "page",
+                        "filename": "solution overview"
+                    },
+                    "width": 250
+                },
+                {
+                    "title": "Technology Details",
+                    "description": "Technisch versierte Dokumentation der AirZen OS Software.",
+                    "download": {
+                        "type": "file",
+                        "filename": "https://airzen.io/whitepaper/Technology Details.pdf"
+                    },
+                    "width": 250
+                },
+                {
+                    "title": "Leistungen",
+                    "description": "Leistungsverzeichnis aller Services & Produkte.",
+                    "download": {
+                        "type": "file",
+                        "filename": "https://airzen.io/whitepaper/Leistungen.pdf"
+                    },
+                    "width": 225
+                }
+            ]
+        },
+        "ournodes": {
+            "title": "Unsere Nodes",
+            "buttonTitle": "Datenblatt FÜR UNSERE NODES",
+            "download": {
+                "type": "file",
+                "filename": "https://airzen.io/whitepaper/Leistungen.pdf"
+            },
+            "items": [
+                [
+                  {
+                    "image": "/images/model.png",
+                    "solution": "HOME & HYBRID",
+                    "title": "Node H6",
+                    "description": "Perfekt für private Home-nutzung & Homeoffice. Auch als Mesh-Set.",
+                    "specs":[
+                      "WiFi6 2.4 GHz & 5GHz",
+                      "interne Antennen",
+                      "2x GBit-Ethernet",
+                      "AirZenOS, Mesh & Roaming"
+                    ],
+                    "imageClass": "relative w-[175px] max-w-fit md:max-w-full h-fit",
+                    "itemClasses": ["w-[120px] xl:w-[260px]", "w-[220px] xl:w-[280px]"]                        
+                  },
+              
+                  {
+                    "image": "/images/model-b6.png",
+                    "solution": "BUSINESS",
+                    "title": "Node B6",
+                    "description": "Office WLAN Router mit PoE und mehreren Ethernet-Anschlüssen.",
+                    "specs":[
+                      "WiFi 6 2.4 GHz & 5GHz",
+                      "2x 1 GBit Ethernet",
+                      "Power over Ethernet",
+                      "AirZenOS, Mesh & Roaming"
+                    ],
+                    "imageClass": "relative w-[230px] max-w-fit md:max-w-full h-fit",
+                    "itemClasses": ["w-[120px] xl:w-[260px]", "w-[220px] xl:w-[280px]"]
+                  }
+                ],
+            
+                [
+                  {
+                    "image": "/images/model-o6.png",
+                    "solution": "OUTDOOR",
+                    "title": "Node O6",
+                    "description": "Wetterfestes WLAN mit externen Antennen-Anschlüssen.",
+                    "specs":[
+                      "WiFi6 2.4 GHz & 5GHz",
+                      "2x 1 GBit Ethernet",
+                      "Power over Ethernet",
+                      "AirZenOS, Mesh & Roaming"
+                    ],
+                    "imageClass": "w-[230px] max-w-fit md:max-w-full h-fit",
+                    "itemClasses": ["w-[120px] xl:w-auto", "w-[220px] xl:w-[280px]"]
+                  },    
+              
+                  {
+                    "image": "/images/model-m5.png",
+                    "solution": "Industrial Solutions",
+                    "title": "Node m5",
+                    "description": "Mobiler Router für extreme Einsätze in rauen Umgebungen.",
+                    "specs":[
+                      "5G, WiFi6, Ethernet",
+                      "10km Internet of Things Reichweite",
+                      "24h Batterie",
+                      "Wetterfest & Shock-Resistent",
+                      "AirZenOS, Mesh & Roaming"
+                    ],
+                    "imageClass": "w-[230px] max-w-fit md:max-w-full h-fit",
+                    "itemClasses": ["w-[120px] xl:w-auto", "w-[220px] xl:w-[280px]"],
+                    "download": {
+                        "type": "page",
+                        "filename": "solution overview"
+                    }
+                  }
+                ]
+            ]
+        },
+        "histories": {
+            "title": "Herkunft",
+            "items": [
+                {
+                  "duration": "1999",
+                  "title": "Wlan Anfänge",
+                  "descriptions": [
+                    "Der erste WLAN-Standard wurde der Welt vorgestellt. Das Air Zen Team setzt sich hauptsächlich aus Autodidakten zusammen, die seit ihrer Kindheit eine Leidenschaft für Linux & Netzwerke besitzen."        
+                  ]
+                },
+                {
+                  "duration": "2004 - 2016",
+                  "title": "Industrielle Projekte",
+                  "descriptions": [
+                    "Vorgängerprojekte unseres Teams entwickelten in dieser Zeit verschiedene kundenspezifische Industrie-Projekte und führten diese auf Basis eigener WLAN-Hard &-Software durch.",
+                    "Von Beginn an konnten wir uns durch Technikaffinität an industriellen Sonderlösungen beteiligen. Zahlreiche Projekte ermöglichten uns den Kontakt zu unabhängigen und innovativen Herstellern."
+                  ]
+                },
+                {
+                  "duration": "2016 - 2020",
+                  "title": "Learning by doing",
+                  "descriptions": [
+                    "Ab 2016 fokussierten wir uns maßgeblich auf cloudbasierte Netzwerk-Technologie mit dem Schwerpunkt des Kunden-WLAN. Die zentrale Plattform, um remote Netzwerke zu steuern wurde durch die vorangegangenen Entwicklungen im Bereich Public-WLAN ergänzt: elementare Bestandteile einer ganzheitlichen Lösung für Unternehmensnetzwerke."        
+                  ]
+                },
+                {
+                  "duration": "2023",
+                  "title": "Themenschwerpunkt Sicherheit",
+                  "descriptions": [
+                    "IT-Security, die wenig Aufmerksamkeit durch ihre Anwender:innen benötigt und automatisiert ihren Dienst verrichtet ist einer unserer Leitsätze für das Jahr 2023. Der Schwerpunkt liegt darauf, Kunden & Nutzer:innen des WLANs vor externen Bedrohungen zu schützen. Parallel zu diesem Schutz steht die weitere Vereinfachung der Cloud-Komponente im Fokus. Ziel ist es, dass jedes Unternehmen selbst seine eigene AirZen-Cloud betreiben kann - mit oder ohne Managed Service über uns."        
+                  ]
+                },
+                {
+                  "duration": "2024",
+                  "title": "Fokus Europa",
+                  "descriptions": [
+                    "Aus unserer Sicht gibt es Stand 2022 aus Europa keine State-Of-The-Art Netzwerk-Technologie. Auch sind uns abseits der eigenen Aktivitäten keine gleichwertigen Versuche bekannt. Wir möchten uns dieser Herausforderung stellen und planen den Ausbau unseres Ansatzes, um alle Core-Elemente Moderner Netzwerktechnologie abzubilden."
+                  ]
+                }
+            ]
+        },
+        "roadmaps": {
+            "title": "Roadmap",
+            "items": [
+                {
+                  "year": 22,
+                  "quarter": "Q3",
+                  "title": "Node H6",
+                  "description": "Produktrealease\nMesh WLAN Router\nfür Home(Office) mit\nAirZen OS."
+                },
+            
+                {
+                  "year": 22,
+                  "quarter": "Q4",
+                  "title": "Node M5",
+                  "description": "Produktrealease\nMobile Router\nfür raue Umgebungen mit\n5G, WLAN & 24h Batterie."
+                },
+            
+                {
+                  "year": 23,
+                  "quarter": "Q1",
+                  "title": "Node H5",
+                  "description": "5G Home&Business Router\nfür den Innenbereich"
+                },
+            
+                {
+                  "year": 23,
+                  "quarter": "",
+                  "title": "Mesh VPN",
+                  "description": "Automatische Mobile &\nSecure Netzwerke"
+                },
+            
+                {
+                  "year": 23,
+                  "quarter": "Q2",
+                  "title": "Home App",
+                  "description": "AirZen App Home\nfür Privatkunden."
+                },
+            
+                {
+                  "year": 23,
+                  "quarter": "",
+                  "title": "Node B7",
+                  "description": "WiFi6 Business Router\nmit Pro-Bandbreite."
+                },
+            
+                {
+                  "year": 23,
+                  "quarter": "Q3",
+                  "title": "Private Cloud",
+                  "description": "Public Release\nAirZen OS Private Cloud.\nSelf-Hosted AirZen\nSystem."
+                },
+            
+                {
+                  "year": 23,
+                  "quarter": "Q4",
+                  "title": "AirZen Things",
+                  "description": "Produkt Launch mehrerer\nInternet of Things basierter\nSensoren für Home & Business."
+                }
+            ]
+        }
+    },
+    "whitepaperDownloadForm": {
+        "companynameInput": {
+            "placeholder": "Firmenname (optional)"
+        },
+        "emailInput": {
+            "placeholder": "Ihre-Email"
+        },
+        "firstnameInput": {
+            "placeholder": "Vorname"
+        },
+        "lastnameInput": {
+            "placeholder": "Nachname"
+        },
+        "sendButton": {
+            "title": "PDF erhalten"
+        },
+        "error": {
+            "apiError": "Server Error."
+        }
     }
 }
