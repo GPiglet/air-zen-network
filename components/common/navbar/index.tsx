@@ -45,7 +45,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
 			id: 5,
 			title: 'Technology',
 			href: '/technology',
-            pageType: 'own',
+      pageType: 'own',
 		},
 	]
 

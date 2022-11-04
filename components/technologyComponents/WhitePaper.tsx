@@ -2,8 +2,6 @@ import React, { FC, useState, useRef, useContext } from 'react'
 import { useRouter } from "next/router"
 
 import Button from './Button'
-import WhitePaperForm from '../common/form/WhitePaperForm'
-import { WhitePaperFormContext } from '../../contexts/WhitePaperFormContext'
 
 type props = {
   className?: string,
@@ -18,11 +16,7 @@ const WhitePaper: FC<props> = ({className = ''}) => {
       description: 'Überblick des AirZen Systems in Funktionsweise, Aufbau & Prozessen.',
       download: {
         type: 'page',
-        image: 'wp-cover-solution-overview.png',
-        heading: 'AIRZEN OS',
-        title: 'SOLUTION OVERVIEW',
-        description: 'Management summary',
-        filename: 'https://airzen.io/whitepaper/Solution Overview.pdf'
+        filename: 'solution overview'
       },
       width: 250,
     },
@@ -46,17 +40,15 @@ const WhitePaper: FC<props> = ({className = ''}) => {
     }
   ]
 
-  const whitePaperFormContext = useContext(WhitePaperFormContext);
-
   const onClickDownload = (data: any) => {
     
     if ( data.type == 'file' ) {
       window.open(data.filename, '_blank');
     }
     else {
-      console.log(data)
-      whitePaperFormContext.setWhitePaper(data);
-      whitePaperFormContext.showForm(true);
+      router.push({
+        pathname: 'technology/whitepaper/' + data.filename,
+      })
     }
   }
   return (

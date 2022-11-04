@@ -3,15 +3,16 @@ import path from 'path';
 import { promises as fs } from 'fs';
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-type Data = {
-  name: string
-}
-
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<any>
 ) {
-  const filePath = path.join(process.cwd(), 'public/whitepapers/en', req.query.filename + '.json');
-  const fileContents = await fs.readFile(filePath, 'utf8');
-  res.status(200).json({ name: fileContents })
+  try {
+    const filePath = path.join(process.cwd(), 'public/whitepapers/en', req.query.filename + '.json');
+    const fileContents = await fs.readFile(filePath, 'utf8');
+    res.status(200).json(JSON.parse(fileContents));
+  }
+  catch(e) {
+    res.status(404).end();
+  }
 }
