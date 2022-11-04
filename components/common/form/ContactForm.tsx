@@ -159,7 +159,7 @@ const ContactForm :FC<ContactFormProps> = () => {
           <div className='relative ml-10 font-lato font-base'>
             { (!validDSGVOCollection || !validDSGVOProtection) ? 'Please check DSGVO.' : ''}
           </div>
-          <SendButton title={t('landing.contact.send')} disabled={buttonDisabled} onClick={()=>onClickSend()} />
+          <SendButton title={t('landing.contact.send')} disabled={buttonDisabled} onClick={()=>onClickSend()} className='flex items-center justify-center text-lgx text-white button-gradient border-primary py-2 px-4 w-[120px] h-[42px] rounded-md border relative z-10'/>
       </div>
       <div className='flex ml-10'>
         {t('landing.contact.DSGVOLabel')}
