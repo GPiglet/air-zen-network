@@ -46,7 +46,7 @@ const OurNodes: FC<props> = ({className = ''}) => {
                   nodes.map(
                     (node: any, index2: number) =>
                     <NodeItem key={index2} className={`${index1==0 ? '' : 'md:flex-row-reverse'}`} item={node}>
-                      <img src={node.image} className={node.imageClass} />
+                      <img src={node.image} className='relative max-w-fit md:max-w-full h-fit' style={{width: node.imageWidth}}/>
                     </NodeItem>
                   )
                 }

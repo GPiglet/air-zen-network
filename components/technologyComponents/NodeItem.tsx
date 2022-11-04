@@ -10,8 +10,8 @@ type props = {
 const NodeItem: FC<props> = ({className = '', item, children}) => {
     return (
       <div className={`relative flex gap-10 md:gap-4 text-white ${className} justify-center`}>
-        <div className={`flex justify-end md:justify-center ${Array.isArray(item?.itemClasses) && item.itemClasses[0]}`} >{children}</div>
-        <div className={`relative top-[-4px] ${Array.isArray(item?.itemClasses) && item.itemClasses[1]}`}>
+        <div className='flex justify-end md:justify-center w-[120px] xl:w-[260px]' >{children}</div>
+        <div className='relative top-[-4px] w-[220px] xl:w-[280px]'>
           <p className='font-lato-light uppercase text-[14px]'>{item?.solution}</p>
           <p className='text-lg mb-6 uppercase'>{item?.title}</p>
           <p className='text-lg font-light mb-6'>{item?.description}</p>
@@ -25,7 +25,7 @@ const NodeItem: FC<props> = ({className = '', item, children}) => {
               )
             }
           </ul>
-          <p className='mt-10'>{item.download ? <DownloadButton title="Datenblatt" item={item.download}/> : <div className='px-8 py-3'>&nbsp;</div>}</p>
+          <div className='mt-10'>{item.download ? <DownloadButton title="Datenblatt" item={item.download}/> : <div className='px-8 py-3'>&nbsp;</div>}</div>
         </div>
       </div>      
     )

@@ -801,8 +801,7 @@
                       "2x GBit-Ethernet",
                       "AirZenOS, Mesh & Roaming"
                     ],
-                    "imageClass": "relative w-[175px] max-w-fit md:max-w-full h-fit",
-                    "itemClasses": ["w-[120px] xl:w-[260px]", "w-[220px] xl:w-[280px]"]                        
+                    "imageWidth": "175px"
                   },
               
                   {
@@ -816,8 +815,7 @@
                       "Power over Ethernet",
                       "AirZenOS, Mesh & Roaming"
                     ],
-                    "imageClass": "relative w-[230px] max-w-fit md:max-w-full h-fit",
-                    "itemClasses": ["w-[120px] xl:w-[260px]", "w-[220px] xl:w-[280px]"]
+                    "imageWidth": "230px"
                   }
                 ],
             
@@ -833,8 +831,7 @@
                       "Power over Ethernet",
                       "AirZenOS, Mesh & Roaming"
                     ],
-                    "imageClass": "w-[230px] max-w-fit md:max-w-full h-fit",
-                    "itemClasses": ["w-[120px] xl:w-auto", "w-[220px] xl:w-[280px]"]
+                    "imageWidth": "230px"
                   },    
               
                   {
@@ -849,8 +846,7 @@
                       "Wetterfest & Shock-Resistent",
                       "AirZenOS, Mesh & Roaming"
                     ],
-                    "imageClass": "w-[230px] max-w-fit md:max-w-full h-fit",
-                    "itemClasses": ["w-[120px] xl:w-auto", "w-[220px] xl:w-[280px]"],
+                    "imageWidth": "230px",
                     "download": {
                         "type": "page",
                         "filename": "solution overview"
