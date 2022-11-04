@@ -21,6 +21,7 @@ const Technology: NextPage = () => {
   return (
     <OwnLayout hasFooter={true} className='relative flex flex-col justify-center m-auto gap-20 md:gap-40'>
         <div className='z-0 absolute top-0 w-full h-[600px] overflow-hidden'>
+            {/* top background */}
             <svg className='absolute bottom-[-10%] left-1/2 translate-x-[-50%] w-[990px]' viewBox="0 0 994 985" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.4" d="M615.476 863.499C824.278 796.749 940.401 576.393 874.843 371.319C809.285 166.245 586.872 54.1116 378.07 120.861C169.268 187.611 53.1451 407.968 118.703 613.041C184.261 818.115 406.674 930.249 615.476 863.499Z" fill="url(#paint0_radial_5689_2335)"/>
                 <path opacity="0.5" d="M586.48 770.269C743.242 720.156 830.423 554.72 781.204 400.757C731.986 246.795 565.006 162.609 408.244 212.723C251.483 262.836 164.302 428.272 213.52 582.234C262.739 736.196 429.719 820.382 586.48 770.269Z" fill="url(#paint1_radial_5689_2335)"/>
@@ -41,13 +42,11 @@ const Technology: NextPage = () => {
                 </defs>
             </svg>
         </div>
-
         {/* Headline */}
         <div className='z-10 text-center text-white pt-[120px] md:pt-[200px]'>
-        <p className="font-lato font-light tracking-widest text-xl mb-3">Software Defined Networking</p>
-        <h1 className="text-title-sm">the <b>Airzen</b> Plattform</h1>
+            <p className="font-lato font-light tracking-widest text-xl mb-3">Software Defined Networking</p>
+            <h1 className="text-title-sm">the <b>Airzen</b> Plattform</h1>
         </div>
-
         {/* Intro */}
         <Intro>
         <div className='flex flex-col xl:flex-row xl:gap-20 justify-center'>
@@ -64,16 +63,12 @@ const Technology: NextPage = () => {
             </div>
         </div>
         </Intro>
-
         {/* WhitePaper */}
         <WhitePaper className='my-10'/>
-
         {/* Our Nodes */}
         <OurNodes className='my-10'/>
-
         {/* history */}
         <CompanyHistory/>
-
         {/* roadmap */}
         <RoadMap/>     
     </OwnLayout>     

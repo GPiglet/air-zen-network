@@ -156,12 +156,12 @@ const WhitePaper: NextPage = (props:any) => {
                 {/* <CloseIcon color="#fff" className='absolute right-4 top-8 md:right-10 md:top-10 cursor-pointer' onClick={() => router.back()} /> */}
                 <div className='flex flex-col md:flex-row gap-8 md:gap-20'>
                     <div className='w-[80%] md:w-1/3 h-fit'>
-                    <img src={`/images/${whitepaper?.image}`} className='shadow shadow-white'/>
+                        <img src={`/images/${whitepaper?.image}`} className='shadow shadow-white'/>
                     </div>
                     <div>
-                    <p className='font-bold text-[20px] md:text-[30px]'>{whitepaper?.heading}</p>
-                    <p className='text-[20px] md:text-[30px] mb-4 md:mb-8'>{whitepaper?.title}</p>
-                    <p>{whitepaper?.description}</p>
+                        <p className='font-bold text-[20px] md:text-[30px]'>{whitepaper?.heading}</p>
+                        <p className='text-[20px] md:text-[30px] mb-4 md:mb-8'>{whitepaper?.title}</p>
+                        <p>{whitepaper?.description}</p>
                     </div>
                 </div>
                 <div>
