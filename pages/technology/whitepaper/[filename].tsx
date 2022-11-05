@@ -155,7 +155,7 @@ const WhitePaper: NextPage = (props:any) => {
             <div className='relative flex gap-8 md:gap-10 flex-col max-w-[1220px] w-full p-8 md:px-16 md:py-10 text-white'>
                 {/* <CloseIcon color="#fff" className='absolute right-4 top-8 md:right-10 md:top-10 cursor-pointer' onClick={() => router.back()} /> */}
                 <div className='flex flex-col md:flex-row gap-8 md:gap-20'>
-                    <div className='w-[80%] md:w-1/3 h-fit'>
+                    <div className='w-[80%] md:w-1/3'>
                         <img src={`/images/${whitepaper?.image}`} className='shadow shadow-white'/>
                     </div>
                     <div>

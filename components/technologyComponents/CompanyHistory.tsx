@@ -41,7 +41,7 @@ const CompanyHistory: FC<props> = ({className = ''}) => {
   return (
     <div className={`relative text-white ${className}`}>
       <p className='text-center text-2xl mb-10 uppercase'>{t('technology.histories.title')}</p>
-      <div className='w-full h-fit overflow-hidden ml-[10%] md:ml-0'>
+      <div className='w-full overflow-hidden ml-[10%] md:ml-0'>
         <div className='z-50 history-nav-back nav-next absolute right-0 w-[300px] h-full'>
           <img src="/images/sparkle-arrow.svg" alt='Next' className='w-[47px] h-[93px] top-[52%] cursor-pointer absolute right-[20px] md:right-[47px] md:top-1/2 center-y-transform z-50' onClick={()=>{gotoHistory('next')}}/>
         </div>

@@ -9,7 +9,7 @@ type props = {
 
 const NodeItem: FC<props> = ({className = '', item, children}) => {
     return (
-      <div className={`relative flex gap-10 md:gap-4 text-white ${className} justify-center`}>
+      <div className={`relative flex gap-10 md:gap-4 text-white ${className} justify-center items-start`}>
         <div className='flex justify-end md:justify-center w-[120px] xl:w-[260px]' >{children}</div>
         <div className='relative top-[-4px] w-[220px] xl:w-[280px]'>
           <p className='font-lato-light uppercase text-[14px]'>{item?.solution}</p>
