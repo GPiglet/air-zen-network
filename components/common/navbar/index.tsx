@@ -37,11 +37,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
 			href: 'contact'
 		},
 
-        {
-            id: 0,
-        },
-
-        {
+    {
 			id: 5,
 			title: 'Technology',
 			href: '/technology',
