@@ -52,6 +52,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
   const [navbarOpen, setNavbarOpen] = React.useState(false)
   const [scrolldown, setScrollDown] = useState(false)
   const [section, setSection] = useState<any>('')
+  const refNavContainer = React.useRef<any>(null)
 
   const router = useRouter()
 
@@ -69,10 +70,20 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
   const handleNavigation = useCallback(
     (e: any) => {
       const window = e.currentTarget
-      if (y > window.scrollY && window.innerWidth < 920) { // && (window.innerWidth < 920 || main === false)
-        setScrollDown(false)
-      } else if (y < window.scrollY && window.innerWidth < 920) {  //  && (window.innerWidth < 920 || main === false)
-        setScrollDown(true)
+      if ( y > window.scrollY ) { // && (window.innerWidth < 920 || main === false) 
+        if ( window.innerWidth < 920 ) {
+          setScrollDown(false)
+        }
+        else {
+          gsap.to(refNavContainer.current, {opacity: 1, display: 'block'});
+        }
+      } else if (y < window.scrollY ) {  //  && (window.innerWidth < 920 || main === false) 
+        if ( window.innerWidth < 920 ) {
+          setScrollDown(true)
+        }
+        else {
+          gsap.to(refNavContainer.current, {opacity: 0, display: 'none'})
+        }
       }
       setY(window.scrollY);
     }, [y]
@@ -113,7 +124,7 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
 
   return (
 
-    <nav className={`${y > 0 && scrolldown ? 'hidden' : 'block'}  md:top-[40px] lg:top-[62px] md:py-5 pb-10 md:pb-0 bg-gradient-to-b from-black md:from-transparent to-transparent fixed w-full items-center z-[70]`}>
+    <nav ref={refNavContainer} className={`${y > 0 && scrolldown ? 'hidden' : 'block'} md:top-[40px] lg:top-[62px] md:py-5 pb-10 md:pb-0 bg-gradient-to-b from-black md:from-transparent to-transparent fixed w-full items-center z-[70]`}>
       <div className="container px-4 mx-auto flex flex-wrap relative items-center justify-between">
         <div className="w-full relative flex justify-between md:w-auto md:static md:block md:justify-start md:w-1/4  px-5 pt-5 md:px-0 md:pt-0">
           <div className=" cursor-pointer" onClick={() => router.push('/landing')}>
