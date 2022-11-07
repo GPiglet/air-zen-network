@@ -117,6 +117,9 @@ const OwnLayout: FC<props> = ({ children, navItems, hasFooter = true, useSmoothe
 				smooth: 2,
 				effects: true
 			});
+			return () => {
+				smoother.kill();
+			}
 		}
     }, [])
 

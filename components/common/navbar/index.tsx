@@ -21,16 +21,19 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
 			title: t('landing.menu').split('\n')[0],
 			href: 'solutions'
 		},
-        {
-			id: 2,
+
+    {
+      id: 2,
+      title: t('landing.menu').split('\n')[2],
+      href: 'credentials'
+    },
+
+    {
+			id: 3,
 			title: t('landing.menu').split('\n')[1],
 			href: 'aboutus'
 		},
-        {
-            id: 3,
-            title: t('landing.menu').split('\n')[2],
-            href: 'credentials'
-        },
+
 		{
 			id: 4,
 			title: t('landing.menu').split('\n')[3],
