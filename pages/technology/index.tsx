@@ -20,8 +20,9 @@ import OwnLayout from '../../layout/own';
 const Technology: NextPage = () => {
     const { t } = useTranslation();
     const router = useRouter()
+    
     return (
-        <OwnLayout hasFooter={true} className='relative flex flex-col justify-center m-auto gap-20 md:gap-40'>
+        <OwnLayout hasFooter={true} useSmoother={true} className='relative flex flex-col justify-center m-auto gap-20 md:gap-40'>
             <div className='z-0 absolute top-0 w-full h-[600px] overflow-hidden'>
                 {/* top background */}
                 <svg className='absolute bottom-[-10%] left-1/2 translate-x-[-50%] w-[990px]' viewBox="0 0 994 985" fill="none" xmlns="http://www.w3.org/2000/svg">

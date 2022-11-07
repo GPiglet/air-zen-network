@@ -1,9 +1,10 @@
 //import modules
 import React, { FC, ReactNode, useContext, useEffect, useState } from 'react';
 
-import gsap from "gsap";
+import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
+import ScrollSmoother from 'gsap/dist/ScrollSmoother';
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 //import components
 import Navbar from '../../components/common/navbar'
@@ -16,10 +17,11 @@ type props = {
     children: ReactNode,
     navItems?: Array<any>,
     hasFooter?: boolean,
+	useSmoother?: boolean,
     className?: string,
 };
 
-const OwnLayout: FC<props> = ({ children, navItems, hasFooter = true, className }) => {   
+const OwnLayout: FC<props> = ({ children, navItems, hasFooter = true, useSmoother=false, className }) => {   
     const [cookie, setCookie] = useState(true)
     useEffect(() => {
         const cookie = getStorage('cookieAllow')
@@ -107,13 +109,26 @@ const OwnLayout: FC<props> = ({ children, navItems, hasFooter = true, className 
         document.body.style.overflowY = 'auto'
     }, [])
 
+	useEffect( () => {
+		if ( useSmoother ) {
+			const smoother = ScrollSmoother.create({
+				wrapper: "#smoother-wrapper",
+				content: "#smoother-content",
+				smooth: 2,
+				effects: true
+			});
+		}
+    }, [])
+
     return (
         <>
             <Navbar navItems={navItems} />
-            <div ref={containerRef} className={`container ${className}`}>
-                {!cookie && <Sticky />}
-                {children}
-                {hasFooter && <Footer />}
+            <div ref={containerRef} id="smoother-wrapper">
+				<div id="smoother-content" className={`container ${className}`}>
+					{!cookie && <Sticky />}
+					{children}
+					{hasFooter && <Footer />}
+				</div>
             </div>
         </>
     );
