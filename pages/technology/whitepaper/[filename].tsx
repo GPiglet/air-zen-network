@@ -9,12 +9,12 @@ import path from 'path';
 import { promises as fs } from 'fs';
 
 import OwnLayout from '../../../layout/own';
-import CloseIcon from '../../../components/common/widgets/icons/CloseIcon';
 import CustomInput from '../../../components/common/widgets/input';
 import CustomCheckbox from '../../../components/common/widgets/checkbox';
 import FriendlyCaptcha from '../../../components/common/FriendlyCaptcha';
 import ContactApi from '../../../services/contact.service';
 import SendButton from '../../../components/common/widgets/button/SendButton';
+import { setStorage, getStorage } from '../../../services/storage.service';
 
 const WhitePaper: NextPage = (props:any) => {
     const { t } = useTranslation();
@@ -112,6 +112,14 @@ const WhitePaper: NextPage = (props:any) => {
             return;
         }
 
+        //set cookie
+        setStorage('whitepaper_contact', {
+            compannyname,
+            firstname,
+            lastname,
+            emailAddress
+        });
+
         setButtonDisabled(true);
 
         ContactApi.create(
@@ -149,6 +157,22 @@ const WhitePaper: NextPage = (props:any) => {
             setAutoSend(false);
         }
     }, [captchaSolution])
+
+    useEffect(() => {
+        const contactCookie = getStorage('whitepaper_contact');
+        if ( contactCookie ) {
+            try {
+                const contact = JSON.parse(contactCookie);
+                setCompanyname(contact.compannyname);
+                setFirstname(contact.firstname);
+                setLastname(contact.lastname);
+                setEmailAddress(contact.emailAddress);
+            }
+            catch(e) {
+
+            }
+        }
+    }, [])
 
     return (
         <OwnLayout hasFooter={true} className='relative flex flex-col items-center mx-auto pt-[6rem] md:pt-[12rem]'>
