@@ -1,10 +1,10 @@
 //import modules
 import React, { FC, ReactNode, useContext, useEffect, useState } from 'react';
 
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import ScrollSmoother from 'gsap/dist/ScrollSmoother';
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+// import gsap from 'gsap';
+// import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+// import ScrollSmoother from 'gsap/dist/ScrollSmoother';
+// gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 //import components
 import Navbar from '../../components/common/navbar'
@@ -110,17 +110,17 @@ const OwnLayout: FC<props> = ({ children, navItems, hasFooter = true, useSmoothe
     }, [])
 
 	useEffect( () => {
-		if ( useSmoother ) {
-			const smoother = ScrollSmoother.create({
-				wrapper: "#smoother-wrapper",
-				content: "#smoother-content",
-				smooth: 2,
-				effects: true
-			});
-			return () => {
-				smoother.kill();
-			}
-		}
+		// if ( useSmoother ) {
+		// 	const smoother = ScrollSmoother.create({
+		// 		wrapper: "#smoother-wrapper",
+		// 		content: "#smoother-content",
+		// 		smooth: 2,
+		// 		effects: true
+		// 	});
+		// 	return () => {
+		// 		smoother.kill();
+		// 	}
+		// }
     }, [])
 
     return (
