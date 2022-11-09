@@ -13,6 +13,7 @@
     "yarn": "1.x"
   },
   "dependencies": {
+    "@gsap/shockingly": "3.11.3",
     "@kunukn/react-collapse": "^2.2.9",
     "@popperjs/core": "^2.11.5",
     "axios": "^1.1.2",

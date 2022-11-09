@@ -86,6 +86,11 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@gsap/shockingly@3.11.3", "gsap@npm:@gsap/shockingly":
+  version "3.11.3"
+  resolved "https://npm.greensock.com/@gsap%2fshockingly/-/shockingly-3.11.3.tgz#cec37a334533a943b667d63e75e23f30950c4911"
+  integrity sha512-YG1xjWe8HP6IDA2UT98xcsEVLt+6vJB2joyiYbc1RJLvXHeft/FYqlUKM0uRMOBpK1GSn2Ziq2JCaJwyrDZQVg==
+
 "@heroku-cli/color@^1.0.4", "@heroku-cli/color@^1.1.1", "@heroku-cli/color@^1.1.14", "@heroku-cli/color@^1.1.3", "@heroku-cli/color@^1.1.5":
   version "1.1.14"
   resolved "https://registry.npmjs.org/@heroku-cli/color/-/color-1.1.14.tgz"
@@ -2406,11 +2411,6 @@ growly@^1.3.0:
   version "1.3.0"
   resolved "https://registry.npmjs.org/growly/-/growly-1.3.0.tgz"
   integrity sha512-+xGQY0YyAWCnqy7Cd++hc2JqMYzlm0dG30Jd0beaA64sROr8C4nt8Yc9V5Ro3avlSUDTN0ulqP/VBKi1/lLygw==
-
-"gsap@npm:@gsap/shockingly":
-  version "3.11.3"
-  resolved "https://npm.greensock.com/@gsap%2fshockingly/-/shockingly-3.11.3.tgz#cec37a334533a943b667d63e75e23f30950c4911"
-  integrity sha512-YG1xjWe8HP6IDA2UT98xcsEVLt+6vJB2joyiYbc1RJLvXHeft/FYqlUKM0uRMOBpK1GSn2Ziq2JCaJwyrDZQVg==
 
 has-ansi@^2.0.0:
   version "2.0.0"
