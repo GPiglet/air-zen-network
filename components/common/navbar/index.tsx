@@ -10,10 +10,11 @@ import LocaleSwitcher from '../../common/localeSwitcher'
 
 type NaveProps = {
   navItems?: Array<any>,
+  isHideItems?: boolean
 }
 
 
-const Navbar: FC<NaveProps> = ({ navItems }) => {
+const Navbar: FC<NaveProps> = ({ navItems, isHideItems }) => {
   const { t } = useTranslation()
   const defaultNavItems: Array<any> = [
 		{
@@ -73,20 +74,10 @@ const Navbar: FC<NaveProps> = ({ navItems }) => {
   const handleNavigation = useCallback(
     (e: any) => {
       const window = e.currentTarget
-      if ( y > window.scrollY ) { // && (window.innerWidth < 920 || main === false) 
-        if ( window.innerWidth < 920 ) {
-          setScrollDown(false)
-        }
-        else {
-          gsap.to(refNavContainer.current, {opacity: 1, display: 'block'});
-        }
-      } else if (y < window.scrollY ) {  //  && (window.innerWidth < 920 || main === false) 
-        if ( window.innerWidth < 920 ) {
-          setScrollDown(true)
-        }
-        else {
-          gsap.to(refNavContainer.current, {opacity: 0, display: 'none'})
-        }
+      if ( y > window.scrollY && (window.innerWidth < 920 || isHideItems == true) ) { // && (window.innerWidth < 920 || main === false) 
+        setScrollDown(false)
+      } else if (y < window.scrollY && (window.innerWidth < 920 || isHideItems == true) ) {  //  && (window.innerWidth < 920 || main === false) 
+        setScrollDown(true)
       }
       setY(window.scrollY);
     }, [y]
