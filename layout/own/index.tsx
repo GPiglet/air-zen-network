@@ -4,7 +4,6 @@ import React, { FC, ReactNode, useContext, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import ScrollSmoother from 'gsap/dist/ScrollSmoother';
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 //import components
 import Navbar from '../../components/common/navbar'
@@ -111,10 +110,11 @@ const OwnLayout: FC<props> = ({ children, navItems, hasFooter = true, useSmoothe
 
 	useEffect( () => {
 		if ( useSmoother ) {
+			gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 			const smoother = ScrollSmoother.create({
 				wrapper: "#smoother-wrapper",
 				content: "#smoother-content",
-				smooth: 2,
+				smooth: 3,
 				effects: true
 			});
 			return () => {
@@ -125,7 +125,7 @@ const OwnLayout: FC<props> = ({ children, navItems, hasFooter = true, useSmoothe
 
     return (
         <>
-            <Navbar navItems={navItems} />
+            <Navbar navItems={navItems} isHideItems={true}/>
             <div ref={containerRef} id="smoother-wrapper">
 				<div id="smoother-content" className={`container ${className}`}>
 					{!cookie && <Sticky />}
