@@ -13,7 +13,7 @@ const WhitePaperPage: NextPage = (props:any) => {
     const whitepaper = props.whitepaper;
 
     return (
-        <OwnLayout hasFooter={true} className='relative flex flex-col items-center mx-auto pt-[6rem] md:pt-[12rem]'>
+        <OwnLayout hasFooter={true} className="relative flex flex-col items-center mx-auto pt-[6rem] md:pt-[12rem] bg-[url('/images/download-form-back.png')] bg-no-repeat bg-cover bg-top bg-fixed">
             <WhitePaper item={whitepaper} />
         </OwnLayout>
     )
