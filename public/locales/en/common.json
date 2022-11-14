@@ -115,7 +115,7 @@
             "successMessage": "Sent successfully.",
             "emailPlaceholder": "example@email.com",
             "subtitle": "High-end network technologies for a relaxed life and work environment. Amazingly simple, safe and reliable.",
-            "href": "https:\/\/airzen.io\/files\/230922_airzen_dataprotection_de.pdf",
+            "href": "/files/230922_airzen_dataprotection_de.pdf",
             "description": "I have read the \nprivacy policy\n and consent to the collection and processing of my personal data by AirZen. \n I consent to the collection and storage of my personal data for the purpose of responding to my enquiry. I can revoke my consent at any time: privacy@airzen.io ",
             "descPlaceholder": "Your message",
             "failedMessage": "Unable to send it right now. Please try again later.",
@@ -395,18 +395,30 @@
                     "tip": "White paper",
                     "title": "Business Wi-Fi",
                     "description": "Simple & secure network management solutions and innovative remote maintenance made in Europe.",
+                    "download": {
+                        "type": "page",
+                        "filename": "solution overview"
+                    },
                     "button": "Download PDF"
                 },
                 {
                     "tip": "White paper",
                     "title": "Work from Home",
                     "description": "Secure separation of professional and private networks. AirZen provides a secure and easily managed network for your remote office.",
+                    "download": {
+                        "type": "file",
+                        "filename": "/whitepaper/Technology Details.pdf"
+                    },
                     "button": "Download PDF"
                 },
                 {
                     "tip": "White paper",
                     "title": "Public Wi-Fi",
                     "description": "A smart guest WLAN that leaves a perfect impression—safe and worry-free.",
+                    "download": {
+                        "type": "file",
+                        "filename": "/whitepaper/Technology Details.pdf"
+                    },
                     "button": "Download PDF"
                 }
             ]
@@ -766,7 +778,7 @@
                     "description": "Technisch versierte Dokumentation der AirZen OS Software.",
                     "download": {
                         "type": "file",
-                        "filename": "https://airzen.io/whitepaper/Technology Details.pdf"
+                        "filename": "/whitepaper/Technology Details.pdf"
                     },
                     "width": 250
                 },
@@ -775,7 +787,7 @@
                     "description": "Leistungsverzeichnis aller Services & Produkte.",
                     "download": {
                         "type": "file",
-                        "filename": "https://airzen.io/whitepaper/Leistungen.pdf"
+                        "filename": "/whitepaper/Leistungen.pdf"
                     },
                     "width": 225
                 }
@@ -786,7 +798,7 @@
             "buttonTitle": "Datenblatt FÜR UNSERE NODES",
             "download": {
                 "type": "file",
-                "filename": "https://airzen.io/whitepaper/Leistungen.pdf"
+                "filename": "/whitepaper/Leistungen.pdf"
             },
             "items": [
                 [

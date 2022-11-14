@@ -115,7 +115,7 @@
             "successMessage": "Erfolgreich gesendet.",
             "emailPlaceholder": "example@email.com",
             "subtitle": "Highend-Netzwerk-Technologien für einen entspannteren Alltag und Arbeitswelt. Und das außergewöhnlich einfach, sicher und zuverlässig.",
-            "href": "https://airzen.io/files/230922_airzen_dataprotection_de.pdf",
+            "href": "/files/230922_airzen_dataprotection_de.pdf",
             "description": "Ich habe die \nDatenschutzerklärung\n gelesen und stimme der Speicherung und Verarbeitung meiner Daten durch AirZen zu. \n Ich willige ein, dass meine Daten zur Beantwortung meiner Anfrage elektronisch erhoben und gespeichert werden. Ich kann meine Einwilligung jederzeit widerrufen: privacy@airzen.io ",
             "descPlaceholder": "Ihre Nachricht",
             "failedMessage": "Konnte jetzt nicht senden. Bitte versuchen Sie es später erneut.",
@@ -395,18 +395,30 @@
                     "tip": "Whitepaper",
                     "title": "Business WiFi",
                     "description": "Einfache & sichere europäische Netzwerk-Management-Lösungen inkl. innovativer Fernwartung.",
+                    "download": {
+                        "type": "page",
+                        "filename": "solution overview"
+                    },
                     "button": "PDF herunterladen"
                 },
                 {
                     "tip": "Whitepaper",
                     "title": "Homeoffice",
                     "description": "Sichere Trennung von beruflichem und privatem Netz. AirZen bietet ein sicher & einfach verwaltbares Netzwerk für Ihr Homeoffice.",
+                    "download": {
+                        "type": "file",
+                        "filename": "/whitepaper/Technology Details.pdf"
+                    },
                     "button": "PDF herunterladen"
                 },
                 {
                     "tip": "Whitepaper",
                     "title": "Public Wifi",
                     "description": "Smartes Gäste-WLAN, das einen idealen Eindruck hinterlässt, sicher & frei von Rechtssorgen.",
+                    "download": {
+                        "type": "file",
+                        "filename": "/whitepaper/Technology Details.pdf"
+                    },
                     "button": "PDF herunterladen"
                 }
             ]
@@ -766,7 +778,7 @@
                     "description": "Technisch versierte Dokumentation der AirZen OS Software.",
                     "download": {
                         "type": "file",
-                        "filename": "https://airzen.io/whitepaper/Technology Details.pdf"
+                        "filename": "/whitepaper/Technology Details.pdf"
                     },
                     "width": 250
                 },
@@ -775,7 +787,7 @@
                     "description": "Leistungsverzeichnis aller Services & Produkte.",
                     "download": {
                         "type": "file",
-                        "filename": "https://airzen.io/whitepaper/Leistungen.pdf"
+                        "filename": "/whitepaper/Leistungen.pdf"
                     },
                     "width": 225
                 }
@@ -786,7 +798,7 @@
             "buttonTitle": "Datenblatt FÜR UNSERE NODES",
             "download": {
                 "type": "file",
-                "filename": "https://airzen.io/whitepaper/Leistungen.pdf"
+                "filename": "/whitepaper/Leistungen.pdf"
             },
             "items": [
                 [

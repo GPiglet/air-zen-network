@@ -1,10 +1,13 @@
 import React, { FC } from 'react'
 import { useTranslation } from 'next-i18next'
 import gsap from 'gsap';
+import { useRouter } from 'next/router';
 
 const WhitePaper: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, ref: any) => {
     //translate
     const { t } = useTranslation()
+    const router = useRouter();
+
     const paperList = t('business.whitepaper.paperList', { returnObjects: true })
     const graphList = [
         <img key={0} src="/images/whitepaper-back1.svg" className='absolute left-[50%] translate-x-[-50%] max-w-[120%] top-[-90px] md:left-[-65px] md:translate-x-0'/>,
@@ -44,6 +47,18 @@ const WhitePaper: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, 
         else if (direction == 'UP' && !shown ) prevAnimation.current = getShowTimeline().reverse(0);
     }
 
+    const onClickDownload = (data: any) => {
+        if ( data?.type == 'file' ) {
+            window.open(data?.filename, '_blank');
+        }
+        else if ( data?.type == 'page' ) {
+            window.open('business/whitepaper/' + data?.filename, '_blank');
+            // router.push({
+            //   pathname: 'business/whitepaper/' + data?.filename,
+            // })
+        }
+    }
+
     return (
         <div id='whitepaper' ref={(el)=>{containerRef.current=el; if (ref) ref.current = {container: el, startAnim}}} className='container text-white items-center m-auto pt-[100px] md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] 4xl:pt-0'>
             <div className='w-full text-center '>
@@ -61,7 +76,7 @@ const WhitePaper: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, 
                                     {graphList[index]}
                                 </div>
                                 <div className='relative z-10 text-center md:text-left'>
-                                    <button className='absolute left-[50%] translate-x-[-50%] w-[80%] mt-72 bg-white rounded-full text-black p-3 uppercase font-lato md:mt-72 md:left-0 md:translate-x-0 xl:mt-80'>{item.button}</button>
+                                    <button onClick={()=>onClickDownload(item.download)} className='absolute left-[50%] translate-x-[-50%] w-[80%] mt-72 bg-white rounded-full text-black p-3 uppercase font-lato md:mt-72 md:left-0 md:translate-x-0 xl:mt-80'>{item.button}</button>
                                     <p className="font-lato-light font-light text-lg tracking-widest">{item.tip}</p>
                                     <h1 className="text-title-sm-white mt-4">
                                         {item.title}

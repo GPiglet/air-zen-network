@@ -18,9 +18,10 @@ type props = {
     hasFooter?: boolean,
 	useSmoother?: boolean,
     className?: string,
+	wrapperClassName?: string,
 };
 
-const OwnLayout: FC<props> = ({ children, navItems, hasFooter = true, useSmoother=false, className }) => {   
+const OwnLayout: FC<props> = ({ children, navItems, hasFooter = true, useSmoother=false, className, wrapperClassName }) => {   
     const [cookie, setCookie] = useState(true)
     useEffect(() => {
         const cookie = getStorage('cookieAllow')
@@ -126,7 +127,7 @@ const OwnLayout: FC<props> = ({ children, navItems, hasFooter = true, useSmoothe
     return (
         <>
             <Navbar navItems={navItems} isHideItems={true}/>
-            <div ref={containerRef} id="smoother-wrapper">
+            <div ref={containerRef} id="smoother-wrapper" className={wrapperClassName}>
 				<div id="smoother-content" className={`container ${className}`}>
 					{!cookie && <Sticky />}
 					{children}

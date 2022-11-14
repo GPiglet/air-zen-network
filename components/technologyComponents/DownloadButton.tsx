@@ -20,9 +20,10 @@ const DownloadButton: FC<props> = ({className = '', title='', item, onClick}) =>
       window.open(data?.filename, '_blank');
     }
     else if ( data?.type == 'page' ) {
-      router.push({
-        pathname: 'technology/whitepaper/' + data?.filename,
-      })
+      window.open('technology/whitepaper/' + data?.filename, '_blank');
+      // router.push({
+      //   pathname: 'technology/whitepaper/' + data?.filename,
+      // })
     }
   }
 
