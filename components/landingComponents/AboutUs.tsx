@@ -214,7 +214,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
     const prevAnimation = React.useRef<any>(null);
     const startAnim = (direction: string, shown: boolean) => {
         if (prevAnimation.current) prevAnimation.current.kill();
-        gsap.set([containerRef.current, animCircle.current], { display: 'flex' });
+        gsap.set([containerRef.current, animCircle.current], { display: 'block' });
         if (direction == 'DOWN' && shown) prevAnimation.current = getShowTimeline().play(0);
         else if (direction == 'DOWN' && !shown) prevAnimation.current = getHideTimeline().play(0);
         else if (direction == 'UP' && shown) prevAnimation.current = getHideTimeline().reverse(0);
@@ -224,8 +224,9 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
 
     return (
         <>
-            <section id='aboutus' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='z-10 container m-auto relative items-center md:py-20 md:fixed md:hidden md:h-screen md:left-[50%] md:translate-x-[-50%] md:flex'>
-                <div className='z-50 w-full'>
+            <section id='aboutus' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className='z-10 container m-auto relative items-center md:py-20 md:fixed md:hidden md:w-full md:h-screen md:left-[50%] md:translate-x-[-50%]'>
+                <div className='flex items-center h-full w-full'>
+                    <div className='z-50 w-full'>
                         <div className="text-center">
                             <h1 ref={el => { if (el && animSideUp.current.indexOf(el) == -1) animSideUp.current.push(el) }} className="relative z-40 text-title-sm md:mt-0 md:top-0 4xl:top-[-40px]">{t('landing.aboutus.title')} </h1>
                         </div>
@@ -251,7 +252,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                                     }
 
                                 </Flickity>
-                                <AZCarousel className="hidden md:block carousel-nav pl-[55px] md:h-[70%] mt-[80px]" onInit={onInitCarousel} onSelect={onSelectCarousel} onShow={onShowCarousel} onHide={onHideCarousel} onCalcHeight={onCalcHeight}>
+                                <AZCarousel className="hidden md:block carousel-nav pl-[55px] md:h-[70%] mt-[80px]" onInit={onInitCarousel} onSelect={onSelectCarousel} onShow={onShowCarousel} onHide={onHideCarousel} >
                                     {
                                         (sliderList as unknown as any[]).map((item, ind) => (
                                             <div className='w-[80%] md:w-full mr-12' key={ind}>
@@ -308,6 +309,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                             </div>
 
                         </div>
+                    </div>
                 </div>
             </section>
             <div ref={el => { if (el && animGradient.current.indexOf(el) == -1) animGradient.current.push(el) }} className='z-0 md:container hidden md:block fixed top-0 md:top-[50%] md:translate-y-[-50%] left-1/2 translate-x-[-50%] w-full h-full max-h-[1080px]'></div>

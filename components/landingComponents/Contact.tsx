@@ -79,7 +79,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
     const prevAnimation = React.useRef<any>(null);
     const startAnim = (direction: string, shown: boolean) => {
         if (prevAnimation.current) prevAnimation.current.kill();
-        gsap.set([containerRef.current, backGradientRef.current], { display: 'block', y: 0 });
+        gsap.set([containerRef.current, backGradientRef.current], { display: 'block'});
         if (direction == 'DOWN' && shown) {
             gsap.set(backGradientRef.current, { background: 'linear-gradient(180.42deg, rgba(1, 172, 230, 0.3) 0%, rgba(1, 172, 230, 0) 50%), #000000' });
             prevAnimation.current = getShowTimeline().play(0);
