@@ -4,7 +4,7 @@ import type { NextPage } from 'next'
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { GetStaticProps } from 'next'
 import gsap from 'gsap';
-import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
+// import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
 import { useRouter } from "next/router";
 
 //custom Components
@@ -239,7 +239,7 @@ const Homepage: NextPage = () => {
 	}
 
 	React.useEffect(() => {
-		gsap.registerPlugin(ScrollToPlugin);
+		// gsap.registerPlugin(ScrollToPlugin);
 		window.addEventListener('keydown', onKeyDown);
 		window.addEventListener('wheel', onMouseWheel);
 		window.addEventListener('touchstart', onTouchStart);
