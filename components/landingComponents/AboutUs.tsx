@@ -145,18 +145,18 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                 { opacity: 1, duration },
                 0
             )
-            // .fromTo(
-            //     animSideUp.current,
-            //     { y: 600 },
-            //     { y: 200, duration: duration / 2 },
-            //     0
-            // )
-            // .fromTo(
-            //     [animSideUp.current, animFadeIn.current],
-            //     { y: 200 },
-            //     { y: 0, duration: duration / 2 },
-            //     duration / 2
-            // )
+            .fromTo(
+                animSideUp.current,
+                { y: 600 },
+                { y: 200, duration: duration / 2 },
+                0
+            )
+            .fromTo(
+                [...animSideUp.current, ...animFadeIn.current],
+                { y: 200 },
+                { y: 0, duration: duration / 2 },
+                duration / 2
+            )
             .fromTo(
                 animFadeIn.current,
                 { opacity: 0 },
@@ -185,12 +185,12 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                 { opacity: 0, duration },
                 0
             )
-            // .fromTo(
-            //     [animSideUp.current, animFadeIn.current],
-            //     { y: 0 },
-            //     { y: -100, duration },
-            //     0
-            // )
+            .fromTo(
+                [...animSideUp.current, ...animFadeIn.current],
+                { y: 0 },
+                { y: -100, duration },
+                0
+            )
             .fromTo(
                 animFadeIn.current,
                 { opacity: 1 },
