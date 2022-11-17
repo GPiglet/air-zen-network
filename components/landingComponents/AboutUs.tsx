@@ -296,7 +296,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                                         </linearGradient>
                                     </defs>
                                 </svg>
-                                <div className="absolute z-[2] md:w-full md:left-[25%] md:translate-x-0 md:top-[50%] md:translate-y-[-50%]">
+                                {/* <div className="absolute z-[2] md:w-full md:left-[25%] md:translate-x-0 md:top-[50%] md:translate-y-[-50%]">
                                     {
                                         (sliderList as unknown as any[]).map((item, ind) => (
                                             <div key={ind} className={`sparkle-divs ${ind == 0 ? '' : 'hidden'}`}>
@@ -305,7 +305,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                                             </div>
                                         ))
                                     }
-                                </div>
+                                </div> */}
                             </div>
 
                         </div>
