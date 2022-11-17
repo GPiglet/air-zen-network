@@ -163,18 +163,18 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                 { opacity: 1, duration: duration / 2 },
                 duration / 2
             )
-            // .fromTo(
-            //     animGradient.current,
-            //     { opacity: 0, background: 'radial-gradient(circle, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 80%)' },
-            //     { opacity: 1, background: 'radial-gradient(circle, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 60%)', duration: duration / 2 },
-            //     0
-            // )
-            // .fromTo(
-            //     animCircle.current,
-            //     { scale: 1.2, opacity: 0 },
-            //     { scale: .8, opacity: 1, duration: duration / 2 },
-            //     0
-            // );
+            .fromTo(
+                animGradient.current,
+                { opacity: 0, background: 'radial-gradient(circle, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 80%)' },
+                { opacity: 1, background: 'radial-gradient(circle, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 60%)', duration: duration / 2 },
+                0
+            )
+            .fromTo(
+                animCircle.current,
+                { scale: 1.2, opacity: 0 },
+                { scale: .8, opacity: 1, duration: duration / 2 },
+                0
+            );
     }
 
     const getHideTimeline = (duration: number = 1.5) => {
@@ -197,18 +197,18 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                 { opacity: 0, duration },
                 0
             )
-            // .fromTo(
-            //     animGradient.current,
-            //     { opacity: 1, background: 'radial-gradient(circle, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 60%)' },
-            //     { opacity: 0, background: 'radial-gradient(circle, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 80%)', duration },
-            //     0
-            // )
-            // .fromTo(
-            //     animCircle.current,
-            //     { scale: .8 },
-            //     { scale: 1.2, duration },
-            //     0
-            // );
+            .fromTo(
+                animGradient.current,
+                { opacity: 1, background: 'radial-gradient(circle, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 60%)' },
+                { opacity: 0, background: 'radial-gradient(circle, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 80%)', duration },
+                0
+            )
+            .fromTo(
+                animCircle.current,
+                { scale: .8 },
+                { scale: 1.2, duration },
+                0
+            );
     }
 
     const prevAnimation = React.useRef<any>(null);
@@ -264,7 +264,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                                 </AZCarousel>
                             </div>
                             <div className='relative h-[400px] w-full md:static md:w-2/5'>
-                                <svg className='z-0 relative w-[180%] sm:top-[-70%] sm:w-[120%] translate-x-[-50%] top-[-220px] left-[45%] md:w-full md:left-[25%] md:translate-x-0 md:top-[50%] md:translate-y-[-50%]' viewBox="0 0 1295 1294" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg className='z-0 absolute w-[180%] sm:top-[-70%] sm:w-[120%] translate-x-[-50%] top-[-220px] left-[45%] md:w-full md:left-[25%] md:translate-x-0 md:top-[50%] md:translate-y-[-50%]' viewBox="0 0 1295 1294" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path ref={el => { if (el && animCrouselScaleLg.current.indexOf(el) == -1) animCrouselScaleLg.current.push(el) }} opacity="0.5" d="M666.531 1047.33C887.445 1047.33 1066.53 868.239 1066.53 647.325C1066.53 426.411 887.445 247.325 666.531 247.325C445.617 247.325 266.531 426.411 266.531 647.325C266.531 868.239 445.617 1047.33 666.531 1047.33Z" fill="url(#paint0_radial_0_1)" />
                                     <path ref={el => { if (el && animCrouselScaleLg.current.indexOf(el) == -1) animCrouselScaleLg.current.push(el) }} opacity="0.5" d="M741.941 880.701C873.371 838.685 946.464 699.983 905.199 570.899C863.934 441.816 723.937 371.234 592.506 413.25C461.076 455.265 387.983 593.968 429.249 723.051C470.514 852.134 610.511 922.716 741.941 880.701Z" fill="url(#paint1_radial_0_1)" />
                                     <path ref={el => { if (el && animCrouselScaleSm.current.indexOf(el) == -1) animCrouselScaleSm.current.push(el) }} d="M951.031 647.325C951.031 804.45 823.656 931.825 666.531 931.825C509.406 931.825 382.031 804.45 382.031 647.325C382.031 490.2 509.406 362.825 666.531 362.825C823.656 362.825 951.031 490.2 951.031 647.325Z" stroke="url(#paint2_linear_0_1)" />
@@ -296,7 +296,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                                         </linearGradient>
                                     </defs>
                                 </svg>
-                                {/* <div className="absolute z-[2] md:w-full md:left-[25%] md:translate-x-0 md:top-[50%] md:translate-y-[-50%]">
+                                <div className="absolute z-[2] md:w-full md:left-[25%] md:translate-x-0 md:top-[50%] md:translate-y-[-50%]">
                                     {
                                         (sliderList as unknown as any[]).map((item, ind) => (
                                             <div key={ind} className={`sparkle-divs ${ind == 0 ? '' : 'hidden'}`}>
@@ -305,7 +305,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                                             </div>
                                         ))
                                     }
-                                </div> */}
+                                </div>
                             </div>
 
                         </div>
