@@ -154,7 +154,7 @@ const Homepage: NextPage = () => {
 		if ( window.innerWidth < 920 || isLockScroll ) return;
 
 		const currentIndex = currentSectionIndex.current;
-		if ( currentIndex != -1 && refSections[currentIndex].current?.scroll && refSections[currentIndex].current?.scroll('Wheel', 0-e.deltaY) ) return;
+		// if ( currentIndex != -1 && refSections[currentIndex].current?.scroll && refSections[currentIndex].current?.scroll('Wheel', 0-e.deltaY) ) return;
 
 		isLockScroll = true;
 		setTimeout(() => {
