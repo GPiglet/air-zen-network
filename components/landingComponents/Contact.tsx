@@ -81,11 +81,11 @@ const Contact = React.forwardRef((props: any, ref: any) => {
         if (prevAnimation.current) prevAnimation.current.kill();
         gsap.set([containerRef.current, backGradientRef.current], { display: 'block'});
         if (direction == 'DOWN' && shown) {
-            gsap.set(backGradientRef.current, { background: 'linear-gradient(180.42deg, rgba(1, 172, 230, 0.3) 0%, rgba(1, 172, 230, 0) 50%), #000000' });
+            // gsap.set(backGradientRef.current, { background: 'linear-gradient(180.42deg, rgba(1, 172, 230, 0.3) 0%, rgba(1, 172, 230, 0) 50%), #000000' });
             prevAnimation.current = getShowTimeline().play(0);
         }
         else if (direction == 'UP' && !shown) {
-            gsap.set(backGradientRef.current, { background: 'transparent' });
+            // gsap.set(backGradientRef.current, { background: 'transparent' });
             prevAnimation.current = getShowTimeline().reverse(0);
         }
     }
