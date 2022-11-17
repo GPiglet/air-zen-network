@@ -15,10 +15,6 @@ const Contact = React.forwardRef((props: any, ref: any) => {
     const { t } = useTranslation()
     const router = useRouter()
 
-
-    const [dataProtection, setDataProtection] = useState(false)
-    const [dataCollection, setDataCollection] = useState(false)
-
     const containerRef = React.useRef<any>();
 
     const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop + 400, behavior: 'smooth' })
@@ -62,14 +58,14 @@ const Contact = React.forwardRef((props: any, ref: any) => {
             )
             .fromTo(
                 animSlideLeft.current,
-                { opacity: 0, x: -200 },
-                { opacity: 1, x: 0, duration: duration / 2 },
+                { opacity: 0 },
+                { opacity: 1, duration: duration / 2 },
                 duration / 2
             )
             .fromTo(
                 animSlideRight.current,
-                { opacity: 0, x: 200 },
-                { opacity: 1, x: 0, duration: duration / 2 },
+                { opacity: 0 },
+                { opacity: 1, duration: duration / 2 },
                 duration / 2
             )
             
