@@ -21,8 +21,8 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
     // Animate Refs
     const animCrouselScaleLg = React.useRef<any>([]);
     const animCrouselScaleSm = React.useRef<any>([]);
-    const animSideUp = React.useRef<any>([]);
-    const animFadeIn = React.useRef<any>([]);
+    const animSideUp = React.useRef<any>(null);
+    const animFadeIn = React.useRef<any>(null);
     const animGradient = React.useRef<any>([]);
     const animCircle = React.useRef<any>(null);
 
@@ -140,7 +140,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
     const getShowTimeline = (duration: number = 3) => {
         return gsap.timeline({ paused: true, onReverseComplete: () => { if (containerRef.current) gsap.set([containerRef.current, animCircle.current], { display: 'none' }); } })
             .fromTo(
-                animSideUp.current[0],
+                animSideUp.current,
                 { opacity: 0 },
                 { opacity: 1, duration },
                 0
@@ -152,7 +152,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                 0
             )
             .fromTo(
-                [...animSideUp.current, ...animFadeIn.current],
+                [animSideUp.current, animFadeIn.current],
                 { y: 200 },
                 { y: 0, duration: duration / 2 },
                 duration / 2
@@ -180,13 +180,13 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
     const getHideTimeline = (duration: number = 1.5) => {
         return gsap.timeline({ paused: true, onComplete: () => { if (containerRef.current) gsap.set([containerRef.current, animCircle.current], { display: 'none' }); } })
             .fromTo(
-                animSideUp.current[0],
+                animSideUp.current,
                 { opacity: 1 },
                 { opacity: 0, duration },
                 0
             )
             .fromTo(
-                [...animSideUp.current, ...animFadeIn.current],
+                [animSideUp.current, animFadeIn.current],
                 { y: 0 },
                 { y: -100, duration },
                 0
@@ -228,9 +228,9 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                 <div className='flex items-center h-full w-full'>
                     <div className='z-50 w-full'>
                         <div className="text-center">
-                            <h1 ref={el => { if (el && animSideUp.current.indexOf(el) == -1) animSideUp.current.push(el) }} className="relative z-40 text-title-sm md:mt-0 md:top-0 4xl:top-[-40px]">{t('landing.aboutus.title')} </h1>
+                            <h1 ref={animSideUp} className="relative z-40 text-title-sm md:mt-0 md:top-0 4xl:top-[-40px]">{t('landing.aboutus.title')} </h1>
                         </div>
-                        <div ref={el => { if (el && animFadeIn.current.indexOf(el) == -1) animFadeIn.current.push(el) }} className=' md:flex relative top-[-80px] md:top-0'>
+                        <div ref={animFadeIn} className=' md:flex relative top-[-80px] md:top-0'>
                             <picture className={`${selected + 1 === sliderList.length ? 'hidden' : ''} `}>
                                 <img src="/images/sparkle-arrow.svg" alt='' onClick={() => svgGroupAnimation('next')} className='w-[47px] h-[93px] top-[52%] cursor-pointer absolute right-[20px] md:right-[47px] md:top-1/2 center-y-transform z-50  ' />
                             </picture>
