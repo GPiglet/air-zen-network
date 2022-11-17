@@ -62,14 +62,14 @@ const Contact = React.forwardRef((props: any, ref: any) => {
             )
             .fromTo(
                 animSlideLeft.current,
-                { opacity: 0, x: -200 },
-                { opacity: 1, x: 0, duration: duration / 2 },
+                { opacity: 0, left: '-40%' },
+                { opacity: 1, left: '-20%', duration: duration / 2 },
                 duration / 2
             )
             .fromTo(
                 animSlideRight.current,
-                { opacity: 0, x: 200 },
-                { opacity: 1, x: 0, duration: duration / 2 },
+                { opacity: 0, right: '-20%' },
+                { opacity: 1, right: 0, duration: duration / 2 },
                 duration / 2
             )
             
