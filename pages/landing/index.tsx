@@ -161,7 +161,7 @@ const Homepage: NextPage = () => {
 		isLockScroll = true;
 		setTimeout(() => {
 			isLockScroll = false;
-		}, 3000);
+		}, 4000);
 
 		let index = 0;
 		if ( e.deltaY > 0 ) { 
