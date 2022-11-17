@@ -41,6 +41,7 @@ const Homepage: NextPage = () => {
 	
 	const currentSectionIndex = React.useRef<any>(-1);
 	const gotoScene = (name: string) => {
+		console.log('goto scene')
 		if ( window.innerWidth < 920 ) return;
 		let direction: string = 'DOWN', index: number = 0;
 		switch( name ) {
@@ -151,6 +152,7 @@ const Homepage: NextPage = () => {
 	}
 
 	const onMouseWheel = (e: WheelEvent) => {
+		e.stopPropagation();
 		if ( window.innerWidth < 920 || isLockScroll ) return;
 
 		const currentIndex = currentSectionIndex.current;
