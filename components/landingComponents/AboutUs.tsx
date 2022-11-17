@@ -239,7 +239,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                             </picture>
                             <div className='md:w-[10%]'></div>
                             <div className='w-full md:w-2/5 z-40 relative '>
-                                {/* <Flickity
+                                <Flickity
                                     {...flickityProps}
                                 >
                                     {
@@ -261,7 +261,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                                             </div>
                                         ))
                                     }
-                                </AZCarousel> */}
+                                </AZCarousel>
                             </div>
                             {/* <div className='relative h-[400px] w-full md:static md:w-2/5'>
                                 <svg className='z-0 absolute w-[180%] sm:top-[-70%] sm:w-[120%] translate-x-[-50%] top-[-220px] left-[45%] md:w-full md:left-[25%] md:translate-x-0 md:top-[50%] md:translate-y-[-50%]' viewBox="0 0 1295 1294" fill="none" xmlns="http://www.w3.org/2000/svg">
