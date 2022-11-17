@@ -263,7 +263,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                                     }
                                 </AZCarousel> */}
                             </div>
-                            <div className='relative h-[400px] w-full md:static md:w-2/5'>
+                            {/* <div className='relative h-[400px] w-full md:static md:w-2/5'>
                                 <svg className='z-0 absolute w-[180%] sm:top-[-70%] sm:w-[120%] translate-x-[-50%] top-[-220px] left-[45%] md:w-full md:left-[25%] md:translate-x-0 md:top-[50%] md:translate-y-[-50%]' viewBox="0 0 1295 1294" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path ref={el => { if (el && animCrouselScaleLg.current.indexOf(el) == -1) animCrouselScaleLg.current.push(el) }} opacity="0.5" d="M666.531 1047.33C887.445 1047.33 1066.53 868.239 1066.53 647.325C1066.53 426.411 887.445 247.325 666.531 247.325C445.617 247.325 266.531 426.411 266.531 647.325C266.531 868.239 445.617 1047.33 666.531 1047.33Z" fill="url(#paint0_radial_0_1)" />
                                     <path ref={el => { if (el && animCrouselScaleLg.current.indexOf(el) == -1) animCrouselScaleLg.current.push(el) }} opacity="0.5" d="M741.941 880.701C873.371 838.685 946.464 699.983 905.199 570.899C863.934 441.816 723.937 371.234 592.506 413.25C461.076 455.265 387.983 593.968 429.249 723.051C470.514 852.134 610.511 922.716 741.941 880.701Z" fill="url(#paint1_radial_0_1)" />
@@ -306,7 +306,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                                         ))
                                     }
                                 </div>
-                            </div>
+                            </div> */}
 
                         </div>
                     </div>
