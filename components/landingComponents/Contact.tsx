@@ -15,6 +15,10 @@ const Contact = React.forwardRef((props: any, ref: any) => {
     const { t } = useTranslation()
     const router = useRouter()
 
+
+    const [dataProtection, setDataProtection] = useState(false)
+    const [dataCollection, setDataCollection] = useState(false)
+
     const containerRef = React.useRef<any>();
 
     const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop + 400, behavior: 'smooth' })
@@ -58,14 +62,14 @@ const Contact = React.forwardRef((props: any, ref: any) => {
             )
             .fromTo(
                 animSlideLeft.current,
-                { opacity: 0 },
-                { opacity: 1, duration: duration / 2 },
+                { opacity: 0, x: -200 },
+                { opacity: 1, x: 0, duration: duration / 2 },
                 duration / 2
             )
             .fromTo(
                 animSlideRight.current,
-                { opacity: 0 },
-                { opacity: 1, duration: duration / 2 },
+                { opacity: 0, x: 200 },
+                { opacity: 1, x: 0, duration: duration / 2 },
                 duration / 2
             )
             
@@ -77,11 +81,11 @@ const Contact = React.forwardRef((props: any, ref: any) => {
         if (prevAnimation.current) prevAnimation.current.kill();
         gsap.set([containerRef.current, backGradientRef.current], { display: 'block'});
         if (direction == 'DOWN' && shown) {
-            // gsap.set(backGradientRef.current, { background: 'linear-gradient(180.42deg, rgba(1, 172, 230, 0.3) 0%, rgba(1, 172, 230, 0) 50%), #000000' });
+            gsap.set(backGradientRef.current, { background: 'linear-gradient(180.42deg, rgba(1, 172, 230, 0.3) 0%, rgba(1, 172, 230, 0) 50%), #000000' });
             prevAnimation.current = getShowTimeline().play(0);
         }
         else if (direction == 'UP' && !shown) {
-            // gsap.set(backGradientRef.current, { background: 'transparent' });
+            gsap.set(backGradientRef.current, { background: 'transparent' });
             prevAnimation.current = getShowTimeline().reverse(0);
         }
     }
