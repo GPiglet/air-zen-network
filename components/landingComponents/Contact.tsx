@@ -44,14 +44,14 @@ const Contact = React.forwardRef((props: any, ref: any) => {
             )
             .fromTo(
                 animSlideUp.current,
-                { y: 600 },
-                { y: 200, duration: duration / 2 },
+                { top: 600 },
+                { top: 200, duration: duration / 2 },
                 0
             )
             .fromTo(
                 animSlideUp.current,
-                { y: 200 },
-                { y: 0, duration: duration / 2 },
+                { top: 200 },
+                { top: 0, duration: duration / 2 },
                 duration / 2
             )
             .fromTo(
@@ -109,35 +109,37 @@ const Contact = React.forwardRef((props: any, ref: any) => {
             <div id='contact' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim, scroll } }} className='container m-auto relative py-[120px] md:py-[280px] flex justify-center md:fixed md:hidden md:left-1/2 md:translate-x-[-50%]'>
                 <div className=" flex justify-center">
                     <div className='text-white md:w-[50%] xl:w-1/3 text-center relative z-40 px-10 md:px-auto'>
-                        <h1 ref={el => {if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el)}} className="text-title-sm">{t('landing.contact.title')}</h1>
-                        <svg ref={el => {if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='absolute left-1/2 center-x-transform w-[90%] md:w-[150%] top-[-100px] md:top-[-150px]' viewBox="0 0 488 519" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path opacity="0.7" d="M243.691 23.0004C377.708 23.0004 486.381 133.623 486.381 270.122C486.381 406.62 377.708 517.243 243.691 517.243C109.673 517.243 0.999995 406.62 0.999989 270.122C0.999983 133.623 109.673 23.0005 243.691 23.0004Z" stroke="url(#paint0_linear_0_1)" strokeWidth="2" />
-                            <path d="M185.181 77.3883C190.736 69.4988 194 59.8815 194 49.5C193.999 22.7146 172.285 1 145.5 1C118.715 1 97 22.7146 97 49.5C97 76.2854 118.715 98 145.5 98C156.055 98 165.821 94.6269 173.782 88.9012L193.126 97.2375L185.181 77.3883Z" stroke="#159BDE" strokeWidth="2" opacity="0.8" strokeMiterlimit="10" />
-                            <defs>
-                                <linearGradient id="paint0_linear_0_1" x1="123.644" y1="29.2225" x2="173.848" y2="255.169" gradientUnits="userSpaceOnUse">
-                                    <stop stopColor="#159BDE" />
-                                    <stop offset="1" stopColor="#159BDE" stopOpacity="0" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                        {/* <p ref={el => {if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='font-lato text-lg text-white mt-11 text-left tracking-widest'>{t('landing.contact.subtitle')}</p> */}
-                        <div className="relative z-10" ref={el => { if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }}>
-                            <ContactForm />
+                        <h1 ref={el => {if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el)}} className="relative text-title-sm">{t('landing.contact.title')}</h1>
+                        <div ref={el => {if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='relative'>
+                            <svg className='absolute left-1/2 center-x-transform w-[90%] md:w-[150%] top-[-100px] md:top-[-150px]' viewBox="0 0 488 519" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.7" d="M243.691 23.0004C377.708 23.0004 486.381 133.623 486.381 270.122C486.381 406.62 377.708 517.243 243.691 517.243C109.673 517.243 0.999995 406.62 0.999989 270.122C0.999983 133.623 109.673 23.0005 243.691 23.0004Z" stroke="url(#paint0_linear_0_1)" strokeWidth="2" />
+                                <path d="M185.181 77.3883C190.736 69.4988 194 59.8815 194 49.5C193.999 22.7146 172.285 1 145.5 1C118.715 1 97 22.7146 97 49.5C97 76.2854 118.715 98 145.5 98C156.055 98 165.821 94.6269 173.782 88.9012L193.126 97.2375L185.181 77.3883Z" stroke="#159BDE" strokeWidth="2" opacity="0.8" strokeMiterlimit="10" />
+                                <defs>
+                                    <linearGradient id="paint0_linear_0_1" x1="123.644" y1="29.2225" x2="173.848" y2="255.169" gradientUnits="userSpaceOnUse">
+                                        <stop stopColor="#159BDE" />
+                                        <stop offset="1" stopColor="#159BDE" stopOpacity="0" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            {/* <p ref={el => {if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='font-lato text-lg text-white mt-11 text-left tracking-widest'>{t('landing.contact.subtitle')}</p> */}
+                            <div className="relative z-10" >
+                                <ContactForm />
+                            </div>
+                            <svg className='z-0 absolute left-1/2 center-x-transform w-[100%] sm:w-[66%] md:w-[130%] bottom-[-140px] sm:bottom-[-190px] md:bottom-[-180px]' viewBox="0 0 412 412" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.7" d="M291.677 300.824C240.073 347.051 160.058 341.948 112.961 289.373C65.8641 236.798 69.5612 156.705 121.165 110.478C172.769 64.2515 252.785 69.3545 299.881 121.93C346.978 174.505 343.281 254.598 291.677 300.824Z" stroke="url(#paint0_linear_1374_3891)" strokeWidth="2" />
+                                <path opacity="0.3" d="M304.085 314.68C244.955 367.649 153.288 361.791 99.3426 301.57C45.3966 241.349 49.6204 149.592 108.75 96.6239C167.879 43.6559 259.546 49.5138 313.492 109.735C367.438 169.956 363.214 261.712 304.085 314.68Z" stroke="url(#paint1_linear_1374_3891)" />
+                                <defs>
+                                    <linearGradient id="paint0_linear_1374_3891" x1="336.251" y1="257.206" x2="238.599" y2="187.246" gradientUnits="userSpaceOnUse">
+                                        <stop stopColor="#159BDE" />
+                                        <stop offset="1" stopColor="#159BDE" stopOpacity="0" />
+                                    </linearGradient>
+                                    <linearGradient id="paint1_linear_1374_3891" x1="354.496" y1="264.453" x2="243.118" y2="184.659" gradientUnits="userSpaceOnUse">
+                                        <stop stopColor="#159BDE" />
+                                        <stop offset="1" stopColor="#159BDE" stopOpacity="0" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
                         </div>
-                        <svg ref={el => { if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='z-0 absolute left-1/2 center-x-transform w-[100%] sm:w-[66%] md:w-[130%] bottom-[-140px] sm:bottom-[-190px] md:bottom-[-180px]' viewBox="0 0 412 412" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path opacity="0.7" d="M291.677 300.824C240.073 347.051 160.058 341.948 112.961 289.373C65.8641 236.798 69.5612 156.705 121.165 110.478C172.769 64.2515 252.785 69.3545 299.881 121.93C346.978 174.505 343.281 254.598 291.677 300.824Z" stroke="url(#paint0_linear_1374_3891)" strokeWidth="2" />
-                            <path opacity="0.3" d="M304.085 314.68C244.955 367.649 153.288 361.791 99.3426 301.57C45.3966 241.349 49.6204 149.592 108.75 96.6239C167.879 43.6559 259.546 49.5138 313.492 109.735C367.438 169.956 363.214 261.712 304.085 314.68Z" stroke="url(#paint1_linear_1374_3891)" />
-                            <defs>
-                                <linearGradient id="paint0_linear_1374_3891" x1="336.251" y1="257.206" x2="238.599" y2="187.246" gradientUnits="userSpaceOnUse">
-                                    <stop stopColor="#159BDE" />
-                                    <stop offset="1" stopColor="#159BDE" stopOpacity="0" />
-                                </linearGradient>
-                                <linearGradient id="paint1_linear_1374_3891" x1="354.496" y1="264.453" x2="243.118" y2="184.659" gradientUnits="userSpaceOnUse">
-                                    <stop stopColor="#159BDE" />
-                                    <stop offset="1" stopColor="#159BDE" stopOpacity="0" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
                     </div>
                 </div>
 

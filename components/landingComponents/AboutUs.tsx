@@ -147,14 +147,14 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
             )
             .fromTo(
                 animSideUp.current,
-                { y: 600 },
-                { y: 200, duration: duration / 2 },
+                { top: 600 },
+                { top: 200, duration: duration / 2 },
                 0
             )
             .fromTo(
                 [animSideUp.current, animFadeIn.current],
-                { y: 200 },
-                { y: 0, duration: duration / 2 },
+                { top: 200 },
+                { top: 0, duration: duration / 2 },
                 duration / 2
             )
             .fromTo(
@@ -187,8 +187,8 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
             )
             .fromTo(
                 [animSideUp.current, animFadeIn.current],
-                { y: 0 },
-                { y: -100, duration },
+                { top: 0 },
+                { top: -100, duration },
                 0
             )
             .fromTo(
@@ -213,7 +213,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
 
     const prevAnimation = React.useRef<any>(null);
     const startAnim = (direction: string, shown: boolean) => {
-        //if (prevAnimation.current) prevAnimation.current.kill();
+        if (prevAnimation.current) prevAnimation.current.kill();
         gsap.set([containerRef.current, animCircle.current], { display: 'block' });
         if (direction == 'DOWN' && shown) prevAnimation.current = getShowTimeline().play(0);
         else if (direction == 'DOWN' && !shown) prevAnimation.current = getHideTimeline().play(0);
@@ -230,7 +230,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                         <div className="text-center">
                             <h1 ref={animSideUp} className="relative z-40 text-title-sm md:mt-0 md:top-0 4xl:top-[-40px]">{t('landing.aboutus.title')} </h1>
                         </div>
-                        <div ref={animFadeIn}>
+                        <div ref={animFadeIn} className='relative'>
 
                             <div className=' md:flex relative top-[-80px] md:top-0'>
                                 <picture className={`${selected + 1 === sliderList.length ? 'hidden' : ''} `}>
