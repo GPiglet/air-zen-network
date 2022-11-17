@@ -169,12 +169,12 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                 { opacity: 1, background: 'radial-gradient(circle, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 60%)', duration: duration / 2 },
                 0
             )
-            .fromTo(
-                animCircle.current,
-                { scale: 1.2, opacity: 0 },
-                { scale: .8, opacity: 1, duration: duration / 2 },
-                0
-            );
+            // .fromTo(
+            //     animCircle.current,
+            //     { scale: 1.2, opacity: 0 },
+            //     { scale: .8, opacity: 1, duration: duration / 2 },
+            //     0
+            // );
     }
 
     const getHideTimeline = (duration: number = 1.5) => {
@@ -203,12 +203,12 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                 { opacity: 0, background: 'radial-gradient(circle, rgba(1, 172, 230, 0.5) 0%, rgba(1, 172, 230, 0) 80%)', duration },
                 0
             )
-            .fromTo(
-                animCircle.current,
-                { scale: .8 },
-                { scale: 1.2, duration },
-                0
-            );
+            // .fromTo(
+            //     animCircle.current,
+            //     { scale: .8 },
+            //     { scale: 1.2, duration },
+            //     0
+            // );
     }
 
     const prevAnimation = React.useRef<any>(null);
