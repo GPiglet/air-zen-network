@@ -110,7 +110,7 @@ const OwnLayout: FC<props> = ({ children, navItems, hasFooter = true, useSmoothe
     }, [])
 
 	useEffect( () => {
-		if ( useSmoother ) {
+		if ( useSmoother && window.innerWidth > 920 ) {
 			gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 			const smoother = ScrollSmoother.create({
 				wrapper: "#smoother-wrapper",

@@ -26,20 +26,20 @@ const Mainlayout: FC<MainlayoutProps> = ({ children, navItems, hasFooter = true 
         setCookie(Boolean(cookie))
     }, [])
 
-    useEffect( () => {
-		if ( window.innerWidth < 920 ) {
-            gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-			const smoother = ScrollSmoother.create({
-				wrapper: "#smoother-wrapper",
-				content: "#smoother-content",
-				smooth: 3,
-				effects: true
-			});
-			return () => {
-				smoother.kill();
-			}
-		}
-    }, [])
+    // useEffect( () => {
+	// 	if ( window.innerWidth < 920 ) {
+    //         gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+	// 		const smoother = ScrollSmoother.create({
+	// 			wrapper: "#smoother-wrapper",
+	// 			content: "#smoother-content",
+	// 			smooth: 3,
+	// 			effects: true
+	// 		});
+	// 		return () => {
+	// 			smoother.kill();
+	// 		}
+	// 	}
+    // }, [])
 
     return (
         <>
