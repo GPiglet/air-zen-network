@@ -248,7 +248,7 @@ const Homepage: NextPage = () => {
 		window.addEventListener('touchmove', onTouchMove);
 		return ()=>{
 			window.removeEventListener('keydown', onKeyDown);
-			window.removeEventListener('wheel', onMouseWheel);
+			window.removeEventListener('wheel', onMouseWheel, {capture: true});
 			window.removeEventListener('touchstart', onTouchStart);
 			window.removeEventListener('touchend', onTouchEnd);
 			window.removeEventListener('touchmove', onTouchMove);

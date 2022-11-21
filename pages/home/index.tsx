@@ -99,6 +99,7 @@ const Home: NextPage = () => {
 	}
 
 	const onMouseWheel = (e: WheelEvent) => {
+		e.stopImmediatePropagation();
 		if ( window.innerWidth < 920 || isLockScroll ) return;
 
 		const currentIndex = currentSectionIndex.current;
@@ -170,13 +171,13 @@ const Home: NextPage = () => {
 	React.useEffect(() => {
 		gotoScene(0);
 		window.addEventListener('keydown', onKeyDown);
-		window.addEventListener('wheel', onMouseWheel);
+		window.addEventListener('wheel', onMouseWheel, {capture: true});
 		window.addEventListener('touchstart', onTouchStart);
 		window.addEventListener('touchend', onTouchEnd);
 		window.addEventListener('touchmove', onTouchMove);
 		return ()=>{
 			window.removeEventListener('keydown', onKeyDown);
-			window.removeEventListener('wheel', onMouseWheel);
+			window.removeEventListener('wheel', onMouseWheel, {capture: true});
 			window.removeEventListener('touchstart', onTouchStart);
 			window.removeEventListener('touchend', onTouchEnd);
 			window.removeEventListener('touchmove', onTouchMove);
