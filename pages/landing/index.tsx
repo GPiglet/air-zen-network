@@ -151,6 +151,7 @@ const Homepage: NextPage = () => {
 	}
 
 	const onMouseWheel = (e: WheelEvent) => {
+		e.stopImmediatePropagation();
 		if ( window.innerWidth < 920 || isLockScroll ) return;
 
 		const currentIndex = currentSectionIndex.current;
@@ -241,7 +242,7 @@ const Homepage: NextPage = () => {
 	React.useEffect(() => {
 		// gsap.registerPlugin(ScrollToPlugin);
 		window.addEventListener('keydown', onKeyDown);
-		window.addEventListener('wheel', onMouseWheel);
+		window.addEventListener('wheel', onMouseWheel, {capture: true});
 		window.addEventListener('touchstart', onTouchStart);
 		window.addEventListener('touchend', onTouchEnd);
 		window.addEventListener('touchmove', onTouchMove);

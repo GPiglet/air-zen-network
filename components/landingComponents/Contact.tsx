@@ -1,8 +1,6 @@
 //modules
 import React, { FC, useEffect, useRef, useState } from 'react'
 import gsap from "gsap";
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
 import { useTranslation } from 'next-i18next';
 
 import { useRouter } from 'next/router';
