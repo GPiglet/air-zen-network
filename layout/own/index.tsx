@@ -24,7 +24,8 @@ type props = {
 const OwnLayout: FC<props> = ({ children, navItems, hasFooter = true, useSmoother=false, className, wrapperClassName }) => {   
     const [cookie, setCookie] = useState(true)
     useEffect(() => {
-        const cookie = getStorage('cookieAllow')
+				// neuter the cookie check as it doesn't do anything right now
+        const cookie = true; //getStorage('cookieAllow')
         setCookie(Boolean(cookie))
     }, [])
 

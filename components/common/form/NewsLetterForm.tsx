@@ -105,7 +105,7 @@ const NewsLetterForm :FC<NewsLetterFormProps> = () => {
     <>
       <p className={`text-left mb-2`}>{t('landing.contact.emailLabel')}</p>
       <CustomInput className="mb-5" ref={refEmailAddress} invalid={!validEmailAddress} value={emailAddress}
-        placeholder={t('landing.contact.namePlaceholder')}
+        placeholder={t('landing.contact.emailPlaceholder')}
         onChange={(e: any)=>onChangeInput(e.target.value, setEmailAddress, setValidEmailAddress)}
       />
       <div className={`mb-4`}>

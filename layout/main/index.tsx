@@ -18,7 +18,8 @@ const Mainlayout: FC<MainlayoutProps> = ({ children, navItems, hasFooter = true 
     const [cookie, setCookie] = useState(true)
     useEffect(() => {
         //const cookie = useContext(StoreContext)
-        const cookie = getStorage('cookieAllow')
+				// neuter the cookie check as it doesn't do anything right now
+        const cookie = true; //getStorage('cookieAllow')
         setCookie(Boolean(cookie))
     }, [])
 
