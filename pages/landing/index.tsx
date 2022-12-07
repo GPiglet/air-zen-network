@@ -39,8 +39,7 @@ const Homepage: NextPage = () => {
 	const router = useRouter();
 	
 	const currentSectionIndex = React.useRef<any>(-1);
-	const gotoScene = (name: string) => {
-		if ( window.innerWidth < 920 ) return;
+	const gotoScene = (name: string) => {		
 		let direction: string = 'DOWN', index: number = 0;
 		switch( name ) {
 			case '':	// hero
@@ -76,6 +75,11 @@ const Homepage: NextPage = () => {
 				else direction = 'DOWN';
 				index = 4;
 				break;
+		}
+
+		if ( window.innerWidth < 920 ) {
+			currentSectionIndex.current = index;	
+			return;
 		}
 
 		refSections.forEach(section=>gsap.set(section.current.container, {zIndex: 10}));
