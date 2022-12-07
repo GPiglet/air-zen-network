@@ -4,7 +4,6 @@ import type { NextPage } from 'next'
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { GetStaticProps } from 'next'
 import gsap from 'gsap';
-// import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
 import { useRouter } from "next/router";
 
 //custom Components
@@ -236,22 +235,38 @@ const Homepage: NextPage = () => {
 		const currentIndex = currentSectionIndex.current;
 		if ( currentIndex != -1 && refSections[currentIndex].current?.scroll )
 			refSections[currentIndex].current?.scroll('Wheel', deltaY);
+	}
 
+	var prevWidth = 0;
+	const onResize = (e: Event) => {
+		if ( window.innerWidth < 920 && prevWidth >= 920 ) {
+			// desktop -> mobile
+			refSections.forEach(section=>gsap.set(section.current.container, {clearProps: 'display'}))
+		}
+		else if ( window.innerWidth >= 920 && prevWidth < 920 ) {
+			// mobile -> desktop
+			const scene = currentSectionIndex.current == 0 ? '' : navItemHrefs[currentSectionIndex.current-1];
+			currentSectionIndex.current = -1;
+			gotoScene(scene);
+		}
+		prevWidth = window.innerWidth;
 	}
 
 	React.useEffect(() => {
-		// gsap.registerPlugin(ScrollToPlugin);
+		prevWidth = window.innerWidth;
 		window.addEventListener('keydown', onKeyDown);
 		window.addEventListener('wheel', onMouseWheel, {capture: true});
 		window.addEventListener('touchstart', onTouchStart);
 		window.addEventListener('touchend', onTouchEnd);
 		window.addEventListener('touchmove', onTouchMove);
+		window.addEventListener('resize', onResize);
 		return ()=>{
 			window.removeEventListener('keydown', onKeyDown);
 			window.removeEventListener('wheel', onMouseWheel, {capture: true});
 			window.removeEventListener('touchstart', onTouchStart);
 			window.removeEventListener('touchend', onTouchEnd);
 			window.removeEventListener('touchmove', onTouchMove);
+			window.removeEventListener('resize', onResize);
 		}	
 	}, [])
 

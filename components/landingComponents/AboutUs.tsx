@@ -23,7 +23,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
     const animCrouselScaleSm = React.useRef<any>([]);
     const animSideUp = React.useRef<any>(null);
     const animFadeIn = React.useRef<any>(null);
-    const animGradient = React.useRef<any>([]);
+    const animGradient = React.useRef<any>(null);
     const animCircle = React.useRef<any>(null);
 
     const scrollToRef = (ref: any) => window.scrollTo({ top: ref.current.offsetTop, behavior: 'smooth' })
@@ -138,7 +138,12 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
 
     /* animation */
     const getShowTimeline = (duration: number = 3) => {
-        return gsap.timeline({ paused: true, onReverseComplete: () => { if (containerRef.current) gsap.set([containerRef.current, animCircle.current], { display: 'none' }); } })
+        return gsap.timeline({ paused: true, onReverseComplete: () => { 
+            if (containerRef.current) {
+                gsap.set([animSideUp.current, animFadeIn.current], {clearProps: 'all'});
+                gsap.set([containerRef.current, animCircle.current], { display: 'none' }); 
+            }
+        }})
             .fromTo(
                 animSideUp.current,
                 { opacity: 0 },
@@ -178,7 +183,12 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
     }
 
     const getHideTimeline = (duration: number = 1.5) => {
-        return gsap.timeline({ paused: true, onComplete: () => { if (containerRef.current) gsap.set([containerRef.current, animCircle.current], { display: 'none' }); } })
+        return gsap.timeline({ paused: true, onComplete: () => { 
+            if (containerRef.current) {
+                gsap.set([animSideUp.current, animFadeIn.current], {clearProps: 'all'});
+                gsap.set([containerRef.current, animCircle.current], { display: 'none' }); 
+            }
+        }})
             .fromTo(
                 animSideUp.current,
                 { opacity: 1 },
@@ -315,7 +325,7 @@ const AboutUs = React.forwardRef((props: any, ref: any) => {
                     </div>
                 </div>
             </section>
-            <div ref={el => { if (el && animGradient.current.indexOf(el) == -1) animGradient.current.push(el) }} className='z-0 md:container hidden md:block fixed top-0 md:top-[50%] md:translate-y-[-50%] left-1/2 translate-x-[-50%] w-full h-full max-h-[1080px]'></div>
+            <div ref={animGradient} className='z-0 md:container hidden md:block fixed top-0 md:top-[50%] md:translate-y-[-50%] left-1/2 translate-x-[-50%] w-full h-full max-h-[1080px]'></div>
             <div ref={animCircle} className='z-0 md:container hidden fixed top-1/2 left-1/2 center-transform w-full' >
             </div>
         </>

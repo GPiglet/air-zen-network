@@ -155,7 +155,12 @@ const Credential = React.forwardRef((props: any, ref: any) => {
     const animCircle = React.useRef<any>([]);
 
     const getShowTimeline = (duration: number = 3) => {
-        return gsap.timeline({ paused: true, onReverseComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
+        return gsap.timeline({ paused: true, onReverseComplete: () => { 
+            if (containerRef.current) {
+                gsap.set([...animSideUp.current, ...animFadeIn.current], {clearProps: 'all'});
+                gsap.set([containerRef.current], { display: 'none' }); 
+            }
+        }})
             .fromTo(
                 animSideUp.current[0],
                 { opacity: 0 },
@@ -202,7 +207,12 @@ const Credential = React.forwardRef((props: any, ref: any) => {
     }
 
     const getHideTimeline = (duration: number = 1.5) => {
-        return gsap.timeline({ paused: true, onComplete: () => { if (containerRef.current) gsap.set([containerRef.current], { display: 'none' }); } })
+        return gsap.timeline({ paused: true, onComplete: () => { 
+            if (containerRef.current) {
+                gsap.set([...animSideUp.current, ...animFadeIn.current], {clearProps: 'all'});
+                gsap.set([containerRef.current], { display: 'none' }); 
+            }
+        }})
             .fromTo(
                 animSideUp.current[0],
                 { opacity: 1 },

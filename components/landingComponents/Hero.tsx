@@ -15,7 +15,12 @@ const Hero = React.forwardRef((props: any, ref: any) => {
     const animGradient = React.useRef<any>([]);
 
     const getShowTimeline = (duration: number = 1.5, isFirst: boolean = false) => {
-        const tl = gsap.timeline({ onComplete: () => { if (containerRef.current) gsap.set([containerRef.current, ...animGradient.current], { display: 'none' }); } })
+        const tl = gsap.timeline({ onComplete: () => { 
+            if (containerRef.current) {
+                gsap.set([animSideUpRefs.current, heroImgRef.current, animZoomInRefs.current, animZoomOutRefs.current], {clearProps: 'all'});
+                gsap.set([containerRef.current, ...animGradient.current], { display: 'none' }); 
+            }
+        } })
             .fromTo(
                 animSideUpRefs.current,
                 { y: 0, opacity: (index, target, targets) => target.getAttribute('opacity') || 1 },

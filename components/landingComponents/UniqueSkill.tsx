@@ -47,7 +47,12 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
     const animGradient = React.useRef<any>([]);
 
     const getShowTimeline = (duration: number = 3) => {
-        return gsap.timeline({ paused: true })
+        return gsap.timeline({ paused: true, onReverseComplete: ()=>{
+            if (containerRef.current) {
+                gsap.set([...animSideUp.current, ...animFadeIn.current, ...animSkills.current], {clearProps: 'all'});
+                gsap.set([containerRef.current, circleRef.current], { display: 'none' }); 
+            }
+        }})
             .fromTo(
                 animSideUp.current[0],
                 { opacity: 0 },
@@ -99,7 +104,12 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
     }
 
     const getHideTimeline = (duration: number = 1.5) => {
-        return gsap.timeline({ paused: true, onComplete: () => { if (containerRef.current) gsap.set([containerRef.current, circleRef.current], { display: 'none' }); } })
+        return gsap.timeline({ paused: true, onComplete: () => { 
+            if (containerRef.current) {
+                gsap.set([...animSideUp.current, ...animFadeIn.current, ...animSkills.current], {clearProps: 'all'});
+                gsap.set([containerRef.current, circleRef.current], { display: 'none' }); 
+            }
+        }})
             .fromTo(
                 animSideUp.current[0],
                 { opacity: 1 },
@@ -442,6 +452,17 @@ const UniqueSkill = React.forwardRef((props: any, ref: any) => {
 
         router.push(graphList[index].href)
     }
+
+    const onResize = () => {
+        if ( window.innerWidth < 920 ) {
+            gsap.set([...animSkills.current, ...animGradient.current, circleRef.current], { clearProps: 'all' });
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', onResize);
+        return ()=>window.removeEventListener('resize', onResize);
+    }, [])
 
     return (
         <>

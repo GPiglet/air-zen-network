@@ -22,16 +22,22 @@ const Contact = React.forwardRef((props: any, ref: any) => {
     }, [])
 
     // animation
-    const animSlideUp = React.useRef<any>([]);
-    const animSlideLeft = React.useRef<any>([]);
-    const animSlideRight = React.useRef<any>([]);
-    const animFadeIn = React.useRef<any>([]);
+    const animSlideUp = React.useRef<any>(null);
+    const animSlideLeft = React.useRef<any>(null);
+    const animSlideRight1 = React.useRef<any>(null);
+    const animSlideRight2 = React.useRef<any>(null);
+    const animFadeIn = React.useRef<any>(null);
     const backGradientRef = React.useRef<any>(null);
 
     const getShowTimeline = (duration: number = 3) => {
-        return gsap.timeline({ paused: true, onReverseComplete: () => { if (containerRef.current) gsap.set([containerRef.current, backGradientRef.current], { display: 'none' }) } })
+        return gsap.timeline({ paused: true, onReverseComplete: () => { 
+            if (containerRef.current) {
+                gsap.set([containerRef.current, animSlideUp.current, animFadeIn.current, animSlideLeft.current, animSlideRight1.current, animSlideRight2.current], {clearProps: 'all'});
+                gsap.set([containerRef.current, backGradientRef.current], { display: 'none' });
+            }
+        }})
             .fromTo(
-                animSlideUp.current[0],
+                animSlideUp.current,
                 { opacity: 0 },
                 { opacity: 1, duration },
                 0
@@ -43,7 +49,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
                 0
             )
             .fromTo(
-                animSlideUp.current,
+                [animSlideUp.current, animFadeIn.current],
                 { top: 200 },
                 { top: 0, duration: duration / 2 },
                 duration / 2
@@ -61,19 +67,17 @@ const Contact = React.forwardRef((props: any, ref: any) => {
                 duration / 2
             )
             .fromTo(
-                animSlideRight.current[0],
+                animSlideRight1.current,
                 { opacity: 0, right: '-20%' },
                 { opacity: 1, right: 0, duration: duration / 2 },
                 duration / 2
             )
             .fromTo(
-                animSlideRight.current[1],
+                animSlideRight2.current,
                 { opacity: 0, right: '-20%' },
                 { opacity: 1, right: '-5%', duration: duration / 2 },
                 duration / 2
-            )
-            
-
+            )           
     }
 
     const prevAnimation = React.useRef<any>(null);
@@ -109,8 +113,8 @@ const Contact = React.forwardRef((props: any, ref: any) => {
             <div id='contact' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim, scroll } }} className='container m-auto relative py-[120px] md:py-[280px] flex justify-center md:fixed md:hidden md:left-1/2 md:translate-x-[-50%]'>
                 <div className=" flex justify-center">
                     <div className='text-white md:w-[50%] xl:w-1/3 text-center relative z-40 px-10 md:px-auto'>
-                        <h1 ref={el => {if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el)}} className="relative text-title-sm">{t('landing.contact.title')}</h1>
-                        <div ref={el => {if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='md:relative'>
+                        <h1 ref={animSlideUp} className="relative text-title-sm">{t('landing.contact.title')}</h1>
+                        <div ref={animFadeIn} className='md:relative'>
                             <svg className='absolute left-1/2 center-x-transform w-[90%] md:w-[180%] top-[-100px] md:top-[-200px]' viewBox="0 0 488 519" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.7" d="M243.691 23.0004C377.708 23.0004 486.381 133.623 486.381 270.122C486.381 406.62 377.708 517.243 243.691 517.243C109.673 517.243 0.999995 406.62 0.999989 270.122C0.999983 133.623 109.673 23.0005 243.691 23.0004Z" stroke="url(#paint0_linear_0_1)" strokeWidth="2" />
                                 <path d="M185.181 77.3883C190.736 69.4988 194 59.8815 194 49.5C193.999 22.7146 172.285 1 145.5 1C118.715 1 97 22.7146 97 49.5C97 76.2854 118.715 98 145.5 98C156.055 98 165.821 94.6269 173.782 88.9012L193.126 97.2375L185.181 77.3883Z" stroke="#159BDE" strokeWidth="2" opacity="0.8" strokeMiterlimit="10" />
@@ -121,7 +125,6 @@ const Contact = React.forwardRef((props: any, ref: any) => {
                                     </linearGradient>
                                 </defs>
                             </svg>
-                            {/* <p ref={el => {if(el && animSlideUp.current.indexOf(el) == -1)animSlideUp.current.push(el); if(el && animFadeIn.current.indexOf(el) == -1)animFadeIn.current.push(el) }} className='font-lato text-lg text-white mt-11 text-left tracking-widest'>{t('landing.contact.subtitle')}</p> */}
                             <div className="relative z-10" >
                                 <ContactForm />
                             </div>
@@ -145,7 +148,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
 
 
                 {/* Animate svgs */}
-                <svg ref={el => { if(el && animSlideLeft.current.indexOf(el) == -1) animSlideLeft.current.push(el) }} className='hidden md:block absolute w-[70%] top-[680px] left-[-20%] center-y-transform' viewBox="0 0 905 910" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg ref={animSlideLeft} className='hidden md:block absolute w-[70%] top-[680px] left-[-20%] center-y-transform' viewBox="0 0 905 910" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.2" d="M366.837 821.129C569.435 870.095 772.026 745.822 819.337 543.557C866.647 341.291 740.762 137.628 538.164 88.6614C335.566 39.6951 132.975 163.968 85.6643 366.234C38.3534 568.499 164.238 772.163 366.837 821.129Z" fill="url(#paint0_radial_1452_3608)" />
                     <path opacity="0.5" d="M537.259 745.903C689.099 696.562 773.542 533.675 725.869 382.084C678.196 230.494 516.459 147.605 364.619 196.947C212.78 246.288 128.336 409.175 176.009 560.766C223.683 712.356 385.42 795.245 537.259 745.903Z" fill="url(#paint1_radial_1452_3608)" />
                     <path opacity="0.5" d="M514.454 673.388C626.179 637.082 688.312 517.229 653.234 405.688C618.156 294.148 499.149 233.158 387.425 269.463C275.701 305.769 213.567 425.622 248.645 537.162C283.724 648.703 402.73 709.693 514.454 673.388Z" fill="url(#paint2_radial_1452_3608)" />
@@ -172,7 +175,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
                     </defs>
                 </svg>
 
-                <svg ref={el => { if(el && animSlideRight.current.indexOf(el) == -1) animSlideRight.current.push(el) }} className='hidden md:block absolute opacity-80 w-[40%] right-0 top-[80px]' viewBox="0 0 608 553" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg ref={animSlideRight1} className='hidden md:block absolute opacity-80 w-[40%] right-0 top-[80px]' viewBox="0 0 608 553" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g opacity="0.7">
                         <path opacity="0.5" d="M158.339 207.726C123.409 291.813 160.16 390.677 240.424 428.543C320.688 466.41 414.071 428.941 449 344.853C483.93 260.766 447.179 161.903 366.915 124.036C286.651 86.169 193.269 123.638 158.339 207.726Z" fill="url(#paint0_radial_1452_3603)" />
                         <path opacity="0.5" d="M208.966 228.503C187.363 280.511 210.093 341.658 259.736 365.078C309.379 388.499 367.136 365.324 388.74 313.316C410.344 261.308 387.614 200.161 337.971 176.741C288.327 153.32 230.57 176.495 208.966 228.503Z" fill="url(#paint1_radial_1452_3603)" />
@@ -195,7 +198,7 @@ const Contact = React.forwardRef((props: any, ref: any) => {
                     </defs>
                 </svg>
 
-                <svg ref={el => { if(el && animSlideRight.current.indexOf(el) == -1) animSlideRight.current.push(el) }} className='hidden md:block absolute w-[40%] right-[-5%] top-[10%]' viewBox="0 0 516 590" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg ref={animSlideRight2} className='hidden md:block absolute w-[40%] right-[-5%] top-[10%]' viewBox="0 0 516 590" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.5" d="M471.592 284.685C463.287 201.018 389.502 138.073 306.787 144.094C224.072 150.115 163.751 222.822 172.055 306.489C180.36 390.157 254.145 453.101 336.86 447.08C419.575 441.059 479.896 368.352 471.592 284.685Z" fill="url(#paint0_radial_1452_3599)" />
                     <path d="M306.024 135.456C393.561 129.083 471.681 195.701 480.474 284.292C489.267 372.882 425.398 449.836 337.86 456.208C250.323 462.58 172.203 395.963 163.41 307.372C154.617 218.781 218.486 141.828 306.024 135.456Z" stroke="url(#paint1_linear_1452_3599)" />
                     <path opacity="0.3" d="M294.402 93.0834C404.565 85.0642 502.869 168.9 513.933 280.377C524.998 391.854 444.628 488.696 334.465 496.715C224.301 504.735 125.998 420.899 114.934 309.422C103.869 197.945 184.239 101.103 294.402 93.0834Z" stroke="url(#paint2_linear_1452_3599)" />
