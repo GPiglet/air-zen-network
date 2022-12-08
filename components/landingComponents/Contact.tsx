@@ -108,9 +108,20 @@ const Contact = React.forwardRef((props: any, ref: any) => {
         return true;
     }
 
+    const onResize = () => {
+        if ( window.innerWidth < 920 ) {
+            gsap.set([containerRef.current, animSlideUp.current, animFadeIn.current, animSlideLeft.current, animSlideRight1.current, animSlideRight2.current], {clearProps: 'all'});
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', onResize);
+        return ()=>window.removeEventListener('resize', onResize);
+    }, [])
+
     return (
         <>
-            <div id='contact' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim, scroll } }} className='container m-auto relative py-[120px] md:py-[280px] flex justify-center md:fixed md:hidden md:left-1/2 md:translate-x-[-50%]'>
+            <div id='contact' ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim, scroll } }} className='container m-auto relative py-[120px] sm:py-[360px] md:py-[280px] flex justify-center md:fixed md:hidden md:left-1/2 md:translate-x-[-50%]'>
                 <div className=" flex justify-center">
                     <div className='text-white md:w-[50%] xl:w-1/3 text-center relative z-40 px-10 md:px-auto'>
                         <h1 ref={animSlideUp} className="relative text-title-sm">{t('landing.contact.title')}</h1>
