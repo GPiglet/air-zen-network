@@ -141,7 +141,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
 
     const containerRef = React.useRef<any>();
     const prevAnimation = React.useRef<any>(null);
-    const rightImagePos = ['90%', '50%', '10%'];
+    const rightImagePos = ['0%', '-50%', '-100%'];
     const startAnim = (direction: string, shown: boolean, index: number) => {
         if (prevAnimation.current) prevAnimation.current.kill();
         gsap.set([containerRef.current], { display: 'block' });
@@ -158,7 +158,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                 )
                 .to(
                     refAnimRightImage.current,
-                    { top: rightImagePos[index - 1], duration: 1 },
+                    { y: rightImagePos[index - 1], duration: 1 },
                     0
                 );
             
@@ -191,7 +191,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
                 )
                 .to(
                     refAnimRightImage.current,
-                    { top: rightImagePos[index - 1], duration: 1 },
+                    { y: rightImagePos[index - 1], duration: 1 },
                     0
                 );
 
@@ -264,7 +264,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
 
             {/*right-side animation*/}
             <div className="realtive z-0 md:static h-[32rem] sm:h-0">
-                <svg ref={refAnimRightImage} className="absolute translate-x-[-27%] top-[25%] w-[220%] sm:translate-x-[6%] sm:top-[20%] sm:w-[140%] md:translate-x-0 md:top-[90%] md:mt-[70px] md:w-[70%] md:right-[-30%] md:translate-y-[-50%]" viewBox="0 60 907 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg ref={refAnimRightImage} className="absolute translate-x-[-27%] top-[25%] w-[220%] sm:translate-x-[6%] sm:top-[20%] sm:w-[140%] md:translate-x-0 md:top-[50%] md:mt-[70px] md:w-[70%] md:right-[-30%] md:translate-y-0" viewBox="0 60 907 750" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.4" d="M538.472 704.59C686.17 656.921 768.31 499.556 721.937 353.106C675.564 206.655 518.239 126.576 370.541 174.245C222.842 221.913 140.702 379.278 187.075 525.729C233.448 672.179 390.774 752.258 538.472 704.59Z" fill="url(#paint0_radial_1376_4815)" />
                     <path opacity="0.5" d="M512.183 639.605C615.95 606.114 673.659 495.555 641.079 392.664C608.499 289.773 497.968 233.513 394.2 267.003C290.433 300.493 232.724 411.052 265.304 513.943C297.884 616.834 408.415 673.095 512.183 639.605Z" fill="url(#paint1_radial_1376_4815)" />
                     <path d="M621.253 399.063C650.392 491.089 598.779 589.983 505.956 619.941C413.134 649.898 314.27 599.571 285.13 507.544C255.99 415.517 307.604 316.624 400.426 286.666C493.249 256.708 592.113 307.036 621.253 399.063Z" stroke="url(#paint2_linear_1376_4815)" />
