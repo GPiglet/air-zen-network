@@ -35,21 +35,22 @@ const OwnLayout: FC<props> = ({ children, navItems, hasFooter = true, useSmoothe
         document.body.style.overflowY = 'auto'
     }, [])
 
-	// useEffect( () => {
-	// 	if ( useSmoother && window.innerWidth > 920 ) {
-	// 		gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-	// 		const smoother = ScrollSmoother.create({
-	// 			wrapper: "#smoother-wrapper-own",
-	// 			content: "#smoother-content-own",
-	// 			smooth: 3,
-	// 			effects: true
-	// 		});
-	// 		return () => {
-	// 			smoother.kill();
-	// 			ScrollTrigger.killAll();
-	// 		}
-	// 	}
-    // }, [])
+	useEffect( () => {
+		if ( useSmoother && window.innerWidth > 920 ) {
+			gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+			const smoother = ScrollSmoother.create({
+				wrapper: "#smoother-wrapper-own",
+				content: "#smoother-content-own",
+				smooth: 3,
+				effects: true
+			});
+			return () => {
+				smoother.kill();
+				ScrollTrigger.killAll();
+				gsap.set(document.body, {clearProps: 'all'});
+			}
+		}
+    }, [])
 
     return (
         <>
