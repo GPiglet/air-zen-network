@@ -26,6 +26,9 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
             setRelH1(width)
             setRelH2(width)
         }
+
+        gsap.config({force3D: true});                   // for safari shaking issue(and add will-change-transform of container div)
+        return ()=>{gsap.config({force3D: 'auto'});}
     }, [])
 
     //translate
@@ -214,7 +217,7 @@ const SafeHome: FC<{ props?: any, ref: any }> = React.forwardRef((props: any, re
     }
 
     return (
-        <div id="secure" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container mx-auto relative md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%]">
+        <div id="secure" ref={(el) => { containerRef.current = el; if (ref) ref.current = { container: el, startAnim } }} className="container mx-auto relative md:h-screen md:fixed md:hidden md:left-[50%] md:translate-x-[-50%] will-change-transform">
             {/*left side animation*/}
             <div className="relative h-[44rem] sm:h-[52rem] md:static md:h-auto" style={{height: `${relH1}rem`}}>
                 <svg className="absolute left-[50%] translate-x-[-50%] top-[-60px] w-[310%] sm:top-0 sm:w-[120%] md:left-[10%] md:top-1/2 md:translate-y-[-50%] md:w-[60%] md:mt-[70px]" viewBox="0 0 804 796" fill="none" xmlns="http://www.w3.org/2000/svg">
